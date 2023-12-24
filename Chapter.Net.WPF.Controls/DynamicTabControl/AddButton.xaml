@@ -1,0 +1,59 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:controls="clr-namespace:Chapter.Net.WPF.Controls">
+
+    <SolidColorBrush x:Key="AddButton.Static.Background" Color="Transparent" />
+    <SolidColorBrush x:Key="AddButton.Static.Foreground" Color="Black" />
+
+    <SolidColorBrush x:Key="AddButton.MouseOver.Background" Color="#B5B5B5" />
+
+    <SolidColorBrush x:Key="AddButton.Pressed.Background" Color="#ADADAD" />
+
+    <SolidColorBrush x:Key="AddButton.Disabled.Foreground" Color="#B5B5B5" />
+
+    <Style TargetType="{x:Type controls:AddButton}">
+        <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" />
+        <Setter Property="Background" Value="{StaticResource AddButton.Static.Background}" />
+        <Setter Property="Padding" Value="3" />
+        <Setter Property="StrokeThickness" Value="2" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type controls:AddButton}">
+                    <Grid Background="Transparent">
+                        <Ellipse Fill="{TemplateBinding Background}" />
+                        <Grid Margin="{TemplateBinding Padding}">
+                            <Line HorizontalAlignment="Center"
+                                  Stretch="Fill"
+                                  Stroke="{TemplateBinding Foreground}"
+                                  StrokeThickness="{TemplateBinding StrokeThickness}"
+                                  X1="0"
+                                  X2="0"
+                                  Y1="0"
+                                  Y2="1" />
+                            <Line VerticalAlignment="Center"
+                                  Stretch="Fill"
+                                  Stroke="{TemplateBinding Foreground}"
+                                  StrokeThickness="{TemplateBinding StrokeThickness}"
+                                  X1="0"
+                                  X2="1"
+                                  Y1="0"
+                                  Y2="0" />
+                        </Grid>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="{StaticResource AddButton.MouseOver.Background}" />
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Background" Value="{StaticResource AddButton.Pressed.Background}" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Foreground" Value="{StaticResource AddButton.Disabled.Foreground}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

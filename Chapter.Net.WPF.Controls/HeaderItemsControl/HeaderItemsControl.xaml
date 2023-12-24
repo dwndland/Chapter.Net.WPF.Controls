@@ -1,0 +1,45 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:controls="clr-namespace:Chapter.Net.WPF.Controls">
+
+    <Style TargetType="{x:Type controls:HeaderItemsControl}">
+        <Setter Property="Focusable" Value="False" />
+        <Setter Property="HorizontalHeaderAlignments" Value="Left" />
+        <Setter Property="HeaderMargins" Value="5,0" />
+        <Setter Property="HorizontalContentAlignments" Value="Stretch" />
+        <Setter Property="VerticalContentAlignments" Value="Center" />
+        <Setter Property="ContentMargins" Value="0,2" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type controls:HeaderItemsControl}">
+                    <StackPanel IsItemsHost="True" Orientation="{TemplateBinding Orientation}" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="{x:Type controls:HeaderItem}">
+        <Setter Property="Focusable" Value="False" />
+        <Setter Property="HorizontalHeaderAlignment" Value="{Binding HorizontalHeaderAlignments, RelativeSource={RelativeSource AncestorType={x:Type controls:HeaderItemsControl}}}" />
+        <Setter Property="HeaderMargin" Value="{Binding HeaderMargins, RelativeSource={RelativeSource AncestorType={x:Type controls:HeaderItemsControl}}}" />
+        <Setter Property="HorizontalContentAlignment" Value="{Binding HorizontalContentAlignments, RelativeSource={RelativeSource AncestorType={x:Type controls:HeaderItemsControl}}}" />
+        <Setter Property="VerticalContentAlignment" Value="{Binding VerticalContentAlignments, RelativeSource={RelativeSource AncestorType={x:Type controls:HeaderItemsControl}}}" />
+        <Setter Property="ContentMargin" Value="{Binding ContentMargins, RelativeSource={RelativeSource AncestorType={x:Type controls:HeaderItemsControl}}}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type controls:HeaderItem}">
+                    <DockPanel>
+                        <ContentPresenter Margin="{TemplateBinding HeaderMargin}"
+                                          HorizontalAlignment="{TemplateBinding HorizontalHeaderAlignment}"
+                                          ContentSource="Header"
+                                          DockPanel.Dock="Top" />
+                        <ContentPresenter Margin="{TemplateBinding ContentMargin}"
+                                          HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                    </DockPanel>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

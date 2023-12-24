@@ -1,0 +1,172 @@
+﻿<UserControl x:Class="Demo.NumberBoxControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:controls="clr-namespace:Chapter.Net.WPF.Controls;assembly=Chapter.Net.WPF.Controls"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             d:DesignHeight="450"
+             d:DesignWidth="800"
+             mc:Ignorable="d">
+
+    <DockPanel>
+        <GroupBox Margin="10,5"
+                  VerticalAlignment="Top"
+                  DockPanel.Dock="Right"
+                  Header="Properties">
+            <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+                <StackPanel Width="200" Margin="10">
+                    <TextBlock Text="NumberType" />
+                    <controls:EnumerationComboBox x:Name="numberType"
+                                                  Margin="0,0,0,10"
+                                                  EnumType="{x:Type controls:NumberType}"
+                                                  SelectedItem="{x:Static controls:NumberType.Int}" />
+
+                    <TextBlock Text="Minimum" />
+                    <TextBox x:Name="minimum"
+                             Margin="0,0,0,10"
+                             Text="0" />
+
+                    <TextBlock Text="Maximum" />
+                    <TextBox x:Name="maximum"
+                             Margin="0,0,0,10"
+                             Text="10000" />
+
+                    <TextBlock Text="Unit" />
+                    <TextBox x:Name="unit"
+                             Margin="0,0,0,10"
+                             Text="mg" />
+
+                    <TextBlock Text="UnitPosition" />
+                    <controls:EnumerationComboBox x:Name="unitPosition"
+                                                  Margin="0,0,0,10"
+                                                  EnumType="{x:Type Dock}"
+                                                  SelectedItem="{x:Static Dock.Right}" />
+
+                    <CheckBox x:Name="hasCheckBox"
+                              Margin="0,0,0,10"
+                              Content="HasCheckBox" />
+
+                    <CheckBox x:Name="isChecked"
+                              Margin="0,0,0,10"
+                              Content="IsChecked"
+                              IsEnabled="{Binding IsChecked, ElementName=hasCheckBox}" />
+
+                    <TextBlock Text="CheckBoxBehavior" />
+                    <controls:EnumerationComboBox x:Name="checkBoxBehavior"
+                                                  Margin="0,0,0,10"
+                                                  EnumType="{x:Type controls:NumberBoxCheckBoxBehavior}"
+                                                  SelectedItem="{x:Static controls:NumberBoxCheckBoxBehavior.None}" />
+
+                    <TextBlock Text="CheckBoxPosition" />
+                    <controls:EnumerationComboBox x:Name="checkBoxPosition"
+                                                  Margin="0,0,0,10"
+                                                  EnumType="{x:Type Dock}"
+                                                  SelectedItem="{x:Static Dock.Left}" />
+
+                    <TextBlock Text="UpDownBehavior" />
+                    <controls:EnumerationComboBox x:Name="upDownBehavior"
+                                                  Margin="0,0,0,10"
+                                                  EnumType="{x:Type controls:UpDownBehavior}"
+                                                  SelectedItem="{x:Static controls:UpDownBehavior.None}" />
+
+                    <TextBlock Text="Step" />
+                    <TextBox x:Name="step"
+                             Margin="0,0,0,10"
+                             Text="1" />
+
+                    <TextBlock Text="UpDownButtonsPosition" />
+                    <controls:EnumerationComboBox x:Name="upDownButtonsPosition"
+                                                  Margin="0,0,0,10"
+                                                  EnumType="{x:Type Dock}"
+                                                  SelectedItem="{x:Static Dock.Right}" />
+
+                    <CheckBox x:Name="canStepUp"
+                              Margin="0,0,0,10"
+                              Content="CanStepUp"
+                              IsChecked="True" />
+
+                    <CheckBox x:Name="canStepDown"
+                              Margin="0,0,0,10"
+                              Content="CanStepDown"
+                              IsChecked="True" />
+
+                    <CheckBox x:Name="acceptUpDownOnNull"
+                              Margin="0,0,0,10"
+                              Content="AcceptUpDownOnNull" />
+
+                    <CheckBox x:Name="hasResetButton"
+                              Margin="0,0,0,10"
+                              Content="HasResetButton" />
+
+                    <TextBlock Text="DefaultNumber" />
+                    <TextBox x:Name="defaultNumber"
+                             Margin="0,0,0,10"
+                             Text="0" />
+
+                    <TextBlock Text="ResetButtonPosition" />
+                    <controls:EnumerationComboBox x:Name="resetButtonPosition"
+                                                  Margin="0,0,0,10"
+                                                  EnumType="{x:Type Dock}"
+                                                  SelectedItem="{x:Static Dock.Right}" />
+
+                    <CheckBox x:Name="canReset"
+                              Margin="0,0,0,10"
+                              Content="CanReset"
+                              IsChecked="True" />
+
+                    <TextBlock Text="NumberSelectionBehavior" />
+                    <controls:EnumerationComboBox x:Name="numberSelectionBehavior"
+                                                  Margin="0,0,0,10"
+                                                  EnumType="{x:Type controls:NumberBoxSelection}"
+                                                  SelectedItem="{x:Static controls:NumberBoxSelection.None}" />
+
+                    <CheckBox x:Name="isReadOnly"
+                              Margin="0,0,0,10"
+                              Content="IsReadOnly" />
+
+                    <TextBlock Margin="0,0,0,10"
+                               Text="InputCulture and PredefinesCulture is CultureInfo.CurrentCulture in this demo."
+                               TextWrapping="Wrap" />
+
+                    <TextBlock Text="LostFocusBehavior is set to None in this Demo." TextWrapping="Wrap" />
+                    <TextBlock Text="Possible options: PlaceDefaultNumber, PlaceMaximumNumber, PlaceMinimumNumber, None plus options like TrimLeadingZero and FormatText and Value." TextWrapping="Wrap" />
+                </StackPanel>
+            </ScrollViewer>
+        </GroupBox>
+
+        <StackPanel Width="200"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center">
+            <controls:NumberBox x:Name="numberBox"
+                                Margin="0,0,0,4"
+                                AcceptUpDownOnNull="{Binding IsChecked, ElementName=acceptUpDownOnNull}"
+                                CanReset="{Binding IsChecked, ElementName=canReset}"
+                                CanStepDown="{Binding IsChecked, ElementName=canStepDown}"
+                                CanStepUp="{Binding IsChecked, ElementName=canStepUp}"
+                                CheckBoxBehavior="{Binding SelectedItem, ElementName=checkBoxBehavior}"
+                                CheckBoxPosition="{Binding SelectedItem, ElementName=checkBoxPosition}"
+                                DefaultNumber="{Binding Text, ElementName=defaultNumber}"
+                                HasCheckBox="{Binding IsChecked, ElementName=hasCheckBox}"
+                                HasResetButton="{Binding IsChecked, ElementName=hasResetButton}"
+                                IsChecked="{Binding IsChecked, ElementName=isChecked}"
+                                IsReadOnly="{Binding IsChecked, ElementName=isReadOnly}"
+                                LostFocusBehavior="{controls:LostFocusBehavior None}"
+                                Maximum="{Binding Text, ElementName=maximum}"
+                                Minimum="{Binding Text, ElementName=minimum}"
+                                Number="0"
+                                NumberSelectionBehavior="{Binding SelectedItem, ElementName=numberSelectionBehavior}"
+                                NumberType="{Binding SelectedItem, ElementName=numberType}"
+                                ResetButtonPosition="{Binding SelectedItem, ElementName=resetButtonPosition}"
+                                Step="{Binding Text, ElementName=step}"
+                                Unit="{Binding Text, ElementName=unit}"
+                                UnitPosition="{Binding SelectedItem, ElementName=unitPosition}"
+                                UpDownBehavior="{Binding SelectedItem, ElementName=upDownBehavior}"
+                                UpDownButtonsPosition="{Binding SelectedItem, ElementName=upDownButtonsPosition}" />
+            <TextBlock Margin="0,0,0,10" Text="{Binding Number, ElementName=numberBox, StringFormat=Number: {0}}" />
+
+            <TextBlock Text="LostFocusBehavior:" />
+            <TextBlock Text="{}{controls:LostFocusBehavior None}" />
+        </StackPanel>
+    </DockPanel>
+
+</UserControl>

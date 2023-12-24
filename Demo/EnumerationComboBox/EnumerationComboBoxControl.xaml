@@ -1,0 +1,60 @@
+﻿<UserControl x:Class="Demo.EnumerationComboBoxControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:controls="clr-namespace:Chapter.Net.WPF.Controls;assembly=Chapter.Net.WPF.Controls"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:demo="clr-namespace:Demo"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             d:DesignHeight="450"
+             d:DesignWidth="800"
+             mc:Ignorable="d">
+
+    <StackPanel Width="200"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center">
+        <TextBlock Text="Build In ComboBox" />
+        <ComboBox Margin="0,0,0,10">
+            <ComboBoxItem Content="First" IsSelected="True" />
+            <ComboBoxItem Content="Second" />
+            <ComboBoxItem Content="Third" />
+        </ComboBox>
+
+        <TextBlock Text="DisplayKind: Converter" />
+        <controls:EnumerationComboBox Margin="0,0,0,10"
+                                      DisplayKind="Converter"
+                                      EnumType="{x:Type demo:DemoEnum}"
+                                      SelectedItem="{x:Static demo:DemoEnum.First}">
+            <controls:EnumerationComboBox.ItemConverter>
+                <demo:EnumToStringConverter />
+            </controls:EnumerationComboBox.ItemConverter>
+        </controls:EnumerationComboBox>
+
+        <TextBlock Text="DisplayKind: Custom" />
+        <controls:EnumerationComboBox Margin="0,0,0,10"
+                                      DisplayKind="Custom"
+                                      EnumType="{x:Type demo:DemoEnum}"
+                                      SelectedItem="{x:Static demo:DemoEnum.First}">
+            <controls:EnumerationComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="ItemTemplate: " />
+                        <TextBlock Text="{Binding}" />
+                    </StackPanel>
+                </DataTemplate>
+            </controls:EnumerationComboBox.ItemTemplate>
+        </controls:EnumerationComboBox>
+
+        <TextBlock Text="DisplayKind: Description" />
+        <controls:EnumerationComboBox Margin="0,0,0,10"
+                                      DisplayKind="Description"
+                                      EnumType="{x:Type demo:DemoEnum}"
+                                      SelectedItem="{x:Static demo:DemoEnum.First}" />
+
+        <TextBlock Text="DisplayKind: ToString" />
+        <controls:EnumerationComboBox Margin="0,0,0,10"
+                                      DisplayKind="ToString"
+                                      EnumType="{x:Type demo:DemoEnum}"
+                                      SelectedItem="{x:Static demo:DemoEnum.First}" />
+    </StackPanel>
+
+</UserControl>

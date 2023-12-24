@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="ImageButton\save.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Chapter.Net.WPF.Controls\Chapter.Net.WPF.Controls.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="ImageButton\save.png" />
+  </ItemGroup>
+
+</Project>

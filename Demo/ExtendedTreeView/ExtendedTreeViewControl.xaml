@@ -1,0 +1,74 @@
+﻿<UserControl x:Class="Demo.ExtendedTreeViewControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:controls="clr-namespace:Chapter.Net.WPF.Controls;assembly=Chapter.Net.WPF.Controls"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             d:DesignHeight="450"
+             d:DesignWidth="800"
+             mc:Ignorable="d">
+
+    <DockPanel>
+        <GroupBox Margin="10,5"
+                  VerticalAlignment="Top"
+                  DockPanel.Dock="Right"
+                  Header="Properties">
+            <StackPanel Width="200" Margin="10">
+                <CheckBox x:Name="autoExpandSelected"
+                          Margin="0,0,0,10"
+                          Content="AutoExpandSelected" />
+                <TextBlock Text="Atm the items expands first once they were shown." TextWrapping="Wrap" />
+            </StackPanel>
+        </GroupBox>
+
+        <DockPanel>
+            <StackPanel Margin="10"
+                        DockPanel.Dock="Bottom"
+                        Orientation="Horizontal">
+                <TextBlock Text="SelectedElement: " />
+                <TextBlock Text="{Binding SelectedItem.Name}" />
+            </StackPanel>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+
+                <DockPanel Grid.Row="0">
+                    <TextBlock DockPanel.Dock="Top" Text="Flat Items" />
+                    <ListBox ItemsSource="{Binding FlatItems}"
+                             SelectedItem="{Binding SelectedItem}"
+                             SelectionMode="Single">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <CheckBox Margin="0,0,4,0" IsChecked="{Binding IsSelected}" />
+                                    <TextBlock Text="{Binding Name}" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </DockPanel>
+
+                <DockPanel Grid.Column="1">
+                    <TextBlock DockPanel.Dock="Top" Text="ExtendedTreeView" />
+                    <controls:ExtendedTreeView AutoExpandSelected="{Binding IsChecked, ElementName=autoExpandSelected}"
+                                               ItemsSource="{Binding Items}"
+                                               SelectedElement="{Binding SelectedItem}">
+                        <controls:ExtendedTreeView.ItemContainerStyle>
+                            <Style TargetType="{x:Type controls:ExtendedTreeViewItem}">
+                                <Setter Property="IsSelected" Value="{Binding IsSelected}" />
+                            </Style>
+                        </controls:ExtendedTreeView.ItemContainerStyle>
+                        <controls:ExtendedTreeView.ItemTemplate>
+                            <HierarchicalDataTemplate ItemsSource="{Binding Items}">
+                                <TextBlock Text="{Binding Name}" />
+                            </HierarchicalDataTemplate>
+                        </controls:ExtendedTreeView.ItemTemplate>
+                    </controls:ExtendedTreeView>
+                </DockPanel>
+            </Grid>
+        </DockPanel>
+    </DockPanel>
+
+</UserControl>

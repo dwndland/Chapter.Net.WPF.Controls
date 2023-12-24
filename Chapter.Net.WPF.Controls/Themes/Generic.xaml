@@ -1,0 +1,30 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/AdvancedTextBox/AdvancedTextBox.xaml" />
+        <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/BrowseTextBox/BrowseTextBox.xaml" />
+        <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/DynamicTabControl/AddButton.xaml" />
+        <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/DynamicTabControl/CloseButton.xaml" />
+        <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/DynamicTabControl/DynamicTabControl.xaml" />
+        <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/DynamicTabControl/DynamicTabItem.xaml" />
+        <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/EnumerationComboBox/EnumerationComboBox.xaml" />
+        <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/EnumerationComboBox/EnumerationComboBoxItem.xaml" />
+        <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/HeaderItemsControl/HeaderItemsControl.xaml" />
+        <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ImageButton/ImageButton.xaml" />
+        <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/NumberBox/NumberBox.xaml" />
+        <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/OptionButton/OptionButton.xaml" />
+        <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/PasswordBox/PasswordBox.xaml" />
+        <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/Resizer/FrameResizer.xaml" />
+        <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/Resizer/Resizer.xaml" />
+        <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/SearchTextBox/SearchTextBox.xaml" />
+        <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/SplitButton/SplitButton.xaml" />
+        <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/SplitButton/SplitButtonItem.xaml" />
+        <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/TimeBox/TimeBox.xaml" />
+        <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/TitledItemsControl/TitledItemsControl.xaml" />
+        <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/TreeListView/TreeListView.xaml" />
+        <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/TreeListView/TreeListViewExpander.xaml" />
+        <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/TreeListView/TreeListViewItem.xaml" />
+        <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/TreeListView/TreeListViewScrollViewer.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+</ResourceDictionary>

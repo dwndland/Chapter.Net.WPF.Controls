@@ -1,0 +1,106 @@
+﻿<UserControl x:Class="Demo.ImageButtonControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:controls="clr-namespace:Chapter.Net.WPF.Controls;assembly=Chapter.Net.WPF.Controls"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:headerItemsControl="clr-namespace:Demo.HeaderItemsControl"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             d:DesignHeight="450"
+             d:DesignWidth="800"
+             mc:Ignorable="d">
+    <UserControl.Resources>
+        <headerItemsControl:StringToThicknessConverter x:Key="StringToThicknessConverter" />
+    </UserControl.Resources>
+
+    <DockPanel>
+        <GroupBox Margin="10,5"
+                  VerticalAlignment="Top"
+                  DockPanel.Dock="Right"
+                  Header="Properties">
+            <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+                <StackPanel Width="200" Margin="10">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="ImageWidth: " />
+                        <TextBlock Text="{Binding Value, ElementName=imageWidth, StringFormat={}{0:0}}" />
+                    </StackPanel>
+                    <Slider x:Name="imageWidth"
+                            Margin="0,0,0,10"
+                            Maximum="128"
+                            Minimum="8"
+                            Value="16" />
+
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="ImageHeight: " />
+                        <TextBlock Text="{Binding Value, ElementName=imageHeight, StringFormat={}{0:0}}" />
+                    </StackPanel>
+                    <Slider x:Name="imageHeight"
+                            Margin="0,0,0,10"
+                            Maximum="128"
+                            Minimum="8"
+                            Value="16" />
+
+                    <TextBlock Text="Padding" />
+                    <TextBox x:Name="padding"
+                             Margin="0,0,0,10"
+                             Text="4,4,4,4" />
+
+                    <TextBlock Text="Content" />
+                    <TextBox x:Name="content"
+                             Margin="0,0,0,10"
+                             Text="Save" />
+
+                    <TextBlock Text="ImageMargin" />
+                    <TextBox x:Name="imageMargin"
+                             Margin="0,0,0,10"
+                             Text="0,0,2,0" />
+
+                    <TextBlock Text="ImagePosition" />
+                    <controls:EnumerationComboBox x:Name="imagePosition"
+                                                  Margin="0,0,0,10"
+                                                  EnumType="{x:Type Dock}"
+                                                  SelectedItem="{x:Static Dock.Left}" />
+
+                    <TextBlock Text="HorizontalImageAlignment" />
+                    <controls:EnumerationComboBox x:Name="horizontalImageAlignment"
+                                                  Margin="0,0,0,10"
+                                                  EnumType="{x:Type HorizontalAlignment}"
+                                                  SelectedItem="{x:Static HorizontalAlignment.Center}" />
+
+                    <TextBlock Text="VerticalImageAlignment" />
+                    <controls:EnumerationComboBox x:Name="verticalImageAlignment"
+                                                  Margin="0,0,0,10"
+                                                  EnumType="{x:Type VerticalAlignment}"
+                                                  SelectedItem="{x:Static VerticalAlignment.Center}" />
+
+                    <TextBlock Text="ImageStretch" />
+                    <controls:EnumerationComboBox x:Name="imageStretch"
+                                                  Margin="0,0,0,10"
+                                                  EnumType="{x:Type Stretch}"
+                                                  SelectedItem="{x:Static Stretch.Uniform}" />
+
+                    <CheckBox x:Name="isEnabled"
+                              Content="IsEnabled"
+                              IsChecked="True" />
+                </StackPanel>
+            </ScrollViewer>
+        </GroupBox>
+
+        <!--  ImageSource  -->
+        <controls:ImageButton Padding="{Binding Text, ElementName=padding, Converter={StaticResource StringToThicknessConverter}}"
+                              HorizontalAlignment="Center"
+                              VerticalAlignment="Center"
+                              Content="{Binding Text, ElementName=content}"
+                              HorizontalImageAlignment="{Binding SelectedItem, ElementName=horizontalImageAlignment}"
+                              ImageHeight="{Binding Value, ElementName=imageHeight}"
+                              ImageMargin="{Binding Text, ElementName=imageMargin, Converter={StaticResource StringToThicknessConverter}}"
+                              ImagePosition="{Binding SelectedItem, ElementName=imagePosition}"
+                              ImageSource="/Demo;component/ImageButton/save.png"
+                              ImageStretch="{Binding SelectedItem, ElementName=imageStretch}"
+                              ImageWidth="{Binding Value, ElementName=imageWidth}"
+                              IsEnabled="{Binding IsChecked, ElementName=isEnabled}"
+                              RenderOptions.BitmapScalingMode="HighQuality"
+                              VerticalImageAlignment="{Binding SelectedItem, ElementName=verticalImageAlignment}" />
+
+    </DockPanel>
+
+</UserControl>

@@ -1,0 +1,80 @@
+﻿<UserControl x:Class="Demo.HeaderItemsControlControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:controls="clr-namespace:Chapter.Net.WPF.Controls;assembly=Chapter.Net.WPF.Controls"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:headerItemsControl="clr-namespace:Demo.HeaderItemsControl"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             d:DesignHeight="450"
+             d:DesignWidth="800"
+             mc:Ignorable="d">
+    <UserControl.Resources>
+        <headerItemsControl:StringToThicknessConverter x:Key="StringToThicknessConverter" />
+    </UserControl.Resources>
+
+    <DockPanel LastChildFill="False">
+        <GroupBox Margin="10,5"
+                  VerticalAlignment="Top"
+                  DockPanel.Dock="Right"
+                  Header="Properties">
+            <StackPanel Width="200" Margin="10">
+                <TextBlock Text="HorizontalHeaderAlignments" />
+                <controls:EnumerationComboBox x:Name="horizontalHeaderAlignments"
+                                              Margin="0,0,0,10"
+                                              EnumType="{x:Type HorizontalAlignment}"
+                                              SelectedItem="{x:Static HorizontalAlignment.Left}" />
+
+                <TextBlock Text="HeaderMargins" />
+                <TextBox x:Name="headerMargins"
+                         Margin="0,0,0,10"
+                         Text="5,0" />
+
+                <TextBlock Text="HorizontalContentAlignments" />
+                <controls:EnumerationComboBox x:Name="horizontalContentAlignments"
+                                              Margin="0,0,0,10"
+                                              EnumType="{x:Type HorizontalAlignment}"
+                                              SelectedItem="{x:Static HorizontalAlignment.Stretch}" />
+
+                <TextBlock Text="VerticalContentAlignments" />
+                <controls:EnumerationComboBox x:Name="verticalContentAlignments"
+                                              Margin="0,0,0,10"
+                                              EnumType="{x:Type VerticalAlignment}"
+                                              SelectedItem="{x:Static VerticalAlignment.Center}" />
+
+                <TextBlock Text="ContentMargins" />
+                <TextBox x:Name="contentMargins"
+                         Margin="0,0,0,10"
+                         Text="0,2" />
+
+                <TextBlock Text="Orientation" />
+                <controls:EnumerationComboBox x:Name="orientation"
+                                              Margin="0,0,0,10"
+                                              EnumType="{x:Type Orientation}"
+                                              SelectedItem="{x:Static Orientation.Vertical}" />
+            </StackPanel>
+        </GroupBox>
+
+        <controls:HeaderItemsControl Margin="40"
+                                     ContentMargins="{Binding Text, ElementName=contentMargins, Converter={StaticResource StringToThicknessConverter}}"
+                                     DockPanel.Dock="Top"
+                                     HeaderMargins="{Binding Text, ElementName=headerMargins, Converter={StaticResource StringToThicknessConverter}}"
+                                     HorizontalContentAlignments="{Binding SelectedItem, ElementName=horizontalContentAlignments}"
+                                     HorizontalHeaderAlignments="{Binding SelectedItem, ElementName=horizontalHeaderAlignments}"
+                                     Orientation="{Binding SelectedItem, ElementName=orientation}"
+                                     VerticalContentAlignments="{Binding SelectedItem, ElementName=verticalContentAlignments}">
+            <controls:HeaderItem Header="Family Name:">
+                <TextBox />
+            </controls:HeaderItem>
+            <controls:HeaderItem Header="Name:">
+                <TextBox />
+            </controls:HeaderItem>
+            <controls:HeaderItem Header="Age:">
+                <TextBox />
+            </controls:HeaderItem>
+            <controls:HeaderItem Header="Sex:">
+                <TextBox />
+            </controls:HeaderItem>
+        </controls:HeaderItemsControl>
+    </DockPanel>
+
+</UserControl>

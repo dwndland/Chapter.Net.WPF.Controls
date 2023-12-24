@@ -1,0 +1,69 @@
+﻿<UserControl x:Class="Demo.ResizerControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:controls="clr-namespace:Chapter.Net.WPF.Controls;assembly=Chapter.Net.WPF.Controls"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             d:DesignHeight="450"
+             d:DesignWidth="800"
+             mc:Ignorable="d">
+    <UserControl.Resources>
+        <Style TargetType="{x:Type TextBlock}">
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="TextWrapping" Value="Wrap" />
+        </Style>
+        <Style TargetType="{x:Type Border}">
+            <Setter Property="SnapsToDevicePixels" Value="True" />
+            <Setter Property="BorderBrush" Value="Gray" />
+        </Style>
+    </UserControl.Resources>
+
+    <Border Background="White" BorderThickness="1,0,0,0">
+        <DockPanel LastChildFill="False">
+            <controls:Resizer Height="100"
+                              DockPanel.Dock="Bottom"
+                              FrameSizes="0,6,0,0">
+                <Border Background="LightBlue" BorderThickness="0,1,0,0">
+                    <TextBlock Text="Size Me Up" />
+                </Border>
+            </controls:Resizer>
+
+            <controls:Resizer Width="100"
+                              DockPanel.Dock="Right"
+                              FrameSizes="6,0,0,0">
+                <Border Background="WhiteSmoke" BorderThickness="1,0,0,0">
+                    <TextBlock Text="Size Me Left" />
+                </Border>
+            </controls:Resizer>
+
+            <controls:Resizer Width="100"
+                              DockPanel.Dock="Left"
+                              FrameSizes="0,0,6,0">
+                <Border Background="LightSalmon" BorderThickness="0,0,1,0">
+                    <TextBlock Text="Size Me Right" />
+                </Border>
+            </controls:Resizer>
+
+            <controls:Resizer Height="100"
+                              DockPanel.Dock="Top"
+                              FrameSizes="0,0,0,6">
+                <Border Background="LightGreen" BorderThickness="0,0,0,1">
+                    <TextBlock Text="Size Me Down" />
+                </Border>
+            </controls:Resizer>
+
+            <controls:Resizer Width="100"
+                              Height="100"
+                              VerticalAlignment="Bottom"
+                              CornerSize="12"
+                              DockPanel.Dock="Left"
+                              FrameSizes="0,6,6,0">
+                <Border Background="LightSkyBlue" BorderThickness="0,1,1,0">
+                    <TextBlock Text="Size Me Up And Right" />
+                </Border>
+            </controls:Resizer>
+        </DockPanel>
+    </Border>
+
+</UserControl>

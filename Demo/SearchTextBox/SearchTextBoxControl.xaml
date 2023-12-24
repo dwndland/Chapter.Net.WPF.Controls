@@ -1,0 +1,73 @@
+﻿<UserControl x:Class="Demo.SearchTextBoxControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:controls="clr-namespace:Chapter.Net.WPF.Controls;assembly=Chapter.Net.WPF.Controls"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             d:DesignHeight="450"
+             d:DesignWidth="800"
+             mc:Ignorable="d">
+    <DockPanel>
+        <GroupBox Margin="10,5"
+                  VerticalAlignment="Top"
+                  DockPanel.Dock="Right"
+                  Header="Properties">
+            <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+                <StackPanel Width="200" Margin="10">
+                    <TextBlock Margin="0,0,0,10"
+                               Text="The SearchTextBox inherits from AdvanceTextBox"
+                               TextWrapping="Wrap" />
+
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Height: " />
+                        <TextBlock Text="{Binding Value, ElementName=height, StringFormat={}{0:0}}" />
+                    </StackPanel>
+                    <Slider x:Name="height"
+                            Margin="0,0,0,10"
+                            Maximum="200"
+                            Minimum="24"
+                            Value="24" />
+
+                    <CheckBox x:Name="showSearchButton"
+                              Margin="0,0,0,10"
+                              Content="ShowSearchButton"
+                              IsChecked="True" />
+
+                    <StackPanel IsEnabled="{Binding IsChecked, ElementName=showSearchButton}">
+                        <TextBlock Text="SearchButtonPosition" />
+                        <controls:EnumerationComboBox x:Name="searchButtonPosition"
+                                                      Margin="0,0,0,10"
+                                                      EnumType="{x:Type Dock}"
+                                                      SelectedItem="{x:Static Dock.Right}" />
+
+                        <CheckBox x:Name="isSearching"
+                                  Margin="0,0,0,10"
+                                  Content="IsSearching" />
+                    </StackPanel>
+                </StackPanel>
+            </ScrollViewer>
+        </GroupBox>
+
+        <StackPanel Width="300"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center">
+
+            <TextBlock Text="Build In TextBox" />
+            <TextBox Height="24"
+                     Margin="0,0,0,10"
+                     VerticalContentAlignment="Center" />
+
+            <TextBlock Text="SearchTextBox" />
+            <controls:SearchTextBox Height="{Binding Value, ElementName=height}"
+                                    VerticalContentAlignment="Center"
+                                    CancelClick="OnCancelClick"
+                                    InfoAppearance="OnEmpty"
+                                    InfoText="Search"
+                                    IsSearching="{Binding IsChecked, ElementName=isSearching}"
+                                    SearchButtonPosition="{Binding SelectedItem, ElementName=searchButtonPosition}"
+                                    SearchClick="OnSearchClick"
+                                    ShowSearchButton="{Binding IsChecked, ElementName=showSearchButton}" />
+        </StackPanel>
+    </DockPanel>
+
+</UserControl>
