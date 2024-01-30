@@ -280,7 +280,8 @@ public class ExtendedTreeView : TreeView
 
     private void Sort(ref int firstItemPos, ref int lastItemPos)
     {
-        if (firstItemPos > lastItemPos) (firstItemPos, lastItemPos) = (lastItemPos, firstItemPos);
+        if (firstItemPos > lastItemPos)
+            (firstItemPos, lastItemPos) = (lastItemPos, firstItemPos);
     }
 
     private List<ExtendedTreeViewItem> GetFlatTreeViewItems(ItemsControl control)
@@ -356,7 +357,10 @@ public class ExtendedTreeView : TreeView
             Deselect(oldSelectedElement);
 
         if (newSelectedElement == null)
+        {
+            _selfSelectedElement = false;
             return;
+        }
 
         var container = GetContainerFromItem(this, newSelectedElement);
         if (container != null)
