@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.0] - 2024-03-28
+### Removed
+- Add possibility to define the amount of decimal places on the number box.
+### Supported .Net Versions
+- .Net 6
+- .Net 7
+- .Net 8
+
 ## [1.0.2] - 2024-02-02
 ### Removed
 - Remove dependency to the Chapter.Net.Converters.

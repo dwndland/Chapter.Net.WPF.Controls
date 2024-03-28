@@ -183,6 +183,12 @@ public class NumberBox : Control
     public static readonly DependencyProperty AcceptUpDownOnNullProperty =
         DependencyProperty.Register(nameof(AcceptUpDownOnNull), typeof(bool), typeof(NumberBox), new PropertyMetadata(false));
 
+    /// <summary>
+    ///     Identifies the <see cref="DecimalPlaces" /> dependency property.
+    /// </summary>
+    public static readonly DependencyProperty DecimalPlacesProperty =
+        DependencyProperty.Register(nameof(DecimalPlaces), typeof(int), typeof(NumberBox), new PropertyMetadata(-1, OnDecimalPlacesChanged));
+
     private RepeatButton _downButton;
     private INumber _number;
     private Button _resetButton;
@@ -478,6 +484,17 @@ public class NumberBox : Control
         set => SetValue(AcceptUpDownOnNullProperty, value);
     }
 
+    /// <summary>
+    ///     Gets or sets the allowed maximum of decimal places.
+    /// </summary>
+    /// <value>Default: -1 (off).</value>
+    [DefaultValue(-1)]
+    public int DecimalPlaces
+    {
+        get => (int)GetValue(DecimalPlacesProperty);
+        set => SetValue(DecimalPlacesProperty, value);
+    }
+
     internal int SelectionStart => _textBox.SelectionStart;
 
     internal string Text => _textBox.Text;
@@ -524,6 +541,12 @@ public class NumberBox : Control
         control.OnInputCultureChanged(e);
     }
 
+    private static void OnDecimalPlacesChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+    {
+        var control = (NumberBox)d;
+        control.OnDecimalPlacesChanged(e);
+    }
+
     /// <summary>
     ///     Occurs when the Number value has been changed.
     /// </summary>
@@ -556,7 +579,7 @@ public class NumberBox : Control
         if (_resetButton != null)
             _resetButton.Click += HandleResetClick;
 
-        _number.Initialize(Number, Minimum, Maximum, Step, DefaultNumber, InputCulture, PredefinesCulture);
+        _number.Initialize(Number, Minimum, Maximum, DecimalPlaces, Step, DefaultNumber, InputCulture, PredefinesCulture);
         _textBox.Text = _number.ToString();
 
         _textBox.PreviewDragOver += HandlePreviewDragOver;
@@ -772,7 +795,7 @@ public class NumberBox : Control
     private void OnNumberTypeChanged(DependencyPropertyChangedEventArgs e)
     {
         _number = NumberFactory.Create((NumberType)e.NewValue);
-        _number.Initialize(Number, Minimum, Maximum, Step, DefaultNumber, InputCulture, PredefinesCulture);
+        _number.Initialize(Number, Minimum, Maximum, DecimalPlaces, Step, DefaultNumber, InputCulture, PredefinesCulture);
     }
 
     private void OnNumberChanged(DependencyPropertyChangedEventArgs e)
@@ -816,6 +839,11 @@ public class NumberBox : Control
     private void OnInputCultureChanged(DependencyPropertyChangedEventArgs e)
     {
         _number.TakeCulture(e.NewValue);
+    }
+
+    private void OnDecimalPlacesChanged(DependencyPropertyChangedEventArgs e)
+    {
+        _number.TakeDecimalPlaces((int)e.NewValue);
     }
 
     private void OnNumberChanged(object oldNumber, object newNumber)

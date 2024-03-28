@@ -4,6 +4,7 @@
 // </copyright>
 // -----------------------------------------------------------------------------------------------------------------
 
+using System;
 using System.Globalization;
 
 // ReSharper disable once CheckNamespace
@@ -17,11 +18,12 @@ internal abstract class Number<T> : INumber
     protected T _maximum;
     protected T _minimum;
     protected CultureInfo _parsingCulture;
+    protected int _decimalPlaces;
     protected T _step;
 
     public object CurrentNumber => _current;
 
-    public void Initialize(object number, object minimum, object maximum, object step, object defaultNumber, CultureInfo parsingCulture, CultureInfo predefinedCulture)
+    public void Initialize(object number, object minimum, object maximum, int decimalPlaces, object step, object defaultNumber, CultureInfo parsingCulture, CultureInfo predefinedCulture)
     {
         TakeCulture(predefinedCulture);
         TakeMinimum(minimum);
@@ -76,6 +78,11 @@ internal abstract class Number<T> : INumber
 
         if (TryParse(newMaximum, out var parsedNumber))
             _maximum = parsedNumber;
+    }
+
+    public void TakeDecimalPlaces(int decimalPlaces)
+    {
+        _decimalPlaces = decimalPlaces;
     }
 
     public void TakeStep(object newStep)
@@ -150,4 +157,27 @@ internal abstract class Number<T> : INumber
     protected abstract void StepDown();
     protected abstract bool IsInRange(T parsedNumber);
     protected abstract bool TryParse(string numberString, out T parsed);
+
+    protected bool IsAllowedDecimalFractionLength(string text, int allowedDecimalPlaces)
+    {
+        if (allowedDecimalPlaces == -1) // It's turned off.
+        {
+            return true;
+        }
+
+        var separator = _parsingCulture.NumberFormat.NumberDecimalSeparator;
+        var index = text.IndexOf(separator, StringComparison.Ordinal);
+        if (index < 0) // No separator yet.
+        {
+            return true;
+        }
+
+        if (index + 1 >= text.Length) // Separator but no number after yet.
+        {
+            return true;
+        }
+
+        var decimalPart = text[(index + 1)..];
+        return decimalPart.Length <= allowedDecimalPlaces;
+    }
 }

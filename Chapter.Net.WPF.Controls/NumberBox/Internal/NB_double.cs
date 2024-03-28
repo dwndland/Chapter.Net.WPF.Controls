@@ -62,7 +62,7 @@ internal class NB_double : Number<double?>
 
         var result = double.TryParse(numberString, NumberStyles.Float, _parsingCulture, out var tmp);
         parsed = tmp;
-        return result;
+        return result && IsAllowedDecimalFractionLength(numberString, _decimalPlaces);
     }
 
     public override string ToString()

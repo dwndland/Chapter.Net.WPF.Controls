@@ -69,6 +69,14 @@
                                                   EnumType="{x:Type controls:UpDownBehavior}"
                                                   SelectedItem="{x:Static controls:UpDownBehavior.None}" />
 
+                    <TextBlock Text="Decimal Places" />
+                    <controls:NumberBox x:Name="decimalPlaces"
+                                        Margin="0,0,0,10"
+                                        Minimum="-1"
+                                        Number="-1"
+                                        NumberType="Int"
+                                        UpDownBehavior="ArrowsAndButtons" />
+
                     <TextBlock Text="Step" />
                     <TextBox x:Name="step"
                              Margin="0,0,0,10"
@@ -145,6 +153,7 @@
                                 CanStepUp="{Binding IsChecked, ElementName=canStepUp}"
                                 CheckBoxBehavior="{Binding SelectedItem, ElementName=checkBoxBehavior}"
                                 CheckBoxPosition="{Binding SelectedItem, ElementName=checkBoxPosition}"
+                                DecimalPlaces="{Binding Number, ElementName=decimalPlaces}"
                                 DefaultNumber="{Binding Text, ElementName=defaultNumber}"
                                 HasCheckBox="{Binding IsChecked, ElementName=hasCheckBox}"
                                 HasResetButton="{Binding IsChecked, ElementName=hasResetButton}"
