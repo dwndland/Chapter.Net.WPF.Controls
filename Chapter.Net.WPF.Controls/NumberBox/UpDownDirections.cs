@@ -6,20 +6,21 @@
 
 // ReSharper disable once CheckNamespace
 
-namespace Chapter.Net.WPF.Controls;
-
-/// <summary>
-///     Represents the direction to be used for the up and down button in the <see cref="NumberBox" />.
-/// </summary>
-public enum UpDownDirections
+namespace Chapter.Net.WPF.Controls
 {
     /// <summary>
-    ///     The button means step up.
+    ///     Represents the direction to be used for the up and down button in the <see cref="NumberBox" />.
     /// </summary>
-    Up,
+    public enum UpDownDirections
+    {
+        /// <summary>
+        ///     The button means step up.
+        /// </summary>
+        Up,
 
-    /// <summary>
-    ///     The button means step down.
-    /// </summary>
-    Down
+        /// <summary>
+        ///     The button means step down.
+        /// </summary>
+        Down
+    }
 }

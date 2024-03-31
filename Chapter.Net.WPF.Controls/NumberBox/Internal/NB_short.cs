@@ -8,67 +8,68 @@ using System.Globalization;
 
 // ReSharper disable once CheckNamespace
 
-namespace Chapter.Net.WPF.Controls;
-
-internal class NB_short : Number<short?>
+namespace Chapter.Net.WPF.Controls
 {
-    public override bool CanIncrease => _current + _step <= _maximum;
-
-    public override bool CanDecrease => _current - _step >= _minimum;
-
-    public override bool AcceptNegative => _minimum < 0;
-
-    public override bool NumberIsBelowMinimum => _current < _minimum;
-
-    protected override short? GetMinValue()
+    internal class NB_short : Number<short?>
     {
-        return short.MinValue;
-    }
+        public override bool CanIncrease => _current + _step <= _maximum;
 
-    protected override short? GetMaxValue()
-    {
-        return short.MaxValue;
-    }
+        public override bool CanDecrease => _current - _step >= _minimum;
 
-    protected override short? GetDefaultStep()
-    {
-        return 1;
-    }
+        public override bool AcceptNegative => _minimum < 0;
 
-    protected override void StepUp()
-    {
-        _current += _step;
-    }
+        public override bool NumberIsBelowMinimum => _current < _minimum;
 
-    protected override void StepDown()
-    {
-        _current -= _step;
-    }
-
-    protected override bool IsInRange(short? parsedNumber)
-    {
-        if (parsedNumber == null)
-            return true;
-        return parsedNumber <= _maximum;
-    }
-
-    protected override bool TryParse(string numberString, out short? parsed)
-    {
-        if (string.IsNullOrWhiteSpace(numberString))
+        protected override short? GetMinValue()
         {
-            parsed = null;
-            return true;
+            return short.MinValue;
         }
 
-        var result = short.TryParse(numberString, NumberStyles.Number, _parsingCulture, out var tmp);
-        parsed = tmp;
-        return result;
-    }
+        protected override short? GetMaxValue()
+        {
+            return short.MaxValue;
+        }
 
-    public override string ToString()
-    {
-        if (_current == null)
-            return string.Empty;
-        return _current.Value.ToString(_parsingCulture);
+        protected override short? GetDefaultStep()
+        {
+            return 1;
+        }
+
+        protected override void StepUp()
+        {
+            _current += _step;
+        }
+
+        protected override void StepDown()
+        {
+            _current -= _step;
+        }
+
+        protected override bool IsInRange(short? parsedNumber)
+        {
+            if (parsedNumber == null)
+                return true;
+            return parsedNumber <= _maximum;
+        }
+
+        protected override bool TryParse(string numberString, out short? parsed)
+        {
+            if (string.IsNullOrWhiteSpace(numberString))
+            {
+                parsed = null;
+                return true;
+            }
+
+            var result = short.TryParse(numberString, NumberStyles.Number, _parsingCulture, out var tmp);
+            parsed = tmp;
+            return result;
+        }
+
+        public override string ToString()
+        {
+            if (_current == null)
+                return string.Empty;
+            return _current.Value.ToString(_parsingCulture);
+        }
     }
 }

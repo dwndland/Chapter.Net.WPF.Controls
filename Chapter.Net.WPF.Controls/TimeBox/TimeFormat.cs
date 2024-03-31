@@ -6,20 +6,21 @@
 
 // ReSharper disable once CheckNamespace
 
-namespace Chapter.Net.WPF.Controls;
-
-/// <summary>
-///     Defines if the <see cref="TimeBox" /> contains a seconds box or not.
-/// </summary>
-public enum TimeFormat
+namespace Chapter.Net.WPF.Controls
 {
     /// <summary>
-    ///     The <see cref="TimeBox" /> contains hours, minutes and seconds.
+    ///     Defines if the <see cref="TimeBox" /> contains a seconds box or not.
     /// </summary>
-    Long,
+    public enum TimeFormat
+    {
+        /// <summary>
+        ///     The <see cref="TimeBox" /> contains hours, minutes and seconds.
+        /// </summary>
+        Long,
 
-    /// <summary>
-    ///     The <see cref="TimeBox" /> contains hours and minutes.
-    /// </summary>
-    Short
+        /// <summary>
+        ///     The <see cref="TimeBox" /> contains hours and minutes.
+        /// </summary>
+        Short
+    }
 }

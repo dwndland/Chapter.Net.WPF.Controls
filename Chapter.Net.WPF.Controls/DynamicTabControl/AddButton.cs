@@ -10,32 +10,33 @@ using System.Windows.Controls;
 
 // ReSharper disable once CheckNamespace
 
-namespace Chapter.Net.WPF.Controls;
-
-/// <summary>
-///     Represents the add new tab Button shown in the <see cref="DynamicTabControl" />.
-/// </summary>
-public class AddButton : Button
+namespace Chapter.Net.WPF.Controls
 {
     /// <summary>
-    ///     Identifies the <see cref="StrokeThickness" /> dependency property.
+    ///     Represents the add new tab Button shown in the <see cref="DynamicTabControl" />.
     /// </summary>
-    public static readonly DependencyProperty StrokeThicknessProperty =
-        DependencyProperty.Register(nameof(StrokeThickness), typeof(double), typeof(AddButton), new UIPropertyMetadata(1.5));
-
-    static AddButton()
+    public class AddButton : Button
     {
-        DefaultStyleKeyProperty.OverrideMetadata(typeof(AddButton), new FrameworkPropertyMetadata(typeof(AddButton)));
-    }
+        /// <summary>
+        ///     Identifies the <see cref="StrokeThickness" /> dependency property.
+        /// </summary>
+        public static readonly DependencyProperty StrokeThicknessProperty =
+            DependencyProperty.Register(nameof(StrokeThickness), typeof(double), typeof(AddButton), new UIPropertyMetadata(1.5));
 
-    /// <summary>
-    ///     Gets or sets the stroke thickness of the plus icon shown in the template.
-    /// </summary>
-    /// <value>Default: 1.5.</value>
-    [DefaultValue(1.5)]
-    public double StrokeThickness
-    {
-        get => (double)GetValue(StrokeThicknessProperty);
-        set => SetValue(StrokeThicknessProperty, value);
+        static AddButton()
+        {
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(AddButton), new FrameworkPropertyMetadata(typeof(AddButton)));
+        }
+
+        /// <summary>
+        ///     Gets or sets the stroke thickness of the plus icon shown in the template.
+        /// </summary>
+        /// <value>Default: 1.5.</value>
+        [DefaultValue(1.5)]
+        public double StrokeThickness
+        {
+            get => (double)GetValue(StrokeThicknessProperty);
+            set => SetValue(StrokeThicknessProperty, value);
+        }
     }
 }

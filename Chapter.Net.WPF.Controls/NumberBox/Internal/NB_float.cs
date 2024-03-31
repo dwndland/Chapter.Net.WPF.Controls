@@ -8,67 +8,68 @@ using System.Globalization;
 
 // ReSharper disable once CheckNamespace
 
-namespace Chapter.Net.WPF.Controls;
-
-internal class NB_float : Number<float?>
+namespace Chapter.Net.WPF.Controls
 {
-    public override bool CanIncrease => _current + _step <= _maximum;
-
-    public override bool CanDecrease => _current - _step >= _minimum;
-
-    public override bool AcceptNegative => _minimum < 0;
-
-    public override bool NumberIsBelowMinimum => _current < _minimum;
-
-    protected override float? GetMinValue()
+    internal class NB_float : Number<float?>
     {
-        return float.MinValue;
-    }
+        public override bool CanIncrease => _current + _step <= _maximum;
 
-    protected override float? GetMaxValue()
-    {
-        return float.MaxValue;
-    }
+        public override bool CanDecrease => _current - _step >= _minimum;
 
-    protected override float? GetDefaultStep()
-    {
-        return 1;
-    }
+        public override bool AcceptNegative => _minimum < 0;
 
-    protected override void StepUp()
-    {
-        _current += _step;
-    }
+        public override bool NumberIsBelowMinimum => _current < _minimum;
 
-    protected override void StepDown()
-    {
-        _current -= _step;
-    }
-
-    protected override bool IsInRange(float? parsedNumber)
-    {
-        if (parsedNumber == null)
-            return true;
-        return parsedNumber <= _maximum;
-    }
-
-    protected override bool TryParse(string numberString, out float? parsed)
-    {
-        if (string.IsNullOrWhiteSpace(numberString))
+        protected override float? GetMinValue()
         {
-            parsed = null;
-            return true;
+            return float.MinValue;
         }
 
-        var result = float.TryParse(numberString, NumberStyles.Float, _parsingCulture, out var tmp);
-        parsed = tmp;
-        return result && IsAllowedDecimalFractionLength(numberString, _decimalPlaces);
-    }
+        protected override float? GetMaxValue()
+        {
+            return float.MaxValue;
+        }
 
-    public override string ToString()
-    {
-        if (_current == null)
-            return string.Empty;
-        return _current.Value.ToString(_parsingCulture);
+        protected override float? GetDefaultStep()
+        {
+            return 1;
+        }
+
+        protected override void StepUp()
+        {
+            _current += _step;
+        }
+
+        protected override void StepDown()
+        {
+            _current -= _step;
+        }
+
+        protected override bool IsInRange(float? parsedNumber)
+        {
+            if (parsedNumber == null)
+                return true;
+            return parsedNumber <= _maximum;
+        }
+
+        protected override bool TryParse(string numberString, out float? parsed)
+        {
+            if (string.IsNullOrWhiteSpace(numberString))
+            {
+                parsed = null;
+                return true;
+            }
+
+            var result = float.TryParse(numberString, NumberStyles.Float, _parsingCulture, out var tmp);
+            parsed = tmp;
+            return result && IsAllowedDecimalFractionLength(numberString, _decimalPlaces);
+        }
+
+        public override string ToString()
+        {
+            if (_current == null)
+                return string.Empty;
+            return _current.Value.ToString(_parsingCulture);
+        }
     }
 }

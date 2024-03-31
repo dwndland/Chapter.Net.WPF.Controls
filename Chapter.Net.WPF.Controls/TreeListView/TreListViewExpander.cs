@@ -9,15 +9,16 @@ using System.Windows.Controls.Primitives;
 
 // ReSharper disable once CheckNamespace
 
-namespace Chapter.Net.WPF.Controls;
-
-/// <summary>
-///     Represents the expander shown in the <see cref="TreeListView" /> to show or collapse child elements.
-/// </summary>
-public class TreeListViewExpander : ToggleButton
+namespace Chapter.Net.WPF.Controls
 {
-    static TreeListViewExpander()
+    /// <summary>
+    ///     Represents the expander shown in the <see cref="TreeListView" /> to show or collapse child elements.
+    /// </summary>
+    public class TreeListViewExpander : ToggleButton
     {
-        DefaultStyleKeyProperty.OverrideMetadata(typeof(TreeListViewExpander), new FrameworkPropertyMetadata(typeof(TreeListViewExpander)));
+        static TreeListViewExpander()
+        {
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(TreeListViewExpander), new FrameworkPropertyMetadata(typeof(TreeListViewExpander)));
+        }
     }
 }

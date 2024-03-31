@@ -9,32 +9,33 @@ using System.Windows.Input;
 
 // ReSharper disable once CheckNamespace
 
-namespace Chapter.Net.WPF.Controls;
-
-/// <summary>
-///     Allows only numeric input ([a-zA-Z0-9 ]) on a <see cref="AdvancedTextBox" />.
-/// </summary>
-public sealed class AlphaNumericInputLimiter : InputLimiter
+namespace Chapter.Net.WPF.Controls
 {
-    private readonly Regex _regex;
-
     /// <summary>
-    ///     Initializes a new instance of the <see cref="AlphaNumericInputLimiter" /> class.
+    ///     Allows only numeric input ([a-zA-Z0-9 ]) on a <see cref="AdvancedTextBox" />.
     /// </summary>
-    public AlphaNumericInputLimiter()
+    public sealed class AlphaNumericInputLimiter : InputLimiter
     {
-        _regex = new Regex(@"^[a-zA-Z0-9 ]*$");
-    }
+        private readonly Regex _regex;
 
-    /// <inheritdoc />
-    public override bool AcceptKey(Key key)
-    {
-        return true;
-    }
+        /// <summary>
+        ///     Initializes a new instance of the <see cref="AlphaNumericInputLimiter" /> class.
+        /// </summary>
+        public AlphaNumericInputLimiter()
+        {
+            _regex = new Regex(@"^[a-zA-Z0-9 ]*$");
+        }
 
-    /// <inheritdoc />
-    public override bool AcceptText(string input)
-    {
-        return _regex.IsMatch(input);
+        /// <inheritdoc />
+        public override bool AcceptKey(Key key)
+        {
+            return true;
+        }
+
+        /// <inheritdoc />
+        public override bool AcceptText(string input)
+        {
+            return _regex.IsMatch(input);
+        }
     }
 }

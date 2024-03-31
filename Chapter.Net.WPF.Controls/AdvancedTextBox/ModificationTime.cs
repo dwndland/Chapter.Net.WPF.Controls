@@ -6,20 +6,21 @@
 
 // ReSharper disable once CheckNamespace
 
-namespace Chapter.Net.WPF.Controls;
-
-/// <summary>
-///     Defines when the <see cref="TextModificator" /> will be executed in the <see cref="AdvancedTextBox" />.
-/// </summary>
-public enum ModificationTime
+namespace Chapter.Net.WPF.Controls
 {
     /// <summary>
-    ///     The text will be modified when the text box loses the focus.
+    ///     Defines when the <see cref="TextModificator" /> will be executed in the <see cref="AdvancedTextBox" />.
     /// </summary>
-    OnLostFocus,
+    public enum ModificationTime
+    {
+        /// <summary>
+        ///     The text will be modified when the text box loses the focus.
+        /// </summary>
+        OnLostFocus,
 
-    /// <summary>
-    ///     The text will be modified in the moment the user is typing.
-    /// </summary>
-    OnType
+        /// <summary>
+        ///     The text will be modified in the moment the user is typing.
+        /// </summary>
+        OnType
+    }
 }

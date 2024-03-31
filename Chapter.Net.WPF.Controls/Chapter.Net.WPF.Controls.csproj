@@ -1,9 +1,9 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net6.0-windows;net7.0-windows;net8.0-windows</TargetFrameworks>
+    <TargetFrameworks>netcoreapp3.0;net45;net5.0-windows;net6.0-windows;net7.0-windows;net8.0-windows</TargetFrameworks>
     <UseWPF>true</UseWPF>
-    <Version>1.1.0</Version>
+    <Version>1.2.0</Version>
     <Authors>David Wendland</Authors>
     <Description>A set of new WPF controls which are not yet build in.</Description>
     <Copyright>Copyright (c) 2024 David Wendland</Copyright>
@@ -34,7 +34,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Chapter.Net.WPF.Behaviors" Version="1.0.0" />
+    <PackageReference Include="Chapter.Net.WPF.Behaviors" Version="1.1.0" />
   </ItemGroup>
 
 </Project>

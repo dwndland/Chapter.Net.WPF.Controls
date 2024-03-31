@@ -9,15 +9,16 @@ using System.Windows.Controls;
 
 // ReSharper disable once CheckNamespace
 
-namespace Chapter.Net.WPF.Controls;
-
-/// <summary>
-///     Represents the currency symbol shown in the <see cref="NumberBox" />.
-/// </summary>
-public class NumberUnitLabel : Label
+namespace Chapter.Net.WPF.Controls
 {
-    static NumberUnitLabel()
+    /// <summary>
+    ///     Represents the currency symbol shown in the <see cref="NumberBox" />.
+    /// </summary>
+    public class NumberUnitLabel : Label
     {
-        DefaultStyleKeyProperty.OverrideMetadata(typeof(NumberUnitLabel), new FrameworkPropertyMetadata(typeof(NumberUnitLabel)));
+        static NumberUnitLabel()
+        {
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(NumberUnitLabel), new FrameworkPropertyMetadata(typeof(NumberUnitLabel)));
+        }
     }
 }

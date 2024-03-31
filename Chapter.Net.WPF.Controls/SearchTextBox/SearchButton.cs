@@ -9,15 +9,16 @@ using System.Windows.Controls;
 
 // ReSharper disable once CheckNamespace
 
-namespace Chapter.Net.WPF.Controls;
-
-/// <summary>
-///     The button which calls the search command in the <see cref="SearchTextBox" />.
-/// </summary>
-public class SearchButton : Button
+namespace Chapter.Net.WPF.Controls
 {
-    static SearchButton()
+    /// <summary>
+    ///     The button which calls the search command in the <see cref="SearchTextBox" />.
+    /// </summary>
+    public class SearchButton : Button
     {
-        DefaultStyleKeyProperty.OverrideMetadata(typeof(SearchButton), new FrameworkPropertyMetadata(typeof(SearchButton)));
+        static SearchButton()
+        {
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(SearchButton), new FrameworkPropertyMetadata(typeof(SearchButton)));
+        }
     }
 }

@@ -9,15 +9,16 @@ using System.Windows.Controls;
 
 // ReSharper disable once CheckNamespace
 
-namespace Chapter.Net.WPF.Controls;
-
-/// <summary>
-///     Represents the check box shown in the <see cref="NumberBox" />.
-/// </summary>
-public class NumberCheckBox : CheckBox
+namespace Chapter.Net.WPF.Controls
 {
-    static NumberCheckBox()
+    /// <summary>
+    ///     Represents the check box shown in the <see cref="NumberBox" />.
+    /// </summary>
+    public class NumberCheckBox : CheckBox
     {
-        DefaultStyleKeyProperty.OverrideMetadata(typeof(NumberCheckBox), new FrameworkPropertyMetadata(typeof(NumberCheckBox)));
+        static NumberCheckBox()
+        {
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(NumberCheckBox), new FrameworkPropertyMetadata(typeof(NumberCheckBox)));
+        }
     }
 }

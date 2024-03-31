@@ -9,15 +9,16 @@ using System.Windows.Controls.Primitives;
 
 // ReSharper disable once CheckNamespace
 
-namespace Chapter.Net.WPF.Controls;
-
-/// <summary>
-///     The drop down toggle button placed in the <see cref="SplitButton" />.
-/// </summary>
-public class SplitToggleButton : ToggleButton
+namespace Chapter.Net.WPF.Controls
 {
-    static SplitToggleButton()
+    /// <summary>
+    ///     The drop down toggle button placed in the <see cref="SplitButton" />.
+    /// </summary>
+    public class SplitToggleButton : ToggleButton
     {
-        DefaultStyleKeyProperty.OverrideMetadata(typeof(SplitToggleButton), new FrameworkPropertyMetadata(typeof(SplitToggleButton)));
+        static SplitToggleButton()
+        {
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(SplitToggleButton), new FrameworkPropertyMetadata(typeof(SplitToggleButton)));
+        }
     }
 }

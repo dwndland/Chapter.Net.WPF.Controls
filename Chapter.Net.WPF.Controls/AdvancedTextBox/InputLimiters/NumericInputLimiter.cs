@@ -9,32 +9,33 @@ using System.Windows.Input;
 
 // ReSharper disable once CheckNamespace
 
-namespace Chapter.Net.WPF.Controls;
-
-/// <summary>
-///     Allows only numeric input ([0-9]) on a <see cref="AdvancedTextBox" />.
-/// </summary>
-public sealed class NumericInputLimiter : InputLimiter
+namespace Chapter.Net.WPF.Controls
 {
-    private readonly Regex _regex;
-
     /// <summary>
-    ///     Initializes a new instance of the <see cref="NumericInputLimiter" /> class.
+    ///     Allows only numeric input ([0-9]) on a <see cref="AdvancedTextBox" />.
     /// </summary>
-    public NumericInputLimiter()
+    public sealed class NumericInputLimiter : InputLimiter
     {
-        _regex = new Regex(@"^[0-9]*$");
-    }
+        private readonly Regex _regex;
 
-    /// <inheritdoc />
-    public override bool AcceptKey(Key key)
-    {
-        return key != Key.Space;
-    }
+        /// <summary>
+        ///     Initializes a new instance of the <see cref="NumericInputLimiter" /> class.
+        /// </summary>
+        public NumericInputLimiter()
+        {
+            _regex = new Regex(@"^[0-9]*$");
+        }
 
-    /// <inheritdoc />
-    public override bool AcceptText(string input)
-    {
-        return _regex.IsMatch(input);
+        /// <inheritdoc />
+        public override bool AcceptKey(Key key)
+        {
+            return key != Key.Space;
+        }
+
+        /// <inheritdoc />
+        public override bool AcceptText(string input)
+        {
+            return _regex.IsMatch(input);
+        }
     }
 }
