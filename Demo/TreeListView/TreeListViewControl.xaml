@@ -3,24 +3,19 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:controls="clr-namespace:Chapter.Net.WPF.Controls;assembly=Chapter.Net.WPF.Controls"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:demo="clr-namespace:Demo"
+             xmlns:local="clr-namespace:Demo"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              d:DesignHeight="450"
              d:DesignWidth="800"
              mc:Ignorable="d">
 
     <DockPanel>
-        <GroupBox Margin="10,5"
-                  VerticalAlignment="Top"
-                  DockPanel.Dock="Right"
-                  Header="Properties">
-            <StackPanel Width="200" Margin="10">
-                <CheckBox x:Name="autoExpandSelected"
-                          Margin="0,0,0,10"
-                          Content="AutoExpandSelected" />
-                <TextBlock Text="Atm the items expands first once they were shown." TextWrapping="Wrap" />
-            </StackPanel>
-        </GroupBox>
+        <local:PropertyPanel>
+            <CheckBox x:Name="autoExpandSelected"
+                      Margin="0,0,0,10"
+                      Content="AutoExpandSelected" />
+            <TextBlock Text="Atm the items expands first once they were shown." TextWrapping="Wrap" />
+        </local:PropertyPanel>
 
         <DockPanel>
             <StackPanel Margin="10"
@@ -59,7 +54,7 @@
                                            ItemsSource="{Binding Items}"
                                            SelectedElement="{Binding SelectedItem}">
                         <controls:TreeListView.Resources>
-                            <HierarchicalDataTemplate DataType="{x:Type demo:Element}" ItemsSource="{Binding Items}" />
+                            <HierarchicalDataTemplate DataType="{x:Type local:Element}" ItemsSource="{Binding Items}" />
                         </controls:TreeListView.Resources>
                         <controls:TreeListView.ItemContainerStyle>
                             <Style TargetType="{x:Type controls:ExtendedTreeViewItem}">

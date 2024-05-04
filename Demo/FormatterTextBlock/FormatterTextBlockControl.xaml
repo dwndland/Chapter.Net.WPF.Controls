@@ -20,7 +20,7 @@
 
         <TextBlock Text="Formatted Text" />
         <DockPanel>
-            <TextBlock Text="Input: " DockPanel.Dock="Left" />
+            <TextBlock DockPanel.Dock="Left" Text="Input: " />
             <TextBox Text="{Binding Input, UpdateSourceTrigger=PropertyChanged}" />
         </DockPanel>
         <controls:FormatterTextBlock Formatter="{DynamicResource DemoString}" TextWrapping="Wrap">

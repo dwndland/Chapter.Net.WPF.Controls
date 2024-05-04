@@ -8,22 +8,15 @@
              d:DesignWidth="800"
              mc:Ignorable="d">
 
-    <StackPanel Width="200"
-                HorizontalAlignment="Center"
-                VerticalAlignment="Center">
-        <Button Height="24"
-                Margin="0,0,0,10"
-                Click="ButtonClick"
-                Content="Build In Button" />
-
-        <controls:SplitButton Height="24"
-                              Margin="0,0,0,10"
-                              Click="MainClick"
-                              Content="Custom Button">
-            <controls:SplitButtonItem Click="FirstClick" Content="First" />
-            <controls:SplitButtonItem Click="SecondClick" Content="Second" />
-            <controls:SplitButtonItem Click="ThirdClick" Content="Third" />
-        </controls:SplitButton>
-    </StackPanel>
+    <controls:SplitButton Height="24"
+                          Margin="0,0,0,10"
+                          HorizontalAlignment="Center"
+                          VerticalAlignment="Center"
+                          Click="MainClick"
+                          Content="Custom Button">
+        <controls:SplitButtonItem Click="FirstClick" Content="First" />
+        <controls:SplitButtonItem Click="SecondClick" Content="Second" />
+        <controls:SplitButtonItem Click="ThirdClick" Content="Third" />
+    </controls:SplitButton>
 
 </UserControl>

@@ -1,5 +1,5 @@
 ﻿// -----------------------------------------------------------------------------------------------------------------
-// <copyright file="AdvancedTextBoxControl.xaml.cs" company="my-libraries">
+// <copyright file="ChapterTextBoxControl.xaml.cs" company="my-libraries">
 //     Copyright (c) David Wendland. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------------------------------------------------
@@ -10,12 +10,12 @@ using System.ComponentModel;
 
 namespace Demo;
 
-public partial class AdvancedTextBoxControl : INotifyPropertyChanged
+public partial class ChapterTextBoxControl : INotifyPropertyChanged
 {
     private bool _showFirstControl;
     private bool _showSecondControl;
 
-    public AdvancedTextBoxControl()
+    public ChapterTextBoxControl()
     {
         InitializeComponent();
 

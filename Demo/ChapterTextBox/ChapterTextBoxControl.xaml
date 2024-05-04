@@ -1,0 +1,153 @@
+﻿<UserControl x:Class="Demo.ChapterTextBoxControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:controls="clr-namespace:Chapter.Net.WPF.Controls;assembly=Chapter.Net.WPF.Controls"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:Demo"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             d:DesignHeight="450"
+             d:DesignWidth="800"
+             mc:Ignorable="d">
+    <UserControl.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+    </UserControl.Resources>
+
+    <DockPanel>
+        <local:PropertyPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Height: " />
+                <TextBlock Text="{Binding Value, ElementName=height, StringFormat={}{0:0}}" />
+            </StackPanel>
+            <Slider x:Name="height"
+                    Margin="0,0,0,10"
+                    Maximum="200"
+                    Minimum="24"
+                    Value="24" />
+
+            <TextBlock Text="InfoAppearance" />
+            <controls:EnumerationComboBox x:Name="infoAppearance"
+                                          Margin="0,0,0,10"
+                                          EnumType="{x:Type controls:InfoAppearance}"
+                                          SelectedItem="{x:Static controls:InfoAppearance.OnLostFocus}" />
+
+            <TextBlock Text="InfoText" />
+            <TextBox x:Name="infoText"
+                     Margin="0,0,0,10"
+                     Text="Enter Name" />
+
+            <CheckBox Margin="0,0,0,10"
+                      Content="Show FirstControl"
+                      IsChecked="{Binding ShowFirstControl}" />
+
+            <StackPanel IsEnabled="{Binding ShowFirstControl}">
+                <TextBlock Text="FirstControlPosition" />
+                <controls:EnumerationComboBox x:Name="firstControlPosition"
+                                              Margin="0,0,0,10"
+                                              EnumType="{x:Type Dock}"
+                                              SelectedItem="{x:Static Dock.Left}" />
+            </StackPanel>
+
+            <CheckBox Margin="0,0,0,10"
+                      Content="Show SecondControl"
+                      IsChecked="{Binding ShowSecondControl}" />
+
+            <StackPanel IsEnabled="{Binding ShowSecondControl}">
+                <TextBlock Text="SecondControlPosition" />
+                <controls:EnumerationComboBox x:Name="secondControlPosition"
+                                              Margin="0,0,0,10"
+                                              EnumType="{x:Type Dock}"
+                                              SelectedItem="{x:Static Dock.Right}" />
+            </StackPanel>
+
+            <CheckBox x:Name="allowDrop"
+                      Margin="0,0,0,10"
+                      Content="Allow Drop" />
+
+            <StackPanel IsEnabled="{Binding IsChecked, ElementName=allowDrop}">
+                <TextBlock Text="AllowedDropType" />
+                <controls:EnumerationComboBox x:Name="allowedDropType"
+                                              Margin="0,0,0,10"
+                                              EnumType="{x:Type controls:DroppableTypes}"
+                                              SelectedItem="{x:Static controls:DroppableTypes.File}" />
+
+                <TextBlock Text="Separator" />
+                <TextBox x:Name="separator"
+                         Margin="0,0,0,10"
+                         Text="; " />
+
+                <TextBlock Text="DragDropEffect" />
+                <controls:EnumerationComboBox x:Name="dragDropEffect"
+                                              Margin="0,0,0,10"
+                                              EnumType="{x:Type DragDropEffects}"
+                                              SelectedItem="{x:Static DragDropEffects.Link}" />
+            </StackPanel>
+
+            <TextBlock Margin="0,0,0,10" Text="InputLimiter" />
+
+            <TextBlock Text="WhitespaceHandling" />
+            <controls:EnumerationComboBox x:Name="whitespaceHandling"
+                                          EnumType="{x:Type controls:WhitespaceHandling}"
+                                          SelectedItem="{x:Static controls:WhitespaceHandling.None}" />
+        </local:PropertyPanel>
+
+        <StackPanel Width="300"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center">
+
+            <TextBlock Text="ChapterTextBox" />
+            <controls:ChapterTextBox Height="{Binding Value, ElementName=height}"
+                                     Margin="0,0,0,10"
+                                     VerticalContentAlignment="Center"
+                                     AllowDrop="{Binding IsChecked, ElementName=allowDrop}"
+                                     AllowedDropType="{Binding SelectedItem, ElementName=allowedDropType}"
+                                     DragDropEffect="{Binding SelectedItem, ElementName=dragDropEffect}"
+                                     FirstControlPosition="{Binding SelectedItem, ElementName=firstControlPosition}"
+                                     InfoAppearance="{Binding SelectedItem, ElementName=infoAppearance}"
+                                     InfoText="{Binding Text, ElementName=infoText, UpdateSourceTrigger=PropertyChanged}"
+                                     SecondControlPosition="{Binding SelectedItem, ElementName=secondControlPosition}"
+                                     Separator="{Binding Text, ElementName=separator}"
+                                     WhitespaceHandling="{Binding SelectedItem, ElementName=whitespaceHandling}">
+                <controls:ChapterTextBox.FirstControl>
+                    <Button Content="First Control" Visibility="{Binding ShowFirstControl, Converter={StaticResource BooleanToVisibilityConverter}}" />
+                </controls:ChapterTextBox.FirstControl>
+                <controls:ChapterTextBox.SecondControl>
+                    <Button Content="Second Control" Visibility="{Binding ShowSecondControl, Converter={StaticResource BooleanToVisibilityConverter}}" />
+                </controls:ChapterTextBox.SecondControl>
+            </controls:ChapterTextBox>
+
+            <TextBlock Text="ChapterTextBox + CharInsertModificator" />
+            <TextBlock Text="Character -, Every 4, ModificationTime OnType" />
+            <controls:ChapterTextBox Margin="0,0,0,10"
+                                     VerticalContentAlignment="Center"
+                                     TextModificator="{controls:CharInsertModificator Character=-,
+                                                                                      Every=4,
+                                                                                      ModificationTime=OnType}" />
+
+            <TextBlock Text="ChapterTextBox + ToLowerModificator" />
+            <TextBlock Text="ModificationTime OnType" />
+            <controls:ChapterTextBox Margin="0,0,0,10"
+                                     VerticalContentAlignment="Center"
+                                     TextModificator="{controls:ToLowerModificator ModificationTime=OnType}" />
+
+            <TextBlock Text="ChapterTextBox + ToUpperModificator" />
+            <TextBlock Text="ModificationTime OnType" />
+            <controls:ChapterTextBox Margin="0,0,0,10"
+                                     VerticalContentAlignment="Center"
+                                     TextModificator="{controls:ToUpperModificator ModificationTime=OnType}" />
+
+            <TextBlock Text="ChapterTextBox + AlphaInputLimiter" />
+            <controls:ChapterTextBox Margin="0,0,0,10"
+                                     VerticalContentAlignment="Center"
+                                     InputLimiter="{controls:AlphaInputLimiter}" />
+
+            <TextBlock Text="ChapterTextBox + AlphaNumericInputLimiter" />
+            <controls:ChapterTextBox Margin="0,0,0,10"
+                                     VerticalContentAlignment="Center"
+                                     InputLimiter="{controls:AlphaNumericInputLimiter}" />
+
+            <TextBlock Text="ChapterTextBox + NumericInputLimiter" />
+            <controls:ChapterTextBox VerticalContentAlignment="Center" InputLimiter="{controls:NumericInputLimiter}" />
+        </StackPanel>
+    </DockPanel>
+
+</UserControl>

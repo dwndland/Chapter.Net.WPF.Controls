@@ -4,6 +4,7 @@
              xmlns:controls="clr-namespace:Chapter.Net.WPF.Controls;assembly=Chapter.Net.WPF.Controls"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:headerItemsControl="clr-namespace:Demo.HeaderItemsControl"
+             xmlns:local="clr-namespace:Demo"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              d:DesignHeight="450"
              d:DesignWidth="800"
@@ -13,52 +14,47 @@
     </UserControl.Resources>
 
     <DockPanel LastChildFill="False">
-        <GroupBox Margin="10,5"
-                  VerticalAlignment="Top"
-                  DockPanel.Dock="Right"
-                  Header="Properties">
-            <StackPanel Width="200" Margin="10">
-                <TextBlock Text="VerticalTitleAlignments" />
-                <controls:EnumerationComboBox x:Name="verticalTitleAlignments"
-                                              Margin="0,0,0,10"
-                                              EnumType="{x:Type VerticalAlignment}"
-                                              SelectedItem="{x:Static VerticalAlignment.Center}" />
+        <local:PropertyPanel>
+            <TextBlock Text="VerticalTitleAlignments" />
+            <controls:EnumerationComboBox x:Name="verticalTitleAlignments"
+                                          Margin="0,0,0,10"
+                                          EnumType="{x:Type VerticalAlignment}"
+                                          SelectedItem="{x:Static VerticalAlignment.Center}" />
 
-                <TextBlock Text="HorizontalTitleAlignments" />
-                <controls:EnumerationComboBox x:Name="horizontalTitleAlignments"
-                                              Margin="0,0,0,10"
-                                              EnumType="{x:Type HorizontalAlignment}"
-                                              SelectedItem="{x:Static HorizontalAlignment.Left}" />
+            <TextBlock Text="HorizontalTitleAlignments" />
+            <controls:EnumerationComboBox x:Name="horizontalTitleAlignments"
+                                          Margin="0,0,0,10"
+                                          EnumType="{x:Type HorizontalAlignment}"
+                                          SelectedItem="{x:Static HorizontalAlignment.Left}" />
 
-                <TextBlock Text="TitleMargins" />
-                <TextBox x:Name="titleMargins"
-                         Margin="0,0,0,10"
-                         Text="5,0" />
+            <TextBlock Text="TitleMargins" />
+            <TextBox x:Name="titleMargins"
+                     Margin="0,0,0,10"
+                     Text="5,0" />
 
-                <TextBlock Text="HorizontalContentAlignments" />
-                <controls:EnumerationComboBox x:Name="horizontalContentAlignments"
-                                              Margin="0,0,0,10"
-                                              EnumType="{x:Type HorizontalAlignment}"
-                                              SelectedItem="{x:Static HorizontalAlignment.Stretch}" />
+            <TextBlock Text="HorizontalContentAlignments" />
+            <controls:EnumerationComboBox x:Name="horizontalContentAlignments"
+                                          Margin="0,0,0,10"
+                                          EnumType="{x:Type HorizontalAlignment}"
+                                          SelectedItem="{x:Static HorizontalAlignment.Stretch}" />
 
-                <TextBlock Text="VerticalContentAlignments" />
-                <controls:EnumerationComboBox x:Name="verticalContentAlignments"
-                                              Margin="0,0,0,10"
-                                              EnumType="{x:Type VerticalAlignment}"
-                                              SelectedItem="{x:Static VerticalAlignment.Center}" />
+            <TextBlock Text="VerticalContentAlignments" />
+            <controls:EnumerationComboBox x:Name="verticalContentAlignments"
+                                          Margin="0,0,0,10"
+                                          EnumType="{x:Type VerticalAlignment}"
+                                          SelectedItem="{x:Static VerticalAlignment.Center}" />
 
-                <TextBlock Text="ContentMargins" />
-                <TextBox x:Name="contentMargins"
-                         Margin="0,0,0,10"
-                         Text="0,2" />
+            <TextBlock Text="ContentMargins" />
+            <TextBox x:Name="contentMargins"
+                     Margin="0,0,0,10"
+                     Text="0,2" />
 
-                <TextBlock Text="Orientation" />
-                <controls:EnumerationComboBox x:Name="orientation"
-                                              Margin="0,0,0,10"
-                                              EnumType="{x:Type Orientation}"
-                                              SelectedItem="{x:Static Orientation.Vertical}" />
-            </StackPanel>
-        </GroupBox>
+            <TextBlock Text="Orientation" />
+            <controls:EnumerationComboBox x:Name="orientation"
+                                          Margin="0,0,0,10"
+                                          EnumType="{x:Type Orientation}"
+                                          SelectedItem="{x:Static Orientation.Vertical}" />
+        </local:PropertyPanel>
 
         <controls:TitledItemsControl Margin="40"
                                      ContentMargins="{Binding Text, ElementName=contentMargins, Converter={StaticResource StringToThicknessConverter}}"

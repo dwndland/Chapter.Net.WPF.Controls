@@ -10,20 +10,28 @@
         MinWidth="800"
         MinHeight="500"
         d:DataContext="{d:DesignInstance demo:MainWindow}"
+        Background="#F3F3F3"
         mc:Ignorable="d">
     <Window.Resources>
         <demo:ControlToNameConverter x:Key="ControlToNameConverter" />
         <Style TargetType="{x:Type ListBoxItem}">
             <Setter Property="FocusVisualStyle" Value="{x:Null}" />
             <Setter Property="Padding" Value="10,6" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Style.Triggers>
+                <Trigger Property="IsSelected" Value="True">
+                    <Setter Property="FontWeight" Value="Bold" />
+                </Trigger>
+            </Style.Triggers>
         </Style>
     </Window.Resources>
 
     <DockPanel>
-        <ListBox BorderThickness="1"
+        <ListBox Background="Transparent"
+                 BorderThickness="0,0,0,1"
                  DockPanel.Dock="Top"
-                 SelectionMode="Single"
-                 SelectionChanged="OnGroupChanged">
+                 SelectionChanged="OnGroupChanged"
+                 SelectionMode="Single">
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
                     <StackPanel Orientation="Horizontal" />
@@ -38,9 +46,10 @@
         </ListBox>
 
         <ListBox x:Name="items"
+                 Width="160"
+                 Background="Transparent"
                  BorderBrush="LightGray"
                  BorderThickness="0,0,1,0"
-                 Width="160"
                  ItemsSource="{Binding Controls}"
                  SelectedIndex="19"
                  SelectionMode="Single">

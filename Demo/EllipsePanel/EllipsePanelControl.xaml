@@ -3,60 +3,57 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:controls="clr-namespace:Chapter.Net.WPF.Controls;assembly=Chapter.Net.WPF.Controls"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:Demo"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              d:DesignHeight="450"
              d:DesignWidth="800"
              mc:Ignorable="d">
 
     <DockPanel>
-        <GroupBox Margin="10,5"
-                  DockPanel.Dock="Right"
-                  Header="Properties">
-            <StackPanel Width="200" Margin="10">
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Height: " />
-                    <TextBlock Text="{Binding Value, ElementName=height, StringFormat={}{0:0}}" />
-                </StackPanel>
-                <Slider x:Name="height"
-                        Margin="0,0,0,10"
-                        Maximum="800"
-                        Minimum="100"
-                        Value="300" />
-
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Width: " />
-                    <TextBlock Text="{Binding Value, ElementName=width, StringFormat={}{0:0}}" />
-                </StackPanel>
-                <Slider x:Name="width"
-                        Margin="0,0,0,10"
-                        Maximum="800"
-                        Minimum="100"
-                        Value="300" />
-
-                <CheckBox x:Name="rotateElements"
-                          Margin="0,0,0,10"
-                          Content="RotateElements" />
-
-                <StackPanel IsEnabled="{Binding IsChecked, ElementName=rotateElements}">
-                    <TextBlock Text="ElementsRotateDirection" />
-                    <controls:EnumerationComboBox x:Name="elementsRotateDirection"
-                                                  Margin="0,0,0,10"
-                                                  EnumType="{x:Type controls:ElementsRotateDirection}"
-                                                  SelectedItem="{x:Static controls:ElementsRotateDirection.Introversive}" />
-                </StackPanel>
-
-                <TextBlock Text="EllipseRotateDirection" />
-                <controls:EnumerationComboBox x:Name="ellipseRotateDirection"
-                                              Margin="0,0,0,10"
-                                              EnumType="{x:Type SweepDirection}"
-                                              SelectedItem="{x:Static SweepDirection.Clockwise}" />
-
-                <TextBlock Text="ElementStartPosition" />
-                <controls:EnumerationComboBox x:Name="elementStartPosition"
-                                              EnumType="{x:Type controls:ElementStartPosition}"
-                                              SelectedItem="{x:Static controls:ElementStartPosition.Top}" />
+        <local:PropertyPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Height: " />
+                <TextBlock Text="{Binding Value, ElementName=height, StringFormat={}{0:0}}" />
             </StackPanel>
-        </GroupBox>
+            <Slider x:Name="height"
+                    Margin="0,0,0,10"
+                    Maximum="800"
+                    Minimum="100"
+                    Value="300" />
+
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Width: " />
+                <TextBlock Text="{Binding Value, ElementName=width, StringFormat={}{0:0}}" />
+            </StackPanel>
+            <Slider x:Name="width"
+                    Margin="0,0,0,10"
+                    Maximum="800"
+                    Minimum="100"
+                    Value="300" />
+
+            <CheckBox x:Name="rotateElements"
+                      Margin="0,0,0,10"
+                      Content="RotateElements" />
+
+            <StackPanel IsEnabled="{Binding IsChecked, ElementName=rotateElements}">
+                <TextBlock Text="ElementsRotateDirection" />
+                <controls:EnumerationComboBox x:Name="elementsRotateDirection"
+                                              Margin="0,0,0,10"
+                                              EnumType="{x:Type controls:ElementsRotateDirection}"
+                                              SelectedItem="{x:Static controls:ElementsRotateDirection.Introversive}" />
+            </StackPanel>
+
+            <TextBlock Text="EllipseRotateDirection" />
+            <controls:EnumerationComboBox x:Name="ellipseRotateDirection"
+                                          Margin="0,0,0,10"
+                                          EnumType="{x:Type SweepDirection}"
+                                          SelectedItem="{x:Static SweepDirection.Clockwise}" />
+
+            <TextBlock Text="ElementStartPosition" />
+            <controls:EnumerationComboBox x:Name="elementStartPosition"
+                                          EnumType="{x:Type controls:ElementStartPosition}"
+                                          SelectedItem="{x:Static controls:ElementStartPosition.Top}" />
+        </local:PropertyPanel>
 
         <Grid Background="LightGray">
             <Grid Width="{Binding Value, ElementName=width}" Height="{Binding Value, ElementName=height}">
