@@ -9,32 +9,32 @@
 namespace Chapter.Net.WPF.Controls
 {
     /// <summary>
-    ///     Represents what is possible to drop into the <see cref="AdvancedTextBox" />.
+    ///     Represents what is possible to drop into the <see cref="ChapterTextBox" />.
     /// </summary>
     public enum DroppableTypes
     {
         /// <summary>
-        ///     Just one file can be dropped into the <see cref="AdvancedTextBox" />.
+        ///     Just one file can be dropped into the <see cref="ChapterTextBox" />.
         /// </summary>
         File,
 
         /// <summary>
-        ///     Multiple files can be dropped into the <see cref="AdvancedTextBox" />.
+        ///     Multiple files can be dropped into the <see cref="ChapterTextBox" />.
         /// </summary>
         Files,
 
         /// <summary>
-        ///     Multiple files and folders can be dropped into the <see cref="AdvancedTextBox" />.
+        ///     Multiple files and folders can be dropped into the <see cref="ChapterTextBox" />.
         /// </summary>
         FilesFolders,
 
         /// <summary>
-        ///     Multiple folders can be dropped into the <see cref="AdvancedTextBox" />.
+        ///     Multiple folders can be dropped into the <see cref="ChapterTextBox" />.
         /// </summary>
         Folders,
 
         /// <summary>
-        ///     Just one folder can be dropped into the <see cref="AdvancedTextBox" />.
+        ///     Just one folder can be dropped into the <see cref="ChapterTextBox" />.
         /// </summary>
         Folder,
 

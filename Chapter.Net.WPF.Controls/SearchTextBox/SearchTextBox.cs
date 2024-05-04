@@ -14,11 +14,11 @@ using System.Windows.Input;
 namespace Chapter.Net.WPF.Controls
 {
     /// <summary>
-    ///     Adds search and cancel buttons to the AdvancedTextBox to represent a search box shown like in the Windows explorer.
+    ///     Adds search and cancel buttons to the ChapterTextBox to represent a search box shown like in the Windows explorer.
     /// </summary>
     [TemplatePart(Name = "PART_SearchButton", Type = typeof(Button))]
     [TemplatePart(Name = "PART_CancelButton", Type = typeof(Button))]
-    public class SearchTextBox : AdvancedTextBox
+    public class SearchTextBox : ChapterTextBox
     {
         /// <summary>
         ///     Identifies the <see cref="SearchButtonPosition" /> dependency property.

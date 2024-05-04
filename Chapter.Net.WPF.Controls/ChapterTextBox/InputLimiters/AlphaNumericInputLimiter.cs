@@ -12,7 +12,7 @@ using System.Windows.Input;
 namespace Chapter.Net.WPF.Controls
 {
     /// <summary>
-    ///     Allows only numeric input ([a-zA-Z0-9 ]) on a <see cref="AdvancedTextBox" />.
+    ///     Allows only numeric input ([a-zA-Z0-9 ]) on a <see cref="ChapterTextBox" />.
     /// </summary>
     public sealed class AlphaNumericInputLimiter : InputLimiter
     {

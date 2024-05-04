@@ -11,7 +11,7 @@ using System.ComponentModel;
 namespace Chapter.Net.WPF.Controls
 {
     /// <summary>
-    ///     Adjust the text in the <see cref="AdvancedTextBox" /> that it always contains a dash every N position.
+    ///     Adjust the text in the <see cref="ChapterTextBox" /> that it always contains a dash every N position.
     /// </summary>
     public sealed class CharInsertModificator : TextModificator
     {

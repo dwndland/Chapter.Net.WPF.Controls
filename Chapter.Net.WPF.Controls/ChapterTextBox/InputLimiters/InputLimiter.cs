@@ -13,7 +13,7 @@ using System.Windows.Markup;
 namespace Chapter.Net.WPF.Controls
 {
     /// <summary>
-    ///     Allows or disallows user inputs on a <see cref="AdvancedTextBox" />.
+    ///     Allows or disallows user inputs on a <see cref="ChapterTextBox" />.
     /// </summary>
     public abstract class InputLimiter : MarkupExtension
     {

@@ -1,5 +1,5 @@
 ﻿// -----------------------------------------------------------------------------------------------------------------
-// <copyright file="WhitespaceHandling.cs" company="my-libraries">
+// <copyright file="ModificationTime.cs" company="my-libraries">
 //     Copyright (c) David Wendland. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------------------------------------------------
@@ -9,23 +9,18 @@
 namespace Chapter.Net.WPF.Controls
 {
     /// <summary>
-    ///     Defines how to handle whitespaces in the <see cref="AdvancedTextBox" />.
+    ///     Defines when the <see cref="TextModificator" /> will be executed in the <see cref="ChapterTextBox" />.
     /// </summary>
-    public enum WhitespaceHandling
+    public enum ModificationTime
     {
         /// <summary>
-        ///     Nothing shall be done.
+        ///     The text will be modified when the text box loses the focus.
         /// </summary>
-        None,
+        OnLostFocus,
 
         /// <summary>
-        ///     Disallow the user to enter whitespaces on the beginning and trims the end on focus lost.
+        ///     The text will be modified the moment the user is typing.
         /// </summary>
-        DisallowLeadingAndTrim,
-
-        /// <summary>
-        ///     Trims leading and trailing whitespace on focus lost.
-        /// </summary>
-        Trim
+        OnType
     }
 }

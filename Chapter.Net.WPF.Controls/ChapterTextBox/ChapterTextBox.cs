@@ -1,5 +1,5 @@
 ﻿// -----------------------------------------------------------------------------------------------------------------
-// <copyright file="AdvancedTextBox.cs" company="my-libraries">
+// <copyright file="ChapterTextBox.cs" company="my-libraries">
 //     Copyright (c) David Wendland. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------------------------------------------------
@@ -20,97 +20,97 @@ namespace Chapter.Net.WPF.Controls
     ///     place additional controls in.
     /// </summary>
     [TemplatePart(Name = "PART_InfoText", Type = typeof(TextBlock))]
-    public class AdvancedTextBox : TextBox
+    public class ChapterTextBox : TextBox
     {
         /// <summary>
         ///     Identifies the <see cref="InfoAppearance" /> dependency property.
         /// </summary>
         public static readonly DependencyProperty InfoAppearanceProperty =
-            DependencyProperty.Register(nameof(InfoAppearance), typeof(InfoAppearance), typeof(AdvancedTextBox), new UIPropertyMetadata(InfoAppearance.OnLostFocus, OnInfoAppearanceChanged));
+            DependencyProperty.Register(nameof(InfoAppearance), typeof(InfoAppearance), typeof(ChapterTextBox), new UIPropertyMetadata(InfoAppearance.OnLostFocus, OnInfoAppearanceChanged));
 
         /// <summary>
         ///     Identifies the <see cref="InfoText" /> dependency property.
         /// </summary>
         public static readonly DependencyProperty InfoTextProperty =
-            DependencyProperty.Register(nameof(InfoText), typeof(string), typeof(AdvancedTextBox), new UIPropertyMetadata(""));
+            DependencyProperty.Register(nameof(InfoText), typeof(string), typeof(ChapterTextBox), new UIPropertyMetadata(""));
 
         /// <summary>
         ///     Identifies the <see cref="InfoTextStyle" /> dependency property.
         /// </summary>
         public static readonly DependencyProperty InfoTextStyleProperty =
-            DependencyProperty.Register(nameof(InfoTextStyle), typeof(Style), typeof(AdvancedTextBox), new UIPropertyMetadata(null));
+            DependencyProperty.Register(nameof(InfoTextStyle), typeof(Style), typeof(ChapterTextBox), new UIPropertyMetadata(null));
 
         /// <summary>
         ///     Identifies the <see cref="FirstControl" /> dependency property.
         /// </summary>
         public static readonly DependencyProperty FirstControlProperty =
-            DependencyProperty.Register(nameof(FirstControl), typeof(object), typeof(AdvancedTextBox), new UIPropertyMetadata(null));
+            DependencyProperty.Register(nameof(FirstControl), typeof(object), typeof(ChapterTextBox), new UIPropertyMetadata(null));
 
         /// <summary>
         ///     Identifies the <see cref="FirstControlPosition" /> dependency property.
         /// </summary>
         public static readonly DependencyProperty FirstControlPositionProperty =
-            DependencyProperty.Register(nameof(FirstControlPosition), typeof(Dock), typeof(AdvancedTextBox), new UIPropertyMetadata(Dock.Left));
+            DependencyProperty.Register(nameof(FirstControlPosition), typeof(Dock), typeof(ChapterTextBox), new UIPropertyMetadata(Dock.Left));
 
         /// <summary>
         ///     Identifies the <see cref="SecondControl" /> dependency property.
         /// </summary>
         public static readonly DependencyProperty SecondControlProperty =
-            DependencyProperty.Register(nameof(SecondControl), typeof(object), typeof(AdvancedTextBox), new UIPropertyMetadata(null));
+            DependencyProperty.Register(nameof(SecondControl), typeof(object), typeof(ChapterTextBox), new UIPropertyMetadata(null));
 
         /// <summary>
         ///     Identifies the <see cref="SecondControlPosition" /> dependency property.
         /// </summary>
         public static readonly DependencyProperty SecondControlPositionProperty =
-            DependencyProperty.Register(nameof(SecondControlPosition), typeof(Dock), typeof(AdvancedTextBox), new UIPropertyMetadata(Dock.Right));
+            DependencyProperty.Register(nameof(SecondControlPosition), typeof(Dock), typeof(ChapterTextBox), new UIPropertyMetadata(Dock.Right));
 
         /// <summary>
         ///     Identifies the <see cref="AllowedDropType" /> dependency property.
         /// </summary>
         public static readonly DependencyProperty AllowedDropTypeProperty =
-            DependencyProperty.Register(nameof(AllowedDropType), typeof(DroppableTypes), typeof(AdvancedTextBox), new UIPropertyMetadata(DroppableTypes.File));
+            DependencyProperty.Register(nameof(AllowedDropType), typeof(DroppableTypes), typeof(ChapterTextBox), new UIPropertyMetadata(DroppableTypes.File));
 
         /// <summary>
         ///     Identifies the <see cref="Separator" /> dependency property.
         /// </summary>
         public static readonly DependencyProperty SeparatorProperty =
-            DependencyProperty.Register(nameof(Separator), typeof(string), typeof(AdvancedTextBox), new UIPropertyMetadata("; "));
+            DependencyProperty.Register(nameof(Separator), typeof(string), typeof(ChapterTextBox), new UIPropertyMetadata("; "));
 
         /// <summary>
         ///     Identifies the <see cref="DragDropEffect" /> dependency property.
         /// </summary>
         public static readonly DependencyProperty DragDropEffectProperty =
-            DependencyProperty.Register(nameof(DragDropEffect), typeof(DragDropEffects), typeof(AdvancedTextBox), new UIPropertyMetadata(DragDropEffects.Link));
+            DependencyProperty.Register(nameof(DragDropEffect), typeof(DragDropEffects), typeof(ChapterTextBox), new UIPropertyMetadata(DragDropEffects.Link));
 
         /// <summary>
         ///     Identifies the <see cref="TextModificator" /> dependency property.
         /// </summary>
         public static readonly DependencyProperty TextModificatorProperty =
-            DependencyProperty.Register(nameof(TextModificator), typeof(TextModificator), typeof(AdvancedTextBox), new PropertyMetadata(null));
+            DependencyProperty.Register(nameof(TextModificator), typeof(TextModificator), typeof(ChapterTextBox), new PropertyMetadata(null));
 
         /// <summary>
         ///     Identifies the <see cref="InputLimiter" /> dependency property.
         /// </summary>
         public static readonly DependencyProperty InputLimiterProperty =
-            DependencyProperty.Register(nameof(InputLimiter), typeof(InputLimiter), typeof(AdvancedTextBox), new PropertyMetadata(null));
+            DependencyProperty.Register(nameof(InputLimiter), typeof(InputLimiter), typeof(ChapterTextBox), new PropertyMetadata(null));
 
         /// <summary>
         ///     Identifies the <see cref="WhitespaceHandling" /> dependency property.
         /// </summary>
         public static readonly DependencyProperty WhitespaceHandlingProperty =
-            DependencyProperty.Register(nameof(WhitespaceHandling), typeof(WhitespaceHandling), typeof(AdvancedTextBox), new PropertyMetadata(WhitespaceHandling.None));
+            DependencyProperty.Register(nameof(WhitespaceHandling), typeof(WhitespaceHandling), typeof(ChapterTextBox), new PropertyMetadata(WhitespaceHandling.None));
 
         private TextBlock _infoText;
 
-        static AdvancedTextBox()
+        static ChapterTextBox()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(AdvancedTextBox), new FrameworkPropertyMetadata(typeof(AdvancedTextBox)));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(ChapterTextBox), new FrameworkPropertyMetadata(typeof(ChapterTextBox)));
         }
 
         /// <summary>
-        ///     Initializes a new instance of the <see cref="AdvancedTextBox" /> class.
+        ///     Initializes a new instance of the <see cref="ChapterTextBox" /> class.
         /// </summary>
-        public AdvancedTextBox()
+        public ChapterTextBox()
         {
             Loaded += InfoTextBox_Loaded;
             PreviewDragOver += DroppableTextBox_PreviewDragOver;
@@ -233,7 +233,7 @@ namespace Chapter.Net.WPF.Controls
         }
 
         /// <summary>
-        ///     Gets or sets the the modificator how to change the text the user inputs.
+        ///     Gets or sets the modificator how to change the text the user inputs.
         /// </summary>
         /// <value>Default: null.</value>
         [DefaultValue(null)]
@@ -467,7 +467,7 @@ namespace Chapter.Net.WPF.Controls
             var contentText = GetContent(e);
             if (string.IsNullOrEmpty(contentText))
                 return;
-            ((AdvancedTextBox)sender).Text = contentText;
+            ((ChapterTextBox)sender).Text = contentText;
             Focus();
         }
 
@@ -503,7 +503,7 @@ namespace Chapter.Net.WPF.Controls
 
         private static void OnInfoAppearanceChanged(DependencyObject sender, DependencyPropertyChangedEventArgs e)
         {
-            ((AdvancedTextBox)sender).RefreshInfoAppearance();
+            ((ChapterTextBox)sender).RefreshInfoAppearance();
         }
     }
 }

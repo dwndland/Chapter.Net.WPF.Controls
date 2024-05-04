@@ -6,9 +6,9 @@
 A set of new WPF controls which are not yet build in.
 
 ## Features
-- **AdvancedTextBox:** Enhances the WPF TextBox by the possibilities to show background text, drop files and folders and place additional controls in.
+- **ChapterTextBox:** Enhances the WPF TextBox by the possibilities to show background text, drop files and folders and place additional controls in.
 - **ArcPanel:** Arranges child elements in an arc form.
-- **BrowseTextBox:** Adds a browse button to the AdvancedTextBox.
+- **BrowseTextBox:** Adds a browse button to the ChapterTextBox.
 - **DynamicTabControl:** Enhances the TabControl with buttons for add new tab item and close buttons of existing tab items.
 - **EllipsePanel:** Arranges child elements in a configurable ellipse form.
 - **EnumerationComboBox:** Represents a ComboBox which takes an enumeration value and shows all possible states inside the dropdown menu for let choosing a value.
@@ -21,7 +21,7 @@ A set of new WPF controls which are not yet build in.
 - **OptionButton:** A custom checkbox where a slider shows the checked and unchecked state.
 - **PasswordBox:** Hosts and enhances the WPF PasswordBox to be able to bind the password value and show info text in the background.
 - **Resizer:** Brings the possibility to resize every UI control manually by hold and drag the corners or sides.
-- **SearchTextBox:** Adds search and cancel buttons to the AdvancedTextBox to represent a search box shown like in the Windows explorer.
+- **SearchTextBox:** Adds search and cancel buttons to the ChapterTextBox to represent a search box shown like in the Windows explorer.
 - **SpacingStackPanel:** A StackPanel which adds a spacing between the items.
 - **SplitButton:** A button with a drop down where more commands can be available.
 - **TimeBox:** Shows textboxes to let the user input a time.
@@ -38,17 +38,17 @@ A set of new WPF controls which are not yet build in.
     dotnet add package Chapter.Net.WPF.Controls
     ```
 
-2. **AdvancedTextBox:**
+2. **ChapterTextBox:**
     - Usage
     ```xaml
-    <chapter:AdvancedTextBox InfoText="Required"
-                             AllowedDropType="Files"
-                             Separator=";"
-                             WhitespaceHandling="Trim"
-                             InputLimiter="{controls:AlphaInputLimiter}"
-                             TextModificator="{controls:ToUpperModificator OnLostFocus}" />
+    <chapter:ChapterTextBox InfoText="Required"
+                            AllowedDropType="Files"
+                            Separator=";"
+                            WhitespaceHandling="Trim"
+                            InputLimiter="{controls:AlphaInputLimiter}"
+                            TextModificator="{controls:ToUpperModificator OnLostFocus}" />
     ```
-    ![AdvancedTextBox](https://raw.githubusercontent.com/dwndland/Chapter.Net.WPF.Controls/master/Images/AdvancedTextBox.png)
+    ![ChapterTextBox](https://raw.githubusercontent.com/dwndland/Chapter.Net.WPF.Controls/master/Images/ChapterTextBox.png)
 
 3. **ArcPanel:**
     - Usage

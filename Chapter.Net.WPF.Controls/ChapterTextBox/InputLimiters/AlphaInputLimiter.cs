@@ -12,7 +12,7 @@ using System.Windows.Input;
 namespace Chapter.Net.WPF.Controls
 {
     /// <summary>
-    ///     Allows only alpha input ([a-zA-Z ]) on a <see cref="AdvancedTextBox" />.
+    ///     Allows only alpha input ([a-zA-Z ]) on a <see cref="ChapterTextBox" />.
     /// </summary>
     public sealed class AlphaInputLimiter : InputLimiter
     {

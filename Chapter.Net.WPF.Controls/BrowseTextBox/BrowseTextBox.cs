@@ -14,10 +14,10 @@ using System.Windows.Input;
 namespace Chapter.Net.WPF.Controls
 {
     /// <summary>
-    ///     Adds a browse button to the <see cref="AdvancedTextBox" />.
+    ///     Adds a browse button to the <see cref="ChapterTextBox" />.
     /// </summary>
     [TemplatePart(Name = "PART_BrowseButton", Type = typeof(Button))]
-    public class BrowseTextBox : AdvancedTextBox
+    public class BrowseTextBox : ChapterTextBox
     {
         /// <summary>
         ///     Identifies the <see cref="BrowseButtonContent" /> dependency property.

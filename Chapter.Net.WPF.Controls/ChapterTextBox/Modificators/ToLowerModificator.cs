@@ -1,5 +1,5 @@
 ﻿// -----------------------------------------------------------------------------------------------------------------
-// <copyright file="ToUpperModificator.cs" company="my-libraries">
+// <copyright file="ToLowerModificator.cs" company="my-libraries">
 //     Copyright (c) David Wendland. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------------------------------------------------
@@ -11,14 +11,14 @@ using System.Globalization;
 namespace Chapter.Net.WPF.Controls
 {
     /// <summary>
-    ///     Modifies the text to always upper in the <see cref="AdvancedTextBox" />.
+    ///     Modifies the text to always lower in the <see cref="ChapterTextBox" />.
     /// </summary>
-    public sealed class ToUpperModificator : TextModificator
+    public sealed class ToLowerModificator : TextModificator
     {
         /// <summary>
         ///     Initializes a new instance of the <see cref="ToUpperModificator" /> class.
         /// </summary>
-        public ToUpperModificator()
+        public ToLowerModificator()
         {
         }
 
@@ -26,7 +26,7 @@ namespace Chapter.Net.WPF.Controls
         ///     Initializes a new instance of the <see cref="ToUpperModificator" /> class.
         /// </summary>
         /// <param name="modificationTime">The time when the <see cref="Modify" /> will be called.</param>
-        public ToUpperModificator(ModificationTime modificationTime)
+        public ToLowerModificator(ModificationTime modificationTime)
             : base(modificationTime)
         {
         }
@@ -34,7 +34,7 @@ namespace Chapter.Net.WPF.Controls
         /// <inheritdoc />
         public override string Modify(string input)
         {
-            return input.ToUpper(CultureInfo.CurrentCulture);
+            return input.ToLower(CultureInfo.CurrentCulture);
         }
     }
 }

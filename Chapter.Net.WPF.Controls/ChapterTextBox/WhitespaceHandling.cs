@@ -1,5 +1,5 @@
 ﻿// -----------------------------------------------------------------------------------------------------------------
-// <copyright file="InfoAppearance.cs" company="my-libraries">
+// <copyright file="WhitespaceHandling.cs" company="my-libraries">
 //     Copyright (c) David Wendland. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------------------------------------------------
@@ -9,24 +9,23 @@
 namespace Chapter.Net.WPF.Controls
 {
     /// <summary>
-    ///     Defines when the <see cref="AdvancedTextBox.InfoText" /> in the <see cref="AdvancedTextBox" /> and its derived
-    ///     controls is visible.
+    ///     Defines how to handle whitespaces in the <see cref="ChapterTextBox" />.
     /// </summary>
-    public enum InfoAppearance
+    public enum WhitespaceHandling
     {
         /// <summary>
-        ///     No info text has to be shown.
+        ///     Nothing shall be done.
         /// </summary>
         None,
 
         /// <summary>
-        ///     The info text is shown when the box is empty, no matter if it has the keyboard focus or not.
+        ///     Disallow the user to enter whitespaces on the beginning and trims the end on focus lost.
         /// </summary>
-        OnEmpty,
+        DisallowLeadingAndTrim,
 
         /// <summary>
-        ///     The info text is shown when the box is empty and does not have the keyboard focus.
+        ///     Trims leading and trailing whitespace on focus lost.
         /// </summary>
-        OnLostFocus
+        Trim
     }
 }

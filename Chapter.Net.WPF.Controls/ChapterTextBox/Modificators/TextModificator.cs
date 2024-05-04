@@ -12,7 +12,7 @@ using System.Windows.Markup;
 namespace Chapter.Net.WPF.Controls
 {
     /// <summary>
-    ///     Allows modification of the text in the <see cref="AdvancedTextBox" />.
+    ///     Allows modification of the text in the <see cref="ChapterTextBox" />.
     /// </summary>
     public abstract class TextModificator : MarkupExtension
     {
