@@ -12,9 +12,8 @@ namespace Demo;
 
 public partial class UniformWrapPanelControl
 {
-    public UniformWrapPanelControl(string group)
+    public UniformWrapPanelControl()
     {
-        Group = group;
         InitializeComponent();
 
         Items = new List<string>
@@ -43,8 +42,6 @@ public partial class UniformWrapPanelControl
 
         DataContext = this;
     }
-
-    public string Group { get; }
 
     public List<string> Items { get; }
 }

@@ -5,52 +5,91 @@
 // -----------------------------------------------------------------------------------------------------------------
 
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Windows.Controls;
 
 namespace Demo;
 
-public partial class MainWindow
+public partial class MainWindow : INotifyPropertyChanged
 {
+    private List<UserControl> _basicInput { get; }
+    private List<UserControl> _collections { get; }
+    private List<UserControl> _text { get; }
+    private List<UserControl> _layout { get; }
+
     public MainWindow()
     {
         InitializeComponent();
 
-        Controls = new List<UserControl>
-        {
-            new ImageButtonControl("Buttons"),
-            new OptionButtonControl("Buttons"),
-            new SplitButtonControl("Buttons"),
+        _basicInput =
+        [
+            new ImageButtonControl(),
+            new OptionButtonControl(),
+            new SplitButtonControl(),
+            new EnumerationComboBoxControl()
+        ];
 
-            new ResizerControl("Docking"),
+        _collections =
+        [
+            new ExtendedTreeViewControl(),
+            new TreeListViewControl(),
+            new DynamicTabControlControl()
+        ];
 
-            new EnumerationComboBoxControl("Dropdowns"),
+        _text =
+        [
+            new FormatterTextBlockControl(),
+            new AdvancedTextBoxControl(),
+            new BrowseTextBoxControl(),
+            new NumberBoxControl(),
+            new PasswordBoxControl(),
+            new SearchTextBoxControl(),
+            new TimeBoxControl()
+        ];
 
-            new AdvancedTextBoxControl("Input"),
-            new BrowseTextBoxControl("Input"),
-            new NumberBoxControl("Input"),
-            new PasswordBoxControl("Input"),
-            new SearchTextBoxControl("Input"),
-            new TimeBoxControl("Input"),
-            
-            new FormatterTextBlockControl("Labeling"),
+        _layout =
+        [
+            new ResizerControl(),
+            new HeaderItemsControlControl(),
+            new TitledItemsControlControl(),
+            new ArcPanelControl(),
+            new EllipsePanelControl(),
+            new ItemsPanelControl(),
+            new SpacingStackPanelControl(),
+            new UniformPanelControl(),
+            new UniformWrapPanelControl()
+        ];
 
-            new HeaderItemsControlControl("Layouting"),
-            new TitledItemsControlControl("Layouting"),
-
-            new ExtendedTreeViewControl("Listing"),
-            new TreeListViewControl("Listing"),
-            new DynamicTabControlControl("Listing"),
-
-            new ArcPanelControl("Panels"),
-            new EllipsePanelControl("Panels"),
-            new ItemsPanelControl("Panels"),
-            new SpacingStackPanelControl("Panels"),
-            new UniformPanelControl("Panels"),
-            new UniformWrapPanelControl("Panels")
-        };
+        Controls = _basicInput;
 
         DataContext = this;
     }
 
-    public List<UserControl> Controls { get; }
+    public event PropertyChangedEventHandler PropertyChanged;
+
+    public List<UserControl> Controls { get; private set; }
+
+    private void OnGroupChanged(object sender, SelectionChangedEventArgs e)
+    {
+        var box = (ListBox)sender;
+        var item = (ListBoxItem)box.SelectedItem;
+
+        switch (item.Name)
+        {
+            case "BasicInput":
+                Controls = _basicInput;
+                break;
+            case "Collections":
+                Controls = _collections;
+                break;
+            case "Text":
+                Controls = _text;
+                break;
+            case "Layout":
+                Controls = _layout;
+                break;
+        }
+
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Controls)));
+    }
 }

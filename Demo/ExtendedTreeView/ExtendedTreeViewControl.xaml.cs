@@ -15,9 +15,8 @@ public partial class ExtendedTreeViewControl : INotifyPropertyChanged
 {
     private Item _selectedItem;
 
-    public ExtendedTreeViewControl(string group)
+    public ExtendedTreeViewControl()
     {
-        Group = group;
         InitializeComponent();
 
         Items = new List<Item>
@@ -46,8 +45,6 @@ public partial class ExtendedTreeViewControl : INotifyPropertyChanged
 
         DataContext = this;
     }
-
-    public string Group { get; }
 
     public List<Item> Items { get; }
 

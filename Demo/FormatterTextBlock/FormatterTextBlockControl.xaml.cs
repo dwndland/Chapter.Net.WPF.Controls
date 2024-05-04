@@ -14,16 +14,13 @@ public partial class FormatterTextBlockControl : INotifyPropertyChanged
 {
     private string _input;
 
-    public FormatterTextBlockControl(string group)
+    public FormatterTextBlockControl()
     {
-        Group = group;
         InitializeComponent();
 
         Input = "example";
         DataContext = this;
     }
-
-    public string Group { get; }
 
     public string Input
     {

@@ -12,9 +12,8 @@ namespace Demo;
 
 public partial class SpacingStackPanelControl
 {
-    public SpacingStackPanelControl(string group)
+    public SpacingStackPanelControl()
     {
-        Group = group;
         InitializeComponent();
 
         Items = new List<string>
@@ -29,8 +28,6 @@ public partial class SpacingStackPanelControl
 
         DataContext = this;
     }
-
-    public string Group { get; }
 
     public List<string> Items { get; }
 }

@@ -10,11 +10,8 @@ namespace Demo;
 
 public partial class ArcPanelControl
 {
-    public ArcPanelControl(string group)
+    public ArcPanelControl()
     {
-        Group = group;
         InitializeComponent();
     }
-
-    public string Group { get; }
 }

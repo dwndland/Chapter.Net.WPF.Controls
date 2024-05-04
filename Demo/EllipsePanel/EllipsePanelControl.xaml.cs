@@ -10,11 +10,8 @@ namespace Demo;
 
 public partial class EllipsePanelControl
 {
-    public EllipsePanelControl(string group)
+    public EllipsePanelControl()
     {
-        Group = group;
         InitializeComponent();
     }
-
-    public string Group { get; }
 }

@@ -10,11 +10,8 @@ namespace Demo;
 
 public partial class ResizerControl
 {
-    public ResizerControl(string group)
+    public ResizerControl()
     {
-        Group = group;
         InitializeComponent();
     }
-
-    public string Group { get; }
 }

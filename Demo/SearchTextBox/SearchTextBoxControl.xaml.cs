@@ -12,13 +12,10 @@ namespace Demo;
 
 public partial class SearchTextBoxControl
 {
-    public SearchTextBoxControl(string group)
+    public SearchTextBoxControl()
     {
-        Group = group;
         InitializeComponent();
     }
-
-    public string Group { get; }
 
     private void OnSearchClick(object sender, RoutedEventArgs e)
     {

@@ -13,33 +13,37 @@
         mc:Ignorable="d">
     <Window.Resources>
         <demo:ControlToNameConverter x:Key="ControlToNameConverter" />
-        <CollectionViewSource x:Key="controls" Source="{Binding Controls}">
-            <CollectionViewSource.GroupDescriptions>
-                <PropertyGroupDescription PropertyName="Group" />
-            </CollectionViewSource.GroupDescriptions>
-        </CollectionViewSource>
+        <Style TargetType="{x:Type ListBoxItem}">
+            <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+            <Setter Property="Padding" Value="10,6" />
+        </Style>
     </Window.Resources>
 
     <DockPanel>
+        <ListBox BorderThickness="1"
+                 DockPanel.Dock="Top"
+                 SelectionMode="Single"
+                 SelectionChanged="OnGroupChanged">
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Horizontal" />
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+            <ListBoxItem x:Name="BasicInput"
+                         Content="Basic input"
+                         IsSelected="True" />
+            <ListBoxItem x:Name="Collections" Content="Collections" />
+            <ListBoxItem x:Name="Text" Content="Text" />
+            <ListBoxItem x:Name="Layout" Content="Layout" />
+        </ListBox>
+
         <ListBox x:Name="items"
                  BorderBrush="LightGray"
                  BorderThickness="0,0,1,0"
-                 ItemsSource="{Binding Source={StaticResource controls}}"
+                 Width="160"
+                 ItemsSource="{Binding Controls}"
                  SelectedIndex="19"
                  SelectionMode="Single">
-            <ListBox.GroupStyle>
-                <GroupStyle>
-                    <GroupStyle.HeaderTemplate>
-                        <DataTemplate>
-                            <Border BorderBrush="Gray" BorderThickness="1">
-                                <TextBlock HorizontalAlignment="Center"
-                                           FontWeight="Bold"
-                                           Text="{Binding Name}" />
-                            </Border>
-                        </DataTemplate>
-                    </GroupStyle.HeaderTemplate>
-                </GroupStyle>
-            </ListBox.GroupStyle>
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <TextBlock Text="{Binding Converter={StaticResource ControlToNameConverter}}" />

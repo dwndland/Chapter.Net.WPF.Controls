@@ -15,9 +15,8 @@ public partial class ItemsPanelControl : INotifyPropertyChanged
 {
     private bool _isUniform;
 
-    public ItemsPanelControl(string group)
+    public ItemsPanelControl()
     {
-        Group = group;
         InitializeComponent();
 
         Items = new List<string>
@@ -32,8 +31,6 @@ public partial class ItemsPanelControl : INotifyPropertyChanged
 
         DataContext = this;
     }
-
-    public string Group { get; }
 
     public bool IsUniform
     {

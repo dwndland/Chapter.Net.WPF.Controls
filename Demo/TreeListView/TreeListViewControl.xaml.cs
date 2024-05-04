@@ -15,9 +15,8 @@ public partial class TreeListViewControl : INotifyPropertyChanged
 {
     private Element _selectedItem;
 
-    public TreeListViewControl(string group)
+    public TreeListViewControl()
     {
-        Group = group;
         InitializeComponent();
 
         Items = new List<Element>
@@ -46,8 +45,6 @@ public partial class TreeListViewControl : INotifyPropertyChanged
 
         DataContext = this;
     }
-
-    public string Group { get; }
 
     public List<Element> Items { get; }
 

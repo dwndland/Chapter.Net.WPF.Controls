@@ -10,11 +10,8 @@ namespace Demo;
 
 public partial class TimeBoxControl
 {
-    public TimeBoxControl(string group)
+    public TimeBoxControl()
     {
-        Group = group;
         InitializeComponent();
     }
-
-    public string Group { get; }
 }

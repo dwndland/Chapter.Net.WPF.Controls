@@ -10,11 +10,8 @@ namespace Demo;
 
 public partial class HeaderItemsControlControl
 {
-    public HeaderItemsControlControl(string group)
+    public HeaderItemsControlControl()
     {
-        Group = group;
         InitializeComponent();
     }
-
-    public string Group { get; }
 }

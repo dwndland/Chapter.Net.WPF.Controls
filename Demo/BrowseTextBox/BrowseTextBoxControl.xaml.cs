@@ -12,13 +12,10 @@ namespace Demo;
 
 public partial class BrowseTextBoxControl
 {
-    public BrowseTextBoxControl(string group)
+    public BrowseTextBoxControl()
     {
-        Group = group;
         InitializeComponent();
     }
-
-    public string Group { get; }
 
     private void OnBrowseClick(object sender, RoutedEventArgs e)
     {

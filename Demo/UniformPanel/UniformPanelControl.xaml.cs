@@ -12,9 +12,8 @@ namespace Demo;
 
 public partial class UniformPanelControl
 {
-    public UniformPanelControl(string group)
+    public UniformPanelControl()
     {
-        Group = group;
         InitializeComponent();
 
         Items = new List<string>
@@ -27,8 +26,6 @@ public partial class UniformPanelControl
 
         DataContext = this;
     }
-
-    public string Group { get; }
 
     public List<string> Items { get; }
 }

@@ -10,11 +10,8 @@ namespace Demo;
 
 public partial class EnumerationComboBoxControl
 {
-    public EnumerationComboBoxControl(string group)
+    public EnumerationComboBoxControl()
     {
-        Group = group;
         InitializeComponent();
     }
-
-    public string Group { get; }
 }

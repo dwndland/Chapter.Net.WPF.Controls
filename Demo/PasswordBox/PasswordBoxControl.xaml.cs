@@ -10,11 +10,8 @@ namespace Demo;
 
 public partial class PasswordBoxControl
 {
-    public PasswordBoxControl(string group)
+    public PasswordBoxControl()
     {
-        Group = group;
         InitializeComponent();
     }
-
-    public string Group { get; }
 }

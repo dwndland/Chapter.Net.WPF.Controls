@@ -10,11 +10,8 @@ namespace Demo;
 
 public partial class ImageButtonControl
 {
-    public ImageButtonControl(string group)
+    public ImageButtonControl()
     {
-        Group = group;
         InitializeComponent();
     }
-
-    public string Group { get; }
 }

@@ -10,11 +10,8 @@ namespace Demo;
 
 public partial class NumberBoxControl
 {
-    public NumberBoxControl(string group)
+    public NumberBoxControl()
     {
-        Group = group;
         InitializeComponent();
     }
-
-    public string Group { get; }
 }

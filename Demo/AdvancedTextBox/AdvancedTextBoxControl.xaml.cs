@@ -15,15 +15,12 @@ public partial class AdvancedTextBoxControl : INotifyPropertyChanged
     private bool _showFirstControl;
     private bool _showSecondControl;
 
-    public AdvancedTextBoxControl(string group)
+    public AdvancedTextBoxControl()
     {
-        Group = group;
         InitializeComponent();
 
         DataContext = this;
     }
-
-    public string Group { get; }
 
     public bool ShowFirstControl
     {

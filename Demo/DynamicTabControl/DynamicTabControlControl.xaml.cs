@@ -12,13 +12,10 @@ namespace Demo;
 
 public partial class DynamicTabControlControl
 {
-    public DynamicTabControlControl(string group)
+    public DynamicTabControlControl()
     {
-        Group = group;
         InitializeComponent();
     }
-
-    public string Group { get; }
 
     private void OnCloseClick(object sender, RoutedEventArgs e)
     {

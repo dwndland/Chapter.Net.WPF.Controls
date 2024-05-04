@@ -10,11 +10,8 @@ namespace Demo;
 
 public partial class TitledItemsControlControl
 {
-    public TitledItemsControlControl(string group)
+    public TitledItemsControlControl()
     {
-        Group = group;
         InitializeComponent();
     }
-
-    public string Group { get; }
 }

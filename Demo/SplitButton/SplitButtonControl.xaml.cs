@@ -12,13 +12,10 @@ namespace Demo;
 
 public partial class SplitButtonControl
 {
-    public SplitButtonControl(string group)
+    public SplitButtonControl()
     {
-        Group = group;
         InitializeComponent();
     }
-
-    public string Group { get; }
 
     private void MainClick(object sender, RoutedEventArgs e)
     {
