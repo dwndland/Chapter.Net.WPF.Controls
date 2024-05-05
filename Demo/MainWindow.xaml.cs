@@ -54,7 +54,7 @@ public partial class MainWindow : INotifyPropertyChanged
             new TitledItemsControlControl(),
             new ChapterArcPanelControl(),
             new ChapterEllipsePanelControl(),
-            new ItemsPanelControl(),
+            new ChapterItemsPanelControl(),
             new SpacingStackPanelControl(),
             new UniformPanelControl(),
             new UniformWrapPanelControl()

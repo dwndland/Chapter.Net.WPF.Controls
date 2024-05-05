@@ -1,5 +1,5 @@
 ﻿// -----------------------------------------------------------------------------------------------------------------
-// <copyright file="ItemsPanelControl.xaml.cs" company="my-libraries">
+// <copyright file="ChapterItemsPanelControl.xaml.cs" company="my-libraries">
 //     Copyright (c) David Wendland. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------------------------------------------------
@@ -11,11 +11,11 @@ using System.ComponentModel;
 
 namespace Demo;
 
-public partial class ItemsPanelControl : INotifyPropertyChanged
+public partial class ChapterItemsPanelControl : INotifyPropertyChanged
 {
     private bool _isUniform;
 
-    public ItemsPanelControl()
+    public ChapterItemsPanelControl()
     {
         InitializeComponent();
 

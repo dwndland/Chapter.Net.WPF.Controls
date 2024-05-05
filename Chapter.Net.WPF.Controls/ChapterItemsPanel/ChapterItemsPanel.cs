@@ -1,5 +1,5 @@
 ﻿// -----------------------------------------------------------------------------------------------------------------
-// <copyright file="ItemsPanel.cs" company="my-libraries">
+// <copyright file="ChapterItemsPanel.cs" company="my-libraries">
 //     Copyright (c) David Wendland. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------------------------------------------------
@@ -16,25 +16,25 @@ namespace Chapter.Net.WPF.Controls
     ///     A UniformGrid with only one row or one column, depending on the orientation, which adds a spacing between the
     ///     items.
     /// </summary>
-    public class ItemsPanel : Panel
+    public class ChapterItemsPanel : Panel
     {
         /// <summary>
         ///     Identifies the Spacing dependency property.
         /// </summary>
         public static readonly DependencyProperty SpacingProperty =
-            DependencyProperty.Register(nameof(Spacing), typeof(double), typeof(ItemsPanel), new FrameworkPropertyMetadata(4.0, FrameworkPropertyMetadataOptions.AffectsMeasure));
+            DependencyProperty.Register(nameof(Spacing), typeof(double), typeof(ChapterItemsPanel), new FrameworkPropertyMetadata(4.0, FrameworkPropertyMetadataOptions.AffectsMeasure));
 
         /// <summary>
         ///     Identifies the Orientation dependency property.
         /// </summary>
         public static readonly DependencyProperty OrientationProperty =
-            DependencyProperty.Register(nameof(Orientation), typeof(Orientation), typeof(ItemsPanel), new FrameworkPropertyMetadata(Orientation.Horizontal, FrameworkPropertyMetadataOptions.AffectsMeasure));
+            DependencyProperty.Register(nameof(Orientation), typeof(Orientation), typeof(ChapterItemsPanel), new FrameworkPropertyMetadata(Orientation.Horizontal, FrameworkPropertyMetadataOptions.AffectsMeasure));
 
         /// <summary>
         ///     Identifies the IsUniform dependency property.
         /// </summary>
         public static readonly DependencyProperty IsUniformProperty =
-            DependencyProperty.Register(nameof(IsUniform), typeof(bool), typeof(ItemsPanel), new FrameworkPropertyMetadata(false, FrameworkPropertyMetadataOptions.AffectsMeasure));
+            DependencyProperty.Register(nameof(IsUniform), typeof(bool), typeof(ChapterItemsPanel), new FrameworkPropertyMetadata(false, FrameworkPropertyMetadataOptions.AffectsMeasure));
 
         /// <summary>
         ///     Gets or sets the space between the items.

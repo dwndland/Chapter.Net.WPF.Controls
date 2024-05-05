@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="Demo.ItemsPanelControl"
+﻿<UserControl x:Class="Demo.ChapterItemsPanelControl"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:controls="clr-namespace:Chapter.Net.WPF.Controls;assembly=Chapter.Net.WPF.Controls"
@@ -40,7 +40,7 @@
                     <ItemsControl ItemTemplate="{StaticResource itemTemplate}" ItemsSource="{Binding Items}">
                         <ItemsControl.ItemsPanel>
                             <ItemsPanelTemplate>
-                                <controls:ItemsPanel IsUniform="{Binding IsUniform}"
+                                <controls:ChapterItemsPanel IsUniform="{Binding IsUniform}"
                                                      Orientation="Horizontal"
                                                      Spacing="{Binding Value, ElementName=spacing}" />
                             </ItemsPanelTemplate>
@@ -55,9 +55,9 @@
                     <ItemsControl ItemTemplate="{StaticResource itemTemplate}" ItemsSource="{Binding Items}">
                         <ItemsControl.ItemsPanel>
                             <ItemsPanelTemplate>
-                                <controls:ItemsPanel IsUniform="{Binding IsUniform}"
-                                                     Orientation="Vertical"
-                                                     Spacing="{Binding Value, ElementName=spacing}" />
+                                <controls:ChapterItemsPanel IsUniform="{Binding IsUniform}"
+                                                            Orientation="Vertical"
+                                                            Spacing="{Binding Value, ElementName=spacing}" />
                             </ItemsPanelTemplate>
                         </ItemsControl.ItemsPanel>
                     </ItemsControl>
