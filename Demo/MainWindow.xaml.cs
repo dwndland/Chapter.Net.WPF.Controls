@@ -24,7 +24,7 @@ public partial class MainWindow : INotifyPropertyChanged
         _basicInput =
         [
             new ChapterButtonControl(),
-            new OptionButtonControl(),
+            new ChapterToggleSwitchControl(),
             new SplitButtonControl()
         ];
 

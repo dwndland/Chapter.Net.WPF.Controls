@@ -1,5 +1,5 @@
 ﻿// -----------------------------------------------------------------------------------------------------------------
-// <copyright file="OptionButtonShape.cs" company="my-libraries">
+// <copyright file="ChapterToggleSwitchShape.cs" company="my-libraries">
 //     Copyright (c) David Wendland. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------------------------------------------------
@@ -11,7 +11,7 @@ namespace Chapter.Net.WPF.Controls
     /// <summary>
     ///     Represents the shape of the option button slider and background.
     /// </summary>
-    public enum OptionButtonShape
+    public enum ChapterToggleSwitchShape
     {
         /// <summary>
         ///     Its circular.

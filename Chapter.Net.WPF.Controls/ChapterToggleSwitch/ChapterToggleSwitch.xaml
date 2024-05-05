@@ -2,25 +2,25 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:controls="clr-namespace:Chapter.Net.WPF.Controls">
 
-    <SolidColorBrush x:Key="OptionButtonSlider.Static.Border" Color="#FF707070" />
-    <SolidColorBrush x:Key="OptionButtonSlider.Static.Background" Color="White" />
-    <SolidColorBrush x:Key="OptionButtonSlider.Disabled.Border" Color="#FFADB2B5" />
-    <SolidColorBrush x:Key="OptionButtonSlider.Disabled.Background" Color="#FFF4F4F4" />
+    <SolidColorBrush x:Key="ChapterToggleSwitchSlider.Static.Border" Color="#FF707070" />
+    <SolidColorBrush x:Key="ChapterToggleSwitchSlider.Static.Background" Color="White" />
+    <SolidColorBrush x:Key="ChapterToggleSwitchSlider.Disabled.Border" Color="#FFADB2B5" />
+    <SolidColorBrush x:Key="ChapterToggleSwitchSlider.Disabled.Background" Color="#FFF4F4F4" />
 
-    <SolidColorBrush x:Key="OptionButtonBack.Static.Border" Color="#FF707070" />
-    <SolidColorBrush x:Key="OptionButtonBack.Static.Background" Color="LightGray" />
-    <SolidColorBrush x:Key="OptionButtonBack.Static.Text" Color="#444444" />
-    <SolidColorBrush x:Key="OptionButtonBack.Checked.Background" Color="LimeGreen" />
-    <SolidColorBrush x:Key="OptionButtonBack.Disabled.Border" Color="#FFADB2B5" />
-    <SolidColorBrush x:Key="OptionButtonBack.Disabled.Background" Color="#FFF4F4F4" />
+    <SolidColorBrush x:Key="ChapterToggleSwitchBack.Static.Border" Color="#FF707070" />
+    <SolidColorBrush x:Key="ChapterToggleSwitchBack.Static.Background" Color="LightGray" />
+    <SolidColorBrush x:Key="ChapterToggleSwitchBack.Static.Text" Color="#444444" />
+    <SolidColorBrush x:Key="ChapterToggleSwitchBack.Checked.Background" Color="LimeGreen" />
+    <SolidColorBrush x:Key="ChapterToggleSwitchBack.Disabled.Border" Color="#FFADB2B5" />
+    <SolidColorBrush x:Key="ChapterToggleSwitchBack.Disabled.Background" Color="#FFF4F4F4" />
 
-    <Style TargetType="{x:Type controls:OptionButtonSlider}">
-        <Setter Property="BorderBrush" Value="{StaticResource OptionButtonSlider.Static.Border}" />
-        <Setter Property="Background" Value="{StaticResource OptionButtonSlider.Static.Background}" />
+    <Style TargetType="{x:Type controls:ChapterToggleSwitchSlider}">
+        <Setter Property="BorderBrush" Value="{StaticResource ChapterToggleSwitchSlider.Static.Border}" />
+        <Setter Property="Background" Value="{StaticResource ChapterToggleSwitchSlider.Static.Background}" />
         <Setter Property="BorderThickness" Value="1" />
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="{x:Type controls:OptionButtonSlider}">
+                <ControlTemplate TargetType="{x:Type controls:ChapterToggleSwitchSlider}">
                     <Grid>
                         <Ellipse x:Name="Ellipse"
                                  Fill="{TemplateBinding Background}"
@@ -39,8 +39,8 @@
                             <Setter TargetName="Square" Property="Visibility" Value="Visible" />
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="False">
-                            <Setter Property="Background" Value="{StaticResource OptionButtonSlider.Disabled.Background}" />
-                            <Setter Property="BorderBrush" Value="{StaticResource OptionButtonSlider.Disabled.Border}" />
+                            <Setter Property="Background" Value="{StaticResource ChapterToggleSwitchSlider.Disabled.Background}" />
+                            <Setter Property="BorderBrush" Value="{StaticResource ChapterToggleSwitchSlider.Disabled.Border}" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -48,13 +48,13 @@
         </Setter>
     </Style>
 
-    <Style TargetType="{x:Type controls:OptionButtonBack}">
-        <Setter Property="Background" Value="{StaticResource OptionButtonBack.Static.Background}" />
+    <Style TargetType="{x:Type controls:ChapterToggleSwitchBack}">
+        <Setter Property="Background" Value="{StaticResource ChapterToggleSwitchBack.Static.Background}" />
         <Setter Property="BorderThickness" Value="1" />
-        <Setter Property="BorderBrush" Value="{StaticResource OptionButtonBack.Static.Border}" />
+        <Setter Property="BorderBrush" Value="{StaticResource ChapterToggleSwitchBack.Static.Border}" />
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="{x:Type controls:OptionButtonBack}">
+                <ControlTemplate TargetType="{x:Type controls:ChapterToggleSwitchBack}">
                     <Border Background="{TemplateBinding Background}"
                             BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}"
@@ -65,7 +65,7 @@
                                        HorizontalAlignment="Left"
                                        VerticalAlignment="Center"
                                        FontSize="10"
-                                       Foreground="{StaticResource OptionButtonBack.Static.Text}"
+                                       Foreground="{StaticResource ChapterToggleSwitchBack.Static.Text}"
                                        Text="{Binding OnText, RelativeSource={RelativeSource TemplatedParent}}"
                                        Visibility="Collapsed" />
                             <TextBlock x:Name="Off"
@@ -73,7 +73,7 @@
                                        HorizontalAlignment="Right"
                                        VerticalAlignment="Center"
                                        FontSize="10"
-                                       Foreground="{StaticResource OptionButtonBack.Static.Text}"
+                                       Foreground="{StaticResource ChapterToggleSwitchBack.Static.Text}"
                                        Text="{Binding OffText, RelativeSource={RelativeSource TemplatedParent}}"
                                        Visibility="Collapsed" />
                         </Grid>
@@ -96,11 +96,11 @@
                             <Setter TargetName="Off" Property="Visibility" Value="Visible" />
                         </MultiTrigger>
                         <Trigger Property="IsChecked" Value="True">
-                            <Setter Property="Background" Value="{StaticResource OptionButtonBack.Checked.Background}" />
+                            <Setter Property="Background" Value="{StaticResource ChapterToggleSwitchBack.Checked.Background}" />
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="False">
-                            <Setter Property="Background" Value="{StaticResource OptionButtonBack.Disabled.Background}" />
-                            <Setter Property="BorderBrush" Value="{StaticResource OptionButtonBack.Disabled.Border}" />
+                            <Setter Property="Background" Value="{StaticResource ChapterToggleSwitchBack.Disabled.Background}" />
+                            <Setter Property="BorderBrush" Value="{StaticResource ChapterToggleSwitchBack.Disabled.Border}" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -108,7 +108,7 @@
         </Setter>
     </Style>
 
-    <Style TargetType="{x:Type controls:OptionButton}">
+    <Style TargetType="{x:Type controls:ChapterToggleSwitch}">
         <Setter Property="Height" Value="26" />
         <Setter Property="Width" Value="50" />
         <Setter Property="SliderHeight" Value="22" />
@@ -117,9 +117,9 @@
         <Setter Property="BackShape" Value="Round" />
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="{x:Type controls:OptionButton}">
+                <ControlTemplate TargetType="{x:Type controls:ChapterToggleSwitch}">
                     <Grid Background="Transparent">
-                        <controls:OptionButtonBack x:Name="OptionButtonBack"
+                        <controls:ChapterToggleSwitchBack x:Name="ChapterToggleSwitchBack"
                                                    Margin="{TemplateBinding BackMargin}"
                                                    HasText="{TemplateBinding HasText}"
                                                    IsChecked="{Binding IsChecked, RelativeSource={RelativeSource TemplatedParent}}"
@@ -127,7 +127,7 @@
                                                    OnText="{TemplateBinding OnText}"
                                                    Shape="{TemplateBinding BackShape}" />
 
-                        <controls:OptionButtonSlider x:Name="OptionButtonSlider"
+                        <controls:ChapterToggleSwitchSlider x:Name="ChapterToggleSwitchSlider"
                                                      Width="{TemplateBinding SliderWidth}"
                                                      Height="{TemplateBinding SliderHeight}"
                                                      Margin="{TemplateBinding SliderMargin}"
@@ -136,7 +136,7 @@
                     </Grid>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsChecked" Value="True">
-                            <Setter TargetName="OptionButtonSlider" Property="HorizontalAlignment" Value="Right" />
+                            <Setter TargetName="ChapterToggleSwitchSlider" Property="HorizontalAlignment" Value="Right" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

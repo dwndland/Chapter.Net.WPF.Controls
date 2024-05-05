@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="Demo.OptionButtonControl"
+﻿<UserControl x:Class="Demo.ChapterToggleSwitchControl"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:controls="clr-namespace:Chapter.Net.WPF.Controls;assembly=Chapter.Net.WPF.Controls"
@@ -18,8 +18,8 @@
             <TextBlock Text="SliderShape" />
             <controls:ChapterComboBox x:Name="sliderShape"
                                           Margin="0,0,0,10"
-                                          EnumType="{x:Type controls:OptionButtonShape}"
-                                          SelectedItem="{x:Static controls:OptionButtonShape.Round}" />
+                                          EnumType="{x:Type controls:ChapterToggleSwitchShape}"
+                                          SelectedItem="{x:Static controls:ChapterToggleSwitchShape.Round}" />
 
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="SliderHeight: " />
@@ -44,8 +44,8 @@
             <TextBlock Text="BackShape" />
             <controls:ChapterComboBox x:Name="backShape"
                                           Margin="0,0,0,10"
-                                          EnumType="{x:Type controls:OptionButtonShape}"
-                                          SelectedItem="{x:Static controls:OptionButtonShape.Round}" />
+                                          EnumType="{x:Type controls:ChapterToggleSwitchShape}"
+                                          SelectedItem="{x:Static controls:ChapterToggleSwitchShape.Round}" />
 
             <TextBlock Text="BackMargin" />
             <TextBox x:Name="backMargin"
@@ -72,7 +72,7 @@
                       IsChecked="true" />
         </local:PropertyPanel>
 
-        <controls:OptionButton HorizontalAlignment="Center"
+        <controls:ChapterToggleSwitch HorizontalAlignment="Center"
                                VerticalAlignment="Center"
                                BackMargin="{Binding Text, ElementName=backMargin, Converter={StaticResource StringToThicknessConverter}}"
                                BackShape="{Binding SelectedItem, ElementName=backShape}"

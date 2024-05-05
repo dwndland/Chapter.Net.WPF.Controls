@@ -1,5 +1,5 @@
 ﻿// -----------------------------------------------------------------------------------------------------------------
-// <copyright file="OptionButtonBack.cs" company="my-libraries">
+// <copyright file="ChapterToggleSwitchBack.cs" company="my-libraries">
 //     Copyright (c) David Wendland. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------------------------------------------------
@@ -13,49 +13,49 @@ using System.Windows.Controls;
 namespace Chapter.Net.WPF.Controls
 {
     /// <summary>
-    ///     The background control shown in the <see cref="OptionButton" />.
+    ///     The background control shown in the <see cref="ChapterToggleSwitch" />.
     /// </summary>
-    public class OptionButtonBack : Control
+    public class ChapterToggleSwitchBack : Control
     {
         /// <summary>
         ///     The DependencyProperty for the Shape property.
         /// </summary>
         public static readonly DependencyProperty ShapeProperty =
-            DependencyProperty.Register(nameof(Shape), typeof(OptionButtonShape), typeof(OptionButtonBack), new PropertyMetadata(OptionButtonShape.Round, OnShapeChanged));
+            DependencyProperty.Register(nameof(Shape), typeof(ChapterToggleSwitchShape), typeof(ChapterToggleSwitchBack), new PropertyMetadata(ChapterToggleSwitchShape.Round, OnShapeChanged));
 
         /// <summary>
         ///     The DependencyProperty for the CornerRadius property.
         /// </summary>
         public static readonly DependencyProperty CornerRadiusProperty =
-            DependencyProperty.Register(nameof(CornerRadius), typeof(double), typeof(OptionButtonBack), new PropertyMetadata(0.0));
+            DependencyProperty.Register(nameof(CornerRadius), typeof(double), typeof(ChapterToggleSwitchBack), new PropertyMetadata(0.0));
 
         /// <summary>
         ///     The DependencyProperty for the IsChecked property.
         /// </summary>
         public static readonly DependencyProperty IsCheckedProperty =
-            DependencyProperty.Register(nameof(IsChecked), typeof(bool), typeof(OptionButtonBack), new PropertyMetadata(false));
+            DependencyProperty.Register(nameof(IsChecked), typeof(bool), typeof(ChapterToggleSwitchBack), new PropertyMetadata(false));
 
         /// <summary>
         ///     The DependencyProperty for the HasText property.
         /// </summary>
         public static readonly DependencyProperty HasTextProperty =
-            DependencyProperty.Register(nameof(HasText), typeof(bool), typeof(OptionButtonBack), new PropertyMetadata(true));
+            DependencyProperty.Register(nameof(HasText), typeof(bool), typeof(ChapterToggleSwitchBack), new PropertyMetadata(true));
 
         /// <summary>
         ///     The DependencyProperty for the OnText property.
         /// </summary>
         public static readonly DependencyProperty OnTextProperty =
-            DependencyProperty.Register(nameof(OnText), typeof(string), typeof(OptionButtonBack), new PropertyMetadata("ON"));
+            DependencyProperty.Register(nameof(OnText), typeof(string), typeof(ChapterToggleSwitchBack), new PropertyMetadata("ON"));
 
         /// <summary>
         ///     The DependencyProperty for the OffText property.
         /// </summary>
         public static readonly DependencyProperty OffTextProperty =
-            DependencyProperty.Register(nameof(OffText), typeof(string), typeof(OptionButtonBack), new PropertyMetadata("OFF"));
+            DependencyProperty.Register(nameof(OffText), typeof(string), typeof(ChapterToggleSwitchBack), new PropertyMetadata("OFF"));
 
-        static OptionButtonBack()
+        static ChapterToggleSwitchBack()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(OptionButtonBack), new FrameworkPropertyMetadata(typeof(OptionButtonBack)));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(ChapterToggleSwitchBack), new FrameworkPropertyMetadata(typeof(ChapterToggleSwitchBack)));
         }
 
         /// <summary>
@@ -94,11 +94,11 @@ namespace Chapter.Net.WPF.Controls
         /// <summary>
         ///     Gets or sets the shape of that control.
         /// </summary>
-        /// <value>Default: OptionButtonShape.Round.</value>
-        [DefaultValue(OptionButtonShape.Round)]
-        public OptionButtonShape Shape
+        /// <value>Default: ChapterToggleSwitchShape.Round.</value>
+        [DefaultValue(ChapterToggleSwitchShape.Round)]
+        public ChapterToggleSwitchShape Shape
         {
-            get => (OptionButtonShape)GetValue(ShapeProperty);
+            get => (ChapterToggleSwitchShape)GetValue(ShapeProperty);
             set => SetValue(ShapeProperty, value);
         }
 
@@ -126,7 +126,7 @@ namespace Chapter.Net.WPF.Controls
 
         private static void OnShapeChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            var control = (OptionButtonBack)d;
+            var control = (ChapterToggleSwitchBack)d;
             control.UpdateCornerRadius();
         }
 
@@ -145,10 +145,10 @@ namespace Chapter.Net.WPF.Controls
         {
             switch (Shape)
             {
-                case OptionButtonShape.Round:
+                case ChapterToggleSwitchShape.Round:
                     CornerRadius = ActualHeight / 2;
                     break;
-                case OptionButtonShape.Square:
+                case ChapterToggleSwitchShape.Square:
                     CornerRadius = 0;
                     break;
             }

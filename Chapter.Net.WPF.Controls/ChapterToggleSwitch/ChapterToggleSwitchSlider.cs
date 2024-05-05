@@ -1,5 +1,5 @@
 ﻿// -----------------------------------------------------------------------------------------------------------------
-// <copyright file="OptionButtonSlider.cs" company="my-libraries">
+// <copyright file="ChapterToggleSwitchSlider.cs" company="my-libraries">
 //     Copyright (c) David Wendland. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------------------------------------------------
@@ -13,29 +13,29 @@ using System.Windows.Controls;
 namespace Chapter.Net.WPF.Controls
 {
     /// <summary>
-    ///     The slider shown in the <see cref="OptionButton" />.
+    ///     The slider shown in the <see cref="ChapterToggleSwitch" />.
     /// </summary>
-    public class OptionButtonSlider : Control
+    public class ChapterToggleSwitchSlider : Control
     {
         /// <summary>
         ///     The DependencyProperty for the Shape property.
         /// </summary>
         public static readonly DependencyProperty ShapeProperty =
-            DependencyProperty.Register(nameof(Shape), typeof(OptionButtonShape), typeof(OptionButtonSlider), new PropertyMetadata(OptionButtonShape.Round));
+            DependencyProperty.Register(nameof(Shape), typeof(ChapterToggleSwitchShape), typeof(ChapterToggleSwitchSlider), new PropertyMetadata(ChapterToggleSwitchShape.Round));
 
-        static OptionButtonSlider()
+        static ChapterToggleSwitchSlider()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(OptionButtonSlider), new FrameworkPropertyMetadata(typeof(OptionButtonSlider)));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(ChapterToggleSwitchSlider), new FrameworkPropertyMetadata(typeof(ChapterToggleSwitchSlider)));
         }
 
         /// <summary>
         ///     Gets or sets the shape of the slider.
         /// </summary>
-        /// <value>Default: OptionButtonShape.Round.</value>
-        [DefaultValue(OptionButtonShape.Round)]
-        public OptionButtonShape Shape
+        /// <value>Default: ChapterToggleSwitchShape.Round.</value>
+        [DefaultValue(ChapterToggleSwitchShape.Round)]
+        public ChapterToggleSwitchShape Shape
         {
-            get => (OptionButtonShape)GetValue(ShapeProperty);
+            get => (ChapterToggleSwitchShape)GetValue(ShapeProperty);
             set => SetValue(ShapeProperty, value);
         }
     }

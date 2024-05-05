@@ -18,7 +18,7 @@ A set of new WPF controls which are not yet build in.
 - **ChapterButton:** Enhances the WPF Button to show an disabled image. The bound image will be shown monochrome if the button is disabled.
 - **ItemsPanel:** A UniformGrid with only one row or one column, depending on the orientation, which adds a spacing between the items.
 - **ChapterNumberBox:** Displays a TextBox to accept numeric values only, so the text can be bound to a numeric property directly without converting.
-- **OptionButton:** A custom checkbox where a slider shows the checked and unchecked state.
+- **ChapterToggleSwitch:** A custom checkbox where a slider shows the checked and unchecked state.
 - **PasswordBox:** Hosts and enhances the WPF PasswordBox to be able to bind the password value and show info text in the background.
 - **Resizer:** Brings the possibility to resize every UI control manually by hold and drag the corners or sides.
 - **SearchTextBox:** Adds search and cancel buttons to the ChapterTextBox to represent a search box shown like in the Windows explorer.
@@ -318,16 +318,16 @@ A set of new WPF controls which are not yet build in.
     ```
     ![ChapterNumberBox](https://raw.githubusercontent.com/dwndland/Chapter.Net.WPF.Controls/master/Images/ChapterNumberBox.png)
 
-14. **OptionButton:**
+14. **ChapterToggleSwitch:**
     - Usage
     ```xaml
-    <chapter:OptionButton SliderShape="Round" BackShape="Round" IsChecked="{Binding IsOn}" />
+    <chapter:ChapterToggleSwitch SliderShape="Round" BackShape="Round" IsChecked="{Binding IsOn}" />
 
-    <chapter:OptionButton SliderShape="Square" BackShape="Square" SliderWidth="18" IsChecked="{Binding IsOn}" />
+    <chapter:ChapterToggleSwitch SliderShape="Square" BackShape="Square" SliderWidth="18" IsChecked="{Binding IsOn}" />
 
-    <chapter:OptionButton SliderShape="Square" BackShape="Square" SliderWidth="18" BackMargin="10,6" HasText="False" IsChecked="{Binding IsOn}" />
+    <chapter:ChapterToggleSwitch SliderShape="Square" BackShape="Square" SliderWidth="18" BackMargin="10,6" HasText="False" IsChecked="{Binding IsOn}" />
     ```
-    ![OptionButton](https://raw.githubusercontent.com/dwndland/Chapter.Net.WPF.Controls/master/Images/OptionButton.png)
+    ![ChapterToggleSwitch](https://raw.githubusercontent.com/dwndland/Chapter.Net.WPF.Controls/master/Images/ChapterToggleSwitch.png)
 
 15. **PasswordBox:**
     - Usage

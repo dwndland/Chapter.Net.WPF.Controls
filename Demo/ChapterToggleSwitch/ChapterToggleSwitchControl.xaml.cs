@@ -1,5 +1,5 @@
 ﻿// -----------------------------------------------------------------------------------------------------------------
-// <copyright file="OptionButtonControl.xaml.cs" company="my-libraries">
+// <copyright file="ChapterToggleSwitchControl.xaml.cs" company="my-libraries">
 //     Copyright (c) David Wendland. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------------------------------------------------
@@ -8,9 +8,9 @@
 
 namespace Demo;
 
-public partial class OptionButtonControl
+public partial class ChapterToggleSwitchControl
 {
-    public OptionButtonControl()
+    public ChapterToggleSwitchControl()
     {
         InitializeComponent();
     }

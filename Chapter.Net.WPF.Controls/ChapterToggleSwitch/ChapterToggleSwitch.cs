@@ -1,5 +1,5 @@
 ﻿// -----------------------------------------------------------------------------------------------------------------
-// <copyright file="OptionButton.cs" company="my-libraries">
+// <copyright file="ChapterToggleSwitch.cs" company="my-libraries">
 //     Copyright (c) David Wendland. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------------------------------------------------
@@ -15,75 +15,75 @@ namespace Chapter.Net.WPF.Controls
     /// <summary>
     ///     A custom checkbox where a slider shows the checked and unchecked state.
     /// </summary>
-    public class OptionButton : CheckBox
+    public class ChapterToggleSwitch : CheckBox
     {
         /// <summary>
         ///     The DependencyProperty for the SliderShape property.
         /// </summary>
         public static readonly DependencyProperty SliderShapeProperty =
-            DependencyProperty.Register(nameof(SliderShape), typeof(OptionButtonShape), typeof(OptionButton), new PropertyMetadata(OptionButtonShape.Round));
+            DependencyProperty.Register(nameof(SliderShape), typeof(ChapterToggleSwitchShape), typeof(ChapterToggleSwitch), new PropertyMetadata(ChapterToggleSwitchShape.Round));
 
         /// <summary>
         ///     The DependencyProperty for the SliderHeight property.
         /// </summary>
         public static readonly DependencyProperty SliderHeightProperty =
-            DependencyProperty.Register(nameof(SliderHeight), typeof(double), typeof(OptionButton), new PropertyMetadata(22.0));
+            DependencyProperty.Register(nameof(SliderHeight), typeof(double), typeof(ChapterToggleSwitch), new PropertyMetadata(22.0));
 
         /// <summary>
         ///     The DependencyProperty for the SliderWidth property.
         /// </summary>
         public static readonly DependencyProperty SliderWidthProperty =
-            DependencyProperty.Register(nameof(SliderWidth), typeof(double), typeof(OptionButton), new PropertyMetadata(22.0));
+            DependencyProperty.Register(nameof(SliderWidth), typeof(double), typeof(ChapterToggleSwitch), new PropertyMetadata(22.0));
 
         /// <summary>
         ///     The DependencyProperty for the BackShape property.
         /// </summary>
         public static readonly DependencyProperty BackShapeProperty =
-            DependencyProperty.Register(nameof(BackShape), typeof(OptionButtonShape), typeof(OptionButton), new PropertyMetadata(OptionButtonShape.Round));
+            DependencyProperty.Register(nameof(BackShape), typeof(ChapterToggleSwitchShape), typeof(ChapterToggleSwitch), new PropertyMetadata(ChapterToggleSwitchShape.Round));
 
         /// <summary>
         ///     The DependencyProperty for the BackMargin property.
         /// </summary>
         public static readonly DependencyProperty BackMarginProperty =
-            DependencyProperty.Register(nameof(BackMargin), typeof(Thickness), typeof(OptionButton), new PropertyMetadata(new Thickness(0)));
+            DependencyProperty.Register(nameof(BackMargin), typeof(Thickness), typeof(ChapterToggleSwitch), new PropertyMetadata(new Thickness(0)));
 
         /// <summary>
         ///     The DependencyProperty for the SliderMargin property.
         /// </summary>
         public static readonly DependencyProperty SliderMarginProperty =
-            DependencyProperty.Register(nameof(SliderMargin), typeof(Thickness), typeof(OptionButton), new PropertyMetadata(new Thickness(2)));
+            DependencyProperty.Register(nameof(SliderMargin), typeof(Thickness), typeof(ChapterToggleSwitch), new PropertyMetadata(new Thickness(2)));
 
         /// <summary>
         ///     The DependencyProperty for the OnText property.
         /// </summary>
         public static readonly DependencyProperty OnTextProperty =
-            DependencyProperty.Register(nameof(OnText), typeof(string), typeof(OptionButton), new PropertyMetadata("ON"));
+            DependencyProperty.Register(nameof(OnText), typeof(string), typeof(ChapterToggleSwitch), new PropertyMetadata("ON"));
 
         /// <summary>
         ///     The DependencyProperty for the OffText property.
         /// </summary>
         public static readonly DependencyProperty OffTextProperty =
-            DependencyProperty.Register(nameof(OffText), typeof(string), typeof(OptionButton), new PropertyMetadata("OFF"));
+            DependencyProperty.Register(nameof(OffText), typeof(string), typeof(ChapterToggleSwitch), new PropertyMetadata("OFF"));
 
         /// <summary>
         ///     The DependencyProperty for the HasText property.
         /// </summary>
         public static readonly DependencyProperty HasTextProperty =
-            DependencyProperty.Register(nameof(HasText), typeof(bool), typeof(OptionButton), new PropertyMetadata(true));
+            DependencyProperty.Register(nameof(HasText), typeof(bool), typeof(ChapterToggleSwitch), new PropertyMetadata(true));
 
-        static OptionButton()
+        static ChapterToggleSwitch()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(OptionButton), new FrameworkPropertyMetadata(typeof(OptionButton)));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(ChapterToggleSwitch), new FrameworkPropertyMetadata(typeof(ChapterToggleSwitch)));
         }
 
         /// <summary>
         ///     Gets or sets the shape of the slider.
         /// </summary>
-        /// <value>Default: OptionButtonShape.Round.</value>
-        [DefaultValue(OptionButtonShape.Round)]
-        public OptionButtonShape SliderShape
+        /// <value>Default: ChapterToggleSwitchShape.Round.</value>
+        [DefaultValue(ChapterToggleSwitchShape.Round)]
+        public ChapterToggleSwitchShape SliderShape
         {
-            get => (OptionButtonShape)GetValue(SliderShapeProperty);
+            get => (ChapterToggleSwitchShape)GetValue(SliderShapeProperty);
             set => SetValue(SliderShapeProperty, value);
         }
 
@@ -112,11 +112,11 @@ namespace Chapter.Net.WPF.Controls
         /// <summary>
         ///     Gets or sets the shape of the background element.
         /// </summary>
-        /// <value>Default: OptionButtonShape.Round.</value>
-        [DefaultValue(OptionButtonShape.Round)]
-        public OptionButtonShape BackShape
+        /// <value>Default: ChapterToggleSwitchShape.Round.</value>
+        [DefaultValue(ChapterToggleSwitchShape.Round)]
+        public ChapterToggleSwitchShape BackShape
         {
-            get => (OptionButtonShape)GetValue(BackShapeProperty);
+            get => (ChapterToggleSwitchShape)GetValue(BackShapeProperty);
             set => SetValue(BackShapeProperty, value);
         }
 
