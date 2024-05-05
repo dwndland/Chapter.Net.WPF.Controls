@@ -15,7 +15,7 @@ A set of new WPF controls which are not yet build in.
 - **ChapterTreeView:** Enhances ChapterTreeView multi select, select an item by right click on it and a two way bindable SelectedItem.
 - **ChapterTextBlock:** Formats the given translation.
 - **ChapterHeaderedContentControl:** Provides the possibility to automatically align Headers and contents.
-- **ImageButton:** Enhances the WPF Button to show an disabled image. The bound image will be shown monochrome if the button is disabled.
+- **ChapterButton:** Enhances the WPF Button to show an disabled image. The bound image will be shown monochrome if the button is disabled.
 - **ItemsPanel:** A UniformGrid with only one row or one column, depending on the orientation, which adds a spacing between the items.
 - **NumberBox:** Displays a TextBox to accept numeric values only, so the text can be bound to a numeric property directly without converting.
 - **OptionButton:** A custom checkbox where a slider shows the checked and unchecked state.
@@ -220,29 +220,29 @@ A set of new WPF controls which are not yet build in.
     ```
     ![ChapterHeaderedContentControl](https://raw.githubusercontent.com/dwndland/Chapter.Net.WPF.Controls/master/Images/ChapterHeaderedContentControl.png)
 
-11. **ImageButton:**
+11. **ChapterButton:**
     - Usage
     ```xaml
     <UniformGrid Rows="1" DockPanel.Dock="Bottom" HorizontalAlignment="Center">
 
-        <chapter:ImageButton Content="Back"
+        <chapter:ChapterButton Content="Back"
                              ImageSource="/MyAssembly;component/Data/Previous.png" />
 
-        <chapter:ImageButton Content="Next"
+        <chapter:ChapterButton Content="Next"
                              ImageSource="/MyAssembly.Demo;component/Data/Next.png" 
                              ImagePosition="Right"
                              ImageMargin="4,0,0,0" />
 
-        <chapter:ImageButton Content="Finish"
+        <chapter:ChapterButton Content="Finish"
                              IsEnabled="False"
                              ImageSource="/MyAssembly;component/Data/OK.png" />
 
-        <chapter:ImageButton Content="Cancel"
+        <chapter:ChapterButton Content="Cancel"
                              ImageSource="/MyAssembly;component/Data/Cancel.png" />
 
     </UniformGrid>
     ```
-    ![ImageButton](https://raw.githubusercontent.com/dwndland/Chapter.Net.WPF.Controls/master/Images/ImageButton.png)
+    ![ChapterButton](https://raw.githubusercontent.com/dwndland/Chapter.Net.WPF.Controls/master/Images/ChapterButton.png)
 
 12. **ItemsPanel:**
     - Usage

@@ -8,15 +8,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="ImageButton\save.png" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Chapter.Net.WPF.Controls\Chapter.Net.WPF.Controls.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="ImageButton\save.png" />
+    <Resource Include="ChapterButton\save.png" />
   </ItemGroup>
 
 </Project>

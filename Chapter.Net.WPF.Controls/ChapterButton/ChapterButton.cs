@@ -1,5 +1,5 @@
 ﻿// -----------------------------------------------------------------------------------------------------------------
-// <copyright file="ImageButton.cs" company="my-libraries">
+// <copyright file="ChapterButton.cs" company="my-libraries">
 //     Copyright (c) David Wendland. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------------------------------------------------
@@ -15,67 +15,67 @@ using System.Windows.Media.Imaging;
 namespace Chapter.Net.WPF.Controls
 {
     /// <summary>
-    ///     Enhances the <see cref="Button" /> to show an disabled image. The bound image will be shown monochrome if the
+    ///     Enhances the <see cref="Button" /> to show a disabled image. The bound image will be shown monochrome if the
     ///     button is disabled.
     /// </summary>
-    public class ImageButton : Button
+    public class ChapterButton : Button
     {
         /// <summary>
         ///     Identifies the ImageSource dependency property.
         /// </summary>
         public static readonly DependencyProperty ImageSourceProperty =
-            DependencyProperty.Register(nameof(ImageSource), typeof(BitmapSource), typeof(ImageButton), new UIPropertyMetadata(null, OnImageSourceChanged));
+            DependencyProperty.Register(nameof(ImageSource), typeof(BitmapSource), typeof(ChapterButton), new UIPropertyMetadata(null, OnImageSourceChanged));
 
         /// <summary>
         ///     Identifies the ImageWidth dependency property.
         /// </summary>
         public static readonly DependencyProperty ImageWidthProperty =
-            DependencyProperty.Register(nameof(ImageWidth), typeof(double), typeof(ImageButton), new UIPropertyMetadata(16.0, OnSizeChanged));
+            DependencyProperty.Register(nameof(ImageWidth), typeof(double), typeof(ChapterButton), new UIPropertyMetadata(16.0, OnSizeChanged));
 
         /// <summary>
         ///     Identifies the ImageHeight dependency property.
         /// </summary>
         public static readonly DependencyProperty ImageHeightProperty =
-            DependencyProperty.Register(nameof(ImageHeight), typeof(double), typeof(ImageButton), new UIPropertyMetadata(16.0, OnSizeChanged));
+            DependencyProperty.Register(nameof(ImageHeight), typeof(double), typeof(ChapterButton), new UIPropertyMetadata(16.0, OnSizeChanged));
 
         /// <summary>
         ///     Identifies the ImageMargin dependency property.
         /// </summary>
         public static readonly DependencyProperty ImageMarginProperty =
-            DependencyProperty.Register(nameof(ImageMargin), typeof(Thickness), typeof(ImageButton), new UIPropertyMetadata(new Thickness(0, 0, 2, 0)));
+            DependencyProperty.Register(nameof(ImageMargin), typeof(Thickness), typeof(ChapterButton), new UIPropertyMetadata(new Thickness(0, 0, 2, 0)));
 
         /// <summary>
         ///     Identifies the ImagePosition dependency property.
         /// </summary>
         public static readonly DependencyProperty ImagePositionProperty =
-            DependencyProperty.Register(nameof(ImagePosition), typeof(Dock), typeof(ImageButton), new UIPropertyMetadata(Dock.Left));
+            DependencyProperty.Register(nameof(ImagePosition), typeof(Dock), typeof(ChapterButton), new UIPropertyMetadata(Dock.Left));
 
         /// <summary>
         ///     Identifies the HorizontalImageAlignment dependency property.
         /// </summary>
         public static readonly DependencyProperty HorizontalImageAlignmentProperty =
-            DependencyProperty.Register(nameof(HorizontalImageAlignment), typeof(HorizontalAlignment), typeof(ImageButton), new UIPropertyMetadata(HorizontalAlignment.Center));
+            DependencyProperty.Register(nameof(HorizontalImageAlignment), typeof(HorizontalAlignment), typeof(ChapterButton), new UIPropertyMetadata(HorizontalAlignment.Center));
 
         /// <summary>
         ///     Identifies the VerticalImageAlignment dependency property.
         /// </summary>
         public static readonly DependencyProperty VerticalImageAlignmentProperty =
-            DependencyProperty.Register(nameof(VerticalImageAlignment), typeof(VerticalAlignment), typeof(ImageButton), new UIPropertyMetadata(VerticalAlignment.Center));
+            DependencyProperty.Register(nameof(VerticalImageAlignment), typeof(VerticalAlignment), typeof(ChapterButton), new UIPropertyMetadata(VerticalAlignment.Center));
 
         /// <summary>
         ///     Identifies the VerticalImageAlignment dependency property.
         /// </summary>
         public static readonly DependencyProperty ImageStretchProperty =
-            DependencyProperty.Register(nameof(ImageStretch), typeof(Stretch), typeof(ImageButton), new UIPropertyMetadata(Stretch.Uniform));
+            DependencyProperty.Register(nameof(ImageStretch), typeof(Stretch), typeof(ChapterButton), new UIPropertyMetadata(Stretch.Uniform));
 
         internal static readonly DependencyProperty DisabledImageSourceProperty =
-            DependencyProperty.Register(nameof(DisabledImageSource), typeof(BitmapSource), typeof(ImageButton), new UIPropertyMetadata(null));
+            DependencyProperty.Register(nameof(DisabledImageSource), typeof(BitmapSource), typeof(ChapterButton), new UIPropertyMetadata(null));
 
         private bool _sizeIsSet;
 
-        static ImageButton()
+        static ChapterButton()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(ImageButton), new FrameworkPropertyMetadata(typeof(ImageButton)));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(ChapterButton), new FrameworkPropertyMetadata(typeof(ChapterButton)));
         }
 
         /// <summary>
@@ -173,7 +173,7 @@ namespace Chapter.Net.WPF.Controls
 
         private static void OnImageSourceChanged(DependencyObject o, DependencyPropertyChangedEventArgs e)
         {
-            var control = (ImageButton)o;
+            var control = (ChapterButton)o;
             if (e.NewValue != null && !control._sizeIsSet)
             {
                 var bitmapSource = e.NewValue as BitmapSource;
@@ -185,7 +185,7 @@ namespace Chapter.Net.WPF.Controls
 
         private static void OnSizeChanged(DependencyObject o, DependencyPropertyChangedEventArgs e)
         {
-            var control = (ImageButton)o;
+            var control = (ChapterButton)o;
             control._sizeIsSet = true;
         }
     }

@@ -1,5 +1,5 @@
 ﻿// -----------------------------------------------------------------------------------------------------------------
-// <copyright file="ImageButtonControl.xaml.cs" company="my-libraries">
+// <copyright file="ChapterButtonControl.xaml.cs" company="my-libraries">
 //     Copyright (c) David Wendland. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------------------------------------------------
@@ -8,9 +8,9 @@
 
 namespace Demo;
 
-public partial class ImageButtonControl
+public partial class ChapterButtonControl
 {
-    public ImageButtonControl()
+    public ChapterButtonControl()
     {
         InitializeComponent();
     }

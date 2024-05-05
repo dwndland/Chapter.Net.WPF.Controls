@@ -16,20 +16,20 @@
         </Setter>
     </Style>
 
-    <SolidColorBrush x:Key="ImageButton.Static.Background" Color="#FFDDDDDD" />
-    <SolidColorBrush x:Key="ImageButton.Static.Border" Color="#FF707070" />
-    <SolidColorBrush x:Key="ImageButton.MouseOver.Background" Color="#FFBEE6FD" />
-    <SolidColorBrush x:Key="ImageButton.MouseOver.Border" Color="#FF3C7FB1" />
-    <SolidColorBrush x:Key="ImageButton.Pressed.Background" Color="#FFC4E5F6" />
-    <SolidColorBrush x:Key="ImageButton.Pressed.Border" Color="#FF2C628B" />
-    <SolidColorBrush x:Key="ImageButton.Disabled.Background" Color="#FFF4F4F4" />
-    <SolidColorBrush x:Key="ImageButton.Disabled.Border" Color="#FFADB2B5" />
-    <SolidColorBrush x:Key="ImageButton.Disabled.Foreground" Color="#FF838383" />
+    <SolidColorBrush x:Key="ChapterButton.Static.Background" Color="#FFDDDDDD" />
+    <SolidColorBrush x:Key="ChapterButton.Static.Border" Color="#FF707070" />
+    <SolidColorBrush x:Key="ChapterButton.MouseOver.Background" Color="#FFBEE6FD" />
+    <SolidColorBrush x:Key="ChapterButton.MouseOver.Border" Color="#FF3C7FB1" />
+    <SolidColorBrush x:Key="ChapterButton.Pressed.Background" Color="#FFC4E5F6" />
+    <SolidColorBrush x:Key="ChapterButton.Pressed.Border" Color="#FF2C628B" />
+    <SolidColorBrush x:Key="ChapterButton.Disabled.Background" Color="#FFF4F4F4" />
+    <SolidColorBrush x:Key="ChapterButton.Disabled.Border" Color="#FFADB2B5" />
+    <SolidColorBrush x:Key="ChapterButton.Disabled.Foreground" Color="#FF838383" />
 
-    <Style TargetType="{x:Type controls:ImageButton}">
+    <Style TargetType="{x:Type controls:ChapterButton}">
         <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}" />
-        <Setter Property="Background" Value="{StaticResource ImageButton.Static.Background}" />
-        <Setter Property="BorderBrush" Value="{StaticResource ImageButton.Static.Border}" />
+        <Setter Property="Background" Value="{StaticResource ChapterButton.Static.Background}" />
+        <Setter Property="BorderBrush" Value="{StaticResource ChapterButton.Static.Border}" />
         <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" />
         <Setter Property="BorderThickness" Value="1" />
         <Setter Property="HorizontalContentAlignment" Value="Center" />
@@ -37,7 +37,7 @@
         <Setter Property="Padding" Value="1" />
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="{x:Type controls:ImageButton}">
+                <ControlTemplate TargetType="{x:Type controls:ChapterButton}">
                     <Border x:Name="border"
                             Background="{TemplateBinding Background}"
                             BorderBrush="{TemplateBinding BorderBrush}"
@@ -79,17 +79,17 @@
                             <Setter TargetName="border" Property="BorderBrush" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" />
                         </Trigger>
                         <Trigger Property="IsMouseOver" Value="true">
-                            <Setter TargetName="border" Property="Background" Value="{StaticResource ImageButton.MouseOver.Background}" />
-                            <Setter TargetName="border" Property="BorderBrush" Value="{StaticResource ImageButton.MouseOver.Border}" />
+                            <Setter TargetName="border" Property="Background" Value="{StaticResource ChapterButton.MouseOver.Background}" />
+                            <Setter TargetName="border" Property="BorderBrush" Value="{StaticResource ChapterButton.MouseOver.Border}" />
                         </Trigger>
                         <Trigger Property="IsPressed" Value="true">
-                            <Setter TargetName="border" Property="Background" Value="{StaticResource ImageButton.Pressed.Background}" />
-                            <Setter TargetName="border" Property="BorderBrush" Value="{StaticResource ImageButton.Pressed.Border}" />
+                            <Setter TargetName="border" Property="Background" Value="{StaticResource ChapterButton.Pressed.Background}" />
+                            <Setter TargetName="border" Property="BorderBrush" Value="{StaticResource ChapterButton.Pressed.Border}" />
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="false">
-                            <Setter TargetName="border" Property="Background" Value="{StaticResource ImageButton.Disabled.Background}" />
-                            <Setter TargetName="border" Property="BorderBrush" Value="{StaticResource ImageButton.Disabled.Border}" />
-                            <Setter TargetName="contentPresenter" Property="TextElement.Foreground" Value="{StaticResource ImageButton.Disabled.Foreground}" />
+                            <Setter TargetName="border" Property="Background" Value="{StaticResource ChapterButton.Disabled.Background}" />
+                            <Setter TargetName="border" Property="BorderBrush" Value="{StaticResource ChapterButton.Disabled.Border}" />
+                            <Setter TargetName="contentPresenter" Property="TextElement.Foreground" Value="{StaticResource ChapterButton.Disabled.Foreground}" />
                             <Setter TargetName="PART_ImageNormal" Property="Visibility" Value="Hidden" />
                             <Setter TargetName="PART_ImageGray" Property="Visibility" Value="Visible" />
                         </Trigger>

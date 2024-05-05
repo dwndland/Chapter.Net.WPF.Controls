@@ -23,7 +23,7 @@ public partial class MainWindow : INotifyPropertyChanged
 
         _basicInput =
         [
-            new ImageButtonControl(),
+            new ChapterButtonControl(),
             new OptionButtonControl(),
             new SplitButtonControl()
         ];
