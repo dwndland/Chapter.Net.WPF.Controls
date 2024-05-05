@@ -8,6 +8,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Changed
 - Renamed AdvancedTextBox to ChapterTextBox
+- Renamed ArcPanel to ChapterArcPanel
+- Renamed BrowseTextBox to ChapterBrowseTextBox
 ### Supported .Net Versions
 - .Net Core 3.0
 - .Net Framework 4.5

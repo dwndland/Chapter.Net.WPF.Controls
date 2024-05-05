@@ -40,7 +40,7 @@ public partial class MainWindow : INotifyPropertyChanged
         [
             new FormatterTextBlockControl(),
             new ChapterTextBoxControl(),
-            new BrowseTextBoxControl(),
+            new ChapterBrowseTextBoxControl(),
             new NumberBoxControl(),
             new PasswordBoxControl(),
             new SearchTextBoxControl(),

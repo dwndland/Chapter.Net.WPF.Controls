@@ -8,7 +8,7 @@ A set of new WPF controls which are not yet build in.
 ## Features
 - **ChapterTextBox:** Enhances the WPF TextBox by the possibilities to show background text, drop files and folders and place additional controls in.
 - **ChapterArcPanel:** Arranges child elements in an arc form.
-- **BrowseTextBox:** Adds a browse button to the ChapterTextBox.
+- **ChapterBrowseTextBox:** Adds a browse button to the ChapterTextBox.
 - **DynamicTabControl:** Enhances the TabControl with buttons for add new tab item and close buttons of existing tab items.
 - **EllipsePanel:** Arranges child elements in a configurable ellipse form.
 - **EnumerationComboBox:** Represents a ComboBox which takes an enumeration value and shows all possible states inside the dropdown menu for let choosing a value.
@@ -70,13 +70,13 @@ A set of new WPF controls which are not yet build in.
     ```
     ![ChapterArcPanel](https://raw.githubusercontent.com/dwndland/Chapter.Net.WPF.Controls/master/Images/ChapterArcPanel.png)
 
-4. **BrowseTextBox:**
+4. **ChapterBrowseTextBox:**
     - Usage
     ```xaml
-    <chapter:BrowseTextBox ShowBrowseButton="True"
+    <chapter:ChapterBrowseTextBox ShowBrowseButton="True"
                            BrowseCommand="{Binding BrowseCommand}" />
     ```
-    ![BrowseTextBox](https://raw.githubusercontent.com/dwndland/Chapter.Net.WPF.Controls/master/Images/BrowseTextBox.png)
+    ![ChapterBrowseTextBox](https://raw.githubusercontent.com/dwndland/Chapter.Net.WPF.Controls/master/Images/ChapterBrowseTextBox.png)
 
 5. **DynamicTabControl:**
     - Usage

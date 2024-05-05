@@ -1,7 +1,7 @@
 <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
 
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/BrowseTextBox/BrowseTextBox.xaml" />
+        <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterBrowseTextBox/ChapterBrowseTextBox.xaml" />
         <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterTextBox/ChapterTextBox.xaml" />
         <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/DynamicTabControl/AddButton.xaml" />
         <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/DynamicTabControl/CloseButton.xaml" />

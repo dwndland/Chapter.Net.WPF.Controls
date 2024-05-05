@@ -1,5 +1,5 @@
 ﻿// -----------------------------------------------------------------------------------------------------------------
-// <copyright file="BrowseTextBox.cs" company="my-libraries">
+// <copyright file="ChapterBrowseTextBox.cs" company="my-libraries">
 //     Copyright (c) David Wendland. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------------------------------------------------
@@ -17,53 +17,53 @@ namespace Chapter.Net.WPF.Controls
     ///     Adds a browse button to the <see cref="ChapterTextBox" />.
     /// </summary>
     [TemplatePart(Name = "PART_BrowseButton", Type = typeof(Button))]
-    public class BrowseTextBox : ChapterTextBox
+    public class ChapterBrowseTextBox : ChapterTextBox
     {
         /// <summary>
         ///     Identifies the <see cref="BrowseButtonContent" /> dependency property.
         /// </summary>
         public static readonly DependencyProperty BrowseButtonContentProperty =
-            DependencyProperty.Register(nameof(BrowseButtonContent), typeof(object), typeof(BrowseTextBox), new UIPropertyMetadata("..."));
+            DependencyProperty.Register(nameof(BrowseButtonContent), typeof(object), typeof(ChapterBrowseTextBox), new UIPropertyMetadata("..."));
 
         /// <summary>
         ///     Identifies the <see cref="BrowseButtonPosition" /> dependency property.
         /// </summary>
         public static readonly DependencyProperty BrowseButtonPositionProperty =
-            DependencyProperty.Register(nameof(BrowseButtonPosition), typeof(Dock), typeof(BrowseTextBox), new UIPropertyMetadata(Dock.Right));
+            DependencyProperty.Register(nameof(BrowseButtonPosition), typeof(Dock), typeof(ChapterBrowseTextBox), new UIPropertyMetadata(Dock.Right));
 
         /// <summary>
         ///     Identifies the <see cref="ShowBrowseButton" /> dependency property.
         /// </summary>
         public static readonly DependencyProperty ShowBrowseButtonProperty =
-            DependencyProperty.Register(nameof(ShowBrowseButton), typeof(bool), typeof(BrowseTextBox), new UIPropertyMetadata(true));
+            DependencyProperty.Register(nameof(ShowBrowseButton), typeof(bool), typeof(ChapterBrowseTextBox), new UIPropertyMetadata(true));
 
         /// <summary>
         ///     Identifies the <see cref="BrowseCommand" /> dependency property.
         /// </summary>
         public static readonly DependencyProperty BrowseCommandProperty =
-            DependencyProperty.Register(nameof(BrowseCommand), typeof(ICommand), typeof(BrowseTextBox), new UIPropertyMetadata(null));
+            DependencyProperty.Register(nameof(BrowseCommand), typeof(ICommand), typeof(ChapterBrowseTextBox), new UIPropertyMetadata(null));
 
         /// <summary>
         ///     Identifies the <see cref="BrowseCommandParameter" /> dependency property.
         /// </summary>
         public static readonly DependencyProperty BrowseCommandParameterProperty =
-            DependencyProperty.Register(nameof(BrowseCommandParameter), typeof(object), typeof(BrowseTextBox), new UIPropertyMetadata(null));
+            DependencyProperty.Register(nameof(BrowseCommandParameter), typeof(object), typeof(ChapterBrowseTextBox), new UIPropertyMetadata(null));
 
         /// <summary>
         ///     Identifies the <see cref="BrowseButtonStyle" /> dependency property.
         /// </summary>
         public static readonly DependencyProperty BrowseButtonStyleProperty =
-            DependencyProperty.Register(nameof(BrowseButtonStyle), typeof(Style), typeof(BrowseTextBox), new PropertyMetadata(null));
+            DependencyProperty.Register(nameof(BrowseButtonStyle), typeof(Style), typeof(ChapterBrowseTextBox), new PropertyMetadata(null));
 
         /// <summary>
         ///     The RoutedEvent for the BrowseClick event.
         /// </summary>
         public static readonly RoutedEvent BrowseClickEvent =
-            EventManager.RegisterRoutedEvent(nameof(BrowseClick), RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(BrowseTextBox));
+            EventManager.RegisterRoutedEvent(nameof(BrowseClick), RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(ChapterBrowseTextBox));
 
-        static BrowseTextBox()
+        static ChapterBrowseTextBox()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(BrowseTextBox), new FrameworkPropertyMetadata(typeof(BrowseTextBox)));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(ChapterBrowseTextBox), new FrameworkPropertyMetadata(typeof(ChapterBrowseTextBox)));
         }
 
         /// <summary>

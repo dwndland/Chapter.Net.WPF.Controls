@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="Demo.BrowseTextBoxControl"
+﻿<UserControl x:Class="Demo.ChapterBrowseTextBoxControl"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:controls="clr-namespace:Chapter.Net.WPF.Controls;assembly=Chapter.Net.WPF.Controls"
@@ -12,7 +12,7 @@
     <DockPanel>
         <local:PropertyPanel>
             <TextBlock Margin="0,0,0,10"
-                       Text="The BrowseTextBox inherits from ChapterTextBox"
+                       Text="The ChapterBrowseTextBox inherits from ChapterTextBox"
                        TextWrapping="Wrap" />
 
             <StackPanel Orientation="Horizontal">
@@ -46,8 +46,8 @@
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center">
 
-            <TextBlock Text="BrowseTextBox" />
-            <controls:BrowseTextBox Height="{Binding Value, ElementName=height}"
+            <TextBlock Text="ChapterBrowseTextBox" />
+            <controls:ChapterBrowseTextBox Height="{Binding Value, ElementName=height}"
                                     VerticalContentAlignment="Center"
                                     AllowDrop="True"
                                     AllowedDropType="File"

@@ -1,5 +1,5 @@
 ﻿// -----------------------------------------------------------------------------------------------------------------
-// <copyright file="BrowseTextBoxControl.xaml.cs" company="my-libraries">
+// <copyright file="ChapterBrowseTextBoxControl.xaml.cs" company="my-libraries">
 //     Copyright (c) David Wendland. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------------------------------------------------
@@ -10,9 +10,9 @@ using System.Windows;
 
 namespace Demo;
 
-public partial class BrowseTextBoxControl
+public partial class ChapterBrowseTextBoxControl
 {
-    public BrowseTextBoxControl()
+    public ChapterBrowseTextBoxControl()
     {
         InitializeComponent();
     }
