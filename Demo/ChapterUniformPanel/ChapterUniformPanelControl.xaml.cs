@@ -10,9 +10,9 @@ using System.Collections.Generic;
 
 namespace Demo;
 
-public partial class UniformPanelControl
+public partial class ChapterUniformPanelControl
 {
-    public UniformPanelControl()
+    public ChapterUniformPanelControl()
     {
         InitializeComponent();
 

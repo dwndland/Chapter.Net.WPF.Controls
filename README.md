@@ -27,7 +27,7 @@ A set of new WPF controls which are not yet build in.
 - **ChapterTimeBox:** Shows textboxes to let the user input a time.
 - **ChapterTitledItemsControl:** Provides the possibility to automatically align titles and contents.
 - **ChapterTreeListView:** Shows a TreeView with the possibility to expand or collapse child elements shown in a GridView. The expander can be placed in every column cell template.
-- **UniformPanel:** A UniformGrid with only one row or one column, depending on the orientation, which adds a spacing between the items.
+- **ChapterUniformPanel:** A UniformGrid with only one row or one column, depending on the orientation, which adds a spacing between the items.
 - **UniformWrapPanel:** Enhances the WrapPanel by the feature that all items will have the same size.
 
 ## Getting Started
@@ -459,10 +459,10 @@ A set of new WPF controls which are not yet build in.
     ```
     ![ChapterTreeListView](https://raw.githubusercontent.com/dwndland/Chapter.Net.WPF.Controls/master/Images/ChapterTreeListView.png)
 
-23. **UniformPanel:**
+23. **ChapterUniformPanel:**
     - Usage
     ```xaml
-    <chapter:UniformPanel DockPanel.Dock="Bottom"
+    <chapter:ChapterUniformPanel DockPanel.Dock="Bottom"
                           HorizontalAlignment="Right"
                           Orientation="Horizontal"
                           Spacing="10">
@@ -470,9 +470,9 @@ A set of new WPF controls which are not yet build in.
         <Button Content="Next" />
         <Button Content="Finish" />
         <Button Content="Cancel" />
-    </chapter:UniformPanel>
+    </chapter:ChapterUniformPanel>
     ```
-    ![UniformPanel](https://raw.githubusercontent.com/dwndland/Chapter.Net.WPF.Controls/master/Images/UniformPanel.png)
+    ![ChapterUniformPanel](https://raw.githubusercontent.com/dwndland/Chapter.Net.WPF.Controls/master/Images/ChapterUniformPanel.png)
 
 24. **UniformWrapPanel:**
     - Usage

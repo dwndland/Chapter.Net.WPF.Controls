@@ -1,5 +1,5 @@
 ﻿// -----------------------------------------------------------------------------------------------------------------
-// <copyright file="UniformPanel.cs" company="my-libraries">
+// <copyright file="ChapterUniformPanel.cs" company="my-libraries">
 //     Copyright (c) David Wendland. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------------------------------------------------
@@ -18,19 +18,19 @@ namespace Chapter.Net.WPF.Controls
     ///     A UniformGrid with only one row or one column, depending on the orientation, which adds a spacing between the
     ///     items.
     /// </summary>
-    public class UniformPanel : Panel
+    public class ChapterUniformPanel : Panel
     {
         /// <summary>
         ///     Identifies the Spacing dependency property.
         /// </summary>
         public static readonly DependencyProperty SpacingProperty =
-            DependencyProperty.Register(nameof(Spacing), typeof(double), typeof(UniformPanel), new FrameworkPropertyMetadata(4.0, FrameworkPropertyMetadataOptions.AffectsMeasure));
+            DependencyProperty.Register(nameof(Spacing), typeof(double), typeof(ChapterUniformPanel), new FrameworkPropertyMetadata(4.0, FrameworkPropertyMetadataOptions.AffectsMeasure));
 
         /// <summary>
         ///     Identifies the Orientation dependency property.
         /// </summary>
         public static readonly DependencyProperty OrientationProperty =
-            DependencyProperty.Register(nameof(Orientation), typeof(Orientation), typeof(UniformPanel), new FrameworkPropertyMetadata(Orientation.Horizontal, FrameworkPropertyMetadataOptions.AffectsMeasure));
+            DependencyProperty.Register(nameof(Orientation), typeof(Orientation), typeof(ChapterUniformPanel), new FrameworkPropertyMetadata(Orientation.Horizontal, FrameworkPropertyMetadataOptions.AffectsMeasure));
 
         /// <summary>
         ///     Gets or sets the space between the items.

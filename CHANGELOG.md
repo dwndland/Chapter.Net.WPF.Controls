@@ -28,6 +28,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Renamed TimeBox to ChapterTimeBox
 - Renamed TitledItemsControl to ChapterTitledItemsControl
 - Renamed TreeListView to ChapterTreeListView
+- Renamed UniformPanel to ChapterUniformPanel
 ### Supported .Net Versions
 - .Net Core 3.0
 - .Net Framework 4.5

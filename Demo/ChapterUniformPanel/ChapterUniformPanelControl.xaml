@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="Demo.UniformPanelControl"
+﻿<UserControl x:Class="Demo.ChapterUniformPanelControl"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:controls="clr-namespace:Chapter.Net.WPF.Controls;assembly=Chapter.Net.WPF.Controls"
@@ -53,22 +53,22 @@
                           ResizeBehavior="PreviousAndNext" />
 
             <DockPanel Grid.Row="2" Grid.Column="0">
-                <TextBlock DockPanel.Dock="Top" Text="UniformPanel (Horizontal)" />
+                <TextBlock DockPanel.Dock="Top" Text="ChapterUniformPanel (Horizontal)" />
                 <ItemsControl ItemTemplate="{StaticResource itemTemplate}" ItemsSource="{Binding Items}">
                     <ItemsControl.ItemsPanel>
                         <ItemsPanelTemplate>
-                            <controls:UniformPanel Orientation="Horizontal" Spacing="{Binding Value, ElementName=spacing}" />
+                            <controls:ChapterUniformPanel Orientation="Horizontal" Spacing="{Binding Value, ElementName=spacing}" />
                         </ItemsPanelTemplate>
                     </ItemsControl.ItemsPanel>
                 </ItemsControl>
             </DockPanel>
 
             <DockPanel Grid.Row="2" Grid.Column="2">
-                <TextBlock DockPanel.Dock="Top" Text="UniformPanel (Vertical)" />
+                <TextBlock DockPanel.Dock="Top" Text="ChapterUniformPanel (Vertical)" />
                 <ItemsControl ItemTemplate="{StaticResource itemTemplate}" ItemsSource="{Binding Items}">
                     <ItemsControl.ItemsPanel>
                         <ItemsPanelTemplate>
-                            <controls:UniformPanel Orientation="Vertical" Spacing="{Binding Value, ElementName=spacing}" />
+                            <controls:ChapterUniformPanel Orientation="Vertical" Spacing="{Binding Value, ElementName=spacing}" />
                         </ItemsPanelTemplate>
                     </ItemsControl.ItemsPanel>
                 </ItemsControl>
