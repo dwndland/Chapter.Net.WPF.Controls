@@ -52,7 +52,7 @@ public partial class MainWindow : INotifyPropertyChanged
             new ResizerControl(),
             new HeaderItemsControlControl(),
             new TitledItemsControlControl(),
-            new ArcPanelControl(),
+            new ChapterArcPanelControl(),
             new EllipsePanelControl(),
             new ItemsPanelControl(),
             new SpacingStackPanelControl(),

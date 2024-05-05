@@ -12,6 +12,6 @@ public partial class ChapterArcPanelControl
 {
     public ChapterArcPanelControl()
     {
-        ChapterArcPanelControl();
+        InitializeComponent();
     }
 }
