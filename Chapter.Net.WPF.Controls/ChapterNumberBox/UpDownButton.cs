@@ -13,7 +13,7 @@ using System.Windows.Controls.Primitives;
 namespace Chapter.Net.WPF.Controls
 {
     /// <summary>
-    ///     Represents a up or down button shown in the <see cref="NumberBox" /> control.
+    ///     Represents an up or down button shown in the <see cref="ChapterNumberBox" /> control.
     /// </summary>
     public class UpDownButton : RepeatButton
     {

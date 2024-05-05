@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="Demo.NumberBoxControl"
+﻿<UserControl x:Class="Demo.ChapterNumberBoxControl"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:controls="clr-namespace:Chapter.Net.WPF.Controls;assembly=Chapter.Net.WPF.Controls"
@@ -50,8 +50,8 @@
             <TextBlock Text="CheckBoxBehavior" />
             <controls:ChapterComboBox x:Name="checkBoxBehavior"
                                           Margin="0,0,0,10"
-                                          EnumType="{x:Type controls:NumberBoxCheckBoxBehavior}"
-                                          SelectedItem="{x:Static controls:NumberBoxCheckBoxBehavior.None}" />
+                                          EnumType="{x:Type controls:ChapterNumberBoxCheckBoxBehavior}"
+                                          SelectedItem="{x:Static controls:ChapterNumberBoxCheckBoxBehavior.None}" />
 
             <TextBlock Text="CheckBoxPosition" />
             <controls:ChapterComboBox x:Name="checkBoxPosition"
@@ -66,7 +66,7 @@
                                           SelectedItem="{x:Static controls:UpDownBehavior.None}" />
 
             <TextBlock Text="Decimal Places" />
-            <controls:NumberBox x:Name="decimalPlaces"
+            <controls:ChapterNumberBox x:Name="decimalPlaces"
                                 Margin="0,0,0,10"
                                 Minimum="-1"
                                 Number="-1"
@@ -121,8 +121,8 @@
             <TextBlock Text="NumberSelectionBehavior" />
             <controls:ChapterComboBox x:Name="numberSelectionBehavior"
                                           Margin="0,0,0,10"
-                                          EnumType="{x:Type controls:NumberBoxSelection}"
-                                          SelectedItem="{x:Static controls:NumberBoxSelection.None}" />
+                                          EnumType="{x:Type controls:ChapterNumberBoxSelection}"
+                                          SelectedItem="{x:Static controls:ChapterNumberBoxSelection.None}" />
 
             <CheckBox x:Name="isReadOnly"
                       Margin="0,0,0,10"
@@ -139,7 +139,7 @@
         <StackPanel Width="200"
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center">
-            <controls:NumberBox x:Name="numberBox"
+            <controls:ChapterNumberBox x:Name="ChapterNumberBox"
                                 Margin="0,0,0,4"
                                 AcceptUpDownOnNull="{Binding IsChecked, ElementName=acceptUpDownOnNull}"
                                 CanReset="{Binding IsChecked, ElementName=canReset}"
@@ -165,7 +165,7 @@
                                 UnitPosition="{Binding SelectedItem, ElementName=unitPosition}"
                                 UpDownBehavior="{Binding SelectedItem, ElementName=upDownBehavior}"
                                 UpDownButtonsPosition="{Binding SelectedItem, ElementName=upDownButtonsPosition}" />
-            <TextBlock Margin="0,0,0,10" Text="{Binding Number, ElementName=numberBox, StringFormat=Number: {0}}" />
+            <TextBlock Margin="0,0,0,10" Text="{Binding Number, ElementName=ChapterNumberBox, StringFormat=Number: {0}}" />
 
             <TextBlock Text="LostFocusBehavior:" />
             <TextBlock Text="{}{controls:LostFocusBehavior None}" />

@@ -12,7 +12,7 @@ using System.Windows.Controls;
 namespace Chapter.Net.WPF.Controls
 {
     /// <summary>
-    ///     Represents the check box shown in the <see cref="NumberBox" />.
+    ///     Represents the check box shown in the <see cref="ChapterNumberBox" />.
     /// </summary>
     public class NumberCheckBox : CheckBox
     {

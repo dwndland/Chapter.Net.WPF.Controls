@@ -17,9 +17,9 @@ namespace Chapter.Net.WPF.Controls
     /// <summary>
     ///     Shows textboxes to let the user input a time.
     /// </summary>
-    [TemplatePart(Name = "PART_HourBox", Type = typeof(NumberBox))]
-    [TemplatePart(Name = "PART_MinuteBox", Type = typeof(NumberBox))]
-    [TemplatePart(Name = "PART_SecondBox", Type = typeof(NumberBox))]
+    [TemplatePart(Name = "PART_HourBox", Type = typeof(ChapterNumberBox))]
+    [TemplatePart(Name = "PART_MinuteBox", Type = typeof(ChapterNumberBox))]
+    [TemplatePart(Name = "PART_SecondBox", Type = typeof(ChapterNumberBox))]
     [TemplatePart(Name = "PART_UpButton", Type = typeof(UpDownButton))]
     [TemplatePart(Name = "PART_DownButton", Type = typeof(UpDownButton))]
     public class TimeBox : Control
@@ -42,10 +42,10 @@ namespace Chapter.Net.WPF.Controls
         public static readonly DependencyProperty HasUpDownButtonsProperty =
             DependencyProperty.Register(nameof(HasUpDownButtons), typeof(bool), typeof(TimeBox), new UIPropertyMetadata(true));
 
-        private NumberBox _focusedBox;
-        private NumberBox _hourBox;
-        private NumberBox _minuteBox;
-        private NumberBox _secondBox;
+        private ChapterNumberBox _focusedBox;
+        private ChapterNumberBox _hourBox;
+        private ChapterNumberBox _minuteBox;
+        private ChapterNumberBox _secondBox;
         private bool _selfChange;
 
         static TimeBox()
@@ -58,7 +58,7 @@ namespace Chapter.Net.WPF.Controls
         /// </summary>
         public TimeBox()
         {
-            AddHandler(NumberBox.NumberChangedEvent, new NumberChangedEventHandler(HandleNumberBoxNumberChanged));
+            AddHandler(ChapterNumberBox.NumberChangedEvent, new NumberChangedEventHandler(HandleChapterNumberBoxNumberChanged));
         }
 
         /// <summary>
@@ -130,26 +130,26 @@ namespace Chapter.Net.WPF.Controls
             _selfChange = false;
         }
 
-        private NumberBox CatchBox(string name)
+        private ChapterNumberBox CatchBox(string name)
         {
-            var numberBox = GetTemplateChild(name) as NumberBox;
-            if (numberBox != null)
+            var ChapterNumberBox = GetTemplateChild(name) as ChapterNumberBox;
+            if (ChapterNumberBox != null)
             {
-                numberBox.GotFocus += NumberBoxOnGotFocus;
-                numberBox.PreviewKeyDown += NumberBoxOnPreviewKeyDown;
-                numberBox.PreviewKeyUp += NumberBoxOnPreviewKeyUp;
+                ChapterNumberBox.GotFocus += ChapterNumberBoxOnGotFocus;
+                ChapterNumberBox.PreviewKeyDown += ChapterNumberBoxOnPreviewKeyDown;
+                ChapterNumberBox.PreviewKeyUp += ChapterNumberBoxOnPreviewKeyUp;
             }
 
-            return numberBox;
+            return ChapterNumberBox;
         }
 
         private void CatchButton(string name, RoutedEventHandler handler)
         {
-            if (GetTemplateChild(name) is UpDownButton numberBox)
-                numberBox.Click += handler;
+            if (GetTemplateChild(name) is UpDownButton ChapterNumberBox)
+                ChapterNumberBox.Click += handler;
         }
 
-        private void HandleNumberBoxNumberChanged(object sender, NumberChangedEventArgs e)
+        private void HandleChapterNumberBoxNumberChanged(object sender, NumberChangedEventArgs e)
         {
             if (_selfChange)
                 return;
@@ -161,21 +161,21 @@ namespace Chapter.Net.WPF.Controls
             _selfChange = false;
         }
 
-        private int GetNumber(NumberBox box)
+        private int GetNumber(ChapterNumberBox box)
         {
             if (box.Number == null)
                 return (int)box.DefaultNumber;
             return (int)box.Number;
         }
 
-        private void NumberBoxOnGotFocus(object sender, RoutedEventArgs routedEventArgs)
+        private void ChapterNumberBoxOnGotFocus(object sender, RoutedEventArgs routedEventArgs)
         {
-            _focusedBox = (NumberBox)sender;
+            _focusedBox = (ChapterNumberBox)sender;
         }
 
-        private void NumberBoxOnPreviewKeyDown(object sender, KeyEventArgs keyEventArgs)
+        private void ChapterNumberBoxOnPreviewKeyDown(object sender, KeyEventArgs keyEventArgs)
         {
-            var box = (NumberBox)sender;
+            var box = (ChapterNumberBox)sender;
             switch (keyEventArgs.Key)
             {
                 case Key.Left:
@@ -187,32 +187,32 @@ namespace Chapter.Net.WPF.Controls
             }
         }
 
-        private void NumberBoxOnPreviewKeyUp(object sender, KeyEventArgs keyEventArgs)
+        private void ChapterNumberBoxOnPreviewKeyUp(object sender, KeyEventArgs keyEventArgs)
         {
-            var box = (NumberBox)sender;
+            var box = (ChapterNumberBox)sender;
             if (box.SelectionStart == 2)
                 MoveCaretRight(box);
         }
 
-        private void MoveCaretLeft(NumberBox numberBox)
+        private void MoveCaretLeft(ChapterNumberBox ChapterNumberBox)
         {
-            if (Equals(numberBox, _hourBox))
+            if (Equals(ChapterNumberBox, _hourBox))
                 return;
 
-            if (numberBox.SelectionStart == 0)
-                numberBox.Tab(FocusNavigationDirection.Left);
+            if (ChapterNumberBox.SelectionStart == 0)
+                ChapterNumberBox.Tab(FocusNavigationDirection.Left);
         }
 
-        private void MoveCaretRight(NumberBox numberBox)
+        private void MoveCaretRight(ChapterNumberBox ChapterNumberBox)
         {
-            if (TimeFormat == TimeFormat.Long && Equals(numberBox, _secondBox))
+            if (TimeFormat == TimeFormat.Long && Equals(ChapterNumberBox, _secondBox))
                 return;
 
-            if (TimeFormat == TimeFormat.Short && Equals(numberBox, _minuteBox))
+            if (TimeFormat == TimeFormat.Short && Equals(ChapterNumberBox, _minuteBox))
                 return;
 
-            if (numberBox.Text.Length == numberBox.SelectionStart)
-                numberBox.Tab(FocusNavigationDirection.Right);
+            if (ChapterNumberBox.Text.Length == ChapterNumberBox.SelectionStart)
+                ChapterNumberBox.Tab(FocusNavigationDirection.Right);
         }
 
         private void Up_Click(object sender, RoutedEventArgs e)
@@ -227,7 +227,7 @@ namespace Chapter.Net.WPF.Controls
                 ChangeValue(_focusedBox, -1);
         }
 
-        private void ChangeValue(NumberBox box, int step)
+        private void ChangeValue(ChapterNumberBox box, int step)
         {
             var value = GetNumber(box) + step;
             if (value >= 60)

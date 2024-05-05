@@ -1,5 +1,5 @@
 ﻿// -----------------------------------------------------------------------------------------------------------------
-// <copyright file="NumberBoxControl.xaml.cs" company="my-libraries">
+// <copyright file="ChapterNumberBoxControl.xaml.cs" company="my-libraries">
 //     Copyright (c) David Wendland. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------------------------------------------------
@@ -8,9 +8,9 @@
 
 namespace Demo;
 
-public partial class NumberBoxControl
+public partial class ChapterNumberBoxControl
 {
-    public NumberBoxControl()
+    public ChapterNumberBoxControl()
     {
         InitializeComponent();
     }

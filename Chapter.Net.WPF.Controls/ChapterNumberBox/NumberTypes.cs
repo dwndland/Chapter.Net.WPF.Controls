@@ -9,7 +9,7 @@
 namespace Chapter.Net.WPF.Controls
 {
     /// <summary>
-    ///     Defines which kind of numbers the <see cref="NumberBox" /> is accepting.
+    ///     Defines which kind of numbers the <see cref="ChapterNumberBox" /> is accepting.
     /// </summary>
     /// <remarks>
     ///     Number type references:<br />

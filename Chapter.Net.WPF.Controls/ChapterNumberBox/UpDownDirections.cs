@@ -9,7 +9,7 @@
 namespace Chapter.Net.WPF.Controls
 {
     /// <summary>
-    ///     Represents the direction to be used for the up and down button in the <see cref="NumberBox" />.
+    ///     Represents the direction to be used for the up and down button in the <see cref="ChapterNumberBox" />.
     /// </summary>
     public enum UpDownDirections
     {

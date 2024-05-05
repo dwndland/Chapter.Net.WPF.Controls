@@ -42,7 +42,7 @@
                                                        IsEnabled="{TemplateBinding IsEnabled}" />
                             </StackPanel>
                             <StackPanel Orientation="Horizontal">
-                                <controls:NumberBox x:Name="PART_HourBox"
+                                <controls:ChapterNumberBox x:Name="PART_HourBox"
                                                     AutomationProperties.AutomationId="CUI_HoursTextBox"
                                                     Background="{TemplateBinding Background}"
                                                     BorderThickness="0"
@@ -57,7 +57,7 @@
                                                     Step="1"
                                                     UpDownBehavior="Arrows" />
                                 <TextBlock Text=":" />
-                                <controls:NumberBox x:Name="PART_MinuteBox"
+                                <controls:ChapterNumberBox x:Name="PART_MinuteBox"
                                                     AutomationProperties.AutomationId="CUI_MinutesTextBox"
                                                     Background="{TemplateBinding Background}"
                                                     BorderThickness="0"
@@ -73,7 +73,7 @@
                                                     UpDownBehavior="Arrows" />
                                 <StackPanel x:Name="longFormat" Orientation="Horizontal">
                                     <TextBlock Text=":" />
-                                    <controls:NumberBox x:Name="PART_SecondBox"
+                                    <controls:ChapterNumberBox x:Name="PART_SecondBox"
                                                         AutomationProperties.AutomationId="CUI_SecondsTextBox"
                                                         Background="{TemplateBinding Background}"
                                                         BorderThickness="0"

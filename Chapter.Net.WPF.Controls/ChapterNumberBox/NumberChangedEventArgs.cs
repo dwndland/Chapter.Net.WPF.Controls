@@ -11,12 +11,12 @@ using System.Windows;
 namespace Chapter.Net.WPF.Controls
 {
     /// <summary>
-    ///     Holds the data passed when a <see cref="NumberBox" /> has changed its value.
+    ///     Holds the data passed when a <see cref="ChapterNumberBox" /> has changed its value.
     /// </summary>
     public sealed class NumberChangedEventArgs : RoutedEventArgs
     {
         internal NumberChangedEventArgs(object oldVal, object newVal)
-            : base(NumberBox.NumberChangedEvent)
+            : base(ChapterNumberBox.NumberChangedEvent)
         {
             OldNumber = oldVal;
             NewNumber = newVal;

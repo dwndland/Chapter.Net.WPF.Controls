@@ -12,7 +12,7 @@ using System.Windows.Controls;
 namespace Chapter.Net.WPF.Controls
 {
     /// <summary>
-    ///     Represents the reset to default button shown in the <see cref="NumberBox" />.
+    ///     Represents the reset to default button shown in the <see cref="ChapterNumberBox" />.
     /// </summary>
     public class NumberResetButton : Button
     {

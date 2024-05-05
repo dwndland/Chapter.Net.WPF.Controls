@@ -1,5 +1,5 @@
 ﻿// -----------------------------------------------------------------------------------------------------------------
-// <copyright file="NumberBoxCheckBoxBehavior.cs" company="my-libraries">
+// <copyright file="ChapterNumberBoxCheckBoxBehavior.cs" company="my-libraries">
 //     Copyright (c) David Wendland. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------------------------------------------------
@@ -9,9 +9,9 @@
 namespace Chapter.Net.WPF.Controls
 {
     /// <summary>
-    ///     Defines what should happen to the  <see cref="NumberBox" /> if the internal checkbox is checked.
+    ///     Defines what should happen to the  <see cref="ChapterNumberBox" /> if the internal checkbox is checked.
     /// </summary>
-    public enum NumberBoxCheckBoxBehavior
+    public enum ChapterNumberBoxCheckBoxBehavior
     {
         /// <summary>
         ///     Nothing happens internally.
@@ -19,12 +19,12 @@ namespace Chapter.Net.WPF.Controls
         None,
 
         /// <summary>
-        ///     The <see cref="NumberBox" /> input field is disabled if the box is checked.
+        ///     The <see cref="ChapterNumberBox" /> input field is disabled if the box is checked.
         /// </summary>
         DisableIfChecked,
 
         /// <summary>
-        ///     The <see cref="NumberBox" /> input field is enabled if the box is checked.
+        ///     The <see cref="ChapterNumberBox" /> input field is enabled if the box is checked.
         /// </summary>
         EnableIfChecked
     }

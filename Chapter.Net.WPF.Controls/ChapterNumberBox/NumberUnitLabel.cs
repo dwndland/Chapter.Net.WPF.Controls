@@ -12,7 +12,7 @@ using System.Windows.Controls;
 namespace Chapter.Net.WPF.Controls
 {
     /// <summary>
-    ///     Represents the currency symbol shown in the <see cref="NumberBox" />.
+    ///     Represents the currency symbol shown in the <see cref="ChapterNumberBox" />.
     /// </summary>
     public class NumberUnitLabel : Label
     {

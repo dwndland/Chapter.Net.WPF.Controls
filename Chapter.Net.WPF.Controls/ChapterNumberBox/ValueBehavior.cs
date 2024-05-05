@@ -9,7 +9,7 @@
 namespace Chapter.Net.WPF.Controls
 {
     /// <summary>
-    ///     Defines what the <see cref="NumberBox" /> should do when it lose the focus without a value (null).
+    ///     Defines what the <see cref="ChapterNumberBox" /> should do when it lose the focus without a value (null).
     /// </summary>
     public enum ValueBehavior
     {
@@ -19,7 +19,7 @@ namespace Chapter.Net.WPF.Controls
         None,
 
         /// <summary>
-        ///     The default number defined by <see cref="NumberBox.DefaultNumber" /> will be placed in.
+        ///     The default number defined by <see cref="ChapterNumberBox.DefaultNumber" /> will be placed in.
         /// </summary>
         PlaceDefaultNumber,
 

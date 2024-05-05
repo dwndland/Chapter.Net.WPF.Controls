@@ -13,7 +13,7 @@ using System.Windows.Markup;
 namespace Chapter.Net.WPF.Controls
 {
     /// <summary>
-    ///     Defines the actions which should be done when the <see cref="NumberBox" /> lost the focus.
+    ///     Defines the actions which should be done when the <see cref="ChapterNumberBox" /> lost the focus.
     /// </summary>
     public class LostFocusBehavior : MarkupExtension
     {
@@ -37,7 +37,7 @@ namespace Chapter.Net.WPF.Controls
         }
 
         /// <summary>
-        ///     Gets or sets the behavior to be applied to the NumberBox value when it its empty (null).
+        ///     Gets or sets the behavior to be applied to the ChapterNumberBox value when it its empty (null).
         /// </summary>
         /// <remarks>Default value is ValueBehavior.None.</remarks>
         [DefaultValue(ValueBehavior.None)]

@@ -1,5 +1,5 @@
 ﻿// -----------------------------------------------------------------------------------------------------------------
-// <copyright file="NumberBox.cs" company="my-libraries">
+// <copyright file="ChapterNumberBox.cs" company="my-libraries">
 //     Copyright (c) David Wendland. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------------------------------------------------
@@ -25,169 +25,169 @@ namespace Chapter.Net.WPF.Controls
     [TemplatePart(Name = "PART_UpButton", Type = typeof(RepeatButton))]
     [TemplatePart(Name = "PART_DownButton", Type = typeof(RepeatButton))]
     [TemplatePart(Name = "PART_ResetButton", Type = typeof(Button))]
-    public class NumberBox : Control
+    public class ChapterNumberBox : Control
     {
         /// <summary>
         ///     Identifies the <see cref="NumberType" /> dependency property.
         /// </summary>
         public static readonly DependencyProperty NumberTypeProperty =
-            DependencyProperty.Register(nameof(NumberType), typeof(NumberType), typeof(NumberBox), new PropertyMetadata(NumberType.Int, OnNumberTypeChanged));
+            DependencyProperty.Register(nameof(NumberType), typeof(NumberType), typeof(ChapterNumberBox), new PropertyMetadata(NumberType.Int, OnNumberTypeChanged));
 
         /// <summary>
         ///     Identifies the <see cref="Number{T}" /> dependency property.
         /// </summary>
         public static readonly DependencyProperty NumberProperty =
-            DependencyProperty.Register(nameof(Number), typeof(object), typeof(NumberBox), new FrameworkPropertyMetadata(null, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault, OnNumberChanged));
+            DependencyProperty.Register(nameof(Number), typeof(object), typeof(ChapterNumberBox), new FrameworkPropertyMetadata(null, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault, OnNumberChanged));
 
         /// <summary>
         ///     Identifies the <see cref="Minimum" /> dependency property.
         /// </summary>
         public static readonly DependencyProperty MinimumProperty =
-            DependencyProperty.Register(nameof(Minimum), typeof(object), typeof(NumberBox), new PropertyMetadata(OnMinimumChanged));
+            DependencyProperty.Register(nameof(Minimum), typeof(object), typeof(ChapterNumberBox), new PropertyMetadata(OnMinimumChanged));
 
         /// <summary>
         ///     Identifies the <see cref="Maximum" /> dependency property.
         /// </summary>
         public static readonly DependencyProperty MaximumProperty =
-            DependencyProperty.Register(nameof(Maximum), typeof(object), typeof(NumberBox), new PropertyMetadata(OnMaximumChanged));
+            DependencyProperty.Register(nameof(Maximum), typeof(object), typeof(ChapterNumberBox), new PropertyMetadata(OnMaximumChanged));
 
         /// <summary>
         ///     Identifies the <see cref="Unit" /> dependency property.
         /// </summary>
         public static readonly DependencyProperty UnitProperty =
-            DependencyProperty.Register(nameof(Unit), typeof(object), typeof(NumberBox), new PropertyMetadata(null));
+            DependencyProperty.Register(nameof(Unit), typeof(object), typeof(ChapterNumberBox), new PropertyMetadata(null));
 
         /// <summary>
         ///     Identifies the <see cref="UnitPosition" /> dependency property.
         /// </summary>
         public static readonly DependencyProperty UnitPositionProperty =
-            DependencyProperty.Register(nameof(UnitPosition), typeof(Dock), typeof(NumberBox), new PropertyMetadata(Dock.Right));
+            DependencyProperty.Register(nameof(UnitPosition), typeof(Dock), typeof(ChapterNumberBox), new PropertyMetadata(Dock.Right));
 
         /// <summary>
         ///     Identifies the <see cref="HasCheckBox" /> dependency property.
         /// </summary>
         public static readonly DependencyProperty HasCheckBoxProperty =
-            DependencyProperty.Register(nameof(HasCheckBox), typeof(bool), typeof(NumberBox), new PropertyMetadata(false));
+            DependencyProperty.Register(nameof(HasCheckBox), typeof(bool), typeof(ChapterNumberBox), new PropertyMetadata(false));
 
         /// <summary>
         ///     Identifies the <see cref="IsChecked" /> dependency property.
         /// </summary>
         public static readonly DependencyProperty IsCheckedProperty =
-            DependencyProperty.Register(nameof(IsChecked), typeof(bool), typeof(NumberBox), new FrameworkPropertyMetadata(false, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
+            DependencyProperty.Register(nameof(IsChecked), typeof(bool), typeof(ChapterNumberBox), new FrameworkPropertyMetadata(false, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
 
         /// <summary>
         ///     Identifies the <see cref="CheckBoxBehavior" /> dependency property.
         /// </summary>
         public static readonly DependencyProperty CheckBoxBehaviorProperty =
-            DependencyProperty.Register(nameof(CheckBoxBehavior), typeof(NumberBoxCheckBoxBehavior), typeof(NumberBox), new PropertyMetadata(NumberBoxCheckBoxBehavior.None));
+            DependencyProperty.Register(nameof(CheckBoxBehavior), typeof(ChapterNumberBoxCheckBoxBehavior), typeof(ChapterNumberBox), new PropertyMetadata(ChapterNumberBoxCheckBoxBehavior.None));
 
         /// <summary>
         ///     Identifies the <see cref="CheckBoxPosition" /> dependency property.
         /// </summary>
         public static readonly DependencyProperty CheckBoxPositionProperty =
-            DependencyProperty.Register(nameof(CheckBoxPosition), typeof(Dock), typeof(NumberBox), new PropertyMetadata(Dock.Left));
+            DependencyProperty.Register(nameof(CheckBoxPosition), typeof(Dock), typeof(ChapterNumberBox), new PropertyMetadata(Dock.Left));
 
         /// <summary>
         ///     Identifies the <see cref="UpDownBehavior" /> dependency property.
         /// </summary>
         public static readonly DependencyProperty UpDownBehaviorProperty =
-            DependencyProperty.Register(nameof(UpDownBehavior), typeof(UpDownBehavior), typeof(NumberBox), new PropertyMetadata(UpDownBehavior.None));
+            DependencyProperty.Register(nameof(UpDownBehavior), typeof(UpDownBehavior), typeof(ChapterNumberBox), new PropertyMetadata(UpDownBehavior.None));
 
         /// <summary>
         ///     Identifies the <see cref="Step" /> dependency property.
         /// </summary>
         public static readonly DependencyProperty StepProperty =
-            DependencyProperty.Register(nameof(Step), typeof(object), typeof(NumberBox), new PropertyMetadata(null, OnStepChanged));
+            DependencyProperty.Register(nameof(Step), typeof(object), typeof(ChapterNumberBox), new PropertyMetadata(null, OnStepChanged));
 
         /// <summary>
         ///     Identifies the <see cref="UpDownButtonsPosition" /> dependency property.
         /// </summary>
         public static readonly DependencyProperty UpDownButtonsPositionProperty =
-            DependencyProperty.Register(nameof(UpDownButtonsPosition), typeof(Dock), typeof(NumberBox), new PropertyMetadata(Dock.Right));
+            DependencyProperty.Register(nameof(UpDownButtonsPosition), typeof(Dock), typeof(ChapterNumberBox), new PropertyMetadata(Dock.Right));
 
         /// <summary>
         ///     Identifies the <see cref="CanStepUp" /> dependency property.
         /// </summary>
         public static readonly DependencyProperty CanStepUpProperty =
-            DependencyProperty.Register(nameof(CanStepUp), typeof(bool), typeof(NumberBox), new FrameworkPropertyMetadata(true, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
+            DependencyProperty.Register(nameof(CanStepUp), typeof(bool), typeof(ChapterNumberBox), new FrameworkPropertyMetadata(true, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
 
         /// <summary>
         ///     Identifies the <see cref="CanStepDown" /> dependency property.
         /// </summary>
         public static readonly DependencyProperty CanStepDownProperty =
-            DependencyProperty.Register(nameof(CanStepDown), typeof(bool), typeof(NumberBox), new FrameworkPropertyMetadata(true, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
+            DependencyProperty.Register(nameof(CanStepDown), typeof(bool), typeof(ChapterNumberBox), new FrameworkPropertyMetadata(true, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
 
         /// <summary>
         ///     Identifies the <see cref="HasResetButton" /> dependency property.
         /// </summary>
         public static readonly DependencyProperty HasResetButtonProperty =
-            DependencyProperty.Register(nameof(HasResetButton), typeof(bool), typeof(NumberBox), new PropertyMetadata(false));
+            DependencyProperty.Register(nameof(HasResetButton), typeof(bool), typeof(ChapterNumberBox), new PropertyMetadata(false));
 
         /// <summary>
         ///     Identifies the <see cref="DefaultNumber" /> dependency property.
         /// </summary>
         public static readonly DependencyProperty DefaultNumberProperty =
-            DependencyProperty.Register(nameof(DefaultNumber), typeof(object), typeof(NumberBox), new PropertyMetadata(null, OnDefaultNumberChanged));
+            DependencyProperty.Register(nameof(DefaultNumber), typeof(object), typeof(ChapterNumberBox), new PropertyMetadata(null, OnDefaultNumberChanged));
 
         /// <summary>
         ///     Identifies the <see cref="ResetButtonPosition" /> dependency property.
         /// </summary>
         public static readonly DependencyProperty ResetButtonPositionProperty =
-            DependencyProperty.Register(nameof(ResetButtonPosition), typeof(Dock), typeof(NumberBox), new PropertyMetadata(Dock.Right));
+            DependencyProperty.Register(nameof(ResetButtonPosition), typeof(Dock), typeof(ChapterNumberBox), new PropertyMetadata(Dock.Right));
 
         /// <summary>
         ///     Identifies the <see cref="CanReset" /> dependency property.
         /// </summary>
         public static readonly DependencyProperty CanResetProperty =
-            DependencyProperty.Register(nameof(CanReset), typeof(bool), typeof(NumberBox), new FrameworkPropertyMetadata(true, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
+            DependencyProperty.Register(nameof(CanReset), typeof(bool), typeof(ChapterNumberBox), new FrameworkPropertyMetadata(true, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
 
         /// <summary>
         ///     Identifies the <see cref="NumberSelectionBehavior" /> dependency property.
         /// </summary>
         public static readonly DependencyProperty NumberSelectionBehaviorProperty =
-            DependencyProperty.Register(nameof(NumberSelectionBehavior), typeof(NumberBoxSelection), typeof(NumberBox), new PropertyMetadata(NumberBoxSelection.None));
+            DependencyProperty.Register(nameof(NumberSelectionBehavior), typeof(ChapterNumberBoxSelection), typeof(ChapterNumberBox), new PropertyMetadata(ChapterNumberBoxSelection.None));
 
         /// <summary>
         ///     Identifies the <see cref="LostFocusBehavior" /> dependency property.
         /// </summary>
         public static readonly DependencyProperty LostFocusBehaviorProperty =
-            DependencyProperty.Register(nameof(LostFocusBehavior), typeof(LostFocusBehavior), typeof(NumberBox), new PropertyMetadata(null));
+            DependencyProperty.Register(nameof(LostFocusBehavior), typeof(LostFocusBehavior), typeof(ChapterNumberBox), new PropertyMetadata(null));
 
         /// <summary>
         ///     Identifies the <see cref="InputCulture" /> dependency property.
         /// </summary>
         public static readonly DependencyProperty InputCultureProperty =
-            DependencyProperty.Register(nameof(InputCulture), typeof(CultureInfo), typeof(NumberBox), new PropertyMetadata(null, OnInputCultureChanged));
+            DependencyProperty.Register(nameof(InputCulture), typeof(CultureInfo), typeof(ChapterNumberBox), new PropertyMetadata(null, OnInputCultureChanged));
 
         /// <summary>
         ///     Identifies the <see cref="PredefinesCulture" /> dependency property.
         /// </summary>
         public static readonly DependencyProperty PredefinesCultureProperty =
-            DependencyProperty.Register(nameof(PredefinesCulture), typeof(CultureInfo), typeof(NumberBox), new PropertyMetadata(null));
+            DependencyProperty.Register(nameof(PredefinesCulture), typeof(CultureInfo), typeof(ChapterNumberBox), new PropertyMetadata(null));
 
         /// <summary>
         ///     Identifies the <see cref="NumberChanged" /> routed event.
         /// </summary>
         public static readonly RoutedEvent NumberChangedEvent =
-            EventManager.RegisterRoutedEvent(nameof(NumberChanged), RoutingStrategy.Bubble, typeof(NumberChangedEventHandler), typeof(NumberBox));
+            EventManager.RegisterRoutedEvent(nameof(NumberChanged), RoutingStrategy.Bubble, typeof(NumberChangedEventHandler), typeof(ChapterNumberBox));
 
         /// <summary>
         ///     Identifies the <see cref="IsReadOnly" /> dependency property.
         /// </summary>
         public static readonly DependencyProperty IsReadOnlyProperty =
-            DependencyProperty.Register(nameof(IsReadOnly), typeof(bool), typeof(NumberBox), new PropertyMetadata(false));
+            DependencyProperty.Register(nameof(IsReadOnly), typeof(bool), typeof(ChapterNumberBox), new PropertyMetadata(false));
 
         /// <summary>
         ///     Identifies the <see cref="AcceptUpDownOnNull" /> dependency property.
         /// </summary>
         public static readonly DependencyProperty AcceptUpDownOnNullProperty =
-            DependencyProperty.Register(nameof(AcceptUpDownOnNull), typeof(bool), typeof(NumberBox), new PropertyMetadata(false));
+            DependencyProperty.Register(nameof(AcceptUpDownOnNull), typeof(bool), typeof(ChapterNumberBox), new PropertyMetadata(false));
 
         /// <summary>
         ///     Identifies the <see cref="DecimalPlaces" /> dependency property.
         /// </summary>
         public static readonly DependencyProperty DecimalPlacesProperty =
-            DependencyProperty.Register(nameof(DecimalPlaces), typeof(int), typeof(NumberBox), new PropertyMetadata(-1, OnDecimalPlacesChanged));
+            DependencyProperty.Register(nameof(DecimalPlaces), typeof(int), typeof(ChapterNumberBox), new PropertyMetadata(-1, OnDecimalPlacesChanged));
 
         private RepeatButton _downButton;
         private INumber _number;
@@ -196,21 +196,21 @@ namespace Chapter.Net.WPF.Controls
         private TextBox _textBox;
         private RepeatButton _upButton;
 
-        static NumberBox()
+        static ChapterNumberBox()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(NumberBox), new FrameworkPropertyMetadata(typeof(NumberBox)));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(ChapterNumberBox), new FrameworkPropertyMetadata(typeof(ChapterNumberBox)));
         }
 
         /// <summary>
-        ///     Initializes a new instance of the <see cref="NumberBox" /> class.
+        ///     Initializes a new instance of the <see cref="ChapterNumberBox" /> class.
         /// </summary>
-        public NumberBox()
+        public ChapterNumberBox()
         {
             _number = NumberFactory.Create(NumberType);
         }
 
         /// <summary>
-        ///     Gets or sets the type of number to be supported in the NumberBox.
+        ///     Gets or sets the type of number to be supported in the ChapterNumberBox.
         /// </summary>
         /// <value>Default: NumberType.Int.</value>
         [DefaultValue(NumberType.Int)]
@@ -232,7 +232,7 @@ namespace Chapter.Net.WPF.Controls
         }
 
         /// <summary>
-        ///     Gets or sets the minimum value to be written into the NumberBox.
+        ///     Gets or sets the minimum value to be written into the ChapterNumberBox.
         /// </summary>
         /// <value>Default: null.</value>
         [DefaultValue(null)]
@@ -243,7 +243,7 @@ namespace Chapter.Net.WPF.Controls
         }
 
         /// <summary>
-        ///     Gets or sets the maximum value to be written into the NumberBox.
+        ///     Gets or sets the maximum value to be written into the ChapterNumberBox.
         /// </summary>
         /// <value>Default: null.</value>
         [DefaultValue(null)]
@@ -265,7 +265,7 @@ namespace Chapter.Net.WPF.Controls
         }
 
         /// <summary>
-        ///     Gets or sets the position of the unit within the NumberBox.
+        ///     Gets or sets the position of the unit within the ChapterNumberBox.
         /// </summary>
         /// <value>Default: Dock.Right.</value>
         [DefaultValue(Dock.Right)]
@@ -276,7 +276,7 @@ namespace Chapter.Net.WPF.Controls
         }
 
         /// <summary>
-        ///     Gets or sets the value which indicates if a checkbox is shown in the NumberBox.
+        ///     Gets or sets the value which indicates if a checkbox is shown in the ChapterNumberBox.
         /// </summary>
         /// <value>Default: false.</value>
         [DefaultValue(false)]
@@ -300,11 +300,11 @@ namespace Chapter.Net.WPF.Controls
         /// <summary>
         ///     Gets or sets the behavior of the checkbox.
         /// </summary>
-        /// <value>Default: NumberBoxCheckBoxBehavior.None.</value>
-        [DefaultValue(NumberBoxCheckBoxBehavior.None)]
-        public NumberBoxCheckBoxBehavior CheckBoxBehavior
+        /// <value>Default: ChapterNumberBoxCheckBoxBehavior.None.</value>
+        [DefaultValue(ChapterNumberBoxCheckBoxBehavior.None)]
+        public ChapterNumberBoxCheckBoxBehavior CheckBoxBehavior
         {
-            get => (NumberBoxCheckBoxBehavior)GetValue(CheckBoxBehaviorProperty);
+            get => (ChapterNumberBoxCheckBoxBehavior)GetValue(CheckBoxBehaviorProperty);
             set => SetValue(CheckBoxBehaviorProperty, value);
         }
 
@@ -375,7 +375,7 @@ namespace Chapter.Net.WPF.Controls
         }
 
         /// <summary>
-        ///     Gets or sets a value which indicates if the NumberBox has a cancel 'X' button.
+        ///     Gets or sets a value which indicates if the ChapterNumberBox has a cancel 'X' button.
         /// </summary>
         /// <value>Default: false.</value>
         [DefaultValue(false)]
@@ -397,7 +397,7 @@ namespace Chapter.Net.WPF.Controls
         }
 
         /// <summary>
-        ///     Gets or sets the position of the reset button within the NumberBox.
+        ///     Gets or sets the position of the reset button within the ChapterNumberBox.
         /// </summary>
         /// <value>Default: Dock.Right.</value>
         [DefaultValue(Dock.Right)]
@@ -421,16 +421,16 @@ namespace Chapter.Net.WPF.Controls
         /// <summary>
         ///     Gets or sets a value that defines when the number should be selected automatically.
         /// </summary>
-        /// <value>Default: NumberBoxSelection.None.</value>
-        [DefaultValue(NumberBoxSelection.None)]
-        public NumberBoxSelection NumberSelectionBehavior
+        /// <value>Default: ChapterNumberBoxSelection.None.</value>
+        [DefaultValue(ChapterNumberBoxSelection.None)]
+        public ChapterNumberBoxSelection NumberSelectionBehavior
         {
-            get => (NumberBoxSelection)GetValue(NumberSelectionBehaviorProperty);
+            get => (ChapterNumberBoxSelection)GetValue(NumberSelectionBehaviorProperty);
             set => SetValue(NumberSelectionBehaviorProperty, value);
         }
 
         /// <summary>
-        ///     Gets or sets the behavior to be applied to the number and/or text when the NumberBox lost its focus.
+        ///     Gets or sets the behavior to be applied to the number and/or text when the ChapterNumberBox lost its focus.
         /// </summary>
         /// <value>Default: null.</value>
         [DefaultValue(null)]
@@ -462,7 +462,7 @@ namespace Chapter.Net.WPF.Controls
         }
 
         /// <summary>
-        ///     Gets or sets a value if the NumberBox is shown read only.
+        ///     Gets or sets a value if the ChapterNumberBox is shown read only.
         /// </summary>
         /// <value>Default: false.</value>
         [DefaultValue(false)]
@@ -501,49 +501,49 @@ namespace Chapter.Net.WPF.Controls
 
         private static void OnNumberTypeChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            var control = (NumberBox)d;
+            var control = (ChapterNumberBox)d;
             control.OnNumberTypeChanged(e);
         }
 
         private static void OnNumberChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            var control = (NumberBox)d;
+            var control = (ChapterNumberBox)d;
             control.OnNumberChanged(e);
         }
 
         private static void OnMinimumChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            var control = (NumberBox)d;
+            var control = (ChapterNumberBox)d;
             control.OnMinimumChanged(e);
         }
 
         private static void OnMaximumChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            var control = (NumberBox)d;
+            var control = (ChapterNumberBox)d;
             control.OnMaximumChanged(e);
         }
 
         private static void OnStepChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            var control = (NumberBox)d;
+            var control = (ChapterNumberBox)d;
             control.OnStepChanged(e);
         }
 
         private static void OnDefaultNumberChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            var control = (NumberBox)d;
+            var control = (ChapterNumberBox)d;
             control.OnDefaultNumberChanged(e);
         }
 
         private static void OnInputCultureChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            var control = (NumberBox)d;
+            var control = (ChapterNumberBox)d;
             control.OnInputCultureChanged(e);
         }
 
         private static void OnDecimalPlacesChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            var control = (NumberBox)d;
+            var control = (ChapterNumberBox)d;
             control.OnDecimalPlacesChanged(e);
         }
 
@@ -705,7 +705,7 @@ namespace Chapter.Net.WPF.Controls
                 _number.Increase();
             TakeNumber();
             _textBox.Text = _number.ToString();
-            if (NumberSelectionBehavior == NumberBoxSelection.OnFocusAndUpDown || NumberSelectionBehavior == NumberBoxSelection.OnUpDown)
+            if (NumberSelectionBehavior == ChapterNumberBoxSelection.OnFocusAndUpDown || NumberSelectionBehavior == ChapterNumberBoxSelection.OnUpDown)
                 SelectAll();
         }
 
@@ -717,7 +717,7 @@ namespace Chapter.Net.WPF.Controls
                 _number.Decrease();
             TakeNumber();
             _textBox.Text = _number.ToString();
-            if (NumberSelectionBehavior == NumberBoxSelection.OnFocusAndUpDown || NumberSelectionBehavior == NumberBoxSelection.OnUpDown)
+            if (NumberSelectionBehavior == ChapterNumberBoxSelection.OnFocusAndUpDown || NumberSelectionBehavior == ChapterNumberBoxSelection.OnUpDown)
                 SelectAll();
         }
 
@@ -853,7 +853,7 @@ namespace Chapter.Net.WPF.Controls
 
         private void HandleTextBoxGotFocus(object sender, RoutedEventArgs e)
         {
-            if (NumberSelectionBehavior == NumberBoxSelection.OnFocusAndUpDown || NumberSelectionBehavior == NumberBoxSelection.OnFocus)
+            if (NumberSelectionBehavior == ChapterNumberBoxSelection.OnFocusAndUpDown || NumberSelectionBehavior == ChapterNumberBoxSelection.OnFocus)
                 SelectAll();
         }
 

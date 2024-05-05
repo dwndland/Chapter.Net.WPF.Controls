@@ -18,6 +18,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Renamed HeaderItemsControl to ChapterHeaderedContentControl
 - Renamed ImageButton to ChapterButton
 - Renamed ItemsPanel to ChapterItemsPanel
+- Renamed NumberBox to ChapterNumberBox
 ### Supported .Net Versions
 - .Net Core 3.0
 - .Net Framework 4.5

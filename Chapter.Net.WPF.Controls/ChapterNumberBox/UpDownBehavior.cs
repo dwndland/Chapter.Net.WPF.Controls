@@ -9,12 +9,12 @@
 namespace Chapter.Net.WPF.Controls
 {
     /// <summary>
-    ///     Defines how the value in the <see cref="NumberBox" /> can incremented or decremented.
+    ///     Defines how the value in the <see cref="ChapterNumberBox" /> can incremented or decremented.
     /// </summary>
     public enum UpDownBehavior
     {
         /// <summary>
-        ///     The NumberBox doesn't have any up/down.
+        ///     The ChapterNumberBox doesn't have any up/down.
         /// </summary>
         None,
 

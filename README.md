@@ -17,7 +17,7 @@ A set of new WPF controls which are not yet build in.
 - **ChapterHeaderedContentControl:** Provides the possibility to automatically align Headers and contents.
 - **ChapterButton:** Enhances the WPF Button to show an disabled image. The bound image will be shown monochrome if the button is disabled.
 - **ItemsPanel:** A UniformGrid with only one row or one column, depending on the orientation, which adds a spacing between the items.
-- **NumberBox:** Displays a TextBox to accept numeric values only, so the text can be bound to a numeric property directly without converting.
+- **ChapterNumberBox:** Displays a TextBox to accept numeric values only, so the text can be bound to a numeric property directly without converting.
 - **OptionButton:** A custom checkbox where a slider shows the checked and unchecked state.
 - **PasswordBox:** Hosts and enhances the WPF PasswordBox to be able to bind the password value and show info text in the background.
 - **Resizer:** Brings the possibility to resize every UI control manually by hold and drag the corners or sides.
@@ -286,11 +286,11 @@ A set of new WPF controls which are not yet build in.
     ```
     ![ItemsPanel](https://raw.githubusercontent.com/dwndland/Chapter.Net.WPF.Controls/master/Images/ItemsPanel.png)
 
-13. **NumberBox:**
+13. **ChapterNumberBox:**
     - Usage
     ```xaml
     <!-- Many properties are set only for display the possibilities -->
-    <chapter:NumberBox NumberType="Double"
+    <chapter:ChapterNumberBox NumberType="Double"
 
                        Number="{Binding MyDoubleValue}"
                        Minimum="-12.5"
@@ -316,7 +316,7 @@ A set of new WPF controls which are not yet build in.
 
                        PredefinesCulture="en-US" />
     ```
-    ![NumberBox](https://raw.githubusercontent.com/dwndland/Chapter.Net.WPF.Controls/master/Images/NumberBox.png)
+    ![ChapterNumberBox](https://raw.githubusercontent.com/dwndland/Chapter.Net.WPF.Controls/master/Images/ChapterNumberBox.png)
 
 14. **OptionButton:**
     - Usage
