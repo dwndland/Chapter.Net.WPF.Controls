@@ -1,5 +1,5 @@
 ﻿// -----------------------------------------------------------------------------------------------------------------
-// <copyright file="UniformWrapPanelControl.xaml.cs" company="my-libraries">
+// <copyright file="ChapterUniformWrapPanelControl.xaml.cs" company="my-libraries">
 //     Copyright (c) David Wendland. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------------------------------------------------
@@ -10,9 +10,9 @@ using System.Collections.Generic;
 
 namespace Demo;
 
-public partial class UniformWrapPanelControl
+public partial class ChapterUniformWrapPanelControl
 {
-    public UniformWrapPanelControl()
+    public ChapterUniformWrapPanelControl()
     {
         InitializeComponent();
 

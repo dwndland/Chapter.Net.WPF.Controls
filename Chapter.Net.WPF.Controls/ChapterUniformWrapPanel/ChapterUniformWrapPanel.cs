@@ -1,5 +1,5 @@
 ﻿// -----------------------------------------------------------------------------------------------------------------
-// <copyright file="UniformWrapPanel.cs" company="my-libraries">
+// <copyright file="ChapterUniformWrapPanel.cs" company="my-libraries">
 //     Copyright (c) David Wendland. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------------------------------------------------
@@ -16,25 +16,25 @@ namespace Chapter.Net.WPF.Controls
     /// <summary>
     ///     Enhances the <see cref="WrapPanel" /> by the feature that all items will have the same size.
     /// </summary>
-    public class UniformWrapPanel : WrapPanel
+    public class ChapterUniformWrapPanel : WrapPanel
     {
         /// <summary>
         ///     Identifies the <see cref="IsAutoUniform" /> dependency property.
         /// </summary>
         public static readonly DependencyProperty IsAutoUniformProperty =
-            DependencyProperty.Register(nameof(IsAutoUniform), typeof(bool), typeof(UniformWrapPanel), new FrameworkPropertyMetadata(true, FrameworkPropertyMetadataOptions.AffectsMeasure));
+            DependencyProperty.Register(nameof(IsAutoUniform), typeof(bool), typeof(ChapterUniformWrapPanel), new FrameworkPropertyMetadata(true, FrameworkPropertyMetadataOptions.AffectsMeasure));
 
         /// <summary>
         ///     Identifies the <see cref="MinItemWidth" /> dependency property.
         /// </summary>
         public static readonly DependencyProperty MinItemWidthProperty =
-            DependencyProperty.Register(nameof(MinItemWidth), typeof(double), typeof(UniformWrapPanel), new FrameworkPropertyMetadata(0d, FrameworkPropertyMetadataOptions.AffectsMeasure));
+            DependencyProperty.Register(nameof(MinItemWidth), typeof(double), typeof(ChapterUniformWrapPanel), new FrameworkPropertyMetadata(0d, FrameworkPropertyMetadataOptions.AffectsMeasure));
 
         /// <summary>
         ///     Identifies the <see cref="MinItemHeight" /> dependency property.
         /// </summary>
         public static readonly DependencyProperty MinItemHeightProperty =
-            DependencyProperty.Register(nameof(MinItemHeight), typeof(double), typeof(UniformWrapPanel), new FrameworkPropertyMetadata(0d, FrameworkPropertyMetadataOptions.AffectsMeasure));
+            DependencyProperty.Register(nameof(MinItemHeight), typeof(double), typeof(ChapterUniformWrapPanel), new FrameworkPropertyMetadata(0d, FrameworkPropertyMetadataOptions.AffectsMeasure));
 
         /// <summary>
         ///     Gets or sets a value that defines if the common height or width will be taken by the biggest child element.

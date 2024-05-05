@@ -28,7 +28,7 @@ A set of new WPF controls which are not yet build in.
 - **ChapterTitledItemsControl:** Provides the possibility to automatically align titles and contents.
 - **ChapterTreeListView:** Shows a TreeView with the possibility to expand or collapse child elements shown in a GridView. The expander can be placed in every column cell template.
 - **ChapterUniformPanel:** A UniformGrid with only one row or one column, depending on the orientation, which adds a spacing between the items.
-- **UniformWrapPanel:** Enhances the WrapPanel by the feature that all items will have the same size.
+- **ChapterUniformWrapPanel:** Enhances the WrapPanel by the feature that all items will have the same size.
 
 ## Getting Started
 
@@ -474,24 +474,24 @@ A set of new WPF controls which are not yet build in.
     ```
     ![ChapterUniformPanel](https://raw.githubusercontent.com/dwndland/Chapter.Net.WPF.Controls/master/Images/ChapterUniformPanel.png)
 
-24. **UniformWrapPanel:**
+24. **ChapterUniformWrapPanel:**
     - Usage
     ```xaml
     <ItemsControl ItemsSource="{Binding Images}">
         <ItemsControl.ItemsPanel>
             <ItemsPanelTemplate>
-                <chapter:UniformWrapPanel />
+                <chapter:ChapterUniformWrapPanel />
             </ItemsPanelTemplate>
         </ItemsControl.ItemsPanel>
     </ItemsControl>
 
-    <chapter:UniformWrapPanel Orientation="Horizontal" MinItemWidth="100">
+    <chapter:ChapterUniformWrapPanel Orientation="Horizontal" MinItemWidth="100">
         <Button Content="One" />
         <Button Content="Two" />
         <Button Content="Three" />
-    </chapter:UniformWrapPanel>
+    </chapter:ChapterUniformWrapPanel>
     ```
-    ![UniformWrapPanel](https://raw.githubusercontent.com/dwndland/Chapter.Net.WPF.Controls/master/Images/UniformWrapPanel.png)
+    ![ChapterUniformWrapPanel](https://raw.githubusercontent.com/dwndland/Chapter.Net.WPF.Controls/master/Images/ChapterUniformWrapPanel.png)
 
 (Note: The shown images are taken from the demo project and are not made by the code next to it.)
 
