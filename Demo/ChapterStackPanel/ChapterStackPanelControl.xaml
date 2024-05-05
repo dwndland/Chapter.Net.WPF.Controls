@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="Demo.SpacingStackPanelControl"
+﻿<UserControl x:Class="Demo.ChapterStackPanelControl"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:controls="clr-namespace:Chapter.Net.WPF.Controls;assembly=Chapter.Net.WPF.Controls"
@@ -33,12 +33,12 @@
             </Grid.ColumnDefinitions>
 
             <DockPanel Grid.Column="0">
-                <TextBlock DockPanel.Dock="Top" Text="SpacingStackPanel (Horizontal)" />
+                <TextBlock DockPanel.Dock="Top" Text="ChapterStackPanel (Horizontal)" />
                 <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled">
                     <ItemsControl ItemTemplate="{StaticResource itemTemplate}" ItemsSource="{Binding Items}">
                         <ItemsControl.ItemsPanel>
                             <ItemsPanelTemplate>
-                                <controls:SpacingStackPanel Orientation="Horizontal" Spacing="{Binding Value, ElementName=spacing}" />
+                                <controls:ChapterStackPanel Orientation="Horizontal" Spacing="{Binding Value, ElementName=spacing}" />
                             </ItemsPanelTemplate>
                         </ItemsControl.ItemsPanel>
                     </ItemsControl>
@@ -46,12 +46,12 @@
             </DockPanel>
 
             <DockPanel Grid.Column="1">
-                <TextBlock DockPanel.Dock="Top" Text="SpacingStackPanel (Vertical)" />
+                <TextBlock DockPanel.Dock="Top" Text="ChapterStackPanel (Vertical)" />
                 <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
                     <ItemsControl ItemTemplate="{StaticResource itemTemplate}" ItemsSource="{Binding Items}">
                         <ItemsControl.ItemsPanel>
                             <ItemsPanelTemplate>
-                                <controls:SpacingStackPanel Orientation="Vertical" Spacing="{Binding Value, ElementName=spacing}" />
+                                <controls:ChapterStackPanel Orientation="Vertical" Spacing="{Binding Value, ElementName=spacing}" />
                             </ItemsPanelTemplate>
                         </ItemsControl.ItemsPanel>
                     </ItemsControl>

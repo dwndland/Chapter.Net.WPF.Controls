@@ -60,7 +60,7 @@ namespace Chapter.Net.WPF.Controls
 
         /// <summary>
         ///     Gets or sets the indicator if the ItemsPanel shall behave like a <see cref="UniformPanel" /> or a
-        ///     <see cref="SpacingStackPanel" />.
+        ///     <see cref="ChapterStackPanel" />.
         /// </summary>
         /// <value>Default: false.</value>
         [DefaultValue(false)]
@@ -79,7 +79,7 @@ namespace Chapter.Net.WPF.Controls
         {
             if (IsUniform)
                 return UniformPanel.Measure(availableSize, Children, Spacing, Orientation, HorizontalAlignment, VerticalAlignment, DockPanel.GetDock(this));
-            return SpacingStackPanel.Measure(availableSize, Children, Spacing, Orientation, HorizontalAlignment, VerticalAlignment);
+            return ChapterStackPanel.Measure(availableSize, Children, Spacing, Orientation, HorizontalAlignment, VerticalAlignment);
         }
 
         /// <summary>
@@ -91,7 +91,7 @@ namespace Chapter.Net.WPF.Controls
         {
             if (IsUniform)
                 return UniformPanel.Arrange(finalSize, Children, Spacing, Orientation);
-            return SpacingStackPanel.Arrange(finalSize, Children, Spacing, Orientation);
+            return ChapterStackPanel.Arrange(finalSize, Children, Spacing, Orientation);
         }
     }
 }

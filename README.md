@@ -22,7 +22,7 @@ A set of new WPF controls which are not yet build in.
 - **ChapterPasswordBox:** Hosts and enhances the WPF ChapterPasswordBox to be able to bind the password value and show info text in the background.
 - **ChapterResizer:** Brings the possibility to resize every UI control manually by hold and drag the corners or sides.
 - **ChapterSearchTextBox:** Adds search and cancel buttons to the ChapterTextBox to represent a search box shown like in the Windows explorer.
-- **SpacingStackPanel:** A StackPanel which adds a spacing between the items.
+- **ChapterStackPanel:** A StackPanel which adds a spacing between the items.
 - **SplitButton:** A button with a drop down where more commands can be available.
 - **TimeBox:** Shows textboxes to let the user input a time.
 - **TitledItemsControl:** Provides the possibility to automatically align titles and contents.
@@ -363,10 +363,10 @@ A set of new WPF controls which are not yet build in.
     ```
     ![ChapterSearchTextBox](https://raw.githubusercontent.com/dwndland/Chapter.Net.WPF.Controls/master/Images/ChapterSearchTextBox.png)
 
-18. **SpacingStackPanel:**
+18. **ChapterStackPanel:**
     - Usage
     ```xaml
-    <chapter:SpacingStackPanel DockPanel.Dock="Bottom"
+    <chapter:ChapterStackPanel DockPanel.Dock="Bottom"
                          HorizontalAlignment="Right"
                          Orientation="Horizontal"
                          Spacing="10">
@@ -374,14 +374,14 @@ A set of new WPF controls which are not yet build in.
         <Button Content="Next" />
         <Button Content="Finish" />
         <Button Content="Cancel" />
-    </chapter:SpacingStackPanel>
+    </chapter:ChapterStackPanel>
 
-    <chapter:SpacingStackPanel Spacings="10">
+    <chapter:ChapterStackPanel Spacings="10">
         <TextBox />
         <TextBox />
-    </chapter:SpacingStackPanel>
+    </chapter:ChapterStackPanel>
     ```
-    ![SpacingStackPanel](https://raw.githubusercontent.com/dwndland/Chapter.Net.WPF.Controls/master/Images/SpacingStackPanel.png)
+    ![ChapterStackPanel](https://raw.githubusercontent.com/dwndland/Chapter.Net.WPF.Controls/master/Images/ChapterStackPanel.png)
 
 19. **SplitButton:**
     - Usage

@@ -1,5 +1,5 @@
 ﻿// -----------------------------------------------------------------------------------------------------------------
-// <copyright file="SpacingStackPanel.cs" company="my-libraries">
+// <copyright file="ChapterStackPanel.cs" company="my-libraries">
 //     Copyright (c) David Wendland. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------------------------------------------------
@@ -17,19 +17,19 @@ namespace Chapter.Net.WPF.Controls
     /// <summary>
     ///     A StackPanel which adds a spacing between the items.
     /// </summary>
-    public class SpacingStackPanel : Panel
+    public class ChapterStackPanel : Panel
     {
         /// <summary>
         ///     Identifies the Spacing dependency property.
         /// </summary>
         public static readonly DependencyProperty SpacingProperty =
-            DependencyProperty.Register(nameof(Spacing), typeof(double), typeof(SpacingStackPanel), new FrameworkPropertyMetadata(4.0, FrameworkPropertyMetadataOptions.AffectsMeasure));
+            DependencyProperty.Register(nameof(Spacing), typeof(double), typeof(ChapterStackPanel), new FrameworkPropertyMetadata(4.0, FrameworkPropertyMetadataOptions.AffectsMeasure));
 
         /// <summary>
         ///     Identifies the Orientation dependency property.
         /// </summary>
         public static readonly DependencyProperty OrientationProperty =
-            DependencyProperty.Register(nameof(Orientation), typeof(Orientation), typeof(SpacingStackPanel), new FrameworkPropertyMetadata(Orientation.Vertical, FrameworkPropertyMetadataOptions.AffectsMeasure));
+            DependencyProperty.Register(nameof(Orientation), typeof(Orientation), typeof(ChapterStackPanel), new FrameworkPropertyMetadata(Orientation.Vertical, FrameworkPropertyMetadataOptions.AffectsMeasure));
 
         /// <summary>
         ///     Gets or sets the space between the items.

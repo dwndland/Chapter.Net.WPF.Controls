@@ -1,5 +1,5 @@
 ﻿// -----------------------------------------------------------------------------------------------------------------
-// <copyright file="SpacingStackPanelControl.xaml.cs" company="my-libraries">
+// <copyright file="ChapterStackPanelControl.xaml.cs" company="my-libraries">
 //     Copyright (c) David Wendland. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------------------------------------------------
@@ -10,9 +10,9 @@ using System.Collections.Generic;
 
 namespace Demo;
 
-public partial class SpacingStackPanelControl
+public partial class ChapterStackPanelControl
 {
-    public SpacingStackPanelControl()
+    public ChapterStackPanelControl()
     {
         InitializeComponent();
 

@@ -23,6 +23,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Renamed PasswordBox to ChapterPasswordBox
 - Renamed Resizer to ChapterResizer
 - Renamed SearchTextBox to ChapterSearchTextBox
+- Renamed SpacingStackPanel to ChapterStackPanel
 ### Supported .Net Versions
 - .Net Core 3.0
 - .Net Framework 4.5
