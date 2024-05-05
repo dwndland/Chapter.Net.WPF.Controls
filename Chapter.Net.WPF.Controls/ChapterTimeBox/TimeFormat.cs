@@ -9,17 +9,17 @@
 namespace Chapter.Net.WPF.Controls
 {
     /// <summary>
-    ///     Defines if the <see cref="TimeBox" /> contains a seconds box or not.
+    ///     Defines if the <see cref="ChapterTimeBox" /> contains a seconds box or not.
     /// </summary>
     public enum TimeFormat
     {
         /// <summary>
-        ///     The <see cref="TimeBox" /> contains hours, minutes and seconds.
+        ///     The <see cref="ChapterTimeBox" /> contains hours, minutes and seconds.
         /// </summary>
         Long,
 
         /// <summary>
-        ///     The <see cref="TimeBox" /> contains hours and minutes.
+        ///     The <see cref="ChapterTimeBox" /> contains hours and minutes.
         /// </summary>
         Short
     }

@@ -24,7 +24,7 @@ A set of new WPF controls which are not yet build in.
 - **ChapterSearchTextBox:** Adds search and cancel buttons to the ChapterTextBox to represent a search box shown like in the Windows explorer.
 - **ChapterStackPanel:** A StackPanel which adds a spacing between the items.
 - **ChapterSplitButton:** A button with a drop down where more commands can be available.
-- **TimeBox:** Shows textboxes to let the user input a time.
+- **ChapterTimeBox:** Shows textboxes to let the user input a time.
 - **TitledItemsControl:** Provides the possibility to automatically align titles and contents.
 - **TreeListView:** Shows a TreeView with the possibility to expand or collapse child elements shown in a GridView. The expander can be placed in every column cell template.
 - **UniformPanel:** A UniformGrid with only one row or one column, depending on the orientation, which adds a spacing between the items.
@@ -409,12 +409,12 @@ A set of new WPF controls which are not yet build in.
     ```
     ![ChapterSplitButton](https://raw.githubusercontent.com/dwndland/Chapter.Net.WPF.Controls/master/Images/ChapterSplitButton.png)
 
-20. **TimeBox:**
+20. **ChapterTimeBox:**
     - Usage
     ```xaml
-    <chapter:TimeBox HasUpDownButtons="True" TimeFormat="Long" Time="{Binding CurrentTime}" />
+    <chapter:ChapterTimeBox HasUpDownButtons="True" TimeFormat="Long" Time="{Binding CurrentTime}" />
     ```
-    ![TimeBox](https://raw.githubusercontent.com/dwndland/Chapter.Net.WPF.Controls/master/Images/TimeBox.png)
+    ![ChapterTimeBox](https://raw.githubusercontent.com/dwndland/Chapter.Net.WPF.Controls/master/Images/ChapterTimeBox.png)
 
 21. **TitledItemsControl:**
     - Usage

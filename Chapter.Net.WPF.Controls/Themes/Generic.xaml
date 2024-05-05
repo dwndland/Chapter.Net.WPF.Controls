@@ -19,7 +19,7 @@
         <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterSearchTextBox/ChapterSearchTextBox.xaml" />
         <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterSplitButton/ChapterSplitButton.xaml" />
         <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterSplitButton/ChapterSplitButtonItem.xaml" />
-        <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/TimeBox/TimeBox.xaml" />
+        <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterTimeBox/ChapterTimeBox.xaml" />
         <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/TitledItemsControl/TitledItemsControl.xaml" />
         <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/TreeListView/TreeListView.xaml" />
         <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/TreeListView/TreeListViewExpander.xaml" />

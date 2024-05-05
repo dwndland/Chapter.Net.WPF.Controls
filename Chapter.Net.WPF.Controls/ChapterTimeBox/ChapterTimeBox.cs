@@ -1,5 +1,5 @@
 ﻿// -----------------------------------------------------------------------------------------------------------------
-// <copyright file="TimeBox.cs" company="my-libraries">
+// <copyright file="ChapterTimeBox.cs" company="my-libraries">
 //     Copyright (c) David Wendland. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------------------------------------------------
@@ -22,25 +22,25 @@ namespace Chapter.Net.WPF.Controls
     [TemplatePart(Name = "PART_SecondBox", Type = typeof(ChapterNumberBox))]
     [TemplatePart(Name = "PART_UpButton", Type = typeof(UpDownButton))]
     [TemplatePart(Name = "PART_DownButton", Type = typeof(UpDownButton))]
-    public class TimeBox : Control
+    public class ChapterTimeBox : Control
     {
         /// <summary>
         ///     Identifies the <see cref="Time" /> dependency property.
         /// </summary>
         public static readonly DependencyProperty TimeProperty =
-            DependencyProperty.Register(nameof(Time), typeof(TimeSpan), typeof(TimeBox), new FrameworkPropertyMetadata(TimeSpan.Zero, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault, OnTimeChanged));
+            DependencyProperty.Register(nameof(Time), typeof(TimeSpan), typeof(ChapterTimeBox), new FrameworkPropertyMetadata(TimeSpan.Zero, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault, OnTimeChanged));
 
         /// <summary>
         ///     Identifies the <see cref="TimeFormat" /> dependency property.
         /// </summary>
         public static readonly DependencyProperty TimeFormatProperty =
-            DependencyProperty.Register(nameof(TimeFormat), typeof(TimeFormat), typeof(TimeBox), new UIPropertyMetadata(TimeFormat.Short));
+            DependencyProperty.Register(nameof(TimeFormat), typeof(TimeFormat), typeof(ChapterTimeBox), new UIPropertyMetadata(TimeFormat.Short));
 
         /// <summary>
         ///     Identifies the <see cref="HasUpDownButtons" /> dependency property.
         /// </summary>
         public static readonly DependencyProperty HasUpDownButtonsProperty =
-            DependencyProperty.Register(nameof(HasUpDownButtons), typeof(bool), typeof(TimeBox), new UIPropertyMetadata(true));
+            DependencyProperty.Register(nameof(HasUpDownButtons), typeof(bool), typeof(ChapterTimeBox), new UIPropertyMetadata(true));
 
         private ChapterNumberBox _focusedBox;
         private ChapterNumberBox _hourBox;
@@ -48,15 +48,15 @@ namespace Chapter.Net.WPF.Controls
         private ChapterNumberBox _secondBox;
         private bool _selfChange;
 
-        static TimeBox()
+        static ChapterTimeBox()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(TimeBox), new FrameworkPropertyMetadata(typeof(TimeBox)));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(ChapterTimeBox), new FrameworkPropertyMetadata(typeof(ChapterTimeBox)));
         }
 
         /// <summary>
-        ///     Initializes a new instance of the <see cref="TimeBox" /> class.
+        ///     Initializes a new instance of the <see cref="ChapterTimeBox" /> class.
         /// </summary>
-        public TimeBox()
+        public ChapterTimeBox()
         {
             AddHandler(ChapterNumberBox.NumberChangedEvent, new NumberChangedEventHandler(HandleChapterNumberBoxNumberChanged));
         }
@@ -95,7 +95,7 @@ namespace Chapter.Net.WPF.Controls
 
         private static void OnTimeChanged(DependencyObject sender, DependencyPropertyChangedEventArgs e)
         {
-            var control = (TimeBox)sender;
+            var control = (ChapterTimeBox)sender;
             control.OnTimeChanged();
         }
 

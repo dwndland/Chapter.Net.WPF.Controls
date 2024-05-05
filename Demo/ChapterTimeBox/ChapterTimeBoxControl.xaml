@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="Demo.TimeBoxControl"
+﻿<UserControl x:Class="Demo.ChapterTimeBoxControl"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:controls="clr-namespace:Chapter.Net.WPF.Controls;assembly=Chapter.Net.WPF.Controls"
@@ -25,15 +25,15 @@
         <StackPanel Width="200"
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center">
-            <TextBlock Text="TimeBox" />
-            <controls:TimeBox x:Name="timeBox"
+            <TextBlock Text="ChapterTimeBox" />
+            <controls:ChapterTimeBox x:Name="ChapterTimeBox"
                               Margin="0,0,0,10"
                               HasUpDownButtons="{Binding IsChecked, ElementName=hasUpDownButtons}"
                               TimeFormat="{Binding SelectedItem, ElementName=timeFormat}" />
 
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="Time: " />
-                <TextBlock Text="{Binding Time, ElementName=timeBox}" />
+                <TextBlock Text="{Binding Time, ElementName=ChapterTimeBox}" />
             </StackPanel>
         </StackPanel>
     </DockPanel>

@@ -1,5 +1,5 @@
 ﻿// -----------------------------------------------------------------------------------------------------------------
-// <copyright file="TimeBoxControl.xaml.cs" company="my-libraries">
+// <copyright file="ChapterTimeBoxControl.xaml.cs" company="my-libraries">
 //     Copyright (c) David Wendland. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------------------------------------------------
@@ -8,9 +8,9 @@
 
 namespace Demo;
 
-public partial class TimeBoxControl
+public partial class ChapterTimeBoxControl
 {
-    public TimeBoxControl()
+    public ChapterTimeBoxControl()
     {
         InitializeComponent();
     }
