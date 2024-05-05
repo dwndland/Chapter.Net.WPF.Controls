@@ -1,5 +1,5 @@
 ﻿// -----------------------------------------------------------------------------------------------------------------
-// <copyright file="FormatterTextBlock.cs" company="my-libraries">
+// <copyright file="ChapterTextBlock.cs" company="my-libraries">
 //     Copyright (c) David Wendland. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------------------------------------------------
@@ -21,24 +21,24 @@ namespace Chapter.Net.WPF.Controls
     ///     Formats the given translation.
     /// </summary>
     [ContentProperty(nameof(Pairs))]
-    public class FormatterTextBlock : TextBlock
+    public class ChapterTextBlock : TextBlock
     {
         /// <summary>
         ///     The Formatter dependency property.
         /// </summary>
         public static readonly DependencyProperty FormatterProperty =
-            DependencyProperty.Register("Formatter", typeof(string), typeof(FormatterTextBlock), new PropertyMetadata(OnTextChanged));
+            DependencyProperty.Register("Formatter", typeof(string), typeof(ChapterTextBlock), new PropertyMetadata(OnTextChanged));
 
         /// <summary>
         ///     The Pairs dependency property.
         /// </summary>
         public static readonly DependencyProperty PairsProperty =
-            DependencyProperty.Register("Pairs", typeof(IList), typeof(FormatterTextBlock), new PropertyMetadata(OnPairsChanged));
+            DependencyProperty.Register("Pairs", typeof(IList), typeof(ChapterTextBlock), new PropertyMetadata(OnPairsChanged));
 
         /// <summary>
-        ///     Creates a new FormatterTextBlock.
+        ///     Creates a new ChapterTextBlock.
         /// </summary>
-        public FormatterTextBlock()
+        public ChapterTextBlock()
         {
             Pairs = new FormatterPairCollection();
             Loaded += OnLoaded;
@@ -69,7 +69,7 @@ namespace Chapter.Net.WPF.Controls
 
         private static void OnPairsChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            var control = (FormatterTextBlock)d;
+            var control = (ChapterTextBlock)d;
 
             if (e.OldValue is INotifyCollectionChanged oldValue)
                 oldValue.CollectionChanged -= control.OnPairsCollectionChanged;
@@ -81,7 +81,7 @@ namespace Chapter.Net.WPF.Controls
 
         private static void OnTextChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            var control = (FormatterTextBlock)d;
+            var control = (ChapterTextBlock)d;
             control.UpdateTranslation();
         }
 

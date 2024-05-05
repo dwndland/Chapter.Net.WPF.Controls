@@ -11,7 +11,7 @@ using System.Windows;
 namespace Chapter.Net.WPF.Controls
 {
     /// <summary>
-    ///     The collection of formatter pairs for the <see cref="FormatterTextBlock" />.
+    ///     The collection of formatter pairs for the <see cref="ChapterTextBlock" />.
     /// </summary>
     public class FormatterPairCollection : FreezableCollection<FormatterPair>
     {

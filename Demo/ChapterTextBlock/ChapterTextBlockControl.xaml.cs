@@ -1,5 +1,5 @@
 ﻿// -----------------------------------------------------------------------------------------------------------------
-// <copyright file="FormatterTextBlockControl.xaml.cs" company="my-libraries">
+// <copyright file="ChapterTextBlockControl.xaml.cs" company="my-libraries">
 //     Copyright (c) David Wendland. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------------------------------------------------
@@ -10,11 +10,11 @@ using System.ComponentModel;
 
 namespace Demo;
 
-public partial class FormatterTextBlockControl : INotifyPropertyChanged
+public partial class ChapterTextBlockControl : INotifyPropertyChanged
 {
     private string _input;
 
-    public FormatterTextBlockControl()
+    public ChapterTextBlockControl()
     {
         InitializeComponent();
 

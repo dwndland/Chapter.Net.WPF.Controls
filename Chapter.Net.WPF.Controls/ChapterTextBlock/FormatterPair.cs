@@ -12,7 +12,7 @@ using System.Windows;
 namespace Chapter.Net.WPF.Controls
 {
     /// <summary>
-    ///     Represents a replace pair within the <see cref="FormatterTextBlock" />.
+    ///     Represents a replace pair within the <see cref="ChapterTextBlock" />.
     /// </summary>
     public class FormatterPair : Freezable
     {

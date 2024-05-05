@@ -13,7 +13,7 @@ A set of new WPF controls which are not yet build in.
 - **ChapterEllipsePanel:** Arranges child elements in a configurable ellipse form.
 - **ChapterComboBox:** Represents a ComboBox which takes an enumeration value and shows all possible states inside the dropdown menu for let choosing a value.
 - **ChapterTreeView:** Enhances ChapterTreeView multi select, select an item by right click on it and a two way bindable SelectedItem.
-- **FormatterTextBlock:** Formats the given translation.
+- **ChapterTextBlock:** Formats the given translation.
 - **HeaderItemsControl:** Provides the possibility to automatically align Headers and contents.
 - **ImageButton:** Enhances the WPF Button to show an disabled image. The bound image will be shown monochrome if the button is disabled.
 - **ItemsPanel:** A UniformGrid with only one row or one column, depending on the orientation, which adds a spacing between the items.
@@ -187,21 +187,21 @@ A set of new WPF controls which are not yet build in.
     ```
     ![ChapterTreeView](https://raw.githubusercontent.com/dwndland/Chapter.Net.WPF.Controls/master/Images/ChapterTreeView.png)
 
-9. **FormatterTextBlock:**
+9. **ChapterTextBlock:**
     - Usage
     ```xaml
     <ListBox ItemsSource="{Binding Patients}">
         <ListBox.ItemTemplate>
             <DataTemplate>
-                <chapter:FormatterTextBlock Formatter="{DynamicResource NameFormatter}">
+                <chapter:ChapterTextBlock Formatter="{DynamicResource NameFormatter}">
                     <chapter:FormatterPair Replace="{}{firstName}" With="{Binding FirstName}" />
                     <chapter:FormatterPair Replace="{}{lastName}" With="{Binding LastName}" />
-                </chapter:FormatterTextBlock>
+                </chapter:ChapterTextBlock>
             </DataTemplate>
         </ListBox.ItemTemplate>
     </ListBox>
     ```
-    ![FormatterTextBlock](https://raw.githubusercontent.com/dwndland/Chapter.Net.WPF.Controls/master/Images/FormatterTextBlock.png)
+    ![ChapterTextBlock](https://raw.githubusercontent.com/dwndland/Chapter.Net.WPF.Controls/master/Images/ChapterTextBlock.png)
 
 10. **HeaderItemsControl:**
     - Usage

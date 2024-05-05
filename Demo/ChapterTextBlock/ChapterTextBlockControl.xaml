@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="Demo.FormatterTextBlockControl"
+﻿<UserControl x:Class="Demo.ChapterTextBlockControl"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:controls="clr-namespace:Chapter.Net.WPF.Controls;assembly=Chapter.Net.WPF.Controls"
@@ -18,14 +18,13 @@
         <TextBlock Text="Input Text" />
         <TextBlock Margin="0,0,0,10" Text="{DynamicResource DemoString}" />
 
-        <TextBlock Text="Formatted Text" />
-        <DockPanel>
+        <DockPanel Margin="0,0,0,10">
             <TextBlock DockPanel.Dock="Left" Text="Input: " />
             <TextBox Text="{Binding Input, UpdateSourceTrigger=PropertyChanged}" />
         </DockPanel>
-        <controls:FormatterTextBlock Formatter="{DynamicResource DemoString}" TextWrapping="Wrap">
+        <controls:ChapterTextBlock Formatter="{DynamicResource DemoString}" TextWrapping="Wrap">
             <controls:FormatterPair Replace="{}{text}" With="{Binding Input}" />
-        </controls:FormatterTextBlock>
+        </controls:ChapterTextBlock>
     </StackPanel>
 
 </UserControl>
