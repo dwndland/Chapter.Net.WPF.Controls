@@ -7,29 +7,30 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Changed
-- Renamed AdvancedTextBox to ChapterTextBox
-- Renamed ArcPanel to ChapterArcPanel
-- Renamed BrowseTextBox to ChapterBrowseTextBox
-- Renamed DynamicTabControl to ChapterTabControl
-- Renamed EllipsePanel to ChapterEllipsePanel
-- Renamed EnumerationComboBox to ChapterComboBox
-- Renamed ExtendedTreeView to ChapterTreeView
-- Renamed FormatterTextBlock to ChapterTextBlock
-- Renamed HeaderItemsControl to ChapterHeaderedContentControl
-- Renamed ImageButton to ChapterButton
-- Renamed ItemsPanel to ChapterItemsPanel
-- Renamed NumberBox to ChapterNumberBox
-- Renamed OptionButton to ChapterToggleSwitch
-- Renamed PasswordBox to ChapterPasswordBox
-- Renamed Resizer to ChapterResizer
-- Renamed SearchTextBox to ChapterSearchTextBox
-- Renamed SpacingStackPanel to ChapterStackPanel
-- Renamed SplitButton to ChapterSplitButton
-- Renamed TimeBox to ChapterTimeBox
-- Renamed TitledItemsControl to ChapterTitledItemsControl
-- Renamed TreeListView to ChapterTreeListView
-- Renamed UniformPanel to ChapterUniformPanel
-- Renamed UniformWrapPanel to ChapterUniformWrapPanel1
+- Renamed AdvancedTextBox to ChapterTextBox.
+- Renamed ArcPanel to ChapterArcPanel.
+- Renamed BrowseTextBox to ChapterBrowseTextBox.
+- Renamed DynamicTabControl to ChapterTabControl.
+- Renamed EllipsePanel to ChapterEllipsePanel.
+- Renamed EnumerationComboBox to ChapterComboBox.
+- Renamed ExtendedTreeView to ChapterTreeView.
+- Renamed FormatterTextBlock to ChapterTextBlock.
+- Renamed HeaderItemsControl to ChapterHeaderedContentControl.
+- Renamed ImageButton to ChapterButton.
+- Renamed ItemsPanel to ChapterItemsPanel.
+- Renamed NumberBox to ChapterNumberBox.
+- Renamed OptionButton to ChapterToggleSwitch.
+- Renamed PasswordBox to ChapterPasswordBox.
+- Renamed Resizer to ChapterResizer.
+- Renamed SearchTextBox to ChapterSearchTextBox.
+- Renamed SpacingStackPanel to ChapterStackPanel.
+- Renamed SplitButton to ChapterSplitButton.
+- Renamed TimeBox to ChapterTimeBox.
+- Renamed TitledItemsControl to ChapterTitledItemsControl.
+- Renamed TreeListView to ChapterTreeListView.
+- Renamed UniformPanel to ChapterUniformPanel.
+- Renamed UniformWrapPanel to ChapterWrapPanel.
+- Change default for IsUniform within the ChapterWrapPanel from true to false.
 ### Supported .Net Versions
 - .Net Core 3.0
 - .Net Framework 4.5

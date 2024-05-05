@@ -52,7 +52,7 @@ public partial class MainWindow : INotifyPropertyChanged
             new ChapterTitledItemsControlControl(),
             new ChapterItemsPanelControl(),
             new ChapterUniformPanelControl(),
-            new ChapterUniformWrapPanelControl()
+            new ChapterWrapPanelControl()
         ];
 
         Controls = _basicInput;
