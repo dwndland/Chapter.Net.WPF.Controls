@@ -1,5 +1,5 @@
 ﻿// -----------------------------------------------------------------------------------------------------------------
-// <copyright file="PasswordBox.cs" company="my-libraries">
+// <copyright file="ChapterPasswordBox.cs" company="my-libraries">
 //     Copyright (c) David Wendland. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------------------------------------------------
@@ -13,51 +13,51 @@ using System.Windows.Controls;
 namespace Chapter.Net.WPF.Controls
 {
     /// <summary>
-    ///     Hosts and enhances the <see cref="System.Windows.Controls.PasswordBox" /> to be able to bind the password value and
+    ///     Hosts and enhances the <see cref="PasswordBox" /> to be able to bind the password value and
     ///     show info text in the background.
     /// </summary>
     [TemplatePart(Name = "PART_InfoText", Type = typeof(TextBlock))]
-    [TemplatePart(Name = "PART_PasswordBox", Type = typeof(System.Windows.Controls.PasswordBox))]
-    public class PasswordBox : Control
+    [TemplatePart(Name = "PART_ChapterPasswordBox", Type = typeof(PasswordBox))]
+    public class ChapterPasswordBox : Control
     {
         /// <summary>
         ///     Identifies the <see cref="InfoAppearance" /> dependency property.
         /// </summary>
         public static readonly DependencyProperty InfoAppearanceProperty =
-            DependencyProperty.Register(nameof(InfoAppearance), typeof(InfoAppearance), typeof(PasswordBox), new UIPropertyMetadata(InfoAppearance.OnLostFocus, OnInfoAppearanceChanged));
+            DependencyProperty.Register(nameof(InfoAppearance), typeof(InfoAppearance), typeof(ChapterPasswordBox), new UIPropertyMetadata(InfoAppearance.OnLostFocus, OnInfoAppearanceChanged));
 
         /// <summary>
         ///     Identifies the <see cref="InfoText" /> dependency property.
         /// </summary>
         public static readonly DependencyProperty InfoTextProperty =
-            DependencyProperty.Register(nameof(InfoText), typeof(string), typeof(PasswordBox), new UIPropertyMetadata(""));
+            DependencyProperty.Register(nameof(InfoText), typeof(string), typeof(ChapterPasswordBox), new UIPropertyMetadata(""));
 
         /// <summary>
         ///     Identifies the <see cref="InfoTextStyle" /> dependency property.
         /// </summary>
         public static readonly DependencyProperty InfoTextStyleProperty =
-            DependencyProperty.Register(nameof(InfoTextStyle), typeof(Style), typeof(PasswordBox), new UIPropertyMetadata(null));
+            DependencyProperty.Register(nameof(InfoTextStyle), typeof(Style), typeof(ChapterPasswordBox), new UIPropertyMetadata(null));
 
         /// <summary>
         ///     Identifies the <see cref="Password" /> dependency property.
         /// </summary>
         public static readonly DependencyProperty PasswordProperty =
-            DependencyProperty.Register(nameof(Password), typeof(string), typeof(PasswordBox), new FrameworkPropertyMetadata(string.Empty, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault, OnPasswordChanged));
+            DependencyProperty.Register(nameof(Password), typeof(string), typeof(ChapterPasswordBox), new FrameworkPropertyMetadata(string.Empty, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault, OnPasswordChanged));
 
         private TextBlock _infoText;
-        private System.Windows.Controls.PasswordBox _innerPasswordBox;
+        private PasswordBox _innerChapterPasswordBox;
 
         private bool _selfChange;
 
-        static PasswordBox()
+        static ChapterPasswordBox()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(PasswordBox), new FrameworkPropertyMetadata(typeof(PasswordBox)));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(ChapterPasswordBox), new FrameworkPropertyMetadata(typeof(ChapterPasswordBox)));
         }
 
         /// <summary>
-        ///     Initializes a new instance of the <see cref="PasswordBox" /> class.
+        ///     Initializes a new instance of the <see cref="ChapterPasswordBox" /> class.
         /// </summary>
-        public PasswordBox()
+        public ChapterPasswordBox()
         {
             Loaded += InfoTextBox_Loaded;
         }
@@ -120,27 +120,27 @@ namespace Chapter.Net.WPF.Controls
         {
             base.OnApplyTemplate();
 
-            _innerPasswordBox = GetTemplateChild("PART_PasswordBox") as System.Windows.Controls.PasswordBox;
-            if (_innerPasswordBox != null)
+            _innerChapterPasswordBox = GetTemplateChild("PART_ChapterPasswordBox") as PasswordBox;
+            if (_innerChapterPasswordBox != null)
             {
-                _innerPasswordBox.PasswordChanged += PasswordBox_PasswordChanged;
+                _innerChapterPasswordBox.PasswordChanged += ChapterPasswordBox_PasswordChanged;
 
-                _innerPasswordBox.GotFocus += InnerPasswordBox_GotFocus;
-                _innerPasswordBox.LostFocus += InnerPasswordBox_LostFocus;
-                _innerPasswordBox.PasswordChanged += InnerPasswordBox_PasswordChanged;
+                _innerChapterPasswordBox.GotFocus += InnerChapterPasswordBox_GotFocus;
+                _innerChapterPasswordBox.LostFocus += InnerChapterPasswordBox_LostFocus;
+                _innerChapterPasswordBox.PasswordChanged += InnerChapterPasswordBox_PasswordChanged;
             }
 
             RefreshInfoAppearance();
         }
 
-        private void InnerPasswordBox_GotFocus(object sender, RoutedEventArgs e)
+        private void InnerChapterPasswordBox_GotFocus(object sender, RoutedEventArgs e)
         {
             if (GetInfoTextBlock())
                 if (InfoAppearance != InfoAppearance.OnEmpty)
                     _infoText.Visibility = Visibility.Collapsed;
         }
 
-        private void InnerPasswordBox_LostFocus(object sender, RoutedEventArgs e)
+        private void InnerChapterPasswordBox_LostFocus(object sender, RoutedEventArgs e)
         {
             if (GetInfoTextBlock())
                 if (InfoAppearance != InfoAppearance.None &&
@@ -148,12 +148,12 @@ namespace Chapter.Net.WPF.Controls
                     _infoText.Visibility = Visibility.Visible;
         }
 
-        private void InnerPasswordBox_PasswordChanged(object sender, RoutedEventArgs e)
+        private void InnerChapterPasswordBox_PasswordChanged(object sender, RoutedEventArgs e)
         {
             if (GetInfoTextBlock())
             {
-                var passwordBox = (System.Windows.Controls.PasswordBox)sender;
-                if (string.IsNullOrEmpty(passwordBox.Password))
+                var ChapterPasswordBox = (PasswordBox)sender;
+                if (string.IsNullOrEmpty(ChapterPasswordBox.Password))
                 {
                     if (InfoAppearance == InfoAppearance.OnEmpty)
                         _infoText.Visibility = Visibility.Visible;
@@ -171,14 +171,14 @@ namespace Chapter.Net.WPF.Controls
         /// <param name="e">The parameter passed by the caller.</param>
         protected override void OnGotFocus(RoutedEventArgs e)
         {
-            if (_innerPasswordBox != null)
-                _innerPasswordBox.Focus();
+            if (_innerChapterPasswordBox != null)
+                _innerChapterPasswordBox.Focus();
             base.OnGotFocus(e);
         }
 
-        private void PasswordBox_PasswordChanged(object sender, RoutedEventArgs e)
+        private void ChapterPasswordBox_PasswordChanged(object sender, RoutedEventArgs e)
         {
-            var box = (System.Windows.Controls.PasswordBox)sender;
+            var box = (PasswordBox)sender;
             _selfChange = true;
             Password = box.Password;
             _selfChange = false;
@@ -186,18 +186,18 @@ namespace Chapter.Net.WPF.Controls
 
         private static void OnPasswordChanged(DependencyObject o, DependencyPropertyChangedEventArgs e)
         {
-            TakePasswordOver(o as PasswordBox, e.NewValue);
+            TakePasswordOver(o as ChapterPasswordBox, e.NewValue);
         }
 
-        private static void TakePasswordOver(PasswordBox control, object password)
+        private static void TakePasswordOver(ChapterPasswordBox control, object password)
         {
             if (!control._selfChange &&
                 password != null &&
-                control._innerPasswordBox != null)
+                control._innerChapterPasswordBox != null)
             {
-                control._innerPasswordBox.PasswordChanged -= control.PasswordBox_PasswordChanged;
-                control._innerPasswordBox.Password = password.ToString();
-                control._innerPasswordBox.PasswordChanged += control.PasswordBox_PasswordChanged;
+                control._innerChapterPasswordBox.PasswordChanged -= control.ChapterPasswordBox_PasswordChanged;
+                control._innerChapterPasswordBox.Password = password.ToString();
+                control._innerChapterPasswordBox.PasswordChanged += control.ChapterPasswordBox_PasswordChanged;
             }
         }
 
@@ -221,7 +221,7 @@ namespace Chapter.Net.WPF.Controls
 
         private static void OnInfoAppearanceChanged(DependencyObject sender, DependencyPropertyChangedEventArgs e)
         {
-            ((PasswordBox)sender).RefreshInfoAppearance();
+            ((ChapterPasswordBox)sender).RefreshInfoAppearance();
         }
     }
 }

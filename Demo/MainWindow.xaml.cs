@@ -42,7 +42,7 @@ public partial class MainWindow : INotifyPropertyChanged
             new ChapterTextBoxControl(),
             new ChapterBrowseTextBoxControl(),
             new ChapterNumberBoxControl(),
-            new PasswordBoxControl(),
+            new ChapterPasswordBoxControl(),
             new SearchTextBoxControl(),
             new TimeBoxControl()
         ];

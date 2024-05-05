@@ -13,7 +13,7 @@
         <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterButton/ChapterButton.xaml" />
         <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterNumberBox/ChapterNumberBox.xaml" />
         <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterToggleSwitch/ChapterToggleSwitch.xaml" />
-        <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/PasswordBox/PasswordBox.xaml" />
+        <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterPasswordBox/ChapterPasswordBox.xaml" />
         <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/Resizer/FrameResizer.xaml" />
         <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/Resizer/Resizer.xaml" />
         <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/SearchTextBox/SearchTextBox.xaml" />

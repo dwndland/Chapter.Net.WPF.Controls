@@ -19,7 +19,7 @@ A set of new WPF controls which are not yet build in.
 - **ItemsPanel:** A UniformGrid with only one row or one column, depending on the orientation, which adds a spacing between the items.
 - **ChapterNumberBox:** Displays a TextBox to accept numeric values only, so the text can be bound to a numeric property directly without converting.
 - **ChapterToggleSwitch:** A custom checkbox where a slider shows the checked and unchecked state.
-- **PasswordBox:** Hosts and enhances the WPF PasswordBox to be able to bind the password value and show info text in the background.
+- **ChapterPasswordBox:** Hosts and enhances the WPF ChapterPasswordBox to be able to bind the password value and show info text in the background.
 - **Resizer:** Brings the possibility to resize every UI control manually by hold and drag the corners or sides.
 - **SearchTextBox:** Adds search and cancel buttons to the ChapterTextBox to represent a search box shown like in the Windows explorer.
 - **SpacingStackPanel:** A StackPanel which adds a spacing between the items.
@@ -329,12 +329,12 @@ A set of new WPF controls which are not yet build in.
     ```
     ![ChapterToggleSwitch](https://raw.githubusercontent.com/dwndland/Chapter.Net.WPF.Controls/master/Images/ChapterToggleSwitch.png)
 
-15. **PasswordBox:**
+15. **ChapterPasswordBox:**
     - Usage
     ```xaml
-    <chapter:PasswordBox Password="{Binding Password}" InfoText="Required" InfoAppearance="OnEmpty" />
+    <chapter:ChapterPasswordBox Password="{Binding Password}" InfoText="Required" InfoAppearance="OnEmpty" />
     ```
-    ![PasswordBox](https://raw.githubusercontent.com/dwndland/Chapter.Net.WPF.Controls/master/Images/PasswordBox.png)
+    ![ChapterPasswordBox](https://raw.githubusercontent.com/dwndland/Chapter.Net.WPF.Controls/master/Images/ChapterPasswordBox.png)
 
 16. **Resizer:**
     - Usage
