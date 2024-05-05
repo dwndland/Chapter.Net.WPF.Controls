@@ -1,5 +1,5 @@
 ﻿// -----------------------------------------------------------------------------------------------------------------
-// <copyright file="Resizer.cs" company="my-libraries">
+// <copyright file="ChapterResizer.cs" company="my-libraries">
 //     Copyright (c) David Wendland. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------------------------------------------------
@@ -24,31 +24,31 @@ namespace Chapter.Net.WPF.Controls
     [TemplatePart(Name = "PART_RightBottomThumb", Type = typeof(Thumb))]
     [TemplatePart(Name = "PART_BottomThumb", Type = typeof(Thumb))]
     [TemplatePart(Name = "PART_LeftBottomThumb", Type = typeof(Thumb))]
-    public class Resizer : ContentControl
+    public class ChapterResizer : ContentControl
     {
         private static readonly DependencyPropertyKey LeftWidthPropertyKey =
-            DependencyProperty.RegisterReadOnly(nameof(LeftWidth), typeof(double), typeof(Resizer), new PropertyMetadata(6d));
+            DependencyProperty.RegisterReadOnly(nameof(LeftWidth), typeof(double), typeof(ChapterResizer), new PropertyMetadata(6d));
 
         private static readonly DependencyPropertyKey TopHeightPropertyKey =
-            DependencyProperty.RegisterReadOnly(nameof(TopHeight), typeof(double), typeof(Resizer), new PropertyMetadata(6d));
+            DependencyProperty.RegisterReadOnly(nameof(TopHeight), typeof(double), typeof(ChapterResizer), new PropertyMetadata(6d));
 
         private static readonly DependencyPropertyKey RightWidthPropertyKey =
-            DependencyProperty.RegisterReadOnly(nameof(RightWidth), typeof(double), typeof(Resizer), new PropertyMetadata(6d));
+            DependencyProperty.RegisterReadOnly(nameof(RightWidth), typeof(double), typeof(ChapterResizer), new PropertyMetadata(6d));
 
         private static readonly DependencyPropertyKey BottomHeightPropertyKey =
-            DependencyProperty.RegisterReadOnly(nameof(BottomHeight), typeof(double), typeof(Resizer), new PropertyMetadata(6d));
+            DependencyProperty.RegisterReadOnly(nameof(BottomHeight), typeof(double), typeof(ChapterResizer), new PropertyMetadata(6d));
 
         /// <summary>
         ///     Identifies the <see cref="FrameSizes" /> dependency property.
         /// </summary>
         public static readonly DependencyProperty FrameSizesProperty =
-            DependencyProperty.Register(nameof(FrameSizes), typeof(Thickness), typeof(Resizer), new UIPropertyMetadata(new Thickness(6), OnFrameSizesChanged));
+            DependencyProperty.Register(nameof(FrameSizes), typeof(Thickness), typeof(ChapterResizer), new UIPropertyMetadata(new Thickness(6), OnFrameSizesChanged));
 
         /// <summary>
         ///     Identifies the <see cref="CornerSize" /> dependency property.
         /// </summary>
         public static readonly DependencyProperty CornerSizeProperty =
-            DependencyProperty.Register(nameof(CornerSize), typeof(double), typeof(Resizer), new UIPropertyMetadata(12d));
+            DependencyProperty.Register(nameof(CornerSize), typeof(double), typeof(ChapterResizer), new UIPropertyMetadata(12d));
 
         /// <summary>
         ///     Identifies the <see cref="CornerSize" /> dependency property.
@@ -70,13 +70,13 @@ namespace Chapter.Net.WPF.Controls
         /// </summary>
         public static readonly DependencyProperty BottomHeightProperty = BottomHeightPropertyKey.DependencyProperty;
 
-        static Resizer()
+        static ChapterResizer()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(Resizer), new FrameworkPropertyMetadata(typeof(Resizer)));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(ChapterResizer), new FrameworkPropertyMetadata(typeof(ChapterResizer)));
         }
 
         /// <summary>
-        ///     Gets or sets all frame resizer widths and heights. Left,Top,Right,Bottom.
+        ///     Gets or sets all frame ChapterResizer widths and heights. Left,Top,Right,Bottom.
         /// </summary>
         /// <value>Default: 6.</value>
         [DefaultValue(6)]
@@ -87,7 +87,7 @@ namespace Chapter.Net.WPF.Controls
         }
 
         /// <summary>
-        ///     Gets or sets the width and height of all corner resizers.
+        ///     Gets or sets the width and height of all corner ChapterResizers.
         /// </summary>
         /// <value>Default: 12.</value>
         [DefaultValue(12)]
@@ -98,7 +98,7 @@ namespace Chapter.Net.WPF.Controls
         }
 
         /// <summary>
-        ///     Gets or sets the width of the left frame resizer.
+        ///     Gets or sets the width of the left frame ChapterResizer.
         /// </summary>
         /// <value>Default: 6.</value>
         [DefaultValue(6)]
@@ -109,7 +109,7 @@ namespace Chapter.Net.WPF.Controls
         }
 
         /// <summary>
-        ///     Gets or sets the height of the top frame resizer.
+        ///     Gets or sets the height of the top frame ChapterResizer.
         /// </summary>
         /// <value>Default: 6.</value>
         [DefaultValue(6)]
@@ -120,7 +120,7 @@ namespace Chapter.Net.WPF.Controls
         }
 
         /// <summary>
-        ///     Gets or sets the width of the right frame resizer.
+        ///     Gets or sets the width of the right frame ChapterResizer.
         /// </summary>
         /// <value>Default: 6.</value>
         [DefaultValue(6)]
@@ -131,7 +131,7 @@ namespace Chapter.Net.WPF.Controls
         }
 
         /// <summary>
-        ///     Gets or sets the height of the bottom frame resizer.
+        ///     Gets or sets the height of the bottom frame ChapterResizer.
         /// </summary>
         /// <value>Default: 6.</value>
         [DefaultValue(6)]
@@ -261,7 +261,7 @@ namespace Chapter.Net.WPF.Controls
 
         private static void OnFrameSizesChanged(DependencyObject owner, DependencyPropertyChangedEventArgs e)
         {
-            var control = (Resizer)owner;
+            var control = (ChapterResizer)owner;
             var thickness = (Thickness)e.NewValue;
             control.LeftWidth = thickness.Left;
             control.TopHeight = thickness.Top;

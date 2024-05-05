@@ -20,7 +20,7 @@ A set of new WPF controls which are not yet build in.
 - **ChapterNumberBox:** Displays a TextBox to accept numeric values only, so the text can be bound to a numeric property directly without converting.
 - **ChapterToggleSwitch:** A custom checkbox where a slider shows the checked and unchecked state.
 - **ChapterPasswordBox:** Hosts and enhances the WPF ChapterPasswordBox to be able to bind the password value and show info text in the background.
-- **Resizer:** Brings the possibility to resize every UI control manually by hold and drag the corners or sides.
+- **ChapterResizer:** Brings the possibility to resize every UI control manually by hold and drag the corners or sides.
 - **SearchTextBox:** Adds search and cancel buttons to the ChapterTextBox to represent a search box shown like in the Windows explorer.
 - **SpacingStackPanel:** A StackPanel which adds a spacing between the items.
 - **SplitButton:** A button with a drop down where more commands can be available.
@@ -336,22 +336,22 @@ A set of new WPF controls which are not yet build in.
     ```
     ![ChapterPasswordBox](https://raw.githubusercontent.com/dwndland/Chapter.Net.WPF.Controls/master/Images/ChapterPasswordBox.png)
 
-16. **Resizer:**
+16. **ChapterResizer:**
     - Usage
     ```xaml
     <StackPanel Orientation="Horizontal" VerticalAlignment="Top">
-        <chapter:Resizer FrameSizes="0,0,4,4" Margin="0,0,20,0" VerticalAlignment="Top" CornerSize="12">
+        <chapter:ChapterResizer FrameSizes="0,0,4,4" Margin="0,0,20,0" VerticalAlignment="Top" CornerSize="12">
             <Button Content="Button" Padding="12" />
-        </chapter:Resizer>
-        <chapter:Resizer RightWidth="4" Margin="0,0,20,0" VerticalAlignment="Top">
+        </chapter:ChapterResizer>
+        <chapter:ChapterResizer RightWidth="4" Margin="0,0,20,0" VerticalAlignment="Top">
             <Button Content="Button" Padding="12" />
-        </chapter:Resizer>
-        <chapter:Resizer BottomHeight="4" VerticalAlignment="Top">
+        </chapter:ChapterResizer>
+        <chapter:ChapterResizer BottomHeight="4" VerticalAlignment="Top">
             <Button Content="Button" Padding="12" />
-        </chapter:Resizer>
+        </chapter:ChapterResizer>
     </StackPanel>
     ```
-    ![Resizer](https://raw.githubusercontent.com/dwndland/Chapter.Net.WPF.Controls/master/Images/Resizer.png)
+    ![ChapterResizer](https://raw.githubusercontent.com/dwndland/Chapter.Net.WPF.Controls/master/Images/ChapterResizer.png)
 
 17. **SearchTextBox:**
     - Usage

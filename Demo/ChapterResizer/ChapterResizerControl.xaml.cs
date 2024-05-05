@@ -1,5 +1,5 @@
 ﻿// -----------------------------------------------------------------------------------------------------------------
-// <copyright file="ResizerControl.xaml.cs" company="my-libraries">
+// <copyright file="ChapterResizerControl.xaml.cs" company="my-libraries">
 //     Copyright (c) David Wendland. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------------------------------------------------
@@ -8,9 +8,9 @@
 
 namespace Demo;
 
-public partial class ResizerControl
+public partial class ChapterResizerControl
 {
-    public ResizerControl()
+    public ChapterResizerControl()
     {
         InitializeComponent();
     }

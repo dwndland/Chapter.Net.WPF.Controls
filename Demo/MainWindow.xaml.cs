@@ -49,7 +49,7 @@ public partial class MainWindow : INotifyPropertyChanged
 
         _layout =
         [
-            new ResizerControl(),
+            new ChapterResizerControl(),
             new ChapterHeaderedContentControlControl(),
             new TitledItemsControlControl(),
             new ChapterArcPanelControl(),

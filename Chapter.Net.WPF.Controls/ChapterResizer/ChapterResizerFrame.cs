@@ -1,5 +1,5 @@
 ﻿// -----------------------------------------------------------------------------------------------------------------
-// <copyright file="FrameResizer.cs" company="my-libraries">
+// <copyright file="ChapterResizerFrame.cs" company="my-libraries">
 //     Copyright (c) David Wendland. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------------------------------------------------
@@ -13,19 +13,19 @@ using System.Windows.Controls.Primitives;
 namespace Chapter.Net.WPF.Controls
 {
     /// <summary>
-    ///     Represents a single line to drag in a specific direction. This is used in the <see cref="Resizer" />.
+    ///     Represents a single line to drag in a specific direction. This is used in the <see cref="ChapterResizer" />.
     /// </summary>
-    public class FrameResizer : Thumb
+    public class ChapterResizerFrame : Thumb
     {
         /// <summary>
         ///     The Direction dependency property.
         /// </summary>
         public static readonly DependencyProperty DirectionProperty =
-            DependencyProperty.Register(nameof(Direction), typeof(FrameResizeDirection), typeof(FrameResizer), new PropertyMetadata(FrameResizeDirection.LeftToRight));
+            DependencyProperty.Register(nameof(Direction), typeof(FrameResizeDirection), typeof(ChapterResizerFrame), new PropertyMetadata(FrameResizeDirection.LeftToRight));
 
-        static FrameResizer()
+        static ChapterResizerFrame()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(FrameResizer), new FrameworkPropertyMetadata(typeof(FrameResizer)));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(ChapterResizerFrame), new FrameworkPropertyMetadata(typeof(ChapterResizerFrame)));
         }
 
         /// <summary>

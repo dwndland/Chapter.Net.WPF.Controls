@@ -9,7 +9,7 @@
 namespace Chapter.Net.WPF.Controls
 {
     /// <summary>
-    ///     Defines the direction for the <see cref="FrameResizer" />.
+    ///     Defines the direction for the <see cref="ChapterResizerFrame" />.
     /// </summary>
     public enum FrameResizeDirection
     {
