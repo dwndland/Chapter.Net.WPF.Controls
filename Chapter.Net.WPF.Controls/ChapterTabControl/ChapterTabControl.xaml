@@ -2,17 +2,17 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:controls="clr-namespace:Chapter.Net.WPF.Controls">
 
-    <SolidColorBrush x:Key="DynamicTabControl.Static.Background" Color="#FFFFFF" />
-    <SolidColorBrush x:Key="DynamicTabControl.Static.Foreground" Color="#ACACAC" />
-    <SolidColorBrush x:Key="DynamicTabControl.Static.Border" Color="#ACACAC" />
+    <SolidColorBrush x:Key="ChapterTabControl.Static.Background" Color="#FFFFFF" />
+    <SolidColorBrush x:Key="ChapterTabControl.Static.Foreground" Color="#ACACAC" />
+    <SolidColorBrush x:Key="ChapterTabControl.Static.Border" Color="#ACACAC" />
 
     <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
 
-    <Style TargetType="{x:Type controls:DynamicTabControl}">
+    <Style TargetType="{x:Type controls:ChapterTabControl}">
         <Setter Property="Padding" Value="2" />
         <Setter Property="BorderThickness" Value="1" />
-        <Setter Property="BorderBrush" Value="{StaticResource DynamicTabControl.Static.Border}" />
-        <Setter Property="Background" Value="{StaticResource DynamicTabControl.Static.Background}" />
+        <Setter Property="BorderBrush" Value="{StaticResource ChapterTabControl.Static.Border}" />
+        <Setter Property="Background" Value="{StaticResource ChapterTabControl.Static.Background}" />
         <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" />
         <Setter Property="HorizontalContentAlignment" Value="Center" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
@@ -28,7 +28,7 @@
         </Setter>
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="{x:Type controls:DynamicTabControl}">
+                <ControlTemplate TargetType="{x:Type controls:ChapterTabControl}">
                     <Grid ClipToBounds="true"
                           KeyboardNavigation.TabNavigation="Local"
                           SnapsToDevicePixels="true">
@@ -52,11 +52,11 @@
                                       IsItemsHost="true" />
                             <controls:AddButton x:Name="PART_AddButton"
                                                 AutomationProperties.AutomationId="CUI_AddNewTabButton"
-                                                Command="{Binding TabItemAddingCommand, RelativeSource={RelativeSource AncestorType={x:Type controls:DynamicTabControl}}}"
-                                                CommandParameter="{Binding TabItemAddingCommandParameter, RelativeSource={RelativeSource AncestorType={x:Type controls:DynamicTabControl}}}"
+                                                Command="{Binding TabItemAddingCommand, RelativeSource={RelativeSource AncestorType={x:Type controls:ChapterTabControl}}}"
+                                                CommandParameter="{Binding TabItemAddingCommandParameter, RelativeSource={RelativeSource AncestorType={x:Type controls:ChapterTabControl}}}"
                                                 DockPanel.Dock="{TemplateBinding AddButtonPosition}"
                                                 Style="{TemplateBinding AddButtonStyle}"
-                                                Visibility="{Binding ShowAddButton, RelativeSource={RelativeSource AncestorType={x:Type controls:DynamicTabControl}}, Converter={StaticResource BooleanToVisibilityConverter}}" />
+                                                Visibility="{Binding ShowAddButton, RelativeSource={RelativeSource AncestorType={x:Type controls:ChapterTabControl}}, Converter={StaticResource BooleanToVisibilityConverter}}" />
                             <StackPanel />
                         </DockPanel>
                         <Border x:Name="ContentPanel"

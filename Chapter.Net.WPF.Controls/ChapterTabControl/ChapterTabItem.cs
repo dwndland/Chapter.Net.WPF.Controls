@@ -1,5 +1,5 @@
 ﻿// -----------------------------------------------------------------------------------------------------------------
-// <copyright file="DynamicTabItem.cs" company="my-libraries">
+// <copyright file="ChapterTabItem.cs" company="my-libraries">
 //     Copyright (c) David Wendland. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------------------------------------------------
@@ -13,38 +13,38 @@ using System.Windows.Controls;
 namespace Chapter.Net.WPF.Controls
 {
     /// <summary>
-    ///     Represents the shown tab in the <see cref="DynamicTabControl" />.
+    ///     Represents the shown tab in the <see cref="ChapterTabControl" />.
     /// </summary>
     [TemplatePart(Name = "PART_CloseButton", Type = typeof(Button))]
-    public class DynamicTabItem : TabItem
+    public class ChapterTabItem : TabItem
     {
         /// <summary>
         ///     Identifies the <see cref="CloseButtonPosition" /> dependency property.
         /// </summary>
         public static readonly DependencyProperty CloseButtonPositionProperty =
-            DependencyProperty.Register(nameof(CloseButtonPosition), typeof(Dock), typeof(DynamicTabItem), new UIPropertyMetadata(Dock.Right));
+            DependencyProperty.Register(nameof(CloseButtonPosition), typeof(Dock), typeof(ChapterTabItem), new UIPropertyMetadata(Dock.Right));
 
         /// <summary>
         ///     Identifies the <see cref="ShowCloseButton" /> dependency property.
         /// </summary>
         public static readonly DependencyProperty ShowCloseButtonProperty =
-            DependencyProperty.Register(nameof(ShowCloseButton), typeof(bool), typeof(DynamicTabItem), new UIPropertyMetadata(true));
+            DependencyProperty.Register(nameof(ShowCloseButton), typeof(bool), typeof(ChapterTabItem), new UIPropertyMetadata(true));
 
         /// <summary>
         ///     Identifies the <see cref="CloseButtonStyle" /> dependency property.
         /// </summary>
         public static readonly DependencyProperty CloseButtonStyleProperty =
-            DependencyProperty.Register(nameof(CloseButtonStyle), typeof(Style), typeof(DynamicTabItem), new PropertyMetadata(null));
+            DependencyProperty.Register(nameof(CloseButtonStyle), typeof(Style), typeof(ChapterTabItem), new PropertyMetadata(null));
 
         /// <summary>
         ///     The RoutedEvent for the CloseClick event.
         /// </summary>
         public static readonly RoutedEvent CloseClickEvent =
-            EventManager.RegisterRoutedEvent(nameof(CloseClick), RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(DynamicTabItem));
+            EventManager.RegisterRoutedEvent(nameof(CloseClick), RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(ChapterTabItem));
 
-        static DynamicTabItem()
+        static ChapterTabItem()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(DynamicTabItem), new FrameworkPropertyMetadata(typeof(DynamicTabItem)));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(ChapterTabItem), new FrameworkPropertyMetadata(typeof(ChapterTabItem)));
         }
 
         /// <summary>

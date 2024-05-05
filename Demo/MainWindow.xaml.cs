@@ -33,7 +33,7 @@ public partial class MainWindow : INotifyPropertyChanged
         [
             new ExtendedTreeViewControl(),
             new TreeListViewControl(),
-            new DynamicTabControlControl()
+            new ChapterTabControlControl()
         ];
 
         _text =

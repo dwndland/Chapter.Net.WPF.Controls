@@ -2,35 +2,35 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:controls="clr-namespace:Chapter.Net.WPF.Controls">
 
-    <LinearGradientBrush x:Key="DynamicTabItem.Static.Background" StartPoint="0,0" EndPoint="0,1">
+    <LinearGradientBrush x:Key="ChapterTabItem.Static.Background" StartPoint="0,0" EndPoint="0,1">
         <GradientStop Offset="0.0" Color="#F0F0F0" />
         <GradientStop Offset="1.0" Color="#E5E5E5" />
     </LinearGradientBrush>
-    <SolidColorBrush x:Key="DynamicTabItem.Static.Border" Color="#ACACAC" />
+    <SolidColorBrush x:Key="ChapterTabItem.Static.Border" Color="#ACACAC" />
 
-    <LinearGradientBrush x:Key="DynamicTabItem.MouseOver.Background" StartPoint="0,0" EndPoint="0,1">
+    <LinearGradientBrush x:Key="ChapterTabItem.MouseOver.Background" StartPoint="0,0" EndPoint="0,1">
         <GradientStop Offset="0.0" Color="#ECF4FC" />
         <GradientStop Offset="1.0" Color="#DCECFC" />
     </LinearGradientBrush>
-    <SolidColorBrush x:Key="DynamicTabItem.MouseOver.Border" Color="#7EB4EA" />
+    <SolidColorBrush x:Key="ChapterTabItem.MouseOver.Border" Color="#7EB4EA" />
 
-    <SolidColorBrush x:Key="DynamicTabItem.Selected.Background" Color="#FFFFFF" />
-    <SolidColorBrush x:Key="DynamicTabItem.Selected.Border" Color="#ACACAC" />
+    <SolidColorBrush x:Key="ChapterTabItem.Selected.Background" Color="#FFFFFF" />
+    <SolidColorBrush x:Key="ChapterTabItem.Selected.Border" Color="#ACACAC" />
 
-    <SolidColorBrush x:Key="DynamicTabItem.Disabled.Background" Color="#F0F0F0" />
-    <SolidColorBrush x:Key="DynamicTabItem.Disabled.BorderBrush" Color="#D9D9D9" />
+    <SolidColorBrush x:Key="ChapterTabItem.Disabled.Background" Color="#F0F0F0" />
+    <SolidColorBrush x:Key="ChapterTabItem.Disabled.BorderBrush" Color="#D9D9D9" />
 
     <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
 
-    <Style TargetType="{x:Type controls:DynamicTabItem}">
+    <Style TargetType="{x:Type controls:ChapterTabItem}">
         <Setter Property="Foreground" Value="Black" />
         <Setter Property="Padding" Value="6,2,6,2" />
-        <Setter Property="BorderBrush" Value="{StaticResource DynamicTabItem.Static.Border}" />
-        <Setter Property="Background" Value="{StaticResource DynamicTabItem.Static.Background}" />
+        <Setter Property="BorderBrush" Value="{StaticResource ChapterTabItem.Static.Border}" />
+        <Setter Property="Background" Value="{StaticResource ChapterTabItem.Static.Background}" />
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
         <Setter Property="VerticalContentAlignment" Value="Stretch" />
         <Setter Property="CloseButtonPosition" Value="Right" />
-        <Setter Property="ShowCloseButton" Value="{Binding ShowCloseButtons, RelativeSource={RelativeSource AncestorType={x:Type controls:DynamicTabControl}}}" />
+        <Setter Property="ShowCloseButton" Value="{Binding ShowCloseButtons, RelativeSource={RelativeSource AncestorType={x:Type controls:ChapterTabControl}}}" />
         <Setter Property="CloseButtonStyle">
             <Setter.Value>
                 <Style TargetType="{x:Type Button}">
@@ -44,7 +44,7 @@
         </Setter>
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="{x:Type controls:DynamicTabItem}">
+                <ControlTemplate TargetType="{x:Type controls:ChapterTabItem}">
                     <Grid SnapsToDevicePixels="true">
                         <Grid x:Name="templateRoot" SnapsToDevicePixels="true">
                             <Border x:Name="mainBorder"
@@ -54,19 +54,19 @@
                                     BorderThickness="1,1,1,0">
                                 <Border x:Name="innerBorder"
                                         Margin="-1"
-                                        Background="{StaticResource DynamicTabItem.Selected.Background}"
-                                        BorderBrush="{StaticResource DynamicTabItem.Selected.Border}"
+                                        Background="{StaticResource ChapterTabItem.Selected.Background}"
+                                        BorderBrush="{StaticResource ChapterTabItem.Selected.Border}"
                                         BorderThickness="1,1,1,0"
                                         Opacity="0" />
                             </Border>
                             <DockPanel x:Name="Content" Margin="{TemplateBinding Padding}">
                                 <controls:CloseButton x:Name="PART_CloseButton"
                                                       AutomationProperties.AutomationId="CUI_CloseTabButton"
-                                                      Command="{Binding TabItemClosingCommand, RelativeSource={RelativeSource AncestorType={x:Type controls:DynamicTabControl}}}"
+                                                      Command="{Binding TabItemClosingCommand, RelativeSource={RelativeSource AncestorType={x:Type controls:ChapterTabControl}}}"
                                                       CommandParameter="{Binding}"
                                                       DockPanel.Dock="{TemplateBinding CloseButtonPosition}"
                                                       Style="{TemplateBinding CloseButtonStyle}"
-                                                      Visibility="{Binding ShowCloseButton, RelativeSource={RelativeSource AncestorType={x:Type controls:DynamicTabItem}}, Converter={StaticResource BooleanToVisibilityConverter}}" />
+                                                      Visibility="{Binding ShowCloseButton, RelativeSource={RelativeSource AncestorType={x:Type controls:ChapterTabItem}}, Converter={StaticResource BooleanToVisibilityConverter}}" />
                                 <ContentPresenter x:Name="contentPresenter"
                                                   HorizontalAlignment="{Binding HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"
                                                   VerticalAlignment="{Binding VerticalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"
@@ -83,8 +83,8 @@
                                 <Condition Binding="{Binding IsMouseOver, RelativeSource={RelativeSource Self}}" Value="true" />
                                 <Condition Binding="{Binding TabStripPlacement, RelativeSource={RelativeSource AncestorType={x:Type TabControl}}}" Value="Left" />
                             </MultiDataTrigger.Conditions>
-                            <Setter TargetName="mainBorder" Property="Background" Value="{StaticResource DynamicTabItem.MouseOver.Background}" />
-                            <Setter TargetName="mainBorder" Property="BorderBrush" Value="{StaticResource DynamicTabItem.MouseOver.Border}" />
+                            <Setter TargetName="mainBorder" Property="Background" Value="{StaticResource ChapterTabItem.MouseOver.Background}" />
+                            <Setter TargetName="mainBorder" Property="BorderBrush" Value="{StaticResource ChapterTabItem.MouseOver.Border}" />
                             <Setter TargetName="innerBorder" Property="BorderThickness" Value="1,1,0,1" />
                             <Setter TargetName="mainBorder" Property="BorderThickness" Value="1,1,0,1" />
                         </MultiDataTrigger>
@@ -93,8 +93,8 @@
                                 <Condition Binding="{Binding IsMouseOver, RelativeSource={RelativeSource Self}}" Value="true" />
                                 <Condition Binding="{Binding TabStripPlacement, RelativeSource={RelativeSource AncestorType={x:Type TabControl}}}" Value="Bottom" />
                             </MultiDataTrigger.Conditions>
-                            <Setter TargetName="mainBorder" Property="Background" Value="{StaticResource DynamicTabItem.MouseOver.Background}" />
-                            <Setter TargetName="mainBorder" Property="BorderBrush" Value="{StaticResource DynamicTabItem.MouseOver.Border}" />
+                            <Setter TargetName="mainBorder" Property="Background" Value="{StaticResource ChapterTabItem.MouseOver.Background}" />
+                            <Setter TargetName="mainBorder" Property="BorderBrush" Value="{StaticResource ChapterTabItem.MouseOver.Border}" />
                             <Setter TargetName="innerBorder" Property="BorderThickness" Value="1,0,1,1" />
                             <Setter TargetName="mainBorder" Property="BorderThickness" Value="1,0,1,1" />
                         </MultiDataTrigger>
@@ -103,8 +103,8 @@
                                 <Condition Binding="{Binding IsMouseOver, RelativeSource={RelativeSource Self}}" Value="true" />
                                 <Condition Binding="{Binding TabStripPlacement, RelativeSource={RelativeSource AncestorType={x:Type TabControl}}}" Value="Right" />
                             </MultiDataTrigger.Conditions>
-                            <Setter TargetName="mainBorder" Property="Background" Value="{StaticResource DynamicTabItem.MouseOver.Background}" />
-                            <Setter TargetName="mainBorder" Property="BorderBrush" Value="{StaticResource DynamicTabItem.MouseOver.Border}" />
+                            <Setter TargetName="mainBorder" Property="Background" Value="{StaticResource ChapterTabItem.MouseOver.Background}" />
+                            <Setter TargetName="mainBorder" Property="BorderBrush" Value="{StaticResource ChapterTabItem.MouseOver.Border}" />
                             <Setter TargetName="innerBorder" Property="BorderThickness" Value="0,1,1,1" />
                             <Setter TargetName="mainBorder" Property="BorderThickness" Value="0,1,1,1" />
                         </MultiDataTrigger>
@@ -113,8 +113,8 @@
                                 <Condition Binding="{Binding IsMouseOver, RelativeSource={RelativeSource Self}}" Value="true" />
                                 <Condition Binding="{Binding TabStripPlacement, RelativeSource={RelativeSource AncestorType={x:Type TabControl}}}" Value="Top" />
                             </MultiDataTrigger.Conditions>
-                            <Setter TargetName="mainBorder" Property="Background" Value="{StaticResource DynamicTabItem.MouseOver.Background}" />
-                            <Setter TargetName="mainBorder" Property="BorderBrush" Value="{StaticResource DynamicTabItem.MouseOver.Border}" />
+                            <Setter TargetName="mainBorder" Property="Background" Value="{StaticResource ChapterTabItem.MouseOver.Background}" />
+                            <Setter TargetName="mainBorder" Property="BorderBrush" Value="{StaticResource ChapterTabItem.MouseOver.Border}" />
                             <Setter TargetName="innerBorder" Property="BorderThickness" Value="1,1,1,0" />
                             <Setter TargetName="mainBorder" Property="BorderThickness" Value="1,1,1,0" />
                         </MultiDataTrigger>
@@ -124,8 +124,8 @@
                                 <Condition Binding="{Binding TabStripPlacement, RelativeSource={RelativeSource AncestorType={x:Type TabControl}}}" Value="Left" />
                             </MultiDataTrigger.Conditions>
                             <Setter TargetName="contentPresenter" Property="Opacity" Value="0.56" />
-                            <Setter TargetName="mainBorder" Property="Background" Value="{StaticResource DynamicTabItem.Disabled.Background}" />
-                            <Setter TargetName="mainBorder" Property="BorderBrush" Value="{StaticResource DynamicTabItem.Disabled.Border}" />
+                            <Setter TargetName="mainBorder" Property="Background" Value="{StaticResource ChapterTabItem.Disabled.Background}" />
+                            <Setter TargetName="mainBorder" Property="BorderBrush" Value="{StaticResource ChapterTabItem.Disabled.Border}" />
                             <Setter TargetName="innerBorder" Property="BorderThickness" Value="1,1,0,1" />
                             <Setter TargetName="mainBorder" Property="BorderThickness" Value="1,1,0,1" />
                         </MultiDataTrigger>
@@ -135,8 +135,8 @@
                                 <Condition Binding="{Binding TabStripPlacement, RelativeSource={RelativeSource AncestorType={x:Type TabControl}}}" Value="Bottom" />
                             </MultiDataTrigger.Conditions>
                             <Setter TargetName="contentPresenter" Property="Opacity" Value="0.56" />
-                            <Setter TargetName="mainBorder" Property="Background" Value="{StaticResource DynamicTabItem.Disabled.Background}" />
-                            <Setter TargetName="mainBorder" Property="BorderBrush" Value="{StaticResource DynamicTabItem.Disabled.Border}" />
+                            <Setter TargetName="mainBorder" Property="Background" Value="{StaticResource ChapterTabItem.Disabled.Background}" />
+                            <Setter TargetName="mainBorder" Property="BorderBrush" Value="{StaticResource ChapterTabItem.Disabled.Border}" />
                             <Setter TargetName="innerBorder" Property="BorderThickness" Value="1,0,1,1" />
                             <Setter TargetName="mainBorder" Property="BorderThickness" Value="1,0,1,1" />
                         </MultiDataTrigger>
@@ -146,8 +146,8 @@
                                 <Condition Binding="{Binding TabStripPlacement, RelativeSource={RelativeSource AncestorType={x:Type TabControl}}}" Value="Right" />
                             </MultiDataTrigger.Conditions>
                             <Setter TargetName="contentPresenter" Property="Opacity" Value="0.56" />
-                            <Setter TargetName="mainBorder" Property="Background" Value="{StaticResource DynamicTabItem.Disabled.Background}" />
-                            <Setter TargetName="mainBorder" Property="BorderBrush" Value="{StaticResource DynamicTabItem.Disabled.Border}" />
+                            <Setter TargetName="mainBorder" Property="Background" Value="{StaticResource ChapterTabItem.Disabled.Background}" />
+                            <Setter TargetName="mainBorder" Property="BorderBrush" Value="{StaticResource ChapterTabItem.Disabled.Border}" />
                             <Setter TargetName="innerBorder" Property="BorderThickness" Value="0,1,1,1" />
                             <Setter TargetName="mainBorder" Property="BorderThickness" Value="0,1,1,1" />
                         </MultiDataTrigger>
@@ -157,8 +157,8 @@
                                 <Condition Binding="{Binding TabStripPlacement, RelativeSource={RelativeSource AncestorType={x:Type TabControl}}}" Value="Top" />
                             </MultiDataTrigger.Conditions>
                             <Setter TargetName="contentPresenter" Property="Opacity" Value="0.56" />
-                            <Setter TargetName="mainBorder" Property="Background" Value="{StaticResource DynamicTabItem.Disabled.Background}" />
-                            <Setter TargetName="mainBorder" Property="BorderBrush" Value="{StaticResource DynamicTabItem.Disabled.Border}" />
+                            <Setter TargetName="mainBorder" Property="Background" Value="{StaticResource ChapterTabItem.Disabled.Background}" />
+                            <Setter TargetName="mainBorder" Property="BorderBrush" Value="{StaticResource ChapterTabItem.Disabled.Border}" />
                             <Setter TargetName="innerBorder" Property="BorderThickness" Value="1,1,1,0" />
                             <Setter TargetName="mainBorder" Property="BorderThickness" Value="1,1,1,0" />
                         </MultiDataTrigger>

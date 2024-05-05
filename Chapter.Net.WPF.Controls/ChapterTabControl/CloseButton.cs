@@ -1,5 +1,5 @@
 ﻿// -----------------------------------------------------------------------------------------------------------------
-// <copyright file="AddButton.cs" company="my-libraries">
+// <copyright file="CloseButton.cs" company="my-libraries">
 //     Copyright (c) David Wendland. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------------------------------------------------
@@ -13,23 +13,23 @@ using System.Windows.Controls;
 namespace Chapter.Net.WPF.Controls
 {
     /// <summary>
-    ///     Represents the add new tab Button shown in the <see cref="DynamicTabControl" />.
+    ///     Represents the close Button shown in the <see cref="ChapterTabControl" />.
     /// </summary>
-    public class AddButton : Button
+    public class CloseButton : Button
     {
         /// <summary>
         ///     Identifies the <see cref="StrokeThickness" /> dependency property.
         /// </summary>
         public static readonly DependencyProperty StrokeThicknessProperty =
-            DependencyProperty.Register(nameof(StrokeThickness), typeof(double), typeof(AddButton), new UIPropertyMetadata(1.5));
+            DependencyProperty.Register(nameof(StrokeThickness), typeof(double), typeof(CloseButton), new UIPropertyMetadata(1.5));
 
-        static AddButton()
+        static CloseButton()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(AddButton), new FrameworkPropertyMetadata(typeof(AddButton)));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(CloseButton), new FrameworkPropertyMetadata(typeof(CloseButton)));
         }
 
         /// <summary>
-        ///     Gets or sets the stroke thickness of the plus icon shown in the template.
+        ///     Gets or sets the stroke thickness of the X in the template.
         /// </summary>
         /// <value>Default: 1.5.</value>
         [DefaultValue(1.5)]

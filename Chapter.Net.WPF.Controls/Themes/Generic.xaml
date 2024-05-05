@@ -3,10 +3,10 @@
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterBrowseTextBox/ChapterBrowseTextBox.xaml" />
         <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterTextBox/ChapterTextBox.xaml" />
-        <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/DynamicTabControl/AddButton.xaml" />
-        <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/DynamicTabControl/CloseButton.xaml" />
-        <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/DynamicTabControl/DynamicTabControl.xaml" />
-        <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/DynamicTabControl/DynamicTabItem.xaml" />
+        <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterTabControl/AddButton.xaml" />
+        <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterTabControl/CloseButton.xaml" />
+        <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterTabControl/ChapterTabControl.xaml" />
+        <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterTabControl/ChapterTabItem.xaml" />
         <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/EnumerationComboBox/EnumerationComboBox.xaml" />
         <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/EnumerationComboBox/EnumerationComboBoxItem.xaml" />
         <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/HeaderItemsControl/HeaderItemsControl.xaml" />

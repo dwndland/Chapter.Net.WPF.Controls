@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="Demo.DynamicTabControlControl"
+﻿<UserControl x:Class="Demo.ChapterTabControlControl"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:controls="clr-namespace:Chapter.Net.WPF.Controls;assembly=Chapter.Net.WPF.Controls"
@@ -35,15 +35,15 @@
             </StackPanel>
         </local:PropertyPanel>
 
-        <controls:DynamicTabControl AddButtonPosition="{Binding SelectedItem, ElementName=addButtonPosition}"
+        <controls:ChapterTabControl AddButtonPosition="{Binding SelectedItem, ElementName=addButtonPosition}"
                                     AddClick="OnAddClick"
                                     ShowAddButton="{Binding IsChecked, ElementName=showAddButton}"
                                     ShowCloseButtons="{Binding IsChecked, ElementName=showCloseButton}"
                                     TabStripPlacement="{Binding SelectedItem, ElementName=tabStripPlacement}">
-            <controls:DynamicTabItem CloseClick="OnCloseClick" Header="First" />
-            <controls:DynamicTabItem CloseClick="OnCloseClick" Header="Second" />
-            <controls:DynamicTabItem CloseClick="OnCloseClick" Header="Third" />
-        </controls:DynamicTabControl>
+            <controls:ChapterTabItem CloseClick="OnCloseClick" Header="First" />
+            <controls:ChapterTabItem CloseClick="OnCloseClick" Header="Second" />
+            <controls:ChapterTabItem CloseClick="OnCloseClick" Header="Third" />
+        </controls:ChapterTabControl>
     </DockPanel>
 
 </UserControl>

@@ -1,5 +1,5 @@
 ﻿// -----------------------------------------------------------------------------------------------------------------
-// <copyright file="DynamicTabControlControl.xaml.cs" company="my-libraries">
+// <copyright file="ChapterTabControlControl.xaml.cs" company="my-libraries">
 //     Copyright (c) David Wendland. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------------------------------------------------
@@ -10,9 +10,9 @@ using System.Windows;
 
 namespace Demo;
 
-public partial class DynamicTabControlControl
+public partial class ChapterTabControlControl
 {
-    public DynamicTabControlControl()
+    public ChapterTabControlControl()
     {
         InitializeComponent();
     }
