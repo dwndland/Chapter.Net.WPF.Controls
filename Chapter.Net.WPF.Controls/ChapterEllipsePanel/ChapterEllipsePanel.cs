@@ -1,5 +1,5 @@
 ﻿// -----------------------------------------------------------------------------------------------------------------
-// <copyright file="EllipsePanel.cs" company="my-libraries">
+// <copyright file="ChapterEllipsePanel.cs" company="my-libraries">
 //     Copyright (c) David Wendland. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------------------------------------------------
@@ -19,31 +19,31 @@ namespace Chapter.Net.WPF.Controls
     /// <summary>
     ///     Arranges child elements in a configurable ellipse form.
     /// </summary>
-    public class EllipsePanel : Panel
+    public class ChapterEllipsePanel : Panel
     {
         /// <summary>
         ///     Identifies the RotateElements dependency property.
         /// </summary>
         public static readonly DependencyProperty RotateElementsProperty =
-            DependencyProperty.Register(nameof(RotateElements), typeof(bool), typeof(EllipsePanel), new FrameworkPropertyMetadata(false, FrameworkPropertyMetadataOptions.AffectsArrange));
+            DependencyProperty.Register(nameof(RotateElements), typeof(bool), typeof(ChapterEllipsePanel), new FrameworkPropertyMetadata(false, FrameworkPropertyMetadataOptions.AffectsArrange));
 
         /// <summary>
         ///     Identifies the ElementsRotateDirection dependency property.
         /// </summary>
         public static readonly DependencyProperty ElementsRotateDirectionProperty =
-            DependencyProperty.Register(nameof(ElementsRotateDirection), typeof(ElementsRotateDirection), typeof(EllipsePanel), new FrameworkPropertyMetadata(ElementsRotateDirection.Introversive, FrameworkPropertyMetadataOptions.AffectsArrange));
+            DependencyProperty.Register(nameof(ElementsRotateDirection), typeof(ElementsRotateDirection), typeof(ChapterEllipsePanel), new FrameworkPropertyMetadata(ElementsRotateDirection.Introversive, FrameworkPropertyMetadataOptions.AffectsArrange));
 
         /// <summary>
         ///     Identifies the EllipseRotateDirection dependency property.
         /// </summary>
         public static readonly DependencyProperty EllipseRotateDirectionProperty =
-            DependencyProperty.Register(nameof(EllipseRotateDirection), typeof(SweepDirection), typeof(EllipsePanel), new FrameworkPropertyMetadata(SweepDirection.Clockwise, FrameworkPropertyMetadataOptions.AffectsArrange));
+            DependencyProperty.Register(nameof(EllipseRotateDirection), typeof(SweepDirection), typeof(ChapterEllipsePanel), new FrameworkPropertyMetadata(SweepDirection.Clockwise, FrameworkPropertyMetadataOptions.AffectsArrange));
 
         /// <summary>
         ///     Identifies the ElementStartPosition dependency property.
         /// </summary>
         public static readonly DependencyProperty ElementStartPositionProperty =
-            DependencyProperty.Register(nameof(ElementStartPosition), typeof(ElementStartPosition), typeof(EllipsePanel), new FrameworkPropertyMetadata(ElementStartPosition.Top, FrameworkPropertyMetadataOptions.AffectsArrange));
+            DependencyProperty.Register(nameof(ElementStartPosition), typeof(ElementStartPosition), typeof(ChapterEllipsePanel), new FrameworkPropertyMetadata(ElementStartPosition.Top, FrameworkPropertyMetadataOptions.AffectsArrange));
 
         private readonly EllipseGeometry _ellipse = new EllipseGeometry();
 
@@ -95,7 +95,7 @@ namespace Chapter.Net.WPF.Controls
         ///     Lets each child calculating is needed size.
         /// </summary>
         /// <param name="availableSize">The available space by the parent control.</param>
-        /// <remarks>Since the EllipsePanel always only consumes the full space it gets, the returned value is always 0,0.</remarks>
+        /// <remarks>Since the ChapterEllipsePanel always only consumes the full space it gets, the returned value is always 0,0.</remarks>
         /// <returns>The calculated minimum size needed for the control.</returns>
         protected override Size MeasureOverride(Size availableSize)
         {
@@ -109,7 +109,7 @@ namespace Chapter.Net.WPF.Controls
         /// </summary>
         /// <param name="finalSize">The maximum possible space given by the parent control.</param>
         /// <remarks>
-        ///     Since the EllipsePanel always only consumes the full space it gets, the returned value is always the maximum
+        ///     Since the ChapterEllipsePanel always only consumes the full space it gets, the returned value is always the maximum
         ///     available by the parent.
         /// </remarks>
         /// <returns>The calculated needed space in sum of all available child controls.</returns>

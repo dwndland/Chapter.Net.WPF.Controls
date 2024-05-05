@@ -1,5 +1,5 @@
 ﻿// -----------------------------------------------------------------------------------------------------------------
-// <copyright file="ElementsRotateDirection.cs" company="my-libraries">
+// <copyright file="ElementStartPosition.cs" company="my-libraries">
 //     Copyright (c) David Wendland. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------------------------------------------------
@@ -9,28 +9,28 @@
 namespace Chapter.Net.WPF.Controls
 {
     /// <summary>
-    ///     Defines how the items should be rotated in the <see cref="EllipsePanel" />.
+    ///     Defines the position where the elements has to start in the <see cref="ChapterEllipsePanel" />.
     /// </summary>
-    public enum ElementsRotateDirection
+    public enum ElementStartPosition
     {
         /// <summary>
-        ///     The top of the items are oriented to the ellipse panel center point.
+        ///     The first item in the ellipse panel is starting on the left side.
         /// </summary>
-        Introversive,
+        Left,
 
         /// <summary>
-        ///     The bottom of the items are oriented to the ellipse panel center point.
+        ///     The first item in the ellipse panel is starting on top.
         /// </summary>
-        Outroversive,
+        Top,
 
         /// <summary>
-        ///     The items are oriented with the ellipse form clockwise.
+        ///     The first item in the ellipse panel is starting on the right side.
         /// </summary>
-        Clockwise,
+        Right,
 
         /// <summary>
-        ///     The items are oriented with the ellipse form counter clockwise.
+        ///     The first item in the ellipse panel is starting on bottom.
         /// </summary>
-        Counterclockwise
+        Bottom
     }
 }

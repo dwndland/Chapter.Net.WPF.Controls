@@ -1,5 +1,5 @@
 ﻿// -----------------------------------------------------------------------------------------------------------------
-// <copyright file="EllipsePanelControl.xaml.cs" company="my-libraries">
+// <copyright file="ChapterEllipsePanelControl.xaml.cs" company="my-libraries">
 //     Copyright (c) David Wendland. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------------------------------------------------
@@ -8,9 +8,9 @@
 
 namespace Demo;
 
-public partial class EllipsePanelControl
+public partial class ChapterEllipsePanelControl
 {
-    public EllipsePanelControl()
+    public ChapterEllipsePanelControl()
     {
         InitializeComponent();
     }

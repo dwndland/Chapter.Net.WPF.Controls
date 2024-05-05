@@ -10,7 +10,7 @@ A set of new WPF controls which are not yet build in.
 - **ChapterArcPanel:** Arranges child elements in an arc form.
 - **ChapterBrowseTextBox:** Adds a browse button to the ChapterTextBox.
 - **ChapterTabControl:** Enhances the TabControl with buttons for add new tab item and close buttons of existing tab items.
-- **EllipsePanel:** Arranges child elements in a configurable ellipse form.
+- **ChapterEllipsePanel:** Arranges child elements in a configurable ellipse form.
 - **EnumerationComboBox:** Represents a ComboBox which takes an enumeration value and shows all possible states inside the dropdown menu for let choosing a value.
 - **ExtendedTreeView:** Enhances ExtendedTreeView multi select, select an item by right click on it and a two way bindable SelectedItem.
 - **FormatterTextBlock:** Formats the given translation.
@@ -87,13 +87,13 @@ A set of new WPF controls which are not yet build in.
     ```
     ![ChapterTabControl](https://raw.githubusercontent.com/dwndland/Chapter.Net.WPF.Controls/master/Images/ChapterTabControl.png)
 
-6. **EllipsePanel:**
+6. **ChapterEllipsePanel:**
     - Usage
     ```xaml
     <ItemsControl ItemsSource="{Binding Player}">
         <ItemsControl.ItemsPanel>
             <ItemsPanelTemplate>
-                <chapter:EllipsePanel ElementStartPosition="Bottom"
+                <chapter:ChapterEllipsePanel ElementStartPosition="Bottom"
                                        EllipseRotateDirection="Clockwise"
                                        ElementsRotateDirection="Outroversive"
                                        RotateElements="True" />
@@ -101,14 +101,14 @@ A set of new WPF controls which are not yet build in.
         </ItemsControl.ItemsPanel>
     </ItemsControl>
 
-    <chapter:EllipsePanel>
+    <chapter:ChapterEllipsePanel>
         <Button Content="One" />
         <Button Content="Two" />
         <Button Content="Three" />
         <Button Content="Four" />
-    </chapter:EllipsePanel>
+    </chapter:ChapterEllipsePanel>
     ```
-    ![EllipsePanel](https://raw.githubusercontent.com/dwndland/Chapter.Net.WPF.Controls/master/Images/EllipsePanel.png)
+    ![ChapterEllipsePanel](https://raw.githubusercontent.com/dwndland/Chapter.Net.WPF.Controls/master/Images/ChapterEllipsePanel.png)
 
 7. **EnumerationComboBox:**
     - Usage
