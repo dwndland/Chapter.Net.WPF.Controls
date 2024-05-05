@@ -1,5 +1,5 @@
 ﻿// -----------------------------------------------------------------------------------------------------------------
-// <copyright file="ExtendedTreeViewControl.xaml.cs" company="my-libraries">
+// <copyright file="ChapterTreeViewControl.xaml.cs" company="my-libraries">
 //     Copyright (c) David Wendland. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------------------------------------------------
@@ -11,11 +11,11 @@ using System.ComponentModel;
 
 namespace Demo;
 
-public partial class ExtendedTreeViewControl : INotifyPropertyChanged
+public partial class ChapterTreeViewControl : INotifyPropertyChanged
 {
     private Item _selectedItem;
 
-    public ExtendedTreeViewControl()
+    public ChapterTreeViewControl()
     {
         InitializeComponent();
 

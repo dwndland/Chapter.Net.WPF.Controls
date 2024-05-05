@@ -1,5 +1,5 @@
 ﻿// -----------------------------------------------------------------------------------------------------------------
-// <copyright file="ExtendedTreeView.cs" company="my-libraries">
+// <copyright file="ChapterTreeView.cs" company="my-libraries">
 //     Copyright (c) David Wendland. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------------------------------------------------
@@ -19,51 +19,51 @@ using System.Windows.Media;
 namespace Chapter.Net.WPF.Controls
 {
     /// <summary>
-    ///     Enhances the <see cref="ExtendedTreeView" /> with:<br />
+    ///     Enhances the <see cref="ChapterTreeView" /> with:<br />
     ///     * multi select,
     ///     * select an item by right click on it and
     ///     * a two way bindable SelectedItem.
     /// </summary>
-    public class ExtendedTreeView : TreeView
+    public class ChapterTreeView : TreeView
     {
         /// <summary>
         ///     Identifies the <see cref="SelectionMode" /> dependency property.
         /// </summary>
         public static readonly DependencyProperty SelectionModeProperty =
-            DependencyProperty.Register(nameof(SelectionMode), typeof(SelectionMode), typeof(ExtendedTreeView), new UIPropertyMetadata(SelectionMode.Extended));
+            DependencyProperty.Register(nameof(SelectionMode), typeof(SelectionMode), typeof(ChapterTreeView), new UIPropertyMetadata(SelectionMode.Extended));
 
         /// <summary>
         ///     Identifies the <see cref="SelectedItemChangedCommand" /> dependency property.
         /// </summary>
         public static readonly DependencyProperty SelectedItemChangedCommandProperty =
-            DependencyProperty.Register(nameof(SelectedItemChangedCommand), typeof(ICommand), typeof(ExtendedTreeView), new PropertyMetadata(null));
+            DependencyProperty.Register(nameof(SelectedItemChangedCommand), typeof(ICommand), typeof(ChapterTreeView), new PropertyMetadata(null));
 
         /// <summary>
         ///     Identifies the <see cref="SelectedElement" /> dependency property.
         /// </summary>
         public static readonly DependencyProperty SelectedElementProperty =
-            DependencyProperty.Register(nameof(SelectedElement), typeof(object), typeof(ExtendedTreeView), new FrameworkPropertyMetadata(null, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault, OnSelectedElementChanged));
+            DependencyProperty.Register(nameof(SelectedElement), typeof(object), typeof(ChapterTreeView), new FrameworkPropertyMetadata(null, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault, OnSelectedElementChanged));
 
         /// <summary>
         ///     Identifies the <see cref="AutoExpandSelected" /> dependency property.
         /// </summary>
         public static readonly DependencyProperty AutoExpandSelectedProperty =
-            DependencyProperty.Register(nameof(AutoExpandSelected), typeof(bool), typeof(ExtendedTreeView), new PropertyMetadata(false));
+            DependencyProperty.Register(nameof(AutoExpandSelected), typeof(bool), typeof(ChapterTreeView), new PropertyMetadata(false));
 
         private readonly PropertyInfo _isSelectionChangeActiveProperty;
-        private ExtendedTreeViewItem _lastSelectedItem;
+        private ChapterTreeViewItem _lastSelectedItem;
         private bool _selectionRequested;
         private bool _selfMultiSelect;
         private bool _selfSelectedElement;
 
         /// <summary>
-        ///     Initializes a new instance of the <see cref="ExtendedTreeView" /> class.
+        ///     Initializes a new instance of the <see cref="ChapterTreeView" /> class.
         /// </summary>
-        public ExtendedTreeView()
+        public ChapterTreeView()
         {
             PreviewMouseRightButtonDown += EnhancedTreeView_PreviewMouseRightButtonDown;
-            _isSelectionChangeActiveProperty = typeof(ExtendedTreeView).GetProperty("IsSelectionChangeActive", BindingFlags.NonPublic | BindingFlags.Instance);
-            SelectedTreeViewItems = new ObservableCollection<ExtendedTreeViewItem>();
+            _isSelectionChangeActiveProperty = typeof(ChapterTreeView).GetProperty("IsSelectionChangeActive", BindingFlags.NonPublic | BindingFlags.Instance);
+            SelectedTreeViewItems = new ObservableCollection<ChapterTreeViewItem>();
 
             _selfMultiSelect = true;
 
@@ -72,7 +72,7 @@ namespace Chapter.Net.WPF.Controls
             PreviewKeyDown += (sender, e) => _selfMultiSelect = false;
             PreviewKeyUp += (sender, e) => _selfMultiSelect = true;
 
-            AddHandler(ExtendedTreeViewItem.ContainerGeneratedEvent, new RoutedEventHandler(HandleContainerGenerated));
+            AddHandler(ChapterTreeViewItem.ContainerGeneratedEvent, new RoutedEventHandler(HandleContainerGenerated));
 
             Loaded += (sender, args) =>
             {
@@ -92,7 +92,7 @@ namespace Chapter.Net.WPF.Controls
         /// <summary>
         ///     Gets the selected tree view item container.
         /// </summary>
-        public ObservableCollection<ExtendedTreeViewItem> SelectedTreeViewItems { get; }
+        public ObservableCollection<ChapterTreeViewItem> SelectedTreeViewItems { get; }
 
         /// <summary>
         ///     Gets or set a value which indicates how items can be selected in the tree view.
@@ -132,13 +132,13 @@ namespace Chapter.Net.WPF.Controls
         }
 
         /// <summary>
-        ///     Gets or sets a value which indicates if the ExtendedTreeViewItems gets expanded automatically to the selected item
+        ///     Gets or sets a value which indicates if the ChapterTreeViewItems gets expanded automatically to the selected item
         ///     when
         ///     using <see cref="SelectedElement" />.
         /// </summary>
         /// <remarks>
         ///     This works only if the items are not virtualized or were visible already.<br />
-        ///     In ItemsPanelTemplate usually a VirtualizingStackPanel is used, then the ExtendedTreeViewItems gets created only
+        ///     In ItemsPanelTemplate usually a VirtualizingStackPanel is used, then the ChapterTreeViewItems gets created only
         ///     after
         ///     expanding the parent.<br />
         ///     With overriding the ItemsPanel with a normal StackPanel all container should get created directly, but then the
@@ -155,37 +155,37 @@ namespace Chapter.Net.WPF.Controls
         }
 
         /// <summary>
-        ///     Generates a new child item container to hold in the <see cref="ExtendedTreeView" />.
+        ///     Generates a new child item container to hold in the <see cref="ChapterTreeView" />.
         /// </summary>
         /// <returns>The generated child item container</returns>
         protected override DependencyObject GetContainerForItemOverride()
         {
-            return new ExtendedTreeViewItem();
+            return new ChapterTreeViewItem();
         }
 
         /// <summary>
         ///     Checks if the item is already the correct item container. If not the <see cref="GetContainerForItemOverride" />
         ///     will be used to generate the right container.
         /// </summary>
-        /// <param name="item">The item to shown in the <see cref="ExtendedTreeView" />.</param>
+        /// <param name="item">The item to shown in the <see cref="ChapterTreeView" />.</param>
         /// <returns>True if the item is the correct item container already.</returns>
         protected override bool IsItemItsOwnContainerOverride(object item)
         {
-            return item is ExtendedTreeViewItem;
+            return item is ChapterTreeViewItem;
         }
 
         private void EnhancedTreeView_PreviewMouseRightButtonDown(object sender, MouseButtonEventArgs e)
         {
-            var control = (ExtendedTreeView)sender;
+            var control = (ChapterTreeView)sender;
             var clickedItem = control.InputHitTest(e.GetPosition(control));
-            while (clickedItem != null && !(clickedItem is ExtendedTreeViewItem))
+            while (clickedItem != null && !(clickedItem is ChapterTreeViewItem))
             {
                 var frameworkElement = (FrameworkElement)clickedItem;
                 clickedItem = (IInputElement)(frameworkElement.Parent ?? frameworkElement.TemplatedParent);
             }
 
             if (clickedItem != null)
-                ((ExtendedTreeViewItem)clickedItem).IsSelected = true;
+                ((ChapterTreeViewItem)clickedItem).IsSelected = true;
         }
 
         /// <summary>
@@ -219,7 +219,7 @@ namespace Chapter.Net.WPF.Controls
             EnableSelectionChangedEvent();
         }
 
-        private void HandleCodeSelection(ExtendedTreeViewItem newSelected)
+        private void HandleCodeSelection(ChapterTreeViewItem newSelected)
         {
             HandleControlKeySelection(newSelected);
             RemoveDeselectedItemContainers();
@@ -232,7 +232,7 @@ namespace Chapter.Net.WPF.Controls
                     SelectedTreeViewItems.RemoveAt(i);
         }
 
-        private void HandleControlKeySelection(ExtendedTreeViewItem newSelected)
+        private void HandleControlKeySelection(ChapterTreeViewItem newSelected)
         {
             if (SelectedTreeViewItems.Contains(newSelected))
             {
@@ -251,7 +251,7 @@ namespace Chapter.Net.WPF.Controls
             }
         }
 
-        private void HandleShiftKeySelection(ExtendedTreeViewItem newSelectedItemContainer)
+        private void HandleShiftKeySelection(ChapterTreeViewItem newSelectedItemContainer)
         {
             if (_lastSelectedItem != null)
             {
@@ -270,7 +270,7 @@ namespace Chapter.Net.WPF.Controls
             }
         }
 
-        private void HandleSingleSelection(ExtendedTreeViewItem newSelectedItem)
+        private void HandleSingleSelection(ChapterTreeViewItem newSelectedItem)
         {
             ClearAllSelections();
             newSelectedItem.IsSelected = true;
@@ -288,13 +288,13 @@ namespace Chapter.Net.WPF.Controls
             }
         }
 
-        private List<ExtendedTreeViewItem> GetFlatTreeViewItems(ItemsControl control)
+        private List<ChapterTreeViewItem> GetFlatTreeViewItems(ItemsControl control)
         {
-            var items = new List<ExtendedTreeViewItem>();
+            var items = new List<ChapterTreeViewItem>();
 
             foreach (var item in control.Items)
             {
-                var containerItem = item as ExtendedTreeViewItem ?? control.ItemContainerGenerator.ContainerFromItem(item) as ExtendedTreeViewItem;
+                var containerItem = item as ChapterTreeViewItem ?? control.ItemContainerGenerator.ContainerFromItem(item) as ChapterTreeViewItem;
                 if (containerItem != null)
                 {
                     items.Add(containerItem);
@@ -315,10 +315,10 @@ namespace Chapter.Net.WPF.Controls
             }
         }
 
-        private ExtendedTreeViewItem GetSelectedContainer()
+        private ChapterTreeViewItem GetSelectedContainer()
         {
             // ReSharper disable once PossibleNullReferenceException
-            return (ExtendedTreeViewItem)typeof(TreeView).GetField("_selectedContainer", BindingFlags.NonPublic | BindingFlags.Instance).GetValue(this);
+            return (ChapterTreeViewItem)typeof(TreeView).GetField("_selectedContainer", BindingFlags.NonPublic | BindingFlags.Instance).GetValue(this);
         }
 
         private void DisableSelectionChangedEvent()
@@ -346,7 +346,7 @@ namespace Chapter.Net.WPF.Controls
 
         private static void OnSelectedElementChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            var control = (ExtendedTreeView)d;
+            var control = (ChapterTreeView)d;
             if (control._selfSelectedElement)
                 return;
 
@@ -375,14 +375,14 @@ namespace Chapter.Net.WPF.Controls
             _selfSelectedElement = false;
         }
 
-        private static ExtendedTreeViewItem GetContainerFromItem(ItemsControl parent, object item)
+        private static ChapterTreeViewItem GetContainerFromItem(ItemsControl parent, object item)
         {
-            if (parent.ItemContainerGenerator.ContainerFromItem(item) is ExtendedTreeViewItem actualContainer)
+            if (parent.ItemContainerGenerator.ContainerFromItem(item) is ChapterTreeViewItem actualContainer)
                 return actualContainer;
 
             foreach (var treeViewItem in parent.Items)
             {
-                var container = parent.ItemContainerGenerator.ContainerFromItem(treeViewItem) as ExtendedTreeViewItem;
+                var container = parent.ItemContainerGenerator.ContainerFromItem(treeViewItem) as ChapterTreeViewItem;
                 if (container == null)
                     continue;
 
@@ -415,7 +415,7 @@ namespace Chapter.Net.WPF.Controls
             }
         }
 
-        private void Select(ExtendedTreeViewItem element)
+        private void Select(ChapterTreeViewItem element)
         {
             if (element.IsSelected)
                 return;
@@ -429,9 +429,9 @@ namespace Chapter.Net.WPF.Controls
                 TryExpandTree(element);
         }
 
-        private void TryExpandTree(ExtendedTreeViewItem element)
+        private void TryExpandTree(ChapterTreeViewItem element)
         {
-            var parents = GetParentsUntil<ExtendedTreeViewItem, ExtendedTreeView>(element).ToList();
+            var parents = GetParentsUntil<ChapterTreeViewItem, ChapterTreeView>(element).ToList();
             parents.ForEach(p => p.IsExpanded = true);
             element.BringIntoView();
         }

@@ -16,7 +16,7 @@ namespace Chapter.Net.WPF.Controls
     ///     Shows a <see cref="TreeView" /> with the possibility to expand or collapse child elements shown in a GridView. The
     ///     expander can be placed in every column cell template.
     /// </summary>
-    public class TreeListView : ExtendedTreeView
+    public class TreeListView : ChapterTreeView
     {
         /// <summary>
         ///     Identifies the View dependency property.

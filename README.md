@@ -12,7 +12,7 @@ A set of new WPF controls which are not yet build in.
 - **ChapterTabControl:** Enhances the TabControl with buttons for add new tab item and close buttons of existing tab items.
 - **ChapterEllipsePanel:** Arranges child elements in a configurable ellipse form.
 - **ChapterComboBox:** Represents a ComboBox which takes an enumeration value and shows all possible states inside the dropdown menu for let choosing a value.
-- **ExtendedTreeView:** Enhances ExtendedTreeView multi select, select an item by right click on it and a two way bindable SelectedItem.
+- **ChapterTreeView:** Enhances ChapterTreeView multi select, select an item by right click on it and a two way bindable SelectedItem.
 - **FormatterTextBlock:** Formats the given translation.
 - **HeaderItemsControl:** Provides the possibility to automatically align Headers and contents.
 - **ImageButton:** Enhances the WPF Button to show an disabled image. The bound image will be shown monochrome if the button is disabled.
@@ -172,20 +172,20 @@ A set of new WPF controls which are not yet build in.
     ```
     ![ChapterComboBox](https://raw.githubusercontent.com/dwndland/Chapter.Net.WPF.Controls/master/Images/ChapterComboBox.png)
 
-8. **ExtendedTreeView:**
+8. **ChapterTreeView:**
     - Usage
     ```xaml
-    <chapter:ExtendedTreeView ItemsSource="{Binding Folders}"
+    <chapter:ChapterTreeView ItemsSource="{Binding Folders}"
                                SelectedElement="{Binding SelectedItem, Mode=TwoWay}"
                                AutoExpandSelected="True">
-        <chapter:ExtendedTreeView.ItemTemplate>
+        <chapter:ChapterTreeView.ItemTemplate>
             <HierarchicalDataTemplate ItemsSource="{Binding Folders}">
                 <TextBlock Text="{Binding Name}" />
             </HierarchicalDataTemplate>
-        </chapter:ExtendedTreeView.ItemTemplate>
-    </chapter:ExtendedTreeView>
+        </chapter:ChapterTreeView.ItemTemplate>
+    </chapter:ChapterTreeView>
     ```
-    ![ExtendedTreeView](https://raw.githubusercontent.com/dwndland/Chapter.Net.WPF.Controls/master/Images/ExtendedTreeView.png)
+    ![ChapterTreeView](https://raw.githubusercontent.com/dwndland/Chapter.Net.WPF.Controls/master/Images/ChapterTreeView.png)
 
 9. **FormatterTextBlock:**
     - Usage

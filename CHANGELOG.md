@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Renamed DynamicTabControl to ChapterTabControl
 - Renamed EllipsePanel to ChapterEllipsePanel
 - Renamed EnumerationComboBox to ChapterComboBox
+- Renamed ExtendedTreeView to ChapterTreeView
 ### Supported .Net Versions
 - .Net Core 3.0
 - .Net Framework 4.5
@@ -50,7 +51,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.0.1] - 2024-01-30
 ### Fixed
-- The ExtendedTreeView did not allow a select by code anymore if the selected item was set to null once.
+- The ChapterTreeView did not allow a select by code anymore if the selected item was set to null once.
 ### Supported .Net Versions
 - .Net 6
 - .Net 7

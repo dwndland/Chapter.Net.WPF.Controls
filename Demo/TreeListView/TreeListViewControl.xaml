@@ -57,7 +57,7 @@
                             <HierarchicalDataTemplate DataType="{x:Type local:Element}" ItemsSource="{Binding Items}" />
                         </controls:TreeListView.Resources>
                         <controls:TreeListView.ItemContainerStyle>
-                            <Style TargetType="{x:Type controls:ExtendedTreeViewItem}">
+                            <Style TargetType="{x:Type controls:ChapterTreeViewItem}">
                                 <Setter Property="IsSelected" Value="{Binding IsSelected}" />
                             </Style>
                         </controls:TreeListView.ItemContainerStyle>

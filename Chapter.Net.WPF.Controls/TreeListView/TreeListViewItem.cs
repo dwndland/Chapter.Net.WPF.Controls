@@ -13,7 +13,7 @@ namespace Chapter.Net.WPF.Controls
     /// <summary>
     ///     Represents a single entry in the <see cref="TreeListView" />.
     /// </summary>
-    public class TreeListViewItem : ExtendedTreeViewItem
+    public class TreeListViewItem : ChapterTreeViewItem
     {
         static TreeListViewItem()
         {
