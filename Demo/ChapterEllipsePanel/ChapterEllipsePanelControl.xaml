@@ -38,30 +38,30 @@
             <StackPanel IsEnabled="{Binding IsChecked, ElementName=rotateElements}">
                 <TextBlock Text="ElementsRotateDirection" />
                 <controls:ChapterComboBox x:Name="elementsRotateDirection"
-                                              Margin="0,0,0,10"
-                                              EnumType="{x:Type controls:ElementsRotateDirection}"
-                                              SelectedItem="{x:Static controls:ElementsRotateDirection.Introversive}" />
+                                          Margin="0,0,0,10"
+                                          EnumType="{x:Type controls:ElementsRotateDirection}"
+                                          SelectedItem="{x:Static controls:ElementsRotateDirection.Introversive}" />
             </StackPanel>
 
             <TextBlock Text="EllipseRotateDirection" />
             <controls:ChapterComboBox x:Name="ellipseRotateDirection"
-                                          Margin="0,0,0,10"
-                                          EnumType="{x:Type SweepDirection}"
-                                          SelectedItem="{x:Static SweepDirection.Clockwise}" />
+                                      Margin="0,0,0,10"
+                                      EnumType="{x:Type SweepDirection}"
+                                      SelectedItem="{x:Static SweepDirection.Clockwise}" />
 
             <TextBlock Text="ElementStartPosition" />
             <controls:ChapterComboBox x:Name="elementStartPosition"
-                                          EnumType="{x:Type controls:ElementStartPosition}"
-                                          SelectedItem="{x:Static controls:ElementStartPosition.Top}" />
+                                      EnumType="{x:Type controls:ElementStartPosition}"
+                                      SelectedItem="{x:Static controls:ElementStartPosition.Top}" />
         </local:PropertyPanel>
 
         <Grid Background="LightGray">
             <Grid Width="{Binding Value, ElementName=width}" Height="{Binding Value, ElementName=height}">
                 <Ellipse Fill="White" />
                 <controls:ChapterEllipsePanel ElementStartPosition="{Binding SelectedItem, ElementName=elementStartPosition}"
-                                       ElementsRotateDirection="{Binding SelectedItem, ElementName=elementsRotateDirection}"
-                                       EllipseRotateDirection="{Binding SelectedItem, ElementName=ellipseRotateDirection}"
-                                       RotateElements="{Binding IsChecked, ElementName=rotateElements}">
+                                              ElementsRotateDirection="{Binding SelectedItem, ElementName=elementsRotateDirection}"
+                                              EllipseRotateDirection="{Binding SelectedItem, ElementName=ellipseRotateDirection}"
+                                              RotateElements="{Binding IsChecked, ElementName=rotateElements}">
                     <TextBlock Text="A" />
                     <TextBlock Text="B" />
                     <TextBlock Text="C" />

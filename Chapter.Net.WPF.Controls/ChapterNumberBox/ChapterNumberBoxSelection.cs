@@ -29,7 +29,8 @@ namespace Chapter.Net.WPF.Controls
         OnUpDown,
 
         /// <summary>
-        ///     The number will be selected when the ChapterNumberBox got the focus or the value gets incremented or decremented using the
+        ///     The number will be selected when the ChapterNumberBox got the focus or the value gets incremented or decremented
+        ///     using the
         ///     arrow keys or up/down buttons.
         /// </summary>
         OnFocusAndUpDown

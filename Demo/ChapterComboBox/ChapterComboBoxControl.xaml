@@ -14,9 +14,9 @@
                 VerticalAlignment="Center">
         <TextBlock Text="DisplayKind: Converter" />
         <controls:ChapterComboBox Margin="0,0,0,10"
-                                      DisplayKind="Converter"
-                                      EnumType="{x:Type demo:DemoEnum}"
-                                      SelectedItem="{x:Static demo:DemoEnum.First}">
+                                  DisplayKind="Converter"
+                                  EnumType="{x:Type demo:DemoEnum}"
+                                  SelectedItem="{x:Static demo:DemoEnum.First}">
             <controls:ChapterComboBox.ItemConverter>
                 <demo:EnumToStringConverter />
             </controls:ChapterComboBox.ItemConverter>
@@ -24,9 +24,9 @@
 
         <TextBlock Text="DisplayKind: Custom" />
         <controls:ChapterComboBox Margin="0,0,0,10"
-                                      DisplayKind="Custom"
-                                      EnumType="{x:Type demo:DemoEnum}"
-                                      SelectedItem="{x:Static demo:DemoEnum.First}">
+                                  DisplayKind="Custom"
+                                  EnumType="{x:Type demo:DemoEnum}"
+                                  SelectedItem="{x:Static demo:DemoEnum.First}">
             <controls:ChapterComboBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
@@ -39,15 +39,15 @@
 
         <TextBlock Text="DisplayKind: Description" />
         <controls:ChapterComboBox Margin="0,0,0,10"
-                                      DisplayKind="Description"
-                                      EnumType="{x:Type demo:DemoEnum}"
-                                      SelectedItem="{x:Static demo:DemoEnum.First}" />
+                                  DisplayKind="Description"
+                                  EnumType="{x:Type demo:DemoEnum}"
+                                  SelectedItem="{x:Static demo:DemoEnum.First}" />
 
         <TextBlock Text="DisplayKind: ToString" />
         <controls:ChapterComboBox Margin="0,0,0,10"
-                                      DisplayKind="ToString"
-                                      EnumType="{x:Type demo:DemoEnum}"
-                                      SelectedItem="{x:Static demo:DemoEnum.First}" />
+                                  DisplayKind="ToString"
+                                  EnumType="{x:Type demo:DemoEnum}"
+                                  SelectedItem="{x:Static demo:DemoEnum.First}" />
     </StackPanel>
 
 </UserControl>

@@ -74,7 +74,7 @@ A set of new WPF controls which are not yet build in.
     - Usage
     ```xaml
     <chapter:ChapterBrowseTextBox ShowBrowseButton="True"
-                           BrowseCommand="{Binding BrowseCommand}" />
+                                  BrowseCommand="{Binding BrowseCommand}" />
     ```
     ![ChapterBrowseTextBox](https://raw.githubusercontent.com/dwndland/Chapter.Net.WPF.Controls/master/Images/ChapterBrowseTextBox.png)
 
@@ -94,9 +94,9 @@ A set of new WPF controls which are not yet build in.
         <ItemsControl.ItemsPanel>
             <ItemsPanelTemplate>
                 <chapter:ChapterEllipsePanel ElementStartPosition="Bottom"
-                                       EllipseRotateDirection="Clockwise"
-                                       ElementsRotateDirection="Outroversive"
-                                       RotateElements="True" />
+                                             EllipseRotateDirection="Clockwise"
+                                             ElementsRotateDirection="Outroversive"
+                                             RotateElements="True" />
             </ItemsPanelTemplate>
         </ItemsControl.ItemsPanel>
     </ItemsControl>
@@ -176,8 +176,8 @@ A set of new WPF controls which are not yet build in.
     - Usage
     ```xaml
     <chapter:ChapterTreeView ItemsSource="{Binding Folders}"
-                               SelectedElement="{Binding SelectedItem, Mode=TwoWay}"
-                               AutoExpandSelected="True">
+                             SelectedElement="{Binding SelectedItem, Mode=TwoWay}"
+                             AutoExpandSelected="True">
         <chapter:ChapterTreeView.ItemTemplate>
             <HierarchicalDataTemplate ItemsSource="{Binding Folders}">
                 <TextBlock Text="{Binding Name}" />
@@ -226,19 +226,19 @@ A set of new WPF controls which are not yet build in.
     <UniformGrid Rows="1" DockPanel.Dock="Bottom" HorizontalAlignment="Center">
 
         <chapter:ChapterButton Content="Back"
-                             ImageSource="/MyAssembly;component/Data/Previous.png" />
+                               ImageSource="/MyAssembly;component/Data/Previous.png" />
 
         <chapter:ChapterButton Content="Next"
-                             ImageSource="/MyAssembly.Demo;component/Data/Next.png" 
-                             ImagePosition="Right"
-                             ImageMargin="4,0,0,0" />
+                               ImageSource="/MyAssembly.Demo;component/Data/Next.png" 
+                               ImagePosition="Right"
+                               ImageMargin="4,0,0,0" />
 
         <chapter:ChapterButton Content="Finish"
-                             IsEnabled="False"
-                             ImageSource="/MyAssembly;component/Data/OK.png" />
+                               IsEnabled="False"
+                               ImageSource="/MyAssembly;component/Data/OK.png" />
 
         <chapter:ChapterButton Content="Cancel"
-                             ImageSource="/MyAssembly;component/Data/Cancel.png" />
+                               ImageSource="/MyAssembly;component/Data/Cancel.png" />
 
     </UniformGrid>
     ```
@@ -292,29 +292,29 @@ A set of new WPF controls which are not yet build in.
     <!-- Many properties are set only for display the possibilities -->
     <chapter:ChapterNumberBox NumberType="Double"
 
-                       Number="{Binding MyDoubleValue}"
-                       Minimum="-12.5"
-                       Maximum="55.5"
-                       DefaultNumber="5"
+                              Number="{Binding MyDoubleValue}"
+                              Minimum="-12.5"
+                              Maximum="55.5"
+                              DefaultNumber="5"
 
-                       ShowCurrency="True"
-                       Currency="€"
-                       CurrencyPosition="Right"
+                              ShowCurrency="True"
+                              Currency="€"
+                              CurrencyPosition="Right"
 
-                       HasCheckBox="True"
-                       CheckBoxBehavior="EnableIfChecked"
-                       IsChecked="{Binding MyDoubleValueIsChecked}"
-                       CheckBoxPosition="Left"
+                              HasCheckBox="True"
+                              CheckBoxBehavior="EnableIfChecked"
+                              IsChecked="{Binding MyDoubleValueIsChecked}"
+                              CheckBoxPosition="Left"
 
-                       UpDownBehavior="ArrowsAndButtons"
-                       Step="0.5"
-                       UpDownButtonsPosition="Right"
+                              UpDownBehavior="ArrowsAndButtons"
+                              Step="0.5"
+                              UpDownButtonsPosition="Right"
 
-                       NumberSelectionBehavior="OnFocusAndUpDown"
+                              NumberSelectionBehavior="OnFocusAndUpDown"
 
-                       LostFocusBehavior="{Toolkit:LostFocusBehavior PlaceDefaultNumber, TrimLeadingZero=True, FormatText={}{0:D2}}"
+                              LostFocusBehavior="{Toolkit:LostFocusBehavior PlaceDefaultNumber, TrimLeadingZero=True, FormatText={}{0:D2}}"
 
-                       PredefinesCulture="en-US" />
+                              PredefinesCulture="en-US" />
     ```
     ![ChapterNumberBox](https://raw.githubusercontent.com/dwndland/Chapter.Net.WPF.Controls/master/Images/ChapterNumberBox.png)
 
@@ -357,9 +357,9 @@ A set of new WPF controls which are not yet build in.
     - Usage
     ```xaml
     <chapter:ChapterSearchTextBox ShowSearchButton="True"
-                           SearchCommand="{Binding SearchCommand}"
-                           IsSearching="{Binding IsSearching}"
-                           CancelCommand="{Binding CancelSearchCommand}" />
+                                  SearchCommand="{Binding SearchCommand}"
+                                  IsSearching="{Binding IsSearching}"
+                                  CancelCommand="{Binding CancelSearchCommand}" />
     ```
     ![ChapterSearchTextBox](https://raw.githubusercontent.com/dwndland/Chapter.Net.WPF.Controls/master/Images/ChapterSearchTextBox.png)
 
@@ -367,9 +367,9 @@ A set of new WPF controls which are not yet build in.
     - Usage
     ```xaml
     <chapter:ChapterStackPanel DockPanel.Dock="Bottom"
-                         HorizontalAlignment="Right"
-                         Orientation="Horizontal"
-                         Spacing="10">
+                               HorizontalAlignment="Right"
+                               Orientation="Horizontal"
+                               Spacing="10">
         <Button Content="Back" />
         <Button Content="Next" />
         <Button Content="Finish" />
@@ -463,9 +463,9 @@ A set of new WPF controls which are not yet build in.
     - Usage
     ```xaml
     <chapter:ChapterUniformPanel DockPanel.Dock="Bottom"
-                          HorizontalAlignment="Right"
-                          Orientation="Horizontal"
-                          Spacing="10">
+                                 HorizontalAlignment="Right"
+                                 Orientation="Horizontal"
+                                 Spacing="10">
         <Button Content="Back" />
         <Button Content="Next" />
         <Button Content="Finish" />

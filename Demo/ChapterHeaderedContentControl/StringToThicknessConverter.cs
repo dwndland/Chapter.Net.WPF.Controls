@@ -11,7 +11,9 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Markup;
 
-namespace Demo.ChapterHeaderedContentControl;
+// ReSharper disable once CheckNamespace
+
+namespace Demo;
 
 public class StringToThicknessConverter : IValueConverter
 {

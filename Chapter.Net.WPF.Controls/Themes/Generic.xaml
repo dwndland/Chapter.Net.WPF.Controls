@@ -2,25 +2,25 @@
 
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterBrowseTextBox/ChapterBrowseTextBox.xaml" />
-        <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterTextBox/ChapterTextBox.xaml" />
-        <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterTabControl/AddButton.xaml" />
-        <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterTabControl/CloseButton.xaml" />
-        <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterTabControl/ChapterTabControl.xaml" />
-        <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterTabControl/ChapterTabItem.xaml" />
+        <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterButton/ChapterButton.xaml" />
         <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterComboBox/ChapterComboBox.xaml" />
         <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterComboBox/ChapterComboBoxItem.xaml" />
         <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterHeaderedContentControl/ChapterHeaderedContentControl.xaml" />
-        <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterButton/ChapterButton.xaml" />
         <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterNumberBox/ChapterNumberBox.xaml" />
-        <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterToggleSwitch/ChapterToggleSwitch.xaml" />
         <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterPasswordBox/ChapterPasswordBox.xaml" />
         <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterResizer/ChapterResizer.xaml" />
         <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterResizer/ChapterResizerFrame.xaml" />
         <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterSearchTextBox/ChapterSearchTextBox.xaml" />
         <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterSplitButton/ChapterSplitButton.xaml" />
         <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterSplitButton/ChapterSplitButtonItem.xaml" />
+        <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterTabControl/AddButton.xaml" />
+        <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterTabControl/ChapterTabControl.xaml" />
+        <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterTabControl/ChapterTabItem.xaml" />
+        <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterTabControl/CloseButton.xaml" />
+        <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterTextBox/ChapterTextBox.xaml" />
         <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterTimeBox/ChapterTimeBox.xaml" />
         <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterTitledItemsControl/ChapterTitledItemsControl.xaml" />
+        <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterToggleSwitch/ChapterToggleSwitch.xaml" />
         <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterTreeListView/ChapterTreeListView.xaml" />
         <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterTreeListView/ChapterTreeListViewExpander.xaml" />
         <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterTreeListView/ChapterTreeListViewItem.xaml" />

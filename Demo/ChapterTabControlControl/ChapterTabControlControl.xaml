@@ -13,9 +13,9 @@
         <local:PropertyPanel>
             <TextBlock Text="TabStripPlacement" />
             <controls:ChapterComboBox x:Name="tabStripPlacement"
-                                          Margin="0,0,0,10"
-                                          EnumType="{x:Type Dock}"
-                                          SelectedItem="{x:Static Dock.Top}" />
+                                      Margin="0,0,0,10"
+                                      EnumType="{x:Type Dock}"
+                                      SelectedItem="{x:Static Dock.Top}" />
 
             <CheckBox x:Name="showCloseButton"
                       Margin="0,0,0,10"
@@ -30,8 +30,8 @@
             <StackPanel IsEnabled="{Binding IsChecked, ElementName=showAddButton}">
                 <TextBlock Text="AddButtonPosition" />
                 <controls:ChapterComboBox x:Name="addButtonPosition"
-                                              EnumType="{x:Type Dock}"
-                                              SelectedItem="{x:Static Dock.Right}" />
+                                          EnumType="{x:Type Dock}"
+                                          SelectedItem="{x:Static Dock.Right}" />
             </StackPanel>
         </local:PropertyPanel>
 

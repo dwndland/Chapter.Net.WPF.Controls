@@ -14,11 +14,11 @@ namespace Chapter.Net.WPF.Controls
     internal abstract class Number<T> : INumber
     {
         protected T _current;
+        protected int _decimalPlaces;
         protected T _default;
         protected T _maximum;
         protected T _minimum;
         protected CultureInfo _parsingCulture;
-        protected int _decimalPlaces;
         protected T _step;
 
         public object CurrentNumber => _current;
@@ -161,21 +161,15 @@ namespace Chapter.Net.WPF.Controls
         protected bool IsAllowedDecimalFractionLength(string text, int allowedDecimalPlaces)
         {
             if (allowedDecimalPlaces == -1) // It's turned off.
-            {
                 return true;
-            }
 
             var separator = _parsingCulture.NumberFormat.NumberDecimalSeparator;
             var index = text.IndexOf(separator, StringComparison.Ordinal);
             if (index < 0) // No separator yet.
-            {
                 return true;
-            }
 
             if (index + 1 >= text.Length) // Separator but no number after yet.
-            {
                 return true;
-            }
 
             var decimalPart = text.Substring(index + 1);
             return decimalPart.Length <= allowedDecimalPlaces;

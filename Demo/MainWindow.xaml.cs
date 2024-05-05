@@ -12,11 +12,6 @@ namespace Demo;
 
 public partial class MainWindow : INotifyPropertyChanged
 {
-    private List<UserControl> _basicInput { get; }
-    private List<UserControl> _collections { get; }
-    private List<UserControl> _text { get; }
-    private List<UserControl> _layout { get; }
-
     public MainWindow()
     {
         InitializeComponent();
@@ -24,38 +19,38 @@ public partial class MainWindow : INotifyPropertyChanged
         _basicInput =
         [
             new ChapterButtonControl(),
-            new ChapterToggleSwitchControl(),
-            new ChapterSplitButtonControl()
+            new ChapterSplitButtonControl(),
+            new ChapterToggleSwitchControl()
         ];
 
         _collections =
         [
-            new ChapterTreeViewControl(),
-            new ChapterTreeListViewControl(),
             new ChapterComboBoxControl(),
-            new ChapterTabControlControl()
+            new ChapterTabControlControl(),
+            new ChapterTreeListViewControl(),
+            new ChapterTreeViewControl()
         ];
 
         _text =
         [
-            new ChapterTextBlockControl(),
-            new ChapterTextBoxControl(),
             new ChapterBrowseTextBoxControl(),
             new ChapterNumberBoxControl(),
             new ChapterPasswordBoxControl(),
             new ChapterSearchTextBoxControl(),
+            new ChapterTextBlockControl(),
+            new ChapterTextBoxControl(),
             new ChapterTimeBoxControl()
         ];
 
         _layout =
         [
-            new ChapterResizerControl(),
-            new ChapterHeaderedContentControlControl(),
-            new ChapterTitledItemsControlControl(),
             new ChapterArcPanelControl(),
             new ChapterEllipsePanelControl(),
-            new ChapterItemsPanelControl(),
+            new ChapterHeaderedContentControlControl(),
+            new ChapterResizerControl(),
             new ChapterStackPanelControl(),
+            new ChapterTitledItemsControlControl(),
+            new ChapterItemsPanelControl(),
             new ChapterUniformPanelControl(),
             new ChapterUniformWrapPanelControl()
         ];
@@ -65,9 +60,14 @@ public partial class MainWindow : INotifyPropertyChanged
         DataContext = this;
     }
 
-    public event PropertyChangedEventHandler PropertyChanged;
+    private List<UserControl> _basicInput { get; }
+    private List<UserControl> _collections { get; }
+    private List<UserControl> _text { get; }
+    private List<UserControl> _layout { get; }
 
     public List<UserControl> Controls { get; private set; }
+
+    public event PropertyChangedEventHandler PropertyChanged;
 
     private void OnGroupChanged(object sender, SelectionChangedEventArgs e)
     {

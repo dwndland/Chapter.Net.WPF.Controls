@@ -3,23 +3,22 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:controls="clr-namespace:Chapter.Net.WPF.Controls;assembly=Chapter.Net.WPF.Controls"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:ChapterHeaderedContentControl="clr-namespace:Demo.ChapterHeaderedContentControl"
              xmlns:local="clr-namespace:Demo"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              d:DesignHeight="450"
              d:DesignWidth="800"
              mc:Ignorable="d">
     <UserControl.Resources>
-        <ChapterHeaderedContentControl:StringToThicknessConverter x:Key="StringToThicknessConverter" />
+        <local:StringToThicknessConverter x:Key="StringToThicknessConverter" />
     </UserControl.Resources>
 
     <DockPanel>
         <local:PropertyPanel>
             <TextBlock Text="SliderShape" />
             <controls:ChapterComboBox x:Name="sliderShape"
-                                          Margin="0,0,0,10"
-                                          EnumType="{x:Type controls:ChapterToggleSwitchShape}"
-                                          SelectedItem="{x:Static controls:ChapterToggleSwitchShape.Round}" />
+                                      Margin="0,0,0,10"
+                                      EnumType="{x:Type controls:ChapterToggleSwitchShape}"
+                                      SelectedItem="{x:Static controls:ChapterToggleSwitchShape.Round}" />
 
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="SliderHeight: " />
@@ -43,9 +42,9 @@
 
             <TextBlock Text="BackShape" />
             <controls:ChapterComboBox x:Name="backShape"
-                                          Margin="0,0,0,10"
-                                          EnumType="{x:Type controls:ChapterToggleSwitchShape}"
-                                          SelectedItem="{x:Static controls:ChapterToggleSwitchShape.Round}" />
+                                      Margin="0,0,0,10"
+                                      EnumType="{x:Type controls:ChapterToggleSwitchShape}"
+                                      SelectedItem="{x:Static controls:ChapterToggleSwitchShape.Round}" />
 
             <TextBlock Text="BackMargin" />
             <TextBox x:Name="backMargin"
@@ -73,16 +72,16 @@
         </local:PropertyPanel>
 
         <controls:ChapterToggleSwitch HorizontalAlignment="Center"
-                               VerticalAlignment="Center"
-                               BackMargin="{Binding Text, ElementName=backMargin, Converter={StaticResource StringToThicknessConverter}}"
-                               BackShape="{Binding SelectedItem, ElementName=backShape}"
-                               HasText="{Binding IsChecked, ElementName=hasText}"
-                               OffText="{Binding Text, ElementName=offText}"
-                               OnText="{Binding Text, ElementName=onText}"
-                               SliderHeight="{Binding Value, ElementName=sliderHeight}"
-                               SliderMargin="{Binding Text, ElementName=sliderMargin, Converter={StaticResource StringToThicknessConverter}}"
-                               SliderShape="{Binding SelectedItem, ElementName=sliderShape}"
-                               SliderWidth="{Binding Value, ElementName=sliderWidth}" />
+                                      VerticalAlignment="Center"
+                                      BackMargin="{Binding Text, ElementName=backMargin, Converter={StaticResource StringToThicknessConverter}}"
+                                      BackShape="{Binding SelectedItem, ElementName=backShape}"
+                                      HasText="{Binding IsChecked, ElementName=hasText}"
+                                      OffText="{Binding Text, ElementName=offText}"
+                                      OnText="{Binding Text, ElementName=onText}"
+                                      SliderHeight="{Binding Value, ElementName=sliderHeight}"
+                                      SliderMargin="{Binding Text, ElementName=sliderMargin, Converter={StaticResource StringToThicknessConverter}}"
+                                      SliderShape="{Binding SelectedItem, ElementName=sliderShape}"
+                                      SliderWidth="{Binding Value, ElementName=sliderWidth}" />
     </DockPanel>
 
 </UserControl>

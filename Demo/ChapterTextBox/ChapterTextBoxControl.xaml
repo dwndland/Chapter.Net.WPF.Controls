@@ -26,9 +26,9 @@
 
             <TextBlock Text="InfoAppearance" />
             <controls:ChapterComboBox x:Name="infoAppearance"
-                                          Margin="0,0,0,10"
-                                          EnumType="{x:Type controls:InfoAppearance}"
-                                          SelectedItem="{x:Static controls:InfoAppearance.OnLostFocus}" />
+                                      Margin="0,0,0,10"
+                                      EnumType="{x:Type controls:InfoAppearance}"
+                                      SelectedItem="{x:Static controls:InfoAppearance.OnLostFocus}" />
 
             <TextBlock Text="InfoText" />
             <TextBox x:Name="infoText"
@@ -42,9 +42,9 @@
             <StackPanel IsEnabled="{Binding ShowFirstControl}">
                 <TextBlock Text="FirstControlPosition" />
                 <controls:ChapterComboBox x:Name="firstControlPosition"
-                                              Margin="0,0,0,10"
-                                              EnumType="{x:Type Dock}"
-                                              SelectedItem="{x:Static Dock.Left}" />
+                                          Margin="0,0,0,10"
+                                          EnumType="{x:Type Dock}"
+                                          SelectedItem="{x:Static Dock.Left}" />
             </StackPanel>
 
             <CheckBox Margin="0,0,0,10"
@@ -54,9 +54,9 @@
             <StackPanel IsEnabled="{Binding ShowSecondControl}">
                 <TextBlock Text="SecondControlPosition" />
                 <controls:ChapterComboBox x:Name="secondControlPosition"
-                                              Margin="0,0,0,10"
-                                              EnumType="{x:Type Dock}"
-                                              SelectedItem="{x:Static Dock.Right}" />
+                                          Margin="0,0,0,10"
+                                          EnumType="{x:Type Dock}"
+                                          SelectedItem="{x:Static Dock.Right}" />
             </StackPanel>
 
             <CheckBox x:Name="allowDrop"
@@ -66,9 +66,9 @@
             <StackPanel IsEnabled="{Binding IsChecked, ElementName=allowDrop}">
                 <TextBlock Text="AllowedDropType" />
                 <controls:ChapterComboBox x:Name="allowedDropType"
-                                              Margin="0,0,0,10"
-                                              EnumType="{x:Type controls:DroppableTypes}"
-                                              SelectedItem="{x:Static controls:DroppableTypes.File}" />
+                                          Margin="0,0,0,10"
+                                          EnumType="{x:Type controls:DroppableTypes}"
+                                          SelectedItem="{x:Static controls:DroppableTypes.File}" />
 
                 <TextBlock Text="Separator" />
                 <TextBox x:Name="separator"
@@ -77,17 +77,17 @@
 
                 <TextBlock Text="DragDropEffect" />
                 <controls:ChapterComboBox x:Name="dragDropEffect"
-                                              Margin="0,0,0,10"
-                                              EnumType="{x:Type DragDropEffects}"
-                                              SelectedItem="{x:Static DragDropEffects.Link}" />
+                                          Margin="0,0,0,10"
+                                          EnumType="{x:Type DragDropEffects}"
+                                          SelectedItem="{x:Static DragDropEffects.Link}" />
             </StackPanel>
 
             <TextBlock Margin="0,0,0,10" Text="InputLimiter" />
 
             <TextBlock Text="WhitespaceHandling" />
             <controls:ChapterComboBox x:Name="whitespaceHandling"
-                                          EnumType="{x:Type controls:WhitespaceHandling}"
-                                          SelectedItem="{x:Static controls:WhitespaceHandling.None}" />
+                                      EnumType="{x:Type controls:WhitespaceHandling}"
+                                      SelectedItem="{x:Static controls:WhitespaceHandling.None}" />
         </local:PropertyPanel>
 
         <StackPanel Width="300"

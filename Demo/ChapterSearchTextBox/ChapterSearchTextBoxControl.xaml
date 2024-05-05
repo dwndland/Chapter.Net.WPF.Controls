@@ -32,9 +32,9 @@
             <StackPanel IsEnabled="{Binding IsChecked, ElementName=showSearchButton}">
                 <TextBlock Text="SearchButtonPosition" />
                 <controls:ChapterComboBox x:Name="searchButtonPosition"
-                                              Margin="0,0,0,10"
-                                              EnumType="{x:Type Dock}"
-                                              SelectedItem="{x:Static Dock.Right}" />
+                                          Margin="0,0,0,10"
+                                          EnumType="{x:Type Dock}"
+                                          SelectedItem="{x:Static Dock.Right}" />
 
                 <CheckBox x:Name="isSearching"
                           Margin="0,0,0,10"
@@ -48,14 +48,14 @@
 
             <TextBlock Text="ChapterSearchTextBox" />
             <controls:ChapterSearchTextBox Height="{Binding Value, ElementName=height}"
-                                    VerticalContentAlignment="Center"
-                                    CancelClick="OnCancelClick"
-                                    InfoAppearance="OnEmpty"
-                                    InfoText="Search"
-                                    IsSearching="{Binding IsChecked, ElementName=isSearching}"
-                                    SearchButtonPosition="{Binding SelectedItem, ElementName=searchButtonPosition}"
-                                    SearchClick="OnSearchClick"
-                                    ShowSearchButton="{Binding IsChecked, ElementName=showSearchButton}" />
+                                           VerticalContentAlignment="Center"
+                                           CancelClick="OnCancelClick"
+                                           InfoAppearance="OnEmpty"
+                                           InfoText="Search"
+                                           IsSearching="{Binding IsChecked, ElementName=isSearching}"
+                                           SearchButtonPosition="{Binding SelectedItem, ElementName=searchButtonPosition}"
+                                           SearchClick="OnSearchClick"
+                                           ShowSearchButton="{Binding IsChecked, ElementName=showSearchButton}" />
         </StackPanel>
     </DockPanel>
 

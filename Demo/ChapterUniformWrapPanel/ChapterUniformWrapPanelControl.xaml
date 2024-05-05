@@ -73,8 +73,8 @@
                     <ItemsControl.ItemsPanel>
                         <ItemsPanelTemplate>
                             <controls:ChapterUniformWrapPanel IsAutoUniform="{Binding IsChecked, ElementName=isAutoUniform}"
-                                                       MinItemWidth="{Binding Value, ElementName=minItemWidth}"
-                                                       Orientation="Horizontal" />
+                                                              MinItemWidth="{Binding Value, ElementName=minItemWidth}"
+                                                              Orientation="Horizontal" />
                         </ItemsPanelTemplate>
                     </ItemsControl.ItemsPanel>
                 </ItemsControl>
@@ -86,8 +86,8 @@
                     <ItemsControl.ItemsPanel>
                         <ItemsPanelTemplate>
                             <controls:ChapterUniformWrapPanel IsAutoUniform="{Binding IsChecked, ElementName=isAutoUniform}"
-                                                       MinItemHeight="{Binding Value, ElementName=minItemHeight}"
-                                                       Orientation="Vertical" />
+                                                              MinItemHeight="{Binding Value, ElementName=minItemHeight}"
+                                                              Orientation="Vertical" />
                         </ItemsPanelTemplate>
                     </ItemsControl.ItemsPanel>
                 </ItemsControl>

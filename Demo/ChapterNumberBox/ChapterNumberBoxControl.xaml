@@ -13,9 +13,9 @@
         <local:PropertyPanel>
             <TextBlock Text="NumberType" />
             <controls:ChapterComboBox x:Name="numberType"
-                                          Margin="0,0,0,10"
-                                          EnumType="{x:Type controls:NumberType}"
-                                          SelectedItem="{x:Static controls:NumberType.Int}" />
+                                      Margin="0,0,0,10"
+                                      EnumType="{x:Type controls:NumberType}"
+                                      SelectedItem="{x:Static controls:NumberType.Int}" />
 
             <TextBlock Text="Minimum" />
             <TextBox x:Name="minimum"
@@ -34,9 +34,9 @@
 
             <TextBlock Text="UnitPosition" />
             <controls:ChapterComboBox x:Name="unitPosition"
-                                          Margin="0,0,0,10"
-                                          EnumType="{x:Type Dock}"
-                                          SelectedItem="{x:Static Dock.Right}" />
+                                      Margin="0,0,0,10"
+                                      EnumType="{x:Type Dock}"
+                                      SelectedItem="{x:Static Dock.Right}" />
 
             <CheckBox x:Name="hasCheckBox"
                       Margin="0,0,0,10"
@@ -49,29 +49,29 @@
 
             <TextBlock Text="CheckBoxBehavior" />
             <controls:ChapterComboBox x:Name="checkBoxBehavior"
-                                          Margin="0,0,0,10"
-                                          EnumType="{x:Type controls:ChapterNumberBoxCheckBoxBehavior}"
-                                          SelectedItem="{x:Static controls:ChapterNumberBoxCheckBoxBehavior.None}" />
+                                      Margin="0,0,0,10"
+                                      EnumType="{x:Type controls:ChapterNumberBoxCheckBoxBehavior}"
+                                      SelectedItem="{x:Static controls:ChapterNumberBoxCheckBoxBehavior.None}" />
 
             <TextBlock Text="CheckBoxPosition" />
             <controls:ChapterComboBox x:Name="checkBoxPosition"
-                                          Margin="0,0,0,10"
-                                          EnumType="{x:Type Dock}"
-                                          SelectedItem="{x:Static Dock.Left}" />
+                                      Margin="0,0,0,10"
+                                      EnumType="{x:Type Dock}"
+                                      SelectedItem="{x:Static Dock.Left}" />
 
             <TextBlock Text="UpDownBehavior" />
             <controls:ChapterComboBox x:Name="upDownBehavior"
-                                          Margin="0,0,0,10"
-                                          EnumType="{x:Type controls:UpDownBehavior}"
-                                          SelectedItem="{x:Static controls:UpDownBehavior.None}" />
+                                      Margin="0,0,0,10"
+                                      EnumType="{x:Type controls:UpDownBehavior}"
+                                      SelectedItem="{x:Static controls:UpDownBehavior.None}" />
 
             <TextBlock Text="Decimal Places" />
             <controls:ChapterNumberBox x:Name="decimalPlaces"
-                                Margin="0,0,0,10"
-                                Minimum="-1"
-                                Number="-1"
-                                NumberType="Int"
-                                UpDownBehavior="ArrowsAndButtons" />
+                                       Margin="0,0,0,10"
+                                       Minimum="-1"
+                                       Number="-1"
+                                       NumberType="Int"
+                                       UpDownBehavior="ArrowsAndButtons" />
 
             <TextBlock Text="Step" />
             <TextBox x:Name="step"
@@ -80,9 +80,9 @@
 
             <TextBlock Text="UpDownButtonsPosition" />
             <controls:ChapterComboBox x:Name="upDownButtonsPosition"
-                                          Margin="0,0,0,10"
-                                          EnumType="{x:Type Dock}"
-                                          SelectedItem="{x:Static Dock.Right}" />
+                                      Margin="0,0,0,10"
+                                      EnumType="{x:Type Dock}"
+                                      SelectedItem="{x:Static Dock.Right}" />
 
             <CheckBox x:Name="canStepUp"
                       Margin="0,0,0,10"
@@ -109,9 +109,9 @@
 
             <TextBlock Text="ResetButtonPosition" />
             <controls:ChapterComboBox x:Name="resetButtonPosition"
-                                          Margin="0,0,0,10"
-                                          EnumType="{x:Type Dock}"
-                                          SelectedItem="{x:Static Dock.Right}" />
+                                      Margin="0,0,0,10"
+                                      EnumType="{x:Type Dock}"
+                                      SelectedItem="{x:Static Dock.Right}" />
 
             <CheckBox x:Name="canReset"
                       Margin="0,0,0,10"
@@ -120,9 +120,9 @@
 
             <TextBlock Text="NumberSelectionBehavior" />
             <controls:ChapterComboBox x:Name="numberSelectionBehavior"
-                                          Margin="0,0,0,10"
-                                          EnumType="{x:Type controls:ChapterNumberBoxSelection}"
-                                          SelectedItem="{x:Static controls:ChapterNumberBoxSelection.None}" />
+                                      Margin="0,0,0,10"
+                                      EnumType="{x:Type controls:ChapterNumberBoxSelection}"
+                                      SelectedItem="{x:Static controls:ChapterNumberBoxSelection.None}" />
 
             <CheckBox x:Name="isReadOnly"
                       Margin="0,0,0,10"
@@ -140,31 +140,31 @@
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center">
             <controls:ChapterNumberBox x:Name="ChapterNumberBox"
-                                Margin="0,0,0,4"
-                                AcceptUpDownOnNull="{Binding IsChecked, ElementName=acceptUpDownOnNull}"
-                                CanReset="{Binding IsChecked, ElementName=canReset}"
-                                CanStepDown="{Binding IsChecked, ElementName=canStepDown}"
-                                CanStepUp="{Binding IsChecked, ElementName=canStepUp}"
-                                CheckBoxBehavior="{Binding SelectedItem, ElementName=checkBoxBehavior}"
-                                CheckBoxPosition="{Binding SelectedItem, ElementName=checkBoxPosition}"
-                                DecimalPlaces="{Binding Number, ElementName=decimalPlaces}"
-                                DefaultNumber="{Binding Text, ElementName=defaultNumber}"
-                                HasCheckBox="{Binding IsChecked, ElementName=hasCheckBox}"
-                                HasResetButton="{Binding IsChecked, ElementName=hasResetButton}"
-                                IsChecked="{Binding IsChecked, ElementName=isChecked}"
-                                IsReadOnly="{Binding IsChecked, ElementName=isReadOnly}"
-                                LostFocusBehavior="{controls:LostFocusBehavior None}"
-                                Maximum="{Binding Text, ElementName=maximum}"
-                                Minimum="{Binding Text, ElementName=minimum}"
-                                Number="0"
-                                NumberSelectionBehavior="{Binding SelectedItem, ElementName=numberSelectionBehavior}"
-                                NumberType="{Binding SelectedItem, ElementName=numberType}"
-                                ResetButtonPosition="{Binding SelectedItem, ElementName=resetButtonPosition}"
-                                Step="{Binding Text, ElementName=step}"
-                                Unit="{Binding Text, ElementName=unit}"
-                                UnitPosition="{Binding SelectedItem, ElementName=unitPosition}"
-                                UpDownBehavior="{Binding SelectedItem, ElementName=upDownBehavior}"
-                                UpDownButtonsPosition="{Binding SelectedItem, ElementName=upDownButtonsPosition}" />
+                                       Margin="0,0,0,4"
+                                       AcceptUpDownOnNull="{Binding IsChecked, ElementName=acceptUpDownOnNull}"
+                                       CanReset="{Binding IsChecked, ElementName=canReset}"
+                                       CanStepDown="{Binding IsChecked, ElementName=canStepDown}"
+                                       CanStepUp="{Binding IsChecked, ElementName=canStepUp}"
+                                       CheckBoxBehavior="{Binding SelectedItem, ElementName=checkBoxBehavior}"
+                                       CheckBoxPosition="{Binding SelectedItem, ElementName=checkBoxPosition}"
+                                       DecimalPlaces="{Binding Number, ElementName=decimalPlaces}"
+                                       DefaultNumber="{Binding Text, ElementName=defaultNumber}"
+                                       HasCheckBox="{Binding IsChecked, ElementName=hasCheckBox}"
+                                       HasResetButton="{Binding IsChecked, ElementName=hasResetButton}"
+                                       IsChecked="{Binding IsChecked, ElementName=isChecked}"
+                                       IsReadOnly="{Binding IsChecked, ElementName=isReadOnly}"
+                                       LostFocusBehavior="{controls:LostFocusBehavior None}"
+                                       Maximum="{Binding Text, ElementName=maximum}"
+                                       Minimum="{Binding Text, ElementName=minimum}"
+                                       Number="0"
+                                       NumberSelectionBehavior="{Binding SelectedItem, ElementName=numberSelectionBehavior}"
+                                       NumberType="{Binding SelectedItem, ElementName=numberType}"
+                                       ResetButtonPosition="{Binding SelectedItem, ElementName=resetButtonPosition}"
+                                       Step="{Binding Text, ElementName=step}"
+                                       Unit="{Binding Text, ElementName=unit}"
+                                       UnitPosition="{Binding SelectedItem, ElementName=unitPosition}"
+                                       UpDownBehavior="{Binding SelectedItem, ElementName=upDownBehavior}"
+                                       UpDownButtonsPosition="{Binding SelectedItem, ElementName=upDownButtonsPosition}" />
             <TextBlock Margin="0,0,0,10" Text="{Binding Number, ElementName=ChapterNumberBox, StringFormat=Number: {0}}" />
 
             <TextBlock Text="LostFocusBehavior:" />

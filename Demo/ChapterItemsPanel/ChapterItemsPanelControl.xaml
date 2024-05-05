@@ -41,8 +41,8 @@
                         <ItemsControl.ItemsPanel>
                             <ItemsPanelTemplate>
                                 <controls:ChapterItemsPanel IsUniform="{Binding IsUniform}"
-                                                     Orientation="Horizontal"
-                                                     Spacing="{Binding Value, ElementName=spacing}" />
+                                                            Orientation="Horizontal"
+                                                            Spacing="{Binding Value, ElementName=spacing}" />
                             </ItemsPanelTemplate>
                         </ItemsControl.ItemsPanel>
                     </ItemsControl>

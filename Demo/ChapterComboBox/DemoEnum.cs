@@ -12,9 +12,12 @@ namespace Demo;
 
 public enum DemoEnum
 {
-    [Description("Description: First")] First,
+    [Description("Description: First")]
+    First,
 
-    [Description("Description: Second")] Second,
+    [Description("Description: Second")]
+    Second,
 
-    [Description("Description: Third")] Third
+    [Description("Description: Third")]
+    Third
 }

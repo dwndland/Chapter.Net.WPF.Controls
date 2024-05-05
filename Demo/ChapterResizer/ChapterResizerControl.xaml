@@ -22,43 +22,43 @@
     <Border Background="White" BorderThickness="1,0,0,0">
         <DockPanel LastChildFill="False">
             <controls:ChapterResizer Height="100"
-                              DockPanel.Dock="Bottom"
-                              FrameSizes="0,6,0,0">
+                                     DockPanel.Dock="Bottom"
+                                     FrameSizes="0,6,0,0">
                 <Border Background="LightBlue" BorderThickness="0,1,0,0">
                     <TextBlock Text="Size Me Up" />
                 </Border>
             </controls:ChapterResizer>
 
             <controls:ChapterResizer Width="100"
-                              DockPanel.Dock="Right"
-                              FrameSizes="6,0,0,0">
+                                     DockPanel.Dock="Right"
+                                     FrameSizes="6,0,0,0">
                 <Border Background="WhiteSmoke" BorderThickness="1,0,0,0">
                     <TextBlock Text="Size Me Left" />
                 </Border>
             </controls:ChapterResizer>
 
             <controls:ChapterResizer Width="100"
-                              DockPanel.Dock="Left"
-                              FrameSizes="0,0,6,0">
+                                     DockPanel.Dock="Left"
+                                     FrameSizes="0,0,6,0">
                 <Border Background="LightSalmon" BorderThickness="0,0,1,0">
                     <TextBlock Text="Size Me Right" />
                 </Border>
             </controls:ChapterResizer>
 
             <controls:ChapterResizer Height="100"
-                              DockPanel.Dock="Top"
-                              FrameSizes="0,0,0,6">
+                                     DockPanel.Dock="Top"
+                                     FrameSizes="0,0,0,6">
                 <Border Background="LightGreen" BorderThickness="0,0,0,1">
                     <TextBlock Text="Size Me Down" />
                 </Border>
             </controls:ChapterResizer>
 
             <controls:ChapterResizer Width="100"
-                              Height="100"
-                              VerticalAlignment="Bottom"
-                              CornerSize="12"
-                              DockPanel.Dock="Left"
-                              FrameSizes="0,6,6,0">
+                                     Height="100"
+                                     VerticalAlignment="Bottom"
+                                     CornerSize="12"
+                                     DockPanel.Dock="Left"
+                                     FrameSizes="0,6,6,0">
                 <Border Background="LightSkyBlue" BorderThickness="0,1,1,0">
                     <TextBlock Text="Size Me Up And Right" />
                 </Border>

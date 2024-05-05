@@ -10,38 +10,38 @@
                         <ContentPresenter />
 
                         <controls:ChapterResizerFrame x:Name="PART_LeftThumb"
-                                               Width="{TemplateBinding LeftWidth}"
-                                               Direction="LeftToRight" />
+                                                      Width="{TemplateBinding LeftWidth}"
+                                                      Direction="LeftToRight" />
                         <controls:ChapterResizerFrame x:Name="PART_TopThumb"
-                                               Height="{TemplateBinding TopHeight}"
-                                               Direction="TopToBotom" />
+                                                      Height="{TemplateBinding TopHeight}"
+                                                      Direction="TopToBotom" />
                         <controls:ChapterResizerFrame x:Name="PART_RightThumb"
-                                               Width="{TemplateBinding RightWidth}"
-                                               Direction="RightToLeft" />
+                                                      Width="{TemplateBinding RightWidth}"
+                                                      Direction="RightToLeft" />
                         <controls:ChapterResizerFrame x:Name="PART_BottomThumb"
-                                               Height="{TemplateBinding BottomHeight}"
-                                               Direction="BottomToTop" />
+                                                      Height="{TemplateBinding BottomHeight}"
+                                                      Direction="BottomToTop" />
 
                         <controls:ChapterResizerFrame x:Name="PART_LeftTopThumb"
-                                               Width="{TemplateBinding CornerSize}"
-                                               Height="{TemplateBinding CornerSize}"
-                                               Direction="TopLeftToBottomRight"
-                                               Visibility="Collapsed" />
+                                                      Width="{TemplateBinding CornerSize}"
+                                                      Height="{TemplateBinding CornerSize}"
+                                                      Direction="TopLeftToBottomRight"
+                                                      Visibility="Collapsed" />
                         <controls:ChapterResizerFrame x:Name="PART_RightTopThumb"
-                                               Width="{TemplateBinding CornerSize}"
-                                               Height="{TemplateBinding CornerSize}"
-                                               Direction="TopRightToBottomLeft"
-                                               Visibility="Collapsed" />
+                                                      Width="{TemplateBinding CornerSize}"
+                                                      Height="{TemplateBinding CornerSize}"
+                                                      Direction="TopRightToBottomLeft"
+                                                      Visibility="Collapsed" />
                         <controls:ChapterResizerFrame x:Name="PART_RightBottomThumb"
-                                               Width="{TemplateBinding CornerSize}"
-                                               Height="{TemplateBinding CornerSize}"
-                                               Direction="BottomRightToTopLeft"
-                                               Visibility="Collapsed" />
+                                                      Width="{TemplateBinding CornerSize}"
+                                                      Height="{TemplateBinding CornerSize}"
+                                                      Direction="BottomRightToTopLeft"
+                                                      Visibility="Collapsed" />
                         <controls:ChapterResizerFrame x:Name="PART_LeftBottomThumb"
-                                               Width="{TemplateBinding CornerSize}"
-                                               Height="{TemplateBinding CornerSize}"
-                                               Direction="BottomLeftToTopRight"
-                                               Visibility="Collapsed" />
+                                                      Width="{TemplateBinding CornerSize}"
+                                                      Height="{TemplateBinding CornerSize}"
+                                                      Direction="BottomLeftToTopRight"
+                                                      Visibility="Collapsed" />
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>

@@ -52,7 +52,9 @@
                             BorderThickness="{TemplateBinding BorderThickness}"
                             SnapsToDevicePixels="True">
                         <DockPanel>
-                            <Grid x:Name="searchButtonArea" DockPanel.Dock="{TemplateBinding SearchButtonPosition}" Visibility="Collapsed">
+                            <Grid x:Name="searchButtonArea"
+                                  DockPanel.Dock="{TemplateBinding SearchButtonPosition}"
+                                  Visibility="Collapsed">
                                 <controls:SearchButton x:Name="PART_SearchButton"
                                                        Command="{TemplateBinding SearchCommand}"
                                                        CommandParameter="{TemplateBinding SearchCommandParameter}"

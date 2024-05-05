@@ -3,14 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:controls="clr-namespace:Chapter.Net.WPF.Controls;assembly=Chapter.Net.WPF.Controls"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:ChapterHeaderedContentControl="clr-namespace:Demo.ChapterHeaderedContentControl"
              xmlns:local="clr-namespace:Demo"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              d:DesignHeight="450"
              d:DesignWidth="800"
              mc:Ignorable="d">
     <UserControl.Resources>
-        <ChapterHeaderedContentControl:StringToThicknessConverter x:Key="StringToThicknessConverter" />
+        <local:StringToThicknessConverter x:Key="StringToThicknessConverter" />
     </UserControl.Resources>
 
     <DockPanel>
@@ -52,27 +51,27 @@
 
             <TextBlock Text="ImagePosition" />
             <controls:ChapterComboBox x:Name="imagePosition"
-                                          Margin="0,0,0,10"
-                                          EnumType="{x:Type Dock}"
-                                          SelectedItem="{x:Static Dock.Left}" />
+                                      Margin="0,0,0,10"
+                                      EnumType="{x:Type Dock}"
+                                      SelectedItem="{x:Static Dock.Left}" />
 
             <TextBlock Text="HorizontalImageAlignment" />
             <controls:ChapterComboBox x:Name="horizontalImageAlignment"
-                                          Margin="0,0,0,10"
-                                          EnumType="{x:Type HorizontalAlignment}"
-                                          SelectedItem="{x:Static HorizontalAlignment.Center}" />
+                                      Margin="0,0,0,10"
+                                      EnumType="{x:Type HorizontalAlignment}"
+                                      SelectedItem="{x:Static HorizontalAlignment.Center}" />
 
             <TextBlock Text="VerticalImageAlignment" />
             <controls:ChapterComboBox x:Name="verticalImageAlignment"
-                                          Margin="0,0,0,10"
-                                          EnumType="{x:Type VerticalAlignment}"
-                                          SelectedItem="{x:Static VerticalAlignment.Center}" />
+                                      Margin="0,0,0,10"
+                                      EnumType="{x:Type VerticalAlignment}"
+                                      SelectedItem="{x:Static VerticalAlignment.Center}" />
 
             <TextBlock Text="ImageStretch" />
             <controls:ChapterComboBox x:Name="imageStretch"
-                                          Margin="0,0,0,10"
-                                          EnumType="{x:Type Stretch}"
-                                          SelectedItem="{x:Static Stretch.Uniform}" />
+                                      Margin="0,0,0,10"
+                                      EnumType="{x:Type Stretch}"
+                                      SelectedItem="{x:Static Stretch.Uniform}" />
 
             <CheckBox x:Name="isEnabled"
                       Content="IsEnabled"
@@ -81,19 +80,19 @@
 
         <!--  ImageSource  -->
         <controls:ChapterButton Padding="{Binding Text, ElementName=padding, Converter={StaticResource StringToThicknessConverter}}"
-                              HorizontalAlignment="Center"
-                              VerticalAlignment="Center"
-                              Content="{Binding Text, ElementName=content}"
-                              HorizontalImageAlignment="{Binding SelectedItem, ElementName=horizontalImageAlignment}"
-                              ImageHeight="{Binding Value, ElementName=imageHeight}"
-                              ImageMargin="{Binding Text, ElementName=imageMargin, Converter={StaticResource StringToThicknessConverter}}"
-                              ImagePosition="{Binding SelectedItem, ElementName=imagePosition}"
-                              ImageSource="/Demo;component/ChapterButton/save.png"
-                              ImageStretch="{Binding SelectedItem, ElementName=imageStretch}"
-                              ImageWidth="{Binding Value, ElementName=imageWidth}"
-                              IsEnabled="{Binding IsChecked, ElementName=isEnabled}"
-                              RenderOptions.BitmapScalingMode="HighQuality"
-                              VerticalImageAlignment="{Binding SelectedItem, ElementName=verticalImageAlignment}" />
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Content="{Binding Text, ElementName=content}"
+                                HorizontalImageAlignment="{Binding SelectedItem, ElementName=horizontalImageAlignment}"
+                                ImageHeight="{Binding Value, ElementName=imageHeight}"
+                                ImageMargin="{Binding Text, ElementName=imageMargin, Converter={StaticResource StringToThicknessConverter}}"
+                                ImagePosition="{Binding SelectedItem, ElementName=imagePosition}"
+                                ImageSource="/Demo;component/ChapterButton/save.png"
+                                ImageStretch="{Binding SelectedItem, ElementName=imageStretch}"
+                                ImageWidth="{Binding Value, ElementName=imageWidth}"
+                                IsEnabled="{Binding IsChecked, ElementName=isEnabled}"
+                                RenderOptions.BitmapScalingMode="HighQuality"
+                                VerticalImageAlignment="{Binding SelectedItem, ElementName=verticalImageAlignment}" />
 
     </DockPanel>
 

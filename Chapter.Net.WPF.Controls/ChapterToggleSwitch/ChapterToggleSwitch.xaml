@@ -120,19 +120,19 @@
                 <ControlTemplate TargetType="{x:Type controls:ChapterToggleSwitch}">
                     <Grid Background="Transparent">
                         <controls:ChapterToggleSwitchBack x:Name="ChapterToggleSwitchBack"
-                                                   Margin="{TemplateBinding BackMargin}"
-                                                   HasText="{TemplateBinding HasText}"
-                                                   IsChecked="{Binding IsChecked, RelativeSource={RelativeSource TemplatedParent}}"
-                                                   OffText="{TemplateBinding OffText}"
-                                                   OnText="{TemplateBinding OnText}"
-                                                   Shape="{TemplateBinding BackShape}" />
+                                                          Margin="{TemplateBinding BackMargin}"
+                                                          HasText="{TemplateBinding HasText}"
+                                                          IsChecked="{Binding IsChecked, RelativeSource={RelativeSource TemplatedParent}}"
+                                                          OffText="{TemplateBinding OffText}"
+                                                          OnText="{TemplateBinding OnText}"
+                                                          Shape="{TemplateBinding BackShape}" />
 
                         <controls:ChapterToggleSwitchSlider x:Name="ChapterToggleSwitchSlider"
-                                                     Width="{TemplateBinding SliderWidth}"
-                                                     Height="{TemplateBinding SliderHeight}"
-                                                     Margin="{TemplateBinding SliderMargin}"
-                                                     HorizontalAlignment="Left"
-                                                     Shape="{TemplateBinding SliderShape}" />
+                                                            Width="{TemplateBinding SliderWidth}"
+                                                            Height="{TemplateBinding SliderHeight}"
+                                                            Margin="{TemplateBinding SliderMargin}"
+                                                            HorizontalAlignment="Left"
+                                                            Shape="{TemplateBinding SliderShape}" />
                     </Grid>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsChecked" Value="True">

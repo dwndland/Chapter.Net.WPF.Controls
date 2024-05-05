@@ -51,8 +51,8 @@
                 <DockPanel Grid.Column="1">
                     <TextBlock DockPanel.Dock="Top" Text="ChapterTreeListView" />
                     <controls:ChapterTreeListView AutoExpandSelected="{Binding IsChecked, ElementName=autoExpandSelected}"
-                                           ItemsSource="{Binding Items}"
-                                           SelectedElement="{Binding SelectedItem}">
+                                                  ItemsSource="{Binding Items}"
+                                                  SelectedElement="{Binding SelectedItem}">
                         <controls:ChapterTreeListView.Resources>
                             <HierarchicalDataTemplate DataType="{x:Type local:Element}" ItemsSource="{Binding Items}" />
                         </controls:ChapterTreeListView.Resources>
