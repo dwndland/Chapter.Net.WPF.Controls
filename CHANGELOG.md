@@ -22,6 +22,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Renamed OptionButton to ChapterToggleSwitch
 - Renamed PasswordBox to ChapterPasswordBox
 - Renamed Resizer to ChapterResizer
+- Renamed SearchTextBox to ChapterSearchTextBox
 ### Supported .Net Versions
 - .Net Core 3.0
 - .Net Framework 4.5

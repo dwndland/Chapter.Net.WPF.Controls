@@ -16,7 +16,7 @@
         <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterPasswordBox/ChapterPasswordBox.xaml" />
         <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterResizer/ChapterResizer.xaml" />
         <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterResizer/ChapterResizerFrame.xaml" />
-        <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/SearchTextBox/SearchTextBox.xaml" />
+        <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterSearchTextBox/ChapterSearchTextBox.xaml" />
         <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/SplitButton/SplitButton.xaml" />
         <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/SplitButton/SplitButtonItem.xaml" />
         <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/TimeBox/TimeBox.xaml" />

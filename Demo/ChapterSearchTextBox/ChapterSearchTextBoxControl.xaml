@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="Demo.SearchTextBoxControl"
+﻿<UserControl x:Class="Demo.ChapterSearchTextBoxControl"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:controls="clr-namespace:Chapter.Net.WPF.Controls;assembly=Chapter.Net.WPF.Controls"
@@ -11,7 +11,7 @@
     <DockPanel>
         <local:PropertyPanel>
             <TextBlock Margin="0,0,0,10"
-                       Text="The SearchTextBox inherits from ChapterTextBox"
+                       Text="The ChapterSearchTextBox inherits from ChapterTextBox"
                        TextWrapping="Wrap" />
 
             <StackPanel Orientation="Horizontal">
@@ -46,8 +46,8 @@
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center">
 
-            <TextBlock Text="SearchTextBox" />
-            <controls:SearchTextBox Height="{Binding Value, ElementName=height}"
+            <TextBlock Text="ChapterSearchTextBox" />
+            <controls:ChapterSearchTextBox Height="{Binding Value, ElementName=height}"
                                     VerticalContentAlignment="Center"
                                     CancelClick="OnCancelClick"
                                     InfoAppearance="OnEmpty"

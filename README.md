@@ -21,7 +21,7 @@ A set of new WPF controls which are not yet build in.
 - **ChapterToggleSwitch:** A custom checkbox where a slider shows the checked and unchecked state.
 - **ChapterPasswordBox:** Hosts and enhances the WPF ChapterPasswordBox to be able to bind the password value and show info text in the background.
 - **ChapterResizer:** Brings the possibility to resize every UI control manually by hold and drag the corners or sides.
-- **SearchTextBox:** Adds search and cancel buttons to the ChapterTextBox to represent a search box shown like in the Windows explorer.
+- **ChapterSearchTextBox:** Adds search and cancel buttons to the ChapterTextBox to represent a search box shown like in the Windows explorer.
 - **SpacingStackPanel:** A StackPanel which adds a spacing between the items.
 - **SplitButton:** A button with a drop down where more commands can be available.
 - **TimeBox:** Shows textboxes to let the user input a time.
@@ -353,15 +353,15 @@ A set of new WPF controls which are not yet build in.
     ```
     ![ChapterResizer](https://raw.githubusercontent.com/dwndland/Chapter.Net.WPF.Controls/master/Images/ChapterResizer.png)
 
-17. **SearchTextBox:**
+17. **ChapterSearchTextBox:**
     - Usage
     ```xaml
-    <chapter:SearchTextBox ShowSearchButton="True"
+    <chapter:ChapterSearchTextBox ShowSearchButton="True"
                            SearchCommand="{Binding SearchCommand}"
                            IsSearching="{Binding IsSearching}"
                            CancelCommand="{Binding CancelSearchCommand}" />
     ```
-    ![SearchTextBox](https://raw.githubusercontent.com/dwndland/Chapter.Net.WPF.Controls/master/Images/SearchTextBox.png)
+    ![ChapterSearchTextBox](https://raw.githubusercontent.com/dwndland/Chapter.Net.WPF.Controls/master/Images/ChapterSearchTextBox.png)
 
 18. **SpacingStackPanel:**
     - Usage

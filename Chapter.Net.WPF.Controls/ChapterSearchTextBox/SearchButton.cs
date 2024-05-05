@@ -12,7 +12,7 @@ using System.Windows.Controls;
 namespace Chapter.Net.WPF.Controls
 {
     /// <summary>
-    ///     The button which calls the search command in the <see cref="SearchTextBox" />.
+    ///     The button which calls the search command in the <see cref="ChapterSearchTextBox" />.
     /// </summary>
     public class SearchButton : Button
     {

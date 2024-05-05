@@ -1,5 +1,5 @@
 ﻿// -----------------------------------------------------------------------------------------------------------------
-// <copyright file="SearchTextBox.cs" company="my-libraries">
+// <copyright file="ChapterSearchTextBox.cs" company="my-libraries">
 //     Copyright (c) David Wendland. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------------------------------------------------
@@ -18,77 +18,77 @@ namespace Chapter.Net.WPF.Controls
     /// </summary>
     [TemplatePart(Name = "PART_SearchButton", Type = typeof(Button))]
     [TemplatePart(Name = "PART_CancelButton", Type = typeof(Button))]
-    public class SearchTextBox : ChapterTextBox
+    public class ChapterSearchTextBox : ChapterTextBox
     {
         /// <summary>
         ///     Identifies the <see cref="SearchButtonPosition" /> dependency property.
         /// </summary>
         public static readonly DependencyProperty SearchButtonPositionProperty =
-            DependencyProperty.Register(nameof(SearchButtonPosition), typeof(Dock), typeof(SearchTextBox), new UIPropertyMetadata(Dock.Right));
+            DependencyProperty.Register(nameof(SearchButtonPosition), typeof(Dock), typeof(ChapterSearchTextBox), new UIPropertyMetadata(Dock.Right));
 
         /// <summary>
         ///     Identifies the <see cref="SearchButtonStyle" /> dependency property.
         /// </summary>
         public static readonly DependencyProperty SearchButtonStyleProperty =
-            DependencyProperty.Register(nameof(SearchButtonStyle), typeof(Style), typeof(SearchTextBox), new PropertyMetadata(null));
+            DependencyProperty.Register(nameof(SearchButtonStyle), typeof(Style), typeof(ChapterSearchTextBox), new PropertyMetadata(null));
 
         /// <summary>
         ///     Identifies the <see cref="ShowSearchButton" /> dependency property.
         /// </summary>
         public static readonly DependencyProperty ShowSearchButtonProperty =
-            DependencyProperty.Register(nameof(ShowSearchButton), typeof(bool), typeof(SearchTextBox), new UIPropertyMetadata(true));
+            DependencyProperty.Register(nameof(ShowSearchButton), typeof(bool), typeof(ChapterSearchTextBox), new UIPropertyMetadata(true));
 
         /// <summary>
         ///     Identifies the <see cref="SearchCommand" /> dependency property.
         /// </summary>
         public static readonly DependencyProperty SearchCommandProperty =
-            DependencyProperty.Register(nameof(SearchCommand), typeof(ICommand), typeof(SearchTextBox), new UIPropertyMetadata(null));
+            DependencyProperty.Register(nameof(SearchCommand), typeof(ICommand), typeof(ChapterSearchTextBox), new UIPropertyMetadata(null));
 
         /// <summary>
         ///     Identifies the <see cref="SearchCommandParameter" /> dependency property.
         /// </summary>
         public static readonly DependencyProperty SearchCommandParameterProperty =
-            DependencyProperty.Register(nameof(SearchCommandParameter), typeof(object), typeof(SearchTextBox), new UIPropertyMetadata(null));
+            DependencyProperty.Register(nameof(SearchCommandParameter), typeof(object), typeof(ChapterSearchTextBox), new UIPropertyMetadata(null));
 
         /// <summary>
         ///     Identifies the <see cref="CancelCommand" /> dependency property.
         /// </summary>
         public static readonly DependencyProperty CancelCommandProperty =
-            DependencyProperty.Register(nameof(CancelCommand), typeof(ICommand), typeof(SearchTextBox), new PropertyMetadata(null));
+            DependencyProperty.Register(nameof(CancelCommand), typeof(ICommand), typeof(ChapterSearchTextBox), new PropertyMetadata(null));
 
         /// <summary>
         ///     Identifies the <see cref="CancelCommandParameter" /> dependency property.
         /// </summary>
         public static readonly DependencyProperty CancelCommandParameterProperty =
-            DependencyProperty.Register(nameof(CancelCommandParameter), typeof(object), typeof(SearchTextBox), new PropertyMetadata(null));
+            DependencyProperty.Register(nameof(CancelCommandParameter), typeof(object), typeof(ChapterSearchTextBox), new PropertyMetadata(null));
 
         /// <summary>
         ///     Identifies the <see cref="CancelButtonStyle" /> dependency property.
         /// </summary>
         public static readonly DependencyProperty CancelButtonStyleProperty =
-            DependencyProperty.Register(nameof(CancelButtonStyle), typeof(Style), typeof(SearchTextBox), new PropertyMetadata(null));
+            DependencyProperty.Register(nameof(CancelButtonStyle), typeof(Style), typeof(ChapterSearchTextBox), new PropertyMetadata(null));
 
         /// <summary>
         ///     Identifies the <see cref="IsSearching" /> dependency property.
         /// </summary>
         public static readonly DependencyProperty IsSearchingProperty =
-            DependencyProperty.Register(nameof(IsSearching), typeof(bool), typeof(SearchTextBox), new UIPropertyMetadata(false));
+            DependencyProperty.Register(nameof(IsSearching), typeof(bool), typeof(ChapterSearchTextBox), new UIPropertyMetadata(false));
 
         /// <summary>
         ///     The RoutedEvent for the SearchClick event.
         /// </summary>
         public static readonly RoutedEvent SearchClickEvent =
-            EventManager.RegisterRoutedEvent(nameof(SearchClick), RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(SearchTextBox));
+            EventManager.RegisterRoutedEvent(nameof(SearchClick), RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(ChapterSearchTextBox));
 
         /// <summary>
         ///     The RoutedEvent for the CancelClick event.
         /// </summary>
         public static readonly RoutedEvent CancelClickEvent =
-            EventManager.RegisterRoutedEvent(nameof(CancelClick), RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(SearchTextBox));
+            EventManager.RegisterRoutedEvent(nameof(CancelClick), RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(ChapterSearchTextBox));
 
-        static SearchTextBox()
+        static ChapterSearchTextBox()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(SearchTextBox), new FrameworkPropertyMetadata(typeof(SearchTextBox)));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(ChapterSearchTextBox), new FrameworkPropertyMetadata(typeof(ChapterSearchTextBox)));
         }
 
         /// <summary>

@@ -1,5 +1,5 @@
 ﻿// -----------------------------------------------------------------------------------------------------------------
-// <copyright file="SearchTextBoxControl.xaml.cs" company="my-libraries">
+// <copyright file="ChapterSearchTextBoxControl.xaml.cs" company="my-libraries">
 //     Copyright (c) David Wendland. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------------------------------------------------
@@ -10,9 +10,9 @@ using System.Windows;
 
 namespace Demo;
 
-public partial class SearchTextBoxControl
+public partial class ChapterSearchTextBoxControl
 {
-    public SearchTextBoxControl()
+    public ChapterSearchTextBoxControl()
     {
         InitializeComponent();
     }
