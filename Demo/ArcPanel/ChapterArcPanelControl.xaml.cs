@@ -1,5 +1,5 @@
 ﻿// -----------------------------------------------------------------------------------------------------------------
-// <copyright file="ArcPanelControl.xaml.cs" company="my-libraries">
+// <copyright file="ChapterArcPanelControl.xaml.cs" company="my-libraries">
 //     Copyright (c) David Wendland. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------------------------------------------------
@@ -8,10 +8,10 @@
 
 namespace Demo;
 
-public partial class ArcPanelControl
+public partial class ChapterArcPanelControl
 {
-    public ArcPanelControl()
+    public ChapterArcPanelControl()
     {
-        InitializeComponent();
+        ChapterArcPanelControl();
     }
 }

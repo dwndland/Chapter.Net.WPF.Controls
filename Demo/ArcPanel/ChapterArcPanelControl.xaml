@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="Demo.ArcPanelControl"
+﻿<UserControl x:Class="Demo.ChapterArcPanelControl"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:controls="clr-namespace:Chapter.Net.WPF.Controls;assembly=Chapter.Net.WPF.Controls"
@@ -43,7 +43,7 @@
                 BorderThickness="1,0"
                 DockPanel.Dock="Bottom"
                 SnapsToDevicePixels="True">
-            <controls:ArcPanel RotateElements="{Binding IsChecked, ElementName=rotateElements}">
+            <controls:ChapterArcPanel RotateElements="{Binding IsChecked, ElementName=rotateElements}">
                 <TextBlock Text="A" />
                 <TextBlock Text="B" />
                 <TextBlock Text="C" />
@@ -70,7 +70,7 @@
                 <TextBlock Text="X" />
                 <TextBlock Text="Y" />
                 <TextBlock Text="Z" />
-            </controls:ArcPanel>
+            </controls:ChapterArcPanel>
         </Border>
 
         <Grid Background="LightGray">

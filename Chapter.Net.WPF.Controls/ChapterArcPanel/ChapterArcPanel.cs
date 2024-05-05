@@ -1,5 +1,5 @@
 ﻿// -----------------------------------------------------------------------------------------------------------------
-// <copyright file="ArcPanel.cs" company="my-libraries">
+// <copyright file="ChapterArcPanel.cs" company="my-libraries">
 //     Copyright (c) David Wendland. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------------------------------------------------
@@ -17,20 +17,20 @@ namespace Chapter.Net.WPF.Controls
     /// <summary>
     ///     Arranges child elements in an arc form.
     /// </summary>
-    public class ArcPanel : Panel
+    public class ChapterArcPanel : Panel
     {
         /// <summary>
         ///     Identifies the RotateElements dependency property.
         /// </summary>
         public static readonly DependencyProperty RotateElementsProperty =
-            DependencyProperty.Register(nameof(RotateElements), typeof(bool), typeof(ArcPanel), new FrameworkPropertyMetadata(true, FrameworkPropertyMetadataOptions.AffectsArrange));
+            DependencyProperty.Register(nameof(RotateElements), typeof(bool), typeof(ChapterArcPanel), new FrameworkPropertyMetadata(true, FrameworkPropertyMetadataOptions.AffectsArrange));
 
         private readonly PathFigure _figure;
 
         /// <summary>
-        ///     Initializes a new instance of the <see cref="ArcPanel" /> class.
+        ///     Initializes a new instance of the <see cref="ChapterArcPanel" /> class.
         /// </summary>
-        public ArcPanel()
+        public ChapterArcPanel()
         {
             _figure = new PathFigure
             {

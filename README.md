@@ -7,7 +7,7 @@ A set of new WPF controls which are not yet build in.
 
 ## Features
 - **ChapterTextBox:** Enhances the WPF TextBox by the possibilities to show background text, drop files and folders and place additional controls in.
-- **ArcPanel:** Arranges child elements in an arc form.
+- **ChapterArcPanel:** Arranges child elements in an arc form.
 - **BrowseTextBox:** Adds a browse button to the ChapterTextBox.
 - **DynamicTabControl:** Enhances the TabControl with buttons for add new tab item and close buttons of existing tab items.
 - **EllipsePanel:** Arranges child elements in a configurable ellipse form.
@@ -50,25 +50,25 @@ A set of new WPF controls which are not yet build in.
     ```
     ![ChapterTextBox](https://raw.githubusercontent.com/dwndland/Chapter.Net.WPF.Controls/master/Images/ChapterTextBox.png)
 
-3. **ArcPanel:**
+3. **ChapterArcPanel:**
     - Usage
     ```xaml
     <ItemsControl ItemsSource="{Binding Cards}">
         <ItemsControl.ItemsPanel>
             <ItemsPanelTemplate>
-                <chapter:ArcPanel Width="210" Height="100" />
+                <chapter:ChapterArcPanel Width="210" Height="100" />
             </ItemsPanelTemplate>
         </ItemsControl.ItemsPanel>
     </ItemsControl>
 
-    <chapter:ArcPanel Width="300" Height="100">
+    <chapter:ChapterArcPanel Width="300" Height="100">
         <Button Content="One" />
         <Button Content="Two" />
         <Button Content="Three" />
         <Button Content="Four" />
-    </chapter:ArcPanel>
+    </chapter:ChapterArcPanel>
     ```
-    ![ArcPanel](https://raw.githubusercontent.com/dwndland/Chapter.Net.WPF.Controls/master/Images/ArcPanel.png)
+    ![ChapterArcPanel](https://raw.githubusercontent.com/dwndland/Chapter.Net.WPF.Controls/master/Images/ChapterArcPanel.png)
 
 4. **BrowseTextBox:**
     - Usage
