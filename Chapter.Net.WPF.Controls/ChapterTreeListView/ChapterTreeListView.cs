@@ -1,5 +1,5 @@
 ﻿// -----------------------------------------------------------------------------------------------------------------
-// <copyright file="TreeListView.cs" company="my-libraries">
+// <copyright file="ChapterTreeListView.cs" company="my-libraries">
 //     Copyright (c) David Wendland. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------------------------------------------------
@@ -16,17 +16,17 @@ namespace Chapter.Net.WPF.Controls
     ///     Shows a <see cref="TreeView" /> with the possibility to expand or collapse child elements shown in a GridView. The
     ///     expander can be placed in every column cell template.
     /// </summary>
-    public class TreeListView : ChapterTreeView
+    public class ChapterTreeListView : ChapterTreeView
     {
         /// <summary>
         ///     Identifies the View dependency property.
         /// </summary>
         public static readonly DependencyProperty ViewProperty =
-            DependencyProperty.Register(nameof(View), typeof(GridView), typeof(TreeListView), new UIPropertyMetadata(null));
+            DependencyProperty.Register(nameof(View), typeof(GridView), typeof(ChapterTreeListView), new UIPropertyMetadata(null));
 
-        static TreeListView()
+        static ChapterTreeListView()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(TreeListView), new FrameworkPropertyMetadata(typeof(TreeListView)));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(ChapterTreeListView), new FrameworkPropertyMetadata(typeof(ChapterTreeListView)));
         }
 
         /// <summary>
@@ -41,23 +41,23 @@ namespace Chapter.Net.WPF.Controls
         }
 
         /// <summary>
-        ///     Generates a new child item container to hold in the <see cref="TreeListView" />.
+        ///     Generates a new child item container to hold in the <see cref="ChapterTreeListView" />.
         /// </summary>
         /// <returns>The generated child item container</returns>
         protected override DependencyObject GetContainerForItemOverride()
         {
-            return new TreeListViewItem();
+            return new ChapterTreeListViewItem();
         }
 
         /// <summary>
         ///     Checks if the item is already the correct item container. If not the <see cref="GetContainerForItemOverride" />
         ///     will be used to generate the right container.
         /// </summary>
-        /// <param name="item">The item to shown in the <see cref="TreeListView" />.</param>
+        /// <param name="item">The item to shown in the <see cref="ChapterTreeListView" />.</param>
         /// <returns>True if the item is the correct item container already.</returns>
         protected override bool IsItemItsOwnContainerOverride(object item)
         {
-            return item is TreeListViewItem;
+            return item is ChapterTreeListViewItem;
         }
     }
 }

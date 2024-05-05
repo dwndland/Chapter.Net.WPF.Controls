@@ -1,5 +1,5 @@
 ﻿// -----------------------------------------------------------------------------------------------------------------
-// <copyright file="TreListViewExpander.cs" company="my-libraries">
+// <copyright file="ChapterTreeListViewExpander.cs" company="my-libraries">
 //     Copyright (c) David Wendland. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------------------------------------------------
@@ -12,13 +12,13 @@ using System.Windows.Controls.Primitives;
 namespace Chapter.Net.WPF.Controls
 {
     /// <summary>
-    ///     Represents the expander shown in the <see cref="TreeListView" /> to show or collapse child elements.
+    ///     Represents the expander shown in the <see cref="ChapterTreeListView" /> to show or collapse child elements.
     /// </summary>
-    public class TreeListViewExpander : ToggleButton
+    public class ChapterTreeListViewExpander : ToggleButton
     {
-        static TreeListViewExpander()
+        static ChapterTreeListViewExpander()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(TreeListViewExpander), new FrameworkPropertyMetadata(typeof(TreeListViewExpander)));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(ChapterTreeListViewExpander), new FrameworkPropertyMetadata(typeof(ChapterTreeListViewExpander)));
         }
     }
 }

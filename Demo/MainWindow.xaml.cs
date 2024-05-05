@@ -31,7 +31,7 @@ public partial class MainWindow : INotifyPropertyChanged
         _collections =
         [
             new ChapterTreeViewControl(),
-            new TreeListViewControl(),
+            new ChapterTreeListViewControl(),
             new ChapterComboBoxControl(),
             new ChapterTabControlControl()
         ];

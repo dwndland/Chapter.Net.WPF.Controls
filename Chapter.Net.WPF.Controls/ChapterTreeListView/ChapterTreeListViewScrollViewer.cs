@@ -1,5 +1,5 @@
 ﻿// -----------------------------------------------------------------------------------------------------------------
-// <copyright file="TreeListViewScrollViewer.cs" company="my-libraries">
+// <copyright file="ChapterTreeListViewScrollViewer.cs" company="my-libraries">
 //     Copyright (c) David Wendland. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------------------------------------------------
@@ -12,13 +12,13 @@ using System.Windows.Controls;
 namespace Chapter.Net.WPF.Controls
 {
     /// <summary>
-    ///     Represents the scroll viewer shown in the <see cref="TreeListView" />.
+    ///     Represents the scroll viewer shown in the <see cref="ChapterTreeListView" />.
     /// </summary>
-    public sealed class TreeListViewScrollViewer : ScrollViewer
+    public sealed class ChapterTreeListViewScrollViewer : ScrollViewer
     {
-        static TreeListViewScrollViewer()
+        static ChapterTreeListViewScrollViewer()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(TreeListViewScrollViewer), new FrameworkPropertyMetadata(typeof(TreeListViewScrollViewer)));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(ChapterTreeListViewScrollViewer), new FrameworkPropertyMetadata(typeof(ChapterTreeListViewScrollViewer)));
         }
     }
 }

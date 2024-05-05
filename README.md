@@ -26,7 +26,7 @@ A set of new WPF controls which are not yet build in.
 - **ChapterSplitButton:** A button with a drop down where more commands can be available.
 - **ChapterTimeBox:** Shows textboxes to let the user input a time.
 - **ChapterTitledItemsControl:** Provides the possibility to automatically align titles and contents.
-- **TreeListView:** Shows a TreeView with the possibility to expand or collapse child elements shown in a GridView. The expander can be placed in every column cell template.
+- **ChapterTreeListView:** Shows a TreeView with the possibility to expand or collapse child elements shown in a GridView. The expander can be placed in every column cell template.
 - **UniformPanel:** A UniformGrid with only one row or one column, depending on the orientation, which adds a spacing between the items.
 - **UniformWrapPanel:** Enhances the WrapPanel by the feature that all items will have the same size.
 
@@ -433,14 +433,14 @@ A set of new WPF controls which are not yet build in.
     ```
     ![ChapterTitledItemsControl](https://raw.githubusercontent.com/dwndland/Chapter.Net.WPF.Controls/master/Images/ChapterTitledItemsControl.png)
 
-22. **TreeListView:**
+22. **ChapterTreeListView:**
     - Usage
     ```xaml
-    <chapter:TreeListView ItemsSource="{Binding Customer}">
-        <chapter:TreeListView.Resources>
+    <chapter:ChapterTreeListView ItemsSource="{Binding Customer}">
+        <chapter:ChapterTreeListView.Resources>
             <HierarchicalDataTemplate DataType="{x:Type Data:Customer}" ItemsSource="{Binding Customer}" />
-        </chapter:TreeListView.Resources>
-        <chapter:TreeListView.View>
+        </chapter:ChapterTreeListView.Resources>
+        <chapter:ChapterTreeListView.View>
             <GridView>
                 <GridViewColumn Header="Name">
                     <GridViewColumn.CellTemplate>
@@ -454,10 +454,10 @@ A set of new WPF controls which are not yet build in.
                 </GridViewColumn>
                 <GridViewColumn Header="Family Name" DisplayMemberBinding="{Binding FamilyName}" />
             </GridView>
-        </chapter:TreeListView.View>
-    </chapter:TreeListView>
+        </chapter:ChapterTreeListView.View>
+    </chapter:ChapterTreeListView>
     ```
-    ![TreeListView](https://raw.githubusercontent.com/dwndland/Chapter.Net.WPF.Controls/master/Images/TreeListView.png)
+    ![ChapterTreeListView](https://raw.githubusercontent.com/dwndland/Chapter.Net.WPF.Controls/master/Images/ChapterTreeListView.png)
 
 23. **UniformPanel:**
     - Usage

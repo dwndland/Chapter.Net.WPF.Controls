@@ -44,7 +44,7 @@
         <GradientStop Offset="1" Color="#FFC9EDFD" />
     </LinearGradientBrush>
 
-    <Style TargetType="{x:Type controls:TreeListViewItem}">
+    <Style TargetType="{x:Type controls:ChapterTreeListViewItem}">
         <Setter Property="FocusVisualStyle" Value="{StaticResource ListViewItemFocusVisual}" />
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="BorderBrush" Value="Transparent" />
@@ -62,7 +62,7 @@
         </Setter>
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="{x:Type controls:TreeListViewItem}">
+                <ControlTemplate TargetType="{x:Type controls:ChapterTreeListViewItem}">
                     <StackPanel>
                         <Grid x:Name="Border" Margin="{TemplateBinding Margin}">
                             <Grid.RowDefinitions>
@@ -88,7 +88,7 @@
                                                   Grid.RowSpan="2"
                                                   Margin="{TemplateBinding Padding}"
                                                   VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                                                  Columns="{Binding View.Columns, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=controls:TreeListView}}"
+                                                  Columns="{Binding View.Columns, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=controls:ChapterTreeListView}}"
                                                   Content="{TemplateBinding Header}"
                                                   SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
                         </Grid>

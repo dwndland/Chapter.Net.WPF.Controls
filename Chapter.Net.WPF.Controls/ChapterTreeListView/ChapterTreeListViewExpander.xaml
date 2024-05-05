@@ -11,7 +11,7 @@
     <SolidColorBrush x:Key="TreeViewItem.TreeArrow.MouseOver.Checked.Stroke" Color="#FF1CC4F7" />
     <SolidColorBrush x:Key="TreeViewItem.TreeArrow.MouseOver.Checked.Fill" Color="#FF82DFFB" />
 
-    <controls:TreeListViewIndentConverter x:Key="ListViewIndentConverter" />
+    <controls:ChapterTreeListViewIndentConverter x:Key="ListViewIndentConverter" />
 
     <Style x:Key="ExpandCollapseToggleStyle" TargetType="{x:Type ToggleButton}">
         <Setter Property="Focusable" Value="False" />
@@ -36,7 +36,7 @@
                         </Border>
                     </StackPanel>
                     <ControlTemplate.Triggers>
-                        <DataTrigger Binding="{Binding HasItems, RelativeSource={RelativeSource AncestorType={x:Type controls:TreeListViewItem}}}" Value="false">
+                        <DataTrigger Binding="{Binding HasItems, RelativeSource={RelativeSource AncestorType={x:Type controls:ChapterTreeListViewItem}}}" Value="false">
                             <Setter TargetName="ContainerElement" Property="Visibility" Value="Hidden" />
                         </DataTrigger>
                         <Trigger Property="IsChecked" Value="True">
@@ -66,16 +66,16 @@
         </Setter>
     </Style>
 
-    <Style TargetType="{x:Type controls:TreeListViewExpander}">
+    <Style TargetType="{x:Type controls:ChapterTreeListViewExpander}">
         <Setter Property="Focusable" Value="False" />
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="{x:Type controls:TreeListViewExpander}">
+                <ControlTemplate TargetType="{x:Type controls:ChapterTreeListViewExpander}">
                     <StackPanel x:Name="containerElement" Orientation="Horizontal">
                         <FrameworkElement Width="{Binding RelativeSource={x:Static RelativeSource.Self}, Converter={StaticResource ListViewIndentConverter}}" />
                         <ToggleButton Margin="1"
                                       VerticalAlignment="Center"
-                                      IsChecked="{Binding IsExpanded, Mode=TwoWay, RelativeSource={RelativeSource AncestorType=controls:TreeListViewItem}}"
+                                      IsChecked="{Binding IsExpanded, Mode=TwoWay, RelativeSource={RelativeSource AncestorType=controls:ChapterTreeListViewItem}}"
                                       Style="{StaticResource ExpandCollapseToggleStyle}" />
                     </StackPanel>
                     <ControlTemplate.Triggers>

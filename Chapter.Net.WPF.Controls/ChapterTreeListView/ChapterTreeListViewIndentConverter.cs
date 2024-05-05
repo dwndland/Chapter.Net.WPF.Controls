@@ -1,5 +1,5 @@
 ﻿// -----------------------------------------------------------------------------------------------------------------
-// <copyright file="TreeListViewIndentConverter.cs" company="my-libraries">
+// <copyright file="ChapterTreeListViewIndentConverter.cs" company="my-libraries">
 //     Copyright (c) David Wendland. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------------------------------------------------
@@ -15,9 +15,9 @@ using System.Windows.Media;
 namespace Chapter.Net.WPF.Controls
 {
     /// <summary>
-    ///     Adds an intending level of the items shown in the tree of the <see cref="TreeListView" />.
+    ///     Adds an intending level of the items shown in the tree of the <see cref="ChapterTreeListView" />.
     /// </summary>
-    public class TreeListViewIndentConverter : IValueConverter
+    public class ChapterTreeListViewIndentConverter : IValueConverter
     {
         /// <summary>
         ///     Checks if the tree view item is a child item and can be collapsed and calculates the intending by the level.
@@ -31,7 +31,7 @@ namespace Chapter.Net.WPF.Controls
         {
             if (value != null)
             {
-                var container = FindParent<TreeListViewItem>(value as DependencyObject);
+                var container = FindParent<ChapterTreeListViewItem>(value as DependencyObject);
                 if (container != null)
                     return container.Level * 10;
             }

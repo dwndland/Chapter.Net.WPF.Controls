@@ -21,10 +21,10 @@
         <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterSplitButton/ChapterSplitButtonItem.xaml" />
         <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterTimeBox/ChapterTimeBox.xaml" />
         <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterTitledItemsControl/ChapterTitledItemsControl.xaml" />
-        <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/TreeListView/TreeListView.xaml" />
-        <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/TreeListView/TreeListViewExpander.xaml" />
-        <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/TreeListView/TreeListViewItem.xaml" />
-        <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/TreeListView/TreeListViewScrollViewer.xaml" />
+        <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterTreeListView/ChapterTreeListView.xaml" />
+        <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterTreeListView/ChapterTreeListViewExpander.xaml" />
+        <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterTreeListView/ChapterTreeListViewItem.xaml" />
+        <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterTreeListView/ChapterTreeListViewScrollViewer.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
 </ResourceDictionary>
