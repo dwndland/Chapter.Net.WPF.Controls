@@ -13,7 +13,7 @@ using System.Windows.Controls;
 namespace Chapter.Net.WPF.Controls
 {
     /// <summary>
-    ///     Represents a single line in the <see cref="HeaderItemsControl" />.
+    ///     Represents a single line in the <see cref="ChapterHeaderedContentControl" />.
     /// </summary>
     public class HeaderItem : ContentControl
     {

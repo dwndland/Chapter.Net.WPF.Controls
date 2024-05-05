@@ -46,7 +46,7 @@
         </ListBox>
 
         <ListBox x:Name="items"
-                 Width="160"
+                 Width="210"
                  Background="Transparent"
                  BorderBrush="LightGray"
                  BorderThickness="0,0,1,0"

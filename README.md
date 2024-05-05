@@ -14,7 +14,7 @@ A set of new WPF controls which are not yet build in.
 - **ChapterComboBox:** Represents a ComboBox which takes an enumeration value and shows all possible states inside the dropdown menu for let choosing a value.
 - **ChapterTreeView:** Enhances ChapterTreeView multi select, select an item by right click on it and a two way bindable SelectedItem.
 - **ChapterTextBlock:** Formats the given translation.
-- **HeaderItemsControl:** Provides the possibility to automatically align Headers and contents.
+- **ChapterHeaderedContentControl:** Provides the possibility to automatically align Headers and contents.
 - **ImageButton:** Enhances the WPF Button to show an disabled image. The bound image will be shown monochrome if the button is disabled.
 - **ItemsPanel:** A UniformGrid with only one row or one column, depending on the orientation, which adds a spacing between the items.
 - **NumberBox:** Displays a TextBox to accept numeric values only, so the text can be bound to a numeric property directly without converting.
@@ -203,10 +203,10 @@ A set of new WPF controls which are not yet build in.
     ```
     ![ChapterTextBlock](https://raw.githubusercontent.com/dwndland/Chapter.Net.WPF.Controls/master/Images/ChapterTextBlock.png)
 
-10. **HeaderItemsControl:**
+10. **ChapterHeaderedContentControl:**
     - Usage
     ```xaml
-    <chapter:HeaderItemsControl>
+    <chapter:ChapterHeaderedContentControl>
         <chapter:HeaderItem Header="Name">
             <TextBox Text="{Binding Name}" />
         </chapter:HeaderItem>
@@ -218,7 +218,7 @@ A set of new WPF controls which are not yet build in.
         </chapter:HeaderItem>
     </chapter:HeaderdItemsControl>
     ```
-    ![HeaderItemsControl](https://raw.githubusercontent.com/dwndland/Chapter.Net.WPF.Controls/master/Images/HeaderItemsControl.png)
+    ![ChapterHeaderedContentControl](https://raw.githubusercontent.com/dwndland/Chapter.Net.WPF.Controls/master/Images/ChapterHeaderedContentControl.png)
 
 11. **ImageButton:**
     - Usage

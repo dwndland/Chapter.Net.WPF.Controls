@@ -9,7 +9,7 @@
         <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterTabControl/ChapterTabItem.xaml" />
         <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterComboBox/ChapterComboBox.xaml" />
         <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterComboBox/ChapterComboBoxItem.xaml" />
-        <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/HeaderItemsControl/HeaderItemsControl.xaml" />
+        <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterHeaderedContentControl/ChapterHeaderedContentControl.xaml" />
         <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ImageButton/ImageButton.xaml" />
         <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/NumberBox/NumberBox.xaml" />
         <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/OptionButton/OptionButton.xaml" />

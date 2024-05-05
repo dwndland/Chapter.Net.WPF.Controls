@@ -11,7 +11,7 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Markup;
 
-namespace Demo.HeaderItemsControl;
+namespace Demo.ChapterHeaderedContentControl;
 
 public class StringToThicknessConverter : IValueConverter
 {

@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Renamed EnumerationComboBox to ChapterComboBox
 - Renamed ExtendedTreeView to ChapterTreeView
 - Renamed FormatterTextBlock to ChapterTextBlock
+- Renamed HeaderItemsControl to ChapterHeaderedContentControl
 ### Supported .Net Versions
 - .Net Core 3.0
 - .Net Framework 4.5

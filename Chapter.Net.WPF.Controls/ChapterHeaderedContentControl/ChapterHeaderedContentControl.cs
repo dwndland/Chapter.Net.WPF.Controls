@@ -1,5 +1,5 @@
 ﻿// -----------------------------------------------------------------------------------------------------------------
-// <copyright file="HeaderItemsControl.cs" company="my-libraries">
+// <copyright file="ChapterHeaderedContentControl.cs" company="my-libraries">
 //     Copyright (c) David Wendland. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------------------------------------------------
@@ -15,47 +15,47 @@ namespace Chapter.Net.WPF.Controls
     /// <summary>
     ///     Provides the possibility to automatically align Headers and contents.
     /// </summary>
-    public class HeaderItemsControl : ItemsControl
+    public class ChapterHeaderedContentControl : ItemsControl
     {
         /// <summary>
         ///     Identifies the HorizontalHeaderAlignments dependency property.
         /// </summary>
         public static readonly DependencyProperty HorizontalHeaderAlignmentsProperty =
-            DependencyProperty.Register(nameof(HorizontalHeaderAlignments), typeof(HorizontalAlignment), typeof(HeaderItemsControl), new UIPropertyMetadata(HorizontalAlignment.Left));
+            DependencyProperty.Register(nameof(HorizontalHeaderAlignments), typeof(HorizontalAlignment), typeof(ChapterHeaderedContentControl), new UIPropertyMetadata(HorizontalAlignment.Left));
 
         /// <summary>
         ///     Identifies the HeaderMargins dependency property.
         /// </summary>
         public static readonly DependencyProperty HeaderMarginsProperty =
-            DependencyProperty.Register(nameof(HeaderMargins), typeof(Thickness), typeof(HeaderItemsControl), new UIPropertyMetadata(new Thickness(5, 0, 5, 0)));
+            DependencyProperty.Register(nameof(HeaderMargins), typeof(Thickness), typeof(ChapterHeaderedContentControl), new UIPropertyMetadata(new Thickness(5, 0, 5, 0)));
 
         /// <summary>
         ///     Identifies the HorizontalContentAlignments dependency property.
         /// </summary>
         public static readonly DependencyProperty HorizontalContentAlignmentsProperty =
-            DependencyProperty.Register(nameof(HorizontalContentAlignments), typeof(HorizontalAlignment), typeof(HeaderItemsControl), new UIPropertyMetadata(HorizontalAlignment.Stretch));
+            DependencyProperty.Register(nameof(HorizontalContentAlignments), typeof(HorizontalAlignment), typeof(ChapterHeaderedContentControl), new UIPropertyMetadata(HorizontalAlignment.Stretch));
 
         /// <summary>
         ///     Identifies the VerticalContentAlignments dependency property.
         /// </summary>
         public static readonly DependencyProperty VerticalContentAlignmentsProperty =
-            DependencyProperty.Register(nameof(VerticalContentAlignments), typeof(VerticalAlignment), typeof(HeaderItemsControl), new UIPropertyMetadata(VerticalAlignment.Center));
+            DependencyProperty.Register(nameof(VerticalContentAlignments), typeof(VerticalAlignment), typeof(ChapterHeaderedContentControl), new UIPropertyMetadata(VerticalAlignment.Center));
 
         /// <summary>
         ///     Identifies the ContentMargins dependency property.
         /// </summary>
         public static readonly DependencyProperty ContentMarginsProperty =
-            DependencyProperty.Register(nameof(ContentMargins), typeof(Thickness), typeof(HeaderItemsControl), new UIPropertyMetadata(new Thickness(0, 2, 0, 2)));
+            DependencyProperty.Register(nameof(ContentMargins), typeof(Thickness), typeof(ChapterHeaderedContentControl), new UIPropertyMetadata(new Thickness(0, 2, 0, 2)));
 
         /// <summary>
         ///     Identifies the Orientation dependency property.
         /// </summary>
         public static readonly DependencyProperty OrientationProperty =
-            DependencyProperty.Register(nameof(Orientation), typeof(Orientation), typeof(HeaderItemsControl), new PropertyMetadata(Orientation.Vertical));
+            DependencyProperty.Register(nameof(Orientation), typeof(Orientation), typeof(ChapterHeaderedContentControl), new PropertyMetadata(Orientation.Vertical));
 
-        static HeaderItemsControl()
+        static ChapterHeaderedContentControl()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(HeaderItemsControl), new FrameworkPropertyMetadata(typeof(HeaderItemsControl)));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(ChapterHeaderedContentControl), new FrameworkPropertyMetadata(typeof(ChapterHeaderedContentControl)));
         }
 
         /// <summary>

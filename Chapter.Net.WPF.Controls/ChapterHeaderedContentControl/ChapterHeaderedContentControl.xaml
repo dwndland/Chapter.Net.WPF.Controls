@@ -2,7 +2,7 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:controls="clr-namespace:Chapter.Net.WPF.Controls">
 
-    <Style TargetType="{x:Type controls:HeaderItemsControl}">
+    <Style TargetType="{x:Type controls:ChapterHeaderedContentControl}">
         <Setter Property="Focusable" Value="False" />
         <Setter Property="HorizontalHeaderAlignments" Value="Left" />
         <Setter Property="HeaderMargins" Value="5,0" />
@@ -11,7 +11,7 @@
         <Setter Property="ContentMargins" Value="0,2" />
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="{x:Type controls:HeaderItemsControl}">
+                <ControlTemplate TargetType="{x:Type controls:ChapterHeaderedContentControl}">
                     <StackPanel IsItemsHost="True" Orientation="{TemplateBinding Orientation}" />
                 </ControlTemplate>
             </Setter.Value>
@@ -20,11 +20,11 @@
 
     <Style TargetType="{x:Type controls:HeaderItem}">
         <Setter Property="Focusable" Value="False" />
-        <Setter Property="HorizontalHeaderAlignment" Value="{Binding HorizontalHeaderAlignments, RelativeSource={RelativeSource AncestorType={x:Type controls:HeaderItemsControl}}}" />
-        <Setter Property="HeaderMargin" Value="{Binding HeaderMargins, RelativeSource={RelativeSource AncestorType={x:Type controls:HeaderItemsControl}}}" />
-        <Setter Property="HorizontalContentAlignment" Value="{Binding HorizontalContentAlignments, RelativeSource={RelativeSource AncestorType={x:Type controls:HeaderItemsControl}}}" />
-        <Setter Property="VerticalContentAlignment" Value="{Binding VerticalContentAlignments, RelativeSource={RelativeSource AncestorType={x:Type controls:HeaderItemsControl}}}" />
-        <Setter Property="ContentMargin" Value="{Binding ContentMargins, RelativeSource={RelativeSource AncestorType={x:Type controls:HeaderItemsControl}}}" />
+        <Setter Property="HorizontalHeaderAlignment" Value="{Binding HorizontalHeaderAlignments, RelativeSource={RelativeSource AncestorType={x:Type controls:ChapterHeaderedContentControl}}}" />
+        <Setter Property="HeaderMargin" Value="{Binding HeaderMargins, RelativeSource={RelativeSource AncestorType={x:Type controls:ChapterHeaderedContentControl}}}" />
+        <Setter Property="HorizontalContentAlignment" Value="{Binding HorizontalContentAlignments, RelativeSource={RelativeSource AncestorType={x:Type controls:ChapterHeaderedContentControl}}}" />
+        <Setter Property="VerticalContentAlignment" Value="{Binding VerticalContentAlignments, RelativeSource={RelativeSource AncestorType={x:Type controls:ChapterHeaderedContentControl}}}" />
+        <Setter Property="ContentMargin" Value="{Binding ContentMargins, RelativeSource={RelativeSource AncestorType={x:Type controls:ChapterHeaderedContentControl}}}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type controls:HeaderItem}">
