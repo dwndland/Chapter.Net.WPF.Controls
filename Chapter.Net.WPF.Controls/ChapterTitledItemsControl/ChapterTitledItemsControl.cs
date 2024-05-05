@@ -1,5 +1,5 @@
 ﻿// -----------------------------------------------------------------------------------------------------------------
-// <copyright file="TitledItemsControl.cs" company="my-libraries">
+// <copyright file="ChapterTitledItemsControl.cs" company="my-libraries">
 //     Copyright (c) David Wendland. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------------------------------------------------
@@ -15,53 +15,53 @@ namespace Chapter.Net.WPF.Controls
     /// <summary>
     ///     Provides the possibility to automatically align titles and contents.
     /// </summary>
-    public class TitledItemsControl : ItemsControl
+    public class ChapterTitledItemsControl : ItemsControl
     {
         /// <summary>
         ///     The DependencyProperty for the ViewModel VerticalTitleAlignments.
         /// </summary>
         public static readonly DependencyProperty VerticalTitleAlignmentsProperty =
-            DependencyProperty.Register(nameof(VerticalTitleAlignments), typeof(VerticalAlignment), typeof(TitledItemsControl), new UIPropertyMetadata(VerticalAlignment.Center));
+            DependencyProperty.Register(nameof(VerticalTitleAlignments), typeof(VerticalAlignment), typeof(ChapterTitledItemsControl), new UIPropertyMetadata(VerticalAlignment.Center));
 
         /// <summary>
         ///     The DependencyProperty for the ViewModel HorizontalTitleAlignments.
         /// </summary>
         public static readonly DependencyProperty HorizontalTitleAlignmentsProperty =
-            DependencyProperty.Register(nameof(HorizontalTitleAlignments), typeof(HorizontalAlignment), typeof(TitledItemsControl), new UIPropertyMetadata(HorizontalAlignment.Left));
+            DependencyProperty.Register(nameof(HorizontalTitleAlignments), typeof(HorizontalAlignment), typeof(ChapterTitledItemsControl), new UIPropertyMetadata(HorizontalAlignment.Left));
 
         /// <summary>
         ///     The DependencyProperty for the ViewModel TitleMargins.
         /// </summary>
         public static readonly DependencyProperty TitleMarginsProperty =
-            DependencyProperty.Register(nameof(TitleMargins), typeof(Thickness), typeof(TitledItemsControl), new UIPropertyMetadata(new Thickness(5, 0, 5, 0)));
+            DependencyProperty.Register(nameof(TitleMargins), typeof(Thickness), typeof(ChapterTitledItemsControl), new UIPropertyMetadata(new Thickness(5, 0, 5, 0)));
 
         /// <summary>
         ///     The DependencyProperty for the ViewModel HorizontalContentAlignments.
         /// </summary>
         public static readonly DependencyProperty HorizontalContentAlignmentsProperty =
-            DependencyProperty.Register(nameof(HorizontalContentAlignments), typeof(HorizontalAlignment), typeof(TitledItemsControl), new UIPropertyMetadata(HorizontalAlignment.Stretch));
+            DependencyProperty.Register(nameof(HorizontalContentAlignments), typeof(HorizontalAlignment), typeof(ChapterTitledItemsControl), new UIPropertyMetadata(HorizontalAlignment.Stretch));
 
         /// <summary>
         ///     The DependencyProperty for the ViewModel VerticalContentAlignments.
         /// </summary>
         public static readonly DependencyProperty VerticalContentAlignmentsProperty =
-            DependencyProperty.Register(nameof(VerticalContentAlignments), typeof(VerticalAlignment), typeof(TitledItemsControl), new UIPropertyMetadata(VerticalAlignment.Center));
+            DependencyProperty.Register(nameof(VerticalContentAlignments), typeof(VerticalAlignment), typeof(ChapterTitledItemsControl), new UIPropertyMetadata(VerticalAlignment.Center));
 
         /// <summary>
         ///     The DependencyProperty for the ViewModel ContentMargins.
         /// </summary>
         public static readonly DependencyProperty ContentMarginsProperty =
-            DependencyProperty.Register(nameof(ContentMargins), typeof(Thickness), typeof(TitledItemsControl), new UIPropertyMetadata(new Thickness(0, 2, 0, 2)));
+            DependencyProperty.Register(nameof(ContentMargins), typeof(Thickness), typeof(ChapterTitledItemsControl), new UIPropertyMetadata(new Thickness(0, 2, 0, 2)));
 
         /// <summary>
         ///     Identifies the Orientation dependency property.
         /// </summary>
         public static readonly DependencyProperty OrientationProperty =
-            DependencyProperty.Register(nameof(Orientation), typeof(Orientation), typeof(TitledItemsControl), new PropertyMetadata(Orientation.Vertical));
+            DependencyProperty.Register(nameof(Orientation), typeof(Orientation), typeof(ChapterTitledItemsControl), new PropertyMetadata(Orientation.Vertical));
 
-        static TitledItemsControl()
+        static ChapterTitledItemsControl()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(TitledItemsControl), new FrameworkPropertyMetadata(typeof(TitledItemsControl)));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(ChapterTitledItemsControl), new FrameworkPropertyMetadata(typeof(ChapterTitledItemsControl)));
         }
 
         /// <summary>
@@ -145,7 +145,7 @@ namespace Chapter.Net.WPF.Controls
         /// <returns>A new child container.</returns>
         protected override DependencyObject GetContainerForItemOverride()
         {
-            return new TitledItem();
+            return new ChapterTitledItem();
         }
 
         /// <summary>
@@ -155,7 +155,7 @@ namespace Chapter.Net.WPF.Controls
         /// <returns>True if the items is already the correct child container; otherwise false.</returns>
         protected override bool IsItemItsOwnContainerOverride(object item)
         {
-            return item is TitledItem;
+            return item is ChapterTitledItem;
         }
     }
 }

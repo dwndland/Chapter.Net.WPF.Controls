@@ -1,5 +1,5 @@
 ﻿// -----------------------------------------------------------------------------------------------------------------
-// <copyright file="TitledItemsControlControl.xaml.cs" company="my-libraries">
+// <copyright file="ChapterTitledItemsControlControl.xaml.cs" company="my-libraries">
 //     Copyright (c) David Wendland. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------------------------------------------------
@@ -8,9 +8,9 @@
 
 namespace Demo;
 
-public partial class TitledItemsControlControl
+public partial class ChapterTitledItemsControlControl
 {
-    public TitledItemsControlControl()
+    public ChapterTitledItemsControlControl()
     {
         InitializeComponent();
     }

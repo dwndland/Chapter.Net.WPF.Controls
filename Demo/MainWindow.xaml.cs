@@ -51,7 +51,7 @@ public partial class MainWindow : INotifyPropertyChanged
         [
             new ChapterResizerControl(),
             new ChapterHeaderedContentControlControl(),
-            new TitledItemsControlControl(),
+            new ChapterTitledItemsControlControl(),
             new ChapterArcPanelControl(),
             new ChapterEllipsePanelControl(),
             new ChapterItemsPanelControl(),

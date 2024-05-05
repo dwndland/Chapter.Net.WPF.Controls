@@ -1,5 +1,5 @@
 ﻿// -----------------------------------------------------------------------------------------------------------------
-// <copyright file="TitledItem.cs" company="my-libraries">
+// <copyright file="ChapterTitledItem.cs" company="my-libraries">
 //     Copyright (c) David Wendland. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------------------------------------------------
@@ -13,43 +13,43 @@ using System.Windows.Controls;
 namespace Chapter.Net.WPF.Controls
 {
     /// <summary>
-    ///     Represents a single line in the <see cref="TitledItemsControl" />.
+    ///     Represents a single line in the <see cref="ChapterTitledItemsControl" />.
     /// </summary>
-    public class TitledItem : ContentControl
+    public class ChapterTitledItem : ContentControl
     {
         /// <summary>
         ///     The DependencyProperty for the Title VerticalTitleAlignments.
         /// </summary>
         public static readonly DependencyProperty TitleProperty =
-            DependencyProperty.Register(nameof(Title), typeof(object), typeof(TitledItem), new UIPropertyMetadata(null));
+            DependencyProperty.Register(nameof(Title), typeof(object), typeof(ChapterTitledItem), new UIPropertyMetadata(null));
 
         /// <summary>
         ///     The DependencyProperty for the VerticalTitleAlignment VerticalTitleAlignments.
         /// </summary>
         public static readonly DependencyProperty VerticalTitleAlignmentProperty =
-            DependencyProperty.Register(nameof(VerticalTitleAlignment), typeof(VerticalAlignment), typeof(TitledItem), new UIPropertyMetadata(VerticalAlignment.Center));
+            DependencyProperty.Register(nameof(VerticalTitleAlignment), typeof(VerticalAlignment), typeof(ChapterTitledItem), new UIPropertyMetadata(VerticalAlignment.Center));
 
         /// <summary>
         ///     The DependencyProperty for the HorizontalTitleAlignment VerticalTitleAlignments.
         /// </summary>
         public static readonly DependencyProperty HorizontalTitleAlignmentProperty =
-            DependencyProperty.Register(nameof(HorizontalTitleAlignment), typeof(HorizontalAlignment), typeof(TitledItem), new UIPropertyMetadata(HorizontalAlignment.Left));
+            DependencyProperty.Register(nameof(HorizontalTitleAlignment), typeof(HorizontalAlignment), typeof(ChapterTitledItem), new UIPropertyMetadata(HorizontalAlignment.Left));
 
         /// <summary>
         ///     The DependencyProperty for the TitleMargin VerticalTitleAlignments.
         /// </summary>
         public static readonly DependencyProperty TitleMarginProperty =
-            DependencyProperty.Register(nameof(TitleMargin), typeof(Thickness), typeof(TitledItem), new UIPropertyMetadata(new Thickness(5, 0, 5, 0)));
+            DependencyProperty.Register(nameof(TitleMargin), typeof(Thickness), typeof(ChapterTitledItem), new UIPropertyMetadata(new Thickness(5, 0, 5, 0)));
 
         /// <summary>
         ///     The DependencyProperty for the ContentMargin VerticalTitleAlignments.
         /// </summary>
         public static readonly DependencyProperty ContentMarginProperty =
-            DependencyProperty.Register(nameof(ContentMargin), typeof(Thickness), typeof(TitledItem), new UIPropertyMetadata(new Thickness(0, 2, 0, 2)));
+            DependencyProperty.Register(nameof(ContentMargin), typeof(Thickness), typeof(ChapterTitledItem), new UIPropertyMetadata(new Thickness(0, 2, 0, 2)));
 
-        static TitledItem()
+        static ChapterTitledItem()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(TitledItem), new FrameworkPropertyMetadata(typeof(TitledItem)));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(ChapterTitledItem), new FrameworkPropertyMetadata(typeof(ChapterTitledItem)));
         }
 
         /// <summary>

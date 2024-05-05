@@ -25,7 +25,7 @@ A set of new WPF controls which are not yet build in.
 - **ChapterStackPanel:** A StackPanel which adds a spacing between the items.
 - **ChapterSplitButton:** A button with a drop down where more commands can be available.
 - **ChapterTimeBox:** Shows textboxes to let the user input a time.
-- **TitledItemsControl:** Provides the possibility to automatically align titles and contents.
+- **ChapterTitledItemsControl:** Provides the possibility to automatically align titles and contents.
 - **TreeListView:** Shows a TreeView with the possibility to expand or collapse child elements shown in a GridView. The expander can be placed in every column cell template.
 - **UniformPanel:** A UniformGrid with only one row or one column, depending on the orientation, which adds a spacing between the items.
 - **UniformWrapPanel:** Enhances the WrapPanel by the feature that all items will have the same size.
@@ -416,22 +416,22 @@ A set of new WPF controls which are not yet build in.
     ```
     ![ChapterTimeBox](https://raw.githubusercontent.com/dwndland/Chapter.Net.WPF.Controls/master/Images/ChapterTimeBox.png)
 
-21. **TitledItemsControl:**
+21. **ChapterTitledItemsControl:**
     - Usage
     ```xaml
-    <chapter:TitledItemsControl>
-        <chapter:TitledItem Text="Name">
+    <chapter:ChapterTitledItemsControl>
+        <chapter:ChapterTitledItem Text="Name">
             <TextBox Text="{Binding Name}" />
-        </chapter:TitledItem>
-        <chapter:TitledItem Text="Family Name">
+        </chapter:ChapterTitledItem>
+        <chapter:ChapterTitledItem Text="Family Name">
             <TextBox Text="{Binding FamilyName}" />
-        </chapter:TitledItem>
-        <chapter:TitledItem Text="Age">
+        </chapter:ChapterTitledItem>
+        <chapter:ChapterTitledItem Text="Age">
             <TextBox Text="{Binding Age}" />
-        </chapter:TitledItem>
-    </chapter:TitledItemsControl>
+        </chapter:ChapterTitledItem>
+    </chapter:ChapterTitledItemsControl>
     ```
-    ![TitledItemsControl](https://raw.githubusercontent.com/dwndland/Chapter.Net.WPF.Controls/master/Images/TitledItemsControl.png)
+    ![ChapterTitledItemsControl](https://raw.githubusercontent.com/dwndland/Chapter.Net.WPF.Controls/master/Images/ChapterTitledItemsControl.png)
 
 22. **TreeListView:**
     - Usage

@@ -26,6 +26,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Renamed SpacingStackPanel to ChapterStackPanel
 - Renamed SplitButton to ChapterSplitButton
 - Renamed TimeBox to ChapterTimeBox
+- Renamed TitledItemsControl to ChapterTitledItemsControl
 ### Supported .Net Versions
 - .Net Core 3.0
 - .Net Framework 4.5
