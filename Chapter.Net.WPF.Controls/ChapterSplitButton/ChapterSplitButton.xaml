@@ -137,14 +137,14 @@
         </Setter>
     </Style>
 
-    <Style TargetType="{x:Type controls:SplitButton}">
+    <Style TargetType="{x:Type controls:ChapterSplitButton}">
         <Setter Property="Padding" Value="1" />
         <Setter Property="Focusable" Value="false" />
         <Setter Property="HorizontalContentAlignment" Value="Center" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="{x:Type controls:SplitButton}">
+                <ControlTemplate TargetType="{x:Type controls:ChapterSplitButton}">
                     <Grid x:Name="templateRoot" SnapsToDevicePixels="True">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition />

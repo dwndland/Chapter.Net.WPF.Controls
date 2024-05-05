@@ -1,24 +1,24 @@
 ﻿// -----------------------------------------------------------------------------------------------------------------
-// <copyright file="SplitMainButton.cs" company="my-libraries">
+// <copyright file="SplitToggleButton.cs" company="my-libraries">
 //     Copyright (c) David Wendland. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------------------------------------------------
 
 using System.Windows;
-using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 
 // ReSharper disable once CheckNamespace
 
 namespace Chapter.Net.WPF.Controls
 {
     /// <summary>
-    ///     The main button placed in the <see cref="SplitButton" />.
+    ///     The drop down toggle button placed in the <see cref="ChapterSplitButton" />.
     /// </summary>
-    public class SplitMainButton : Button
+    public class SplitToggleButton : ToggleButton
     {
-        static SplitMainButton()
+        static SplitToggleButton()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(SplitMainButton), new FrameworkPropertyMetadata(typeof(SplitMainButton)));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(SplitToggleButton), new FrameworkPropertyMetadata(typeof(SplitToggleButton)));
         }
     }
 }

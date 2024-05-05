@@ -1,5 +1,5 @@
 ﻿// -----------------------------------------------------------------------------------------------------------------
-// <copyright file="SplitButtonControl.xaml.cs" company="my-libraries">
+// <copyright file="ChapterSplitButtonControl.xaml.cs" company="my-libraries">
 //     Copyright (c) David Wendland. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------------------------------------------------
@@ -10,9 +10,9 @@ using System.Windows;
 
 namespace Demo;
 
-public partial class SplitButtonControl
+public partial class ChapterSplitButtonControl
 {
-    public SplitButtonControl()
+    public ChapterSplitButtonControl()
     {
         InitializeComponent();
     }

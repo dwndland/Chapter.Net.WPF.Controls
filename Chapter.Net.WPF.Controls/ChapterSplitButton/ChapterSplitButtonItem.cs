@@ -1,5 +1,5 @@
 ﻿// -----------------------------------------------------------------------------------------------------------------
-// <copyright file="SplitButtonItem.cs" company="my-libraries">
+// <copyright file="ChapterSplitButtonItem.cs" company="my-libraries">
 //     Copyright (c) David Wendland. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------------------------------------------------
@@ -14,37 +14,37 @@ using System.Windows.Input;
 namespace Chapter.Net.WPF.Controls
 {
     /// <summary>
-    ///     A single command entry in the <see cref="SplitButton" />.
+    ///     A single command entry in the <see cref="ChapterSplitButton" />.
     /// </summary>
-    public class SplitButtonItem : ComboBoxItem
+    public class ChapterSplitButtonItem : ComboBoxItem
     {
         /// <summary>
         ///     The DependencyProperty for the Command property.
         /// </summary>
         public static readonly DependencyProperty CommandProperty =
-            DependencyProperty.Register(nameof(Command), typeof(ICommand), typeof(SplitButtonItem), new PropertyMetadata(null));
+            DependencyProperty.Register(nameof(Command), typeof(ICommand), typeof(ChapterSplitButtonItem), new PropertyMetadata(null));
 
         /// <summary>
         ///     The DependencyProperty for the CommandParameter property.
         /// </summary>
         public static readonly DependencyProperty CommandParameterProperty =
-            DependencyProperty.Register(nameof(CommandParameter), typeof(object), typeof(SplitButtonItem), new PropertyMetadata(null));
+            DependencyProperty.Register(nameof(CommandParameter), typeof(object), typeof(ChapterSplitButtonItem), new PropertyMetadata(null));
 
         /// <summary>
         ///     The RoutedEvent for the Click event.
         /// </summary>
         public static readonly RoutedEvent ClickEvent =
-            EventManager.RegisterRoutedEvent(nameof(Click), RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(SplitButtonItem));
+            EventManager.RegisterRoutedEvent(nameof(Click), RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(ChapterSplitButtonItem));
 
-        static SplitButtonItem()
+        static ChapterSplitButtonItem()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(SplitButtonItem), new FrameworkPropertyMetadata(typeof(SplitButtonItem)));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(ChapterSplitButtonItem), new FrameworkPropertyMetadata(typeof(ChapterSplitButtonItem)));
         }
 
         /// <summary>
-        ///     Creates a new instance of the <see cref="SplitButtonItem" /> object.
+        ///     Creates a new instance of the <see cref="ChapterSplitButtonItem" /> object.
         /// </summary>
-        public SplitButtonItem()
+        public ChapterSplitButtonItem()
         {
             KeyDown += OnKeyDown;
             PreviewMouseLeftButtonUp += OnPreviewMouseLeftButtonUp;

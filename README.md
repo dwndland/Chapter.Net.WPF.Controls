@@ -23,7 +23,7 @@ A set of new WPF controls which are not yet build in.
 - **ChapterResizer:** Brings the possibility to resize every UI control manually by hold and drag the corners or sides.
 - **ChapterSearchTextBox:** Adds search and cancel buttons to the ChapterTextBox to represent a search box shown like in the Windows explorer.
 - **ChapterStackPanel:** A StackPanel which adds a spacing between the items.
-- **SplitButton:** A button with a drop down where more commands can be available.
+- **ChapterSplitButton:** A button with a drop down where more commands can be available.
 - **TimeBox:** Shows textboxes to let the user input a time.
 - **TitledItemsControl:** Provides the possibility to automatically align titles and contents.
 - **TreeListView:** Shows a TreeView with the possibility to expand or collapse child elements shown in a GridView. The expander can be placed in every column cell template.
@@ -383,31 +383,31 @@ A set of new WPF controls which are not yet build in.
     ```
     ![ChapterStackPanel](https://raw.githubusercontent.com/dwndland/Chapter.Net.WPF.Controls/master/Images/ChapterStackPanel.png)
 
-19. **SplitButton:**
+19. **ChapterSplitButton:**
     - Usage
     ```xaml
-    <chapter:SplitButton Content="Any Button" Padding="12,4" Command="{Binding SplitButtonCommand}">
-        <chapter:SplitButtonItem Content="Sub Item 1" Command="{Binding SplitButtonItemCommand}" CommmandParameter="1" />
-        <chapter:SplitButtonItem Content="Sub Item 2" Command="{Binding SplitButtonItemCommand}" CommmandParameter="2" />
-        <chapter:SplitButtonItem Content="Sub Item 3" Command="{Binding SplitButtonItemCommand}" CommmandParameter="3" />
-    </chapter:SplitButton>
+    <chapter:ChapterSplitButton Content="Any Button" Padding="12,4" Command="{Binding ChapterSplitButtonCommand}">
+        <chapter:ChapterSplitButtonItem Content="Sub Item 1" Command="{Binding ChapterSplitButtonItemCommand}" CommmandParameter="1" />
+        <chapter:ChapterSplitButtonItem Content="Sub Item 2" Command="{Binding ChapterSplitButtonItemCommand}" CommmandParameter="2" />
+        <chapter:ChapterSplitButtonItem Content="Sub Item 3" Command="{Binding ChapterSplitButtonItemCommand}" CommmandParameter="3" />
+    </chapter:ChapterSplitButton>
 
-    <chapter:SplitButton Content="Any Button" Padding="12,4" ItemsSource="{Binding Items}" Command="{Binding SplitButtonCommand}">
-        <chapter:SplitButton.ItemContainerStyle>
-            <Style TargetType="{x:Type chapter:SplitButtonItem}">
-                <Setter Property="Command" Value="{Binding DataContext.SplitButtonItemCommand, RelativeSource={RelativeSource AncestorType={x:Type buttons:SplitButton}}}" />
+    <chapter:ChapterSplitButton Content="Any Button" Padding="12,4" ItemsSource="{Binding Items}" Command="{Binding ChapterSplitButtonCommand}">
+        <chapter:ChapterSplitButton.ItemContainerStyle>
+            <Style TargetType="{x:Type chapter:ChapterSplitButtonItem}">
+                <Setter Property="Command" Value="{Binding DataContext.ChapterSplitButtonItemCommand, RelativeSource={RelativeSource AncestorType={x:Type buttons:ChapterSplitButton}}}" />
                  <Setter Property="CommandParameter" Value="{Binding Index}" />
                  <Setter Property="HorizontalContentAlignment" Value="Left" />
              </Style>
-         </chapter:SplitButton.ItemContainerStyle>
-         <chapter:SplitButton.ItemTemplate>
+         </chapter:ChapterSplitButton.ItemContainerStyle>
+         <chapter:ChapterSplitButton.ItemTemplate>
              <DataTemplate>
                  <TextBlock Text="{Binding }" />
              </DataTemplate>
-         </chapter:SplitButton.ItemTemplate>
-     </chapter:SplitButton>
+         </chapter:ChapterSplitButton.ItemTemplate>
+     </chapter:ChapterSplitButton>
     ```
-    ![SplitButton](https://raw.githubusercontent.com/dwndland/Chapter.Net.WPF.Controls/master/Images/SplitButton.png)
+    ![ChapterSplitButton](https://raw.githubusercontent.com/dwndland/Chapter.Net.WPF.Controls/master/Images/ChapterSplitButton.png)
 
 20. **TimeBox:**
     - Usage

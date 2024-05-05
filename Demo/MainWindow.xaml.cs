@@ -25,7 +25,7 @@ public partial class MainWindow : INotifyPropertyChanged
         [
             new ChapterButtonControl(),
             new ChapterToggleSwitchControl(),
-            new SplitButtonControl()
+            new ChapterSplitButtonControl()
         ];
 
         _collections =

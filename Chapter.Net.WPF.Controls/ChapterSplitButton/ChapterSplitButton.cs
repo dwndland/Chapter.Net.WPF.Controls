@@ -1,5 +1,5 @@
 ﻿// -----------------------------------------------------------------------------------------------------------------
-// <copyright file="SplitButton.cs" company="my-libraries">
+// <copyright file="ChapterSplitButton.cs" company="my-libraries">
 //     Copyright (c) David Wendland. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------------------------------------------------
@@ -18,47 +18,47 @@ namespace Chapter.Net.WPF.Controls
     ///     A button with a drop down where more commands can be available.
     /// </summary>
     [TemplatePart(Name = "PART_MainButton", Type = typeof(ButtonBase))]
-    public class SplitButton : ComboBox
+    public class ChapterSplitButton : ComboBox
     {
         /// <summary>
         ///     The DependencyProperty for the Command property.
         /// </summary>
         public static readonly DependencyProperty CommandProperty =
-            DependencyProperty.Register(nameof(Command), typeof(ICommand), typeof(SplitButton), new PropertyMetadata(null));
+            DependencyProperty.Register(nameof(Command), typeof(ICommand), typeof(ChapterSplitButton), new PropertyMetadata(null));
 
         /// <summary>
         ///     The DependencyProperty for the CommandParameter property.
         /// </summary>
         public static readonly DependencyProperty CommandParameterProperty =
-            DependencyProperty.Register(nameof(CommandParameter), typeof(object), typeof(SplitButton), new PropertyMetadata(null));
+            DependencyProperty.Register(nameof(CommandParameter), typeof(object), typeof(ChapterSplitButton), new PropertyMetadata(null));
 
         /// <summary>
         ///     The DependencyProperty for the Content property.
         /// </summary>
         public static readonly DependencyProperty ContentProperty =
-            DependencyProperty.Register(nameof(Content), typeof(object), typeof(SplitButton), new PropertyMetadata(null));
+            DependencyProperty.Register(nameof(Content), typeof(object), typeof(ChapterSplitButton), new PropertyMetadata(null));
 
         /// <summary>
         ///     The DependencyProperty for the ContentTemplate property.
         /// </summary>
         public static readonly DependencyProperty ContentTemplateProperty =
-            DependencyProperty.Register(nameof(ContentTemplate), typeof(DataTemplate), typeof(SplitButton), new PropertyMetadata(null));
+            DependencyProperty.Register(nameof(ContentTemplate), typeof(DataTemplate), typeof(ChapterSplitButton), new PropertyMetadata(null));
 
         /// <summary>
         ///     The DependencyProperty for the ContentTemplateSelector property.
         /// </summary>
         public static readonly DependencyProperty ContentTemplateSelectorProperty =
-            DependencyProperty.Register(nameof(ContentTemplateSelector), typeof(DataTemplateSelector), typeof(SplitButton), new PropertyMetadata(null));
+            DependencyProperty.Register(nameof(ContentTemplateSelector), typeof(DataTemplateSelector), typeof(ChapterSplitButton), new PropertyMetadata(null));
 
         /// <summary>
         ///     The RoutedEvent for the Click event.
         /// </summary>
         public static readonly RoutedEvent ClickEvent =
-            EventManager.RegisterRoutedEvent(nameof(Click), RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(SplitButton));
+            EventManager.RegisterRoutedEvent(nameof(Click), RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(ChapterSplitButton));
 
-        static SplitButton()
+        static ChapterSplitButton()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(SplitButton), new FrameworkPropertyMetadata(typeof(SplitButton)));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(ChapterSplitButton), new FrameworkPropertyMetadata(typeof(ChapterSplitButton)));
         }
 
         /// <summary>
@@ -149,7 +149,7 @@ namespace Chapter.Net.WPF.Controls
         /// <returns>True if the items is already the correct child container; otherwise false.</returns>
         protected override bool IsItemItsOwnContainerOverride(object item)
         {
-            return item is SplitButtonItem;
+            return item is ChapterSplitButtonItem;
         }
 
         /// <summary>
@@ -158,7 +158,7 @@ namespace Chapter.Net.WPF.Controls
         /// <returns>A new child container.</returns>
         protected override DependencyObject GetContainerForItemOverride()
         {
-            return new SplitButtonItem();
+            return new ChapterSplitButtonItem();
         }
     }
 }
