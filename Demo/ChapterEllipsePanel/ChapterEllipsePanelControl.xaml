@@ -37,20 +37,20 @@
 
             <StackPanel IsEnabled="{Binding IsChecked, ElementName=rotateElements}">
                 <TextBlock Text="ElementsRotateDirection" />
-                <controls:EnumerationComboBox x:Name="elementsRotateDirection"
+                <controls:ChapterComboBox x:Name="elementsRotateDirection"
                                               Margin="0,0,0,10"
                                               EnumType="{x:Type controls:ElementsRotateDirection}"
                                               SelectedItem="{x:Static controls:ElementsRotateDirection.Introversive}" />
             </StackPanel>
 
             <TextBlock Text="EllipseRotateDirection" />
-            <controls:EnumerationComboBox x:Name="ellipseRotateDirection"
+            <controls:ChapterComboBox x:Name="ellipseRotateDirection"
                                           Margin="0,0,0,10"
                                           EnumType="{x:Type SweepDirection}"
                                           SelectedItem="{x:Static SweepDirection.Clockwise}" />
 
             <TextBlock Text="ElementStartPosition" />
-            <controls:EnumerationComboBox x:Name="elementStartPosition"
+            <controls:ChapterComboBox x:Name="elementStartPosition"
                                           EnumType="{x:Type controls:ElementStartPosition}"
                                           SelectedItem="{x:Static controls:ElementStartPosition.Top}" />
         </local:PropertyPanel>

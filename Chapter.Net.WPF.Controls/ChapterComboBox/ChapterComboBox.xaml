@@ -4,7 +4,7 @@
 
     <controls:EnumDescriptionConverter x:Key="EnumDescriptionConverter" />
 
-    <Style BasedOn="{StaticResource {x:Type ComboBox}}" TargetType="{x:Type controls:EnumerationComboBox}">
+    <Style BasedOn="{StaticResource {x:Type ComboBox}}" TargetType="{x:Type controls:ChapterComboBox}">
         <Style.Triggers>
             <Trigger Property="DisplayKind" Value="Description">
                 <Setter Property="ItemTemplate">

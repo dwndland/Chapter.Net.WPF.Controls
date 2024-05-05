@@ -9,7 +9,7 @@
 namespace Chapter.Net.WPF.Controls
 {
     /// <summary>
-    ///     Defines how the enum values in the <see cref="EnumerationComboBox" /> will be displayed.
+    ///     Defines how the enum values in the <see cref="ChapterComboBox" /> will be displayed.
     /// </summary>
     public enum EnumDisplayKind
     {
@@ -24,13 +24,13 @@ namespace Chapter.Net.WPF.Controls
         Description,
 
         /// <summary>
-        ///     The bound <see cref="EnumerationComboBox.ItemConverter" /> will be used to convert the value into the variable to
+        ///     The bound <see cref="ChapterComboBox.ItemConverter" /> will be used to convert the value into the variable to
         ///     show.
         /// </summary>
         Converter,
 
         /// <summary>
-        ///     The EnumerationComboBox.ItemTemplate will be set from outside of the control manually.
+        ///     The ChapterComboBox.ItemTemplate will be set from outside of the control manually.
         /// </summary>
         Custom
     }

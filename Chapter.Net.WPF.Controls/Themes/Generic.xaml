@@ -7,8 +7,8 @@
         <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterTabControl/CloseButton.xaml" />
         <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterTabControl/ChapterTabControl.xaml" />
         <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterTabControl/ChapterTabItem.xaml" />
-        <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/EnumerationComboBox/EnumerationComboBox.xaml" />
-        <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/EnumerationComboBox/EnumerationComboBoxItem.xaml" />
+        <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterComboBox/ChapterComboBox.xaml" />
+        <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterComboBox/ChapterComboBoxItem.xaml" />
         <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/HeaderItemsControl/HeaderItemsControl.xaml" />
         <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ImageButton/ImageButton.xaml" />
         <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/NumberBox/NumberBox.xaml" />

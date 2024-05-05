@@ -11,7 +11,7 @@ A set of new WPF controls which are not yet build in.
 - **ChapterBrowseTextBox:** Adds a browse button to the ChapterTextBox.
 - **ChapterTabControl:** Enhances the TabControl with buttons for add new tab item and close buttons of existing tab items.
 - **ChapterEllipsePanel:** Arranges child elements in a configurable ellipse form.
-- **EnumerationComboBox:** Represents a ComboBox which takes an enumeration value and shows all possible states inside the dropdown menu for let choosing a value.
+- **ChapterComboBox:** Represents a ComboBox which takes an enumeration value and shows all possible states inside the dropdown menu for let choosing a value.
 - **ExtendedTreeView:** Enhances ExtendedTreeView multi select, select an item by right click on it and a two way bindable SelectedItem.
 - **FormatterTextBlock:** Formats the given translation.
 - **HeaderItemsControl:** Provides the possibility to automatically align Headers and contents.
@@ -110,7 +110,7 @@ A set of new WPF controls which are not yet build in.
     ```
     ![ChapterEllipsePanel](https://raw.githubusercontent.com/dwndland/Chapter.Net.WPF.Controls/master/Images/ChapterEllipsePanel.png)
 
-7. **EnumerationComboBox:**
+7. **ChapterComboBox:**
     - Usage
     ```csharp
     public enum Number
@@ -148,8 +148,8 @@ A set of new WPF controls which are not yet build in.
     <!-- The items will be shown like "Name: One; Description: The Number One". -->
     <!-- (The EnumDescriptionConverter will return the description value unchanged) -->
     <!-- DisplayKind is not set so the default will be taken which is EnumDisplayKind.Custom -->
-    <chapter:EnumerationComboBox EnumType="{x:Type Demo:Number}" SelectedItem="{Binding Number}">
-        <chapter:EnumerationComboBox.ItemTemplate>
+    <chapter:ChapterComboBox EnumType="{x:Type Demo:Number}" SelectedItem="{Binding Number}">
+        <chapter:ChapterComboBox.ItemTemplate>
             <DataTemplate>
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="Name: " />
@@ -158,19 +158,19 @@ A set of new WPF controls which are not yet build in.
                     <TextBlock Text="{Binding Converter={StaticResource EnumDescriptionConverter}}" />
                 </StackPanel>
             </DataTemplate>
-        </chapter:EnumerationComboBox.ItemTemplate>
-    </chapter:EnumerationComboBox>
+        </chapter:ChapterComboBox.ItemTemplate>
+    </chapter:ChapterComboBox>
     
     <!-- The items will be shown like "The Number One". -->
-    <chapter:EnumerationComboBox EnumType="{x:Type Demo:Number}" SelectedItem="{Binding Number}" DisplayKind="Description" />
+    <chapter:ChapterComboBox EnumType="{x:Type Demo:Number}" SelectedItem="{Binding Number}" DisplayKind="Description" />
 
     <!-- The items will be shown like "One". -->    
-    <chapter:EnumerationComboBox EnumType="{x:Type Demo:Number}" SelectedItem="{Binding Number}" DisplayKind="ToString" />
+    <chapter:ChapterComboBox EnumType="{x:Type Demo:Number}" SelectedItem="{Binding Number}" DisplayKind="ToString" />
     
     <!-- The items will be shown how you defined in the EnumToStringConverter. -->
-    <chapter:EnumerationComboBox EnumType="{x:Type Demo:Number}" SelectedItem="{Binding Number}" DisplayKind="Converter" ItemConverter="{StaticResource EnumToStringConverter}" />
+    <chapter:ChapterComboBox EnumType="{x:Type Demo:Number}" SelectedItem="{Binding Number}" DisplayKind="Converter" ItemConverter="{StaticResource EnumToStringConverter}" />
     ```
-    ![EnumerationComboBox](https://raw.githubusercontent.com/dwndland/Chapter.Net.WPF.Controls/master/Images/EnumerationComboBox.png)
+    ![ChapterComboBox](https://raw.githubusercontent.com/dwndland/Chapter.Net.WPF.Controls/master/Images/ChapterComboBox.png)
 
 8. **ExtendedTreeView:**
     - Usage

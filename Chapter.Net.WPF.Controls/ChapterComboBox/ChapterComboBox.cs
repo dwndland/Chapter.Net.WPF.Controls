@@ -1,5 +1,5 @@
 ﻿// -----------------------------------------------------------------------------------------------------------------
-// <copyright file="EnumerationComboBox.cs" company="my-libraries">
+// <copyright file="ChapterComboBox.cs" company="my-libraries">
 //     Copyright (c) David Wendland. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------------------------------------------------
@@ -19,36 +19,36 @@ namespace Chapter.Net.WPF.Controls
     ///     Represents a ComboBox which takes an enumeration value and shows all possible states inside the dropdown menu for
     ///     let choosing a value.
     /// </summary>
-    public class EnumerationComboBox : ComboBox
+    public class ChapterComboBox : ComboBox
     {
         /// <summary>
         ///     Identifies the EnumType dependency property.
         /// </summary>
         public static readonly DependencyProperty EnumTypeProperty =
-            DependencyProperty.Register(nameof(EnumType), typeof(Type), typeof(EnumerationComboBox), new PropertyMetadata(OnEnumTypeChanged));
+            DependencyProperty.Register(nameof(EnumType), typeof(Type), typeof(ChapterComboBox), new PropertyMetadata(OnEnumTypeChanged));
 
         /// <summary>
         ///     Identifies the DisplayKind dependency property.
         /// </summary>
         public static readonly DependencyProperty DisplayKindProperty =
-            DependencyProperty.Register(nameof(DisplayKind), typeof(EnumDisplayKind), typeof(EnumerationComboBox), new PropertyMetadata(EnumDisplayKind.Custom, OnItemConverterChanged));
+            DependencyProperty.Register(nameof(DisplayKind), typeof(EnumDisplayKind), typeof(ChapterComboBox), new PropertyMetadata(EnumDisplayKind.Custom, OnItemConverterChanged));
 
         /// <summary>
         ///     Identifies the ItemConverter dependency property.
         /// </summary>
         public static readonly DependencyProperty ItemConverterProperty =
-            DependencyProperty.Register(nameof(ItemConverter), typeof(IValueConverter), typeof(EnumerationComboBox), new PropertyMetadata(OnItemConverterChanged));
+            DependencyProperty.Register(nameof(ItemConverter), typeof(IValueConverter), typeof(ChapterComboBox), new PropertyMetadata(OnItemConverterChanged));
 
-        static EnumerationComboBox()
+        static ChapterComboBox()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(EnumerationComboBox), new FrameworkPropertyMetadata(typeof(EnumerationComboBox)));
-            SelectedItemProperty.OverrideMetadata(typeof(EnumerationComboBox), new FrameworkPropertyMetadata(OnSelectedItemChanged, OnSelectedItemChanging));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(ChapterComboBox), new FrameworkPropertyMetadata(typeof(ChapterComboBox)));
+            SelectedItemProperty.OverrideMetadata(typeof(ChapterComboBox), new FrameworkPropertyMetadata(OnSelectedItemChanged, OnSelectedItemChanging));
         }
 
         /// <summary>
-        ///     Initializes a new instance of the <see cref="EnumerationComboBox" /> class.
+        ///     Initializes a new instance of the <see cref="ChapterComboBox" /> class.
         /// </summary>
-        public EnumerationComboBox()
+        public ChapterComboBox()
         {
             Loaded += HandleLoaded;
         }
@@ -69,7 +69,7 @@ namespace Chapter.Net.WPF.Controls
         /// </summary>
         /// <remarks>
         ///     The default is <see cref="EnumDisplayKind.Custom" /> which means you have to define the
-        ///     EnumerationComboBox.ItemTemplate by yourself.
+        ///     ChapterComboBox.ItemTemplate by yourself.
         /// </remarks>
         /// <remarks>
         ///     Note: If <see cref="EnumDisplayKind.Custom" /> is set you need to set the <see cref="ItemConverter" /> as well;
@@ -126,7 +126,7 @@ namespace Chapter.Net.WPF.Controls
             if (basevalue == null)
                 return null;
 
-            var control = (EnumerationComboBox)sender;
+            var control = (ChapterComboBox)sender;
             if (control.EnumType != null)
                 return basevalue;
 
@@ -138,25 +138,25 @@ namespace Chapter.Net.WPF.Controls
         ///     Checks if the item is already the correct item container. If not the <see cref="GetContainerForItemOverride" />
         ///     will be used to generate the right container.
         /// </summary>
-        /// <param name="item">The item to shown in the <see cref="EnumerationComboBox" />.</param>
+        /// <param name="item">The item to shown in the <see cref="ChapterComboBox" />.</param>
         /// <returns>True if the item is the correct item container already.</returns>
         protected override bool IsItemItsOwnContainerOverride(object item)
         {
-            return item is EnumerationComboBoxItem;
+            return item is ChapterComboBoxItem;
         }
 
         /// <summary>
-        ///     Generates a new child item container to hold in the <see cref="EnumerationComboBox" />.
+        ///     Generates a new child item container to hold in the <see cref="ChapterComboBox" />.
         /// </summary>
         /// <returns>The generated child item container.</returns>
         protected override DependencyObject GetContainerForItemOverride()
         {
-            return new EnumerationComboBoxItem();
+            return new ChapterComboBoxItem();
         }
 
         private static void OnItemConverterChanged(DependencyObject sender, DependencyPropertyChangedEventArgs e)
         {
-            var control = (EnumerationComboBox)sender;
+            var control = (ChapterComboBox)sender;
             if (control.DisplayKind != EnumDisplayKind.Converter || control.ItemConverter == null)
                 return;
 
@@ -172,7 +172,7 @@ namespace Chapter.Net.WPF.Controls
 
         private static void OnEnumTypeChanged(DependencyObject sender, DependencyPropertyChangedEventArgs e)
         {
-            var control = (EnumerationComboBox)sender;
+            var control = (ChapterComboBox)sender;
 
             if (control.ItemsSource != null)
                 return;
@@ -180,7 +180,7 @@ namespace Chapter.Net.WPF.Controls
             TakeValues(control);
         }
 
-        private static void TakeValues(EnumerationComboBox control)
+        private static void TakeValues(ChapterComboBox control)
         {
             control.Items.Clear();
             foreach (var value in Enum.GetValues(control.EnumType))

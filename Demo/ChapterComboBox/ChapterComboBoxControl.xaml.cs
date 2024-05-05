@@ -1,5 +1,5 @@
 ﻿// -----------------------------------------------------------------------------------------------------------------
-// <copyright file="EnumerationComboBoxControl.xaml.cs" company="my-libraries">
+// <copyright file="ChapterComboBoxControl.xaml.cs" company="my-libraries">
 //     Copyright (c) David Wendland. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------------------------------------------------
@@ -8,9 +8,9 @@
 
 namespace Demo;
 
-public partial class EnumerationComboBoxControl
+public partial class ChapterComboBoxControl
 {
-    public EnumerationComboBoxControl()
+    public ChapterComboBoxControl()
     {
         InitializeComponent();
     }

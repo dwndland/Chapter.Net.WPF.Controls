@@ -25,7 +25,7 @@
                     Value="24" />
 
             <TextBlock Text="InfoAppearance" />
-            <controls:EnumerationComboBox x:Name="infoAppearance"
+            <controls:ChapterComboBox x:Name="infoAppearance"
                                           Margin="0,0,0,10"
                                           EnumType="{x:Type controls:InfoAppearance}"
                                           SelectedItem="{x:Static controls:InfoAppearance.OnLostFocus}" />
@@ -41,7 +41,7 @@
 
             <StackPanel IsEnabled="{Binding ShowFirstControl}">
                 <TextBlock Text="FirstControlPosition" />
-                <controls:EnumerationComboBox x:Name="firstControlPosition"
+                <controls:ChapterComboBox x:Name="firstControlPosition"
                                               Margin="0,0,0,10"
                                               EnumType="{x:Type Dock}"
                                               SelectedItem="{x:Static Dock.Left}" />
@@ -53,7 +53,7 @@
 
             <StackPanel IsEnabled="{Binding ShowSecondControl}">
                 <TextBlock Text="SecondControlPosition" />
-                <controls:EnumerationComboBox x:Name="secondControlPosition"
+                <controls:ChapterComboBox x:Name="secondControlPosition"
                                               Margin="0,0,0,10"
                                               EnumType="{x:Type Dock}"
                                               SelectedItem="{x:Static Dock.Right}" />
@@ -65,7 +65,7 @@
 
             <StackPanel IsEnabled="{Binding IsChecked, ElementName=allowDrop}">
                 <TextBlock Text="AllowedDropType" />
-                <controls:EnumerationComboBox x:Name="allowedDropType"
+                <controls:ChapterComboBox x:Name="allowedDropType"
                                               Margin="0,0,0,10"
                                               EnumType="{x:Type controls:DroppableTypes}"
                                               SelectedItem="{x:Static controls:DroppableTypes.File}" />
@@ -76,7 +76,7 @@
                          Text="; " />
 
                 <TextBlock Text="DragDropEffect" />
-                <controls:EnumerationComboBox x:Name="dragDropEffect"
+                <controls:ChapterComboBox x:Name="dragDropEffect"
                                               Margin="0,0,0,10"
                                               EnumType="{x:Type DragDropEffects}"
                                               SelectedItem="{x:Static DragDropEffects.Link}" />
@@ -85,7 +85,7 @@
             <TextBlock Margin="0,0,0,10" Text="InputLimiter" />
 
             <TextBlock Text="WhitespaceHandling" />
-            <controls:EnumerationComboBox x:Name="whitespaceHandling"
+            <controls:ChapterComboBox x:Name="whitespaceHandling"
                                           EnumType="{x:Type controls:WhitespaceHandling}"
                                           SelectedItem="{x:Static controls:WhitespaceHandling.None}" />
         </local:PropertyPanel>

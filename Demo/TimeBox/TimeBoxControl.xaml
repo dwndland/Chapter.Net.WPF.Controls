@@ -12,7 +12,7 @@
     <DockPanel>
         <local:PropertyPanel>
             <TextBlock Text="TimeFormat" />
-            <controls:EnumerationComboBox x:Name="timeFormat"
+            <controls:ChapterComboBox x:Name="timeFormat"
                                           Margin="0,0,0,10"
                                           EnumType="{x:Type controls:TimeFormat}"
                                           SelectedItem="{x:Static controls:TimeFormat.Short}" />

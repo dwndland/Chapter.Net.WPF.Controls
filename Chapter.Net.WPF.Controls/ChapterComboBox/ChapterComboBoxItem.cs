@@ -1,5 +1,5 @@
 ﻿// -----------------------------------------------------------------------------------------------------------------
-// <copyright file="EnumerationComboBoxItem.cs" company="my-libraries">
+// <copyright file="ChapterComboBoxItem.cs" company="my-libraries">
 //     Copyright (c) David Wendland. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------------------------------------------------
@@ -12,13 +12,13 @@ using System.Windows.Controls;
 namespace Chapter.Net.WPF.Controls
 {
     /// <summary>
-    ///     Represents an item inside the <see cref="EnumerationComboBox" /> which holds the appropriate enumeration object.
+    ///     Represents an item inside the <see cref="ChapterComboBox" /> which holds the appropriate enumeration object.
     /// </summary>
-    public class EnumerationComboBoxItem : ComboBoxItem
+    public class ChapterComboBoxItem : ComboBoxItem
     {
-        static EnumerationComboBoxItem()
+        static ChapterComboBoxItem()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(EnumerationComboBoxItem), new FrameworkPropertyMetadata(typeof(EnumerationComboBoxItem)));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(ChapterComboBoxItem), new FrameworkPropertyMetadata(typeof(ChapterComboBoxItem)));
         }
     }
 }

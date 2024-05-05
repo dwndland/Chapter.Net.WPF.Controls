@@ -12,7 +12,7 @@
     <DockPanel>
         <local:PropertyPanel>
             <TextBlock Text="NumberType" />
-            <controls:EnumerationComboBox x:Name="numberType"
+            <controls:ChapterComboBox x:Name="numberType"
                                           Margin="0,0,0,10"
                                           EnumType="{x:Type controls:NumberType}"
                                           SelectedItem="{x:Static controls:NumberType.Int}" />
@@ -33,7 +33,7 @@
                      Text="mg" />
 
             <TextBlock Text="UnitPosition" />
-            <controls:EnumerationComboBox x:Name="unitPosition"
+            <controls:ChapterComboBox x:Name="unitPosition"
                                           Margin="0,0,0,10"
                                           EnumType="{x:Type Dock}"
                                           SelectedItem="{x:Static Dock.Right}" />
@@ -48,19 +48,19 @@
                       IsEnabled="{Binding IsChecked, ElementName=hasCheckBox}" />
 
             <TextBlock Text="CheckBoxBehavior" />
-            <controls:EnumerationComboBox x:Name="checkBoxBehavior"
+            <controls:ChapterComboBox x:Name="checkBoxBehavior"
                                           Margin="0,0,0,10"
                                           EnumType="{x:Type controls:NumberBoxCheckBoxBehavior}"
                                           SelectedItem="{x:Static controls:NumberBoxCheckBoxBehavior.None}" />
 
             <TextBlock Text="CheckBoxPosition" />
-            <controls:EnumerationComboBox x:Name="checkBoxPosition"
+            <controls:ChapterComboBox x:Name="checkBoxPosition"
                                           Margin="0,0,0,10"
                                           EnumType="{x:Type Dock}"
                                           SelectedItem="{x:Static Dock.Left}" />
 
             <TextBlock Text="UpDownBehavior" />
-            <controls:EnumerationComboBox x:Name="upDownBehavior"
+            <controls:ChapterComboBox x:Name="upDownBehavior"
                                           Margin="0,0,0,10"
                                           EnumType="{x:Type controls:UpDownBehavior}"
                                           SelectedItem="{x:Static controls:UpDownBehavior.None}" />
@@ -79,7 +79,7 @@
                      Text="1" />
 
             <TextBlock Text="UpDownButtonsPosition" />
-            <controls:EnumerationComboBox x:Name="upDownButtonsPosition"
+            <controls:ChapterComboBox x:Name="upDownButtonsPosition"
                                           Margin="0,0,0,10"
                                           EnumType="{x:Type Dock}"
                                           SelectedItem="{x:Static Dock.Right}" />
@@ -108,7 +108,7 @@
                      Text="0" />
 
             <TextBlock Text="ResetButtonPosition" />
-            <controls:EnumerationComboBox x:Name="resetButtonPosition"
+            <controls:ChapterComboBox x:Name="resetButtonPosition"
                                           Margin="0,0,0,10"
                                           EnumType="{x:Type Dock}"
                                           SelectedItem="{x:Static Dock.Right}" />
@@ -119,7 +119,7 @@
                       IsChecked="True" />
 
             <TextBlock Text="NumberSelectionBehavior" />
-            <controls:EnumerationComboBox x:Name="numberSelectionBehavior"
+            <controls:ChapterComboBox x:Name="numberSelectionBehavior"
                                           Margin="0,0,0,10"
                                           EnumType="{x:Type controls:NumberBoxSelection}"
                                           SelectedItem="{x:Static controls:NumberBoxSelection.None}" />

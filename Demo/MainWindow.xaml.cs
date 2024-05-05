@@ -26,13 +26,13 @@ public partial class MainWindow : INotifyPropertyChanged
             new ImageButtonControl(),
             new OptionButtonControl(),
             new SplitButtonControl(),
-            new EnumerationComboBoxControl()
         ];
 
         _collections =
         [
             new ExtendedTreeViewControl(),
             new TreeListViewControl(),
+            new ChapterComboBoxControl()
             new ChapterTabControlControl()
         ];
 

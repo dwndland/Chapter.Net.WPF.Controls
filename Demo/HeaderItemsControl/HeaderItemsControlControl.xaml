@@ -16,7 +16,7 @@
     <DockPanel LastChildFill="False">
         <local:PropertyPanel>
             <TextBlock Text="HorizontalHeaderAlignments" />
-            <controls:EnumerationComboBox x:Name="horizontalHeaderAlignments"
+            <controls:ChapterComboBox x:Name="horizontalHeaderAlignments"
                                           Margin="0,0,0,10"
                                           EnumType="{x:Type HorizontalAlignment}"
                                           SelectedItem="{x:Static HorizontalAlignment.Left}" />
@@ -27,13 +27,13 @@
                      Text="5,0" />
 
             <TextBlock Text="HorizontalContentAlignments" />
-            <controls:EnumerationComboBox x:Name="horizontalContentAlignments"
+            <controls:ChapterComboBox x:Name="horizontalContentAlignments"
                                           Margin="0,0,0,10"
                                           EnumType="{x:Type HorizontalAlignment}"
                                           SelectedItem="{x:Static HorizontalAlignment.Stretch}" />
 
             <TextBlock Text="VerticalContentAlignments" />
-            <controls:EnumerationComboBox x:Name="verticalContentAlignments"
+            <controls:ChapterComboBox x:Name="verticalContentAlignments"
                                           Margin="0,0,0,10"
                                           EnumType="{x:Type VerticalAlignment}"
                                           SelectedItem="{x:Static VerticalAlignment.Center}" />
@@ -44,7 +44,7 @@
                      Text="0,2" />
 
             <TextBlock Text="Orientation" />
-            <controls:EnumerationComboBox x:Name="orientation"
+            <controls:ChapterComboBox x:Name="orientation"
                                           Margin="0,0,0,10"
                                           EnumType="{x:Type Orientation}"
                                           SelectedItem="{x:Static Orientation.Vertical}" />

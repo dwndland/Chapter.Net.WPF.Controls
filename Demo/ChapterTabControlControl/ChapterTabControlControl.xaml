@@ -12,7 +12,7 @@
     <DockPanel>
         <local:PropertyPanel>
             <TextBlock Text="TabStripPlacement" />
-            <controls:EnumerationComboBox x:Name="tabStripPlacement"
+            <controls:ChapterComboBox x:Name="tabStripPlacement"
                                           Margin="0,0,0,10"
                                           EnumType="{x:Type Dock}"
                                           SelectedItem="{x:Static Dock.Top}" />
@@ -29,7 +29,7 @@
 
             <StackPanel IsEnabled="{Binding IsChecked, ElementName=showAddButton}">
                 <TextBlock Text="AddButtonPosition" />
-                <controls:EnumerationComboBox x:Name="addButtonPosition"
+                <controls:ChapterComboBox x:Name="addButtonPosition"
                                               EnumType="{x:Type Dock}"
                                               SelectedItem="{x:Static Dock.Right}" />
             </StackPanel>

@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="Demo.EnumerationComboBoxControl"
+﻿<UserControl x:Class="Demo.ChapterComboBoxControl"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:controls="clr-namespace:Chapter.Net.WPF.Controls;assembly=Chapter.Net.WPF.Controls"
@@ -13,38 +13,38 @@
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center">
         <TextBlock Text="DisplayKind: Converter" />
-        <controls:EnumerationComboBox Margin="0,0,0,10"
+        <controls:ChapterComboBox Margin="0,0,0,10"
                                       DisplayKind="Converter"
                                       EnumType="{x:Type demo:DemoEnum}"
                                       SelectedItem="{x:Static demo:DemoEnum.First}">
-            <controls:EnumerationComboBox.ItemConverter>
+            <controls:ChapterComboBox.ItemConverter>
                 <demo:EnumToStringConverter />
-            </controls:EnumerationComboBox.ItemConverter>
-        </controls:EnumerationComboBox>
+            </controls:ChapterComboBox.ItemConverter>
+        </controls:ChapterComboBox>
 
         <TextBlock Text="DisplayKind: Custom" />
-        <controls:EnumerationComboBox Margin="0,0,0,10"
+        <controls:ChapterComboBox Margin="0,0,0,10"
                                       DisplayKind="Custom"
                                       EnumType="{x:Type demo:DemoEnum}"
                                       SelectedItem="{x:Static demo:DemoEnum.First}">
-            <controls:EnumerationComboBox.ItemTemplate>
+            <controls:ChapterComboBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="ItemTemplate: " />
                         <TextBlock Text="{Binding}" />
                     </StackPanel>
                 </DataTemplate>
-            </controls:EnumerationComboBox.ItemTemplate>
-        </controls:EnumerationComboBox>
+            </controls:ChapterComboBox.ItemTemplate>
+        </controls:ChapterComboBox>
 
         <TextBlock Text="DisplayKind: Description" />
-        <controls:EnumerationComboBox Margin="0,0,0,10"
+        <controls:ChapterComboBox Margin="0,0,0,10"
                                       DisplayKind="Description"
                                       EnumType="{x:Type demo:DemoEnum}"
                                       SelectedItem="{x:Static demo:DemoEnum.First}" />
 
         <TextBlock Text="DisplayKind: ToString" />
-        <controls:EnumerationComboBox Margin="0,0,0,10"
+        <controls:ChapterComboBox Margin="0,0,0,10"
                                       DisplayKind="ToString"
                                       EnumType="{x:Type demo:DemoEnum}"
                                       SelectedItem="{x:Static demo:DemoEnum.First}" />

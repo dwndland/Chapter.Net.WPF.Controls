@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Renamed BrowseTextBox to ChapterBrowseTextBox
 - Renamed DynamicTabControl to ChapterTabControl
 - Renamed EllipsePanel to ChapterEllipsePanel
+- Renamed EnumerationComboBox to ChapterComboBox
 ### Supported .Net Versions
 - .Net Core 3.0
 - .Net Framework 4.5
