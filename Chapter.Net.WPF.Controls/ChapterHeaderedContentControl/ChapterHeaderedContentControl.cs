@@ -13,45 +13,86 @@ using System.Windows.Controls;
 namespace Chapter.Net.WPF.Controls
 {
     /// <summary>
-    ///     Provides the possibility to automatically align Headers and contents.
+    ///     A headered content control with more possible customization and a footer.
     /// </summary>
-    public class ChapterHeaderedContentControl : ItemsControl
+    public class ChapterHeaderedContentControl : HeaderedContentControl
     {
         /// <summary>
-        ///     Identifies the HorizontalHeaderAlignments dependency property.
+        ///     The ChapterBadge style key.
         /// </summary>
-        public static readonly DependencyProperty HorizontalHeaderAlignmentsProperty =
-            DependencyProperty.Register(nameof(HorizontalHeaderAlignments), typeof(HorizontalAlignment), typeof(ChapterHeaderedContentControl), new UIPropertyMetadata(HorizontalAlignment.Left));
+        public static readonly ComponentResourceKey StyleKey = new ComponentResourceKey(typeof(ChapterHeaderedContentControl), "ChapterHeaderedContentControl");
 
         /// <summary>
-        ///     Identifies the HeaderMargins dependency property.
+        ///     A HeaderPosition dependency property.
         /// </summary>
-        public static readonly DependencyProperty HeaderMarginsProperty =
-            DependencyProperty.Register(nameof(HeaderMargins), typeof(Thickness), typeof(ChapterHeaderedContentControl), new UIPropertyMetadata(new Thickness(5, 0, 5, 0)));
+        public static readonly DependencyProperty HeaderPositionProperty =
+            DependencyProperty.Register(nameof(HeaderPosition), typeof(Dock), typeof(ChapterHeaderedContentControl), new PropertyMetadata(Dock.Top));
 
         /// <summary>
-        ///     Identifies the HorizontalContentAlignments dependency property.
+        ///     A HorizontalHeaderAlignment dependency property.
         /// </summary>
-        public static readonly DependencyProperty HorizontalContentAlignmentsProperty =
-            DependencyProperty.Register(nameof(HorizontalContentAlignments), typeof(HorizontalAlignment), typeof(ChapterHeaderedContentControl), new UIPropertyMetadata(HorizontalAlignment.Stretch));
+        public static readonly DependencyProperty HorizontalHeaderAlignmentProperty =
+            DependencyProperty.Register(nameof(HorizontalHeaderAlignment), typeof(HorizontalAlignment), typeof(ChapterHeaderedContentControl), new PropertyMetadata(HorizontalAlignment.Left));
 
         /// <summary>
-        ///     Identifies the VerticalContentAlignments dependency property.
+        ///     A VerticalHeaderAlignment dependency property.
         /// </summary>
-        public static readonly DependencyProperty VerticalContentAlignmentsProperty =
-            DependencyProperty.Register(nameof(VerticalContentAlignments), typeof(VerticalAlignment), typeof(ChapterHeaderedContentControl), new UIPropertyMetadata(VerticalAlignment.Center));
+        public static readonly DependencyProperty VerticalHeaderAlignmentProperty =
+            DependencyProperty.Register(nameof(VerticalHeaderAlignment), typeof(VerticalAlignment), typeof(ChapterHeaderedContentControl), new PropertyMetadata(VerticalAlignment.Top));
 
         /// <summary>
-        ///     Identifies the ContentMargins dependency property.
+        ///     A HeaderMargin dependency property.
         /// </summary>
-        public static readonly DependencyProperty ContentMarginsProperty =
-            DependencyProperty.Register(nameof(ContentMargins), typeof(Thickness), typeof(ChapterHeaderedContentControl), new UIPropertyMetadata(new Thickness(0, 2, 0, 2)));
+        public static readonly DependencyProperty HeaderMarginProperty =
+            DependencyProperty.Register(nameof(HeaderMargin), typeof(Thickness), typeof(ChapterHeaderedContentControl), new PropertyMetadata(new Thickness(0, 0, 0, 8)));
 
         /// <summary>
-        ///     Identifies the Orientation dependency property.
+        ///     A FooterPosition dependency property.
         /// </summary>
-        public static readonly DependencyProperty OrientationProperty =
-            DependencyProperty.Register(nameof(Orientation), typeof(Orientation), typeof(ChapterHeaderedContentControl), new PropertyMetadata(Orientation.Vertical));
+        public static readonly DependencyProperty FooterPositionProperty =
+            DependencyProperty.Register(nameof(FooterPosition), typeof(Dock), typeof(ChapterHeaderedContentControl), new PropertyMetadata(Dock.Bottom));
+
+        /// <summary>
+        ///     A HorizontalFooterAlignment dependency property.
+        /// </summary>
+        public static readonly DependencyProperty HorizontalFooterAlignmentProperty =
+            DependencyProperty.Register(nameof(HorizontalFooterAlignment), typeof(HorizontalAlignment), typeof(ChapterHeaderedContentControl), new PropertyMetadata(HorizontalAlignment.Left));
+
+        /// <summary>
+        ///     A VerticalFooterAlignment dependency property.
+        /// </summary>
+        public static readonly DependencyProperty VerticalFooterAlignmentProperty =
+            DependencyProperty.Register(nameof(VerticalFooterAlignment), typeof(VerticalAlignment), typeof(ChapterHeaderedContentControl), new PropertyMetadata(VerticalAlignment.Top));
+
+        /// <summary>
+        ///     A FooterMargin dependency property.
+        /// </summary>
+        public static readonly DependencyProperty FooterMarginProperty =
+            DependencyProperty.Register(nameof(FooterMargin), typeof(Thickness), typeof(ChapterHeaderedContentControl), new PropertyMetadata(new Thickness(0)));
+
+        /// <summary>
+        ///     A FooterTemplateSelector dependency property.
+        /// </summary>
+        public static readonly DependencyProperty FooterTemplateSelectorProperty =
+            DependencyProperty.Register(nameof(FooterTemplateSelector), typeof(DataTemplateSelector), typeof(ChapterHeaderedContentControl), new PropertyMetadata(null));
+
+        /// <summary>
+        ///     A Footer dependency property.
+        /// </summary>
+        public static readonly DependencyProperty FooterProperty =
+            DependencyProperty.Register(nameof(Footer), typeof(object), typeof(ChapterHeaderedContentControl), new PropertyMetadata(default(object)));
+
+        /// <summary>
+        ///     A FooterStringFormat dependency property.
+        /// </summary>
+        public static readonly DependencyProperty FooterStringFormatProperty =
+            DependencyProperty.Register(nameof(FooterStringFormat), typeof(string), typeof(ChapterHeaderedContentControl), new PropertyMetadata(null));
+
+        /// <summary>
+        ///     A FooterTemplate dependency property.
+        /// </summary>
+        public static readonly DependencyProperty FooterTemplateProperty =
+            DependencyProperty.Register(nameof(FooterTemplate), typeof(DataTemplate), typeof(ChapterHeaderedContentControl), new PropertyMetadata(null));
 
         static ChapterHeaderedContentControl()
         {
@@ -59,86 +100,133 @@ namespace Chapter.Net.WPF.Controls
         }
 
         /// <summary>
-        ///     Gets or sets the HorizontalAlignment of all Headers.
+        ///     Gets or sets the header position.
         /// </summary>
-        /// <remarks>Default: HorizontalAlignment.Left</remarks>
+        /// <value>Default: Dock.Top.</value>
+        [DefaultValue(Dock.Top)]
+        public Dock HeaderPosition
+        {
+            get => (Dock)GetValue(HeaderPositionProperty);
+            set => SetValue(HeaderPositionProperty, value);
+        }
+
+        /// <summary>
+        ///     Gets or sets the horizontal header alignment.
+        /// </summary>
+        /// <value>Default: HorizontalAlignment.Left.</value>
         [DefaultValue(HorizontalAlignment.Left)]
-        public HorizontalAlignment HorizontalHeaderAlignments
+        public HorizontalAlignment HorizontalHeaderAlignment
         {
-            get => (HorizontalAlignment)GetValue(HorizontalHeaderAlignmentsProperty);
-            set => SetValue(HorizontalHeaderAlignmentsProperty, value);
+            get => (HorizontalAlignment)GetValue(HorizontalHeaderAlignmentProperty);
+            set => SetValue(HorizontalHeaderAlignmentProperty, value);
         }
 
         /// <summary>
-        ///     Gets or sets the margin for all Headers.
+        ///     Gets or sets the vertical header alignment.
         /// </summary>
-        /// <remarks>Default: new Thickness(5, 0, 5, 0)</remarks>
-        public Thickness HeaderMargins
+        /// <value>Default: VerticalAlignment.Top.</value>
+        [DefaultValue(VerticalAlignment.Top)]
+        public VerticalAlignment VerticalHeaderAlignment
         {
-            get => (Thickness)GetValue(HeaderMarginsProperty);
-            set => SetValue(HeaderMarginsProperty, value);
+            get => (VerticalAlignment)GetValue(VerticalHeaderAlignmentProperty);
+            set => SetValue(VerticalHeaderAlignmentProperty, value);
         }
 
         /// <summary>
-        ///     Gets or sets the HorizontalAlignment for all contents.
+        ///     Gets or sets header margin.
         /// </summary>
-        /// <remarks>Default: HorizontalAlignment.Stretch</remarks>
-        [DefaultValue(HorizontalAlignment.Stretch)]
-        public HorizontalAlignment HorizontalContentAlignments
+        /// <value>Default: 0,0,0,8.</value>
+        public Thickness HeaderMargin
         {
-            get => (HorizontalAlignment)GetValue(HorizontalContentAlignmentsProperty);
-            set => SetValue(HorizontalContentAlignmentsProperty, value);
+            get => (Thickness)GetValue(HeaderMarginProperty);
+            set => SetValue(HeaderMarginProperty, value);
         }
 
         /// <summary>
-        ///     Gets or sets the VerticalAlignment for all contents.
+        ///     Gets or sets the footer position.
         /// </summary>
-        /// <remarks>Default: VerticalAlignment.Center</remarks>
-        [DefaultValue(VerticalAlignment.Center)]
-        public VerticalAlignment VerticalContentAlignments
+        /// <value>Default: Dock.Bottom.</value>
+        [DefaultValue(Dock.Bottom)]
+        public Dock FooterPosition
         {
-            get => (VerticalAlignment)GetValue(VerticalContentAlignmentsProperty);
-            set => SetValue(VerticalContentAlignmentsProperty, value);
+            get => (Dock)GetValue(FooterPositionProperty);
+            set => SetValue(FooterPositionProperty, value);
         }
 
         /// <summary>
-        ///     Gets or sets the margin of all contents.
+        ///     Gets or sets horizontal footer alignment.
         /// </summary>
-        /// <remarks>Default: new Thickness(0, 2, 0, 2)</remarks>
-        public Thickness ContentMargins
+        /// <value>Default: HorizontalAlignment.Left.</value>
+        [DefaultValue(HorizontalAlignment.Left)]
+        public HorizontalAlignment HorizontalFooterAlignment
         {
-            get => (Thickness)GetValue(ContentMarginsProperty);
-            set => SetValue(ContentMarginsProperty, value);
+            get => (HorizontalAlignment)GetValue(HorizontalFooterAlignmentProperty);
+            set => SetValue(HorizontalFooterAlignmentProperty, value);
         }
 
         /// <summary>
-        ///     Gets or sets the orientation how the items shall be aligned.
+        ///     Gets or sets vertical footer alignment.
         /// </summary>
-        /// <remarks>Default: Orientation.Vertical.</remarks>
-        [DefaultValue(Orientation.Vertical)]
-        public Orientation Orientation
+        /// <value>Default: VerticalAlignment.Top.</value>
+        [DefaultValue(VerticalAlignment.Top)]
+        public VerticalAlignment VerticalFooterAlignment
         {
-            get => (Orientation)GetValue(OrientationProperty);
-            set => SetValue(OrientationProperty, value);
+            get => (VerticalAlignment)GetValue(VerticalFooterAlignmentProperty);
+            set => SetValue(VerticalFooterAlignmentProperty, value);
         }
 
         /// <summary>
-        ///     Returns a new child container.
+        ///     Gets or sets footer margin.
         /// </summary>
-        /// <returns>A new child container.</returns>
-        protected override DependencyObject GetContainerForItemOverride()
+        /// <value>Default: 0.</value>
+        public Thickness FooterMargin
         {
-            return new HeaderItem();
+            get => (Thickness)GetValue(FooterMarginProperty);
+            set => SetValue(FooterMarginProperty, value);
         }
 
         /// <summary>
-        ///     Checks if the item is already the right container.
+        ///     Gets or sets footer data template selector.
         /// </summary>
-        /// <param name="item">The item added to the collection.</param>
-        /// <returns>True if the items is already the correct child container; otherwise false.</returns>
-        protected override bool IsItemItsOwnContainerOverride(object item)
+        /// <value>Default: null.</value>
+        [DefaultValue(null)]
+        public DataTemplateSelector FooterTemplateSelector
         {
-            return item is HeaderItem;
+            get => (DataTemplateSelector)GetValue(FooterTemplateSelectorProperty);
+            set => SetValue(FooterTemplateSelectorProperty, value);
+        }
+
+        /// <summary>
+        ///     Gets or sets the footer.
+        /// </summary>
+        /// <value>Default: null.</value>
+        [DefaultValue(null)]
+        public object Footer
+        {
+            get => GetValue(FooterProperty);
+            set => SetValue(FooterProperty, value);
+        }
+
+        /// <summary>
+        ///     Gets or sets the footer string format.
+        /// </summary>
+        /// <value>Default: null.</value>
+        [DefaultValue(null)]
+        public string FooterStringFormat
+        {
+            get => (string)GetValue(FooterStringFormatProperty);
+            set => SetValue(FooterStringFormatProperty, value);
+        }
+
+        /// <summary>
+        ///     Gets or sets the footer data template.
+        /// </summary>
+        /// <value>Default: null.</value>
+        [DefaultValue(null)]
+        public DataTemplate FooterTemplate
+        {
+            get => (DataTemplate)GetValue(FooterTemplateProperty);
+            set => SetValue(FooterTemplateProperty, value);
         }
     }
 }

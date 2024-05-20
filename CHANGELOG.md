@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added ChapterCard which is a container control to crate card like groups of elements.
 ### Changed
 - Extended ChapterButton with more features like oval endings, corner radius, header, footer and optional icon either as image or object.
+- Renewed the ChapterHeaderedContentControl to be a headered content control with more possible customization and a footer.
 ### Supported .Net Versions
 - .Net Core 3.0
 - .Net Framework 4.5
