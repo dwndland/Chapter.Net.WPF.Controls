@@ -37,7 +37,6 @@ public partial class MainWindow : INotifyPropertyChanged
             new ChapterNumberBoxControl(),
             new ChapterPasswordBoxControl(),
             new ChapterSearchTextBoxControl(),
-            new ChapterTextBlockControl(),
             new ChapterTextBoxControl(),
             new ChapterTimeBoxControl()
         ];
