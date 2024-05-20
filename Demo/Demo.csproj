@@ -5,7 +5,12 @@
     <TargetFramework>net8.0-windows</TargetFramework>
     <UseWPF>true</UseWPF>
     <IsPackable>false</IsPackable>
+    <ApplicationIcon>Properties\Chapter.ico</ApplicationIcon>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="Properties\Chapter.ico" />
+  </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Chapter.Net.WPF.Controls\Chapter.Net.WPF.Controls.csproj" />
