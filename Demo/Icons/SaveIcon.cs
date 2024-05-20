@@ -1,15 +1,18 @@
 ﻿// -----------------------------------------------------------------------------------------------------------------
-// <copyright file="ChapterAccordionControl.xaml.cs" company="my-libraries">
+// <copyright file="SaveIcon.cs" company="my-libraries">
 //     Copyright (c) David Wendland. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------------------------------------------------
 
-namespace Demo;
+using System.Windows;
+using System.Windows.Controls;
 
-public partial class ChapterAccordionControl
+namespace Demo.Icons;
+
+public class SaveIcon : Control
 {
-    public ChapterAccordionControl()
+    static SaveIcon()
     {
-        InitializeComponent();
+        DefaultStyleKeyProperty.OverrideMetadata(typeof(SaveIcon), new FrameworkPropertyMetadata(typeof(SaveIcon)));
     }
 }

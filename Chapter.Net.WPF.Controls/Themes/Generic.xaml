@@ -13,6 +13,7 @@
         <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterControlFooterPresenter/ChapterControlFooterPresenter.xaml" />
         <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterControlHeaderPresenter/ChapterControlHeaderPresenter.xaml" />
         <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterHeaderedContentControl/ChapterHeaderedContentControl.xaml" />
+        <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterImagePresenter/ChapterImagePresenter.xaml" />
         <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterNumberBox/ChapterNumberBox.xaml" />
         <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterPasswordBox/ChapterPasswordBox.xaml" />
         <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterResizer/ChapterResizer.xaml" />

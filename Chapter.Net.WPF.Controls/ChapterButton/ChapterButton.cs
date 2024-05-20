@@ -7,71 +7,72 @@
 using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
+using Chapter.Net.WPF.Controls.Bases;
 
 // ReSharper disable once CheckNamespace
 
 namespace Chapter.Net.WPF.Controls
 {
     /// <summary>
-    ///     Enhances the <see cref="Button" /> to show a disabled image. The bound image will be shown monochrome if the
-    ///     button is disabled.
+    ///     A button which brings additional features like a header, footer and icon.
     /// </summary>
-    public class ChapterButton : Button
+    [TemplatePart(Name = "PART_Border", Type = typeof(FrameworkElement))]
+    public class ChapterButton : ButtonBase
     {
         /// <summary>
-        ///     Identifies the ImageSource dependency property.
+        ///     The ChapterButton style key.
         /// </summary>
-        public static readonly DependencyProperty ImageSourceProperty =
-            DependencyProperty.Register(nameof(ImageSource), typeof(BitmapSource), typeof(ChapterButton), new UIPropertyMetadata(null, OnImageSourceChanged));
+        public static readonly ComponentResourceKey StyleKey = new ComponentResourceKey(typeof(ChapterButton), "ChapterButton");
 
         /// <summary>
-        ///     Identifies the ImageWidth dependency property.
+        ///     The Header dependency property.
         /// </summary>
-        public static readonly DependencyProperty ImageWidthProperty =
-            DependencyProperty.Register(nameof(ImageWidth), typeof(double), typeof(ChapterButton), new UIPropertyMetadata(16.0, OnSizeChanged));
+        public static readonly DependencyProperty HeaderProperty =
+            DependencyProperty.Register(nameof(Header), typeof(object), typeof(ChapterButton), new PropertyMetadata(null));
 
         /// <summary>
-        ///     Identifies the ImageHeight dependency property.
+        ///     The Footer dependency property.
         /// </summary>
-        public static readonly DependencyProperty ImageHeightProperty =
-            DependencyProperty.Register(nameof(ImageHeight), typeof(double), typeof(ChapterButton), new UIPropertyMetadata(16.0, OnSizeChanged));
+        public static readonly DependencyProperty FooterProperty =
+            DependencyProperty.Register(nameof(Footer), typeof(object), typeof(ChapterButton), new PropertyMetadata(null));
 
         /// <summary>
-        ///     Identifies the ImageMargin dependency property.
+        ///     The Icon dependency property.
         /// </summary>
-        public static readonly DependencyProperty ImageMarginProperty =
-            DependencyProperty.Register(nameof(ImageMargin), typeof(Thickness), typeof(ChapterButton), new UIPropertyMetadata(new Thickness(0, 0, 2, 0)));
+        public static readonly DependencyProperty IconProperty =
+            DependencyProperty.Register(nameof(Icon), typeof(object), typeof(ChapterButton), new PropertyMetadata(null));
 
         /// <summary>
-        ///     Identifies the ImagePosition dependency property.
+        ///     The ImageIcon dependency property.
         /// </summary>
-        public static readonly DependencyProperty ImagePositionProperty =
-            DependencyProperty.Register(nameof(ImagePosition), typeof(Dock), typeof(ChapterButton), new UIPropertyMetadata(Dock.Left));
+        public static readonly DependencyProperty ImageIconProperty =
+            DependencyProperty.Register(nameof(ImageIcon), typeof(Image), typeof(ChapterButton), new PropertyMetadata(null));
 
         /// <summary>
-        ///     Identifies the HorizontalImageAlignment dependency property.
+        ///     The IconMargin dependency property.
         /// </summary>
-        public static readonly DependencyProperty HorizontalImageAlignmentProperty =
-            DependencyProperty.Register(nameof(HorizontalImageAlignment), typeof(HorizontalAlignment), typeof(ChapterButton), new UIPropertyMetadata(HorizontalAlignment.Center));
+        public static readonly DependencyProperty IconMarginProperty =
+            DependencyProperty.Register(nameof(IconMargin), typeof(Thickness), typeof(ChapterButton), new PropertyMetadata(new Thickness(0, 0, 6, 0)));
 
         /// <summary>
-        ///     Identifies the VerticalImageAlignment dependency property.
+        ///     The HorizontalIconAlignment dependency property.
         /// </summary>
-        public static readonly DependencyProperty VerticalImageAlignmentProperty =
-            DependencyProperty.Register(nameof(VerticalImageAlignment), typeof(VerticalAlignment), typeof(ChapterButton), new UIPropertyMetadata(VerticalAlignment.Center));
+        public static readonly DependencyProperty HorizontalIconAlignmentProperty =
+            DependencyProperty.Register(nameof(HorizontalIconAlignment), typeof(HorizontalAlignment), typeof(ChapterButton), new PropertyMetadata(HorizontalAlignment.Left));
 
         /// <summary>
-        ///     Identifies the VerticalImageAlignment dependency property.
+        ///     The VerticalIconAlignment dependency property.
         /// </summary>
-        public static readonly DependencyProperty ImageStretchProperty =
-            DependencyProperty.Register(nameof(ImageStretch), typeof(Stretch), typeof(ChapterButton), new UIPropertyMetadata(Stretch.Uniform));
+        public static readonly DependencyProperty VerticalIconAlignmentProperty =
+            DependencyProperty.Register(nameof(VerticalIconAlignment), typeof(VerticalAlignment), typeof(ChapterButton), new PropertyMetadata(VerticalAlignment.Center));
 
-        internal static readonly DependencyProperty DisabledImageSourceProperty =
-            DependencyProperty.Register(nameof(DisabledImageSource), typeof(BitmapSource), typeof(ChapterButton), new UIPropertyMetadata(null));
+        /// <summary>
+        ///     The IconPosition dependency property.
+        /// </summary>
+        public static readonly DependencyProperty IconPositionProperty =
+            DependencyProperty.Register(nameof(IconPosition), typeof(Dock), typeof(ChapterButton), new PropertyMetadata(Dock.Left));
 
-        private bool _sizeIsSet;
+        private FrameworkElement _border;
 
         static ChapterButton()
         {
@@ -79,114 +80,107 @@ namespace Chapter.Net.WPF.Controls
         }
 
         /// <summary>
-        ///     Gets or sets the source if the button image.
+        ///     Gets or sets the header.
         /// </summary>
         /// <value>Default: null.</value>
         [DefaultValue(null)]
-        public BitmapSource ImageSource
+        public object Header
         {
-            get => (BitmapSource)GetValue(ImageSourceProperty);
-            set => SetValue(ImageSourceProperty, value);
+            get => GetValue(HeaderProperty);
+            set => SetValue(HeaderProperty, value);
         }
 
         /// <summary>
-        ///     Gets or sets the width of the image shown in the button.
+        ///     Gets or sets the footer.
         /// </summary>
-        /// <value>Default: 16d.</value>
-        [DefaultValue(16d)]
-        public double ImageWidth
+        /// <value>Default: null.</value>
+        [DefaultValue(null)]
+        public object Footer
         {
-            get => (double)GetValue(ImageWidthProperty);
-            set => SetValue(ImageWidthProperty, value);
+            get => GetValue(FooterProperty);
+            set => SetValue(FooterProperty, value);
         }
 
         /// <summary>
-        ///     Gets or sets the height of the image shown in the button.
+        ///     Gets or sets the icon.
         /// </summary>
-        /// <value>Default: 16d.</value>
-        [DefaultValue(16d)]
-        public double ImageHeight
+        /// <value>Default: null.</value>
+        [DefaultValue(null)]
+        public object Icon
         {
-            get => (double)GetValue(ImageHeightProperty);
-            set => SetValue(ImageHeightProperty, value);
+            get => GetValue(IconProperty);
+            set => SetValue(IconProperty, value);
         }
 
         /// <summary>
-        ///     Gets or sets the margin of the image shown in the button.
+        ///     Gets or sets the icon by image.
         /// </summary>
-        /// <value>Default: 0,0,2,0.</value>
-        public Thickness ImageMargin
+        /// <value>Default: null.</value>
+        [DefaultValue(null)]
+        public Image ImageIcon
         {
-            get => (Thickness)GetValue(ImageMarginProperty);
-            set => SetValue(ImageMarginProperty, value);
+            get => (Image)GetValue(ImageIconProperty);
+            set => SetValue(ImageIconProperty, value);
         }
 
         /// <summary>
-        ///     Gets or sets a value that indicates where the image have to be placed in the button.
+        ///     Gets or sets the margin of the icon.
+        /// </summary>
+        /// <value>Default: 0, 0, 6, 0</value>
+        public Thickness IconMargin
+        {
+            get => (Thickness)GetValue(IconMarginProperty);
+            set => SetValue(IconMarginProperty, value);
+        }
+
+        /// <summary>
+        ///     Gets or sets the horizontal icon alignment.
+        /// </summary>
+        /// <value>Default: HorizontalAlignment.Left.</value>
+        [DefaultValue(HorizontalAlignment.Left)]
+        public HorizontalAlignment HorizontalIconAlignment
+        {
+            get => (HorizontalAlignment)GetValue(HorizontalIconAlignmentProperty);
+            set => SetValue(HorizontalIconAlignmentProperty, value);
+        }
+
+        /// <summary>
+        ///     Gets or sets the vertical icon alignment.
+        /// </summary>
+        /// <value>Default: VerticalAlignment.Left.</value>
+        [DefaultValue(VerticalAlignment.Center)]
+        public VerticalAlignment VerticalIconAlignment
+        {
+            get => (VerticalAlignment)GetValue(VerticalIconAlignmentProperty);
+            set => SetValue(VerticalIconAlignmentProperty, value);
+        }
+
+        /// <summary>
+        ///     Gets or sets the position of the icon.
         /// </summary>
         /// <value>Default: Dock.Left.</value>
         [DefaultValue(Dock.Left)]
-        public Dock ImagePosition
+        public Dock IconPosition
         {
-            get => (Dock)GetValue(ImagePositionProperty);
-            set => SetValue(ImagePositionProperty, value);
+            get => (Dock)GetValue(IconPositionProperty);
+            set => SetValue(IconPositionProperty, value);
         }
 
-        /// <summary>
-        ///     Gets or sets the horizontal alignment of the image shown in the button.
-        /// </summary>
-        /// <value>Default: HorizontalAlignment.Center.</value>
-        [DefaultValue(HorizontalAlignment.Center)]
-        public HorizontalAlignment HorizontalImageAlignment
+        /// <inheritdoc />
+        public override void OnApplyTemplate()
         {
-            get => (HorizontalAlignment)GetValue(HorizontalImageAlignmentProperty);
-            set => SetValue(HorizontalImageAlignmentProperty, value);
+            base.OnApplyTemplate();
+
+            _border = GetTemplateChild("PART_Border") as FrameworkElement;
         }
 
-        /// <summary>
-        ///     Gets or sets the vertical alignment of the image shown in the button.
-        /// </summary>
-        /// <value>Default: VerticalAlignment.Center.</value>
-        [DefaultValue(VerticalAlignment.Center)]
-        public VerticalAlignment VerticalImageAlignment
+        /// <inheritdoc />
+        protected override void OnRenderSizeChanged(SizeChangedInfo sizeInfo)
         {
-            get => (VerticalAlignment)GetValue(VerticalImageAlignmentProperty);
-            set => SetValue(VerticalImageAlignmentProperty, value);
-        }
+            base.OnRenderSizeChanged(sizeInfo);
 
-        /// <summary>
-        ///     Gets or sets a value that indicated how the image have to be stretched in the button.
-        /// </summary>
-        /// <value>Default: Stretch.Uniform.</value>
-        [DefaultValue(Stretch.Uniform)]
-        public Stretch ImageStretch
-        {
-            get => (Stretch)GetValue(ImageStretchProperty);
-            set => SetValue(ImageStretchProperty, value);
-        }
-
-        internal BitmapSource DisabledImageSource
-        {
-            get => (BitmapSource)GetValue(DisabledImageSourceProperty);
-            set => SetValue(DisabledImageSourceProperty, value);
-        }
-
-        private static void OnImageSourceChanged(DependencyObject o, DependencyPropertyChangedEventArgs e)
-        {
-            var control = (ChapterButton)o;
-            if (e.NewValue != null && !control._sizeIsSet)
-            {
-                var bitmapSource = e.NewValue as BitmapSource;
-                control.DisabledImageSource = new FormatConvertedBitmap(bitmapSource, PixelFormats.Gray32Float, null, 0);
-                control.ImageHeight = bitmapSource.Height;
-                control.ImageWidth = bitmapSource.Width;
-            }
-        }
-
-        private static void OnSizeChanged(DependencyObject o, DependencyPropertyChangedEventArgs e)
-        {
-            var control = (ChapterButton)o;
-            control._sizeIsSet = true;
+            if (_border != null && _border.ActualHeight > 0)
+                OvalCornerRadius = new CornerRadius(_border.ActualHeight / 2);
         }
     }
 }

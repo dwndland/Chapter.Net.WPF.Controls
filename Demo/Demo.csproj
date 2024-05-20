@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="ChapterButton\save.png" />
+    <Resource Include="Icons\SaveIcon.png" />
   </ItemGroup>
 
 </Project>

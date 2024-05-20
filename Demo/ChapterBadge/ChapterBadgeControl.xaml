@@ -114,8 +114,7 @@
         <controls:ChapterButton Padding="12,6"
                                 HorizontalAlignment="Center"
                                 VerticalAlignment="Center"
-                                Content="Updates"
-                                ImageWidth="0">
+                                Content="Updates">
             <controls:ChapterBadge.Badge>
                 <controls:ChapterBadge MinWidth="{Binding MinSize}"
                                        MinHeight="{Binding MinSize}"

@@ -43,7 +43,7 @@
     <SolidColorBrush x:Key="OptionMark.Disabled.Glyph" Color="#FF707070" />
 
     <Style x:Key="{x:Static controls:ChapterCheckBox.StyleKey}" TargetType="{x:Type controls:ChapterCheckBox}">
-        <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+        <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}" />
         <Setter Property="Background" Value="{StaticResource OptionMark.Static.Background}" />
         <Setter Property="BorderBrush" Value="{StaticResource OptionMark.Static.Border}" />
         <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" />
@@ -108,7 +108,7 @@
                     </Grid>
                     <ControlTemplate.Triggers>
                         <Trigger Property="HasContent" Value="true">
-                            <Setter Property="FocusVisualStyle" Value="{StaticResource OptionMarkFocusVisual}"/>
+                            <Setter Property="FocusVisualStyle" Value="{StaticResource OptionMarkFocusVisual}" />
                             <Setter Property="Padding" Value="4,-1,0,0" />
                         </Trigger>
                         <Trigger Property="IsMouseOver" Value="true">

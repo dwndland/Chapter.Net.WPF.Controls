@@ -1,5 +1,6 @@
 <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:icons="clr-namespace:Demo.Icons"
                     xmlns:local="clr-namespace:Demo">
 
     <Style TargetType="{x:Type local:PropertyPanel}">
@@ -17,9 +18,9 @@
                                 BorderThickness="1"
                                 SnapsToDevicePixels="True">
                             <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
-                                <StackPanel Width="200" Margin="10">
-                                    <ItemsPresenter />
-                                </StackPanel>
+                                <StackPanel Width="200"
+                                            Margin="10"
+                                            IsItemsHost="True" />
                             </ScrollViewer>
                         </Border>
                     </DockPanel>
@@ -27,4 +28,52 @@
             </Setter.Value>
         </Setter>
     </Style>
+
+    <Style TargetType="{x:Type icons:SaveIcon}">
+        <Setter Property="Focusable" Value="False" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type icons:SaveIcon}">
+                    <Border>
+                        <Border.Background>
+                            <DrawingBrush>
+                                <DrawingBrush.Drawing>
+                                    <DrawingGroup>
+                                        <GeometryDrawing Geometry="F0M88.00916,0.00002 L99.57201,11.56321 L99.57201,94.11157 C99.57201,97.36364 96.93565,100 93.68358,100 C75.79145,100 22.25276,100 5.24639,100 C3.85496,100 2.52091,99.44775 1.53658,98.46342 C0.55293,97.47976 0,96.14504 0,94.75361 C0,77.51769 0,22.74374 0,5.35335 C0,3.93357 0.5644,2.57191 1.56831,1.56793 C2.57222,0.56402 3.93395,0.00002 5.35373,0.00002 L88.00916,0.00002 z">
+                                            <GeometryDrawing.Pen>
+                                                <Pen Brush="{Binding Foreground, RelativeSource={RelativeSource TemplatedParent}}"
+                                                     EndLineCap="Round"
+                                                     LineJoin="Round"
+                                                     StartLineCap="Round"
+                                                     Thickness="5.62581" />
+                                            </GeometryDrawing.Pen>
+                                        </GeometryDrawing>
+                                        <GeometryDrawing Geometry="F0M20.55666,49.46494 L77.94416,49.46494 L77.94416,99.78619 L20.55666,99.78619 z">
+                                            <GeometryDrawing.Pen>
+                                                <Pen Brush="{Binding Foreground, RelativeSource={RelativeSource TemplatedParent}}"
+                                                     EndLineCap="Round"
+                                                     LineJoin="Round"
+                                                     StartLineCap="Round"
+                                                     Thickness="6.22734" />
+                                            </GeometryDrawing.Pen>
+                                        </GeometryDrawing>
+                                        <GeometryDrawing Geometry="F0M73.87608,0 L73.87608,25.16063 C73.87608,26.09768 73.50386,26.99637 72.84113,27.65895 C72.17893,28.32159 71.27978,28.69383 70.34275,28.69383 C61.01035,28.69383 35.77825,28.69383 26.44586,28.69383 C25.50829,28.69383 24.60967,28.32159 23.94748,27.65895 C23.28474,26.99637 22.91253,26.09768 22.91253,25.16063 C22.91253,17.49081 22.91253,0 22.91253,0 L73.87608,0 z">
+                                            <GeometryDrawing.Pen>
+                                                <Pen Brush="{Binding Foreground, RelativeSource={RelativeSource TemplatedParent}}"
+                                                     EndLineCap="Round"
+                                                     LineJoin="Round"
+                                                     StartLineCap="Round"
+                                                     Thickness="5.92255" />
+                                            </GeometryDrawing.Pen>
+                                        </GeometryDrawing>
+                                    </DrawingGroup>
+                                </DrawingBrush.Drawing>
+                            </DrawingBrush>
+                        </Border.Background>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
 </ResourceDictionary>

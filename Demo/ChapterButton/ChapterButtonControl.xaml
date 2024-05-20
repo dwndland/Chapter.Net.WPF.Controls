@@ -3,8 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:controls="clr-namespace:Chapter.Net.WPF.Controls;assembly=Chapter.Net.WPF.Controls"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:icons="clr-namespace:Demo.Icons"
              xmlns:local="clr-namespace:Demo"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             d:DataContext="{d:DesignInstance local:ChapterButtonControl}"
              d:DesignHeight="450"
              d:DesignWidth="800"
              mc:Ignorable="d">
@@ -14,25 +16,11 @@
 
     <DockPanel>
         <local:PropertyPanel>
-            <StackPanel Orientation="Horizontal">
-                <TextBlock Text="ImageWidth: " />
-                <TextBlock Text="{Binding Value, ElementName=imageWidth, StringFormat={}{0:0}}" />
-            </StackPanel>
-            <Slider x:Name="imageWidth"
-                    Margin="0,0,0,10"
-                    Maximum="128"
-                    Minimum="8"
-                    Value="16" />
-
-            <StackPanel Orientation="Horizontal">
-                <TextBlock Text="ImageHeight: " />
-                <TextBlock Text="{Binding Value, ElementName=imageHeight, StringFormat={}{0:0}}" />
-            </StackPanel>
-            <Slider x:Name="imageHeight"
-                    Margin="0,0,0,10"
-                    Maximum="128"
-                    Minimum="8"
-                    Value="16" />
+            <TextBlock Text="{Binding IconSize, StringFormat=Icon Width: {0:0}}" />
+            <Slider Margin="0,0,0,10"
+                    Maximum="64"
+                    Minimum="16"
+                    Value="{Binding IconSize}" />
 
             <TextBlock Text="Padding" />
             <TextBox x:Name="padding"
@@ -42,57 +30,107 @@
             <TextBlock Text="Content" />
             <TextBox x:Name="content"
                      Margin="0,0,0,10"
-                     Text="Save" />
+                     Text="Save Changes" />
 
-            <TextBlock Text="ImageMargin" />
-            <TextBox x:Name="imageMargin"
+            <TextBlock Text="IconMargin" />
+            <TextBox x:Name="iconMargin"
                      Margin="0,0,0,10"
-                     Text="0,0,2,0" />
+                     Text="0,0,6,0" />
 
-            <TextBlock Text="ImagePosition" />
-            <controls:ChapterComboBox x:Name="imagePosition"
+            <TextBlock Text="IconPosition" />
+            <controls:ChapterComboBox x:Name="iconPosition"
                                       Margin="0,0,0,10"
                                       EnumType="{x:Type Dock}"
                                       SelectedItem="{x:Static Dock.Left}" />
 
-            <TextBlock Text="HorizontalImageAlignment" />
-            <controls:ChapterComboBox x:Name="horizontalImageAlignment"
+            <TextBlock Text="HorizontalIconAlignment" />
+            <controls:ChapterComboBox x:Name="horizontalIconAlignment"
                                       Margin="0,0,0,10"
                                       EnumType="{x:Type HorizontalAlignment}"
                                       SelectedItem="{x:Static HorizontalAlignment.Center}" />
 
-            <TextBlock Text="VerticalImageAlignment" />
-            <controls:ChapterComboBox x:Name="verticalImageAlignment"
+            <TextBlock Text="VerticalIconAlignment" />
+            <controls:ChapterComboBox x:Name="verticalIconAlignment"
                                       Margin="0,0,0,10"
                                       EnumType="{x:Type VerticalAlignment}"
                                       SelectedItem="{x:Static VerticalAlignment.Center}" />
 
-            <TextBlock Text="ImageStretch" />
-            <controls:ChapterComboBox x:Name="imageStretch"
+            <TextBlock Text="HorizontalContentAlignment" />
+            <controls:ChapterComboBox x:Name="horizontalContentAlignment"
                                       Margin="0,0,0,10"
-                                      EnumType="{x:Type Stretch}"
-                                      SelectedItem="{x:Static Stretch.Uniform}" />
+                                      EnumType="{x:Type HorizontalAlignment}"
+                                      SelectedItem="{x:Static HorizontalAlignment.Center}" />
+
+            <TextBlock Text="VerticalContentAlignment" />
+            <controls:ChapterComboBox x:Name="verticalContentAlignment"
+                                      Margin="0,0,0,10"
+                                      EnumType="{x:Type VerticalAlignment}"
+                                      SelectedItem="{x:Static VerticalAlignment.Center}" />
 
             <CheckBox x:Name="isEnabled"
+                      Margin="0,0,0,10"
                       Content="IsEnabled"
                       IsChecked="True" />
+
+            <CheckBox x:Name="hasOvalEndings"
+                      Margin="0,0,0,10"
+                      Content="HasOvalEndings"
+                      IsChecked="false" />
+
+            <TextBlock Text="{Binding Value, ElementName=cornerRadius, StringFormat=CornerRadius: {0:0}}" />
+            <Slider x:Name="cornerRadius"
+                    Maximum="16"
+                    Minimum="0"
+                    Value="2" />
         </local:PropertyPanel>
 
-        <!--  ImageSource  -->
-        <controls:ChapterButton Padding="{Binding Text, ElementName=padding, Converter={StaticResource StringToThicknessConverter}}"
-                                HorizontalAlignment="Center"
-                                VerticalAlignment="Center"
-                                Content="{Binding Text, ElementName=content}"
-                                HorizontalImageAlignment="{Binding SelectedItem, ElementName=horizontalImageAlignment}"
-                                ImageHeight="{Binding Value, ElementName=imageHeight}"
-                                ImageMargin="{Binding Text, ElementName=imageMargin, Converter={StaticResource StringToThicknessConverter}}"
-                                ImagePosition="{Binding SelectedItem, ElementName=imagePosition}"
-                                ImageSource="/Demo;component/ChapterButton/save.png"
-                                ImageStretch="{Binding SelectedItem, ElementName=imageStretch}"
-                                ImageWidth="{Binding Value, ElementName=imageWidth}"
-                                IsEnabled="{Binding IsChecked, ElementName=isEnabled}"
-                                RenderOptions.BitmapScalingMode="HighQuality"
-                                VerticalImageAlignment="{Binding SelectedItem, ElementName=verticalImageAlignment}" />
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <controls:ChapterButton Margin="0,0,0,10"
+                                    Padding="{Binding Text, ElementName=padding, Converter={StaticResource StringToThicknessConverter}}"
+                                    HorizontalContentAlignment="{Binding SelectedItem, ElementName=horizontalContentAlignment}"
+                                    VerticalContentAlignment="{Binding SelectedItem, ElementName=verticalContentAlignment}"
+                                    Content="{Binding Text, ElementName=content}"
+                                    CornerRadius="{Binding Value, ElementName=cornerRadius}"
+                                    HasOvalEndings="{Binding IsChecked, ElementName=hasOvalEndings}"
+                                    Header="No Icon"
+                                    IsEnabled="{Binding IsChecked, ElementName=isEnabled}" />
+            <controls:ChapterButton Margin="0,0,0,10"
+                                    Padding="{Binding Text, ElementName=padding, Converter={StaticResource StringToThicknessConverter}}"
+                                    HorizontalContentAlignment="{Binding SelectedItem, ElementName=horizontalContentAlignment}"
+                                    VerticalContentAlignment="{Binding SelectedItem, ElementName=verticalContentAlignment}"
+                                    Content="{Binding Text, ElementName=content}"
+                                    CornerRadius="{Binding Value, ElementName=cornerRadius}"
+                                    HasOvalEndings="{Binding IsChecked, ElementName=hasOvalEndings}"
+                                    Header="Image Icon"
+                                    HorizontalIconAlignment="{Binding SelectedItem, ElementName=horizontalIconAlignment}"
+                                    IconMargin="{Binding Text, ElementName=iconMargin, Converter={StaticResource StringToThicknessConverter}}"
+                                    IconPosition="{Binding SelectedItem, ElementName=iconPosition}"
+                                    IsEnabled="{Binding IsChecked, ElementName=isEnabled}"
+                                    VerticalIconAlignment="{Binding SelectedItem, ElementName=verticalIconAlignment}">
+                <controls:ChapterButton.ImageIcon>
+                    <Image Width="{Binding IconSize}"
+                           Height="{Binding IconSize}"
+                           RenderOptions.BitmapScalingMode="Fant"
+                           Source="/Demo;component/Icons/SaveIcon.png" />
+                </controls:ChapterButton.ImageIcon>
+            </controls:ChapterButton>
+            <controls:ChapterButton Padding="{Binding Text, ElementName=padding, Converter={StaticResource StringToThicknessConverter}}"
+                                    HorizontalContentAlignment="{Binding SelectedItem, ElementName=horizontalContentAlignment}"
+                                    VerticalContentAlignment="{Binding SelectedItem, ElementName=verticalContentAlignment}"
+                                    Content="{Binding Text, ElementName=content}"
+                                    CornerRadius="{Binding Value, ElementName=cornerRadius}"
+                                    HasOvalEndings="{Binding IsChecked, ElementName=hasOvalEndings}"
+                                    Header="Path Icon"
+                                    HorizontalIconAlignment="{Binding SelectedItem, ElementName=horizontalIconAlignment}"
+                                    IconMargin="{Binding Text, ElementName=iconMargin, Converter={StaticResource StringToThicknessConverter}}"
+                                    IconPosition="{Binding SelectedItem, ElementName=iconPosition}"
+                                    IsEnabled="{Binding IsChecked, ElementName=isEnabled}"
+                                    VerticalIconAlignment="{Binding SelectedItem, ElementName=verticalIconAlignment}">
+                <controls:ChapterButton.Icon>
+                    <icons:SaveIcon Width="{Binding IconSize}" Height="{Binding IconSize}" />
+                </controls:ChapterButton.Icon>
+            </controls:ChapterButton>
+        </StackPanel>
 
     </DockPanel>
 
