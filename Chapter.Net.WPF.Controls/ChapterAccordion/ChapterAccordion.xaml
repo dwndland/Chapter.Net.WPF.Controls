@@ -1,0 +1,25 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:controls="clr-namespace:Chapter.Net.WPF.Controls">
+
+    <Style x:Key="{x:Static controls:ChapterAccordion.StyleKey}" TargetType="{x:Type controls:ChapterAccordion}">
+        <Setter Property="Focusable" Value="False" />
+        <Setter Property="BorderBrush" Value="Gray" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type controls:ChapterAccordion}">
+                    <Border Padding="{TemplateBinding Padding}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}">
+                        <controls:AccordionPanel IsItemsHost="True" Orientation="{TemplateBinding Orientation}" />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style BasedOn="{StaticResource {x:Static controls:ChapterAccordion.StyleKey}}" TargetType="{x:Type controls:ChapterAccordion}" />
+
+</ResourceDictionary>

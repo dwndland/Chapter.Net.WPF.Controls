@@ -60,6 +60,11 @@ public partial class MainWindow : INotifyPropertyChanged
             new ChapterBadgeControl()
         ];
 
+        _menusAndToolBars =
+        [
+            new ChapterAccordionControl()
+        ];
+
         Controls = _basicInput;
 
         DataContext = this;
@@ -70,6 +75,7 @@ public partial class MainWindow : INotifyPropertyChanged
     private List<UserControl> _text { get; }
     private List<UserControl> _layout { get; }
     private List<UserControl> _statusAndInfo { get; }
+    private List<UserControl> _menusAndToolBars { get; }
 
     public List<UserControl> Controls { get; private set; }
 
@@ -96,6 +102,9 @@ public partial class MainWindow : INotifyPropertyChanged
                 break;
             case "StatusAndInfo":
                 Controls = _statusAndInfo;
+                break;
+            case "MenusAndToolBars":
+                Controls = _menusAndToolBars;
                 break;
         }
 

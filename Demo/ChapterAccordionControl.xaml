@@ -1,0 +1,58 @@
+﻿<UserControl x:Class="Demo.ChapterAccordionControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:controls="Chapter.Net.WPF.Controls"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:demo="clr-namespace:Demo"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             d:DesignHeight="450"
+             d:DesignWidth="800"
+             mc:Ignorable="d">
+
+    <DockPanel>
+        <demo:PropertyPanel>
+            <CheckBox x:Name="allowCollapseAll"
+                      Margin="0,0,0,10"
+                      Content="AllowCollapseAll" />
+
+            <CheckBox x:Name="allowExpandMultiple"
+                      Margin="0,0,0,10"
+                      Content="AllowExpandMultiple" />
+
+            <TextBlock Text="ExpandDirection" />
+            <controls:ChapterComboBox x:Name="expandDirection"
+                                      Margin="0,0,0,10"
+                                      EnumType="{x:Type controls:AccordionExpandDirection}"
+                                      SelectedItem="{x:Static controls:AccordionExpandDirection.Forward}" />
+        </demo:PropertyPanel>
+
+        <controls:ChapterAccordion Height="300"
+                                   AllowCollapseAll="{Binding IsChecked, ElementName=allowCollapseAll}"
+                                   AllowExpandMultiple="{Binding IsChecked, ElementName=allowExpandMultiple}"
+                                   DockPanel.Dock="Top"
+                                   ExpandDirection="{Binding SelectedItem, ElementName=expandDirection}"
+                                   Orientation="Horizontal">
+            <controls:ChapterAccordionItem Header="( 1 )" />
+            <controls:ChapterAccordionItem Header="( 2 )" />
+            <controls:ChapterAccordionItem Header="( 3 )" />
+            <controls:ChapterAccordionItem Header="( 4 )" />
+            <controls:ChapterAccordionItem Header="( 5 )" />
+            <controls:ChapterAccordionItem Header="( 6 )" />
+        </controls:ChapterAccordion>
+        <controls:ChapterAccordion Width="300"
+                                   AllowCollapseAll="{Binding IsChecked, ElementName=allowCollapseAll}"
+                                   AllowExpandMultiple="{Binding IsChecked, ElementName=allowExpandMultiple}"
+                                   DockPanel.Dock="Left"
+                                   ExpandDirection="{Binding SelectedItem, ElementName=expandDirection}">
+            <controls:ChapterAccordionItem Header="Item 1" />
+            <controls:ChapterAccordionItem Header="Item 2" />
+            <controls:ChapterAccordionItem Header="Item 3" />
+            <controls:ChapterAccordionItem Header="Item 4" />
+            <controls:ChapterAccordionItem Header="Item 5" />
+            <controls:ChapterAccordionItem Header="Item 6" />
+        </controls:ChapterAccordion>
+
+        <Grid />
+    </DockPanel>
+
+</UserControl>

@@ -42,6 +42,7 @@
                          IsSelected="True" />
             <ListBoxItem x:Name="Collections" Content="Collections" />
             <ListBoxItem x:Name="StatusAndInfo" Content="Status &amp; Info" />
+            <ListBoxItem x:Name="MenusAndToolBars" Content="Menus &amp; ToolBars" />
             <ListBoxItem x:Name="Text" Content="Text" />
             <ListBoxItem x:Name="Layout" Content="Layout" />
         </ListBox>

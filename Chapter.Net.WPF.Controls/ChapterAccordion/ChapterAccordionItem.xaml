@@ -1,0 +1,112 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:controls="clr-namespace:Chapter.Net.WPF.Controls">
+
+    <ControlTemplate x:Key="VerticalItem" TargetType="{x:Type controls:ChapterAccordionItem}">
+        <DockPanel>
+            <ToggleButton x:Name="toggler"
+                          Padding="6,2,8,2"
+                          HorizontalContentAlignment="Stretch"
+                          BorderThickness="0,1"
+                          DockPanel.Dock="Top"
+                          IsChecked="{Binding IsExpanded, RelativeSource={RelativeSource TemplatedParent}}">
+                <DockPanel>
+                    <Path x:Name="arrow"
+                          Width="6"
+                          Height="4"
+                          Data="M 0,0 L 1,1 2,0"
+                          DockPanel.Dock="Right"
+                          RenderTransformOrigin="0.5,0.5"
+                          Stretch="Fill"
+                          Stroke="Black"
+                          StrokeThickness="1" />
+                    <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                      VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                      ContentSource="Header" />
+                </DockPanel>
+            </ToggleButton>
+            <ContentPresenter x:Name="contentPresenter"
+                              Margin="{TemplateBinding Padding}"
+                              Visibility="Collapsed" />
+        </DockPanel>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsExpanded" Value="True">
+                <Setter TargetName="contentPresenter" Property="Visibility" Value="Visible" />
+                <Setter TargetName="arrow" Property="RenderTransform">
+                    <Setter.Value>
+                        <RotateTransform Angle="180" />
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+            <Trigger Property="ExpandDirection" Value="Backward">
+                <Setter TargetName="toggler" Property="DockPanel.Dock" Value="Bottom" />
+                <Setter TargetName="arrow" Property="Data" Value="M 0,1 1,0 2,1" />
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="HorizontalItem" TargetType="{x:Type controls:ChapterAccordionItem}">
+        <DockPanel>
+            <ToggleButton x:Name="toggler"
+                          Padding="2,8,2,6"
+                          VerticalContentAlignment="Stretch"
+                          BorderThickness="1,0"
+                          DockPanel.Dock="Left"
+                          IsChecked="{Binding IsExpanded, RelativeSource={RelativeSource TemplatedParent}}">
+                <DockPanel>
+                    <Path x:Name="arrow"
+                          Width="4"
+                          Height="6"
+                          Data="M 0,0 L 1,1 0,2"
+                          DockPanel.Dock="Top"
+                          RenderTransformOrigin="0.5,0.5"
+                          Stretch="Fill"
+                          Stroke="Black"
+                          StrokeThickness="1" />
+                    <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                      VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                      ContentSource="Header" />
+                </DockPanel>
+            </ToggleButton>
+            <ContentPresenter x:Name="contentPresenter"
+                              Margin="{TemplateBinding Padding}"
+                              Visibility="Collapsed" />
+        </DockPanel>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsExpanded" Value="True">
+                <Setter TargetName="contentPresenter" Property="Visibility" Value="Visible" />
+                <Setter TargetName="arrow" Property="RenderTransform">
+                    <Setter.Value>
+                        <RotateTransform Angle="180" />
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+            <Trigger Property="ExpandDirection" Value="Backward">
+                <Setter TargetName="toggler" Property="DockPanel.Dock" Value="Right" />
+                <Setter TargetName="arrow" Property="Data" Value="M 1,0 0,1 1,2" />
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <Style x:Key="{x:Static controls:ChapterAccordionItem.StyleKey}" TargetType="{x:Type controls:ChapterAccordionItem}">
+        <Setter Property="ExpandDirection" Value="{Binding ExpandDirection, RelativeSource={RelativeSource AncestorType={x:Type controls:ChapterAccordion}}}" />
+        <Setter Property="Orientation" Value="{Binding Orientation, RelativeSource={RelativeSource AncestorType={x:Type controls:ChapterAccordion}}}" />
+        <Setter Property="Padding" Value="2" />
+        <Setter Property="Focusable" Value="False" />
+        <Style.Triggers>
+            <Trigger Property="Orientation" Value="Vertical">
+                <Setter Property="VerticalContentAlignment" Value="Center" />
+                <Setter Property="HorizontalContentAlignment" Value="Left" />
+                <Setter Property="Template" Value="{StaticResource VerticalItem}" />
+            </Trigger>
+            <Trigger Property="Orientation" Value="Horizontal">
+                <Setter Property="VerticalContentAlignment" Value="Bottom" />
+                <Setter Property="HorizontalContentAlignment" Value="Center" />
+                <Setter Property="Template" Value="{StaticResource HorizontalItem}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style BasedOn="{StaticResource {x:Static controls:ChapterAccordionItem.StyleKey}}" TargetType="{x:Type controls:ChapterAccordionItem}" />
+
+</ResourceDictionary>
