@@ -23,6 +23,11 @@ namespace Chapter.Net.WPF.Controls
     public class ChapterBadge : ContentControlBase
     {
         /// <summary>
+        ///     The ChapterBadge style key.
+        /// </summary>
+        public static readonly ComponentResourceKey StyleKey = new ComponentResourceKey(typeof(ChapterBadge), "ChapterBadge");
+
+        /// <summary>
         ///     The Shape dependency property.
         /// </summary>
         public static readonly DependencyProperty ShapeProperty =

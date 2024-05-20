@@ -187,7 +187,7 @@
         </Border>
     </ControlTemplate>
 
-    <Style TargetType="{x:Type controls:BadgeShapePresenter}">
+    <Style x:Key="{x:Static controls:BadgeShapePresenter.StyleKey}" TargetType="{x:Type controls:BadgeShapePresenter}">
         <Setter Property="Focusable" Value="False" />
         <Style.Triggers>
             <Trigger Property="Shape" Value="Circle">
@@ -240,5 +240,7 @@
             </Trigger>
         </Style.Triggers>
     </Style>
+
+    <Style BasedOn="{StaticResource {x:Static controls:BadgeShapePresenter.StyleKey}}" TargetType="{x:Type controls:BadgeShapePresenter}" />
 
 </ResourceDictionary>

@@ -123,7 +123,7 @@
         </Setter>
     </Style>
 
-    <Style TargetType="{x:Type controls:ChapterBadge}">
+    <Style x:Key="{x:Static controls:ChapterBadge.StyleKey}" TargetType="{x:Type controls:ChapterBadge}">
         <Setter Property="Background" Value="Red" />
         <Setter Property="Foreground" Value="White" />
         <Setter Property="CornerRadius" Value="6" />
@@ -193,5 +193,7 @@
             </MultiTrigger>
         </Style.Triggers>
     </Style>
+
+    <Style BasedOn="{StaticResource {x:Static controls:ChapterBadge.StyleKey}}" TargetType="{x:Type controls:ChapterBadge}" />
 
 </ResourceDictionary>
