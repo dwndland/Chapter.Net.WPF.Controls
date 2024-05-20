@@ -7,6 +7,7 @@
         <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterBadge/ChapterBadge.xaml" />
         <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterBrowseTextBox/ChapterBrowseTextBox.xaml" />
         <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterButton/ChapterButton.xaml" />
+        <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterCard/ChapterCard.xaml" />
         <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterCheckBox/ChapterCheckBox.xaml" />
         <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterComboBox/ChapterComboBox.xaml" />
         <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterComboBox/ChapterComboBoxItem.xaml" />

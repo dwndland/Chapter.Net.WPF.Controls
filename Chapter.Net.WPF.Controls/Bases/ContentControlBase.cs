@@ -15,12 +15,28 @@ namespace Chapter.Net.WPF.Controls.Bases
     public abstract class ContentControlBase : ContentControl
     {
         /// <summary>
+        ///     The CornerRadius dependency property.
+        /// </summary>
+        public static readonly DependencyProperty CornerRadiusProperty =
+            DependencyProperty.Register(nameof(CornerRadius), typeof(CornerRadius), typeof(ContentControlBase), new PropertyMetadata(default(CornerRadius)));
+
+        /// <summary>
         ///     Create a new instance of ContentControlBase.
         /// </summary>
         protected ContentControlBase()
         {
             Loaded += OnLoaded;
             IsEnabledChanged += OnIsEnabledChanged;
+        }
+
+        /// <summary>
+        ///     Gets or sets the corner radius.
+        /// </summary>
+        /// <value>Default: default.</value>
+        public CornerRadius CornerRadius
+        {
+            get => (CornerRadius)GetValue(CornerRadiusProperty);
+            set => SetValue(CornerRadiusProperty, value);
         }
 
         /// <summary>
