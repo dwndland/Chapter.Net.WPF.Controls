@@ -1,0 +1,244 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:controls="clr-namespace:Chapter.Net.WPF.Controls">
+
+    <ControlTemplate x:Key="CircleTemplate" TargetType="{x:Type controls:BadgeShapePresenter}">
+        <Border>
+            <Border.Background>
+                <DrawingBrush>
+                    <DrawingBrush.Drawing>
+                        <GeometryDrawing Brush="{Binding Background, RelativeSource={RelativeSource TemplatedParent}}" Geometry="F0M100,50 C100,77.61424 77.61424,100 50,100 C22.38576,100 0,77.61424 0,50 C0,22.38576 22.38576,0 50,0 C77.61424,0 100,22.38576 100,50 z" />
+                    </DrawingBrush.Drawing>
+                </DrawingBrush>
+            </Border.Background>
+            <ContentPresenter Margin="{TemplateBinding Padding}" />
+        </Border>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="DiamondTemplate" TargetType="{x:Type controls:BadgeShapePresenter}">
+        <Border>
+            <Border.Background>
+                <DrawingBrush>
+                    <DrawingBrush.Drawing>
+                        <GeometryDrawing Brush="{Binding Background, RelativeSource={RelativeSource TemplatedParent}}" Geometry="F0M50,0 L99.9986,50 L50,100 L0,50 L50,0 z" />
+                    </DrawingBrush.Drawing>
+                </DrawingBrush>
+            </Border.Background>
+            <ContentPresenter Margin="{TemplateBinding Padding}" />
+        </Border>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="HeartTemplate" TargetType="{x:Type controls:BadgeShapePresenter}">
+        <Border>
+            <Border.Background>
+                <DrawingBrush>
+                    <DrawingBrush.Drawing>
+                        <GeometryDrawing Brush="{Binding Background, RelativeSource={RelativeSource TemplatedParent}}" Geometry="F0M49.99914,14.89725 C60.52528,-3.08532 81.57755,-3.08532 92.1054,5.90597 C102.63154,14.89725 102.63154,32.87983 92.1054,50.86241 C84.73642,64.34848 65.78835,77.83456 49.99914,86.82585 C34.20994,77.83456 15.26187,64.34848 7.8946,50.86241 C-2.63153,32.87983 -2.63153,14.89725 7.8946,5.90597 C18.42074,-3.08532 39.47301,-3.08532 49.99914,14.89725 z" />
+                    </DrawingBrush.Drawing>
+                </DrawingBrush>
+            </Border.Background>
+            <ContentPresenter Margin="{TemplateBinding Padding}" />
+        </Border>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="NoneTemplate" TargetType="{x:Type controls:BadgeShapePresenter}">
+        <ContentPresenter Margin="{TemplateBinding Padding}" />
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="OvalTemplate" TargetType="{x:Type controls:BadgeShapePresenter}">
+        <Border Background="{TemplateBinding Background}" CornerRadius="{TemplateBinding OvalCornerRadius}">
+            <ContentPresenter Margin="{TemplateBinding Padding}" />
+        </Border>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="Polygon5Template" TargetType="{x:Type controls:BadgeShapePresenter}">
+        <Border>
+            <Border.Background>
+                <DrawingBrush>
+                    <DrawingBrush.Drawing>
+                        <GeometryDrawing Brush="{Binding Background, RelativeSource={RelativeSource TemplatedParent}}" Geometry="F0M50,0 L100,36.32767 L80.90167,95.1058 L19.09833,95.1058 L0,36.32767 L50,0 z" />
+                    </DrawingBrush.Drawing>
+                </DrawingBrush>
+            </Border.Background>
+            <ContentPresenter Margin="{TemplateBinding Padding}" />
+        </Border>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="Polygon6Template" TargetType="{x:Type controls:BadgeShapePresenter}">
+        <Border>
+            <Border.Background>
+                <DrawingBrush>
+                    <DrawingBrush.Drawing>
+                        <GeometryDrawing Brush="{Binding Background, RelativeSource={RelativeSource TemplatedParent}}" Geometry="F0M25.00072,0 L75.00014,0.00015 L100,43.30115 L75.00044,86.60201 L24.99986,86.60253 L0,43.30152 L25.00072,0 z" />
+                    </DrawingBrush.Drawing>
+                </DrawingBrush>
+            </Border.Background>
+            <ContentPresenter Margin="{TemplateBinding Padding}" />
+        </Border>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="Polygon7Template" TargetType="{x:Type controls:BadgeShapePresenter}">
+        <Border>
+            <Border.Background>
+                <DrawingBrush>
+                    <DrawingBrush.Drawing>
+                        <GeometryDrawing Brush="{Binding Background, RelativeSource={RelativeSource TemplatedParent}}" Geometry="F0M50,0 L90.09677,19.30964 L100,62.69693 L72.25166,97.49143 L27.74834,97.49143 L0,62.69693 L9.90323,19.30964 L50,0 z" />
+                    </DrawingBrush.Drawing>
+                </DrawingBrush>
+            </Border.Background>
+            <ContentPresenter Margin="{TemplateBinding Padding}" />
+        </Border>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="Polygon8Template" TargetType="{x:Type controls:BadgeShapePresenter}">
+        <Border>
+            <Border.Background>
+                <DrawingBrush>
+                    <DrawingBrush.Drawing>
+                        <GeometryDrawing Brush="{Binding Background, RelativeSource={RelativeSource TemplatedParent}}" Geometry="F0M29.52304,0 L70.87724,0.16554 L100,29.52304 L99.83547,70.87483 L70.47696,100 L29.12447,99.83376 L0,70.47696 L0.16624,29.12447 L29.52304,0 z" />
+                    </DrawingBrush.Drawing>
+                </DrawingBrush>
+            </Border.Background>
+            <ContentPresenter Margin="{TemplateBinding Padding}" />
+        </Border>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="SquareTemplate" TargetType="{x:Type controls:BadgeShapePresenter}">
+        <Border Background="{TemplateBinding Background}" CornerRadius="{TemplateBinding CornerRadius}">
+            <ContentPresenter Margin="{TemplateBinding Padding}" />
+        </Border>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="StarTemplate" TargetType="{x:Type controls:BadgeShapePresenter}">
+        <Border>
+            <Border.Background>
+                <DrawingBrush>
+                    <DrawingBrush.Drawing>
+                        <GeometryDrawing Brush="{Binding Background, RelativeSource={RelativeSource TemplatedParent}}" Geometry="F0M50,0 L61.80291,36.32763 L100,36.32763 L69.09854,58.77852 L80.90146,95.10615 L50,72.65526 L19.09854,95.10615 L30.90146,58.77852 L0,36.32763 L38.1955,36.32763 L50,0 z" />
+                    </DrawingBrush.Drawing>
+                </DrawingBrush>
+            </Border.Background>
+            <ContentPresenter Margin="{TemplateBinding Padding}" />
+        </Border>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="TriangleTemplate" TargetType="{x:Type controls:BadgeShapePresenter}">
+        <Border>
+            <Border.Background>
+                <DrawingBrush>
+                    <DrawingBrush.Drawing>
+                        <GeometryDrawing Brush="{Binding Background, RelativeSource={RelativeSource TemplatedParent}}" Geometry="F0M50,0 L100,100 L0,100 L50,0 z" />
+                    </DrawingBrush.Drawing>
+                </DrawingBrush>
+            </Border.Background>
+            <ContentPresenter Margin="{TemplateBinding Padding}" />
+        </Border>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="TriangleBottomLeftTemplate" TargetType="{x:Type controls:BadgeShapePresenter}">
+        <Border>
+            <Border.Background>
+                <DrawingBrush>
+                    <DrawingBrush.Drawing>
+                        <GeometryDrawing Brush="{Binding Background, RelativeSource={RelativeSource TemplatedParent}}" Geometry="F0M0,0 L100,100 L0,100 L0,0 z" />
+                    </DrawingBrush.Drawing>
+                </DrawingBrush>
+            </Border.Background>
+            <ContentPresenter Margin="{TemplateBinding Padding}" />
+        </Border>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="TriangleBottomRightTemplate" TargetType="{x:Type controls:BadgeShapePresenter}">
+        <Border>
+            <Border.Background>
+                <DrawingBrush>
+                    <DrawingBrush.Drawing>
+                        <GeometryDrawing Brush="{Binding Background, RelativeSource={RelativeSource TemplatedParent}}" Geometry="F0M0,100 L100,0 L100,100 L0,100 z" />
+                    </DrawingBrush.Drawing>
+                </DrawingBrush>
+            </Border.Background>
+            <ContentPresenter Margin="{TemplateBinding Padding}" />
+        </Border>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="TriangleTopLeftTemplate" TargetType="{x:Type controls:BadgeShapePresenter}">
+        <Border>
+            <Border.Background>
+                <DrawingBrush>
+                    <DrawingBrush.Drawing>
+                        <GeometryDrawing Brush="{Binding Background, RelativeSource={RelativeSource TemplatedParent}}" Geometry="F0M100,0 L0,100 L0,0 L100,0 z" />
+                    </DrawingBrush.Drawing>
+                </DrawingBrush>
+            </Border.Background>
+            <ContentPresenter Margin="{TemplateBinding Padding}" />
+        </Border>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="TriangleTopRightTemplate" TargetType="{x:Type controls:BadgeShapePresenter}">
+        <Border>
+            <Border.Background>
+                <DrawingBrush>
+                    <DrawingBrush.Drawing>
+                        <GeometryDrawing Brush="{Binding Background, RelativeSource={RelativeSource TemplatedParent}}" Geometry="F0M100,100 L0,0 L100,0 L100,100 z" />
+                    </DrawingBrush.Drawing>
+                </DrawingBrush>
+            </Border.Background>
+            <ContentPresenter Margin="{TemplateBinding Padding}" />
+        </Border>
+    </ControlTemplate>
+
+    <Style TargetType="{x:Type controls:BadgeShapePresenter}">
+        <Setter Property="Focusable" Value="False" />
+        <Style.Triggers>
+            <Trigger Property="Shape" Value="Circle">
+                <Setter Property="Template" Value="{StaticResource CircleTemplate}" />
+            </Trigger>
+            <Trigger Property="Shape" Value="Diamond">
+                <Setter Property="Template" Value="{StaticResource DiamondTemplate}" />
+            </Trigger>
+            <Trigger Property="Shape" Value="Heart">
+                <Setter Property="Template" Value="{StaticResource HeartTemplate}" />
+            </Trigger>
+            <Trigger Property="Shape" Value="None">
+                <Setter Property="Template" Value="{StaticResource NoneTemplate}" />
+            </Trigger>
+            <Trigger Property="Shape" Value="Oval">
+                <Setter Property="Template" Value="{StaticResource OvalTemplate}" />
+            </Trigger>
+            <Trigger Property="Shape" Value="Polygon5">
+                <Setter Property="Template" Value="{StaticResource Polygon5Template}" />
+            </Trigger>
+            <Trigger Property="Shape" Value="Polygon6">
+                <Setter Property="Template" Value="{StaticResource Polygon6Template}" />
+            </Trigger>
+            <Trigger Property="Shape" Value="Polygon7">
+                <Setter Property="Template" Value="{StaticResource Polygon7Template}" />
+            </Trigger>
+            <Trigger Property="Shape" Value="Polygon8">
+                <Setter Property="Template" Value="{StaticResource Polygon8Template}" />
+            </Trigger>
+            <Trigger Property="Shape" Value="Square">
+                <Setter Property="Template" Value="{StaticResource SquareTemplate}" />
+            </Trigger>
+            <Trigger Property="Shape" Value="Star">
+                <Setter Property="Template" Value="{StaticResource StarTemplate}" />
+            </Trigger>
+            <Trigger Property="Shape" Value="Triangle">
+                <Setter Property="Template" Value="{StaticResource TriangleTemplate}" />
+            </Trigger>
+            <Trigger Property="Shape" Value="TriangleBottomLeft">
+                <Setter Property="Template" Value="{StaticResource TriangleBottomLeftTemplate}" />
+            </Trigger>
+            <Trigger Property="Shape" Value="TriangleBottomRight">
+                <Setter Property="Template" Value="{StaticResource TriangleBottomRightTemplate}" />
+            </Trigger>
+            <Trigger Property="Shape" Value="TriangleTopLeft">
+                <Setter Property="Template" Value="{StaticResource TriangleTopLeftTemplate}" />
+            </Trigger>
+            <Trigger Property="Shape" Value="TriangleTopRight">
+                <Setter Property="Template" Value="{StaticResource TriangleTopRightTemplate}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+</ResourceDictionary>

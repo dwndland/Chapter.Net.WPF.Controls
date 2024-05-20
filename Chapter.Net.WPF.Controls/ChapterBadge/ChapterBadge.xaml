@@ -1,0 +1,197 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:controls="clr-namespace:Chapter.Net.WPF.Controls">
+
+    <Style x:Key="BlockStyle" TargetType="{x:Type Grid}">
+        <Setter Property="Focusable" Value="False" />
+        <Setter Property="Background">
+            <Setter.Value>
+                <DrawingBrush>
+                    <DrawingBrush.Drawing>
+                        <DrawingGroup>
+                            <GeometryDrawing Brush="Transparent" Geometry="F0M100,50 C100,77.61424 77.61424,100 50,100 C22.38576,100 0,77.61424 0,50 C0,22.38576 22.38576,0 50,0 C77.61424,0 100,22.38576 100,50 z" />
+                            <GeometryDrawing Geometry="F0M80.09301,49.89998 C80.09301,66.59083 66.56241,80.12143 49.87156,80.12143 C33.18072,80.12143 19.65011,66.59083 19.65011,49.89998 C19.65011,33.20914 33.18072,19.67853 49.87156,19.67853 C66.56241,19.67853 80.09301,33.20914 80.09301,49.89998 z">
+                                <GeometryDrawing.Pen>
+                                    <Pen Brush="{Binding Foreground, RelativeSource={RelativeSource TemplatedParent}}"
+                                         EndLineCap="Round"
+                                         LineJoin="Round"
+                                         StartLineCap="Round"
+                                         Thickness="5.79007" />
+                                </GeometryDrawing.Pen>
+                            </GeometryDrawing>
+                            <GeometryDrawing Brush="{Binding Foreground, RelativeSource={RelativeSource TemplatedParent}}" Geometry="F0M27.31967,32.83763 L32.51268,27.64462 L72.68806,67.82 L67.49505,73.01301 z" />
+                        </DrawingGroup>
+                    </DrawingBrush.Drawing>
+                </DrawingBrush>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="CancelStyle" TargetType="{x:Type Grid}">
+        <Setter Property="Focusable" Value="False" />
+        <Setter Property="Background">
+            <Setter.Value>
+                <DrawingBrush>
+                    <DrawingBrush.Drawing>
+                        <DrawingGroup>
+                            <GeometryDrawing Brush="Transparent" Geometry="F0M100,50 C100,77.61424 77.61424,100 50,100 C22.38576,100 0,77.61424 0,50 C0,22.38576 22.38576,0 50,0 C77.61424,0 100,22.38576 100,50 z" />
+                            <GeometryDrawing Brush="{Binding Foreground, RelativeSource={RelativeSource TemplatedParent}}" Geometry="F0M26.63394,32.1519 L31.82695,26.95889 L72.68801,67.81995 L67.495,73.01296 z" />
+                            <GeometryDrawing Brush="{Binding Foreground, RelativeSource={RelativeSource TemplatedParent}}" Geometry="F0M67.49439,26.95874 L72.6874,32.15175 L31.82633,73.01282 L26.63333,67.81981 z" />
+                        </DrawingGroup>
+                    </DrawingBrush.Drawing>
+                </DrawingBrush>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="CheckStyle" TargetType="{x:Type Grid}">
+        <Setter Property="Focusable" Value="False" />
+    </Style>
+
+    <Style x:Key="MinusStyle" TargetType="{x:Type Grid}">
+        <Setter Property="Focusable" Value="False" />
+        <Setter Property="Background">
+            <Setter.Value>
+                <DrawingBrush>
+                    <DrawingBrush.Drawing>
+                        <DrawingGroup>
+                            <GeometryDrawing Brush="Transparent" Geometry="F0M100,50 C100,77.61424 77.61424,100 50,100 C22.38576,100 0,77.61424 0,50 C0,22.38576 22.38576,0 50,0 C77.61424,0 100,22.38576 100,50 z" />
+                            <GeometryDrawing Brush="{Binding Foreground, RelativeSource={RelativeSource TemplatedParent}}" Geometry="F0M73.9826,46.31343 L73.9826,53.65746 L26.02482,53.65746 L26.02482,46.31343 z" />
+                        </DrawingGroup>
+                    </DrawingBrush.Drawing>
+                </DrawingBrush>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="PlusStyle" TargetType="{x:Type Grid}">
+        <Setter Property="Focusable" Value="False" />
+        <Setter Property="Background">
+            <Setter.Value>
+                <DrawingBrush>
+                    <DrawingBrush.Drawing>
+                        <DrawingGroup>
+                            <GeometryDrawing Brush="Transparent" Geometry="F0M100,50 C100,77.61424 77.61424,100 50,100 C22.38576,100 0,77.61424 0,50 C0,22.38576 22.38576,0 50,0 C77.61424,0 100,22.38576 100,50 z" />
+                            <GeometryDrawing Brush="{Binding Foreground, RelativeSource={RelativeSource TemplatedParent}}" Geometry="F0M73.9826,46.31343 L73.9826,53.65746 L26.02482,53.65746 L26.02482,46.31343 z" />
+                            <GeometryDrawing Brush="{Binding Foreground, RelativeSource={RelativeSource TemplatedParent}}" Geometry="F0M53.67637,73.96445 L46.33235,73.96445 L46.33235,26.00667 L53.67637,26.00667 z" />
+                        </DrawingGroup>
+                    </DrawingBrush.Drawing>
+                </DrawingBrush>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="TimeStyle" TargetType="{x:Type Grid}">
+        <Setter Property="Focusable" Value="False" />
+        <Setter Property="Background">
+            <Setter.Value>
+                <DrawingBrush>
+                    <DrawingBrush.Drawing>
+                        <DrawingGroup>
+                            <GeometryDrawing Brush="Transparent" Geometry="F0M100,50 C100,77.61424 77.61424,100 50,100 C22.38576,100 0,77.61424 0,50 C0,22.38576 22.38576,0 50,0 C77.61424,0 100,22.38576 100,50 z" />
+                            <GeometryDrawing Geometry="F0M77.80717,49.89994 C77.80717,65.3284 65.29993,77.83564 49.87147,77.83564 C34.44301,77.83564 21.93577,65.3284 21.93577,49.89994 C21.93577,34.47147 34.44301,21.96424 49.87147,21.96424 C65.29993,21.96424 77.80717,34.47147 77.80717,49.89994 z">
+                                <GeometryDrawing.Pen>
+                                    <Pen Brush="{Binding Foreground, RelativeSource={RelativeSource TemplatedParent}}"
+                                         EndLineCap="Round"
+                                         LineJoin="Round"
+                                         StartLineCap="Round"
+                                         Thickness="5.78905" />
+                                </GeometryDrawing.Pen>
+                            </GeometryDrawing>
+                            <GeometryDrawing Brush="{Binding Foreground, RelativeSource={RelativeSource TemplatedParent}}" Geometry="F0M64.35785,47.80918 L64.35785,53.32452 L47.94287,53.32452 L47.94287,47.80918 z" />
+                            <GeometryDrawing Brush="{Binding Foreground, RelativeSource={RelativeSource TemplatedParent}}" Geometry="F0M47.52654,31.69012 L53.04188,31.69012 L53.04188,53.3506 L47.52654,53.3506 z" />
+                        </DrawingGroup>
+                    </DrawingBrush.Drawing>
+                </DrawingBrush>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="WarningStyle" TargetType="{x:Type Grid}">
+        <Setter Property="Focusable" Value="False" />
+        <Setter Property="Background">
+            <Setter.Value>
+                <DrawingBrush>
+                    <DrawingBrush.Drawing>
+                        <DrawingGroup>
+                            <GeometryDrawing Brush="Transparent" Geometry="F0M99.99999,50 C99.99999,77.61423 77.61423,99.99999 49.99999,99.99999 C22.38576,99.99999 0,77.61423 0,50 C0,22.38576 22.38576,0 49.99999,0 C77.61423,0 99.99999,22.38576 99.99999,50 z" />
+                            <GeometryDrawing Brush="{Binding Foreground, RelativeSource={RelativeSource TemplatedParent}}" Geometry="F1M44.91412,70.0546 L53.14733,70.0546 L53.14733,78.20825 L44.91412,78.20825 L44.91412,70.0546 z M44.59593,19.89967 L53.46552,19.89967 L53.46552,32.8262 L51.39727,63.73054 L46.7835,63.73054 L44.59593,32.8262 L44.59593,19.89967 z" />
+                        </DrawingGroup>
+                    </DrawingBrush.Drawing>
+                </DrawingBrush>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="{x:Type controls:ChapterBadge}">
+        <Setter Property="Background" Value="Red" />
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="CornerRadius" Value="6" />
+        <Setter Property="Padding" Value="6,1" />
+        <Setter Property="Focusable" Value="False" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type controls:ChapterBadge}">
+                    <controls:BadgeShapePresenter Padding="{TemplateBinding Padding}"
+                                                  Background="{TemplateBinding Background}"
+                                                  CornerRadius="{TemplateBinding CornerRadius}"
+                                                  OvalCornerRadius="{TemplateBinding OvalCornerRadius}"
+                                                  Shape="{TemplateBinding Shape}">
+                        <Grid x:Name="content">
+                            <TextBlock x:Name="PART_NumberPresenter"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"
+                                       Visibility="Collapsed" />
+                            <ContentPresenter x:Name="contentPresenter" Visibility="Collapsed" />
+                        </Grid>
+                    </controls:BadgeShapePresenter>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Variant" Value="Block">
+                            <Setter Property="Padding" Value="0" />
+                            <Setter TargetName="content" Property="Style" Value="{StaticResource BlockStyle}" />
+                        </Trigger>
+                        <Trigger Property="Variant" Value="Cancel">
+                            <Setter Property="Padding" Value="0" />
+                            <Setter TargetName="content" Property="Style" Value="{StaticResource CancelStyle}" />
+                        </Trigger>
+                        <Trigger Property="Variant" Value="Check">
+                            <Setter Property="Padding" Value="0" />
+                            <Setter TargetName="content" Property="Style" Value="{StaticResource CheckStyle}" />
+                        </Trigger>
+                        <Trigger Property="Variant" Value="Content">
+                            <Setter TargetName="contentPresenter" Property="Visibility" Value="Visible" />
+                        </Trigger>
+                        <Trigger Property="Variant" Value="Minus">
+                            <Setter Property="Padding" Value="0" />
+                            <Setter TargetName="content" Property="Style" Value="{StaticResource MinusStyle}" />
+                        </Trigger>
+                        <Trigger Property="Variant" Value="Number">
+                            <Setter TargetName="PART_NumberPresenter" Property="Visibility" Value="Visible" />
+                        </Trigger>
+                        <Trigger Property="Variant" Value="Plus">
+                            <Setter Property="Padding" Value="0" />
+                            <Setter TargetName="content" Property="Style" Value="{StaticResource PlusStyle}" />
+                        </Trigger>
+                        <Trigger Property="Variant" Value="Time">
+                            <Setter Property="Padding" Value="0" />
+                            <Setter TargetName="content" Property="Style" Value="{StaticResource TimeStyle}" />
+                        </Trigger>
+                        <Trigger Property="Variant" Value="Warning">
+                            <Setter TargetName="content" Property="Style" Value="{StaticResource WarningStyle}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="HideOnZero" Value="True" />
+                    <Condition Property="Number" Value="0" />
+                </MultiTrigger.Conditions>
+                <Setter Property="Visibility" Value="Collapsed" />
+            </MultiTrigger>
+        </Style.Triggers>
+    </Style>
+
+</ResourceDictionary>

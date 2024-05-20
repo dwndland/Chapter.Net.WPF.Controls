@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Added
 - Added ChapterCheckBox which is a regular check box but with a build in header and footer.
+- Added ChaperBadge which allows to attach a notification icon to any control.
 ### Supported .Net Versions
 - .Net Core 3.0
 - .Net Framework 4.5
