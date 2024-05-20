@@ -20,6 +20,7 @@ namespace Chapter.Net.WPF.Controls.Bases
         protected ItemsControlBase()
         {
             Loaded += OnLoaded;
+            IsEnabledChanged += OnIsEnabledChanged;
         }
 
         /// <summary>
@@ -28,6 +29,15 @@ namespace Chapter.Net.WPF.Controls.Bases
         /// <param name="sender">The loaded checkbox.</param>
         /// <param name="e">The loaded event parameter.</param>
         protected virtual void OnLoaded(object sender, RoutedEventArgs e)
+        {
+        }
+
+        /// <summary>
+        ///     Callback when the control IsEnabled got changed.
+        /// </summary>
+        /// <param name="sender">The checkbox.</param>
+        /// <param name="e">The IsEnabledChanged event parameter.</param>
+        protected virtual void OnIsEnabledChanged(object sender, DependencyPropertyChangedEventArgs e)
         {
         }
     }
