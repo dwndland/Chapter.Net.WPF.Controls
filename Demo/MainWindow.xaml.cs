@@ -63,10 +63,11 @@ public partial class MainWindow : INotifyPropertyChanged
 
         _menusAndToolBars =
         [
-            new ChapterAccordionControl()
+            new ChapterAccordionControl(),
+            new ChapterNavigationViewControl()
         ];
 
-        Controls = _basicInput;
+        Controls = _menusAndToolBars;
 
         DataContext = this;
     }
