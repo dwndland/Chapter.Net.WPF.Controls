@@ -42,10 +42,10 @@
                             <Setter TargetName="contentControl" Property="Visibility" Value="Visible" />
                         </Trigger>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Background" Value="LightGray" />
+                            <Setter Property="Background" Value="#BEE6FD" />
                         </Trigger>
                         <Trigger Property="IsPressed" Value="True">
-                            <Setter Property="Background" Value="Gray" />
+                            <Setter Property="Background" Value="#C4E5F6" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

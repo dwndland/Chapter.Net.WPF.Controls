@@ -19,7 +19,7 @@
                         <Border x:Name="sideBar"
                                 Grid.Column="0"
                                 Grid.ColumnSpan="2"
-                                Background="AliceBlue" />
+                                Background="#F5F5F5" />
 
                         <controls:ChapterNavigationBurgerButton x:Name="toggleButton"
                                                                 Grid.Column="0"
