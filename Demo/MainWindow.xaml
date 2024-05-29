@@ -1,10 +1,10 @@
 ﻿<Window x:Class="Demo.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:controls="Chapter.Net.WPF.Controls"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:demo="clr-namespace:Demo"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:controls="Chapter.Net.WPF.Controls"
         Title="Chapter.WPF.Controls Demo"
         Width="1000"
         Height="700"
@@ -27,11 +27,13 @@
         </Style>
     </Window.Resources>
 
-    <controls:ChapterNavigationView>
-        <Button Content="Content" />
+    <controls:ChapterNavigationView DisplayMode="{Binding SelectedItem, ElementName=displayMode}">
+        <Button>
+            <controls:ChapterComboBox x:Name="displayMode"
+                                      EnumType="{x:Type controls:NavigationDisplayMode}"
+                                      SelectedItem="{x:Static controls:NavigationDisplayMode.Left}" />
+        </Button>
     </controls:ChapterNavigationView>
-
-
 
     <!--<DockPanel>
         <ListBox Background="Transparent"

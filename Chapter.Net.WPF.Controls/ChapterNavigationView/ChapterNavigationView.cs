@@ -7,6 +7,7 @@
 using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 using System.Windows.Markup;
 
 // ReSharper disable once CheckNamespace
@@ -16,6 +17,7 @@ namespace Chapter.Net.WPF.Controls
     /// <summary>
     ///     A burger menu with items to navigate with.
     /// </summary>
+    [TemplatePart(Name = "PART_ContentPresenter", Type = typeof(FrameworkElement))]
     [ContentProperty(nameof(Content))]
     public class ChapterNavigationView : ComboBox
     {
@@ -77,6 +79,20 @@ namespace Chapter.Net.WPF.Controls
         {
             get => GetValue(ContentProperty);
             set => SetValue(ContentProperty, value);
+        }
+
+        /// <inheritdoc />
+        public override void OnApplyTemplate()
+        {
+            base.OnApplyTemplate();
+
+            if (GetTemplateChild("PART_ContentPresenter") is FrameworkElement contentPresenter)
+                contentPresenter.PreviewMouseLeftButtonDown += OnContentClick;
+        }
+
+        private void OnContentClick(object sender, MouseButtonEventArgs e)
+        {
+            SetCurrentValue(IsDropDownOpenProperty, false);
         }
     }
 }

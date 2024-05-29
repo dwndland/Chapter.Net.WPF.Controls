@@ -14,7 +14,7 @@
                             <ColumnDefinition />
                         </Grid.ColumnDefinitions>
 
-                        <ContentPresenter x:Name="content" Grid.Column="2" />
+                        <ContentPresenter x:Name="PART_ContentPresenter" Grid.Column="2" />
 
                         <Border x:Name="sideBar"
                                 Grid.Column="0"
@@ -28,12 +28,62 @@
                                       Margin="6"
                                       VerticalAlignment="Top"
                                       IsChecked="{Binding IsExpanded, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" />
-
                     </Grid>
 
                     <ControlTemplate.Triggers>
-                        <Trigger Property="IsExpanded" Value="True">
-                            <Trigger.EnterActions>
+                        <Trigger Property="DisplayMode" Value="LeftCompact">
+                            <Setter TargetName="PART_ContentPresenter" Property="Grid.Column" Value="1" />
+                            <Setter TargetName="PART_ContentPresenter" Property="Grid.ColumnSpan" Value="2" />
+                            <Setter TargetName="toggleButton" Property="IsChecked" Value="{Binding IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" />
+                        </Trigger>
+
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="DisplayMode" Value="LeftCompact" />
+                                <Condition Property="IsDropDownOpen" Value="True" />
+                            </MultiTrigger.Conditions>
+                            <MultiTrigger.EnterActions>
+                                <BeginStoryboard Name="PopupSlideIn">
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="extendColumn"
+                                                         Storyboard.TargetProperty="MinWidth"
+                                                         From="0"
+                                                         To="210"
+                                                         Duration="0:0:0.150" />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </MultiTrigger.EnterActions>
+                            <MultiTrigger.ExitActions>
+                                <RemoveStoryboard BeginStoryboardName="PopupSlideIn" />
+                            </MultiTrigger.ExitActions>
+                        </MultiTrigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="DisplayMode" Value="LeftCompact" />
+                                <Condition Property="IsDropDownOpen" Value="False" />
+                            </MultiTrigger.Conditions>
+                            <MultiTrigger.EnterActions>
+                                <BeginStoryboard Name="PopupSlideOut">
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="extendColumn"
+                                                         Storyboard.TargetProperty="MinWidth"
+                                                         From="210"
+                                                         To="0"
+                                                         Duration="0:0:0.150" />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </MultiTrigger.EnterActions>
+                            <MultiTrigger.ExitActions>
+                                <RemoveStoryboard BeginStoryboardName="PopupSlideOut" />
+                            </MultiTrigger.ExitActions>
+                        </MultiTrigger>
+
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="DisplayMode" Value="Left" />
+                                <Condition Property="IsExpanded" Value="True" />
+                            </MultiTrigger.Conditions>
+                            <MultiTrigger.EnterActions>
                                 <BeginStoryboard Name="LeftSlideIn">
                                     <Storyboard>
                                         <DoubleAnimation Storyboard.TargetName="extendColumn"
@@ -43,13 +93,17 @@
                                                          Duration="0:0:0.150" />
                                     </Storyboard>
                                 </BeginStoryboard>
-                            </Trigger.EnterActions>
-                            <Trigger.ExitActions>
+                            </MultiTrigger.EnterActions>
+                            <MultiTrigger.ExitActions>
                                 <RemoveStoryboard BeginStoryboardName="LeftSlideIn" />
-                            </Trigger.ExitActions>
-                        </Trigger>
-                        <Trigger Property="IsExpanded" Value="False">
-                            <Trigger.EnterActions>
+                            </MultiTrigger.ExitActions>
+                        </MultiTrigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="DisplayMode" Value="Left" />
+                                <Condition Property="IsExpanded" Value="False" />
+                            </MultiTrigger.Conditions>
+                            <MultiTrigger.EnterActions>
                                 <BeginStoryboard Name="LeftSlideOut">
                                     <Storyboard>
                                         <DoubleAnimation Storyboard.TargetName="extendColumn"
@@ -59,11 +113,11 @@
                                                          Duration="0:0:0.150" />
                                     </Storyboard>
                                 </BeginStoryboard>
-                            </Trigger.EnterActions>
-                            <Trigger.ExitActions>
+                            </MultiTrigger.EnterActions>
+                            <MultiTrigger.ExitActions>
                                 <RemoveStoryboard BeginStoryboardName="LeftSlideOut" />
-                            </Trigger.ExitActions>
-                        </Trigger>
+                            </MultiTrigger.ExitActions>
+                        </MultiTrigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
