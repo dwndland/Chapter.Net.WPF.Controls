@@ -32,16 +32,16 @@
                     </Grid>
 
                     <ControlTemplate.Triggers>
-                        <Trigger Property="DisplayMode" Value="Left">
+                        <Trigger Property="CurrentDisplayMode" Value="Left">
                             <Setter TargetName="leftColumn" Property="MinWidth" Value="40" />
                         </Trigger>
-                        <Trigger Property="DisplayMode" Value="LeftCompact">
+                        <Trigger Property="CurrentDisplayMode" Value="LeftCompact">
                             <Setter TargetName="leftColumn" Property="MinWidth" Value="40" />
                             <Setter TargetName="PART_ContentPresenter" Property="Grid.Column" Value="1" />
                             <Setter TargetName="PART_ContentPresenter" Property="Grid.ColumnSpan" Value="2" />
                             <Setter TargetName="toggleButton" Property="IsChecked" Value="{Binding IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" />
                         </Trigger>
-                        <Trigger Property="DisplayMode" Value="LeftMinimal">
+                        <Trigger Property="CurrentDisplayMode" Value="LeftMinimal">
                             <Setter TargetName="PART_ContentPresenter" Property="Grid.Column" Value="1" />
                             <Setter TargetName="PART_ContentPresenter" Property="Grid.ColumnSpan" Value="2" />
                             <Setter TargetName="toggleButton" Property="Grid.ColumnSpan" Value="3" />
@@ -51,7 +51,7 @@
 
                         <MultiTrigger>
                             <MultiTrigger.Conditions>
-                                <Condition Property="DisplayMode" Value="Left" />
+                                <Condition Property="CurrentDisplayMode" Value="Left" />
                                 <Condition Property="IsExpanded" Value="True" />
                             </MultiTrigger.Conditions>
                             <MultiTrigger.EnterActions>
@@ -71,7 +71,7 @@
                         </MultiTrigger>
                         <MultiTrigger>
                             <MultiTrigger.Conditions>
-                                <Condition Property="DisplayMode" Value="Left" />
+                                <Condition Property="CurrentDisplayMode" Value="Left" />
                                 <Condition Property="IsExpanded" Value="False" />
                             </MultiTrigger.Conditions>
                             <MultiTrigger.EnterActions>
@@ -92,7 +92,7 @@
 
                         <MultiTrigger>
                             <MultiTrigger.Conditions>
-                                <Condition Property="DisplayMode" Value="LeftCompact" />
+                                <Condition Property="CurrentDisplayMode" Value="LeftCompact" />
                                 <Condition Property="IsDropDownOpen" Value="True" />
                             </MultiTrigger.Conditions>
                             <MultiTrigger.EnterActions>
@@ -112,7 +112,7 @@
                         </MultiTrigger>
                         <MultiTrigger>
                             <MultiTrigger.Conditions>
-                                <Condition Property="DisplayMode" Value="LeftCompact" />
+                                <Condition Property="CurrentDisplayMode" Value="LeftCompact" />
                                 <Condition Property="IsDropDownOpen" Value="False" />
                             </MultiTrigger.Conditions>
                             <MultiTrigger.EnterActions>
@@ -133,7 +133,7 @@
 
                         <MultiTrigger>
                             <MultiTrigger.Conditions>
-                                <Condition Property="DisplayMode" Value="LeftMinimal" />
+                                <Condition Property="CurrentDisplayMode" Value="LeftMinimal" />
                                 <Condition Property="IsDropDownOpen" Value="True" />
                             </MultiTrigger.Conditions>
                             <MultiTrigger.EnterActions>
@@ -153,7 +153,7 @@
                         </MultiTrigger>
                         <MultiTrigger>
                             <MultiTrigger.Conditions>
-                                <Condition Property="DisplayMode" Value="LeftMinimal" />
+                                <Condition Property="CurrentDisplayMode" Value="LeftMinimal" />
                                 <Condition Property="IsDropDownOpen" Value="False" />
                             </MultiTrigger.Conditions>
                             <MultiTrigger.EnterActions>

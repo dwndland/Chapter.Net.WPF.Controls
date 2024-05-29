@@ -26,7 +26,7 @@ namespace Chapter.Net.WPF.Controls
         ///     The DisplayMode dependency property.
         /// </summary>
         public static readonly DependencyProperty DisplayModeProperty =
-            DependencyProperty.Register(nameof(DisplayMode), typeof(NavigationDisplayMode), typeof(ChapterNavigationView), new PropertyMetadata(NavigationDisplayMode.Left));
+            DependencyProperty.Register(nameof(DisplayMode), typeof(NavigationDisplayMode), typeof(ChapterNavigationView), new PropertyMetadata(NavigationDisplayMode.Left, OnDisplayModeChanged));
 
         /// <summary>
         ///     The IsExpanded dependency property.
@@ -39,6 +39,12 @@ namespace Chapter.Net.WPF.Controls
         /// </summary>
         public static readonly DependencyProperty ContentProperty =
             DependencyProperty.Register(nameof(Content), typeof(object), typeof(ChapterNavigationView), new PropertyMetadata(null));
+
+        /// <summary>
+        ///     The CurrentDisplayMode dependency property.
+        /// </summary>
+        internal static readonly DependencyProperty CurrentDisplayModeProperty =
+            DependencyProperty.Register(nameof(CurrentDisplayMode), typeof(NavigationDisplayMode), typeof(ChapterNavigationView), new PropertyMetadata(NavigationDisplayMode.Left));
 
         static ChapterNavigationView()
         {
@@ -80,6 +86,24 @@ namespace Chapter.Net.WPF.Controls
         {
             get => GetValue(ContentProperty);
             set => SetValue(ContentProperty, value);
+        }
+
+        /// <summary>
+        ///     Gets or sets the current display mode which gets controlled by the DisplayMode.
+        /// </summary>
+        /// <value>Default: NavigationDisplayMode.Left.</value>
+        [DefaultValue(NavigationDisplayMode.Left)]
+        internal NavigationDisplayMode CurrentDisplayMode
+        {
+            get => (NavigationDisplayMode)GetValue(CurrentDisplayModeProperty);
+            set => SetValue(CurrentDisplayModeProperty, value);
+        }
+
+        private static void OnDisplayModeChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var control = (ChapterNavigationView)d;
+            if (control.DisplayMode != NavigationDisplayMode.Auto)
+                control.SetCurrentValue(CurrentDisplayModeProperty, control.DisplayMode);
         }
 
         /// <inheritdoc />
