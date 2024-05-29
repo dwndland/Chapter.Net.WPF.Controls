@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:demo="clr-namespace:Demo"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:controls="Chapter.Net.WPF.Controls"
         Title="Chapter.WPF.Controls Demo"
         Width="1000"
         Height="700"
@@ -26,7 +27,13 @@
         </Style>
     </Window.Resources>
 
-    <DockPanel>
+    <controls:ChapterNavigationView>
+        <Button Content="Content" />
+    </controls:ChapterNavigationView>
+
+
+
+    <!--<DockPanel>
         <ListBox Background="Transparent"
                  BorderThickness="0,0,0,1"
                  DockPanel.Dock="Top"
@@ -63,6 +70,6 @@
         </ListBox>
 
         <ContentControl Content="{Binding SelectedItem, ElementName=items}" />
-    </DockPanel>
+    </DockPanel>-->
 
 </Window>
