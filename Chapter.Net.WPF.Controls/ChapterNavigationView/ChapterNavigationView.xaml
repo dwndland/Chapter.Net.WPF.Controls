@@ -21,14 +21,14 @@
                                 Grid.ColumnSpan="2"
                                 Background="AliceBlue" />
 
-                        <ToggleButton x:Name="toggleButton"
-                                      Grid.Column="0"
-                                      Grid.ColumnSpan="2"
-                                      Height="28"
-                                      MinWidth="28"
-                                      Margin="6"
-                                      VerticalAlignment="Top"
-                                      IsChecked="{Binding IsExpanded, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" />
+                        <controls:ChapterNavigationBurgerButton x:Name="toggleButton"
+                                                                Grid.Column="0"
+                                                                Grid.ColumnSpan="2"
+                                                                Margin="6"
+                                                                VerticalAlignment="Top"
+                                                                IsChecked="{Binding IsExpanded, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}">
+                            <ContentPresenter ContentSource="Title" />
+                        </controls:ChapterNavigationBurgerButton>
                     </Grid>
 
                     <ControlTemplate.Triggers>

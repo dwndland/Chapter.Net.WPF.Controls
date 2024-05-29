@@ -27,7 +27,7 @@
         </Style>
     </Window.Resources>
 
-    <controls:ChapterNavigationView DisplayMode="{Binding SelectedItem, ElementName=displayMode}">
+    <controls:ChapterNavigationView Title="ChapterNavigationView" DisplayMode="{Binding SelectedItem, ElementName=displayMode}">
         <Button>
             <controls:ChapterComboBox x:Name="displayMode"
                                       EnumType="{x:Type controls:NavigationDisplayMode}"

@@ -41,6 +41,12 @@ namespace Chapter.Net.WPF.Controls
             DependencyProperty.Register(nameof(Content), typeof(object), typeof(ChapterNavigationView), new PropertyMetadata(null));
 
         /// <summary>
+        ///     The Title dependency property.
+        /// </summary>
+        public static readonly DependencyProperty TitleProperty =
+            DependencyProperty.Register(nameof(Title), typeof(object), typeof(ChapterNavigationView), new PropertyMetadata(null));
+
+        /// <summary>
         ///     The CurrentDisplayMode dependency property.
         /// </summary>
         internal static readonly DependencyProperty CurrentDisplayModeProperty =
@@ -86,6 +92,17 @@ namespace Chapter.Net.WPF.Controls
         {
             get => GetValue(ContentProperty);
             set => SetValue(ContentProperty, value);
+        }
+
+        /// <summary>
+        ///     Gets or sets the title control shown within the burger button.
+        /// </summary>
+        /// <value>Default: null</value>
+        [DefaultValue(null)]
+        public object Title
+        {
+            get => GetValue(TitleProperty);
+            set => SetValue(TitleProperty, value);
         }
 
         /// <summary>
