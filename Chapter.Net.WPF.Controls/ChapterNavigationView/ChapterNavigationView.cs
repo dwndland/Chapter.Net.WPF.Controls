@@ -9,6 +9,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Markup;
+using Chapter.Net.WPF.Controls.Bases;
 
 // ReSharper disable once CheckNamespace
 
@@ -19,7 +20,7 @@ namespace Chapter.Net.WPF.Controls
     /// </summary>
     [TemplatePart(Name = "PART_ContentPresenter", Type = typeof(FrameworkElement))]
     [ContentProperty(nameof(Content))]
-    public class ChapterNavigationView : ComboBox
+    public class ChapterNavigationView : ComboBoxBase
     {
         /// <summary>
         ///     The DisplayMode dependency property.
