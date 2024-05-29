@@ -104,6 +104,8 @@ namespace Chapter.Net.WPF.Controls
             var control = (ChapterNavigationView)d;
             if (control.DisplayMode != NavigationDisplayMode.Auto)
                 control.SetCurrentValue(CurrentDisplayModeProperty, control.DisplayMode);
+            else
+                control.SetCurrentDisplayModeByWidth(control.ActualWidth);
         }
 
         /// <inheritdoc />
@@ -115,9 +117,28 @@ namespace Chapter.Net.WPF.Controls
                 contentPresenter.PreviewMouseLeftButtonDown += OnContentClick;
         }
 
+        /// <inheritdoc />
+        protected override void OnRenderSizeChanged(SizeChangedInfo sizeInfo)
+        {
+            if (DisplayMode == NavigationDisplayMode.Auto && sizeInfo.WidthChanged)
+                SetCurrentDisplayModeByWidth(sizeInfo.NewSize.Width);
+
+            base.OnRenderSizeChanged(sizeInfo);
+        }
+
         private void OnContentClick(object sender, MouseButtonEventArgs e)
         {
             SetCurrentValue(IsDropDownOpenProperty, false);
+        }
+
+        private void SetCurrentDisplayModeByWidth(double width)
+        {
+            if (width < 400)
+                SetCurrentValue(CurrentDisplayModeProperty, NavigationDisplayMode.LeftMinimal);
+            else if (width < 800)
+                SetCurrentValue(CurrentDisplayModeProperty, NavigationDisplayMode.LeftCompact);
+            else
+                SetCurrentValue(CurrentDisplayModeProperty, NavigationDisplayMode.Left);
         }
     }
 }
