@@ -49,6 +49,11 @@
                                     <ContentPresenter ContentSource="Title" />
                                 </controls:ChapterNavigationBurgerButton>
                             </DockPanel>
+
+                            <!-- Footer Items (Bottom|Right) -->
+
+                            <!-- Footer Control (Bottom|Right) -->
+
                             <controls:ChapterNavigationSearchBarContainer x:Name="PART_SearchControl"
                                                                           Margin="3"
                                                                           VerticalAlignment="Top"
@@ -56,6 +61,7 @@
                                 <ContentPresenter ContentSource="SearchControl" />
                             </controls:ChapterNavigationSearchBarContainer>
 
+                            <!-- Items -->
                             <Border />
                         </DockPanel>
 
@@ -86,6 +92,7 @@
                             <Setter TargetName="panelArea" Property="Grid.Row" Value="0" />
                             <Setter TargetName="panelArea" Property="Grid.ColumnSpan" Value="3" />
                             <Setter TargetName="toggleButton" Property="Visibility" Value="Collapsed" />
+                            <Setter TargetName="buttonsArea" Property="DockPanel.Dock" Value="Left" />
                             <Setter TargetName="PART_SearchControl" Property="DockPanel.Dock" Value="Right" />
                         </Trigger>
                         <MultiTrigger>
