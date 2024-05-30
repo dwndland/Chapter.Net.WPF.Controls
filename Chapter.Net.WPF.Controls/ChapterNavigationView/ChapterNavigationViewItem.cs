@@ -17,6 +17,7 @@ namespace Chapter.Net.WPF.Controls
     ///     A single item within the <see cref="ChapterNavigationView" />.
     /// </summary>
     [TemplatePart(Name = "PART_HeaderBar", Type = typeof(FrameworkElement))]
+    [TemplatePart(Name = "PART_PopupHeaderBar", Type = typeof(FrameworkElement))]
     public class ChapterNavigationViewItem : ChapterTreeViewItem
     {
         /// <summary>
@@ -53,6 +54,12 @@ namespace Chapter.Net.WPF.Controls
         /// </summary>
         public static readonly DependencyProperty CornerRadiusProperty =
             DependencyProperty.Register(nameof(CornerRadius), typeof(CornerRadius), typeof(ChapterNavigationViewItem), new PropertyMetadata(default(CornerRadius)));
+
+        /// <summary>
+        ///     The Level dependency property.
+        /// </summary>
+        public static readonly DependencyProperty LevelProperty =
+            DependencyProperty.Register(nameof(Level), typeof(int), typeof(ChapterNavigationViewItem), new PropertyMetadata(0));
 
         static ChapterNavigationViewItem()
         {
@@ -113,6 +120,17 @@ namespace Chapter.Net.WPF.Controls
             set => SetValue(CornerRadiusProperty, value);
         }
 
+        /// <summary>
+        ///     Gets the level of the item within the hierarchy.
+        /// </summary>
+        /// <value>Default: 0</value>
+        [DefaultValue(0)]
+        public int Level
+        {
+            get => (int)GetValue(LevelProperty);
+            private set => SetValue(LevelProperty, value);
+        }
+
         private static void OnToCompact(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var control = (ChapterNavigationViewItem)d;
@@ -134,11 +152,37 @@ namespace Chapter.Net.WPF.Controls
 
             if (GetTemplateChild("PART_HeaderBar") is FrameworkElement headerBar)
                 headerBar.PreviewMouseDown += OnPressed;
+
+            if (GetTemplateChild("PART_PopupHeaderBar") is FrameworkElement popupHeaderBar)
+                popupHeaderBar.PreviewMouseDown += OnPressed;
+
+            Level = GetLevel();
         }
 
         private void OnPressed(object sender, MouseButtonEventArgs e)
         {
             SetCurrentValue(IsSelectedProperty, true);
+        }
+
+        private int GetLevel()
+        {
+            if (Parent == null) // Items are bound
+            {
+                var count = VisualTreeAssist.GetParentsUntilCount<ChapterNavigationViewItem, ChapterNavigationView>(this);
+                if (count == 0)
+                    return VisualTreeAssist.FindParent<ChapterNavigationView>(this) == null ? 1 : count;
+                return count;
+            }
+
+            var level = 0;
+            var parent = Parent as ChapterNavigationViewItem;
+            while (parent != null)
+            {
+                ++level;
+                parent = parent.Parent as ChapterNavigationViewItem;
+            }
+
+            return level;
         }
 
         /// <inheritdoc />

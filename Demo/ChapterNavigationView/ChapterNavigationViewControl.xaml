@@ -31,10 +31,12 @@
                       IsChecked="True" />
         </demo:PropertyPanel>
 
-        <controls:ChapterNavigationView Title="{Binding Text, ElementName=title}"
-                                        BorderThickness="1"
-                                        BorderBrush="Gray"
+        <controls:ChapterNavigationView x:Name="view"
+                                        Title="{Binding Text, ElementName=title}"
                                         Margin="10"
+                                        BorderBrush="Gray"
+                                        BorderThickness="1"
+                                        SelectedItem="{Binding SelectedItem}"
                                         DisplayMode="{Binding SelectedItem, ElementName=displayMode}"
                                         IsBackButtonVisible="{Binding IsChecked, ElementName=isBackButtonVisible}"
                                         IsBurgerButtonVisible="{Binding IsChecked, ElementName=isBurgerButtonVisible}">
@@ -46,7 +48,9 @@
             </controls:ChapterNavigationView.Header>
             <controls:ChapterNavigationView.Items>
                 <controls:ChapterNavigationViewItem Header="Parent 1" Icon="(1)">
-                    <controls:ChapterNavigationViewItem Header="Parent 1.1" Icon="(1.1)" />
+                    <controls:ChapterNavigationViewItem Header="Parent 1.1" Icon="(1.1)">
+                        <controls:ChapterNavigationViewItem Header="Parent 1.2" Icon="(1.2)" />
+                    </controls:ChapterNavigationViewItem>
                 </controls:ChapterNavigationViewItem>
                 <controls:ChapterNavigationViewItem Header="Parent 2" Icon="(2)">
                     <controls:ChapterNavigationViewItem Header="Parent 2.1" Icon="(2.1)" />
@@ -63,7 +67,7 @@
                     <controls:ChapterNavigationViewItem Header="Parent 5.1" Icon="(5.1)" />
                 </controls:ChapterNavigationViewItem>
             </controls:ChapterNavigationView.FooterItems>
-            <Button Content="Content">
+            <Button Content="{Binding SelectedItemString}">
                 <Button.ContextMenu>
                     <ContextMenu>
                         <MenuItem Header="First" />

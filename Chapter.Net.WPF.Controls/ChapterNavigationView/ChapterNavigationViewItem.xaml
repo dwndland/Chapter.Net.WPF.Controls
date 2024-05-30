@@ -26,34 +26,94 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type controls:ChapterNavigationViewItem}">
-                    <DockPanel>
-                        <ToggleButton x:Name="PART_HeaderBar"
-                                      DockPanel.Dock="Top"
-                                      IsChecked="{Binding IsExpanded, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
-                                      Style="{StaticResource InvisibleToggleButton}">
-                            <Border MinHeight="28"
-                                    Background="{TemplateBinding Background}"
-                                    BorderBrush="{TemplateBinding BorderBrush}"
-                                    BorderThickness="{TemplateBinding BorderThickness}"
-                                    CornerRadius="{TemplateBinding CornerRadius}">
-                                <DockPanel DockPanel.Dock="Top">
-                                    <Border x:Name="icon"
-                                            Width="28"
-                                            DockPanel.Dock="Left">
-                                        <ContentPresenter HorizontalAlignment="Center"
-                                                          VerticalAlignment="Center"
-                                                          ContentSource="Icon" />
+                    <StackPanel>
+                        <controls:ChapterNavigationPopupItemPresenter x:Name="popupPresenter" Visibility="Collapsed">
+                            <controls:ChapterNavigationPopupItemPresenter.Header>
+                                <ToggleButton x:Name="PART_PopupHeaderBar"
+                                              DockPanel.Dock="Top"
+                                              IsChecked="{Binding IsExpanded, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
+                                              Style="{StaticResource InvisibleToggleButton}">
+                                    <Border MinHeight="28"
+                                            Background="{TemplateBinding Background}"
+                                            BorderBrush="{TemplateBinding BorderBrush}"
+                                            BorderThickness="{TemplateBinding BorderThickness}"
+                                            CornerRadius="{TemplateBinding CornerRadius}">
+                                        <DockPanel DockPanel.Dock="Top">
+                                            <Border Width="28" DockPanel.Dock="Left">
+                                                <ContentPresenter HorizontalAlignment="Center"
+                                                                  VerticalAlignment="Center"
+                                                                  ContentSource="Icon" />
+                                            </Border>
+                                            <ContentPresenter Margin="6,0"
+                                                              VerticalAlignment="Center"
+                                                              ContentSource="Header" />
+                                        </DockPanel>
                                     </Border>
-                                    <ContentPresenter x:Name="header"
-                                                      Margin="6,0"
-                                                      VerticalAlignment="Center"
-                                                      ContentSource="Header" />
-                                </DockPanel>
-                            </Border>
-                        </ToggleButton>
-                        <ItemsPresenter x:Name="ItemsPresenter" Margin="20,0,0,0" />
-                    </DockPanel>
+                                </ToggleButton>
+                            </controls:ChapterNavigationPopupItemPresenter.Header>
+                            <ItemsPresenter />
+                        </controls:ChapterNavigationPopupItemPresenter>
+
+                        <DockPanel x:Name="directPresenter">
+                            <ToggleButton x:Name="PART_HeaderBar"
+                                          DockPanel.Dock="Top"
+                                          IsChecked="{Binding IsExpanded, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
+                                          Style="{StaticResource InvisibleToggleButton}">
+                                <Border MinHeight="28"
+                                        Background="{TemplateBinding Background}"
+                                        BorderBrush="{TemplateBinding BorderBrush}"
+                                        BorderThickness="{TemplateBinding BorderThickness}"
+                                        CornerRadius="{TemplateBinding CornerRadius}">
+                                    <DockPanel DockPanel.Dock="Top">
+                                        <Border x:Name="icon"
+                                                Width="28"
+                                                DockPanel.Dock="Left">
+                                            <ContentPresenter HorizontalAlignment="Center"
+                                                              VerticalAlignment="Center"
+                                                              ContentSource="Icon" />
+                                        </Border>
+                                        <ContentPresenter x:Name="header"
+                                                          Margin="6,0"
+                                                          VerticalAlignment="Center"
+                                                          ContentSource="Header" />
+                                    </DockPanel>
+                                </Border>
+                            </ToggleButton>
+                            <ItemsPresenter x:Name="ItemsPresenter" Margin="20,0,0,0" />
+                        </DockPanel>
+                    </StackPanel>
                     <ControlTemplate.Triggers>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="DisplayMode" Value="LeftCompact" />
+                                <Condition Property="IsDropDownOpen" Value="False" />
+                                <Condition Property="Level" Value="0" />
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="directPresenter" Property="Visibility" Value="Collapsed" />
+                            <Setter TargetName="popupPresenter" Property="Visibility" Value="Visible" />
+                            <Setter TargetName="popupPresenter" Property="IsDropDownOpen" Value="{Binding IsExpanded, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" />
+                        </MultiTrigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="DisplayMode" Value="Left" />
+                                <Condition Property="IsNavigationExpanded" Value="False" />
+                                <Condition Property="Level" Value="0" />
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="directPresenter" Property="Visibility" Value="Collapsed" />
+                            <Setter TargetName="popupPresenter" Property="Visibility" Value="Visible" />
+                            <Setter TargetName="popupPresenter" Property="IsDropDownOpen" Value="{Binding IsExpanded, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" />
+                        </MultiTrigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="DisplayMode" Value="Top" />
+                                <Condition Property="Level" Value="0" />
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="directPresenter" Property="Visibility" Value="Collapsed" />
+                            <Setter TargetName="popupPresenter" Property="Visibility" Value="Visible" />
+                            <Setter TargetName="popupPresenter" Property="IsDropDownOpen" Value="{Binding IsExpanded, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" />
+                            <Setter TargetName="popupPresenter" Property="Placement" Value="Bottom" />
+                        </MultiTrigger>
+
                         <MultiTrigger>
                             <MultiTrigger.Conditions>
                                 <Condition Property="DisplayMode" Value="Left" />
@@ -77,6 +137,10 @@
                         </MultiTrigger>
 
                         <Trigger SourceName="PART_HeaderBar" Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#BEE6FD" />
+                            <Setter Property="BorderBrush" Value="LightGray" />
+                        </Trigger>
+                        <Trigger SourceName="PART_PopupHeaderBar" Property="IsMouseOver" Value="True">
                             <Setter Property="Background" Value="#BEE6FD" />
                             <Setter Property="BorderBrush" Value="LightGray" />
                         </Trigger>
