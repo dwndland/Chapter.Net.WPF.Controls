@@ -77,6 +77,14 @@
                             <Setter TargetName="buttonsArea" Property="Grid.ColumnSpan" Value="3" />
                             <Setter TargetName="toggleButton" Property="Visibility" Value="Collapsed" />
                         </Trigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="CurrentDisplayMode" Value="LeftMinimal" />
+                                <Condition Property="IsDropDownOpen" Value="True" />
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="buttonsArea" Property="Grid.ColumnSpan" Value="2" />
+                            <Setter TargetName="toggleButton" Property="HorizontalAlignment" Value="Stretch" />
+                        </MultiTrigger>
 
                         <Trigger Property="IsBackButtonVisible" Value="True">
                             <Setter TargetName="PART_BackButton" Property="Visibility" Value="Visible" />
