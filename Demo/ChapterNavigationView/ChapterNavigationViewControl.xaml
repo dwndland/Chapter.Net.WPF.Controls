@@ -22,7 +22,13 @@
                      Margin="0,0,0,10"
                      Text="ChapterNavigationView" />
 
-            <CheckBox x:Name="isBackButtonVisible" Content="IsBackButtonVisible" />
+            <CheckBox x:Name="isBackButtonVisible"
+                      Margin="0,0,0,10"
+                      Content="IsBackButtonVisible" />
+
+            <CheckBox x:Name="isBurgerButtonVisible"
+                      Content="IsBurgerButtonVisible"
+                      IsChecked="True" />
         </demo:PropertyPanel>
 
         <Border Margin="10"
@@ -30,7 +36,8 @@
                 BorderThickness="1">
             <controls:ChapterNavigationView Title="{Binding Text, ElementName=title}"
                                             DisplayMode="{Binding SelectedItem, ElementName=displayMode}"
-                                            IsBackButtonVisible="{Binding IsChecked, ElementName=isBackButtonVisible}">
+                                            IsBackButtonVisible="{Binding IsChecked, ElementName=isBackButtonVisible}"
+                                            IsBurgerButtonVisible="{Binding IsChecked, ElementName=isBurgerButtonVisible}">
                 <controls:ChapterNavigationView.SearchControl>
                     <controls:ChapterSearchTextBox VerticalContentAlignment="Center" />
                 </controls:ChapterNavigationView.SearchControl>

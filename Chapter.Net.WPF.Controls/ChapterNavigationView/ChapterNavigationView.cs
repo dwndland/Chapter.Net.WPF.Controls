@@ -73,6 +73,12 @@ namespace Chapter.Net.WPF.Controls
             DependencyProperty.Register(nameof(SearchControl), typeof(object), typeof(ChapterNavigationView), new PropertyMetadata(null));
 
         /// <summary>
+        ///     The IsBurgerButtonVisible dependency property.
+        /// </summary>
+        public static readonly DependencyProperty IsBurgerButtonVisibleProperty =
+            DependencyProperty.Register(nameof(IsBurgerButtonVisible), typeof(bool), typeof(ChapterNavigationView), new PropertyMetadata(true));
+
+        /// <summary>
         ///     The CurrentDisplayMode dependency property.
         /// </summary>
         internal static readonly DependencyProperty CurrentDisplayModeProperty =
@@ -179,6 +185,17 @@ namespace Chapter.Net.WPF.Controls
         {
             get => GetValue(SearchControlProperty);
             set => SetValue(SearchControlProperty, value);
+        }
+
+        /// <summary>
+        ///     Gets or sets a value indicating whether the burger button is visible or not.
+        /// </summary>
+        /// <value>Default: true.</value>
+        [DefaultValue(true)]
+        public bool IsBurgerButtonVisible
+        {
+            get => (bool)GetValue(IsBurgerButtonVisibleProperty);
+            set => SetValue(IsBurgerButtonVisibleProperty, value);
         }
 
         /// <summary>

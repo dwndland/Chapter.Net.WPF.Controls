@@ -107,6 +107,9 @@
                         <Trigger Property="IsBackButtonVisible" Value="True">
                             <Setter TargetName="PART_BackButton" Property="Visibility" Value="Visible" />
                         </Trigger>
+                        <Trigger Property="IsBurgerButtonVisible" Value="False">
+                            <Setter TargetName="toggleButton" Property="Visibility" Value="Collapsed" />
+                        </Trigger>
 
                         <MultiTrigger>
                             <MultiTrigger.Conditions>
