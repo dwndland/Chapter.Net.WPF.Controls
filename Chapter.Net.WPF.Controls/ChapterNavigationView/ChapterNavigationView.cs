@@ -79,6 +79,18 @@ namespace Chapter.Net.WPF.Controls
             DependencyProperty.Register(nameof(IsBurgerButtonVisible), typeof(bool), typeof(ChapterNavigationView), new PropertyMetadata(true));
 
         /// <summary>
+        ///     The LeftToLeftCompactThreshold dependency property.
+        /// </summary>
+        public static readonly DependencyProperty LeftToLeftCompactThresholdProperty =
+            DependencyProperty.Register(nameof(LeftToLeftCompactThreshold), typeof(double), typeof(ChapterNavigationView), new PropertyMetadata(1000d));
+
+        /// <summary>
+        ///     The LeftCompactToLeftMinimalThreshold dependency property.
+        /// </summary>
+        public static readonly DependencyProperty LeftCompactToLeftMinimalThresholdProperty =
+            DependencyProperty.Register(nameof(LeftCompactToLeftMinimalThreshold), typeof(double), typeof(ChapterNavigationView), new PropertyMetadata(600d));
+
+        /// <summary>
         ///     The CurrentDisplayMode dependency property.
         /// </summary>
         internal static readonly DependencyProperty CurrentDisplayModeProperty =
@@ -199,6 +211,29 @@ namespace Chapter.Net.WPF.Controls
         }
 
         /// <summary>
+        ///     Gets or sets the threshold when the view shall switch from Left to LeftCompact in the case of Auto display mode.
+        /// </summary>
+        /// <value>Default: 1000.</value>
+        [DefaultValue(1000d)]
+        public double LeftToLeftCompactThreshold
+        {
+            get => (double)GetValue(LeftToLeftCompactThresholdProperty);
+            set => SetValue(LeftToLeftCompactThresholdProperty, value);
+        }
+
+        /// <summary>
+        ///     Gets or sets the threshold when the view shall switch from LeftCompact to LeftMinimal in the case of Auto display
+        ///     mode.
+        /// </summary>
+        /// <value>Default: 600.</value>
+        [DefaultValue(600d)]
+        public double LeftCompactToLeftMinimalThreshold
+        {
+            get => (double)GetValue(LeftCompactToLeftMinimalThresholdProperty);
+            set => SetValue(LeftCompactToLeftMinimalThresholdProperty, value);
+        }
+
+        /// <summary>
         ///     Gets or sets the current display mode which gets controlled by the DisplayMode.
         /// </summary>
         /// <value>Default: NavigationDisplayMode.Left.</value>
@@ -276,9 +311,9 @@ namespace Chapter.Net.WPF.Controls
 
         private void SetCurrentDisplayModeByWidth(double width)
         {
-            if (width < 400)
+            if (width < LeftCompactToLeftMinimalThreshold)
                 SetCurrentValue(CurrentDisplayModeProperty, NavigationDisplayMode.LeftMinimal);
-            else if (width < 800)
+            else if (width < LeftToLeftCompactThreshold)
                 SetCurrentValue(CurrentDisplayModeProperty, NavigationDisplayMode.LeftCompact);
             else
                 SetCurrentValue(CurrentDisplayModeProperty, NavigationDisplayMode.Left);
