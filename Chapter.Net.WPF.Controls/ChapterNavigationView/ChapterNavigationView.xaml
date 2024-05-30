@@ -28,23 +28,27 @@
                                 Grid.ColumnSpan="2"
                                 Background="#F5F5F5" />
 
-                        <DockPanel x:Name="buttonsArea"
-                                    Grid.Row="1"
-                                    Grid.Column="0"
-                                    Grid.ColumnSpan="2"
-                                    Margin="6,6,6,0"
-                                    VerticalAlignment="Top">
+                        <DockPanel x:Name="panelArea"
+                                   Grid.Row="1"
+                                   Grid.Column="0"
+                                   Grid.ColumnSpan="2"
+                                   Margin="3">
                             <controls:ChapterNavigationBackButton x:Name="PART_BackButton"
-                                                                  Margin="0,0,0,6"
+                                                                  Margin="3"
+                                                                  VerticalAlignment="Top"
                                                                   Command="{TemplateBinding BackCommand}"
-                                                                  DockPanel.Dock="Top"
                                                                   CommandParameter="{TemplateBinding BackCommandParameter}"
+                                                                  DockPanel.Dock="Top"
                                                                   Visibility="Collapsed" />
                             <controls:ChapterNavigationBurgerButton x:Name="toggleButton"
-                                                                    Margin="0,0,0,6"
+                                                                    Margin="3"
+                                                                    VerticalAlignment="Top"
+                                                                    DockPanel.Dock="Top"
                                                                     IsChecked="{Binding IsExpanded, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}">
                                 <ContentPresenter ContentSource="Title" />
                             </controls:ChapterNavigationBurgerButton>
+
+                            <Border />
                         </DockPanel>
 
                     </Grid>
@@ -62,19 +66,17 @@
                         <Trigger Property="CurrentDisplayMode" Value="LeftMinimal">
                             <Setter TargetName="PART_ContentPresenter" Property="Grid.Column" Value="1" />
                             <Setter TargetName="PART_ContentPresenter" Property="Grid.ColumnSpan" Value="2" />
-                            <Setter TargetName="buttonsArea" Property="Grid.ColumnSpan" Value="3" />
+                            <Setter TargetName="panelArea" Property="Grid.ColumnSpan" Value="3" />
                             <Setter TargetName="PART_BackButton" Property="DockPanel.Dock" Value="Left" />
-                            <Setter TargetName="PART_BackButton" Property="Margin" Value="0,0,6,0" />
                             <Setter TargetName="toggleButton" Property="HorizontalAlignment" Value="Left" />
-                            <Setter TargetName="toggleButton" Property="Margin" Value="0,0,6,0" />
                             <Setter TargetName="toggleButton" Property="IsChecked" Value="{Binding IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" />
                         </Trigger>
                         <Trigger Property="CurrentDisplayMode" Value="Top">
                             <Setter TargetName="topRow" Property="MinHeight" Value="40" />
                             <Setter TargetName="sideBar" Property="Grid.Row" Value="0" />
                             <Setter TargetName="sideBar" Property="Grid.ColumnSpan" Value="3" />
-                            <Setter TargetName="buttonsArea" Property="Grid.Row" Value="0" />
-                            <Setter TargetName="buttonsArea" Property="Grid.ColumnSpan" Value="3" />
+                            <Setter TargetName="panelArea" Property="Grid.Row" Value="0" />
+                            <Setter TargetName="panelArea" Property="Grid.ColumnSpan" Value="3" />
                             <Setter TargetName="toggleButton" Property="Visibility" Value="Collapsed" />
                         </Trigger>
                         <MultiTrigger>
@@ -82,7 +84,7 @@
                                 <Condition Property="CurrentDisplayMode" Value="LeftMinimal" />
                                 <Condition Property="IsDropDownOpen" Value="True" />
                             </MultiTrigger.Conditions>
-                            <Setter TargetName="buttonsArea" Property="Grid.ColumnSpan" Value="2" />
+                            <Setter TargetName="panelArea" Property="Grid.ColumnSpan" Value="2" />
                             <Setter TargetName="toggleButton" Property="HorizontalAlignment" Value="Stretch" />
                         </MultiTrigger>
 
