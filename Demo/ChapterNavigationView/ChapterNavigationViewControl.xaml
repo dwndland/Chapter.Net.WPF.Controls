@@ -31,6 +31,9 @@
             <controls:ChapterNavigationView Title="{Binding Text, ElementName=title}"
                                             DisplayMode="{Binding SelectedItem, ElementName=displayMode}"
                                             IsBackButtonVisible="{Binding IsChecked, ElementName=isBackButtonVisible}">
+                <controls:ChapterNavigationView.SearchControl>
+                    <controls:ChapterSearchTextBox VerticalContentAlignment="Center" />
+                </controls:ChapterNavigationView.SearchControl>
                 <Button Content="Content">
                     <Button.ContextMenu>
                         <ContextMenu>

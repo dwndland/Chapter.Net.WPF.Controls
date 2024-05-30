@@ -20,6 +20,7 @@ namespace Chapter.Net.WPF.Controls
     /// </summary>
     [TemplatePart(Name = "PART_BackButton", Type = typeof(Button))]
     [TemplatePart(Name = "PART_ContentPresenter", Type = typeof(FrameworkElement))]
+    [TemplatePart(Name = "PART_SearchControl", Type = typeof(Button))]
     [ContentProperty(nameof(Content))]
     public class ChapterNavigationView : ComboBoxBase
     {
@@ -64,6 +65,12 @@ namespace Chapter.Net.WPF.Controls
         /// </summary>
         public static readonly DependencyProperty BackCommandParameterProperty =
             DependencyProperty.Register(nameof(BackCommandParameter), typeof(object), typeof(ChapterNavigationView), new PropertyMetadata(null));
+
+        /// <summary>
+        ///     The SearchControl dependency property.
+        /// </summary>
+        public static readonly DependencyProperty SearchControlProperty =
+            DependencyProperty.Register(nameof(SearchControl), typeof(object), typeof(ChapterNavigationView), new PropertyMetadata(null));
 
         /// <summary>
         ///     The CurrentDisplayMode dependency property.
@@ -164,6 +171,17 @@ namespace Chapter.Net.WPF.Controls
         }
 
         /// <summary>
+        ///     Gets or sets the search control.
+        /// </summary>
+        /// <value>Default: null.</value>
+        [DefaultValue(null)]
+        public object SearchControl
+        {
+            get => GetValue(SearchControlProperty);
+            set => SetValue(SearchControlProperty, value);
+        }
+
+        /// <summary>
         ///     Gets or sets the current display mode which gets controlled by the DisplayMode.
         /// </summary>
         /// <value>Default: NavigationDisplayMode.Left.</value>
@@ -202,6 +220,9 @@ namespace Chapter.Net.WPF.Controls
 
             if (GetTemplateChild("PART_BackButton") is Button backButton)
                 backButton.Click += OnBackClick;
+
+            if (GetTemplateChild("PART_SearchControl") is Button searchButton)
+                searchButton.Click += OnSearchClick;
         }
 
         /// <inheritdoc />
@@ -221,6 +242,19 @@ namespace Chapter.Net.WPF.Controls
         private void OnBackClick(object sender, RoutedEventArgs e)
         {
             RaiseEvent(new RoutedEventArgs(BackClickEvent, this));
+        }
+
+        private void OnSearchClick(object sender, RoutedEventArgs e)
+        {
+            if (CurrentDisplayMode == NavigationDisplayMode.Left)
+                SetCurrentValue(IsExpandedProperty, true);
+            else
+                SetCurrentValue(IsDropDownOpenProperty, true);
+
+            var button = (Button)e.OriginalSource;
+            var childTextBox = VisualTreeAssist.FindChild<TextBox>(button);
+            if (childTextBox != null)
+                ControlFocus.GiveFocus(childTextBox);
         }
 
         private void SetCurrentDisplayModeByWidth(double width)

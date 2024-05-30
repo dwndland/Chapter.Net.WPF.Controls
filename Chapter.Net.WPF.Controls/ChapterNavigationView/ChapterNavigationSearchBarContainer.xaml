@@ -1,0 +1,98 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:controls="clr-namespace:Chapter.Net.WPF.Controls">
+
+    <Style TargetType="{x:Type controls:ChapterNavigationSearchBarContainer}">
+        <Setter Property="IsDropDownOpen" Value="{Binding IsDropDownOpen, RelativeSource={RelativeSource AncestorType={x:Type controls:ChapterNavigationView}}}" />
+        <Setter Property="IsExpanded" Value="{Binding IsExpanded, RelativeSource={RelativeSource AncestorType={x:Type controls:ChapterNavigationView}}}" />
+        <Setter Property="DisplayMode" Value="{Binding CurrentDisplayMode, RelativeSource={RelativeSource AncestorType={x:Type controls:ChapterNavigationView}}}" />
+        <Setter Property="CornerRadius" Value="4" />
+        <Setter Property="MinHeight" Value="28" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type controls:ChapterNavigationSearchBarContainer}">
+                    <DockPanel>
+                        <Border>
+                            <Border x:Name="icon"
+                                    Width="28"
+                                    Height="28"
+                                    Background="{TemplateBinding Background}"
+                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                    BorderThickness="{TemplateBinding BorderThickness}"
+                                    CornerRadius="4"
+                                    DockPanel.Dock="Left">
+                                <Border Width="16" Height="16">
+                                    <Border.Background>
+                                        <DrawingBrush>
+                                            <DrawingBrush.Drawing>
+                                                <GeometryDrawing Brush="#FF000000" Geometry="F0M100,96.58203 Q100,97.94922 99.16992,98.97461 Q98.33984,100 96.875,100 Q95.60547,100 94.67774,99.07227 L56.34766,60.79102 Q51.66016,64.64844 46.06934,66.69922 Q40.47852,68.75 34.375,68.75 Q29.63867,68.75 25.24414,67.5293 Q20.84961,66.30859 17.04102,64.0625 Q13.23242,61.81641 10.08301,58.66699 Q6.93359,55.51758 4.6875,51.70898 Q2.44141,47.90039 1.2207,43.50586 Q0,39.11133 0,34.375 Q0,29.63867 1.2207,25.24414 Q2.44141,20.84961 4.6875,17.04102 Q6.93359,13.23242 10.08301,10.08301 Q13.23242,6.93359 17.04102,4.6875 Q20.84961,2.44141 25.24414,1.2207 Q29.63867,0 34.375,0 Q39.11133,0 43.50586,1.2207 Q47.90039,2.44141 51.70898,4.6875 Q55.51758,6.93359 58.66699,10.08301 Q61.81641,13.23242 64.0625,17.04102 Q66.30859,20.84961 67.5293,25.24414 Q68.75,29.63867 68.75,34.375 Q68.75,40.47852 66.69922,46.06934 Q64.64844,51.66016 60.79102,56.34766 Q61.52344,57.08008 63.59863,59.13086 Q65.67383,61.18164 68.5791,64.01367 Q71.48438,66.8457 74.92676,70.23926 Q78.36914,73.63281 81.86035,77.12402 Q85.35156,80.61523 88.62305,83.93555 Q91.89453,87.25586 94.43359,89.94141 Q96.97266,92.62695 98.48633,94.40918 Q100,96.19141 100,96.58203 z M34.375,62.5 Q40.18555,62.5 45.3125,60.27832 Q50.43945,58.05664 54.24805,54.24805 Q58.05664,50.43945 60.27832,45.3125 Q62.5,40.18555 62.5,34.375 Q62.5,28.56445 60.27832,23.4375 Q58.05664,18.31055 54.24805,14.50195 Q50.43945,10.69336 45.3125,8.47168 Q40.18555,6.25 34.375,6.25 Q28.56445,6.25 23.4375,8.47168 Q18.31055,10.69336 14.50195,14.50195 Q10.69336,18.31055 8.47168,23.4375 Q6.25,28.56445 6.25,34.375 Q6.25,40.18555 8.47168,45.3125 Q10.69336,50.43945 14.50195,54.24805 Q18.31055,58.05664 23.4375,60.27832 Q28.56445,62.5 34.375,62.5 z" />
+                                            </DrawingBrush.Drawing>
+                                        </DrawingBrush>
+                                    </Border.Background>
+                                </Border>
+                            </Border>
+                        </Border>
+
+                        <ContentPresenter x:Name="contentPresenter" Visibility="Collapsed" />
+                    </DockPanel>
+                    <ControlTemplate.Triggers>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="DisplayMode" Value="Left" />
+                                <Condition Property="IsExpanded" Value="True" />
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="icon" Property="Visibility" Value="Collapsed" />
+                            <Setter TargetName="contentPresenter" Property="Visibility" Value="Visible" />
+                            <Setter Property="HorizontalAlignment" Value="Stretch" />
+                        </MultiTrigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="DisplayMode" Value="LeftCompact" />
+                                <Condition Property="IsDropDownOpen" Value="True" />
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="icon" Property="Visibility" Value="Collapsed" />
+                            <Setter TargetName="contentPresenter" Property="Visibility" Value="Visible" />
+                            <Setter Property="HorizontalAlignment" Value="Stretch" />
+                        </MultiTrigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="DisplayMode" Value="LeftMinimal" />
+                                <Condition Property="IsDropDownOpen" Value="False" />
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="icon" Property="Visibility" Value="Collapsed" />
+                        </MultiTrigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="DisplayMode" Value="LeftMinimal" />
+                                <Condition Property="IsDropDownOpen" Value="True" />
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="icon" Property="Visibility" Value="Collapsed" />
+                            <Setter TargetName="contentPresenter" Property="Visibility" Value="Visible" />
+                            <Setter Property="HorizontalAlignment" Value="Stretch" />
+                        </MultiTrigger>
+                        <Trigger Property="DisplayMode" Value="Top">
+                            <Setter TargetName="icon" Property="Visibility" Value="Collapsed" />
+                            <Setter TargetName="contentPresenter" Property="Visibility" Value="Visible" />
+                            <Setter Property="Width" Value="200" />
+                        </Trigger>
+
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#BEE6FD" />
+                            <Setter Property="BorderBrush" Value="LightGray" />
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Background" Value="#C4E5F6" />
+                            <Setter Property="BorderBrush" Value="LightGray" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

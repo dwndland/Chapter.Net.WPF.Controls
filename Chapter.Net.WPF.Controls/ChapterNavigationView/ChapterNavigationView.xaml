@@ -33,20 +33,28 @@
                                    Grid.Column="0"
                                    Grid.ColumnSpan="2"
                                    Margin="3">
-                            <controls:ChapterNavigationBackButton x:Name="PART_BackButton"
-                                                                  Margin="3"
-                                                                  VerticalAlignment="Top"
-                                                                  Command="{TemplateBinding BackCommand}"
-                                                                  CommandParameter="{TemplateBinding BackCommandParameter}"
-                                                                  DockPanel.Dock="Top"
-                                                                  Visibility="Collapsed" />
-                            <controls:ChapterNavigationBurgerButton x:Name="toggleButton"
-                                                                    Margin="3"
-                                                                    VerticalAlignment="Top"
-                                                                    DockPanel.Dock="Top"
-                                                                    IsChecked="{Binding IsExpanded, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}">
-                                <ContentPresenter ContentSource="Title" />
-                            </controls:ChapterNavigationBurgerButton>
+                            <DockPanel x:Name="buttonsArea" DockPanel.Dock="Top">
+                                <controls:ChapterNavigationBackButton x:Name="PART_BackButton"
+                                                                      Margin="3"
+                                                                      VerticalAlignment="Top"
+                                                                      Command="{TemplateBinding BackCommand}"
+                                                                      CommandParameter="{TemplateBinding BackCommandParameter}"
+                                                                      DockPanel.Dock="Top"
+                                                                      Visibility="Collapsed" />
+                                <controls:ChapterNavigationBurgerButton x:Name="toggleButton"
+                                                                        Margin="3"
+                                                                        VerticalAlignment="Top"
+                                                                        DockPanel.Dock="Top"
+                                                                        IsChecked="{Binding IsExpanded, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}">
+                                    <ContentPresenter ContentSource="Title" />
+                                </controls:ChapterNavigationBurgerButton>
+                            </DockPanel>
+                            <controls:ChapterNavigationSearchBarContainer x:Name="PART_SearchControl"
+                                                                          Margin="3"
+                                                                          VerticalAlignment="Top"
+                                                                          DockPanel.Dock="Top">
+                                <ContentPresenter ContentSource="SearchControl" />
+                            </controls:ChapterNavigationSearchBarContainer>
 
                             <Border />
                         </DockPanel>
@@ -78,6 +86,7 @@
                             <Setter TargetName="panelArea" Property="Grid.Row" Value="0" />
                             <Setter TargetName="panelArea" Property="Grid.ColumnSpan" Value="3" />
                             <Setter TargetName="toggleButton" Property="Visibility" Value="Collapsed" />
+                            <Setter TargetName="PART_SearchControl" Property="DockPanel.Dock" Value="Right" />
                         </Trigger>
                         <MultiTrigger>
                             <MultiTrigger.Conditions>
