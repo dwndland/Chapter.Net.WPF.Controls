@@ -13,6 +13,7 @@
         <Setter Property="CornerRadius" Value="4" />
         <Setter Property="BorderThickness" Value="1" />
         <Setter Property="BorderBrush" Value="#F5F5F5" />
+        <Setter Property="AutomationProperties.AutomationId" Value="NavigationBurgerButton" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type controls:ChapterNavigationBurgerButton}">
