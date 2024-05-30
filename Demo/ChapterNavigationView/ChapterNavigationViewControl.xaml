@@ -41,6 +41,9 @@
             <controls:ChapterNavigationView.SearchControl>
                 <controls:ChapterSearchTextBox VerticalContentAlignment="Center" />
             </controls:ChapterNavigationView.SearchControl>
+            <controls:ChapterNavigationView.Header>
+                <Button Content="Header" />
+            </controls:ChapterNavigationView.Header>
             <Button Content="Content">
                 <Button.ContextMenu>
                     <ContextMenu>

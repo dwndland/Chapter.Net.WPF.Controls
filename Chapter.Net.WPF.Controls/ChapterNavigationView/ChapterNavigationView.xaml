@@ -21,9 +21,12 @@
                                 <RowDefinition />
                             </Grid.RowDefinitions>
 
-                            <ContentPresenter x:Name="PART_ContentPresenter"
-                                              Grid.Row="1"
-                                              Grid.Column="2" />
+                            <DockPanel x:Name="PART_ContentPresenter"
+                                       Grid.Row="1"
+                                       Grid.Column="2">
+                                <ContentPresenter ContentSource="Header" DockPanel.Dock="Top" />
+                                <ContentPresenter />
+                            </DockPanel>
 
                             <Border x:Name="sideBar"
                                     Grid.Row="1"

@@ -43,6 +43,12 @@ namespace Chapter.Net.WPF.Controls
             DependencyProperty.Register(nameof(Content), typeof(object), typeof(ChapterNavigationView), new PropertyMetadata(null));
 
         /// <summary>
+        ///     The Header dependency property.
+        /// </summary>
+        public static readonly DependencyProperty HeaderProperty =
+            DependencyProperty.Register("Header", typeof(object), typeof(ChapterNavigationView), new PropertyMetadata(null));
+
+        /// <summary>
         ///     The Title dependency property.
         /// </summary>
         public static readonly DependencyProperty TitleProperty =
@@ -131,6 +137,17 @@ namespace Chapter.Net.WPF.Controls
         {
             get => (bool)GetValue(IsExpandedProperty);
             set => SetValue(IsExpandedProperty, value);
+        }
+
+        /// <summary>
+        ///     Gets or sets the header shown in the body of the navigation view.
+        /// </summary>
+        /// <value>Default: null.</value>
+        [DefaultValue(null)]
+        public object Header
+        {
+            get => GetValue(HeaderProperty);
+            set => SetValue(HeaderProperty, value);
         }
 
         /// <summary>
