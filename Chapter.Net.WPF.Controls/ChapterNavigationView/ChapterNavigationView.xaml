@@ -3,70 +3,72 @@
                     xmlns:controls="clr-namespace:Chapter.Net.WPF.Controls">
 
     <Style TargetType="{x:Type controls:ChapterNavigationView}">
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="0" />
         <Setter Property="Focusable" Value="False" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type controls:ChapterNavigationView}">
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition x:Name="leftColumn" Width="0" />
-                            <ColumnDefinition x:Name="extendColumn" Width="0" />
-                            <ColumnDefinition />
-                        </Grid.ColumnDefinitions>
-                        <Grid.RowDefinitions>
-                            <RowDefinition x:Name="topRow" Height="Auto" />
-                            <RowDefinition />
-                        </Grid.RowDefinitions>
+                    <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition x:Name="leftColumn" Width="0" />
+                                <ColumnDefinition x:Name="extendColumn" Width="0" />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition x:Name="topRow" Height="Auto" />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
 
-                        <ContentPresenter x:Name="PART_ContentPresenter"
-                                          Grid.Row="1"
-                                          Grid.Column="2" />
+                            <ContentPresenter x:Name="PART_ContentPresenter"
+                                              Grid.Row="1"
+                                              Grid.Column="2" />
 
-                        <Border x:Name="sideBar"
-                                Grid.Row="1"
-                                Grid.Column="0"
-                                Grid.ColumnSpan="2"
-                                Background="#F5F5F5" />
+                            <Border x:Name="sideBar"
+                                    Grid.Row="1"
+                                    Grid.Column="0"
+                                    Grid.ColumnSpan="2"
+                                    Background="#F5F5F5" />
 
-                        <DockPanel x:Name="panelArea"
-                                   Grid.Row="1"
-                                   Grid.Column="0"
-                                   Grid.ColumnSpan="2"
-                                   Margin="3">
-                            <DockPanel x:Name="buttonsArea" DockPanel.Dock="Top">
-                                <controls:ChapterNavigationBackButton x:Name="PART_BackButton"
-                                                                      Margin="3"
-                                                                      VerticalAlignment="Top"
-                                                                      Command="{TemplateBinding BackCommand}"
-                                                                      CommandParameter="{TemplateBinding BackCommandParameter}"
-                                                                      DockPanel.Dock="Top"
-                                                                      Visibility="Collapsed" />
-                                <controls:ChapterNavigationBurgerButton x:Name="toggleButton"
-                                                                        Margin="3"
-                                                                        VerticalAlignment="Top"
-                                                                        DockPanel.Dock="Top"
-                                                                        IsChecked="{Binding IsExpanded, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}">
-                                    <ContentPresenter ContentSource="Title" />
-                                </controls:ChapterNavigationBurgerButton>
-                            </DockPanel>
-
-                            <!-- Footer Items (Bottom|Right) -->
-
-                            <!-- Footer Control (Bottom|Right) -->
-
-                            <controls:ChapterNavigationSearchBarContainer x:Name="PART_SearchControl"
+                            <DockPanel x:Name="panelArea"
+                                       Grid.Row="1"
+                                       Grid.Column="0"
+                                       Grid.ColumnSpan="2"
+                                       Margin="3">
+                                <DockPanel x:Name="buttonsArea" DockPanel.Dock="Top">
+                                    <controls:ChapterNavigationBackButton x:Name="PART_BackButton"
                                                                           Margin="3"
                                                                           VerticalAlignment="Top"
-                                                                          DockPanel.Dock="Top">
-                                <ContentPresenter ContentSource="SearchControl" />
-                            </controls:ChapterNavigationSearchBarContainer>
+                                                                          Command="{TemplateBinding BackCommand}"
+                                                                          CommandParameter="{TemplateBinding BackCommandParameter}"
+                                                                          DockPanel.Dock="Top"
+                                                                          Visibility="Collapsed" />
+                                    <controls:ChapterNavigationBurgerButton x:Name="toggleButton"
+                                                                            Margin="3"
+                                                                            VerticalAlignment="Top"
+                                                                            DockPanel.Dock="Top"
+                                                                            IsChecked="{Binding IsExpanded, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}">
+                                        <ContentPresenter ContentSource="Title" />
+                                    </controls:ChapterNavigationBurgerButton>
+                                </DockPanel>
 
-                            <!-- Items -->
-                            <Border />
-                        </DockPanel>
+                                <!--  Footer Items (Bottom|Right)  -->
 
-                    </Grid>
+                                <!--  Footer Control (Bottom|Right)  -->
 
+                                <controls:ChapterNavigationSearchBarContainer x:Name="PART_SearchControl"
+                                                                              Margin="3"
+                                                                              VerticalAlignment="Top"
+                                                                              DockPanel.Dock="Top">
+                                    <ContentPresenter ContentSource="SearchControl" />
+                                </controls:ChapterNavigationSearchBarContainer>
+
+                                <!--  Items  -->
+                                <Border />
+                            </DockPanel>
+                        </Grid>
+                    </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="CurrentDisplayMode" Value="Left">
                             <Setter TargetName="leftColumn" Property="MinWidth" Value="40" />
