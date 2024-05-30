@@ -4,13 +4,16 @@
 // </copyright>
 // -----------------------------------------------------------------------------------------------------------------
 
-using Chapter.Net.WPF.Controls.Bases;
 using System.Windows;
+using Chapter.Net.WPF.Controls.Bases;
 
 // ReSharper disable once CheckNamespace
 
 namespace Chapter.Net.WPF.Controls
 {
+    /// <summary>
+    ///     A burger button placed on the <see cref="ChapterNavigationView" />.
+    /// </summary>
     public class ChapterNavigationBurgerButton : ToggleButtonBase
     {
         static ChapterNavigationBurgerButton()
