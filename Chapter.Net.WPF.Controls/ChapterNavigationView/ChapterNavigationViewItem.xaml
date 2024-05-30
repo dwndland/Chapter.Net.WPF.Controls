@@ -51,7 +51,6 @@
                                 </DockPanel>
                             </Border>
                         </ToggleButton>
-                        <ContentControl Content="{Binding RelativeSource={RelativeSource TemplatedParent}}" />
                         <ItemsPresenter x:Name="ItemsPresenter" Margin="20,0,0,0" />
                     </DockPanel>
                     <ControlTemplate.Triggers>
