@@ -4,6 +4,8 @@
 // </copyright>
 // -----------------------------------------------------------------------------------------------------------------
 
+using System.Collections;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
@@ -51,7 +53,7 @@ namespace Chapter.Net.WPF.Controls
         ///     The Header dependency property.
         /// </summary>
         public static readonly DependencyProperty HeaderProperty =
-            DependencyProperty.Register("Header", typeof(object), typeof(ChapterNavigationView), new PropertyMetadata(null));
+            DependencyProperty.Register(nameof(Header), typeof(object), typeof(ChapterNavigationView), new PropertyMetadata(null));
 
         /// <summary>
         ///     The Title dependency property.
@@ -102,6 +104,18 @@ namespace Chapter.Net.WPF.Controls
             DependencyProperty.Register(nameof(LeftCompactToLeftMinimalThreshold), typeof(double), typeof(ChapterNavigationView), new PropertyMetadata(600d));
 
         /// <summary>
+        ///     The Items dependency property.
+        /// </summary>
+        public static readonly DependencyProperty ItemsProperty =
+            DependencyProperty.Register(nameof(Items), typeof(IList), typeof(ChapterNavigationView), new PropertyMetadata(null));
+
+        /// <summary>
+        ///     The SelectedItem dependency property.
+        /// </summary>
+        public new static readonly DependencyProperty SelectedItemProperty =
+            DependencyProperty.Register(nameof(SelectedItem), typeof(object), typeof(ChapterNavigationView), new FrameworkPropertyMetadata(null, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
+
+        /// <summary>
         ///     The CurrentDisplayMode dependency property.
         /// </summary>
         internal static readonly DependencyProperty CurrentDisplayModeProperty =
@@ -116,6 +130,14 @@ namespace Chapter.Net.WPF.Controls
         static ChapterNavigationView()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(ChapterNavigationView), new FrameworkPropertyMetadata(typeof(ChapterNavigationView)));
+        }
+
+        /// <summary>
+        ///     Creates a new instance of ChapterNavigationView.
+        /// </summary>
+        public ChapterNavigationView()
+        {
+            Items = new ObservableCollection<ChapterNavigationViewItem>();
         }
 
         /// <summary>
@@ -253,6 +275,28 @@ namespace Chapter.Net.WPF.Controls
         {
             get => (double)GetValue(LeftCompactToLeftMinimalThresholdProperty);
             set => SetValue(LeftCompactToLeftMinimalThresholdProperty, value);
+        }
+
+        /// <summary>
+        ///     Gets or sets the main items.
+        /// </summary>
+        /// <value>Default: null.</value>
+        [DefaultValue(null)]
+        public new IList Items
+        {
+            get => (IList)GetValue(ItemsProperty);
+            set => SetValue(ItemsProperty, value);
+        }
+
+        /// <summary>
+        ///     Gets or sets the current selected item.
+        /// </summary>
+        /// <value>Default: null.</value>
+        [DefaultValue(null)]
+        public new object SelectedItem
+        {
+            get => GetValue(SelectedItemProperty);
+            set => SetValue(SelectedItemProperty, value);
         }
 
         /// <summary>

@@ -44,6 +44,17 @@
             <controls:ChapterNavigationView.Header>
                 <Button Content="Header" />
             </controls:ChapterNavigationView.Header>
+            <controls:ChapterNavigationView.Items>
+                <controls:ChapterNavigationViewItem Header="Parent 1" Icon="(1)">
+                    <controls:ChapterNavigationViewItem Header="Parent 1.1" Icon="(1.1)" />
+                </controls:ChapterNavigationViewItem>
+                <controls:ChapterNavigationViewItem Header="Parent 2" Icon="(2)">
+                    <controls:ChapterNavigationViewItem Header="Parent 2.1" Icon="(2.1)" />
+                </controls:ChapterNavigationViewItem>
+                <controls:ChapterNavigationViewItem Header="Parent 3" Icon="(3)">
+                    <controls:ChapterNavigationViewItem Header="Parent 3.1" Icon="(3.1)" />
+                </controls:ChapterNavigationViewItem>
+            </controls:ChapterNavigationView.Items>
             <Button Content="Content">
                 <Button.ContextMenu>
                     <ContextMenu>

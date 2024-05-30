@@ -68,8 +68,12 @@
                                     <ContentPresenter ContentSource="SearchControl" />
                                 </controls:ChapterNavigationSearchBarContainer>
 
-                                <!--  Items  -->
-                                <Border />
+                                <controls:ChapterNavigationTreeItemsPresenter x:Name="itemsPresenter"
+                                                                              ItemContainerStyle="{TemplateBinding ItemContainerStyle}"
+                                                                              ItemTemplate="{TemplateBinding ItemTemplate}"
+                                                                              ItemsSource="{TemplateBinding Items}"
+                                                                              SelectedElement="{Binding SelectedItem, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
+                                                                              SelectionMode="Single" />
                             </DockPanel>
                         </Grid>
                     </Border>
@@ -100,6 +104,7 @@
                             <Setter TargetName="toggleButton" Property="Visibility" Value="Collapsed" />
                             <Setter TargetName="buttonsArea" Property="DockPanel.Dock" Value="Left" />
                             <Setter TargetName="PART_SearchControl" Property="DockPanel.Dock" Value="Right" />
+                            <Setter TargetName="itemsPresenter" Property="VerticalAlignment" Value="Center" />
                         </Trigger>
                         <MultiTrigger>
                             <MultiTrigger.Conditions>
