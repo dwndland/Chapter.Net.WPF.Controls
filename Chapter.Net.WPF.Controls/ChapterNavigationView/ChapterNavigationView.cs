@@ -18,6 +18,7 @@ namespace Chapter.Net.WPF.Controls
     /// <summary>
     ///     A burger menu with items to navigate with.
     /// </summary>
+    [TemplatePart(Name = "PART_BackButton", Type = typeof(Button))]
     [TemplatePart(Name = "PART_ContentPresenter", Type = typeof(FrameworkElement))]
     [ContentProperty(nameof(Content))]
     public class ChapterNavigationView : ComboBoxBase
@@ -47,10 +48,34 @@ namespace Chapter.Net.WPF.Controls
             DependencyProperty.Register(nameof(Title), typeof(object), typeof(ChapterNavigationView), new PropertyMetadata(null));
 
         /// <summary>
+        ///     The IsBackButtonVisible dependency property.
+        /// </summary>
+        public static readonly DependencyProperty IsBackButtonVisibleProperty =
+            DependencyProperty.Register(nameof(IsBackButtonVisible), typeof(bool), typeof(ChapterNavigationView), new PropertyMetadata(false));
+
+        /// <summary>
+        ///     The CurrentDisplayMode dependency property.
+        /// </summary>
+        public static readonly DependencyProperty BackCommandProperty =
+            DependencyProperty.Register(nameof(BackCommand), typeof(ICommand), typeof(ChapterNavigationView), new PropertyMetadata(null));
+
+        /// <summary>
+        ///     The CurrentDisplayMode dependency property.
+        /// </summary>
+        public static readonly DependencyProperty BackCommandParameterProperty =
+            DependencyProperty.Register(nameof(BackCommandParameter), typeof(object), typeof(ChapterNavigationView), new PropertyMetadata(null));
+
+        /// <summary>
         ///     The CurrentDisplayMode dependency property.
         /// </summary>
         internal static readonly DependencyProperty CurrentDisplayModeProperty =
             DependencyProperty.Register(nameof(CurrentDisplayMode), typeof(NavigationDisplayMode), typeof(ChapterNavigationView), new PropertyMetadata(NavigationDisplayMode.Left));
+
+        /// <summary>
+        ///     The RoutedEvent for the BackClick event.
+        /// </summary>
+        public static readonly RoutedEvent BackClickEvent =
+            EventManager.RegisterRoutedEvent(nameof(BackClick), RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(ChapterBrowseTextBox));
 
         static ChapterNavigationView()
         {
@@ -97,12 +122,45 @@ namespace Chapter.Net.WPF.Controls
         /// <summary>
         ///     Gets or sets the title control shown within the burger button.
         /// </summary>
-        /// <value>Default: null</value>
+        /// <value>Default: null.</value>
         [DefaultValue(null)]
         public object Title
         {
             get => GetValue(TitleProperty);
             set => SetValue(TitleProperty, value);
+        }
+
+        /// <summary>
+        ///     Gets or sets a value indicating whether the back button is visible or not.
+        /// </summary>
+        /// <value>Default: false.</value>
+        [DefaultValue(false)]
+        public bool IsBackButtonVisible
+        {
+            get => (bool)GetValue(IsBackButtonVisibleProperty);
+            set => SetValue(IsBackButtonVisibleProperty, value);
+        }
+
+        /// <summary>
+        ///     Gets or sets the command to execute by click on the back button.
+        /// </summary>
+        /// <value>Default: null.</value>
+        [DefaultValue(null)]
+        public ICommand BackCommand
+        {
+            get => (ICommand)GetValue(BackCommandProperty);
+            set => SetValue(BackCommandProperty, value);
+        }
+
+        /// <summary>
+        ///     Gets or sets the parameter to send with the <see cref="BackCommand" />.
+        /// </summary>
+        /// <value>Default: null.</value>
+        [DefaultValue(null)]
+        public object BackCommandParameter
+        {
+            get => GetValue(BackCommandParameterProperty);
+            set => SetValue(BackCommandParameterProperty, value);
         }
 
         /// <summary>
@@ -114,6 +172,15 @@ namespace Chapter.Net.WPF.Controls
         {
             get => (NavigationDisplayMode)GetValue(CurrentDisplayModeProperty);
             set => SetValue(CurrentDisplayModeProperty, value);
+        }
+
+        /// <summary>
+        ///     Add or removes the event handler for the BackClick routed event.
+        /// </summary>
+        public event RoutedEventHandler BackClick
+        {
+            add => AddHandler(BackClickEvent, value);
+            remove => RemoveHandler(BackClickEvent, value);
         }
 
         private static void OnDisplayModeChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
@@ -132,6 +199,9 @@ namespace Chapter.Net.WPF.Controls
 
             if (GetTemplateChild("PART_ContentPresenter") is FrameworkElement contentPresenter)
                 contentPresenter.PreviewMouseLeftButtonDown += OnContentClick;
+
+            if (GetTemplateChild("PART_BackButton") is Button backButton)
+                backButton.Click += OnBackClick;
         }
 
         /// <inheritdoc />
@@ -146,6 +216,11 @@ namespace Chapter.Net.WPF.Controls
         private void OnContentClick(object sender, MouseButtonEventArgs e)
         {
             SetCurrentValue(IsDropDownOpenProperty, false);
+        }
+
+        private void OnBackClick(object sender, RoutedEventArgs e)
+        {
+            RaiseEvent(new RoutedEventArgs(BackClickEvent, this));
         }
 
         private void SetCurrentDisplayModeByWidth(double width)

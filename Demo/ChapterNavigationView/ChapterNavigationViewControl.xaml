@@ -18,14 +18,19 @@
                                       SelectedItem="{x:Static controls:NavigationDisplayMode.Left}" />
 
             <TextBlock Text="Title" />
-            <TextBox x:Name="title" Text="ChapterNavigationView" />
+            <TextBox x:Name="title"
+                     Margin="0,0,0,10"
+                     Text="ChapterNavigationView" />
+
+            <CheckBox x:Name="isBackButtonVisible" Content="IsBackButtonVisible" />
         </demo:PropertyPanel>
 
         <Border Margin="10"
                 BorderBrush="Gray"
                 BorderThickness="1">
             <controls:ChapterNavigationView Title="{Binding Text, ElementName=title}"
-                                            DisplayMode="{Binding SelectedItem, ElementName=displayMode}">
+                                            DisplayMode="{Binding SelectedItem, ElementName=displayMode}"
+                                            IsBackButtonVisible="{Binding IsChecked, ElementName=isBackButtonVisible}">
                 <Button Content="Content">
                     <Button.ContextMenu>
                         <ContextMenu>

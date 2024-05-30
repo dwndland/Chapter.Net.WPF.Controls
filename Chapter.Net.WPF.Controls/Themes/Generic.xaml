@@ -15,6 +15,7 @@
         <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterControlHeaderPresenter/ChapterControlHeaderPresenter.xaml" />
         <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterHeaderedContentControl/ChapterHeaderedContentControl.xaml" />
         <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterImagePresenter/ChapterImagePresenter.xaml" />
+        <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterNavigationView/ChapterNavigationBackButton.xaml" />
         <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterNavigationView/ChapterNavigationBurgerButton.xaml" />
         <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterNavigationView/ChapterNavigationView.xaml" />
         <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterNumberBox/ChapterNumberBox.xaml" />
