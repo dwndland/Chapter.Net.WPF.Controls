@@ -13,15 +13,23 @@
                             <ColumnDefinition x:Name="extendColumn" Width="0" />
                             <ColumnDefinition />
                         </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition x:Name="topRow" Height="Auto" />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
 
-                        <ContentPresenter x:Name="PART_ContentPresenter" Grid.Column="2" />
+                        <ContentPresenter x:Name="PART_ContentPresenter"
+                                          Grid.Row="1"
+                                          Grid.Column="2" />
 
                         <Border x:Name="sideBar"
+                                Grid.Row="1"
                                 Grid.Column="0"
                                 Grid.ColumnSpan="2"
                                 Background="#F5F5F5" />
 
                         <controls:ChapterNavigationBurgerButton x:Name="toggleButton"
+                                                                Grid.Row="1"
                                                                 Grid.Column="0"
                                                                 Grid.ColumnSpan="2"
                                                                 Margin="6"
@@ -47,6 +55,12 @@
                             <Setter TargetName="toggleButton" Property="Grid.ColumnSpan" Value="3" />
                             <Setter TargetName="toggleButton" Property="HorizontalAlignment" Value="Left" />
                             <Setter TargetName="toggleButton" Property="IsChecked" Value="{Binding IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" />
+                        </Trigger>
+                        <Trigger Property="CurrentDisplayMode" Value="Top">
+                            <Setter TargetName="topRow" Property="MinHeight" Value="40" />
+                            <Setter TargetName="sideBar" Property="Grid.Row" Value="0" />
+                            <Setter TargetName="sideBar" Property="Grid.ColumnSpan" Value="3" />
+                            <Setter TargetName="toggleButton" Property="Visibility" Value="Collapsed" />
                         </Trigger>
 
                         <MultiTrigger>
