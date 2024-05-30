@@ -110,6 +110,24 @@ namespace Chapter.Net.WPF.Controls
             DependencyProperty.Register(nameof(Items), typeof(IList), typeof(ChapterNavigationView), new PropertyMetadata(null));
 
         /// <summary>
+        ///     The FooterItems dependency property.
+        /// </summary>
+        public static readonly DependencyProperty FooterItemsProperty =
+            DependencyProperty.Register(nameof(FooterItems), typeof(IList), typeof(ChapterNavigationView), new PropertyMetadata(null));
+
+        /// <summary>
+        ///     The FooterItemContainerStyle dependency property.
+        /// </summary>
+        public static readonly DependencyProperty FooterItemContainerStyleProperty =
+            DependencyProperty.Register(nameof(FooterItemContainerStyle), typeof(Style), typeof(ChapterNavigationView), new PropertyMetadata(null));
+
+        /// <summary>
+        ///     The FooterItemTemplate dependency property.
+        /// </summary>
+        public static readonly DependencyProperty FooterItemTemplateProperty =
+            DependencyProperty.Register(nameof(FooterItemTemplate), typeof(DataTemplate), typeof(ChapterNavigationView), new PropertyMetadata(null));
+
+        /// <summary>
         ///     The SelectedItem dependency property.
         /// </summary>
         public new static readonly DependencyProperty SelectedItemProperty =
@@ -138,6 +156,7 @@ namespace Chapter.Net.WPF.Controls
         public ChapterNavigationView()
         {
             Items = new ObservableCollection<ChapterNavigationViewItem>();
+            FooterItems = new ObservableCollection<ChapterNavigationViewItem>();
         }
 
         /// <summary>
@@ -286,6 +305,39 @@ namespace Chapter.Net.WPF.Controls
         {
             get => (IList)GetValue(ItemsProperty);
             set => SetValue(ItemsProperty, value);
+        }
+
+        /// <summary>
+        ///     Gets or sets footer items.
+        /// </summary>
+        /// <value>Default: null.</value>
+        [DefaultValue(null)]
+        public IList FooterItems
+        {
+            get => (IList)GetValue(FooterItemsProperty);
+            set => SetValue(FooterItemsProperty, value);
+        }
+
+        /// <summary>
+        ///     Gets or sets the item container styles for the footer items.
+        /// </summary>
+        /// <value>Default: null.</value>
+        [DefaultValue(null)]
+        public Style FooterItemContainerStyle
+        {
+            get => (Style)GetValue(FooterItemContainerStyleProperty);
+            set => SetValue(FooterItemContainerStyleProperty, value);
+        }
+
+        /// <summary>
+        ///     Gets or sets item templates for the footer items.
+        /// </summary>
+        /// <value>Default: null.</value>
+        [DefaultValue(null)]
+        public DataTemplate FooterItemTemplate
+        {
+            get => (DataTemplate)GetValue(FooterItemTemplateProperty);
+            set => SetValue(FooterItemTemplateProperty, value);
         }
 
         /// <summary>

@@ -57,7 +57,13 @@
                                     </controls:ChapterNavigationBurgerButton>
                                 </DockPanel>
 
-                                <!--  Footer Items (Bottom|Right)  -->
+                                <controls:ChapterNavigationTreeItemsPresenter x:Name="footerItemsPresenter"
+                                                                              DockPanel.Dock="Bottom"
+                                                                              ItemContainerStyle="{TemplateBinding FooterItemContainerStyle}"
+                                                                              ItemTemplate="{TemplateBinding FooterItemTemplate}"
+                                                                              ItemsSource="{TemplateBinding FooterItems}"
+                                                                              SelectedElement="{Binding SelectedItem, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
+                                                                              SelectionMode="Single" />
 
                                 <!--  Footer Control (Bottom|Right)  -->
 
@@ -103,7 +109,9 @@
                             <Setter TargetName="panelArea" Property="Grid.ColumnSpan" Value="3" />
                             <Setter TargetName="toggleButton" Property="Visibility" Value="Collapsed" />
                             <Setter TargetName="buttonsArea" Property="DockPanel.Dock" Value="Left" />
+                            <Setter TargetName="footerItemsPresenter" Property="DockPanel.Dock" Value="Right" />
                             <Setter TargetName="PART_SearchControl" Property="DockPanel.Dock" Value="Right" />
+                            <Setter TargetName="footerItemsPresenter" Property="VerticalAlignment" Value="Center" />
                             <Setter TargetName="itemsPresenter" Property="VerticalAlignment" Value="Center" />
                         </Trigger>
                         <MultiTrigger>
