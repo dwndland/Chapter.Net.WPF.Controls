@@ -18,6 +18,11 @@ namespace Chapter.Net.WPF.Controls
     public class ChapterNavigationSearchBarContainer : ButtonBase
     {
         /// <summary>
+        ///     The ChapterNavigationSearchBarContainer style key.
+        /// </summary>
+        public static readonly ComponentResourceKey StyleKey = new ComponentResourceKey(typeof(ChapterNavigationSearchBarContainer), "ChapterNavigationSearchBarContainer");
+
+        /// <summary>
         ///     The IsDropDownOpen dependency property.
         /// </summary>
         public static readonly DependencyProperty IsDropDownOpenProperty =

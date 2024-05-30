@@ -16,6 +16,11 @@ namespace Chapter.Net.WPF.Controls
     /// </summary>
     public class ChapterNavigationBackButton : ButtonBase
     {
+        /// <summary>
+        ///     The ChapterNavigationBackButton style key.
+        /// </summary>
+        public static readonly ComponentResourceKey StyleKey = new ComponentResourceKey(typeof(ChapterNavigationBackButton), "ChapterNavigationBackButton");
+
         static ChapterNavigationBackButton()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(ChapterNavigationBackButton), new FrameworkPropertyMetadata(typeof(ChapterNavigationBackButton)));

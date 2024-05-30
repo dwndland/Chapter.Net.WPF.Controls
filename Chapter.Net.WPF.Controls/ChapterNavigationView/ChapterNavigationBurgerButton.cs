@@ -16,6 +16,11 @@ namespace Chapter.Net.WPF.Controls
     /// </summary>
     public class ChapterNavigationBurgerButton : ToggleButtonBase
     {
+        /// <summary>
+        ///     The ChapterNavigationBurgerButton style key.
+        /// </summary>
+        public static readonly ComponentResourceKey StyleKey = new ComponentResourceKey(typeof(ChapterNavigationBurgerButton), "ChapterNavigationBurgerButton");
+
         static ChapterNavigationBurgerButton()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(ChapterNavigationBurgerButton), new FrameworkPropertyMetadata(typeof(ChapterNavigationBurgerButton)));

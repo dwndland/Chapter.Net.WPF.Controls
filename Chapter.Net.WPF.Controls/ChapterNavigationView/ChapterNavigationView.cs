@@ -25,6 +25,11 @@ namespace Chapter.Net.WPF.Controls
     public class ChapterNavigationView : ComboBoxBase
     {
         /// <summary>
+        ///     The ChapterNavigationView style key.
+        /// </summary>
+        public static readonly ComponentResourceKey StyleKey = new ComponentResourceKey(typeof(ChapterNavigationView), "ChapterNavigationView");
+
+        /// <summary>
         ///     The DisplayMode dependency property.
         /// </summary>
         public static readonly DependencyProperty DisplayModeProperty =
