@@ -39,7 +39,9 @@
                                             BorderThickness="{TemplateBinding BorderThickness}"
                                             CornerRadius="{TemplateBinding CornerRadius}">
                                         <DockPanel DockPanel.Dock="Top">
-                                            <Border Width="28" DockPanel.Dock="Left">
+                                            <Border x:Name="popupIcon"
+                                                    Width="28"
+                                                    DockPanel.Dock="Left">
                                                 <ContentPresenter HorizontalAlignment="Center"
                                                                   VerticalAlignment="Center"
                                                                   ContentSource="Icon" />
@@ -150,6 +152,14 @@
                                 <Condition Property="IsDropDownOpen" Value="False" />
                             </MultiTrigger.Conditions>
                             <Setter Property="Visibility" Value="Collapsed" />
+                        </MultiTrigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="DisplayMode" Value="Top" />
+                                <Condition Property="Level" Value="0" />
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="icon" Property="Visibility" Value="Collapsed" />
+                            <Setter TargetName="popupIcon" Property="Visibility" Value="Collapsed" />
                         </MultiTrigger>
 
                         <Trigger SourceName="PART_HeaderBar" Property="IsMouseOver" Value="True">

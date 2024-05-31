@@ -31,8 +31,7 @@
                       IsChecked="True" />
         </demo:PropertyPanel>
 
-        <controls:ChapterNavigationView x:Name="view"
-                                        Title="{Binding Text, ElementName=title}"
+        <controls:ChapterNavigationView Title="{Binding Text, ElementName=title}"
                                         Margin="10"
                                         BorderBrush="Gray"
                                         BorderThickness="1"
@@ -47,26 +46,30 @@
                 <Button Content="Header" />
             </controls:ChapterNavigationView.Header>
             <controls:ChapterNavigationView.Items>
-                <controls:ChapterNavigationViewItem Header="Parent 1" Icon="(1)">
-                    <controls:ChapterNavigationViewItem Header="Parent 1.1" Icon="(1.1)">
-                        <controls:ChapterNavigationViewItem Header="Parent 1.2" Icon="(1.2)" />
+                <controls:ChapterNavigationViewItem Header="Item 1" Icon="(1)">
+                    <controls:ChapterNavigationViewItem Header="Item 1.1" Icon="(1.1)">
+                        <controls:ChapterNavigationViewItem Header="Item 1.2" Icon="(1.2)" />
                     </controls:ChapterNavigationViewItem>
                 </controls:ChapterNavigationViewItem>
-                <controls:ChapterNavigationViewItem Header="Parent 2" Icon="(2)">
-                    <controls:ChapterNavigationViewItem Header="Parent 2.1" Icon="(2.1)" />
+                <controls:ChapterNavigationViewItem Header="Item 2" Icon="(2)">
+                    <controls:ChapterNavigationViewItem Header="Item 2.1" Icon="(2.1)" />
                 </controls:ChapterNavigationViewItem>
-                <controls:ChapterNavigationViewItem Header="Parent 3" Icon="(3)">
-                    <controls:ChapterNavigationViewItem Header="Parent 3.1" Icon="(3.1)" />
+                <controls:ChapterNavigationViewItem Header="Item 3" Icon="(3)">
+                    <controls:ChapterNavigationViewItem Header="Item 3.1" Icon="(3.1)" />
                 </controls:ChapterNavigationViewItem>
-                <controls:ChapterNavigationViewItem Header="Parent 4" Icon="(4)" />
+                <controls:ChapterNavigationViewItem Header="Item 4" Icon="(4)" />
+                <controls:ChapterNavigationViewItem Header="Item 5" Icon="(5)" />
+                <controls:ChapterNavigationViewItem Header="Item 6" Icon="(6)" />
             </controls:ChapterNavigationView.Items>
             <controls:ChapterNavigationView.FooterItems>
-                <controls:ChapterNavigationViewItem Header="Parent 5" Icon="(5)">
-                    <controls:ChapterNavigationViewItem Header="Parent 5.1" Icon="(5.1)" />
+                <controls:ChapterNavigationViewItem Header="Footer Item 1" Icon="(F1)">
+                    <controls:ChapterNavigationViewItem Header="Footer Item F1.1" Icon="(F1.1)" />
                 </controls:ChapterNavigationViewItem>
-                <controls:ChapterNavigationViewItem Header="Parent 6" Icon="(6)">
-                    <controls:ChapterNavigationViewItem Header="Parent 6.1" Icon="(6.1)" />
+                <controls:ChapterNavigationViewItem Header="Footer Item 2" Icon="(F2)">
+                    <controls:ChapterNavigationViewItem Header="Footer Item F2.1" Icon="(F2.1)" />
                 </controls:ChapterNavigationViewItem>
+                <controls:ChapterNavigationViewItem Header="Footer Item 3" Icon="(F3)" />
+                <controls:ChapterNavigationViewItem Header="Footer Item 4" Icon="(F4)" />
             </controls:ChapterNavigationView.FooterItems>
             
             <Button Content="{Binding SelectedItemString}">
