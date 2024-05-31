@@ -61,6 +61,12 @@ namespace Chapter.Net.WPF.Controls
         public static readonly DependencyProperty LevelProperty =
             DependencyProperty.Register(nameof(Level), typeof(int), typeof(ChapterNavigationViewItem), new PropertyMetadata(0));
 
+        /// <summary>
+        ///     The Indentation dependency property.
+        /// </summary>
+        public static readonly DependencyProperty IndentationProperty =
+            DependencyProperty.Register(nameof(Indentation), typeof(Thickness), typeof(ChapterNavigationViewItem), new PropertyMetadata(new Thickness()));
+
         private FrameworkElement _headerBar;
 
         static ChapterNavigationViewItem()
@@ -138,6 +144,16 @@ namespace Chapter.Net.WPF.Controls
             private set => SetValue(LevelProperty, value);
         }
 
+        /// <summary>
+        ///     Gets or sets the indentation.
+        /// </summary>
+        /// <value>Default: 0.</value>
+        public Thickness Indentation
+        {
+            get => (Thickness)GetValue(IndentationProperty);
+            set => SetValue(IndentationProperty, value);
+        }
+
         /// <inheritdoc />
         public override void OnApplyTemplate()
         {
@@ -159,6 +175,7 @@ namespace Chapter.Net.WPF.Controls
             SetBinding(IsDropDownOpenProperty, new Binding("IsDropDownOpen") { RelativeSource = new RelativeSource(RelativeSourceMode.FindAncestor, typeof(ChapterNavigationView), 1) });
 
             Level = GetLevel();
+            Indentation = new Thickness(Level * 20, 0, 0, 0);
         }
 
         private static void OnToCompact(DependencyObject d, DependencyPropertyChangedEventArgs e)
