@@ -87,6 +87,7 @@
         <StackPanel>
             <DockPanel>
                 <ToggleButton x:Name="PART_HeaderBar"
+                              Margin="3,0"
                               DockPanel.Dock="Top"
                               IsChecked="{Binding IsExpanded, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
                               Style="{StaticResource InvisibleToggleButton}">
@@ -107,9 +108,7 @@
                                   Stretch="Fill"
                                   Stroke="Black"
                                   StrokeThickness="1" />
-                            <Border x:Name="icon"
-                                    Width="28"
-                                    DockPanel.Dock="Left">
+                            <Border x:Name="icon" DockPanel.Dock="Left">
                                 <ContentPresenter HorizontalAlignment="Center"
                                                   VerticalAlignment="Center"
                                                   ContentSource="Icon" />
@@ -141,6 +140,14 @@
                 </MultiTrigger.Conditions>
                 <Setter TargetName="header" Property="Visibility" Value="Collapsed" />
                 <Setter TargetName="panel" Property="HorizontalAlignment" Value="Center" />
+            </MultiTrigger>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="DisplayMode" Value="Left" />
+                    <Condition Property="IsNavigationExpanded" Value="True" />
+                    <Condition Property="Level" Value="0" />
+                </MultiTrigger.Conditions>
+                <Setter TargetName="icon" Property="Width" Value="28" />
             </MultiTrigger>
             <MultiTrigger>
                 <MultiTrigger.Conditions>
