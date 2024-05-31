@@ -52,29 +52,31 @@
                         <icons:StatusAndInfoIcon Width="16" Height="16" />
                     </controls:ChapterNavigationViewItem.Icon>
                     <controls:ChapterNavigationViewItem Header="Item 1.1" Icon="(1.1)">
-                        <controls:ChapterNavigationViewItem Header="Item 1.2" Icon="(1.2)" />
-                    </controls:ChapterNavigationViewItem>
+                        <controls:ChapterNavigationViewItem Header="Item 1.2" Icon="(1.2)">
+                            <controls:ChapterNavigationViewItem Header="Item 1.3" Icon="(1.3)" />
+                        </controls:ChapterNavigationViewItem>
+                        </controls:ChapterNavigationViewItem>
                 </controls:ChapterNavigationViewItem>
                 <controls:ChapterNavigationViewItem Header="Item 2">
                     <controls:ChapterNavigationViewItem.Icon>
-                        <icons:TextIcon Width="16" Height="12" />
+                        <icons:TextIcon Width="16" Height="16" />
                     </controls:ChapterNavigationViewItem.Icon>
                     <controls:ChapterNavigationViewItem Header="Item 2.1" Icon="(2.1)" />
                 </controls:ChapterNavigationViewItem>
                 <controls:ChapterNavigationViewItem Header="Item 3">
                     <controls:ChapterNavigationViewItem.Icon>
-                        <icons:CollectionsIcon Width="16" Height="12" />
+                        <icons:CollectionsIcon Width="16" Height="16" />
                     </controls:ChapterNavigationViewItem.Icon>
                     <controls:ChapterNavigationViewItem Header="Item 3.1" Icon="(3.1)" />
                 </controls:ChapterNavigationViewItem>
                 <controls:ChapterNavigationViewItem Header="Item 4">
                     <controls:ChapterNavigationViewItem.Icon>
-                        <icons:LayoutIcon Width="16" Height="12" />
+                        <icons:LayoutIcon Width="16" Height="16" />
                     </controls:ChapterNavigationViewItem.Icon>
                 </controls:ChapterNavigationViewItem>
                 <controls:ChapterNavigationViewItem Header="Item 5">
                     <controls:ChapterNavigationViewItem.Icon>
-                        <icons:BasicInputIcon Width="14" Height="14" />
+                        <icons:BasicInputIcon Width="16" Height="16" />
                     </controls:ChapterNavigationViewItem.Icon>
                 </controls:ChapterNavigationViewItem>
                 <controls:ChapterNavigationViewItem Header="Item 6">

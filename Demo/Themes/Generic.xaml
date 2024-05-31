@@ -36,7 +36,7 @@
                 <ControlTemplate TargetType="{x:Type icons:SaveIcon}">
                     <Border>
                         <Border.Background>
-                            <DrawingBrush>
+                            <DrawingBrush Stretch="Uniform">
                                 <DrawingBrush.Drawing>
                                     <DrawingGroup>
                                         <GeometryDrawing Geometry="F0M88.00916,0.00002 L99.57201,11.56321 L99.57201,94.11157 C99.57201,97.36364 96.93565,100 93.68358,100 C75.79145,100 22.25276,100 5.24639,100 C3.85496,100 2.52091,99.44775 1.53658,98.46342 C0.55293,97.47976 0,96.14504 0,94.75361 C0,77.51769 0,22.74374 0,5.35335 C0,3.93357 0.5644,2.57191 1.56831,1.56793 C2.57222,0.56402 3.93395,0.00002 5.35373,0.00002 L88.00916,0.00002 z">
@@ -83,7 +83,7 @@
                 <ControlTemplate TargetType="{x:Type icons:StatusAndInfoIcon}">
                     <Border>
                         <Border.Background>
-                            <DrawingBrush>
+                            <DrawingBrush Stretch="Uniform">
                                 <DrawingBrush.Drawing>
                                     <GeometryDrawing Brush="{Binding Foreground, RelativeSource={RelativeSource TemplatedParent}}" Geometry="F0M100,62.5 L81.25,62.5 L81.25,75 L31.25,75 L12.5,93.75 L12.5,75 L0,75 L0,18.75 L12.5,18.75 L12.5,0 L100,0 L100,62.5 z M75,25 L6.25,25 L6.25,68.75 L18.75,68.75 L18.75,78.66211 Q21.24023,76.17187 23.65723,73.68164 Q26.07422,71.19141 28.66211,68.75 L75,68.75 L75,25 z M93.75,6.25 L18.75,6.25 L18.75,18.75 L81.25,18.75 L81.25,56.25 L93.75,56.25 L93.75,6.25 z" />
                                 </DrawingBrush.Drawing>
@@ -102,7 +102,7 @@
                 <ControlTemplate TargetType="{x:Type icons:TextIcon}">
                     <Border>
                         <Border.Background>
-                            <DrawingBrush>
+                            <DrawingBrush Stretch="Uniform">
                                 <DrawingBrush.Drawing>
                                     <GeometryDrawing Brush="{Binding Foreground, RelativeSource={RelativeSource TemplatedParent}}" Geometry="F0M34.5465,44.36742 L12.70942,44.36742 L7.79896,59.15656 L0,59.15656 L19.75737,0 L27.49856,0 L42.98094,46.3316 L38.30156,55.69035 L34.5465,44.36742 z M32.06239,36.97285 L23.62796,11.66955 L15.19353,36.97285 L32.06239,36.97285 z M88.7926,76.19873 Q89.7747,78.5673 90.61236,80.41594 Q91.45003,82.26459 92.60543,83.56441 Q93.76083,84.86424 95.49393,85.52859 Q97.22704,86.19295 100,86.19295 L100,88.73483 L74.06124,88.73483 L74.06124,86.19295 Q75.04333,86.19295 76.22761,86.22184 Q77.4119,86.25072 78.45176,85.99075 Q79.49162,85.73079 80.18486,85.03755 Q80.8781,84.34431 80.8781,82.90006 Q80.8781,82.09127 80.5026,80.64702 Q80.12709,79.20277 79.57828,77.52744 Q79.02946,75.85211 78.36511,74.09012 Q77.70075,72.32813 77.09416,70.76834 Q76.48758,69.20855 76.02542,68.08203 Q75.56326,66.95552 75.38995,66.55112 L49.50895,66.55112 Q49.33564,67.01329 48.81571,68.1398 Q48.29578,69.26632 47.63143,70.79723 Q46.96707,72.32813 46.24494,74.06123 Q45.52282,75.79434 44.91623,77.44078 Q44.30965,79.08723 43.93414,80.53148 Q43.55864,81.97573 43.55864,82.84229 Q43.55864,84.22877 44.28076,84.89312 Q45.00289,85.55748 46.04275,85.81744 Q47.08261,86.07741 48.2669,86.1063 Q49.45118,86.13518 50.3755,86.19295 L50.3755,88.73483 L28.59619,88.73483 L28.59619,86.19295 Q31.42692,85.67302 32.98671,84.97978 Q34.5465,84.28654 35.5286,83.10225 Q36.51069,81.91796 37.2617,80.12709 Q38.01271,78.33622 39.16811,75.56326 L61.81398,22.18371 L66.55113,22.18371 L88.7926,76.19873 z M71.98151,59.15656 L61.75621,37.14616 L51.99307,59.15656 L71.98151,59.15656 z" />
                                 </DrawingBrush.Drawing>
@@ -121,7 +121,7 @@
                 <ControlTemplate TargetType="{x:Type icons:CollectionsIcon}">
                     <Border>
                         <Border.Background>
-                            <DrawingBrush>
+                            <DrawingBrush Stretch="Uniform">
                                 <DrawingBrush.Drawing>
                                     <GeometryDrawing Brush="{Binding Foreground, RelativeSource={RelativeSource TemplatedParent}}" Geometry="F0M0,43.75 L0,37.5 L6.25,37.5 L6.25,43.75 L0,43.75 z M0,25 L0,18.75 L6.25,18.75 L6.25,25 L0,25 z M18.75,25 L18.75,18.75 L100,18.75 L100,25 L18.75,25 z M0,6.25 L0,0 L6.25,0 L6.25,6.25 L0,6.25 z M18.75,0 L100,0 L100,6.25 L18.75,6.25 L18.75,0 z M18.75,43.75 L18.75,37.5 L100,37.5 L100,43.75 L18.75,43.75 z M0,62.5 L0,56.25 L6.25,56.25 L6.25,62.5 L0,62.5 z M18.75,62.5 L18.75,56.25 L100,56.25 L100,62.5 L18.75,62.5 z" />
                                 </DrawingBrush.Drawing>
@@ -140,7 +140,7 @@
                 <ControlTemplate TargetType="{x:Type icons:LayoutIcon}">
                     <Border>
                         <Border.Background>
-                            <DrawingBrush>
+                            <DrawingBrush Stretch="Uniform">
                                 <DrawingBrush.Drawing>
                                     <GeometryDrawing Brush="{Binding Foreground, RelativeSource={RelativeSource TemplatedParent}}" Geometry="F0M0,0 L100,0 L100,75 L0,75 L0,0 z M93.75,68.75 L93.75,6.25 L6.25,6.25 L6.25,68.75 L93.75,68.75 z M87.5,12.5 L87.5,31.25 L12.5,31.25 L12.5,12.5 L87.5,12.5 z M81.25,25 L81.25,18.75 L18.75,18.75 L18.75,25 L81.25,25 z M62.5,62.5 L62.5,37.5 L87.5,37.5 L87.5,62.5 L62.5,62.5 z M68.75,43.75 L68.75,56.25 L81.25,56.25 L81.25,43.75 L68.75,43.75 z M50,37.5 L50,43.75 L12.5,43.75 L12.5,37.5 L50,37.5 z M50,56.25 L50,62.5 L12.5,62.5 L12.5,56.25 L50,56.25 z" />
                                 </DrawingBrush.Drawing>
@@ -159,7 +159,7 @@
                 <ControlTemplate TargetType="{x:Type icons:BasicInputIcon}">
                     <Border>
                         <Border.Background>
-                            <DrawingBrush>
+                            <DrawingBrush Stretch="Uniform">
                                 <DrawingBrush.Drawing>
                                     <GeometryDrawing Brush="{Binding Foreground, RelativeSource={RelativeSource TemplatedParent}}" Geometry="F0M100,0 L100,100 L0,100 L0,0 L100,0 z M93.75,6.25 L6.25,6.25 L6.25,93.75 L93.75,93.75 L93.75,6.25 z M37.5,79.44336 L16.55273,58.44727 L20.94727,54.05273 L37.5,70.55664 L79.05274,29.05273 L83.44727,33.44727 L37.5,79.44336 z" />
                                 </DrawingBrush.Drawing>

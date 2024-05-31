@@ -5,111 +5,86 @@
 // -----------------------------------------------------------------------------------------------------------------
 
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Windows.Controls;
 
 namespace Demo;
 
-public partial class MainWindow : INotifyPropertyChanged
+public partial class MainWindow
 {
     public MainWindow()
     {
         InitializeComponent();
 
-        _basicInput =
+        BasicInput =
         [
-            new ChapterButtonControl(),
-            new ChapterCheckBoxControl(),
-            new ChapterSplitButtonControl(),
-            new ChapterToggleSwitchControl()
+            new ControlItem("ChapterButton", new ChapterButtonControl()),
+            new ControlItem("ChapterCheckBox", new ChapterCheckBoxControl()),
+            new ControlItem("ChapterSplitButton", new ChapterSplitButtonControl()),
+            new ControlItem("ChapterToggleSwitch", new ChapterToggleSwitchControl())
         ];
 
-        _collections =
+        Collections =
         [
-            new ChapterComboBoxControl(),
-            new ChapterTabControlControl(),
-            new ChapterTreeListViewControl(),
-            new ChapterTreeViewControl()
+            new ControlItem("ChapterComboBox", new ChapterComboBoxControl()),
+            new ControlItem("ChapterTabControl", new ChapterTabControlControl()),
+            new ControlItem("ChapterTreeListView", new ChapterTreeListViewControl()),
+            new ControlItem("ChapterTreeView", new ChapterTreeViewControl())
         ];
 
-        _text =
+        Text =
         [
-            new ChapterBrowseTextBoxControl(),
-            new ChapterNumberBoxControl(),
-            new ChapterPasswordBoxControl(),
-            new ChapterSearchTextBoxControl(),
-            new ChapterTextBoxControl(),
-            new ChapterTimeBoxControl()
+            new ControlItem("ChapterBrowseTextBox", new ChapterBrowseTextBoxControl()),
+            new ControlItem("ChapterNumberBox", new ChapterNumberBoxControl()),
+            new ControlItem("ChapterPasswordBox", new ChapterPasswordBoxControl()),
+            new ControlItem("ChapterSearchTextBox", new ChapterSearchTextBoxControl()),
+            new ControlItem("ChapterTextBox", new ChapterTextBoxControl()),
+            new ControlItem("ChapterTimeBox", new ChapterTimeBoxControl())
         ];
 
-        _layout =
+        Layout =
         [
-            new ChapterArcPanelControl(),
-            new ChapterCardControl(),
-            new ChapterEllipsePanelControl(),
-            new ChapterHeaderedContentControlControl(),
-            new ChapterResizerControl(),
-            new ChapterStackPanelControl(),
-            new ChapterTitledItemsControlControl(),
-            new ChapterItemsPanelControl(),
-            new ChapterUniformPanelControl(),
-            new ChapterWrapPanelControl()
+            new ControlItem("ChapterArcPanel", new ChapterArcPanelControl()),
+            new ControlItem("ChapterCard", new ChapterCardControl()),
+            new ControlItem("ChapterEllipsePanel", new ChapterEllipsePanelControl()),
+            new ControlItem("ChapterHeaderedContentControl", new ChapterHeaderedContentControlControl()),
+            new ControlItem("ChapterResizer", new ChapterResizerControl()),
+            new ControlItem("ChapterStackPanel", new ChapterStackPanelControl()),
+            new ControlItem("ChapterTitledItemsControl", new ChapterTitledItemsControlControl()),
+            new ControlItem("ChapterItemsPanel", new ChapterItemsPanelControl()),
+            new ControlItem("ChapterUniformPanel", new ChapterUniformPanelControl()),
+            new ControlItem("ChapterWrapPanel", new ChapterWrapPanelControl())
         ];
 
-        _statusAndInfo =
+        StatusAndInfo =
         [
-            new ChapterBadgeControl()
+            new ControlItem("ChapterBadge", new ChapterBadgeControl())
         ];
 
-        _menusAndToolBars =
+        MenusAndToolBars =
         [
-            new ChapterAccordionControl(),
-            new ChapterNavigationViewControl()
+            new ControlItem("ChapterAccordion", new ChapterAccordionControl()),
+            new ControlItem("ChapterNavigationView", new ChapterNavigationViewControl())
         ];
-
-        Controls = _menusAndToolBars;
 
         DataContext = this;
     }
 
-    private List<UserControl> _basicInput { get; }
-    private List<UserControl> _collections { get; }
-    private List<UserControl> _text { get; }
-    private List<UserControl> _layout { get; }
-    private List<UserControl> _statusAndInfo { get; }
-    private List<UserControl> _menusAndToolBars { get; }
+    public List<ControlItem> BasicInput { get; }
+    public List<ControlItem> Collections { get; }
+    public List<ControlItem> Text { get; }
+    public List<ControlItem> Layout { get; }
+    public List<ControlItem> StatusAndInfo { get; }
+    public List<ControlItem> MenusAndToolBars { get; }
+}
 
-    public List<UserControl> Controls { get; private set; }
-
-    public event PropertyChangedEventHandler PropertyChanged;
-
-    private void OnGroupChanged(object sender, SelectionChangedEventArgs e)
+public class ControlItem
+{
+    public ControlItem(string title, UserControl control)
     {
-        var box = (ListBox)sender;
-        var item = (ListBoxItem)box.SelectedItem;
-
-        switch (item.Name)
-        {
-            case "BasicInput":
-                Controls = _basicInput;
-                break;
-            case "Collections":
-                Controls = _collections;
-                break;
-            case "Text":
-                Controls = _text;
-                break;
-            case "Layout":
-                Controls = _layout;
-                break;
-            case "StatusAndInfo":
-                Controls = _statusAndInfo;
-                break;
-            case "MenusAndToolBars":
-                Controls = _menusAndToolBars;
-                break;
-        }
-
-        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Controls)));
+        Title = title;
+        Control = control;
     }
+
+    public string Title { get; set; }
+    public UserControl Control { get; set; }
 }
