@@ -129,6 +129,9 @@
                         <Trigger Property="IsBurgerButtonVisible" Value="False">
                             <Setter TargetName="toggleButton" Property="Visibility" Value="Collapsed" />
                         </Trigger>
+                        <Trigger Property="SearchControl" Value="{x:Null}">
+                            <Setter TargetName="PART_SearchControl" Property="Visibility" Value="Collapsed" />
+                        </Trigger>
 
                         <MultiTrigger>
                             <MultiTrigger.Conditions>

@@ -86,14 +86,28 @@
                 </controls:ChapterNavigationViewItem>
             </controls:ChapterNavigationView.Items>
             <controls:ChapterNavigationView.FooterItems>
-                <controls:ChapterNavigationViewItem Header="Footer Item 1" Icon="(F1)">
+                <controls:ChapterNavigationViewItem Header="Footer Item 1">
+                    <controls:ChapterNavigationViewItem.Icon>
+                        <icons:UsersIcon Width="16" Height="16" />
+                    </controls:ChapterNavigationViewItem.Icon>
                     <controls:ChapterNavigationViewItem Header="Footer Item F1.1" Icon="(F1.1)" />
                 </controls:ChapterNavigationViewItem>
-                <controls:ChapterNavigationViewItem Header="Footer Item 2" Icon="(F2)">
+                <controls:ChapterNavigationViewItem Header="Footer Item 2">
+                    <controls:ChapterNavigationViewItem.Icon>
+                        <icons:DocumentsIcon Width="16" Height="16" />
+                    </controls:ChapterNavigationViewItem.Icon>
                     <controls:ChapterNavigationViewItem Header="Footer Item F2.1" Icon="(F2.1)" />
                 </controls:ChapterNavigationViewItem>
-                <controls:ChapterNavigationViewItem Header="Footer Item 3" Icon="(F3)" />
-                <controls:ChapterNavigationViewItem Header="Footer Item 4" Icon="(F4)" />
+                <controls:ChapterNavigationViewItem Header="Footer Item 3">
+                    <controls:ChapterNavigationViewItem.Icon>
+                        <icons:LibrariesIcon Width="16" Height="16" />
+                    </controls:ChapterNavigationViewItem.Icon>
+                </controls:ChapterNavigationViewItem>
+                <controls:ChapterNavigationViewItem Header="Footer Item 4">
+                    <controls:ChapterNavigationViewItem.Icon>
+                        <icons:SettingsIcon Width="16" Height="16" />
+                    </controls:ChapterNavigationViewItem.Icon>
+                </controls:ChapterNavigationViewItem>
             </controls:ChapterNavigationView.FooterItems>
 
             <Button Content="{Binding SelectedItemString}">
