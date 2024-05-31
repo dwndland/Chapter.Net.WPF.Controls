@@ -7,6 +7,7 @@
 using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls.Primitives;
+using System.Windows.Input;
 using System.Windows.Markup;
 using Chapter.Net.WPF.Controls.Bases;
 
@@ -96,6 +97,19 @@ namespace Chapter.Net.WPF.Controls
         {
             get => (CornerRadius)GetValue(CornerRadiusProperty);
             set => SetValue(CornerRadiusProperty, value);
+        }
+
+        /// <inheritdoc />
+        protected override void OnPreviewMouseDown(MouseButtonEventArgs e)
+        {
+            base.OnPreviewMouseDown(e);
+
+            if (e.OriginalSource is DependencyObject obj)
+            {
+                var clickedItem = VisualTreeAssist.FindParent<ChapterNavigationViewItem>(obj);
+                if (clickedItem != null && !clickedItem.HasItems)
+                    SetValue(IsDropDownOpenProperty, false);
+            }
         }
     }
 }
