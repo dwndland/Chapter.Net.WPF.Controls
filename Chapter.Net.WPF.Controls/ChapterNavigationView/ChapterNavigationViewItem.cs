@@ -61,9 +61,16 @@ namespace Chapter.Net.WPF.Controls
         public static readonly DependencyProperty LevelProperty =
             DependencyProperty.Register(nameof(Level), typeof(int), typeof(ChapterNavigationViewItem), new PropertyMetadata(0));
 
+        private FrameworkElement _headerBar;
+
         static ChapterNavigationViewItem()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(ChapterNavigationViewItem), new FrameworkPropertyMetadata(typeof(ChapterNavigationViewItem)));
+        }
+
+        public ChapterNavigationViewItem()
+        {
+            Loaded += OnLoaded;
         }
 
         /// <summary>
@@ -136,16 +143,20 @@ namespace Chapter.Net.WPF.Controls
         {
             base.OnApplyTemplate();
 
-            // No idea why these bindings do not work in the style.
+            if (_headerBar != null)
+                _headerBar.PreviewMouseDown -= OnPressed;
+
+            _headerBar = GetTemplateChild("PART_HeaderBar") as FrameworkElement;
+            if (_headerBar != null)
+                _headerBar.PreviewMouseDown += OnPressed;
+        }
+
+        private void OnLoaded(object sender, RoutedEventArgs e)
+        {
+            // The binding in the xaml does not work if the item is within the popup item presenter
             SetBinding(DisplayModeProperty, new Binding("CurrentDisplayMode") { RelativeSource = new RelativeSource(RelativeSourceMode.FindAncestor, typeof(ChapterNavigationView), 1) });
             SetBinding(IsNavigationExpandedProperty, new Binding("IsExpanded") { RelativeSource = new RelativeSource(RelativeSourceMode.FindAncestor, typeof(ChapterNavigationView), 1) });
             SetBinding(IsDropDownOpenProperty, new Binding("IsDropDownOpen") { RelativeSource = new RelativeSource(RelativeSourceMode.FindAncestor, typeof(ChapterNavigationView), 1) });
-
-            if (GetTemplateChild("PART_HeaderBar") is FrameworkElement headerBar)
-                headerBar.PreviewMouseDown += OnPressed;
-
-            if (GetTemplateChild("PART_PopupHeaderBar") is FrameworkElement popupHeaderBar)
-                popupHeaderBar.PreviewMouseDown += OnPressed;
 
             Level = GetLevel();
         }

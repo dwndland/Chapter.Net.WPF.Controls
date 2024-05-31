@@ -17,7 +17,8 @@
                         <Popup x:Name="popupPresenter"
                                AllowsTransparency="True"
                                IsOpen="{Binding IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
-                               Placement="{TemplateBinding Placement}">
+                               Placement="{TemplateBinding Placement}"
+                               VerticalOffset="{TemplateBinding VerticalOffset}">
                             <Grid Margin="10">
                                 <Border Margin="1"
                                         Background="Black"

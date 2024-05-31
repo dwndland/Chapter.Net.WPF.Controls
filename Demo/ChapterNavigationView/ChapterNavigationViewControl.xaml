@@ -4,6 +4,7 @@
              xmlns:controls="Chapter.Net.WPF.Controls"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:demo="clr-namespace:Demo"
+             xmlns:icons="clr-namespace:Demo.Icons"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              d:DesignHeight="450"
              d:DesignWidth="800"
@@ -35,10 +36,10 @@
                                         Margin="10"
                                         BorderBrush="Gray"
                                         BorderThickness="1"
-                                        SelectedItem="{Binding SelectedItem}"
                                         DisplayMode="{Binding SelectedItem, ElementName=displayMode}"
                                         IsBackButtonVisible="{Binding IsChecked, ElementName=isBackButtonVisible}"
-                                        IsBurgerButtonVisible="{Binding IsChecked, ElementName=isBurgerButtonVisible}">
+                                        IsBurgerButtonVisible="{Binding IsChecked, ElementName=isBurgerButtonVisible}"
+                                        SelectedItem="{Binding SelectedItem}">
             <controls:ChapterNavigationView.SearchControl>
                 <controls:ChapterSearchTextBox VerticalContentAlignment="Center" />
             </controls:ChapterNavigationView.SearchControl>
@@ -46,20 +47,41 @@
                 <Button Content="Header" />
             </controls:ChapterNavigationView.Header>
             <controls:ChapterNavigationView.Items>
-                <controls:ChapterNavigationViewItem Header="Item 1" Icon="(1)">
+                <controls:ChapterNavigationViewItem Header="Item 1">
+                    <controls:ChapterNavigationViewItem.Icon>
+                        <icons:StatusAndInfoIcon Width="16" Height="16" />
+                    </controls:ChapterNavigationViewItem.Icon>
                     <controls:ChapterNavigationViewItem Header="Item 1.1" Icon="(1.1)">
                         <controls:ChapterNavigationViewItem Header="Item 1.2" Icon="(1.2)" />
                     </controls:ChapterNavigationViewItem>
                 </controls:ChapterNavigationViewItem>
-                <controls:ChapterNavigationViewItem Header="Item 2" Icon="(2)">
+                <controls:ChapterNavigationViewItem Header="Item 2">
+                    <controls:ChapterNavigationViewItem.Icon>
+                        <icons:TextIcon Width="16" Height="12" />
+                    </controls:ChapterNavigationViewItem.Icon>
                     <controls:ChapterNavigationViewItem Header="Item 2.1" Icon="(2.1)" />
                 </controls:ChapterNavigationViewItem>
-                <controls:ChapterNavigationViewItem Header="Item 3" Icon="(3)">
+                <controls:ChapterNavigationViewItem Header="Item 3">
+                    <controls:ChapterNavigationViewItem.Icon>
+                        <icons:CollectionsIcon Width="16" Height="12" />
+                    </controls:ChapterNavigationViewItem.Icon>
                     <controls:ChapterNavigationViewItem Header="Item 3.1" Icon="(3.1)" />
                 </controls:ChapterNavigationViewItem>
-                <controls:ChapterNavigationViewItem Header="Item 4" Icon="(4)" />
-                <controls:ChapterNavigationViewItem Header="Item 5" Icon="(5)" />
-                <controls:ChapterNavigationViewItem Header="Item 6" Icon="(6)" />
+                <controls:ChapterNavigationViewItem Header="Item 4">
+                    <controls:ChapterNavigationViewItem.Icon>
+                        <icons:LayoutIcon Width="16" Height="12" />
+                    </controls:ChapterNavigationViewItem.Icon>
+                </controls:ChapterNavigationViewItem>
+                <controls:ChapterNavigationViewItem Header="Item 5">
+                    <controls:ChapterNavigationViewItem.Icon>
+                        <icons:BasicInputIcon Width="14" Height="14" />
+                    </controls:ChapterNavigationViewItem.Icon>
+                </controls:ChapterNavigationViewItem>
+                <controls:ChapterNavigationViewItem Header="Item 6">
+                    <controls:ChapterNavigationViewItem.Icon>
+                        <icons:SaveIcon Width="16" Height="16" />
+                    </controls:ChapterNavigationViewItem.Icon>
+                </controls:ChapterNavigationViewItem>
             </controls:ChapterNavigationView.Items>
             <controls:ChapterNavigationView.FooterItems>
                 <controls:ChapterNavigationViewItem Header="Footer Item 1" Icon="(F1)">
@@ -71,7 +93,7 @@
                 <controls:ChapterNavigationViewItem Header="Footer Item 3" Icon="(F3)" />
                 <controls:ChapterNavigationViewItem Header="Footer Item 4" Icon="(F4)" />
             </controls:ChapterNavigationView.FooterItems>
-            
+
             <Button Content="{Binding SelectedItemString}">
                 <Button.ContextMenu>
                     <ContextMenu>

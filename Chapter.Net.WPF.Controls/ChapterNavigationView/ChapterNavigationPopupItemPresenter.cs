@@ -51,6 +51,12 @@ namespace Chapter.Net.WPF.Controls
         public static readonly DependencyProperty CornerRadiusProperty =
             DependencyProperty.Register(nameof(CornerRadius), typeof(CornerRadius), typeof(ChapterNavigationPopupItemPresenter), new PropertyMetadata(default(CornerRadius)));
 
+        /// <summary>
+        ///     The VerticalOffset dependency property.
+        /// </summary>
+        public static readonly DependencyProperty VerticalOffsetProperty =
+            DependencyProperty.Register(nameof(VerticalOffset), typeof(double), typeof(ChapterNavigationPopupItemPresenter), new PropertyMetadata(0d));
+
         static ChapterNavigationPopupItemPresenter()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(ChapterNavigationPopupItemPresenter), new FrameworkPropertyMetadata(typeof(ChapterNavigationPopupItemPresenter)));
@@ -97,6 +103,17 @@ namespace Chapter.Net.WPF.Controls
         {
             get => (CornerRadius)GetValue(CornerRadiusProperty);
             set => SetValue(CornerRadiusProperty, value);
+        }
+
+        /// <summary>
+        ///     Gets or sets the vertical offset of the popup.
+        /// </summary>
+        /// <value>Default: 0d.</value>
+        [DefaultValue(0d)]
+        public double VerticalOffset
+        {
+            get => (double)GetValue(VerticalOffsetProperty);
+            set => SetValue(VerticalOffsetProperty, value);
         }
 
         /// <inheritdoc />
