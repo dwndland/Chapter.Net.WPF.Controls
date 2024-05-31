@@ -44,6 +44,12 @@ namespace Chapter.Net.WPF.Controls
         public static readonly DependencyProperty PlacementProperty =
             DependencyProperty.Register(nameof(Placement), typeof(PlacementMode), typeof(ChapterNavigationPopupItemPresenter), new PropertyMetadata(PlacementMode.Right));
 
+        /// <summary>
+        ///     The CornerRadius dependency property.
+        /// </summary>
+        public static readonly DependencyProperty CornerRadiusProperty =
+            DependencyProperty.Register(nameof(CornerRadius), typeof(CornerRadius), typeof(ChapterNavigationPopupItemPresenter), new PropertyMetadata(default(CornerRadius)));
+
         static ChapterNavigationPopupItemPresenter()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(ChapterNavigationPopupItemPresenter), new FrameworkPropertyMetadata(typeof(ChapterNavigationPopupItemPresenter)));
@@ -80,6 +86,16 @@ namespace Chapter.Net.WPF.Controls
         {
             get => (PlacementMode)GetValue(PlacementProperty);
             set => SetValue(PlacementProperty, value);
+        }
+
+        /// <summary>
+        ///     Gets or sets the corner radius.
+        /// </summary>
+        /// <value>Default: default.</value>
+        public CornerRadius CornerRadius
+        {
+            get => (CornerRadius)GetValue(CornerRadiusProperty);
+            set => SetValue(CornerRadiusProperty, value);
         }
     }
 }

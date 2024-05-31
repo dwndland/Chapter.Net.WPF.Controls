@@ -131,15 +131,6 @@ namespace Chapter.Net.WPF.Controls
             private set => SetValue(LevelProperty, value);
         }
 
-        private static void OnToCompact(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            var control = (ChapterNavigationViewItem)d;
-            if (control.DisplayMode == NavigationDisplayMode.Left && !control.IsNavigationExpanded)
-                control.SetValue(IsExpandedProperty, false);
-            if (control.DisplayMode == NavigationDisplayMode.LeftCompact && !control.IsDropDownOpen)
-                control.SetValue(IsExpandedProperty, false);
-        }
-
         /// <inheritdoc />
         public override void OnApplyTemplate()
         {
@@ -157,6 +148,15 @@ namespace Chapter.Net.WPF.Controls
                 popupHeaderBar.PreviewMouseDown += OnPressed;
 
             Level = GetLevel();
+        }
+
+        private static void OnToCompact(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var control = (ChapterNavigationViewItem)d;
+            if (control.DisplayMode == NavigationDisplayMode.Left && !control.IsNavigationExpanded)
+                control.SetValue(IsExpandedProperty, false);
+            if (control.DisplayMode == NavigationDisplayMode.LeftCompact && !control.IsDropDownOpen)
+                control.SetValue(IsExpandedProperty, false);
         }
 
         private void OnPressed(object sender, MouseButtonEventArgs e)

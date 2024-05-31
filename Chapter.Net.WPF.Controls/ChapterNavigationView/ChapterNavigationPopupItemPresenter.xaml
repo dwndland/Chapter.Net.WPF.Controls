@@ -4,6 +4,11 @@
 
     <Style x:Key="{x:Static controls:ChapterNavigationPopupItemPresenter.StyleKey}" TargetType="{x:Type controls:ChapterNavigationPopupItemPresenter}">
         <Setter Property="Focusable" Value="False" />
+        <Setter Property="Background" Value="#F5F5F5" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="Padding" Value="6" />
+        <Setter Property="CornerRadius" Value="4" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type controls:ChapterNavigationPopupItemPresenter}">
@@ -12,11 +17,25 @@
                         <Popup x:Name="popupPresenter"
                                AllowsTransparency="True"
                                IsOpen="{Binding IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
-                               Placement="{TemplateBinding Placement}"
-                               Visibility="Collapsed">
-                            <Border Background="White" CornerRadius="6">
-                                <ContentPresenter />
-                            </Border>
+                               Placement="{TemplateBinding Placement}">
+                            <Grid Margin="10">
+                                <Border Margin="1"
+                                        Background="Black"
+                                        CornerRadius="{TemplateBinding CornerRadius}">
+                                    <Border.Effect>
+                                        <DropShadowEffect Opacity="0.35"
+                                                          ShadowDepth="1"
+                                                          Color="#71000000" />
+                                    </Border.Effect>
+                                </Border>
+
+                                <Border Background="{TemplateBinding Background}"
+                                        BorderBrush="{TemplateBinding BorderBrush}"
+                                        BorderThickness="{TemplateBinding BorderThickness}"
+                                        CornerRadius="{TemplateBinding CornerRadius}">
+                                    <ContentPresenter Margin="{TemplateBinding Padding}" />
+                                </Border>
+                            </Grid>
                         </Popup>
                     </DockPanel>
                 </ControlTemplate>
