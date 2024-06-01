@@ -38,6 +38,7 @@
         <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterTextBox/ChapterTextBox.xaml" />
         <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterTimeBox/ChapterTimeBox.xaml" />
         <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterTitledItemsControl/ChapterTitledItemsControl.xaml" />
+        <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterToggleButton/ChapterToggleButton.xaml" />
         <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterToggleSwitch/ChapterToggleSwitch.xaml" />
         <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterTreeListView/ChapterTreeListView.xaml" />
         <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterTreeListView/ChapterTreeListViewExpander.xaml" />

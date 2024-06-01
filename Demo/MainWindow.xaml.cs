@@ -20,6 +20,7 @@ public partial class MainWindow
             new ControlItem("ChapterButton", new ChapterButtonControl()),
             new ControlItem("ChapterCheckBox", new ChapterCheckBoxControl()),
             new ControlItem("ChapterSplitButton", new ChapterSplitButtonControl()),
+            new ControlItem("ChapterToggleButton", new ChapterToggleButtonControl()),
             new ControlItem("ChapterToggleSwitch", new ChapterToggleSwitchControl())
         ];
 

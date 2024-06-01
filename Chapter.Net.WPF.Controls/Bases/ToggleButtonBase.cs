@@ -4,6 +4,7 @@
 // </copyright>
 // -----------------------------------------------------------------------------------------------------------------
 
+using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls.Primitives;
 
@@ -19,6 +20,18 @@ namespace Chapter.Net.WPF.Controls.Bases
         /// </summary>
         public static readonly DependencyProperty CornerRadiusProperty =
             DependencyProperty.Register(nameof(CornerRadius), typeof(CornerRadius), typeof(ToggleButtonBase), new PropertyMetadata(default(CornerRadius)));
+
+        /// <summary>
+        ///     The OvalCornerRadius dependency property.
+        /// </summary>
+        public static readonly DependencyProperty OvalCornerRadiusProperty =
+            DependencyProperty.Register(nameof(OvalCornerRadius), typeof(CornerRadius), typeof(ToggleButtonBase), new PropertyMetadata(default(CornerRadius)));
+
+        /// <summary>
+        ///     The HasOvalEndings dependency property.
+        /// </summary>
+        public static readonly DependencyProperty HasOvalEndingsProperty =
+            DependencyProperty.Register(nameof(HasOvalEndings), typeof(bool), typeof(ToggleButtonBase), new PropertyMetadata(false));
 
         /// <summary>
         ///     Create a new instance of ToggleButtonBase.
@@ -40,6 +53,27 @@ namespace Chapter.Net.WPF.Controls.Bases
         }
 
         /// <summary>
+        ///     Gets or sets the corner radius if <see cref="HasOvalEndings" /> is on.
+        /// </summary>
+        /// <value>Default: default.</value>
+        public CornerRadius OvalCornerRadius
+        {
+            get => (CornerRadius)GetValue(OvalCornerRadiusProperty);
+            set => SetValue(OvalCornerRadiusProperty, value);
+        }
+
+        /// <summary>
+        ///     Gets or set a value indicating whether the endings of the toggle button shall be oval.
+        /// </summary>
+        /// <value>Default: false.</value>
+        [DefaultValue(false)]
+        public bool HasOvalEndings
+        {
+            get => (bool)GetValue(HasOvalEndingsProperty);
+            set => SetValue(HasOvalEndingsProperty, value);
+        }
+
+        /// <summary>
         ///     Callback when the control got loaded.
         /// </summary>
         /// <param name="sender">The loaded checkbox.</param>
@@ -55,6 +89,15 @@ namespace Chapter.Net.WPF.Controls.Bases
         /// <param name="e">The IsEnabledChanged event parameter.</param>
         protected virtual void OnIsEnabledChanged(object sender, DependencyPropertyChangedEventArgs e)
         {
+        }
+
+        /// <inheritdoc />
+        protected override void OnRenderSizeChanged(SizeChangedInfo sizeInfo)
+        {
+            if (sizeInfo.HeightChanged && sizeInfo.NewSize.Height > 0)
+                OvalCornerRadius = new CornerRadius(sizeInfo.NewSize.Height / 2);
+
+            base.OnRenderSizeChanged(sizeInfo);
         }
     }
 }
