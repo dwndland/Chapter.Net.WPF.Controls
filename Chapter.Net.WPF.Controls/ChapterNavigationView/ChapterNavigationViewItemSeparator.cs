@@ -1,5 +1,5 @@
 ﻿// -----------------------------------------------------------------------------------------------------------------
-// <copyright file="ChapterNavigationViewItemLabel.cs" company="my-libraries">
+// <copyright file="ChapterNavigationViewItemSeparator.cs" company="my-libraries">
 //     Copyright (c) David Wendland. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------------------------------------------------
@@ -12,34 +12,35 @@ using System.Windows;
 namespace Chapter.Net.WPF.Controls
 {
     /// <summary>
-    ///     Displays a label within the items in the <see cref="ChapterNavigationView" />.
+    ///     Displays a separator line within the items in the <see cref="ChapterNavigationView" />.
     /// </summary>
-    public class ChapterNavigationViewItemLabel : ChapterNavigationViewItem
+    public class ChapterNavigationViewItemSeparator : ChapterNavigationViewItem
     {
         /// <summary>
-        ///     The ChapterNavigationViewItemLabel style key.
+        ///     The ChapterNavigationViewItemSeparator style key.
         /// </summary>
-        public new static readonly ComponentResourceKey StyleKey = new ComponentResourceKey(typeof(ChapterNavigationViewItemLabel), "ChapterNavigationViewItemLabel");
+        public new static readonly ComponentResourceKey StyleKey = new ComponentResourceKey(typeof(ChapterNavigationViewItemSeparator), "ChapterNavigationViewItemSeparator");
 
         /// <summary>
         ///     The IsVisibleOnLeftCompact dependency property.
         /// </summary>
         public static readonly DependencyProperty IsVisibleOnLeftCompactProperty =
-            DependencyProperty.Register(nameof(IsVisibleOnLeftCompact), typeof(bool), typeof(ChapterNavigationViewItemLabel), new PropertyMetadata(false));
+            DependencyProperty.Register(nameof(IsVisibleOnLeftCompact), typeof(bool), typeof(ChapterNavigationViewItemSeparator), new PropertyMetadata(false));
 
         /// <summary>
         ///     The IsVisibleOnTop dependency property.
         /// </summary>
         public static readonly DependencyProperty IsVisibleOnTopProperty =
-            DependencyProperty.Register(nameof(IsVisibleOnTop), typeof(bool), typeof(ChapterNavigationViewItemLabel), new PropertyMetadata(true));
+            DependencyProperty.Register(nameof(IsVisibleOnTop), typeof(bool), typeof(ChapterNavigationViewItemSeparator), new PropertyMetadata(true));
 
-        static ChapterNavigationViewItemLabel()
+        static ChapterNavigationViewItemSeparator()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(ChapterNavigationViewItemLabel), new FrameworkPropertyMetadata(typeof(ChapterNavigationViewItemLabel)));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(ChapterNavigationViewItemSeparator), new FrameworkPropertyMetadata(typeof(ChapterNavigationViewItemSeparator)));
         }
 
         /// <summary>
-        ///     Gets or set a value indicating whether the label shall be shown if the navigation view is collapsed to the left.
+        ///     Gets or set a value indicating whether the separator shall be shown if the navigation view is collapsed to the
+        ///     left.
         /// </summary>
         /// <value>Default: false.</value>
         [DefaultValue(false)]
@@ -50,7 +51,7 @@ namespace Chapter.Net.WPF.Controls
         }
 
         /// <summary>
-        ///     Gets or set a value indicating whether the label shall be shown if the navigation view is on the top.
+        ///     Gets or set a value indicating whether the separator shall be shown if the navigation view is on the top.
         /// </summary>
         /// <value>Default: true.</value>
         [DefaultValue(true)]

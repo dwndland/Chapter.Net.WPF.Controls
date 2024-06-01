@@ -47,6 +47,7 @@
                 <Button Content="Header" />
             </controls:ChapterNavigationView.Header>
             <controls:ChapterNavigationView.Items>
+                <controls:ChapterNavigationViewItemLabel Icon="Ctrl" Header="Controls" IsVisibleOnTop="False" />
                 <controls:ChapterNavigationViewItem Header="Item 1">
                     <controls:ChapterNavigationViewItem.Icon>
                         <icons:StatusAndInfoIcon Width="16" Height="16" />
@@ -57,7 +58,6 @@
                         </controls:ChapterNavigationViewItem>
                         </controls:ChapterNavigationViewItem>
                 </controls:ChapterNavigationViewItem>
-                <controls:ChapterNavigationViewItemLabel Icon="Ctrl" Header="Controls" IsVisibleOnTop="False" />
                 <controls:ChapterNavigationViewItem Header="Item 2">
                     <controls:ChapterNavigationViewItem.Icon>
                         <icons:TextIcon Width="16" Height="16" />
@@ -87,6 +87,7 @@
                 </controls:ChapterNavigationViewItem>
             </controls:ChapterNavigationView.Items>
             <controls:ChapterNavigationView.FooterItems>
+                <controls:ChapterNavigationViewItemSeparator IsVisibleOnTop="False" />
                 <controls:ChapterNavigationViewItem Header="Footer Item 1">
                     <controls:ChapterNavigationViewItem.Icon>
                         <icons:UsersIcon Width="16" Height="16" />

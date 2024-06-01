@@ -1,0 +1,81 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:controls="clr-namespace:Chapter.Net.WPF.Controls">
+
+    <Style x:Key="{x:Static controls:ChapterNavigationViewItemSeparator.StyleKey}" TargetType="{x:Type controls:ChapterNavigationViewItemSeparator}">
+        <Setter Property="Focusable" Value="False" />
+        <Setter Property="BorderBrush" Value="LightGray" />
+        <Setter Property="BorderThickness" Value="0,0,0,1" />
+        <Setter Property="MinHeight" Value="20" />
+        <Setter Property="MinWidth" Value="20" />
+        <Setter Property="Padding" Value="6,0" />
+        <Setter Property="Visibility" Value="Collapsed" />
+        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type controls:ChapterNavigationViewItemSeparator}">
+                    <Border Margin="{TemplateBinding Padding}"
+                            HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                            VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            SnapsToDevicePixels="True" />
+                    <ControlTemplate.Triggers>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="DisplayMode" Value="Left" />
+                                <Condition Property="IsNavigationExpanded" Value="True" />
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Visibility" Value="Visible" />
+                        </MultiTrigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="DisplayMode" Value="Left" />
+                                <Condition Property="IsNavigationExpanded" Value="False" />
+                                <Condition Property="IsVisibleOnLeftCompact" Value="True" />
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Visibility" Value="Visible" />
+                        </MultiTrigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="DisplayMode" Value="LeftCompact" />
+                                <Condition Property="IsDropDownOpen" Value="True" />
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Visibility" Value="Visible" />
+                        </MultiTrigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="DisplayMode" Value="LeftCompact" />
+                                <Condition Property="IsDropDownOpen" Value="False" />
+                                <Condition Property="IsVisibleOnLeftCompact" Value="True" />
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Visibility" Value="Visible" />
+                        </MultiTrigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="DisplayMode" Value="LeftMinimal" />
+                                <Condition Property="IsDropDownOpen" Value="True" />
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Visibility" Value="Visible" />
+                        </MultiTrigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="DisplayMode" Value="Top" />
+                                <Condition Property="IsVisibleOnTop" Value="True" />
+                            </MultiTrigger.Conditions>
+                            <Setter Property="BorderThickness" Value="0,0,1,0" />
+                            <Setter Property="Padding" Value="0,6" />
+                            <Setter Property="HorizontalContentAlignment" Value="Center" />
+                            <Setter Property="VerticalContentAlignment" Value="Stretch" />
+                            <Setter Property="Visibility" Value="Visible" />
+                        </MultiTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style BasedOn="{StaticResource {x:Static controls:ChapterNavigationViewItemSeparator.StyleKey}}" TargetType="{x:Type controls:ChapterNavigationViewItemSeparator}" />
+
+</ResourceDictionary>

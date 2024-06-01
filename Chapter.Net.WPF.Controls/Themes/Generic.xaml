@@ -23,6 +23,7 @@
         <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterNavigationView/ChapterNavigationView.xaml" />
         <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterNavigationView/ChapterNavigationViewItem.xaml" />
         <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterNavigationView/ChapterNavigationViewItemLabel.xaml" />
+        <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterNavigationView/ChapterNavigationViewItemSeparator.xaml" />
         <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterNumberBox/ChapterNumberBox.xaml" />
         <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterPasswordBox/ChapterPasswordBox.xaml" />
         <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterResizer/ChapterResizer.xaml" />
