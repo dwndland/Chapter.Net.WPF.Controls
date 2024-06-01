@@ -177,8 +177,11 @@ namespace Chapter.Net.WPF.Controls
             SetBinding(IsNavigationExpandedProperty, new Binding("IsExpanded") { RelativeSource = new RelativeSource(RelativeSourceMode.FindAncestor, typeof(ChapterNavigationView), 1) });
             SetBinding(IsDropDownOpenProperty, new Binding("IsDropDownOpen") { RelativeSource = new RelativeSource(RelativeSourceMode.FindAncestor, typeof(ChapterNavigationView), 1) });
 
-            Level = GetLevel();
-            Indentation = new Thickness(Level * 20, 0, 0, 0);
+            var level = GetLevel();
+            Level = level;
+
+            var isInPopup = VisualTreeAssist.FindParent<ChapterNavigationView>(this) == null;
+            Indentation = new Thickness((isInPopup ? Level - 1 : Level) * 20, 0, 0, 0);
         }
 
         private static void OnToCompact(DependencyObject d, DependencyPropertyChangedEventArgs e)

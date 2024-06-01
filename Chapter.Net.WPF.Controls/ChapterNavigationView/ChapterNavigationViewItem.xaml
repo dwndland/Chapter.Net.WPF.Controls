@@ -111,10 +111,10 @@
                                   Stretch="Fill"
                                   Stroke="Black"
                                   StrokeThickness="1" />
-                            <Border x:Name="icon" DockPanel.Dock="Left">
-                                <ContentPresenter HorizontalAlignment="Center"
-                                                  VerticalAlignment="Center"
-                                                  ContentSource="Icon" />
+                            <Border x:Name="icon"
+                                    Margin="5,0"
+                                    DockPanel.Dock="Left">
+                                <ContentPresenter VerticalAlignment="Center" ContentSource="Icon" />
                             </Border>
                             <ContentPresenter x:Name="header"
                                               Margin="6,0"
@@ -142,15 +142,6 @@
                     <Condition Property="Level" Value="0" />
                 </MultiTrigger.Conditions>
                 <Setter TargetName="header" Property="Visibility" Value="Collapsed" />
-                <Setter TargetName="panel" Property="HorizontalAlignment" Value="Center" />
-            </MultiTrigger>
-            <MultiTrigger>
-                <MultiTrigger.Conditions>
-                    <Condition Property="DisplayMode" Value="Left" />
-                    <Condition Property="IsNavigationExpanded" Value="True" />
-                    <Condition Property="Level" Value="0" />
-                </MultiTrigger.Conditions>
-                <Setter TargetName="icon" Property="Width" Value="28" />
             </MultiTrigger>
             <MultiTrigger>
                 <MultiTrigger.Conditions>
@@ -159,7 +150,7 @@
                     <Condition Property="Level" Value="0" />
                 </MultiTrigger.Conditions>
                 <Setter TargetName="header" Property="Visibility" Value="Collapsed" />
-                <Setter TargetName="panel" Property="HorizontalAlignment" Value="Center" />
+                <Setter TargetName="icon" Property="Margin" Value="5,0" />
             </MultiTrigger>
             <Trigger Property="IsExpanded" Value="False">
                 <Setter TargetName="ItemsPresenter" Property="Visibility" Value="Collapsed" />
