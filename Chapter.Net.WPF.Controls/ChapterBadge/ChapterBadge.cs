@@ -40,12 +40,6 @@ namespace Chapter.Net.WPF.Controls
             DependencyProperty.Register(nameof(Variant), typeof(BadgeVariant), typeof(ChapterBadge), new PropertyMetadata(BadgeVariant.Number));
 
         /// <summary>
-        ///     The CornerRadius dependency property.
-        /// </summary>
-        public static readonly DependencyProperty CornerRadiusProperty =
-            DependencyProperty.Register(nameof(CornerRadius), typeof(CornerRadius), typeof(ChapterBadge), new PropertyMetadata(new CornerRadius(4)));
-
-        /// <summary>
         ///     The Number dependency property.
         /// </summary>
         public static readonly DependencyProperty NumberProperty =
@@ -130,16 +124,6 @@ namespace Chapter.Net.WPF.Controls
         {
             get => (BadgeVariant)GetValue(VariantProperty);
             set => SetValue(VariantProperty, value);
-        }
-
-        /// <summary>
-        ///     Gets or sets the shape of the badge.
-        /// </summary>
-        /// <value>Default: default.</value>
-        public CornerRadius CornerRadius
-        {
-            get => (CornerRadius)GetValue(CornerRadiusProperty);
-            set => SetValue(CornerRadiusProperty, value);
         }
 
         /// <summary>

@@ -29,12 +29,6 @@ namespace Chapter.Net.WPF.Controls
             DependencyProperty.Register(nameof(Shape), typeof(BadgeShape), typeof(BadgeShapePresenter), new PropertyMetadata(BadgeShape.Oval));
 
         /// <summary>
-        ///     The CornerRadius dependency property.
-        /// </summary>
-        public static readonly DependencyProperty CornerRadiusProperty =
-            DependencyProperty.Register(nameof(CornerRadius), typeof(CornerRadius), typeof(BadgeShapePresenter), new PropertyMetadata(default(CornerRadius)));
-
-        /// <summary>
         ///     The OvalCornerRadius dependency property.
         /// </summary>
         internal static readonly DependencyProperty OvalCornerRadiusProperty =
@@ -54,16 +48,6 @@ namespace Chapter.Net.WPF.Controls
         {
             get => (BadgeShape)GetValue(ShapeProperty);
             set => SetValue(ShapeProperty, value);
-        }
-
-        /// <summary>
-        ///     Gets or sets the corner radius.
-        /// </summary>
-        /// <value>Default: default.</value>
-        public CornerRadius CornerRadius
-        {
-            get => (CornerRadius)GetValue(CornerRadiusProperty);
-            set => SetValue(CornerRadiusProperty, value);
         }
 
         /// <summary>
