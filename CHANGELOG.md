@@ -12,9 +12,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added ChapterCard which is a container control to crate card like groups of elements.
 - Added ChapterCheckBox which is a regular check box but with a build in header and footer.
 - Added ChapterNavigationView which is a menu side bar collapsable by a burger button.
-- Added ChapterToggleButton with more features like oval endings, corner radius, header, footer and optional icon either as image or object.
+- Added ChapterRepeatButton which is a repeat button with more features like oval endings, corner radius, header, footer and optional icon either as image or object.
+- Added ChapterToggleButton which is a toggle button with more features like oval endings, corner radius, header, footer and optional icon either as image or object.
 ### Changed
-- Extended ChapterButton with more features like oval endings, corner radius, header, footer and optional icon either as image or object.
+- Extended ChapterButton which is a button with more features like oval endings, corner radius, header, footer and optional icon either as image or object.
 - Renewed the ChapterHeaderedContentControl to be a headered content control with more possible customization and a footer.
 ### Supported .Net Versions
 - .Net Core 3.0
