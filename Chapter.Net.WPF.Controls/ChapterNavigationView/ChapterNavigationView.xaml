@@ -57,7 +57,7 @@
                                     </controls:ChapterNavigationBurgerButton>
                                 </DockPanel>
 
-                                <controls:ChapterNavigationTreeItemsPresenter x:Name="footerItemsPresenter"
+                                <controls:ChapterNavigationTreeItemsPresenter x:Name="PART_FooterItemsPresenter"
                                                                               DockPanel.Dock="Bottom"
                                                                               ItemContainerStyle="{TemplateBinding FooterItemContainerStyle}"
                                                                               ItemTemplate="{TemplateBinding FooterItemTemplate}"
@@ -74,7 +74,7 @@
                                     <ContentPresenter ContentSource="SearchControl" />
                                 </controls:ChapterNavigationSearchBarContainer>
 
-                                <controls:ChapterNavigationTreeItemsPresenter x:Name="itemsPresenter"
+                                <controls:ChapterNavigationTreeItemsPresenter x:Name="PART_ItemsPresenter"
                                                                               ItemContainerStyle="{TemplateBinding ItemContainerStyle}"
                                                                               ItemTemplate="{TemplateBinding ItemTemplate}"
                                                                               ItemsSource="{TemplateBinding Items}"
@@ -109,10 +109,10 @@
                             <Setter TargetName="panelArea" Property="Grid.ColumnSpan" Value="3" />
                             <Setter TargetName="toggleButton" Property="Visibility" Value="Collapsed" />
                             <Setter TargetName="buttonsArea" Property="DockPanel.Dock" Value="Left" />
-                            <Setter TargetName="footerItemsPresenter" Property="DockPanel.Dock" Value="Right" />
+                            <Setter TargetName="PART_FooterItemsPresenter" Property="DockPanel.Dock" Value="Right" />
                             <Setter TargetName="PART_SearchControl" Property="DockPanel.Dock" Value="Right" />
-                            <Setter TargetName="footerItemsPresenter" Property="VerticalAlignment" Value="Center" />
-                            <Setter TargetName="itemsPresenter" Property="VerticalAlignment" Value="Center" />
+                            <Setter TargetName="PART_FooterItemsPresenter" Property="VerticalAlignment" Value="Center" />
+                            <Setter TargetName="PART_ItemsPresenter" Property="VerticalAlignment" Value="Center" />
                         </Trigger>
                         <MultiTrigger>
                             <MultiTrigger.Conditions>

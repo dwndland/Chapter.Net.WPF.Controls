@@ -23,6 +23,8 @@ namespace Chapter.Net.WPF.Controls
     [TemplatePart(Name = "PART_BackButton", Type = typeof(Button))]
     [TemplatePart(Name = "PART_ContentPresenter", Type = typeof(FrameworkElement))]
     [TemplatePart(Name = "PART_SearchControl", Type = typeof(Button))]
+    [TemplatePart(Name = "PART_ItemsPresenter", Type = typeof(ChapterNavigationTreeItemsPresenter))]
+    [TemplatePart(Name = "PART_FooterItemsPresenter", Type = typeof(ChapterNavigationTreeItemsPresenter))]
     [ContentProperty(nameof(Content))]
     public class ChapterNavigationView : ComboBoxBase
     {
@@ -134,6 +136,12 @@ namespace Chapter.Net.WPF.Controls
             DependencyProperty.Register(nameof(SelectedItem), typeof(object), typeof(ChapterNavigationView), new FrameworkPropertyMetadata(null, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
 
         /// <summary>
+        ///     The AllowMultiExpanding dependency property.
+        /// </summary>
+        public static readonly DependencyProperty AllowMultiExpandingProperty =
+            DependencyProperty.Register(nameof(AllowMultiExpanding), typeof(bool), typeof(ChapterNavigationView), new PropertyMetadata(false));
+
+        /// <summary>
         ///     The CurrentDisplayMode dependency property.
         /// </summary>
         internal static readonly DependencyProperty CurrentDisplayModeProperty =
@@ -144,6 +152,9 @@ namespace Chapter.Net.WPF.Controls
         /// </summary>
         public static readonly RoutedEvent BackClickEvent =
             EventManager.RegisterRoutedEvent(nameof(BackClick), RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(ChapterBrowseTextBox));
+
+        private ChapterNavigationTreeItemsPresenter _footerItemsPresenter;
+        private ChapterNavigationTreeItemsPresenter _itemsPresenter;
 
         static ChapterNavigationView()
         {
@@ -157,6 +168,8 @@ namespace Chapter.Net.WPF.Controls
         {
             Items = new ObservableCollection<ChapterNavigationViewItem>();
             FooterItems = new ObservableCollection<ChapterNavigationViewItem>();
+
+            AddHandler(TreeViewItem.ExpandedEvent, new RoutedEventHandler(OnItemExpanded));
         }
 
         /// <summary>
@@ -352,6 +365,17 @@ namespace Chapter.Net.WPF.Controls
         }
 
         /// <summary>
+        ///     Gets or sets a value indicating whether the navigation view allows multiple expanded items.
+        /// </summary>
+        /// <value>Default: false.</value>
+        [DefaultValue(false)]
+        public bool AllowMultiExpanding
+        {
+            get => (bool)GetValue(AllowMultiExpandingProperty);
+            set => SetValue(AllowMultiExpandingProperty, value);
+        }
+
+        /// <summary>
         ///     Gets or sets the current display mode which gets controlled by the DisplayMode.
         /// </summary>
         /// <value>Default: NavigationDisplayMode.Left.</value>
@@ -393,6 +417,9 @@ namespace Chapter.Net.WPF.Controls
 
             if (GetTemplateChild("PART_SearchControl") is Button searchButton)
                 searchButton.Click += OnSearchClick;
+
+            _itemsPresenter = GetTemplateChild("PART_ItemsPresenter") as ChapterNavigationTreeItemsPresenter;
+            _footerItemsPresenter = GetTemplateChild("PART_FooterItemsPresenter") as ChapterNavigationTreeItemsPresenter;
         }
 
         /// <inheritdoc />
@@ -402,6 +429,18 @@ namespace Chapter.Net.WPF.Controls
                 SetCurrentDisplayModeByWidth(sizeInfo.NewSize.Width);
 
             base.OnRenderSizeChanged(sizeInfo);
+        }
+
+        private void OnItemExpanded(object sender, RoutedEventArgs e)
+        {
+            if (!AllowMultiExpanding)
+            {
+                if (!(e.OriginalSource is ChapterNavigationViewItem container) || container.Level != 0)
+                    return;
+
+                _itemsPresenter.CollapseAllExcept(e.OriginalSource);
+                _footerItemsPresenter.CollapseAllExcept(e.OriginalSource);
+            }
         }
 
         private void OnContentClick(object sender, MouseButtonEventArgs e)

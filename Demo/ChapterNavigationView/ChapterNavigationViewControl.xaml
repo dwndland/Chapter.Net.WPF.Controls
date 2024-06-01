@@ -28,12 +28,18 @@
                       Content="IsBackButtonVisible" />
 
             <CheckBox x:Name="isBurgerButtonVisible"
+                      Margin="0,0,0,10"
                       Content="IsBurgerButtonVisible"
+                      IsChecked="True" />
+
+            <CheckBox x:Name="allowMultiExpanding"
+                      Content="AllowMultiExpanding"
                       IsChecked="True" />
         </demo:PropertyPanel>
 
         <controls:ChapterNavigationView Title="{Binding Text, ElementName=title}"
                                         Margin="10"
+                                        AllowMultiExpanding="{Binding IsChecked, ElementName=allowMultiExpanding}"
                                         BorderBrush="Gray"
                                         BorderThickness="1"
                                         DisplayMode="{Binding SelectedItem, ElementName=displayMode}"
@@ -47,7 +53,9 @@
                 <Button Content="Header" />
             </controls:ChapterNavigationView.Header>
             <controls:ChapterNavigationView.Items>
-                <controls:ChapterNavigationViewItemLabel Icon="Ctrl" Header="Controls" IsVisibleOnTop="False" />
+                <controls:ChapterNavigationViewItemLabel Header="Controls"
+                                                         Icon="Ctrl"
+                                                         IsVisibleOnTop="False" />
                 <controls:ChapterNavigationViewItem Header="Item 1">
                     <controls:ChapterNavigationViewItem.Icon>
                         <icons:StatusAndInfoIcon Width="16" Height="16" />
@@ -56,7 +64,7 @@
                         <controls:ChapterNavigationViewItem Header="Item 1.2" Icon="(1.2)">
                             <controls:ChapterNavigationViewItem Header="Item 1.3" Icon="(1.3)" />
                         </controls:ChapterNavigationViewItem>
-                        </controls:ChapterNavigationViewItem>
+                    </controls:ChapterNavigationViewItem>
                 </controls:ChapterNavigationViewItem>
                 <controls:ChapterNavigationViewItem Header="Item 2">
                     <controls:ChapterNavigationViewItem.Icon>

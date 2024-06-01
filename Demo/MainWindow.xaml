@@ -20,7 +20,9 @@
         </Style>
     </Window.Resources>
 
-    <controls:ChapterNavigationView Title="Chapter Controls" x:Name="view">
+    <controls:ChapterNavigationView x:Name="view"
+                                    Title="Chapter Controls"
+                                    AllowMultiExpanding="True">
         <controls:ChapterNavigationView.Items>
 
             <controls:ChapterNavigationViewItem Header="Basic Input" ItemsSource="{Binding BasicInput}">

@@ -6,6 +6,7 @@
 
 using System.ComponentModel;
 using System.Windows;
+using System.Windows.Controls;
 
 // ReSharper disable once CheckNamespace
 
@@ -41,6 +42,22 @@ namespace Chapter.Net.WPF.Controls
         {
             get => (NavigationDisplayMode)GetValue(DisplayModeProperty);
             set => SetValue(DisplayModeProperty, value);
+        }
+
+        /// <summary>
+        /// Collapses all items except the given one.
+        /// </summary>
+        /// <param name="expandedContainer"></param>
+        public void CollapseAllExcept(object expandedContainer)
+        {
+            foreach (var item in Items)
+            {
+                var container = item as TreeViewItem ?? ItemContainerGenerator.ContainerFromItem(item) as TreeViewItem;
+                if (container == null || container == expandedContainer)
+                    continue;
+
+                container.SetValue(TreeViewItem.IsExpandedProperty, false);
+            }
         }
 
         /// <inheritdoc />
