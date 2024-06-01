@@ -4,6 +4,7 @@
 // </copyright>
 // -----------------------------------------------------------------------------------------------------------------
 
+using System;
 using System.Collections;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -11,6 +12,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Markup;
+using System.Windows.Media.Animation;
 using Chapter.Net.WPF.Controls.Bases;
 
 // ReSharper disable once CheckNamespace
@@ -43,7 +45,7 @@ namespace Chapter.Net.WPF.Controls
         ///     The IsExpanded dependency property.
         /// </summary>
         public static readonly DependencyProperty IsExpandedProperty =
-            DependencyProperty.Register(nameof(IsExpanded), typeof(bool), typeof(ChapterNavigationView), new PropertyMetadata(true));
+            DependencyProperty.Register(nameof(IsExpanded), typeof(bool), typeof(ChapterNavigationView), new PropertyMetadata(true, OnExpandChanged));
 
         /// <summary>
         ///     The Content dependency property.
@@ -148,10 +150,40 @@ namespace Chapter.Net.WPF.Controls
             DependencyProperty.Register(nameof(IsBurgerButtonVisibleForExpandedLeftMinimal), typeof(bool), typeof(ChapterNavigationView), new PropertyMetadata(true));
 
         /// <summary>
+        ///     The CollapsedPanelSize dependency property.
+        /// </summary>
+        public static readonly DependencyProperty CollapsedPanelSizeProperty =
+            DependencyProperty.Register(nameof(CollapsedPanelSize), typeof(double), typeof(ChapterNavigationView), new PropertyMetadata(40d));
+
+        /// <summary>
+        ///     The ExtendedPanelSize dependency property.
+        /// </summary>
+        public static readonly DependencyProperty ExtendedPanelSizeProperty =
+            DependencyProperty.Register(nameof(ExtendedPanelSize), typeof(double), typeof(ChapterNavigationView), new PropertyMetadata(210d));
+
+        /// <summary>
+        ///     The DisableAnimations dependency property.
+        /// </summary>
+        public static readonly DependencyProperty DisableAnimationsProperty =
+            DependencyProperty.Register(nameof(DisableAnimations), typeof(bool), typeof(ChapterNavigationView), new PropertyMetadata(false));
+
+        /// <summary>
+        ///     The AnimationSpeed dependency property.
+        /// </summary>
+        public static readonly DependencyProperty AnimationSpeedProperty =
+            DependencyProperty.Register(nameof(AnimationSpeed), typeof(TimeSpan), typeof(ChapterNavigationView), new PropertyMetadata(TimeSpan.FromMilliseconds(120)));
+
+        /// <summary>
         ///     The CurrentDisplayMode dependency property.
         /// </summary>
         internal static readonly DependencyProperty CurrentDisplayModeProperty =
             DependencyProperty.Register(nameof(CurrentDisplayMode), typeof(NavigationDisplayMode), typeof(ChapterNavigationView), new PropertyMetadata(NavigationDisplayMode.Left));
+
+        /// <summary>
+        ///     The ExtendedColumnWidth dependency property.
+        /// </summary>
+        internal static readonly DependencyProperty ExtendedColumnWidthProperty =
+            DependencyProperty.Register(nameof(ExtendedColumnWidth), typeof(double), typeof(ChapterNavigationView), new PropertyMetadata(210d));
 
         /// <summary>
         ///     The RoutedEvent for the BackClick event.
@@ -394,6 +426,49 @@ namespace Chapter.Net.WPF.Controls
         }
 
         /// <summary>
+        ///     Gets or sets the panel size if collapsed.
+        /// </summary>
+        /// <value>Default: 40d.</value>
+        [DefaultValue(40d)]
+        public double CollapsedPanelSize
+        {
+            get => (double)GetValue(CollapsedPanelSizeProperty);
+            set => SetValue(CollapsedPanelSizeProperty, value);
+        }
+
+        /// <summary>
+        ///     Gets or sets the panel size if extended.
+        /// </summary>
+        /// <value>Default: 210d.</value>
+        [DefaultValue(210d)]
+        public double ExtendedPanelSize
+        {
+            get => (double)GetValue(ExtendedPanelSizeProperty);
+            set => SetValue(ExtendedPanelSizeProperty, value);
+        }
+
+        /// <summary>
+        ///     Gets or sets a value indicating whether the panel expand and collapsed shall be animated or not.
+        /// </summary>
+        /// <value>Default: false.</value>
+        [DefaultValue(false)]
+        public bool DisableAnimations
+        {
+            get => (bool)GetValue(DisableAnimationsProperty);
+            set => SetValue(DisableAnimationsProperty, value);
+        }
+
+        /// <summary>
+        ///     Gets or sets the speed of the panel expand and collapse animation.
+        /// </summary>
+        /// <value>Default: 120ms.</value>
+        public TimeSpan AnimationSpeed
+        {
+            get => (TimeSpan)GetValue(AnimationSpeedProperty);
+            set => SetValue(AnimationSpeedProperty, value);
+        }
+
+        /// <summary>
         ///     Gets or sets the current display mode which gets controlled by the DisplayMode.
         /// </summary>
         /// <value>Default: NavigationDisplayMode.Left.</value>
@@ -402,6 +477,17 @@ namespace Chapter.Net.WPF.Controls
         {
             get => (NavigationDisplayMode)GetValue(CurrentDisplayModeProperty);
             set => SetValue(CurrentDisplayModeProperty, value);
+        }
+
+        /// <summary>
+        ///     Gets or sets the width of the extended column.
+        /// </summary>
+        /// <value>Default: 210d</value>
+        [DefaultValue(210d)]
+        internal double ExtendedColumnWidth
+        {
+            get => (double)GetValue(ExtendedColumnWidthProperty);
+            set => SetValue(ExtendedColumnWidthProperty, value);
         }
 
         /// <summary>
@@ -420,6 +506,65 @@ namespace Chapter.Net.WPF.Controls
                 control.SetCurrentValue(CurrentDisplayModeProperty, control.DisplayMode);
             else
                 control.SetCurrentDisplayModeByWidth(control.ActualWidth);
+
+            control.AnimatePanelSize();
+        }
+
+        private static void OnExpandChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var control = (ChapterNavigationView)d;
+            control.AnimatePanelSize();
+        }
+
+        private void AnimatePanelSize()
+        {
+            switch (CurrentDisplayMode)
+            {
+                case NavigationDisplayMode.Left:
+                    if (IsExpanded)
+                        AnimatePanelSize(0, ExtendedPanelSize);
+                    else
+                        AnimatePanelSize(ExtendedPanelSize, 0);
+                    break;
+                case NavigationDisplayMode.LeftCompact:
+                    if (IsDropDownOpen)
+                        AnimatePanelSize(0, ExtendedPanelSize);
+                    else
+                        AnimatePanelSize(ExtendedPanelSize, 0);
+                    break;
+                case NavigationDisplayMode.LeftMinimal:
+                    if (IsDropDownOpen)
+                        AnimatePanelSize(0, CollapsedPanelSize + ExtendedPanelSize);
+                    else
+                        AnimatePanelSize(CollapsedPanelSize + ExtendedPanelSize, 0);
+                    break;
+            }
+        }
+
+        private void AnimatePanelSize(double from, double to)
+        {
+            if (DisableAnimations)
+            {
+                SetCurrentValue(ExtendedColumnWidthProperty, to);
+                return;
+            }
+
+            var doubleAnimation = new DoubleAnimation(from, to, new Duration(AnimationSpeed));
+            BeginAnimation(ExtendedColumnWidthProperty, doubleAnimation);
+        }
+
+        /// <inheritdoc />
+        protected override void OnDropDownOpened(EventArgs e)
+        {
+            base.OnDropDownOpened(e);
+            AnimatePanelSize();
+        }
+
+        /// <inheritdoc />
+        protected override void OnDropDownClosed(EventArgs e)
+        {
+            base.OnDropDownClosed(e);
+            AnimatePanelSize();
         }
 
         /// <inheritdoc />

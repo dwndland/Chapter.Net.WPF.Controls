@@ -37,17 +37,46 @@
                       Content="AllowMultiExpanding"
                       IsChecked="True" />
 
-            <CheckBox x:Name="isBurgerButtonVisibleForExpandedLeftMinimal" IsChecked="True">
+            <CheckBox x:Name="isBurgerButtonVisibleForExpandedLeftMinimal"
+                      Margin="0,0,0,10"
+                      IsChecked="True">
                 <TextBlock Text="IsBurgerButtonVisibleForExpandedLeftMinimal" TextWrapping="Wrap" />
             </CheckBox>
+
+            <CheckBox x:Name="disableAnimations"
+                      Margin="0,0,0,10"
+                      Content="DisableAnimations" />
+
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="CollapsedPanelSize: " />
+                <TextBlock Text="{Binding Value, ElementName=collapsedPanelSize, StringFormat={}{0:0}ms}" />
+            </StackPanel>
+            <Slider x:Name="collapsedPanelSize"
+                    Margin="0,0,0,10"
+                    Maximum="60"
+                    Minimum="20"
+                    Value="40" />
+
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="ExtendedPanelSize: " />
+                <TextBlock Text="{Binding Value, ElementName=extendedPanelSize, StringFormat={}{0:0}ms}" />
+            </StackPanel>
+            <Slider x:Name="extendedPanelSize"
+                    Maximum="350"
+                    Minimum="150"
+                    Value="210" />
         </demo:PropertyPanel>
 
         <controls:ChapterNavigationView Title="{Binding Text, ElementName=title}"
                                         Margin="10"
                                         AllowMultiExpanding="{Binding IsChecked, ElementName=allowMultiExpanding}"
+                                        AnimationSpeed="{Binding Value, ElementName=animationSpeed}"
                                         BorderBrush="Gray"
                                         BorderThickness="1"
+                                        CollapsedPanelSize="{Binding Value, ElementName=collapsedPanelSize}"
+                                        DisableAnimations="{Binding IsChecked, ElementName=disableAnimations}"
                                         DisplayMode="{Binding SelectedItem, ElementName=displayMode}"
+                                        ExtendedPanelSize="{Binding Value, ElementName=extendedPanelSize}"
                                         IsBackButtonVisible="{Binding IsChecked, ElementName=isBackButtonVisible}"
                                         IsBurgerButtonVisible="{Binding IsChecked, ElementName=isBurgerButtonVisible}"
                                         IsBurgerButtonVisibleForExpandedLeftMinimal="{Binding IsChecked, ElementName=isBurgerButtonVisibleForExpandedLeftMinimal}"
