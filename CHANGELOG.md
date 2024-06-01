@@ -7,10 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Added
-- Added ChapterCheckBox which is a regular check box but with a build in header and footer.
-- Added ChaperBadge which allows to attach a notification icon to any control.
 - Added ChapterAccordion which is an accordion with sub items which can be expanded or collapsed.
+- Added ChapterBadge which allows to attach a notification icon to any control.
 - Added ChapterCard which is a container control to crate card like groups of elements.
+- Added ChapterCheckBox which is a regular check box but with a build in header and footer.
+- Added ChapterNavigationView which is a menu side bar collapsable by a burger button.
 ### Changed
 - Extended ChapterButton with more features like oval endings, corner radius, header, footer and optional icon either as image or object.
 - Renewed the ChapterHeaderedContentControl to be a headered content control with more possible customization and a footer.
