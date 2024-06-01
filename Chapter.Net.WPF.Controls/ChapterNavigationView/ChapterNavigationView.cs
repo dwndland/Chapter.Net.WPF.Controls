@@ -538,6 +538,9 @@ namespace Chapter.Net.WPF.Controls
                     else
                         AnimatePanelSize(CollapsedPanelSize + ExtendedPanelSize, 0);
                     break;
+                case NavigationDisplayMode.Top:
+                    SetCurrentValue(ExtendedColumnWidthProperty, 0d);
+                    break;
             }
         }
 
