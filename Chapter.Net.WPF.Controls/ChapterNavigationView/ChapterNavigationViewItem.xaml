@@ -59,7 +59,6 @@
             <controls:ChapterNavigationPopupItemPresenter.Header>
                 <ToggleButton x:Name="PART_HeaderBar"
                               DockPanel.Dock="Top"
-                              IsChecked="{Binding IsExpanded, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
                               Style="{StaticResource InvisibleToggleButton}">
                     <Border MinHeight="28"
                             Background="{TemplateBinding Background}"
@@ -82,6 +81,9 @@
             <Trigger Property="IsSelected" Value="True">
                 <Setter Property="Background" Value="#C4E5F6" />
                 <Setter Property="BorderBrush" Value="LightGray" />
+            </Trigger>
+            <Trigger Property="HasItems" Value="True">
+                <Setter TargetName="PART_HeaderBar" Property="IsChecked" Value="{Binding IsExpanded, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" />
             </Trigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
