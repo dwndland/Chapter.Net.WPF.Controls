@@ -132,6 +132,15 @@
                         <Trigger Property="SearchControl" Value="{x:Null}">
                             <Setter TargetName="PART_SearchControl" Property="Visibility" Value="Collapsed" />
                         </Trigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="CurrentDisplayMode" Value="LeftMinimal" />
+                                <Condition Property="IsDropDownOpen" Value="True" />
+                                <Condition Property="IsBurgerButtonVisibleForExpandedLeftMinimal" Value="False" />
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="toggleButton" Property="MinHeight" Value="0" />
+                            <Setter TargetName="toggleButton" Property="Height" Value="0" />
+                        </MultiTrigger>
 
                         <MultiTrigger>
                             <MultiTrigger.Conditions>

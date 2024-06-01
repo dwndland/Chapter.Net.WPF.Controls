@@ -33,8 +33,13 @@
                       IsChecked="True" />
 
             <CheckBox x:Name="allowMultiExpanding"
+                      Margin="0,0,0,10"
                       Content="AllowMultiExpanding"
                       IsChecked="True" />
+
+            <CheckBox x:Name="isBurgerButtonVisibleForExpandedLeftMinimal" IsChecked="True">
+                <TextBlock Text="IsBurgerButtonVisibleForExpandedLeftMinimal" TextWrapping="Wrap" />
+            </CheckBox>
         </demo:PropertyPanel>
 
         <controls:ChapterNavigationView Title="{Binding Text, ElementName=title}"
@@ -45,6 +50,7 @@
                                         DisplayMode="{Binding SelectedItem, ElementName=displayMode}"
                                         IsBackButtonVisible="{Binding IsChecked, ElementName=isBackButtonVisible}"
                                         IsBurgerButtonVisible="{Binding IsChecked, ElementName=isBurgerButtonVisible}"
+                                        IsBurgerButtonVisibleForExpandedLeftMinimal="{Binding IsChecked, ElementName=isBurgerButtonVisibleForExpandedLeftMinimal}"
                                         SelectedItem="{Binding SelectedItem}">
             <controls:ChapterNavigationView.SearchControl>
                 <controls:ChapterSearchTextBox VerticalContentAlignment="Center" />
