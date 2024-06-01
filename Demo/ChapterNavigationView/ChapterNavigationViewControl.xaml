@@ -57,6 +57,7 @@
                         </controls:ChapterNavigationViewItem>
                         </controls:ChapterNavigationViewItem>
                 </controls:ChapterNavigationViewItem>
+                <controls:ChapterNavigationViewItemLabel Icon="Ctrl" Header="Controls" IsVisibleOnTop="False" />
                 <controls:ChapterNavigationViewItem Header="Item 2">
                     <controls:ChapterNavigationViewItem.Icon>
                         <icons:TextIcon Width="16" Height="16" />

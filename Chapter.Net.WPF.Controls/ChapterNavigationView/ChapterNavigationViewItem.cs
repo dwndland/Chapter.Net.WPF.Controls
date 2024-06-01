@@ -74,6 +74,9 @@ namespace Chapter.Net.WPF.Controls
             DefaultStyleKeyProperty.OverrideMetadata(typeof(ChapterNavigationViewItem), new FrameworkPropertyMetadata(typeof(ChapterNavigationViewItem)));
         }
 
+        /// <summary>
+        ///     Creates a new instance of ChapterNavigationViewItem.
+        /// </summary>
         public ChapterNavigationViewItem()
         {
             Loaded += OnLoaded;
