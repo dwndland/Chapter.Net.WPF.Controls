@@ -1,0 +1,132 @@
+﻿<UserControl x:Class="Demo.ChapterSelectorBarControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:controls="Chapter.Net.WPF.Controls"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:icons="clr-namespace:Demo.Icons"
+             xmlns:local="clr-namespace:Demo"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             d:DesignHeight="450"
+             d:DesignWidth="800"
+             mc:Ignorable="d">
+    <UserControl.Resources>
+        <local:StringToThicknessConverter x:Key="StringToThicknessConverter" />
+    </UserControl.Resources>
+
+    <DockPanel>
+        <local:PropertyPanel DockPanel.Dock="Right">
+            <TextBlock Text="Orientation" />
+            <controls:ChapterComboBox x:Name="orientation"
+                                      Margin="0,0,0,10"
+                                      EnumType="{x:Type Orientation}"
+                                      SelectedItem="{x:Static Orientation.Horizontal}" />
+
+            <TextBlock Text="Padding" />
+            <TextBox x:Name="padding"
+                     Margin="0,0,0,10"
+                     Text="4,10,12,10" />
+
+            <TextBlock Text="IconPosition" />
+            <controls:ChapterComboBox x:Name="iconPosition"
+                                      Margin="0,0,0,10"
+                                      EnumType="{x:Type Dock}"
+                                      SelectedItem="{x:Static Dock.Left}" />
+
+            <TextBlock Text="IconMargin" />
+            <TextBox x:Name="iconMargin"
+                     Margin="0,0,0,10"
+                     Text="6" />
+
+            <TextBlock Text="HorizontalIconAlignment" />
+            <controls:ChapterComboBox x:Name="horizontalIconAlignment"
+                                      Margin="0,0,0,10"
+                                      EnumType="{x:Type HorizontalAlignment}"
+                                      SelectedItem="{x:Static HorizontalAlignment.Center}" />
+
+            <TextBlock Text="VerticalIconAlignment" />
+            <controls:ChapterComboBox x:Name="verticalIconAlignment"
+                                      Margin="0,0,0,10"
+                                      EnumType="{x:Type VerticalAlignment}"
+                                      SelectedItem="{x:Static VerticalAlignment.Center}" />
+
+            <TextBlock Text="HorizontalContentAlignment" />
+            <controls:ChapterComboBox x:Name="horizontalContentAlignment"
+                                      Margin="0,0,0,10"
+                                      EnumType="{x:Type HorizontalAlignment}"
+                                      SelectedItem="{x:Static HorizontalAlignment.Center}" />
+
+            <TextBlock Text="VerticalContentAlignment" />
+            <controls:ChapterComboBox x:Name="verticalContentAlignment"
+                                      EnumType="{x:Type VerticalAlignment}"
+                                      SelectedItem="{x:Static VerticalAlignment.Center}" />
+        </local:PropertyPanel>
+
+        <controls:ChapterSelectorBar Orientation="{Binding SelectedItem, ElementName=orientation}">
+            <controls:ChapterSelectorBarItem Padding="{Binding Text, ElementName=padding, Converter={StaticResource StringToThicknessConverter}}"
+                                             HorizontalContentAlignment="{Binding SelectedItem, ElementName=horizontalContentAlignment}"
+                                             VerticalContentAlignment="{Binding SelectedItem, ElementName=verticalContentAlignment}"
+                                             Content="Chapter.Net"
+                                             HorizontalIconAlignment="{Binding SelectedItem, ElementName=horizontalIconAlignment}"
+                                             IconMargin="{Binding Text, ElementName=iconMargin, Converter={StaticResource StringToThicknessConverter}}"
+                                             IconPosition="{Binding SelectedItem, ElementName=iconPosition}"
+                                             VerticalIconAlignment="{Binding SelectedItem, ElementName=verticalIconAlignment}">
+                <controls:ChapterSelectorBarItem.Icon>
+                    <icons:BasicInputIcon Width="20" Height="20" />
+                </controls:ChapterSelectorBarItem.Icon>
+            </controls:ChapterSelectorBarItem>
+
+            <controls:ChapterSelectorBarItem Padding="{Binding Text, ElementName=padding, Converter={StaticResource StringToThicknessConverter}}"
+                                             HorizontalContentAlignment="{Binding SelectedItem, ElementName=horizontalContentAlignment}"
+                                             VerticalContentAlignment="{Binding SelectedItem, ElementName=verticalContentAlignment}"
+                                             Content="Chapter.Net.WPF"
+                                             HorizontalIconAlignment="{Binding SelectedItem, ElementName=horizontalIconAlignment}"
+                                             IconMargin="{Binding Text, ElementName=iconMargin, Converter={StaticResource StringToThicknessConverter}}"
+                                             IconPosition="{Binding SelectedItem, ElementName=iconPosition}"
+                                             VerticalIconAlignment="{Binding SelectedItem, ElementName=verticalIconAlignment}">
+                <controls:ChapterSelectorBarItem.Icon>
+                    <icons:LibrariesIcon Width="20" Height="20" />
+                </controls:ChapterSelectorBarItem.Icon>
+            </controls:ChapterSelectorBarItem>
+
+            <controls:ChapterSelectorBarItem Padding="{Binding Text, ElementName=padding, Converter={StaticResource StringToThicknessConverter}}"
+                                             HorizontalContentAlignment="{Binding SelectedItem, ElementName=horizontalContentAlignment}"
+                                             VerticalContentAlignment="{Binding SelectedItem, ElementName=verticalContentAlignment}"
+                                             Content="Chapter.Net.BLZ"
+                                             HorizontalIconAlignment="{Binding SelectedItem, ElementName=horizontalIconAlignment}"
+                                             IconMargin="{Binding Text, ElementName=iconMargin, Converter={StaticResource StringToThicknessConverter}}"
+                                             IconPosition="{Binding SelectedItem, ElementName=iconPosition}"
+                                             VerticalIconAlignment="{Binding SelectedItem, ElementName=verticalIconAlignment}">
+                <controls:ChapterSelectorBarItem.Icon>
+                    <icons:StatusAndInfoIcon Width="20" Height="20" />
+                </controls:ChapterSelectorBarItem.Icon>
+            </controls:ChapterSelectorBarItem>
+
+            <controls:ChapterSelectorBarItem Padding="{Binding Text, ElementName=padding, Converter={StaticResource StringToThicknessConverter}}"
+                                             HorizontalContentAlignment="{Binding SelectedItem, ElementName=horizontalContentAlignment}"
+                                             VerticalContentAlignment="{Binding SelectedItem, ElementName=verticalContentAlignment}"
+                                             Content="Chapter.Net.MAUI"
+                                             HorizontalIconAlignment="{Binding SelectedItem, ElementName=horizontalIconAlignment}"
+                                             IconMargin="{Binding Text, ElementName=iconMargin, Converter={StaticResource StringToThicknessConverter}}"
+                                             IconPosition="{Binding SelectedItem, ElementName=iconPosition}"
+                                             VerticalIconAlignment="{Binding SelectedItem, ElementName=verticalIconAlignment}">
+                <controls:ChapterSelectorBarItem.Icon>
+                    <icons:UsersIcon Width="20" Height="20" />
+                </controls:ChapterSelectorBarItem.Icon>
+            </controls:ChapterSelectorBarItem>
+
+            <controls:ChapterSelectorBarItem Padding="{Binding Text, ElementName=padding, Converter={StaticResource StringToThicknessConverter}}"
+                                             HorizontalContentAlignment="{Binding SelectedItem, ElementName=horizontalContentAlignment}"
+                                             VerticalContentAlignment="{Binding SelectedItem, ElementName=verticalContentAlignment}"
+                                             Content="Chapter.Net.WinUI"
+                                             HorizontalIconAlignment="{Binding SelectedItem, ElementName=horizontalIconAlignment}"
+                                             IconMargin="{Binding Text, ElementName=iconMargin, Converter={StaticResource StringToThicknessConverter}}"
+                                             IconPosition="{Binding SelectedItem, ElementName=iconPosition}"
+                                             VerticalIconAlignment="{Binding SelectedItem, ElementName=verticalIconAlignment}">
+                <controls:ChapterSelectorBarItem.Icon>
+                    <icons:SettingsIcon Width="20" Height="20" />
+                </controls:ChapterSelectorBarItem.Icon>
+            </controls:ChapterSelectorBarItem>
+        </controls:ChapterSelectorBar>
+    </DockPanel>
+
+</UserControl>

@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added ChapterCheckBox which is a regular check box but with a build in header and footer.
 - Added ChapterNavigationView which is a menu side bar collapsable by a burger button.
 - Added ChapterRepeatButton which is a repeat button with more features like oval endings, corner radius, header, footer and optional icon either as image or object.
+- Added ChapterSelectorBar which is an item bar like a more simple tab control.
 - Added ChapterToggleButton which is a toggle button with more features like oval endings, corner radius, header, footer and optional icon either as image or object.
 ### Changed
 - Extended ChapterButton which is a button with more features like oval endings, corner radius, header, footer and optional icon either as image or object.

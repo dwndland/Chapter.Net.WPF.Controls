@@ -65,7 +65,8 @@ public partial class MainWindow
         MenusAndToolBars =
         [
             new ControlItem("ChapterAccordion", new ChapterAccordionControl()),
-            new ControlItem("ChapterNavigationView", new ChapterNavigationViewControl())
+            new ControlItem("ChapterNavigationView", new ChapterNavigationViewControl()),
+            new ControlItem("ChapterSelectorBar", new ChapterSelectorBarControl())
         ];
 
         DataContext = this;
