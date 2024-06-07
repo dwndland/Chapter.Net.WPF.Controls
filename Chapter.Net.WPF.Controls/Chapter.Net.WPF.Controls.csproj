@@ -7,7 +7,7 @@
     <Authors>David Wendland</Authors>
     <Description>A set of new WPF controls which are not yet build in.</Description>
     <Copyright>Copyright (c) 2024 David Wendland</Copyright>
-    <PackageProjectUrl>https://github.com/dwndland/Chapter.Net.WPF.Controls</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/dwndlnd/Chapter.Net.WPF.Controls</PackageProjectUrl>
     <PackageIcon>Icon.png</PackageIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
