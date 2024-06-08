@@ -11,107 +11,106 @@ using System.Windows.Controls;
 
 // ReSharper disable once CheckNamespace
 
-namespace Chapter.Net.WPF.Controls
+namespace Chapter.Net.WPF.Controls;
+
+/// <summary>
+///     Enhances the <see cref="WrapPanel" /> by the feature that all items will have the same size.
+/// </summary>
+public class ChapterWrapPanel : WrapPanel
 {
     /// <summary>
-    ///     Enhances the <see cref="WrapPanel" /> by the feature that all items will have the same size.
+    ///     Identifies the <see cref="IsAutoUniform" /> dependency property.
     /// </summary>
-    public class ChapterWrapPanel : WrapPanel
+    public static readonly DependencyProperty IsAutoUniformProperty =
+        DependencyProperty.Register(nameof(IsAutoUniform), typeof(bool), typeof(ChapterWrapPanel), new FrameworkPropertyMetadata(false, FrameworkPropertyMetadataOptions.AffectsMeasure));
+
+    /// <summary>
+    ///     Identifies the <see cref="MinItemWidth" /> dependency property.
+    /// </summary>
+    public static readonly DependencyProperty MinItemWidthProperty =
+        DependencyProperty.Register(nameof(MinItemWidth), typeof(double), typeof(ChapterWrapPanel), new FrameworkPropertyMetadata(0d, FrameworkPropertyMetadataOptions.AffectsMeasure));
+
+    /// <summary>
+    ///     Identifies the <see cref="MinItemHeight" /> dependency property.
+    /// </summary>
+    public static readonly DependencyProperty MinItemHeightProperty =
+        DependencyProperty.Register(nameof(MinItemHeight), typeof(double), typeof(ChapterWrapPanel), new FrameworkPropertyMetadata(0d, FrameworkPropertyMetadataOptions.AffectsMeasure));
+
+    /// <summary>
+    ///     Gets or sets a value that defines if the common height or width will be taken by the biggest child element.
+    /// </summary>
+    /// <value>Default: false.</value>
+    [DefaultValue(false)]
+    public bool IsAutoUniform
     {
-        /// <summary>
-        ///     Identifies the <see cref="IsAutoUniform" /> dependency property.
-        /// </summary>
-        public static readonly DependencyProperty IsAutoUniformProperty =
-            DependencyProperty.Register(nameof(IsAutoUniform), typeof(bool), typeof(ChapterWrapPanel), new FrameworkPropertyMetadata(false, FrameworkPropertyMetadataOptions.AffectsMeasure));
+        get => (bool)GetValue(IsAutoUniformProperty);
+        set => SetValue(IsAutoUniformProperty, value);
+    }
 
-        /// <summary>
-        ///     Identifies the <see cref="MinItemWidth" /> dependency property.
-        /// </summary>
-        public static readonly DependencyProperty MinItemWidthProperty =
-            DependencyProperty.Register(nameof(MinItemWidth), typeof(double), typeof(ChapterWrapPanel), new FrameworkPropertyMetadata(0d, FrameworkPropertyMetadataOptions.AffectsMeasure));
+    /// <summary>
+    ///     Gets or sets the minimum width of the items.
+    /// </summary>
+    /// <value>Default: 0.</value>
+    [DefaultValue(0d)]
+    public double MinItemWidth
+    {
+        get => (double)GetValue(MinItemWidthProperty);
+        set => SetValue(MinItemWidthProperty, value);
+    }
 
-        /// <summary>
-        ///     Identifies the <see cref="MinItemHeight" /> dependency property.
-        /// </summary>
-        public static readonly DependencyProperty MinItemHeightProperty =
-            DependencyProperty.Register(nameof(MinItemHeight), typeof(double), typeof(ChapterWrapPanel), new FrameworkPropertyMetadata(0d, FrameworkPropertyMetadataOptions.AffectsMeasure));
+    /// <summary>
+    ///     Gets or sets the minimum height of the items.
+    /// </summary>
+    /// <value>Default: 0.</value>
+    [DefaultValue(0d)]
+    public double MinItemHeight
+    {
+        get => (double)GetValue(MinItemHeightProperty);
+        set => SetValue(MinItemHeightProperty, value);
+    }
 
-        /// <summary>
-        ///     Gets or sets a value that defines if the common height or width will be taken by the biggest child element.
-        /// </summary>
-        /// <value>Default: false.</value>
-        [DefaultValue(false)]
-        public bool IsAutoUniform
+    /// <summary>
+    ///     Lets each child calculating is needed size.
+    /// </summary>
+    /// <param name="availableSize">The available space by the parent control.</param>
+    /// <returns>The calculated size needed for the control.</returns>
+    protected override Size MeasureOverride(Size availableSize)
+    {
+        if (IsAutoUniform)
         {
-            get => (bool)GetValue(IsAutoUniformProperty);
-            set => SetValue(IsAutoUniformProperty, value);
-        }
-
-        /// <summary>
-        ///     Gets or sets the minimum width of the items.
-        /// </summary>
-        /// <value>Default: 0.</value>
-        [DefaultValue(0d)]
-        public double MinItemWidth
-        {
-            get => (double)GetValue(MinItemWidthProperty);
-            set => SetValue(MinItemWidthProperty, value);
-        }
-
-        /// <summary>
-        ///     Gets or sets the minimum height of the items.
-        /// </summary>
-        /// <value>Default: 0.</value>
-        [DefaultValue(0d)]
-        public double MinItemHeight
-        {
-            get => (double)GetValue(MinItemHeightProperty);
-            set => SetValue(MinItemHeightProperty, value);
-        }
-
-        /// <summary>
-        ///     Lets each child calculating is needed size.
-        /// </summary>
-        /// <param name="availableSize">The available space by the parent control.</param>
-        /// <returns>The calculated size needed for the control.</returns>
-        protected override Size MeasureOverride(Size availableSize)
-        {
-            if (IsAutoUniform)
+            if (Orientation == Orientation.Vertical)
             {
-                if (Orientation == Orientation.Vertical)
-                {
-                    var itemHeight = 0d;
-                    foreach (UIElement el in Children)
-                        itemHeight = MeasureItem(itemHeight, el.DesiredSize.Height, MinItemHeight);
-                    ItemHeight = itemHeight;
-                }
-                else
-                {
-                    var itemWidth = 0d;
-                    foreach (UIElement el in Children)
-                        itemWidth = MeasureItem(itemWidth, el.DesiredSize.Width, MinItemWidth);
-                    ItemWidth = itemWidth;
-                }
+                var itemHeight = 0d;
+                foreach (UIElement el in Children)
+                    itemHeight = MeasureItem(itemHeight, el.DesiredSize.Height, MinItemHeight);
+                ItemHeight = itemHeight;
             }
             else
             {
-                ItemHeight = double.NaN;
-                ItemWidth = double.NaN;
+                var itemWidth = 0d;
+                foreach (UIElement el in Children)
+                    itemWidth = MeasureItem(itemWidth, el.DesiredSize.Width, MinItemWidth);
+                ItemWidth = itemWidth;
             }
-
-            return base.MeasureOverride(availableSize);
         }
-
-        private double MeasureItem(double finalItemSize, double currentItemSize, double minimumSize)
+        else
         {
-            if (double.IsNaN(finalItemSize))
-                finalItemSize = 0;
-
-            if (double.IsInfinity(currentItemSize) || double.IsNaN(currentItemSize))
-                return finalItemSize;
-
-            finalItemSize = Math.Max(finalItemSize, currentItemSize);
-            return Math.Max(finalItemSize, minimumSize);
+            ItemHeight = double.NaN;
+            ItemWidth = double.NaN;
         }
+
+        return base.MeasureOverride(availableSize);
+    }
+
+    private double MeasureItem(double finalItemSize, double currentItemSize, double minimumSize)
+    {
+        if (double.IsNaN(finalItemSize))
+            finalItemSize = 0;
+
+        if (double.IsInfinity(currentItemSize) || double.IsNaN(currentItemSize))
+            return finalItemSize;
+
+        finalItemSize = Math.Max(finalItemSize, currentItemSize);
+        return Math.Max(finalItemSize, minimumSize);
     }
 }

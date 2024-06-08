@@ -9,21 +9,20 @@ using Chapter.Net.WPF.Controls.Bases;
 
 // ReSharper disable once CheckNamespace
 
-namespace Chapter.Net.WPF.Controls
+namespace Chapter.Net.WPF.Controls;
+
+/// <summary>
+///     A back button placed on the <see cref="ChapterNavigationView" />.
+/// </summary>
+public class ChapterNavigationBackButton : ButtonBase
 {
     /// <summary>
-    ///     A back button placed on the <see cref="ChapterNavigationView" />.
+    ///     The ChapterNavigationBackButton style key.
     /// </summary>
-    public class ChapterNavigationBackButton : ButtonBase
-    {
-        /// <summary>
-        ///     The ChapterNavigationBackButton style key.
-        /// </summary>
-        public static readonly ComponentResourceKey StyleKey = new ComponentResourceKey(typeof(ChapterNavigationBackButton), "ChapterNavigationBackButton");
+    public static readonly ComponentResourceKey StyleKey = new(typeof(ChapterNavigationBackButton), "ChapterNavigationBackButton");
 
-        static ChapterNavigationBackButton()
-        {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(ChapterNavigationBackButton), new FrameworkPropertyMetadata(typeof(ChapterNavigationBackButton)));
-        }
+    static ChapterNavigationBackButton()
+    {
+        DefaultStyleKeyProperty.OverrideMetadata(typeof(ChapterNavigationBackButton), new FrameworkPropertyMetadata(typeof(ChapterNavigationBackButton)));
     }
 }

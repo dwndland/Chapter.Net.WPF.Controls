@@ -6,56 +6,55 @@
 
 // ReSharper disable once CheckNamespace
 
-namespace Chapter.Net.WPF.Controls
+namespace Chapter.Net.WPF.Controls;
+
+/// <summary>
+///     Defines the variant of the <see cref="ChapterBadge" />.
+/// </summary>
+public enum BadgeVariant
 {
     /// <summary>
-    ///     Defines the variant of the <see cref="ChapterBadge" />.
+    ///     The block icon.
     /// </summary>
-    public enum BadgeVariant
-    {
-        /// <summary>
-        ///     The block icon.
-        /// </summary>
-        Block,
+    Block,
 
-        /// <summary>
-        ///     The cancel icon.
-        /// </summary>
-        Cancel,
+    /// <summary>
+    ///     The cancel icon.
+    /// </summary>
+    Cancel,
 
-        /// <summary>
-        ///     The checkmark icon.
-        /// </summary>
-        Check,
+    /// <summary>
+    ///     The checkmark icon.
+    /// </summary>
+    Check,
 
-        /// <summary>
-        ///     The custom content.
-        /// </summary>
-        Content,
+    /// <summary>
+    ///     The custom content.
+    /// </summary>
+    Content,
 
-        /// <summary>
-        ///     The minus icon.
-        /// </summary>
-        Minus,
+    /// <summary>
+    ///     The minus icon.
+    /// </summary>
+    Minus,
 
-        /// <summary>
-        ///     The number display.
-        /// </summary>
-        Number,
+    /// <summary>
+    ///     The number display.
+    /// </summary>
+    Number,
 
-        /// <summary>
-        ///     The plus icon.
-        /// </summary>
-        Plus,
+    /// <summary>
+    ///     The plus icon.
+    /// </summary>
+    Plus,
 
-        /// <summary>
-        ///     The time icon.
-        /// </summary>
-        Time,
+    /// <summary>
+    ///     The time icon.
+    /// </summary>
+    Time,
 
-        /// <summary>
-        ///     The warning icon.
-        /// </summary>
-        Warning
-    }
+    /// <summary>
+    ///     The warning icon.
+    /// </summary>
+    Warning
 }

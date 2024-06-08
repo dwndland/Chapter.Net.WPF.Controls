@@ -8,68 +8,67 @@ using System.Globalization;
 
 // ReSharper disable once CheckNamespace
 
-namespace Chapter.Net.WPF.Controls
+namespace Chapter.Net.WPF.Controls;
+
+internal class NB_ulong : Number<ulong?>
 {
-    internal class NB_ulong : Number<ulong?>
+    public override bool CanIncrease => _current + _step <= _maximum;
+
+    public override bool CanDecrease => _current - _step >= _minimum;
+
+    public override bool AcceptNegative => false;
+
+    public override bool NumberIsBelowMinimum => _current < _minimum;
+
+    protected override ulong? GetMinValue()
     {
-        public override bool CanIncrease => _current + _step <= _maximum;
+        return ulong.MinValue;
+    }
 
-        public override bool CanDecrease => _current - _step >= _minimum;
+    protected override ulong? GetMaxValue()
+    {
+        return ulong.MaxValue;
+    }
 
-        public override bool AcceptNegative => false;
+    protected override ulong? GetDefaultStep()
+    {
+        return 1;
+    }
 
-        public override bool NumberIsBelowMinimum => _current < _minimum;
+    protected override void StepUp()
+    {
+        _current += _step;
+    }
 
-        protected override ulong? GetMinValue()
+    protected override void StepDown()
+    {
+        _current -= _step;
+    }
+
+    protected override bool IsInRange(ulong? parsedNumber)
+    {
+        if (parsedNumber == null)
+            return true;
+        return parsedNumber <= _maximum;
+    }
+
+    protected override bool TryParse(string numberString, out ulong? parsed)
+    {
+        if (string.IsNullOrWhiteSpace(numberString))
         {
-            return ulong.MinValue;
+            parsed = null;
+            return true;
         }
 
-        protected override ulong? GetMaxValue()
-        {
-            return ulong.MaxValue;
-        }
+        var result = ulong.TryParse(numberString, NumberStyles.AllowLeadingWhite | NumberStyles.AllowTrailingWhite, _parsingCulture, out var tmp);
+        parsed = tmp;
+        return result;
+    }
 
-        protected override ulong? GetDefaultStep()
-        {
-            return 1;
-        }
-
-        protected override void StepUp()
-        {
-            _current += _step;
-        }
-
-        protected override void StepDown()
-        {
-            _current -= _step;
-        }
-
-        protected override bool IsInRange(ulong? parsedNumber)
-        {
-            if (parsedNumber == null)
-                return true;
-            return parsedNumber <= _maximum;
-        }
-
-        protected override bool TryParse(string numberString, out ulong? parsed)
-        {
-            if (string.IsNullOrWhiteSpace(numberString))
-            {
-                parsed = null;
-                return true;
-            }
-
-            var result = ulong.TryParse(numberString, NumberStyles.AllowLeadingWhite | NumberStyles.AllowTrailingWhite, _parsingCulture, out var tmp);
-            parsed = tmp;
-            return result;
-        }
-
-        public override string ToString()
-        {
-            if (_current == null)
-                return string.Empty;
-            return _current.Value.ToString(_parsingCulture);
-        }
+    public override string ToString()
+    {
+        if (_current == null)
+            return string.Empty;
+        return _current.Value.ToString(_parsingCulture);
     }
 }

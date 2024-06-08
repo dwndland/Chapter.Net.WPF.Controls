@@ -8,68 +8,67 @@ using System.Globalization;
 
 // ReSharper disable once CheckNamespace
 
-namespace Chapter.Net.WPF.Controls
+namespace Chapter.Net.WPF.Controls;
+
+internal class NB_sbyte : Number<sbyte?>
 {
-    internal class NB_sbyte : Number<sbyte?>
+    public override bool CanIncrease => _current + _step <= _maximum;
+
+    public override bool CanDecrease => _current - _step >= _minimum;
+
+    public override bool AcceptNegative => _minimum < 0;
+
+    public override bool NumberIsBelowMinimum => _current < _minimum;
+
+    protected override sbyte? GetMinValue()
     {
-        public override bool CanIncrease => _current + _step <= _maximum;
+        return sbyte.MinValue;
+    }
 
-        public override bool CanDecrease => _current - _step >= _minimum;
+    protected override sbyte? GetMaxValue()
+    {
+        return sbyte.MaxValue;
+    }
 
-        public override bool AcceptNegative => _minimum < 0;
+    protected override sbyte? GetDefaultStep()
+    {
+        return 1;
+    }
 
-        public override bool NumberIsBelowMinimum => _current < _minimum;
+    protected override void StepUp()
+    {
+        _current += _step;
+    }
 
-        protected override sbyte? GetMinValue()
+    protected override void StepDown()
+    {
+        _current -= _step;
+    }
+
+    protected override bool IsInRange(sbyte? parsedNumber)
+    {
+        if (parsedNumber == null)
+            return true;
+        return parsedNumber <= _maximum;
+    }
+
+    protected override bool TryParse(string numberString, out sbyte? parsed)
+    {
+        if (string.IsNullOrWhiteSpace(numberString))
         {
-            return sbyte.MinValue;
+            parsed = null;
+            return true;
         }
 
-        protected override sbyte? GetMaxValue()
-        {
-            return sbyte.MaxValue;
-        }
+        var result = sbyte.TryParse(numberString, NumberStyles.Number, _parsingCulture, out var tmp);
+        parsed = tmp;
+        return result;
+    }
 
-        protected override sbyte? GetDefaultStep()
-        {
-            return 1;
-        }
-
-        protected override void StepUp()
-        {
-            _current += _step;
-        }
-
-        protected override void StepDown()
-        {
-            _current -= _step;
-        }
-
-        protected override bool IsInRange(sbyte? parsedNumber)
-        {
-            if (parsedNumber == null)
-                return true;
-            return parsedNumber <= _maximum;
-        }
-
-        protected override bool TryParse(string numberString, out sbyte? parsed)
-        {
-            if (string.IsNullOrWhiteSpace(numberString))
-            {
-                parsed = null;
-                return true;
-            }
-
-            var result = sbyte.TryParse(numberString, NumberStyles.Number, _parsingCulture, out var tmp);
-            parsed = tmp;
-            return result;
-        }
-
-        public override string ToString()
-        {
-            if (_current == null)
-                return string.Empty;
-            return _current.Value.ToString(_parsingCulture);
-        }
+    public override string ToString()
+    {
+        if (_current == null)
+            return string.Empty;
+        return _current.Value.ToString(_parsingCulture);
     }
 }

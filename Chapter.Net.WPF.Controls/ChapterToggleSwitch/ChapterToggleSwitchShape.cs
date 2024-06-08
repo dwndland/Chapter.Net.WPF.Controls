@@ -6,21 +6,20 @@
 
 // ReSharper disable once CheckNamespace
 
-namespace Chapter.Net.WPF.Controls
+namespace Chapter.Net.WPF.Controls;
+
+/// <summary>
+///     Represents the shape of the option button slider and background.
+/// </summary>
+public enum ChapterToggleSwitchShape
 {
     /// <summary>
-    ///     Represents the shape of the option button slider and background.
+    ///     Its circular.
     /// </summary>
-    public enum ChapterToggleSwitchShape
-    {
-        /// <summary>
-        ///     Its circular.
-        /// </summary>
-        Round,
+    Round,
 
-        /// <summary>
-        ///     Its square.
-        /// </summary>
-        Square
-    }
+    /// <summary>
+    ///     Its square.
+    /// </summary>
+    Square
 }

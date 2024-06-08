@@ -9,16 +9,15 @@ using System.Windows.Controls;
 
 // ReSharper disable once CheckNamespace
 
-namespace Chapter.Net.WPF.Controls
+namespace Chapter.Net.WPF.Controls;
+
+/// <summary>
+///     The main button placed in the <see cref="ChapterSplitButton" />.
+/// </summary>
+public class SplitMainButton : Button
 {
-    /// <summary>
-    ///     The main button placed in the <see cref="ChapterSplitButton" />.
-    /// </summary>
-    public class SplitMainButton : Button
+    static SplitMainButton()
     {
-        static SplitMainButton()
-        {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(SplitMainButton), new FrameworkPropertyMetadata(typeof(SplitMainButton)));
-        }
+        DefaultStyleKeyProperty.OverrideMetadata(typeof(SplitMainButton), new FrameworkPropertyMetadata(typeof(SplitMainButton)));
     }
 }

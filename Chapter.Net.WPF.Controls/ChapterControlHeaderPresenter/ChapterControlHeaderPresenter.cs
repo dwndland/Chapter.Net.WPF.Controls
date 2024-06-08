@@ -9,21 +9,20 @@ using Chapter.Net.WPF.Controls.Bases;
 
 // ReSharper disable once CheckNamespace
 
-namespace Chapter.Net.WPF.Controls
+namespace Chapter.Net.WPF.Controls;
+
+/// <summary>
+///     A header presenter to display optional headers in the chapter controls.
+/// </summary>
+public class ChapterControlHeaderPresenter : ContentControlBase
 {
     /// <summary>
-    ///     A header presenter to display optional headers in the chapter controls.
+    ///     The ChapterControlHeaderPresenter style key.
     /// </summary>
-    public class ChapterControlHeaderPresenter : ContentControlBase
-    {
-        /// <summary>
-        ///     The ChapterControlHeaderPresenter style key.
-        /// </summary>
-        public static readonly ComponentResourceKey StyleKey = new ComponentResourceKey(typeof(ChapterControlHeaderPresenter), "ChapterControlHeaderPresenter");
+    public static readonly ComponentResourceKey StyleKey = new(typeof(ChapterControlHeaderPresenter), "ChapterControlHeaderPresenter");
 
-        static ChapterControlHeaderPresenter()
-        {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(ChapterControlHeaderPresenter), new FrameworkPropertyMetadata(typeof(ChapterControlHeaderPresenter)));
-        }
+    static ChapterControlHeaderPresenter()
+    {
+        DefaultStyleKeyProperty.OverrideMetadata(typeof(ChapterControlHeaderPresenter), new FrameworkPropertyMetadata(typeof(ChapterControlHeaderPresenter)));
     }
 }

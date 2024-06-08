@@ -8,33 +8,32 @@ using System.Globalization;
 
 // ReSharper disable once CheckNamespace
 
-namespace Chapter.Net.WPF.Controls
+namespace Chapter.Net.WPF.Controls;
+
+/// <summary>
+///     Modifies the text to always lower in the <see cref="ChapterTextBox" />.
+/// </summary>
+public sealed class ToLowerModificator : TextModificator
 {
     /// <summary>
-    ///     Modifies the text to always lower in the <see cref="ChapterTextBox" />.
+    ///     Initializes a new instance of the <see cref="ToUpperModificator" /> class.
     /// </summary>
-    public sealed class ToLowerModificator : TextModificator
+    public ToLowerModificator()
     {
-        /// <summary>
-        ///     Initializes a new instance of the <see cref="ToUpperModificator" /> class.
-        /// </summary>
-        public ToLowerModificator()
-        {
-        }
+    }
 
-        /// <summary>
-        ///     Initializes a new instance of the <see cref="ToUpperModificator" /> class.
-        /// </summary>
-        /// <param name="modificationTime">The time when the <see cref="Modify" /> will be called.</param>
-        public ToLowerModificator(ModificationTime modificationTime)
-            : base(modificationTime)
-        {
-        }
+    /// <summary>
+    ///     Initializes a new instance of the <see cref="ToUpperModificator" /> class.
+    /// </summary>
+    /// <param name="modificationTime">The time when the <see cref="Modify" /> will be called.</param>
+    public ToLowerModificator(ModificationTime modificationTime)
+        : base(modificationTime)
+    {
+    }
 
-        /// <inheritdoc />
-        public override string Modify(string input)
-        {
-            return input.ToLower(CultureInfo.CurrentCulture);
-        }
+    /// <inheritdoc />
+    public override string Modify(string input)
+    {
+        return input.ToLower(CultureInfo.CurrentCulture);
     }
 }

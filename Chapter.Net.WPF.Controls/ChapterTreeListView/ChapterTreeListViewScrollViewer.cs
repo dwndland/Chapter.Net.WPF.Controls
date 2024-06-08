@@ -9,16 +9,15 @@ using System.Windows.Controls;
 
 // ReSharper disable once CheckNamespace
 
-namespace Chapter.Net.WPF.Controls
+namespace Chapter.Net.WPF.Controls;
+
+/// <summary>
+///     Represents the scroll viewer shown in the <see cref="ChapterTreeListView" />.
+/// </summary>
+public sealed class ChapterTreeListViewScrollViewer : ScrollViewer
 {
-    /// <summary>
-    ///     Represents the scroll viewer shown in the <see cref="ChapterTreeListView" />.
-    /// </summary>
-    public sealed class ChapterTreeListViewScrollViewer : ScrollViewer
+    static ChapterTreeListViewScrollViewer()
     {
-        static ChapterTreeListViewScrollViewer()
-        {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(ChapterTreeListViewScrollViewer), new FrameworkPropertyMetadata(typeof(ChapterTreeListViewScrollViewer)));
-        }
+        DefaultStyleKeyProperty.OverrideMetadata(typeof(ChapterTreeListViewScrollViewer), new FrameworkPropertyMetadata(typeof(ChapterTreeListViewScrollViewer)));
     }
 }

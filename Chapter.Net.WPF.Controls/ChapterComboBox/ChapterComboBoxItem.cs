@@ -9,16 +9,15 @@ using System.Windows.Controls;
 
 // ReSharper disable once CheckNamespace
 
-namespace Chapter.Net.WPF.Controls
+namespace Chapter.Net.WPF.Controls;
+
+/// <summary>
+///     Represents an item inside the <see cref="ChapterComboBox" /> which holds the appropriate enumeration object.
+/// </summary>
+public class ChapterComboBoxItem : ComboBoxItem
 {
-    /// <summary>
-    ///     Represents an item inside the <see cref="ChapterComboBox" /> which holds the appropriate enumeration object.
-    /// </summary>
-    public class ChapterComboBoxItem : ComboBoxItem
+    static ChapterComboBoxItem()
     {
-        static ChapterComboBoxItem()
-        {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(ChapterComboBoxItem), new FrameworkPropertyMetadata(typeof(ChapterComboBoxItem)));
-        }
+        DefaultStyleKeyProperty.OverrideMetadata(typeof(ChapterComboBoxItem), new FrameworkPropertyMetadata(typeof(ChapterComboBoxItem)));
     }
 }

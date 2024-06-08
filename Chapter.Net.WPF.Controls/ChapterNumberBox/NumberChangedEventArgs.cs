@@ -8,28 +8,27 @@ using System.Windows;
 
 // ReSharper disable once CheckNamespace
 
-namespace Chapter.Net.WPF.Controls
+namespace Chapter.Net.WPF.Controls;
+
+/// <summary>
+///     Holds the data passed when a <see cref="ChapterNumberBox" /> has changed its value.
+/// </summary>
+public sealed class NumberChangedEventArgs : RoutedEventArgs
 {
-    /// <summary>
-    ///     Holds the data passed when a <see cref="ChapterNumberBox" /> has changed its value.
-    /// </summary>
-    public sealed class NumberChangedEventArgs : RoutedEventArgs
+    internal NumberChangedEventArgs(object oldVal, object newVal)
+        : base(ChapterNumberBox.NumberChangedEvent)
     {
-        internal NumberChangedEventArgs(object oldVal, object newVal)
-            : base(ChapterNumberBox.NumberChangedEvent)
-        {
-            OldNumber = oldVal;
-            NewNumber = newVal;
-        }
-
-        /// <summary>
-        ///     Gets the old number.
-        /// </summary>
-        public object OldNumber { get; }
-
-        /// <summary>
-        ///     Gets the new number
-        /// </summary>
-        public object NewNumber { get; }
+        OldNumber = oldVal;
+        NewNumber = newVal;
     }
+
+    /// <summary>
+    ///     Gets the old number.
+    /// </summary>
+    public object OldNumber { get; }
+
+    /// <summary>
+    ///     Gets the new number
+    /// </summary>
+    public object NewNumber { get; }
 }

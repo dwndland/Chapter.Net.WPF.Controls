@@ -7,38 +7,37 @@
 using System.Windows;
 using System.Windows.Controls;
 
-namespace Chapter.Net.WPF.Controls.Bases
+namespace Chapter.Net.WPF.Controls.Bases;
+
+/// <summary>
+///     Base class for expanders.
+/// </summary>
+public abstract class ExpanderBase : Expander
 {
     /// <summary>
-    ///     Base class for expanders.
+    ///     Create a new instance of ExpanderBase.
     /// </summary>
-    public abstract class ExpanderBase : Expander
+    protected ExpanderBase()
     {
-        /// <summary>
-        ///     Create a new instance of ExpanderBase.
-        /// </summary>
-        protected ExpanderBase()
-        {
-            Loaded += OnLoaded;
-            IsEnabledChanged += OnIsEnabledChanged;
-        }
+        Loaded += OnLoaded;
+        IsEnabledChanged += OnIsEnabledChanged;
+    }
 
-        /// <summary>
-        ///     Callback when the control got loaded.
-        /// </summary>
-        /// <param name="sender">The loaded checkbox.</param>
-        /// <param name="e">The loaded event parameter.</param>
-        protected virtual void OnLoaded(object sender, RoutedEventArgs e)
-        {
-        }
+    /// <summary>
+    ///     Callback when the control got loaded.
+    /// </summary>
+    /// <param name="sender">The loaded checkbox.</param>
+    /// <param name="e">The loaded event parameter.</param>
+    protected virtual void OnLoaded(object sender, RoutedEventArgs e)
+    {
+    }
 
-        /// <summary>
-        ///     Callback when the control IsEnabled got changed.
-        /// </summary>
-        /// <param name="sender">The checkbox.</param>
-        /// <param name="e">The IsEnabledChanged event parameter.</param>
-        protected virtual void OnIsEnabledChanged(object sender, DependencyPropertyChangedEventArgs e)
-        {
-        }
+    /// <summary>
+    ///     Callback when the control IsEnabled got changed.
+    /// </summary>
+    /// <param name="sender">The checkbox.</param>
+    /// <param name="e">The IsEnabledChanged event parameter.</param>
+    protected virtual void OnIsEnabledChanged(object sender, DependencyPropertyChangedEventArgs e)
+    {
     }
 }

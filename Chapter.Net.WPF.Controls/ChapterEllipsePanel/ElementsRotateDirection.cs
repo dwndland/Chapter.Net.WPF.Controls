@@ -6,31 +6,30 @@
 
 // ReSharper disable once CheckNamespace
 
-namespace Chapter.Net.WPF.Controls
+namespace Chapter.Net.WPF.Controls;
+
+/// <summary>
+///     Defines how the items should be rotated in the <see cref="ChapterEllipsePanel" />.
+/// </summary>
+public enum ElementsRotateDirection
 {
     /// <summary>
-    ///     Defines how the items should be rotated in the <see cref="ChapterEllipsePanel" />.
+    ///     The top of the items are oriented to the ellipse panel center point.
     /// </summary>
-    public enum ElementsRotateDirection
-    {
-        /// <summary>
-        ///     The top of the items are oriented to the ellipse panel center point.
-        /// </summary>
-        Introversive,
+    Introversive,
 
-        /// <summary>
-        ///     The bottom of the items are oriented to the ellipse panel center point.
-        /// </summary>
-        Outroversive,
+    /// <summary>
+    ///     The bottom of the items are oriented to the ellipse panel center point.
+    /// </summary>
+    Outroversive,
 
-        /// <summary>
-        ///     The items are oriented with the ellipse form clockwise.
-        /// </summary>
-        Clockwise,
+    /// <summary>
+    ///     The items are oriented with the ellipse form clockwise.
+    /// </summary>
+    Clockwise,
 
-        /// <summary>
-        ///     The items are oriented with the ellipse form counter clockwise.
-        /// </summary>
-        Counterclockwise
-    }
+    /// <summary>
+    ///     The items are oriented with the ellipse form counter clockwise.
+    /// </summary>
+    Counterclockwise
 }

@@ -6,21 +6,20 @@
 
 // ReSharper disable once CheckNamespace
 
-namespace Chapter.Net.WPF.Controls
+namespace Chapter.Net.WPF.Controls;
+
+/// <summary>
+///     Defines when the <see cref="TextModificator" /> will be executed in the <see cref="ChapterTextBox" />.
+/// </summary>
+public enum ModificationTime
 {
     /// <summary>
-    ///     Defines when the <see cref="TextModificator" /> will be executed in the <see cref="ChapterTextBox" />.
+    ///     The text will be modified when the text box loses the focus.
     /// </summary>
-    public enum ModificationTime
-    {
-        /// <summary>
-        ///     The text will be modified when the text box loses the focus.
-        /// </summary>
-        OnLostFocus,
+    OnLostFocus,
 
-        /// <summary>
-        ///     The text will be modified the moment the user is typing.
-        /// </summary>
-        OnType
-    }
+    /// <summary>
+    ///     The text will be modified the moment the user is typing.
+    /// </summary>
+    OnType
 }

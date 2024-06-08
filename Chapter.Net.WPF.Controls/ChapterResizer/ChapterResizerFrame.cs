@@ -10,33 +10,32 @@ using System.Windows.Controls.Primitives;
 
 // ReSharper disable once CheckNamespace
 
-namespace Chapter.Net.WPF.Controls
+namespace Chapter.Net.WPF.Controls;
+
+/// <summary>
+///     Represents a single line to drag in a specific direction. This is used in the <see cref="ChapterResizer" />.
+/// </summary>
+public class ChapterResizerFrame : Thumb
 {
     /// <summary>
-    ///     Represents a single line to drag in a specific direction. This is used in the <see cref="ChapterResizer" />.
+    ///     The Direction dependency property.
     /// </summary>
-    public class ChapterResizerFrame : Thumb
+    public static readonly DependencyProperty DirectionProperty =
+        DependencyProperty.Register(nameof(Direction), typeof(FrameResizeDirection), typeof(ChapterResizerFrame), new PropertyMetadata(FrameResizeDirection.LeftToRight));
+
+    static ChapterResizerFrame()
     {
-        /// <summary>
-        ///     The Direction dependency property.
-        /// </summary>
-        public static readonly DependencyProperty DirectionProperty =
-            DependencyProperty.Register(nameof(Direction), typeof(FrameResizeDirection), typeof(ChapterResizerFrame), new PropertyMetadata(FrameResizeDirection.LeftToRight));
+        DefaultStyleKeyProperty.OverrideMetadata(typeof(ChapterResizerFrame), new FrameworkPropertyMetadata(typeof(ChapterResizerFrame)));
+    }
 
-        static ChapterResizerFrame()
-        {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(ChapterResizerFrame), new FrameworkPropertyMetadata(typeof(ChapterResizerFrame)));
-        }
-
-        /// <summary>
-        ///     Defines in which direction the frame is resize to.
-        /// </summary>
-        /// <value>Default: FrameResizeDirection.LeftToRight.</value>
-        [DefaultValue(FrameResizeDirection.LeftToRight)]
-        public FrameResizeDirection Direction
-        {
-            get => (FrameResizeDirection)GetValue(DirectionProperty);
-            set => SetValue(DirectionProperty, value);
-        }
+    /// <summary>
+    ///     Defines in which direction the frame is resize to.
+    /// </summary>
+    /// <value>Default: FrameResizeDirection.LeftToRight.</value>
+    [DefaultValue(FrameResizeDirection.LeftToRight)]
+    public FrameResizeDirection Direction
+    {
+        get => (FrameResizeDirection)GetValue(DirectionProperty);
+        set => SetValue(DirectionProperty, value);
     }
 }

@@ -9,16 +9,15 @@ using System.Windows.Controls;
 
 // ReSharper disable once CheckNamespace
 
-namespace Chapter.Net.WPF.Controls
+namespace Chapter.Net.WPF.Controls;
+
+/// <summary>
+///     The button which calls the cancel command in the <see cref="ChapterSearchTextBox" />.
+/// </summary>
+public class CancelButton : Button
 {
-    /// <summary>
-    ///     The button which calls the cancel command in the <see cref="ChapterSearchTextBox" />.
-    /// </summary>
-    public class CancelButton : Button
+    static CancelButton()
     {
-        static CancelButton()
-        {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(CancelButton), new FrameworkPropertyMetadata(typeof(CancelButton)));
-        }
+        DefaultStyleKeyProperty.OverrideMetadata(typeof(CancelButton), new FrameworkPropertyMetadata(typeof(CancelButton)));
     }
 }

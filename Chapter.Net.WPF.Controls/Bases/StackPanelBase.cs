@@ -6,12 +6,9 @@
 
 using System.Windows.Controls;
 
-namespace Chapter.Net.WPF.Controls.Bases
-{
-    /// <summary>
-    ///     Base class for stack panels.
-    /// </summary>
-    public abstract class StackPanelBase : StackPanel
-    {
-    }
-}
+namespace Chapter.Net.WPF.Controls.Bases;
+
+/// <summary>
+///     Base class for stack panels.
+/// </summary>
+public abstract class StackPanelBase : StackPanel;

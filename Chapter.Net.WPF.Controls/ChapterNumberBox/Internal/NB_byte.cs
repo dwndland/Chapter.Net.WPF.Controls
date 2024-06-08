@@ -8,68 +8,67 @@ using System.Globalization;
 
 // ReSharper disable once CheckNamespace
 
-namespace Chapter.Net.WPF.Controls
+namespace Chapter.Net.WPF.Controls;
+
+internal class NB_byte : Number<byte?>
 {
-    internal class NB_byte : Number<byte?>
+    public override bool CanIncrease => _current + _step <= _maximum;
+
+    public override bool CanDecrease => _current - _step >= _minimum;
+
+    public override bool AcceptNegative => false;
+
+    public override bool NumberIsBelowMinimum => _current < _minimum;
+
+    protected override byte? GetMinValue()
     {
-        public override bool CanIncrease => _current + _step <= _maximum;
+        return byte.MinValue;
+    }
 
-        public override bool CanDecrease => _current - _step >= _minimum;
+    protected override byte? GetMaxValue()
+    {
+        return byte.MaxValue;
+    }
 
-        public override bool AcceptNegative => false;
+    protected override byte? GetDefaultStep()
+    {
+        return 1;
+    }
 
-        public override bool NumberIsBelowMinimum => _current < _minimum;
+    protected override void StepUp()
+    {
+        _current += _step;
+    }
 
-        protected override byte? GetMinValue()
+    protected override void StepDown()
+    {
+        _current -= _step;
+    }
+
+    protected override bool IsInRange(byte? parsedNumber)
+    {
+        if (parsedNumber == null)
+            return true;
+        return parsedNumber <= _maximum;
+    }
+
+    protected override bool TryParse(string numberString, out byte? parsed)
+    {
+        if (string.IsNullOrWhiteSpace(numberString))
         {
-            return byte.MinValue;
+            parsed = null;
+            return true;
         }
 
-        protected override byte? GetMaxValue()
-        {
-            return byte.MaxValue;
-        }
+        var result = byte.TryParse(numberString, NumberStyles.AllowLeadingWhite | NumberStyles.AllowTrailingWhite, _parsingCulture, out var tmp);
+        parsed = tmp;
+        return result;
+    }
 
-        protected override byte? GetDefaultStep()
-        {
-            return 1;
-        }
-
-        protected override void StepUp()
-        {
-            _current += _step;
-        }
-
-        protected override void StepDown()
-        {
-            _current -= _step;
-        }
-
-        protected override bool IsInRange(byte? parsedNumber)
-        {
-            if (parsedNumber == null)
-                return true;
-            return parsedNumber <= _maximum;
-        }
-
-        protected override bool TryParse(string numberString, out byte? parsed)
-        {
-            if (string.IsNullOrWhiteSpace(numberString))
-            {
-                parsed = null;
-                return true;
-            }
-
-            var result = byte.TryParse(numberString, NumberStyles.AllowLeadingWhite | NumberStyles.AllowTrailingWhite, _parsingCulture, out var tmp);
-            parsed = tmp;
-            return result;
-        }
-
-        public override string ToString()
-        {
-            if (_current == null)
-                return string.Empty;
-            return _current.Value.ToString(_parsingCulture);
-        }
+    public override string ToString()
+    {
+        if (_current == null)
+            return string.Empty;
+        return _current.Value.ToString(_parsingCulture);
     }
 }

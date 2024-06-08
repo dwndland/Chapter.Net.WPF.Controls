@@ -6,31 +6,30 @@
 
 // ReSharper disable once CheckNamespace
 
-namespace Chapter.Net.WPF.Controls
+namespace Chapter.Net.WPF.Controls;
+
+/// <summary>
+///     Defines the position where the elements has to start in the <see cref="ChapterEllipsePanel" />.
+/// </summary>
+public enum ElementStartPosition
 {
     /// <summary>
-    ///     Defines the position where the elements has to start in the <see cref="ChapterEllipsePanel" />.
+    ///     The first item in the ellipse panel is starting on the left side.
     /// </summary>
-    public enum ElementStartPosition
-    {
-        /// <summary>
-        ///     The first item in the ellipse panel is starting on the left side.
-        /// </summary>
-        Left,
+    Left,
 
-        /// <summary>
-        ///     The first item in the ellipse panel is starting on top.
-        /// </summary>
-        Top,
+    /// <summary>
+    ///     The first item in the ellipse panel is starting on top.
+    /// </summary>
+    Top,
 
-        /// <summary>
-        ///     The first item in the ellipse panel is starting on the right side.
-        /// </summary>
-        Right,
+    /// <summary>
+    ///     The first item in the ellipse panel is starting on the right side.
+    /// </summary>
+    Right,
 
-        /// <summary>
-        ///     The first item in the ellipse panel is starting on bottom.
-        /// </summary>
-        Bottom
-    }
+    /// <summary>
+    ///     The first item in the ellipse panel is starting on bottom.
+    /// </summary>
+    Bottom
 }

@@ -9,16 +9,15 @@ using System.Windows.Controls;
 
 // ReSharper disable once CheckNamespace
 
-namespace Chapter.Net.WPF.Controls
+namespace Chapter.Net.WPF.Controls;
+
+/// <summary>
+///     Represents the reset to default button shown in the <see cref="ChapterNumberBox" />.
+/// </summary>
+public class NumberResetButton : Button
 {
-    /// <summary>
-    ///     Represents the reset to default button shown in the <see cref="ChapterNumberBox" />.
-    /// </summary>
-    public class NumberResetButton : Button
+    static NumberResetButton()
     {
-        static NumberResetButton()
-        {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(NumberResetButton), new FrameworkPropertyMetadata(typeof(NumberResetButton)));
-        }
+        DefaultStyleKeyProperty.OverrideMetadata(typeof(NumberResetButton), new FrameworkPropertyMetadata(typeof(NumberResetButton)));
     }
 }

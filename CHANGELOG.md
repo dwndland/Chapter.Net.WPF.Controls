@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+## [3.0.0] - 2024-06-07
 ### Added
 - Added ChapterAccordion which is an accordion with sub items which can be expanded or collapsed.
 - Added ChapterBadge which allows to attach a notification icon to any control.
@@ -16,15 +18,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added ChapterSelectorBar which is an item bar like a more simple tab control.
 - Added ChapterToggleButton which is a toggle button with more features like oval endings, corner radius, header, footer and optional icon either as image or object.
 ### Changed
+- Update to support .Net 8 only.
 - Extended ChapterButton which is a button with more features like oval endings, corner radius, header, footer and optional icon either as image or object.
 - Renewed the ChapterHeaderedContentControl to be a headered content control with more possible customization and a footer.
-### Supported .Net Versions
-- .Net Core 3.0
-- .Net Framework 4.5
-- .Net 5 (Windows)
-- .Net 6 (Windows)
-- .Net 7 (Windows)
-- .Net 8 (Windows)
 
 ## [2.0.0] - 2024-04-20
 ### Removed

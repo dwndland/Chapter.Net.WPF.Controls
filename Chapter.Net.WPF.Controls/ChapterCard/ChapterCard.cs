@@ -9,21 +9,20 @@ using Chapter.Net.WPF.Controls.Bases;
 
 // ReSharper disable once CheckNamespace
 
-namespace Chapter.Net.WPF.Controls
+namespace Chapter.Net.WPF.Controls;
+
+/// <summary>
+///     A container control to crate card like groups of elements.
+/// </summary>
+public class ChapterCard : ContentControlBase
 {
     /// <summary>
-    ///     A container control to crate card like groups of elements.
+    ///     The ChapterButton style key.
     /// </summary>
-    public class ChapterCard : ContentControlBase
-    {
-        /// <summary>
-        ///     The ChapterButton style key.
-        /// </summary>
-        public static readonly ComponentResourceKey StyleKey = new ComponentResourceKey(typeof(ChapterCard), "ChapterCard");
+    public static readonly ComponentResourceKey StyleKey = new(typeof(ChapterCard), "ChapterCard");
 
-        static ChapterCard()
-        {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(ChapterCard), new FrameworkPropertyMetadata(typeof(ChapterCard)));
-        }
+    static ChapterCard()
+    {
+        DefaultStyleKeyProperty.OverrideMetadata(typeof(ChapterCard), new FrameworkPropertyMetadata(typeof(ChapterCard)));
     }
 }
