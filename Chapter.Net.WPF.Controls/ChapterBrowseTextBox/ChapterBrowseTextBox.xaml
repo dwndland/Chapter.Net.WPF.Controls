@@ -8,7 +8,7 @@
 
     <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
 
-    <Style TargetType="{x:Type controls:ChapterBrowseTextBox}">
+    <Style x:Key="{x:Static controls:ChapterBrowseTextBox.StyleKey}" TargetType="{x:Type controls:ChapterBrowseTextBox}">
         <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" />
         <Setter Property="BorderBrush" Value="{StaticResource TextBox.Static.Border}" />
         <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" />
@@ -94,5 +94,7 @@
             </MultiTrigger>
         </Style.Triggers>
     </Style>
+
+    <Style BasedOn="{StaticResource {x:Static controls:ChapterBrowseTextBox.StyleKey}}" TargetType="{x:Type controls:ChapterBrowseTextBox}" />
 
 </ResourceDictionary>

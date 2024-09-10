@@ -18,7 +18,7 @@
     <SolidColorBrush x:Key="ChapterSplitButtonItem.Hover.Background" Color="#5426A0DA" />
     <SolidColorBrush x:Key="ChapterSplitButtonItem.Hover.Border" Color="#FF26A0DA" />
 
-    <Style TargetType="{x:Type controls:ChapterSplitButtonItem}">
+    <Style x:Key="{x:Static controls:ChapterSplitButtonItem.StyleKey}" TargetType="{x:Type controls:ChapterSplitButtonItem}">
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="Padding" Value="4,2" />
         <Setter Property="HorizontalContentAlignment" Value="{Binding HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}" />
@@ -54,5 +54,7 @@
             </Setter.Value>
         </Setter>
     </Style>
+
+    <Style BasedOn="{StaticResource {x:Static controls:ChapterSplitButtonItem.StyleKey}}" TargetType="{x:Type controls:ChapterSplitButtonItem}" />
 
 </ResourceDictionary>

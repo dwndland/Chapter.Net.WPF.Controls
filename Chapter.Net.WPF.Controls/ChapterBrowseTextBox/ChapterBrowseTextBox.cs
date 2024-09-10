@@ -20,6 +20,11 @@ namespace Chapter.Net.WPF.Controls;
 public class ChapterBrowseTextBox : ChapterTextBox
 {
     /// <summary>
+    ///     The ChapterBrowseTextBox style key.
+    /// </summary>
+    public new static readonly ComponentResourceKey StyleKey = new(typeof(ChapterBrowseTextBox), "ChapterBrowseTextBox");
+
+    /// <summary>
     ///     Identifies the <see cref="BrowseButtonContent" /> dependency property.
     /// </summary>
     public static readonly DependencyProperty BrowseButtonContentProperty =

@@ -137,7 +137,7 @@
         </Setter>
     </Style>
 
-    <Style TargetType="{x:Type controls:ChapterSplitButton}">
+    <Style x:Key="{x:Static controls:ChapterSplitButton.StyleKey}" TargetType="{x:Type controls:ChapterSplitButton}">
         <Setter Property="Padding" Value="1" />
         <Setter Property="Focusable" Value="false" />
         <Setter Property="HorizontalContentAlignment" Value="Center" />
@@ -203,5 +203,7 @@
             </Setter.Value>
         </Setter>
     </Style>
+
+    <Style BasedOn="{StaticResource {x:Static controls:ChapterSplitButton.StyleKey}}" TargetType="{x:Type controls:ChapterSplitButton}" />
 
 </ResourceDictionary>

@@ -1,0 +1,74 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:controls="clr-namespace:Chapter.Net.WPF.Controls">
+
+    <SolidColorBrush x:Key="ChapterToggleSwitchBack.Static.Border" Color="#FF707070" />
+    <SolidColorBrush x:Key="ChapterToggleSwitchBack.Static.Background" Color="LightGray" />
+    <SolidColorBrush x:Key="ChapterToggleSwitchBack.Static.Text" Color="#444444" />
+    <SolidColorBrush x:Key="ChapterToggleSwitchBack.Checked.Background" Color="LimeGreen" />
+    <SolidColorBrush x:Key="ChapterToggleSwitchBack.Disabled.Border" Color="#FFADB2B5" />
+    <SolidColorBrush x:Key="ChapterToggleSwitchBack.Disabled.Background" Color="#FFF4F4F4" />
+
+    <Style x:Key="{x:Static controls:ChapterToggleSwitchBack.StyleKey}" TargetType="{x:Type controls:ChapterToggleSwitchBack}">
+        <Setter Property="Background" Value="{StaticResource ChapterToggleSwitchBack.Static.Background}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="BorderBrush" Value="{StaticResource ChapterToggleSwitchBack.Static.Border}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type controls:ChapterToggleSwitchBack}">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="{Binding CornerRadius, RelativeSource={RelativeSource TemplatedParent}}">
+                        <Grid>
+                            <TextBlock x:Name="On"
+                                       Margin="4,0,0,0"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                       FontSize="10"
+                                       Foreground="{StaticResource ChapterToggleSwitchBack.Static.Text}"
+                                       Text="{Binding OnText, RelativeSource={RelativeSource TemplatedParent}}"
+                                       Visibility="Collapsed" />
+                            <TextBlock x:Name="Off"
+                                       Margin="0,0,4,0"
+                                       HorizontalAlignment="Right"
+                                       VerticalAlignment="Center"
+                                       FontSize="10"
+                                       Foreground="{StaticResource ChapterToggleSwitchBack.Static.Text}"
+                                       Text="{Binding OffText, RelativeSource={RelativeSource TemplatedParent}}"
+                                       Visibility="Collapsed" />
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="HasText" Value="True" />
+                                <Condition Property="IsChecked" Value="True" />
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="On" Property="Visibility" Value="Visible" />
+                            <Setter TargetName="Off" Property="Visibility" Value="Collapsed" />
+                        </MultiTrigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="HasText" Value="True" />
+                                <Condition Property="IsChecked" Value="False" />
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="On" Property="Visibility" Value="Collapsed" />
+                            <Setter TargetName="Off" Property="Visibility" Value="Visible" />
+                        </MultiTrigger>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter Property="Background" Value="{StaticResource ChapterToggleSwitchBack.Checked.Background}" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Background" Value="{StaticResource ChapterToggleSwitchBack.Disabled.Background}" />
+                            <Setter Property="BorderBrush" Value="{StaticResource ChapterToggleSwitchBack.Disabled.Border}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style BasedOn="{StaticResource {x:Static controls:ChapterToggleSwitchBack.StyleKey}}" TargetType="{x:Type controls:ChapterToggleSwitchBack}" />
+
+</ResourceDictionary>

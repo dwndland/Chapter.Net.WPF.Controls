@@ -1,0 +1,70 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:controls="clr-namespace:Chapter.Net.WPF.Controls">
+
+    <Style x:Key="{x:Static controls:SearchButton.StyleKey}"
+           BasedOn="{StaticResource {x:Type Button}}"
+           TargetType="{x:Type controls:SearchButton}">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Padding" Value="4,2" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type controls:SearchButton}">
+                    <Border Background="{TemplateBinding Background}">
+                        <Grid Margin="{TemplateBinding Padding}"
+                              HorizontalAlignment="Center"
+                              VerticalAlignment="Center">
+                            <Path Width="8.5"
+                                  Height="13"
+                                  HorizontalAlignment="Center"
+                                  Data="M4.9130001,9.7180004 L5.2130001,9.7180004 5.2399942,14.92409 4.9399942,14.92409 z M5.0630001,0.75 C7.4450042,0.75 9.3759999,2.6787577 9.3759999,5.0580003 9.3759999,7.4372431 7.4450042,9.3660004 5.0630001,9.3660004 2.6809959,9.3660004 0.75,7.4372431 0.75,5.0580003 0.75,2.6787577 2.6809959,0.75 5.0630001,0.75 z"
+                                  Fill="#FFF2F8FE"
+                                  RenderTransformOrigin="0.5,0.5"
+                                  Stretch="Fill"
+                                  StrokeThickness="1.5">
+                                <Path.Stroke>
+                                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                        <GradientStop Offset="0" Color="#FF36A7D4" />
+                                        <GradientStop Offset="1" Color="#FF223A68" />
+                                    </LinearGradientBrush>
+                                </Path.Stroke>
+                                <Path.RenderTransform>
+                                    <RotateTransform Angle="45" />
+                                </Path.RenderTransform>
+                            </Path>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter Property="Background">
+                                <Setter.Value>
+                                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                        <GradientStop Offset="0.029" Color="#FFEAF6FD" />
+                                        <GradientStop Offset="0.496" Color="#FFD7EFFC" />
+                                        <GradientStop Offset="0.504" Color="#FFBDE6FD" />
+                                        <GradientStop Offset="0.971" Color="#FFA9DAF5" />
+                                    </LinearGradientBrush>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+
+                        <Trigger Property="IsPressed" Value="true">
+                            <Setter Property="Background">
+                                <Setter.Value>
+                                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                        <GradientStop Offset="0.5" Color="#FFC2E4F6" />
+                                        <GradientStop Offset="0.507" Color="#FFA9D9F2" />
+                                        <GradientStop Offset="0.978" Color="#FF95CEEC" />
+                                    </LinearGradientBrush>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style BasedOn="{StaticResource {x:Static controls:SearchButton.StyleKey}}" TargetType="{x:Type controls:SearchButton}" />
+
+</ResourceDictionary>

@@ -6,7 +6,7 @@
     <SolidColorBrush x:Key="TextBox.MouseOver.Border" Color="#FF7EB4EA" />
     <SolidColorBrush x:Key="TextBox.Focus.Border" Color="#FF569DE5" />
 
-    <Style TargetType="{x:Type controls:ChapterTimeBox}">
+    <Style x:Key="{x:Static controls:ChapterTimeBox.StyleKey}" TargetType="{x:Type controls:ChapterTimeBox}">
         <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" />
         <Setter Property="BorderBrush" Value="{StaticResource TextBox.Static.Border}" />
         <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" />
@@ -112,5 +112,7 @@
             </Setter.Value>
         </Setter>
     </Style>
+
+    <Style BasedOn="{StaticResource {x:Static controls:ChapterTimeBox.StyleKey}}" TargetType="{x:Type controls:ChapterTimeBox}" />
 
 </ResourceDictionary>

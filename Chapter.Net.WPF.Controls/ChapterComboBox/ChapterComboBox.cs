@@ -22,6 +22,11 @@ namespace Chapter.Net.WPF.Controls;
 public class ChapterComboBox : ComboBox
 {
     /// <summary>
+    ///     The ChapterComboBox style key.
+    /// </summary>
+    public static readonly ComponentResourceKey StyleKey = new(typeof(ChapterComboBox), "ChapterComboBox");
+
+    /// <summary>
     ///     Identifies the EnumType dependency property.
     /// </summary>
     public static readonly DependencyProperty EnumTypeProperty =

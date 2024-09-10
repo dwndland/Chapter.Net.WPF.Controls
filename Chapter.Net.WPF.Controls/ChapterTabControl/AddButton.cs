@@ -18,6 +18,11 @@ namespace Chapter.Net.WPF.Controls;
 public class AddButton : Button
 {
     /// <summary>
+    ///     The AddButton style key.
+    /// </summary>
+    public static readonly ComponentResourceKey StyleKey = new(typeof(AddButton), "AddButton");
+
+    /// <summary>
     ///     Identifies the <see cref="StrokeThickness" /> dependency property.
     /// </summary>
     public static readonly DependencyProperty StrokeThicknessProperty =

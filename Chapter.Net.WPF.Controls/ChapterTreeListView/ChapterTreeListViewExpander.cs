@@ -16,6 +16,11 @@ namespace Chapter.Net.WPF.Controls;
 /// </summary>
 public class ChapterTreeListViewExpander : ToggleButton
 {
+    /// <summary>
+    ///     The ChapterTreeListViewExpander style key.
+    /// </summary>
+    public static readonly ComponentResourceKey StyleKey = new(typeof(ChapterTreeListViewExpander), "ChapterTreeListViewExpander");
+
     static ChapterTreeListViewExpander()
     {
         DefaultStyleKeyProperty.OverrideMetadata(typeof(ChapterTreeListViewExpander), new FrameworkPropertyMetadata(typeof(ChapterTreeListViewExpander)));

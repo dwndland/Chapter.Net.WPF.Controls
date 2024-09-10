@@ -2,6 +2,10 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:controls="clr-namespace:Chapter.Net.WPF.Controls">
 
-    <Style BasedOn="{StaticResource {x:Type ComboBoxItem}}" TargetType="{x:Type controls:ChapterComboBoxItem}" />
+    <Style x:Key="{x:Static controls:ChapterComboBoxItem.StyleKey}"
+           BasedOn="{StaticResource {x:Type ComboBoxItem}}"
+           TargetType="{x:Type controls:ChapterComboBoxItem}" />
+
+    <Style BasedOn="{StaticResource {x:Static controls:ChapterComboBoxItem.StyleKey}}" TargetType="{x:Type controls:ChapterComboBoxItem}" />
 
 </ResourceDictionary>

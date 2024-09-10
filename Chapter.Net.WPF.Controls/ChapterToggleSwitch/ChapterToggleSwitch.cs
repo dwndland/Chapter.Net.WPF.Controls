@@ -18,6 +18,11 @@ namespace Chapter.Net.WPF.Controls;
 public class ChapterToggleSwitch : CheckBox
 {
     /// <summary>
+    ///     The ChapterToggleSwitch style key.
+    /// </summary>
+    public static readonly ComponentResourceKey StyleKey = new(typeof(ChapterToggleSwitch), "ChapterToggleSwitch");
+
+    /// <summary>
     ///     The DependencyProperty for the SliderShape property.
     /// </summary>
     public static readonly DependencyProperty SliderShapeProperty =

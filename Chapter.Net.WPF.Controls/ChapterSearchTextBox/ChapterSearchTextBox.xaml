@@ -6,7 +6,7 @@
     <SolidColorBrush x:Key="TextBox.MouseOver.Border" Color="#FF7EB4EA" />
     <SolidColorBrush x:Key="TextBox.Focus.Border" Color="#FF569DE5" />
 
-    <Style TargetType="{x:Type controls:ChapterSearchTextBox}">
+    <Style x:Key="{x:Static controls:ChapterSearchTextBox.StyleKey}" TargetType="{x:Type controls:ChapterSearchTextBox}">
         <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" />
         <Setter Property="BorderBrush" Value="{StaticResource TextBox.Static.Border}" />
         <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" />
@@ -115,128 +115,6 @@
         </Style.Triggers>
     </Style>
 
-    <Style BasedOn="{StaticResource {x:Type Button}}" TargetType="{x:Type controls:SearchButton}">
-        <Setter Property="Background" Value="Transparent" />
-        <Setter Property="Padding" Value="4,2" />
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="{x:Type controls:SearchButton}">
-                    <Border Background="{TemplateBinding Background}">
-                        <Grid Margin="{TemplateBinding Padding}"
-                              HorizontalAlignment="Center"
-                              VerticalAlignment="Center">
-                            <Path Width="8.5"
-                                  Height="13"
-                                  HorizontalAlignment="Center"
-                                  Data="M4.9130001,9.7180004 L5.2130001,9.7180004 5.2399942,14.92409 4.9399942,14.92409 z M5.0630001,0.75 C7.4450042,0.75 9.3759999,2.6787577 9.3759999,5.0580003 9.3759999,7.4372431 7.4450042,9.3660004 5.0630001,9.3660004 2.6809959,9.3660004 0.75,7.4372431 0.75,5.0580003 0.75,2.6787577 2.6809959,0.75 5.0630001,0.75 z"
-                                  Fill="#FFF2F8FE"
-                                  RenderTransformOrigin="0.5,0.5"
-                                  Stretch="Fill"
-                                  StrokeThickness="1.5">
-                                <Path.Stroke>
-                                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
-                                        <GradientStop Offset="0" Color="#FF36A7D4" />
-                                        <GradientStop Offset="1" Color="#FF223A68" />
-                                    </LinearGradientBrush>
-                                </Path.Stroke>
-                                <Path.RenderTransform>
-                                    <RotateTransform Angle="45" />
-                                </Path.RenderTransform>
-                            </Path>
-                        </Grid>
-                    </Border>
-                    <ControlTemplate.Triggers>
-                        <Trigger Property="IsMouseOver" Value="true">
-                            <Setter Property="Background">
-                                <Setter.Value>
-                                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
-                                        <GradientStop Offset="0.029" Color="#FFEAF6FD" />
-                                        <GradientStop Offset="0.496" Color="#FFD7EFFC" />
-                                        <GradientStop Offset="0.504" Color="#FFBDE6FD" />
-                                        <GradientStop Offset="0.971" Color="#FFA9DAF5" />
-                                    </LinearGradientBrush>
-                                </Setter.Value>
-                            </Setter>
-                        </Trigger>
-
-                        <Trigger Property="IsPressed" Value="true">
-                            <Setter Property="Background">
-                                <Setter.Value>
-                                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
-                                        <GradientStop Offset="0.5" Color="#FFC2E4F6" />
-                                        <GradientStop Offset="0.507" Color="#FFA9D9F2" />
-                                        <GradientStop Offset="0.978" Color="#FF95CEEC" />
-                                    </LinearGradientBrush>
-                                </Setter.Value>
-                            </Setter>
-                        </Trigger>
-                    </ControlTemplate.Triggers>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
-
-    <Style BasedOn="{StaticResource {x:Type Button}}" TargetType="{x:Type controls:CancelButton}">
-        <Setter Property="Background" Value="Transparent" />
-        <Setter Property="Padding" Value="4,2" />
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="{x:Type controls:CancelButton}">
-                    <Border Background="{TemplateBinding Background}">
-                        <Grid Margin="{TemplateBinding Padding}"
-                              HorizontalAlignment="Center"
-                              VerticalAlignment="Center">
-                            <Path Width="10.5"
-                                  Height="10.5"
-                                  HorizontalAlignment="Center"
-                                  VerticalAlignment="Center"
-                                  Data="M6.2500001,0.25 L9.75,0.25 9.75,6.25 15.75,6.25 15.75,9.75 9.75,9.75 9.75,15.75 6.2500001,15.75 6.2500001,9.75 0.25,9.75 0.25,6.25 6.2500001,6.25 z"
-                                  RenderTransformOrigin="0.5,0.5"
-                                  Stretch="Fill"
-                                  Stroke="White"
-                                  StrokeThickness="0.5">
-                                <Path.Fill>
-                                    <LinearGradientBrush StartPoint="0.151,0.142" EndPoint="0.849,0.858">
-                                        <GradientStop Offset="0" Color="#FFA0C7E2" />
-                                        <GradientStop Offset="1" Color="#FF8A9CB3" />
-                                        <GradientStop Offset="0.733" Color="#FF41648C" />
-                                    </LinearGradientBrush>
-                                </Path.Fill>
-                                <Path.RenderTransform>
-                                    <RotateTransform Angle="45" />
-                                </Path.RenderTransform>
-                            </Path>
-                        </Grid>
-                    </Border>
-                    <ControlTemplate.Triggers>
-                        <Trigger Property="IsMouseOver" Value="true">
-                            <Setter Property="Background">
-                                <Setter.Value>
-                                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
-                                        <GradientStop Offset="0.029" Color="#FFEAF6FD" />
-                                        <GradientStop Offset="0.496" Color="#FFD7EFFC" />
-                                        <GradientStop Offset="0.504" Color="#FFBDE6FD" />
-                                        <GradientStop Offset="0.971" Color="#FFA9DAF5" />
-                                    </LinearGradientBrush>
-                                </Setter.Value>
-                            </Setter>
-                        </Trigger>
-
-                        <Trigger Property="IsPressed" Value="true">
-                            <Setter Property="Background">
-                                <Setter.Value>
-                                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
-                                        <GradientStop Offset="0.5" Color="#FFC2E4F6" />
-                                        <GradientStop Offset="0.507" Color="#FFA9D9F2" />
-                                        <GradientStop Offset="0.978" Color="#FF95CEEC" />
-                                    </LinearGradientBrush>
-                                </Setter.Value>
-                            </Setter>
-                        </Trigger>
-                    </ControlTemplate.Triggers>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
+    <Style BasedOn="{StaticResource {x:Static controls:ChapterSearchTextBox.StyleKey}}" TargetType="{x:Type controls:ChapterSearchTextBox}" />
 
 </ResourceDictionary>

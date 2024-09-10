@@ -28,6 +28,11 @@ namespace Chapter.Net.WPF.Controls;
 public class ChapterNumberBox : Control
 {
     /// <summary>
+    ///     The ChapterNumberBox style key.
+    /// </summary>
+    public static readonly ComponentResourceKey StyleKey = new(typeof(ChapterNumberBox), "ChapterNumberBox");
+
+    /// <summary>
     ///     Identifies the <see cref="NumberType" /> dependency property.
     /// </summary>
     public static readonly DependencyProperty NumberTypeProperty =

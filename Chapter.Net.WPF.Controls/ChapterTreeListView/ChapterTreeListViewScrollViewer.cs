@@ -16,6 +16,11 @@ namespace Chapter.Net.WPF.Controls;
 /// </summary>
 public sealed class ChapterTreeListViewScrollViewer : ScrollViewer
 {
+    /// <summary>
+    ///     The ChapterTreeListViewScrollViewer style key.
+    /// </summary>
+    public static readonly ComponentResourceKey StyleKey = new(typeof(ChapterTreeListViewScrollViewer), "ChapterTreeListViewScrollViewer");
+
     static ChapterTreeListViewScrollViewer()
     {
         DefaultStyleKeyProperty.OverrideMetadata(typeof(ChapterTreeListViewScrollViewer), new FrameworkPropertyMetadata(typeof(ChapterTreeListViewScrollViewer)));

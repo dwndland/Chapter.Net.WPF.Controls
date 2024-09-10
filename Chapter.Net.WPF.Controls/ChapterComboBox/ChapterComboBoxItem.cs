@@ -16,6 +16,11 @@ namespace Chapter.Net.WPF.Controls;
 /// </summary>
 public class ChapterComboBoxItem : ComboBoxItem
 {
+    /// <summary>
+    ///     The ChapterComboBoxItem style key.
+    /// </summary>
+    public static readonly ComponentResourceKey StyleKey = new(typeof(ChapterComboBoxItem), "ChapterComboBoxItem");
+
     static ChapterComboBoxItem()
     {
         DefaultStyleKeyProperty.OverrideMetadata(typeof(ChapterComboBoxItem), new FrameworkPropertyMetadata(typeof(ChapterComboBoxItem)));

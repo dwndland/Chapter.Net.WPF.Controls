@@ -18,6 +18,11 @@ namespace Chapter.Net.WPF.Controls;
 public class ChapterToggleSwitchBack : Control
 {
     /// <summary>
+    ///     The ChapterToggleSwitchBack style key.
+    /// </summary>
+    public static readonly ComponentResourceKey StyleKey = new(typeof(ChapterToggleSwitchBack), "ChapterToggleSwitchBack");
+
+    /// <summary>
     ///     The DependencyProperty for the Shape property.
     /// </summary>
     public static readonly DependencyProperty ShapeProperty =

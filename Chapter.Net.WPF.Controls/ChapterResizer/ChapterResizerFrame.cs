@@ -18,6 +18,11 @@ namespace Chapter.Net.WPF.Controls;
 public class ChapterResizerFrame : Thumb
 {
     /// <summary>
+    ///     The ChapterResizerFrame style key.
+    /// </summary>
+    public static readonly ComponentResourceKey StyleKey = new(typeof(ChapterResizerFrame), "ChapterResizerFrame");
+
+    /// <summary>
     ///     The Direction dependency property.
     /// </summary>
     public static readonly DependencyProperty DirectionProperty =

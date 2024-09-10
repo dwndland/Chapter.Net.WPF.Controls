@@ -16,6 +16,11 @@ namespace Chapter.Net.WPF.Controls;
 /// </summary>
 public class CancelButton : Button
 {
+    /// <summary>
+    ///     The CancelButton style key.
+    /// </summary>
+    public static readonly ComponentResourceKey StyleKey = new(typeof(CancelButton), "CancelButton");
+
     static CancelButton()
     {
         DefaultStyleKeyProperty.OverrideMetadata(typeof(CancelButton), new FrameworkPropertyMetadata(typeof(CancelButton)));

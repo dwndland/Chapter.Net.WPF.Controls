@@ -4,7 +4,9 @@
 
     <controls:EnumDescriptionConverter x:Key="EnumDescriptionConverter" />
 
-    <Style BasedOn="{StaticResource {x:Type ComboBox}}" TargetType="{x:Type controls:ChapterComboBox}">
+    <Style x:Key="{x:Static controls:ChapterComboBox.StyleKey}"
+           BasedOn="{StaticResource {x:Type ComboBox}}"
+           TargetType="{x:Type controls:ChapterComboBox}">
         <Style.Triggers>
             <Trigger Property="DisplayKind" Value="Description">
                 <Setter Property="ItemTemplate">
@@ -17,5 +19,7 @@
             </Trigger>
         </Style.Triggers>
     </Style>
+
+    <Style BasedOn="{StaticResource {x:Static controls:ChapterComboBox.StyleKey}}" TargetType="{x:Type controls:ChapterComboBox}" />
 
 </ResourceDictionary>

@@ -29,7 +29,9 @@
         <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterRepeatButton/ChapterRepeatButton.xaml" />
         <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterResizer/ChapterResizer.xaml" />
         <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterResizer/ChapterResizerFrame.xaml" />
+        <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterSearchTextBox/CancelButton.xaml" />
         <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterSearchTextBox/ChapterSearchTextBox.xaml" />
+        <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterSearchTextBox/SearchButton.xaml" />
         <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterSelectorBar/ChapterSelectorBar.xaml" />
         <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterSelectorBar/ChapterSelectorBarItem.xaml" />
         <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterSplitButton/ChapterSplitButton.xaml" />
@@ -40,9 +42,12 @@
         <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterTabControl/CloseButton.xaml" />
         <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterTextBox/ChapterTextBox.xaml" />
         <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterTimeBox/ChapterTimeBox.xaml" />
+        <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterTitledItemsControl/ChapterTitledItem.xaml" />
         <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterTitledItemsControl/ChapterTitledItemsControl.xaml" />
         <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterToggleButton/ChapterToggleButton.xaml" />
         <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterToggleSwitch/ChapterToggleSwitch.xaml" />
+        <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterToggleSwitch/ChapterToggleSwitchBack.xaml" />
+        <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterToggleSwitch/ChapterToggleSwitchSlider.xaml" />
         <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterTreeListView/ChapterTreeListView.xaml" />
         <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterTreeListView/ChapterTreeListViewExpander.xaml" />
         <ResourceDictionary Source="/Chapter.Net.WPF.Controls;component/ChapterTreeListView/ChapterTreeListViewItem.xaml" />

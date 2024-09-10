@@ -21,6 +21,11 @@ namespace Chapter.Net.WPF.Controls;
 public class ChapterSearchTextBox : ChapterTextBox
 {
     /// <summary>
+    ///     The ChapterSearchTextBox style key.
+    /// </summary>
+    public new static readonly ComponentResourceKey StyleKey = new(typeof(ChapterSearchTextBox), "ChapterSearchTextBox");
+
+    /// <summary>
     ///     Identifies the <see cref="SearchButtonPosition" /> dependency property.
     /// </summary>
     public static readonly DependencyProperty SearchButtonPositionProperty =

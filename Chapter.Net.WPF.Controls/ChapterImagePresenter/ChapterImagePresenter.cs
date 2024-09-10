@@ -21,6 +21,11 @@ namespace Chapter.Net.WPF.Controls;
 public class ChapterImagePresenter : ControlBase
 {
     /// <summary>
+    ///     The ChapterImagePresenter style key.
+    /// </summary>
+    public static readonly ComponentResourceKey StyleKey = new(typeof(ChapterImagePresenter), "ChapterImagePresenter");
+
+    /// <summary>
     ///     The Image dependency property.
     /// </summary>
     public static readonly DependencyProperty ImageProperty =

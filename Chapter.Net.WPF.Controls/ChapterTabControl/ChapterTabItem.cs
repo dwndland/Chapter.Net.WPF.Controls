@@ -19,6 +19,11 @@ namespace Chapter.Net.WPF.Controls;
 public class ChapterTabItem : TabItem
 {
     /// <summary>
+    ///     The ChapterTabItem style key.
+    /// </summary>
+    public static readonly ComponentResourceKey StyleKey = new(typeof(ChapterTabItem), "ChapterTabItem");
+
+    /// <summary>
     ///     Identifies the <see cref="CloseButtonPosition" /> dependency property.
     /// </summary>
     public static readonly DependencyProperty CloseButtonPositionProperty =

@@ -8,7 +8,7 @@
 
     <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
 
-    <Style TargetType="{x:Type controls:ChapterTabControl}">
+    <Style x:Key="{x:Static controls:ChapterTabControl.StyleKey}" TargetType="{x:Type controls:ChapterTabControl}">
         <Setter Property="Padding" Value="2" />
         <Setter Property="BorderThickness" Value="1" />
         <Setter Property="BorderBrush" Value="{StaticResource ChapterTabControl.Static.Border}" />
@@ -116,5 +116,7 @@
             </Setter.Value>
         </Setter>
     </Style>
+
+    <Style BasedOn="{StaticResource {x:Static controls:ChapterTabControl.StyleKey}}" TargetType="{x:Type controls:ChapterTabControl}" />
 
 </ResourceDictionary>

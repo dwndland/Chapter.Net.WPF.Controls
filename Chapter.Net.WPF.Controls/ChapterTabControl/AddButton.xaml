@@ -11,7 +11,7 @@
 
     <SolidColorBrush x:Key="AddButton.Disabled.Foreground" Color="#B5B5B5" />
 
-    <Style TargetType="{x:Type controls:AddButton}">
+    <Style x:Key="{x:Static controls:AddButton.StyleKey}" TargetType="{x:Type controls:AddButton}">
         <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" />
         <Setter Property="Background" Value="{StaticResource AddButton.Static.Background}" />
         <Setter Property="Padding" Value="3" />
@@ -55,5 +55,7 @@
             </Setter.Value>
         </Setter>
     </Style>
+
+    <Style BasedOn="{StaticResource {x:Static controls:AddButton.StyleKey}}" TargetType="{x:Type controls:AddButton}" />
 
 </ResourceDictionary>

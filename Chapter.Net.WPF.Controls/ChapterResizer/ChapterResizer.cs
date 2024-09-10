@@ -26,6 +26,11 @@ namespace Chapter.Net.WPF.Controls;
 [TemplatePart(Name = "PART_LeftBottomThumb", Type = typeof(Thumb))]
 public class ChapterResizer : ContentControl
 {
+    /// <summary>
+    ///     The ChapterResizer style key.
+    /// </summary>
+    public static readonly ComponentResourceKey StyleKey = new(typeof(ChapterResizer), "ChapterResizer");
+
     private static readonly DependencyPropertyKey LeftWidthPropertyKey =
         DependencyProperty.RegisterReadOnly(nameof(LeftWidth), typeof(double), typeof(ChapterResizer), new PropertyMetadata(6d));
 

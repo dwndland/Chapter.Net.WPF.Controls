@@ -20,6 +20,11 @@ namespace Chapter.Net.WPF.Controls;
 public class ChapterTabControl : TabControl
 {
     /// <summary>
+    ///     The ChapterTabControl style key.
+    /// </summary>
+    public static readonly ComponentResourceKey StyleKey = new(typeof(ChapterTabControl), "ChapterTabControl");
+
+    /// <summary>
     ///     Identifies the <see cref="ShowCloseButtons" /> dependency property.
     /// </summary>
     public static readonly DependencyProperty ShowCloseButtonsProperty =

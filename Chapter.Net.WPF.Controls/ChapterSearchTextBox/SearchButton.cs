@@ -16,6 +16,11 @@ namespace Chapter.Net.WPF.Controls;
 /// </summary>
 public class SearchButton : Button
 {
+    /// <summary>
+    ///     The SearchButton style key.
+    /// </summary>
+    public static readonly ComponentResourceKey StyleKey = new(typeof(SearchButton), "SearchButton");
+
     static SearchButton()
     {
         DefaultStyleKeyProperty.OverrideMetadata(typeof(SearchButton), new FrameworkPropertyMetadata(typeof(SearchButton)));

@@ -102,7 +102,7 @@
         <Setter Property="VerticalAlignment" Value="Center" />
     </Style>
 
-    <Style TargetType="{x:Type controls:ChapterNumberBox}">
+    <Style x:Key="{x:Static controls:ChapterNumberBox.StyleKey}" TargetType="{x:Type controls:ChapterNumberBox}">
         <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" />
         <Setter Property="BorderBrush" Value="{StaticResource TextBox.Static.Border}" />
         <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" />
@@ -218,5 +218,7 @@
             </Setter.Value>
         </Setter>
     </Style>
+
+    <Style BasedOn="{StaticResource {x:Static controls:ChapterNumberBox.StyleKey}}" TargetType="{x:Type controls:ChapterNumberBox}" />
 
 </ResourceDictionary>

@@ -21,6 +21,11 @@ namespace Chapter.Net.WPF.Controls;
 public class ChapterPasswordBox : Control
 {
     /// <summary>
+    ///     The ChapterPasswordBox style key.
+    /// </summary>
+    public static readonly ComponentResourceKey StyleKey = new(typeof(ChapterPasswordBox), "ChapterPasswordBox");
+
+    /// <summary>
     ///     Identifies the <see cref="InfoAppearance" /> dependency property.
     /// </summary>
     public static readonly DependencyProperty InfoAppearanceProperty =

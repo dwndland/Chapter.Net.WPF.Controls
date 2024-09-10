@@ -25,6 +25,11 @@ namespace Chapter.Net.WPF.Controls;
 public class ChapterTimeBox : Control
 {
     /// <summary>
+    ///     The ChapterTimeBox style key.
+    /// </summary>
+    public static readonly ComponentResourceKey StyleKey = new(typeof(ChapterTimeBox), "ChapterTimeBox");
+
+    /// <summary>
     ///     Identifies the <see cref="Time" /> dependency property.
     /// </summary>
     public static readonly DependencyProperty TimeProperty =

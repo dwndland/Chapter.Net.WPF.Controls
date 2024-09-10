@@ -19,6 +19,11 @@ namespace Chapter.Net.WPF.Controls;
 public class ChapterTreeListView : ChapterTreeView
 {
     /// <summary>
+    ///     The ChapterTreeListView style key.
+    /// </summary>
+    public static readonly ComponentResourceKey StyleKey = new(typeof(ChapterTreeListView), "ChapterTreeListView");
+
+    /// <summary>
     ///     Identifies the View dependency property.
     /// </summary>
     public static readonly DependencyProperty ViewProperty =

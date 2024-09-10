@@ -2,7 +2,7 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:controls="clr-namespace:Chapter.Net.WPF.Controls">
 
-    <Style TargetType="{x:Type controls:ChapterResizerFrame}">
+    <Style x:Key="{x:Static controls:ChapterResizerFrame.StyleKey}" TargetType="{x:Type controls:ChapterResizerFrame}">
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type controls:ChapterResizerFrame}">
@@ -50,5 +50,7 @@
             </Trigger>
         </Style.Triggers>
     </Style>
+
+    <Style BasedOn="{StaticResource {x:Static controls:ChapterResizerFrame.StyleKey}}" TargetType="{x:Type controls:ChapterResizerFrame}" />
 
 </ResourceDictionary>

@@ -18,6 +18,11 @@ namespace Chapter.Net.WPF.Controls;
 public class CloseButton : Button
 {
     /// <summary>
+    ///     The CloseButton style key.
+    /// </summary>
+    public static readonly ComponentResourceKey StyleKey = new(typeof(CloseButton), "CloseButton");
+
+    /// <summary>
     ///     Identifies the <see cref="StrokeThickness" /> dependency property.
     /// </summary>
     public static readonly DependencyProperty StrokeThicknessProperty =

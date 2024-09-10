@@ -18,6 +18,11 @@ namespace Chapter.Net.WPF.Controls;
 public class ChapterTitledItem : ContentControl
 {
     /// <summary>
+    ///     The ChapterTitledItem style key.
+    /// </summary>
+    public static readonly ComponentResourceKey StyleKey = new(typeof(ChapterTitledItem), "ChapterTitledItem");
+
+    /// <summary>
     ///     The DependencyProperty for the Title VerticalTitleAlignments.
     /// </summary>
     public static readonly DependencyProperty TitleProperty =

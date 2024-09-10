@@ -15,6 +15,11 @@ namespace Chapter.Net.WPF.Controls;
 /// </summary>
 public class ChapterTreeListViewItem : ChapterTreeViewItem
 {
+    /// <summary>
+    ///     The ChapterTreeListViewItem style key.
+    /// </summary>
+    public static readonly ComponentResourceKey StyleKey = new(typeof(ChapterTreeListViewItem), "ChapterTreeListViewItem");
+
     static ChapterTreeListViewItem()
     {
         DefaultStyleKeyProperty.OverrideMetadata(typeof(ChapterTreeListViewItem), new FrameworkPropertyMetadata(typeof(ChapterTreeListViewItem)));

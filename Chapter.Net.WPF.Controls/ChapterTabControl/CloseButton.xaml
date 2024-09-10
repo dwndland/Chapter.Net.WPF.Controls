@@ -11,7 +11,7 @@
 
     <SolidColorBrush x:Key="CloseButton.Disables.Foreground" Color="#B5B5B5" />
 
-    <Style TargetType="{x:Type controls:CloseButton}">
+    <Style x:Key="{x:Static controls:CloseButton.StyleKey}" TargetType="{x:Type controls:CloseButton}">
         <Setter Property="Foreground" Value="{StaticResource CloseButton.Static.Foreground}" />
         <Setter Property="Background" Value="{StaticResource CloseButton.Static.Background}" />
         <Setter Property="Padding" Value="4" />
@@ -53,5 +53,7 @@
             </Setter.Value>
         </Setter>
     </Style>
+
+    <Style BasedOn="{StaticResource {x:Static controls:CloseButton.StyleKey}}" TargetType="{x:Type controls:CloseButton}" />
 
 </ResourceDictionary>

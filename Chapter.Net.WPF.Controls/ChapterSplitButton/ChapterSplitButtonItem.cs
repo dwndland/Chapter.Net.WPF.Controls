@@ -19,6 +19,11 @@ namespace Chapter.Net.WPF.Controls;
 public class ChapterSplitButtonItem : ComboBoxItem
 {
     /// <summary>
+    ///     The ChapterSplitButtonItem style key.
+    /// </summary>
+    public static readonly ComponentResourceKey StyleKey = new(typeof(ChapterSplitButtonItem), "ChapterSplitButtonItem");
+
+    /// <summary>
     ///     The DependencyProperty for the Command property.
     /// </summary>
     public static readonly DependencyProperty CommandProperty =

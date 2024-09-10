@@ -44,7 +44,7 @@
         <GradientStop Offset="1" Color="#FFC9EDFD" />
     </LinearGradientBrush>
 
-    <Style TargetType="{x:Type controls:ChapterTreeListViewItem}">
+    <Style x:Key="{x:Static controls:ChapterTreeListViewItem.StyleKey}" TargetType="{x:Type controls:ChapterTreeListViewItem}">
         <Setter Property="FocusVisualStyle" Value="{StaticResource ListViewItemFocusVisual}" />
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="BorderBrush" Value="Transparent" />
@@ -134,5 +134,7 @@
             </Setter.Value>
         </Setter>
     </Style>
+
+    <Style BasedOn="{StaticResource {x:Static controls:ChapterTreeListViewItem.StyleKey}}" TargetType="{x:Type controls:ChapterTreeListViewItem}" />
 
 </ResourceDictionary>
