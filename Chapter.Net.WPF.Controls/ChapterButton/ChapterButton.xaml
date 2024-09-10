@@ -41,38 +41,21 @@
                         <controls:ChapterControlHeaderPresenter Content="{TemplateBinding Header}" DockPanel.Dock="Top" />
                         <controls:ChapterControlFooterPresenter Content="{TemplateBinding Footer}" DockPanel.Dock="Bottom" />
                         <Border x:Name="PART_Border"
+                                Padding="{TemplateBinding Padding}"
                                 Background="{TemplateBinding Background}"
                                 BorderBrush="{TemplateBinding BorderBrush}"
                                 BorderThickness="{TemplateBinding BorderThickness}"
                                 CornerRadius="{TemplateBinding CornerRadius}"
                                 SnapsToDevicePixels="true">
-                            <DockPanel Margin="{TemplateBinding Padding}">
-                                <Grid HorizontalAlignment="{TemplateBinding HorizontalIconAlignment}"
-                                      VerticalAlignment="{TemplateBinding VerticalIconAlignment}"
-                                      DockPanel.Dock="{TemplateBinding IconPosition}">
-                                    <controls:ChapterImagePresenter x:Name="imageIcon"
-                                                                    Margin="{TemplateBinding IconMargin}"
-                                                                    Image="{TemplateBinding ImageIcon}" />
-                                    <ContentPresenter x:Name="icon"
-                                                      Margin="{TemplateBinding IconMargin}"
-                                                      ContentSource="Icon" />
-                                </Grid>
-                                <ContentPresenter x:Name="contentPresenter"
-                                                  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                                  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                                                  Focusable="False"
-                                                  RecognizesAccessKey="True"
-                                                  SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
-                            </DockPanel>
+                            <ContentPresenter x:Name="contentPresenter"
+                                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                              Focusable="False"
+                                              RecognizesAccessKey="True"
+                                              SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
                         </Border>
                     </DockPanel>
                     <ControlTemplate.Triggers>
-                        <Trigger Property="Icon" Value="{x:Null}">
-                            <Setter TargetName="icon" Property="Visibility" Value="Collapsed" />
-                        </Trigger>
-                        <Trigger Property="ImageIcon" Value="{x:Null}">
-                            <Setter TargetName="imageIcon" Property="Visibility" Value="Collapsed" />
-                        </Trigger>
                         <Trigger Property="IsDefaulted" Value="true">
                             <Setter TargetName="PART_Border" Property="BorderBrush" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" />
                         </Trigger>
@@ -91,7 +74,6 @@
                             <Setter TargetName="PART_Border" Property="Background" Value="{StaticResource ChapterButton.Disabled.Background}" />
                             <Setter TargetName="PART_Border" Property="BorderBrush" Value="{StaticResource ChapterButton.Disabled.Border}" />
                             <Setter TargetName="contentPresenter" Property="TextElement.Foreground" Value="{StaticResource ChapterButton.Disabled.Foreground}" />
-                            <Setter TargetName="icon" Property="TextElement.Foreground" Value="{StaticResource ChapterButton.Disabled.Foreground}" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
