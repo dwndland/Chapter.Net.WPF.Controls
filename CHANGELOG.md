@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Changed
+- Adjusted ChapterHeaderedContentControl to use the ChapterControlHeaderPresenter and ChapterControlFooterPresenter to present the header and footer.
 ### Fixed
 - Fixed crash of the ChapterStackPanel if used empty.
 

@@ -8,61 +8,17 @@
              d:DesignHeight="450"
              d:DesignWidth="800"
              mc:Ignorable="d">
-    <UserControl.Resources>
-        <local:StringToThicknessConverter x:Key="StringToThicknessConverter" />
-    </UserControl.Resources>
 
-    <DockPanel>
-        <local:PropertyPanel>
-            <TextBlock Text="HeaderPosition" />
-            <controls:ChapterComboBox x:Name="headerPosition"
-                                      Margin="0,0,0,10"
-                                      EnumType="{x:Type Dock}"
-                                      SelectedItem="{x:Static Dock.Top}" />
-
-            <TextBlock Text="HorizontalHeaderAlignments" />
-            <controls:ChapterComboBox x:Name="horizontalHeaderAlignments"
-                                      Margin="0,0,0,10"
-                                      EnumType="{x:Type HorizontalAlignment}"
-                                      SelectedItem="{x:Static HorizontalAlignment.Left}" />
-
-            <TextBlock Text="HeaderMargin" />
-            <TextBox x:Name="headerMargins"
-                     Margin="0,0,0,10"
-                     Text="5,0,0,2" />
-
-            <TextBlock Text="FooterPosition" />
-            <controls:ChapterComboBox x:Name="footerPosition"
-                                      Margin="0,0,0,10"
-                                      EnumType="{x:Type Dock}"
-                                      SelectedItem="{x:Static Dock.Bottom}" />
-
-            <TextBlock Text="HorizontalFooterAlignment" />
-            <controls:ChapterComboBox x:Name="horizontalFooterAlignment"
-                                      Margin="0,0,0,10"
-                                      EnumType="{x:Type HorizontalAlignment}"
-                                      SelectedItem="{x:Static HorizontalAlignment.Left}" />
-
-            <TextBlock Text="FooterMargin" />
-            <TextBox x:Name="footerMargin"
-                     Margin="0,0,0,10"
-                     Text="5,2,0,0" />
-
-        </local:PropertyPanel>
-
-        <controls:ChapterHeaderedContentControl Margin="40"
-                                                Footer="Footer"
-                                                FooterMargin="{Binding Text, ElementName=footerMargin, Converter={StaticResource StringToThicknessConverter}}"
-                                                FooterPosition="{Binding SelectedItem, ElementName=footerPosition}"
-                                                Header="Header"
-                                                HeaderMargin="{Binding Text, ElementName=headerMargins, Converter={StaticResource StringToThicknessConverter}}"
-                                                HeaderPosition="{Binding SelectedItem, ElementName=headerPosition}"
-                                                HorizontalFooterAlignment="{Binding SelectedItem, ElementName=horizontalFooterAlignment}"
-                                                HorizontalHeaderAlignment="{Binding SelectedItem, ElementName=horizontalHeaderAlignments}">
-            <Border BorderThickness="1" BorderBrush="Gray">
-                <TextBlock Text="Content" />
-            </Border>
-        </controls:ChapterHeaderedContentControl>
-    </DockPanel>
+    <controls:ChapterHeaderedContentControl Width="200"
+                                            Height="200"
+                                            Margin="40"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"
+                                            Footer="Footer"
+                                            Header="Header">
+        <Border BorderBrush="Gray" BorderThickness="1">
+            <TextBlock Text="Content" />
+        </Border>
+    </controls:ChapterHeaderedContentControl>
 
 </UserControl>

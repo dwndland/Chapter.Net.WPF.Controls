@@ -8,22 +8,8 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type controls:ChapterHeaderedContentControl}">
                     <DockPanel>
-                        <ContentControl Margin="{TemplateBinding HeaderMargin}"
-                                        HorizontalAlignment="{TemplateBinding HorizontalHeaderAlignment}"
-                                        VerticalAlignment="{TemplateBinding VerticalHeaderAlignment}"
-                                        Content="{TemplateBinding Header}"
-                                        ContentStringFormat="{TemplateBinding HeaderStringFormat}"
-                                        ContentTemplate="{TemplateBinding HeaderTemplate}"
-                                        ContentTemplateSelector="{TemplateBinding HeaderTemplateSelector}"
-                                        DockPanel.Dock="{TemplateBinding HeaderPosition}" />
-                        <ContentControl Margin="{TemplateBinding FooterMargin}"
-                                        HorizontalAlignment="{TemplateBinding HorizontalFooterAlignment}"
-                                        VerticalAlignment="{TemplateBinding VerticalFooterAlignment}"
-                                        Content="{TemplateBinding Footer}"
-                                        ContentStringFormat="{TemplateBinding FooterStringFormat}"
-                                        ContentTemplate="{TemplateBinding FooterTemplate}"
-                                        ContentTemplateSelector="{TemplateBinding FooterTemplateSelector}"
-                                        DockPanel.Dock="{TemplateBinding FooterPosition}" />
+                        <controls:ChapterControlHeaderPresenter Content="{TemplateBinding Header}" DockPanel.Dock="Top" />
+                        <controls:ChapterControlFooterPresenter Content="{TemplateBinding Footer}" DockPanel.Dock="Bottom" />
                         <ContentPresenter />
                     </DockPanel>
                 </ControlTemplate>
