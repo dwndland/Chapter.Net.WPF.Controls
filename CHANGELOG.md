@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Adjusted ChapterHeaderedContentControl to use the ChapterControlHeaderPresenter and ChapterControlFooterPresenter to present the header and footer.
 - Removed icon handling inside the ChapterButton.
 - Removed icon handling inside the ChapterRepeatButton.
+- Removed icon handling inside the ChapterToggleButton.
 ### Fixed
 - Fixed crash of the ChapterStackPanel if used empty.
 

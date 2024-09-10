@@ -6,7 +6,6 @@
 
 using System.ComponentModel;
 using System.Windows;
-using System.Windows.Controls;
 using Chapter.Net.WPF.Controls.Bases;
 
 // ReSharper disable once CheckNamespace
@@ -36,42 +35,6 @@ public class ChapterToggleButton : ToggleButtonBase
     public static readonly DependencyProperty FooterProperty =
         DependencyProperty.Register(nameof(Footer), typeof(object), typeof(ChapterToggleButton), new PropertyMetadata(null));
 
-    /// <summary>
-    ///     The Icon dependency property.
-    /// </summary>
-    public static readonly DependencyProperty IconProperty =
-        DependencyProperty.Register(nameof(Icon), typeof(object), typeof(ChapterToggleButton), new PropertyMetadata(null));
-
-    /// <summary>
-    ///     The ImageIcon dependency property.
-    /// </summary>
-    public static readonly DependencyProperty ImageIconProperty =
-        DependencyProperty.Register(nameof(ImageIcon), typeof(Image), typeof(ChapterToggleButton), new PropertyMetadata(null));
-
-    /// <summary>
-    ///     The IconMargin dependency property.
-    /// </summary>
-    public static readonly DependencyProperty IconMarginProperty =
-        DependencyProperty.Register(nameof(IconMargin), typeof(Thickness), typeof(ChapterToggleButton), new PropertyMetadata(new Thickness(0, 0, 6, 0)));
-
-    /// <summary>
-    ///     The HorizontalIconAlignment dependency property.
-    /// </summary>
-    public static readonly DependencyProperty HorizontalIconAlignmentProperty =
-        DependencyProperty.Register(nameof(HorizontalIconAlignment), typeof(HorizontalAlignment), typeof(ChapterToggleButton), new PropertyMetadata(HorizontalAlignment.Left));
-
-    /// <summary>
-    ///     The VerticalIconAlignment dependency property.
-    /// </summary>
-    public static readonly DependencyProperty VerticalIconAlignmentProperty =
-        DependencyProperty.Register(nameof(VerticalIconAlignment), typeof(VerticalAlignment), typeof(ChapterToggleButton), new PropertyMetadata(VerticalAlignment.Center));
-
-    /// <summary>
-    ///     The IconPosition dependency property.
-    /// </summary>
-    public static readonly DependencyProperty IconPositionProperty =
-        DependencyProperty.Register(nameof(IconPosition), typeof(Dock), typeof(ChapterToggleButton), new PropertyMetadata(Dock.Left));
-
     private FrameworkElement _border;
 
     static ChapterToggleButton()
@@ -99,71 +62,6 @@ public class ChapterToggleButton : ToggleButtonBase
     {
         get => GetValue(FooterProperty);
         set => SetValue(FooterProperty, value);
-    }
-
-    /// <summary>
-    ///     Gets or sets the icon.
-    /// </summary>
-    /// <value>Default: null.</value>
-    [DefaultValue(null)]
-    public object Icon
-    {
-        get => GetValue(IconProperty);
-        set => SetValue(IconProperty, value);
-    }
-
-    /// <summary>
-    ///     Gets or sets the icon by image.
-    /// </summary>
-    /// <value>Default: null.</value>
-    [DefaultValue(null)]
-    public Image ImageIcon
-    {
-        get => (Image)GetValue(ImageIconProperty);
-        set => SetValue(ImageIconProperty, value);
-    }
-
-    /// <summary>
-    ///     Gets or sets the margin of the icon.
-    /// </summary>
-    /// <value>Default: 0, 0, 6, 0</value>
-    public Thickness IconMargin
-    {
-        get => (Thickness)GetValue(IconMarginProperty);
-        set => SetValue(IconMarginProperty, value);
-    }
-
-    /// <summary>
-    ///     Gets or sets the horizontal icon alignment.
-    /// </summary>
-    /// <value>Default: HorizontalAlignment.Left.</value>
-    [DefaultValue(HorizontalAlignment.Left)]
-    public HorizontalAlignment HorizontalIconAlignment
-    {
-        get => (HorizontalAlignment)GetValue(HorizontalIconAlignmentProperty);
-        set => SetValue(HorizontalIconAlignmentProperty, value);
-    }
-
-    /// <summary>
-    ///     Gets or sets the vertical icon alignment.
-    /// </summary>
-    /// <value>Default: VerticalAlignment.Left.</value>
-    [DefaultValue(VerticalAlignment.Center)]
-    public VerticalAlignment VerticalIconAlignment
-    {
-        get => (VerticalAlignment)GetValue(VerticalIconAlignmentProperty);
-        set => SetValue(VerticalIconAlignmentProperty, value);
-    }
-
-    /// <summary>
-    ///     Gets or sets the position of the icon.
-    /// </summary>
-    /// <value>Default: Dock.Left.</value>
-    [DefaultValue(Dock.Left)]
-    public Dock IconPosition
-    {
-        get => (Dock)GetValue(IconPositionProperty);
-        set => SetValue(IconPositionProperty, value);
     }
 
     /// <inheritdoc />
