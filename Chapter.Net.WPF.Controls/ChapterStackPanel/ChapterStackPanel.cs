@@ -97,14 +97,14 @@ public class ChapterStackPanel : Panel
 
         if (orientation == Orientation.Horizontal)
         {
-            var calculatedWidth = totalItemWidth + spacing * (elements.Count - 1);
+            var calculatedWidth = Math.Max(totalItemWidth + spacing * (elements.Count - 1), 0);
             var availableWidth = double.IsInfinity(availableSize.Width) ? calculatedWidth : availableSize.Width;
             if (horizontalAlignment != HorizontalAlignment.Stretch)
                 availableWidth = Math.Min(availableWidth, calculatedWidth);
             return new Size(Math.Min(availableWidth, calculatedWidth), maxHeight);
         }
 
-        var calculatedHeight = totalItemHeight + spacing * (elements.Count - 1);
+        var calculatedHeight = Math.Max(totalItemHeight + spacing * (elements.Count - 1), 0);
         var availableHeight = double.IsInfinity(availableSize.Height) ? calculatedHeight : availableSize.Height;
         if (verticalAlignment != VerticalAlignment.Stretch)
             availableHeight = Math.Min(availableHeight, calculatedHeight);
