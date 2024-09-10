@@ -7,38 +7,22 @@
         <Setter Property="Foreground" Value="Black" />
         <Setter Property="Padding" Value="12,10" />
         <Setter Property="CornerRadius" Value="4" />
-        <Setter Property="IconMargin" Value="8" />
         <Setter Property="BorderThickness" Value="1" />
         <Setter Property="BorderBrush" Value="Transparent" />
-        <Setter Property="HorizontalIconAlignment" Value="Center" />
-        <Setter Property="VerticalIconAlignment" Value="Center" />
         <Setter Property="HorizontalContentAlignment" Value="Center" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
-        <Setter Property="IconPosition" Value="Left" />
         <Setter Property="IsTabStop" Value="True" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type controls:ChapterSelectorBarItem}">
-                    <Border Background="{TemplateBinding Background}"
+                    <Border Padding="{TemplateBinding Padding}"
+                            Background="{TemplateBinding Background}"
                             BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}"
                             CornerRadius="{TemplateBinding CornerRadius}">
-                        <DockPanel>
-                            <ContentPresenter x:Name="iconPresenter"
-                                              Margin="{TemplateBinding IconMargin}"
-                                              HorizontalAlignment="{TemplateBinding HorizontalIconAlignment}"
-                                              VerticalAlignment="{TemplateBinding VerticalIconAlignment}"
-                                              ContentSource="Icon"
-                                              DockPanel.Dock="{TemplateBinding IconPosition}" />
-                            <ContentPresenter Margin="{TemplateBinding Padding}"
-                                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
-                        </DockPanel>
+                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
                     </Border>
                     <ControlTemplate.Triggers>
-                        <Trigger Property="Icon" Value="{x:Null}">
-                            <Setter TargetName="iconPresenter" Property="Visibility" Value="Collapsed" />
-                        </Trigger>
                         <Trigger Property="IsMouseOver" Value="True">
                             <Setter Property="Background" Value="#BEE6FD" />
                             <Setter Property="BorderBrush" Value="LightGray" />
