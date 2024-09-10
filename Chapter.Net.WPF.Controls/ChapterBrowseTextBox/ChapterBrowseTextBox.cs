@@ -32,12 +32,6 @@ public class ChapterBrowseTextBox : ChapterTextBox
         DependencyProperty.Register(nameof(BrowseButtonPosition), typeof(Dock), typeof(ChapterBrowseTextBox), new UIPropertyMetadata(Dock.Right));
 
     /// <summary>
-    ///     Identifies the <see cref="ShowBrowseButton" /> dependency property.
-    /// </summary>
-    public static readonly DependencyProperty ShowBrowseButtonProperty =
-        DependencyProperty.Register(nameof(ShowBrowseButton), typeof(bool), typeof(ChapterBrowseTextBox), new UIPropertyMetadata(true));
-
-    /// <summary>
     ///     Identifies the <see cref="BrowseCommand" /> dependency property.
     /// </summary>
     public static readonly DependencyProperty BrowseCommandProperty =
@@ -86,17 +80,6 @@ public class ChapterBrowseTextBox : ChapterTextBox
     {
         get => (Dock)GetValue(BrowseButtonPositionProperty);
         set => SetValue(BrowseButtonPositionProperty, value);
-    }
-
-    /// <summary>
-    ///     Gets or sets a value which indicates if the browse button is shown or not.
-    /// </summary>
-    /// <value>Default: true.</value>
-    [DefaultValue(true)]
-    public bool ShowBrowseButton
-    {
-        get => (bool)GetValue(ShowBrowseButtonProperty);
-        set => SetValue(ShowBrowseButtonProperty, value);
     }
 
     /// <summary>

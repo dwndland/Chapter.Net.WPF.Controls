@@ -25,11 +25,6 @@
                     Minimum="24"
                     Value="24" />
 
-            <CheckBox x:Name="showBrowseButton"
-                      Margin="0,0,0,10"
-                      Content="ShowBrowseButton"
-                      IsChecked="True" />
-
             <StackPanel IsEnabled="{Binding IsChecked, ElementName=showBrowseButton}">
                 <TextBlock Text="BrowseButtonPosition" />
                 <controls:ChapterComboBox x:Name="browseButtonPosition"
@@ -55,8 +50,7 @@
                                            BrowseButtonPosition="{Binding SelectedItem, ElementName=browseButtonPosition}"
                                            BrowseClick="OnBrowseClick"
                                            InfoAppearance="OnEmpty"
-                                           InfoText="Provide File"
-                                           ShowBrowseButton="{Binding IsChecked, ElementName=showBrowseButton}" />
+                                           InfoText="Provide File" />
         </StackPanel>
     </DockPanel>
 
