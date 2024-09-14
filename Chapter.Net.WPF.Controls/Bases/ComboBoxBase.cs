@@ -15,12 +15,29 @@ namespace Chapter.Net.WPF.Controls.Bases;
 public class ComboBoxBase : ComboBox
 {
     /// <summary>
+    ///     The CornerRadius dependency property.
+    /// </summary>
+    public static readonly DependencyProperty CornerRadiusProperty =
+        DependencyProperty.Register(nameof(CornerRadius), typeof(CornerRadius), typeof(ComboBoxBase), new PropertyMetadata(default(CornerRadius)));
+
+    /// <summary>
     ///     Create a new instance of ComboBoxBase.
     /// </summary>
     protected ComboBoxBase()
     {
         Loaded += OnLoaded;
         IsEnabledChanged += OnIsEnabledChanged;
+        DataContextChanged += OnDataContextChanged;
+    }
+
+    /// <summary>
+    ///     Gets or sets the corner radius.
+    /// </summary>
+    /// <value>Default: default.</value>
+    public CornerRadius CornerRadius
+    {
+        get => (CornerRadius)GetValue(CornerRadiusProperty);
+        set => SetValue(CornerRadiusProperty, value);
     }
 
     /// <summary>
@@ -39,5 +56,26 @@ public class ComboBoxBase : ComboBox
     /// <param name="e">The IsEnabledChanged event parameter.</param>
     protected virtual void OnIsEnabledChanged(object sender, DependencyPropertyChangedEventArgs e)
     {
+    }
+
+    /// <summary>
+    ///     Callback when the data context got changed.
+    /// </summary>
+    /// <param name="sender">The control.</param>
+    /// <param name="e">The DataContextChanged event parameter.</param>
+    protected virtual void OnDataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
+    {
+    }
+
+    /// <inheritdoc />
+    protected override bool IsItemItsOwnContainerOverride(object item)
+    {
+        return item is ComboBoxItemBase;
+    }
+
+    /// <inheritdoc />
+    protected override DependencyObject GetContainerForItemOverride()
+    {
+        return new ComboBoxItemBase();
     }
 }

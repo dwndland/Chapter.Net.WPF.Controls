@@ -5,7 +5,7 @@
 // -----------------------------------------------------------------------------------------------------------------
 
 using System.Windows;
-using System.Windows.Controls.Primitives;
+using Chapter.Net.WPF.Controls.Bases;
 
 // ReSharper disable once CheckNamespace
 
@@ -14,7 +14,7 @@ namespace Chapter.Net.WPF.Controls;
 /// <summary>
 ///     Represents the expander shown in the <see cref="ChapterTreeListView" /> to show or collapse child elements.
 /// </summary>
-public class ChapterTreeListViewExpander : ToggleButton
+public class ChapterTreeListViewExpander : ToggleButtonBase
 {
     /// <summary>
     ///     The ChapterTreeListViewExpander style key.

@@ -6,7 +6,7 @@
 
 using System.ComponentModel;
 using System.Windows;
-using System.Windows.Controls;
+using Chapter.Net.WPF.Controls.Bases;
 
 // ReSharper disable once CheckNamespace
 
@@ -15,7 +15,7 @@ namespace Chapter.Net.WPF.Controls;
 /// <summary>
 ///     A headered content control with more possible customization and a footer.
 /// </summary>
-public class ChapterHeaderedContentControl : HeaderedContentControl
+public class ChapterHeaderedContentControl : HeaderedContentControlBase
 {
     /// <summary>
     ///     The ChapterBadge style key.

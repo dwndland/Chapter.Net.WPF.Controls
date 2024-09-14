@@ -7,6 +7,7 @@
 using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
+using Chapter.Net.WPF.Controls.Bases;
 
 // ReSharper disable once CheckNamespace
 
@@ -15,7 +16,7 @@ namespace Chapter.Net.WPF.Controls;
 /// <summary>
 ///     Provides the possibility to automatically align titles and contents.
 /// </summary>
-public class ChapterTitledItemsControl : ItemsControl
+public class ChapterTitledItemsControl : ItemsControlBase
 {
     /// <summary>
     ///     The ChapterTitledItemsControl style key.

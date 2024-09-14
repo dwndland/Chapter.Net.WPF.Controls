@@ -12,6 +12,7 @@ using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using System.Windows.Input;
 using System.Windows.Threading;
+using Chapter.Net.WPF.Controls.Bases;
 
 // ReSharper disable once CheckNamespace
 
@@ -25,7 +26,7 @@ namespace Chapter.Net.WPF.Controls;
 [TemplatePart(Name = "PART_UpButton", Type = typeof(RepeatButton))]
 [TemplatePart(Name = "PART_DownButton", Type = typeof(RepeatButton))]
 [TemplatePart(Name = "PART_ResetButton", Type = typeof(Button))]
-public class ChapterNumberBox : Control
+public class ChapterNumberBox : ControlBase
 {
     /// <summary>
     ///     The ChapterNumberBox style key.

@@ -27,6 +27,7 @@ public class ListBoxBase : ListBox
     {
         Loaded += OnLoaded;
         IsEnabledChanged += OnIsEnabledChanged;
+        DataContextChanged += OnDataContextChanged;
     }
 
     /// <summary>
@@ -55,5 +56,26 @@ public class ListBoxBase : ListBox
     /// <param name="e">The IsEnabledChanged event parameter.</param>
     protected virtual void OnIsEnabledChanged(object sender, DependencyPropertyChangedEventArgs e)
     {
+    }
+
+    /// <summary>
+    ///     Callback when the data context got changed.
+    /// </summary>
+    /// <param name="sender">The control.</param>
+    /// <param name="e">The DataContextChanged event parameter.</param>
+    protected virtual void OnDataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
+    {
+    }
+
+    /// <inheritdoc />
+    protected override bool IsItemItsOwnContainerOverride(object item)
+    {
+        return item is ListBoxItemBase;
+    }
+
+    /// <inheritdoc />
+    protected override DependencyObject GetContainerForItemOverride()
+    {
+        return new ListBoxItemBase();
     }
 }

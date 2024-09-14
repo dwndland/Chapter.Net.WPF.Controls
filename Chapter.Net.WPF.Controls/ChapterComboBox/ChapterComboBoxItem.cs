@@ -5,7 +5,7 @@
 // -----------------------------------------------------------------------------------------------------------------
 
 using System.Windows;
-using System.Windows.Controls;
+using Chapter.Net.WPF.Controls.Bases;
 
 // ReSharper disable once CheckNamespace
 
@@ -14,7 +14,7 @@ namespace Chapter.Net.WPF.Controls;
 /// <summary>
 ///     Represents an item inside the <see cref="ChapterComboBox" /> which holds the appropriate enumeration object.
 /// </summary>
-public class ChapterComboBoxItem : ComboBoxItem
+public class ChapterComboBoxItem : ComboBoxItemBase
 {
     /// <summary>
     ///     The ChapterComboBoxItem style key.

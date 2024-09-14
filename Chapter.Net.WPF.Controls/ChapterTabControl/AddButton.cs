@@ -6,7 +6,7 @@
 
 using System.ComponentModel;
 using System.Windows;
-using System.Windows.Controls;
+using Chapter.Net.WPF.Controls.Bases;
 
 // ReSharper disable once CheckNamespace
 
@@ -15,7 +15,7 @@ namespace Chapter.Net.WPF.Controls;
 /// <summary>
 ///     Represents the add new tab Button shown in the <see cref="ChapterTabControl" />.
 /// </summary>
-public class AddButton : Button
+public class AddButton : ButtonBase
 {
     /// <summary>
     ///     The AddButton style key.

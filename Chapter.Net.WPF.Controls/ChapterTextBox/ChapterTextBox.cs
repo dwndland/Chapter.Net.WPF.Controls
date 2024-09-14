@@ -10,6 +10,7 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using Chapter.Net.WPF.Controls.Bases;
 
 // ReSharper disable once CheckNamespace
 
@@ -20,7 +21,7 @@ namespace Chapter.Net.WPF.Controls;
 ///     place additional controls in.
 /// </summary>
 [TemplatePart(Name = "PART_InfoText", Type = typeof(TextBlock))]
-public class ChapterTextBox : TextBox
+public class ChapterTextBox : TextBoxBase
 {
     /// <summary>
     ///     The ChapterTextBox style key.
@@ -117,7 +118,6 @@ public class ChapterTextBox : TextBox
     /// </summary>
     public ChapterTextBox()
     {
-        Loaded += InfoTextBox_Loaded;
         PreviewDragOver += DroppableTextBox_PreviewDragOver;
         PreviewDrop += DroppableTextBox_PreviewDrop;
         CommandBindings.Add(new CommandBinding(ApplicationCommands.Paste, null, CanPasteCommand));
@@ -270,7 +270,8 @@ public class ChapterTextBox : TextBox
         set => SetValue(WhitespaceHandlingProperty, value);
     }
 
-    private void InfoTextBox_Loaded(object sender, RoutedEventArgs e)
+    /// <inheritdoc />
+    protected override void OnLoaded(object sender, RoutedEventArgs e)
     {
         RefreshInfoAppearance();
     }

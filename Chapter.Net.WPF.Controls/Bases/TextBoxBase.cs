@@ -1,5 +1,5 @@
 ﻿// -----------------------------------------------------------------------------------------------------------------
-// <copyright file="ItemsControlBase.cs" company="my-libraries">
+// <copyright file="TextBoxBase.cs" company="my-libraries">
 //     Copyright (c) David Wendland. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------------------------------------------------
@@ -10,18 +10,34 @@ using System.Windows.Controls;
 namespace Chapter.Net.WPF.Controls.Bases;
 
 /// <summary>
-///     Base class for items controls.
+///     Base class for text boxes.
 /// </summary>
-public abstract class ItemsControlBase : ItemsControl
+public abstract class TextBoxBase : TextBox
 {
     /// <summary>
-    ///     Create a new instance of ItemsControlBase.
+    ///     The CornerRadius dependency property.
     /// </summary>
-    protected ItemsControlBase()
+    public static readonly DependencyProperty CornerRadiusProperty =
+        DependencyProperty.Register(nameof(CornerRadius), typeof(CornerRadius), typeof(TextBoxBase), new PropertyMetadata(default(CornerRadius)));
+
+    /// <summary>
+    ///     Create a new instance of TextBoxBase.
+    /// </summary>
+    protected TextBoxBase()
     {
         Loaded += OnLoaded;
         IsEnabledChanged += OnIsEnabledChanged;
         DataContextChanged += OnDataContextChanged;
+    }
+
+    /// <summary>
+    ///     Gets or sets the corner radius.
+    /// </summary>
+    /// <value>Default: default.</value>
+    public CornerRadius CornerRadius
+    {
+        get => (CornerRadius)GetValue(CornerRadiusProperty);
+        set => SetValue(CornerRadiusProperty, value);
     }
 
     /// <summary>

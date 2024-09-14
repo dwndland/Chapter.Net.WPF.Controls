@@ -7,6 +7,7 @@
 using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
+using Chapter.Net.WPF.Controls.Bases;
 
 // ReSharper disable once CheckNamespace
 
@@ -18,7 +19,7 @@ namespace Chapter.Net.WPF.Controls;
 /// </summary>
 [TemplatePart(Name = "PART_InfoText", Type = typeof(TextBlock))]
 [TemplatePart(Name = "PART_ChapterPasswordBox", Type = typeof(PasswordBox))]
-public class ChapterPasswordBox : Control
+public class ChapterPasswordBox : ControlBase
 {
     /// <summary>
     ///     The ChapterPasswordBox style key.
@@ -57,14 +58,6 @@ public class ChapterPasswordBox : Control
     static ChapterPasswordBox()
     {
         DefaultStyleKeyProperty.OverrideMetadata(typeof(ChapterPasswordBox), new FrameworkPropertyMetadata(typeof(ChapterPasswordBox)));
-    }
-
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="ChapterPasswordBox" /> class.
-    /// </summary>
-    public ChapterPasswordBox()
-    {
-        Loaded += InfoTextBox_Loaded;
     }
 
     /// <summary>
@@ -111,7 +104,8 @@ public class ChapterPasswordBox : Control
         set => SetValue(PasswordProperty, value);
     }
 
-    private void InfoTextBox_Loaded(object sender, RoutedEventArgs e)
+    /// <inheritdoc />
+    protected override void OnLoaded(object sender, RoutedEventArgs e)
     {
         RefreshInfoAppearance();
         if (!string.IsNullOrEmpty(Password))

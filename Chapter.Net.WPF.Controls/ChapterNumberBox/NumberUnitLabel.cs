@@ -5,7 +5,7 @@
 // -----------------------------------------------------------------------------------------------------------------
 
 using System.Windows;
-using System.Windows.Controls;
+using Chapter.Net.WPF.Controls.Bases;
 
 // ReSharper disable once CheckNamespace
 
@@ -14,7 +14,7 @@ namespace Chapter.Net.WPF.Controls;
 /// <summary>
 ///     Represents the currency symbol shown in the <see cref="ChapterNumberBox" />.
 /// </summary>
-public class NumberUnitLabel : Label
+public class NumberUnitLabel : LabelBase
 {
     static NumberUnitLabel()
     {

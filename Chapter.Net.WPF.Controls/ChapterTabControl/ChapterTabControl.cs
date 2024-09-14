@@ -8,6 +8,7 @@ using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using Chapter.Net.WPF.Controls.Bases;
 
 // ReSharper disable once CheckNamespace
 
@@ -17,7 +18,7 @@ namespace Chapter.Net.WPF.Controls;
 ///     Enhances the TabControl with buttons for add new tab item and close buttons of existing tab items.
 /// </summary>
 [TemplatePart(Name = "PART_AddButton", Type = typeof(Button))]
-public class ChapterTabControl : TabControl
+public class ChapterTabControl : TabControlBase
 {
     /// <summary>
     ///     The ChapterTabControl style key.

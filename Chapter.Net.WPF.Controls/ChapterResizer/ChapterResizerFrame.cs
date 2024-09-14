@@ -6,7 +6,7 @@
 
 using System.ComponentModel;
 using System.Windows;
-using System.Windows.Controls.Primitives;
+using Chapter.Net.WPF.Controls.Bases;
 
 // ReSharper disable once CheckNamespace
 
@@ -15,7 +15,7 @@ namespace Chapter.Net.WPF.Controls;
 /// <summary>
 ///     Represents a single line to drag in a specific direction. This is used in the <see cref="ChapterResizer" />.
 /// </summary>
-public class ChapterResizerFrame : Thumb
+public class ChapterResizerFrame : ThumbBase
 {
     /// <summary>
     ///     The ChapterResizerFrame style key.

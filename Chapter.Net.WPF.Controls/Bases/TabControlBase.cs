@@ -1,5 +1,5 @@
 ﻿// -----------------------------------------------------------------------------------------------------------------
-// <copyright file="ItemsControlBase.cs" company="my-libraries">
+// <copyright file="TabControlBase.cs" company="my-libraries">
 //     Copyright (c) David Wendland. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------------------------------------------------
@@ -10,18 +10,34 @@ using System.Windows.Controls;
 namespace Chapter.Net.WPF.Controls.Bases;
 
 /// <summary>
-///     Base class for items controls.
+///     Base class for tab controls.
 /// </summary>
-public abstract class ItemsControlBase : ItemsControl
+public class TabControlBase : TabControl
 {
     /// <summary>
-    ///     Create a new instance of ItemsControlBase.
+    ///     The CornerRadius dependency property.
     /// </summary>
-    protected ItemsControlBase()
+    public static readonly DependencyProperty CornerRadiusProperty =
+        DependencyProperty.Register(nameof(CornerRadius), typeof(CornerRadius), typeof(TabControlBase), new PropertyMetadata(default(CornerRadius)));
+
+    /// <summary>
+    ///     Create a new instance of TabControlBase.
+    /// </summary>
+    protected TabControlBase()
     {
         Loaded += OnLoaded;
         IsEnabledChanged += OnIsEnabledChanged;
         DataContextChanged += OnDataContextChanged;
+    }
+
+    /// <summary>
+    ///     Gets or sets the corner radius.
+    /// </summary>
+    /// <value>Default: default.</value>
+    public CornerRadius CornerRadius
+    {
+        get => (CornerRadius)GetValue(CornerRadiusProperty);
+        set => SetValue(CornerRadiusProperty, value);
     }
 
     /// <summary>
@@ -49,5 +65,17 @@ public abstract class ItemsControlBase : ItemsControl
     /// <param name="e">The DataContextChanged event parameter.</param>
     protected virtual void OnDataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
     {
+    }
+
+    /// <inheritdoc />
+    protected override bool IsItemItsOwnContainerOverride(object item)
+    {
+        return item is TabItemBase;
+    }
+
+    /// <inheritdoc />
+    protected override DependencyObject GetContainerForItemOverride()
+    {
+        return new TabItemBase();
     }
 }

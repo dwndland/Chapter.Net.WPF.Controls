@@ -6,7 +6,7 @@
 
 using System.ComponentModel;
 using System.Windows;
-using System.Windows.Controls;
+using Chapter.Net.WPF.Controls.Bases;
 
 // ReSharper disable once CheckNamespace
 
@@ -15,7 +15,7 @@ namespace Chapter.Net.WPF.Controls;
 /// <summary>
 ///     Represents the close Button shown in the <see cref="ChapterTabControl" />.
 /// </summary>
-public class CloseButton : Button
+public class CloseButton : ButtonBase
 {
     /// <summary>
     ///     The CloseButton style key.

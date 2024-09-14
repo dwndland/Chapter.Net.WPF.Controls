@@ -21,6 +21,7 @@ public abstract class ExpanderBase : Expander
     {
         Loaded += OnLoaded;
         IsEnabledChanged += OnIsEnabledChanged;
+        DataContextChanged += OnDataContextChanged;
     }
 
     /// <summary>
@@ -38,6 +39,15 @@ public abstract class ExpanderBase : Expander
     /// <param name="sender">The checkbox.</param>
     /// <param name="e">The IsEnabledChanged event parameter.</param>
     protected virtual void OnIsEnabledChanged(object sender, DependencyPropertyChangedEventArgs e)
+    {
+    }
+
+    /// <summary>
+    ///     Callback when the data context got changed.
+    /// </summary>
+    /// <param name="sender">The control.</param>
+    /// <param name="e">The DataContextChanged event parameter.</param>
+    protected virtual void OnDataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
     {
     }
 }

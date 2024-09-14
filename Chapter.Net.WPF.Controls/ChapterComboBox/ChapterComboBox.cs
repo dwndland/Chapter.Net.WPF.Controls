@@ -10,6 +10,7 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
+using Chapter.Net.WPF.Controls.Bases;
 
 // ReSharper disable once CheckNamespace
 
@@ -19,7 +20,7 @@ namespace Chapter.Net.WPF.Controls;
 ///     Represents a ComboBox which takes an enumeration value and shows all possible states inside the dropdown menu for
 ///     let choosing a value.
 /// </summary>
-public class ChapterComboBox : ComboBox
+public class ChapterComboBox : ComboBoxBase
 {
     /// <summary>
     ///     The ChapterComboBox style key.
@@ -48,14 +49,6 @@ public class ChapterComboBox : ComboBox
     {
         DefaultStyleKeyProperty.OverrideMetadata(typeof(ChapterComboBox), new FrameworkPropertyMetadata(typeof(ChapterComboBox)));
         SelectedItemProperty.OverrideMetadata(typeof(ChapterComboBox), new FrameworkPropertyMetadata(OnSelectedItemChanged, OnSelectedItemChanging));
-    }
-
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="ChapterComboBox" /> class.
-    /// </summary>
-    public ChapterComboBox()
-    {
-        Loaded += HandleLoaded;
     }
 
     /// <summary>
@@ -100,7 +93,8 @@ public class ChapterComboBox : ComboBox
         set => SetValue(ItemConverterProperty, value);
     }
 
-    private void HandleLoaded(object sender, RoutedEventArgs e)
+    /// <inheritdoc />
+    protected override void OnLoaded(object sender, RoutedEventArgs e)
     {
         if (EnumType != null)
             return;

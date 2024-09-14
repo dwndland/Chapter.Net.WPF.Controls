@@ -1,23 +1,25 @@
 ﻿// -----------------------------------------------------------------------------------------------------------------
-// <copyright file="ItemsControlBase.cs" company="my-libraries">
+// <copyright file="AdornerBase.cs" company="my-libraries">
 //     Copyright (c) David Wendland. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------------------------------------------------
 
 using System.Windows;
-using System.Windows.Controls;
+using System.Windows.Documents;
 
 namespace Chapter.Net.WPF.Controls.Bases;
 
 /// <summary>
-///     Base class for items controls.
+///     Base class for adorners;
 /// </summary>
-public abstract class ItemsControlBase : ItemsControl
+public abstract class AdornerBase : Adorner
 {
     /// <summary>
-    ///     Create a new instance of ItemsControlBase.
+    ///     Creates a new instance of AdornerBase.
     /// </summary>
-    protected ItemsControlBase()
+    /// <param name="adornedElement">The adorned element.</param>
+    protected AdornerBase(UIElement adornedElement)
+        : base(adornedElement)
     {
         Loaded += OnLoaded;
         IsEnabledChanged += OnIsEnabledChanged;

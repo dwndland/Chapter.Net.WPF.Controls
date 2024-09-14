@@ -1,5 +1,5 @@
 ﻿// -----------------------------------------------------------------------------------------------------------------
-// <copyright file="ItemsControlBase.cs" company="my-libraries">
+// <copyright file="TreeViewItemBase.cs" company="my-libraries">
 //     Copyright (c) David Wendland. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------------------------------------------------
@@ -10,14 +10,20 @@ using System.Windows.Controls;
 namespace Chapter.Net.WPF.Controls.Bases;
 
 /// <summary>
-///     Base class for items controls.
+///     Base class for tree view items.
 /// </summary>
-public abstract class ItemsControlBase : ItemsControl
+public class TreeViewItemBase : TreeViewItem
 {
     /// <summary>
-    ///     Create a new instance of ItemsControlBase.
+    ///     The CornerRadius dependency property.
     /// </summary>
-    protected ItemsControlBase()
+    public static readonly DependencyProperty CornerRadiusProperty =
+        DependencyProperty.Register(nameof(CornerRadius), typeof(CornerRadius), typeof(TreeViewItemBase), new PropertyMetadata(default(CornerRadius)));
+
+    /// <summary>
+    ///     Create a new instance of TreeViewItemBase.
+    /// </summary>
+    public TreeViewItemBase()
     {
         Loaded += OnLoaded;
         IsEnabledChanged += OnIsEnabledChanged;
@@ -25,9 +31,19 @@ public abstract class ItemsControlBase : ItemsControl
     }
 
     /// <summary>
+    ///     Gets or sets the corner radius of the bar.
+    /// </summary>
+    /// <value>Default: 0.</value>
+    public CornerRadius CornerRadius
+    {
+        get => (CornerRadius)GetValue(CornerRadiusProperty);
+        set => SetValue(CornerRadiusProperty, value);
+    }
+
+    /// <summary>
     ///     Callback when the control got loaded.
     /// </summary>
-    /// <param name="sender">The loaded checkbox.</param>
+    /// <param name="sender">The loaded control.</param>
     /// <param name="e">The loaded event parameter.</param>
     protected virtual void OnLoaded(object sender, RoutedEventArgs e)
     {
@@ -36,7 +52,7 @@ public abstract class ItemsControlBase : ItemsControl
     /// <summary>
     ///     Callback when the control IsEnabled got changed.
     /// </summary>
-    /// <param name="sender">The checkbox.</param>
+    /// <param name="sender">The control.</param>
     /// <param name="e">The IsEnabledChanged event parameter.</param>
     protected virtual void OnIsEnabledChanged(object sender, DependencyPropertyChangedEventArgs e)
     {
@@ -49,5 +65,17 @@ public abstract class ItemsControlBase : ItemsControl
     /// <param name="e">The DataContextChanged event parameter.</param>
     protected virtual void OnDataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
     {
+    }
+
+    /// <inheritdoc />
+    protected override bool IsItemItsOwnContainerOverride(object item)
+    {
+        return item is TreeViewItemBase;
+    }
+
+    /// <inheritdoc />
+    protected override DependencyObject GetContainerForItemOverride()
+    {
+        return new TreeViewItemBase();
     }
 }

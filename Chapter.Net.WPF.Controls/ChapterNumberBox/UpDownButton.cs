@@ -6,7 +6,7 @@
 
 using System.ComponentModel;
 using System.Windows;
-using System.Windows.Controls.Primitives;
+using Chapter.Net.WPF.Controls.Bases;
 
 // ReSharper disable once CheckNamespace
 
@@ -15,7 +15,7 @@ namespace Chapter.Net.WPF.Controls;
 /// <summary>
 ///     Represents an up or down button shown in the <see cref="ChapterNumberBox" /> control.
 /// </summary>
-public class UpDownButton : RepeatButton
+public class UpDownButton : RepeatButtonBase
 {
     /// <summary>
     ///     Identifies the <see cref="UpDownButton.Direction" /> dependency property.

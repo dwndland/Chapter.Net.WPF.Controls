@@ -7,8 +7,8 @@
 using System;
 using System.ComponentModel;
 using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Input;
+using Chapter.Net.WPF.Controls.Bases;
 
 // ReSharper disable once CheckNamespace
 
@@ -22,7 +22,7 @@ namespace Chapter.Net.WPF.Controls;
 [TemplatePart(Name = "PART_SecondBox", Type = typeof(ChapterNumberBox))]
 [TemplatePart(Name = "PART_UpButton", Type = typeof(UpDownButton))]
 [TemplatePart(Name = "PART_DownButton", Type = typeof(UpDownButton))]
-public class ChapterTimeBox : Control
+public class ChapterTimeBox : ControlBase
 {
     /// <summary>
     ///     The ChapterTimeBox style key.

@@ -7,8 +7,9 @@
 using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Controls.Primitives;
 using System.Windows.Input;
+using Chapter.Net.WPF.Controls.Bases;
+using ButtonBase = System.Windows.Controls.Primitives.ButtonBase;
 
 // ReSharper disable once CheckNamespace
 
@@ -18,7 +19,7 @@ namespace Chapter.Net.WPF.Controls;
 ///     A button with a drop down where more commands can be available.
 /// </summary>
 [TemplatePart(Name = "PART_MainButton", Type = typeof(ButtonBase))]
-public class ChapterSplitButton : ComboBox
+public class ChapterSplitButton : ComboBoxBase
 {
     /// <summary>
     ///     The ChapterSplitButton style key.

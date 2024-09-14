@@ -5,7 +5,7 @@
 // -----------------------------------------------------------------------------------------------------------------
 
 using System.Windows;
-using System.Windows.Controls;
+using Chapter.Net.WPF.Controls.Bases;
 
 // ReSharper disable once CheckNamespace
 
@@ -14,7 +14,7 @@ namespace Chapter.Net.WPF.Controls;
 /// <summary>
 ///     Represents the scroll viewer shown in the <see cref="ChapterTreeListView" />.
 /// </summary>
-public sealed class ChapterTreeListViewScrollViewer : ScrollViewer
+public sealed class ChapterTreeListViewScrollViewer : ScrollViewerBase
 {
     /// <summary>
     ///     The ChapterTreeListViewScrollViewer style key.

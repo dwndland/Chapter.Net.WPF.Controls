@@ -6,8 +6,8 @@
 
 using System.ComponentModel;
 using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
+using Chapter.Net.WPF.Controls.Bases;
 
 // ReSharper disable once CheckNamespace
 
@@ -24,7 +24,7 @@ namespace Chapter.Net.WPF.Controls;
 [TemplatePart(Name = "PART_RightBottomThumb", Type = typeof(Thumb))]
 [TemplatePart(Name = "PART_BottomThumb", Type = typeof(Thumb))]
 [TemplatePart(Name = "PART_LeftBottomThumb", Type = typeof(Thumb))]
-public class ChapterResizer : ContentControl
+public class ChapterResizer : ContentControlBase
 {
     /// <summary>
     ///     The ChapterResizer style key.

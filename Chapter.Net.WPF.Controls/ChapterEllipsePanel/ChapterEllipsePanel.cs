@@ -9,8 +9,8 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Media;
+using Chapter.Net.WPF.Controls.Bases;
 
 // ReSharper disable once CheckNamespace
 
@@ -19,7 +19,7 @@ namespace Chapter.Net.WPF.Controls;
 /// <summary>
 ///     Arranges child elements in a configurable ellipse form.
 /// </summary>
-public class ChapterEllipsePanel : Panel
+public class ChapterEllipsePanel : PanelBase
 {
     /// <summary>
     ///     Identifies the RotateElements dependency property.

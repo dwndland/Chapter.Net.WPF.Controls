@@ -5,7 +5,7 @@
 // -----------------------------------------------------------------------------------------------------------------
 
 using System.Windows;
-using System.Windows.Controls;
+using Chapter.Net.WPF.Controls.Bases;
 
 // ReSharper disable once CheckNamespace
 
@@ -14,7 +14,7 @@ namespace Chapter.Net.WPF.Controls;
 /// <summary>
 ///     Represents the reset to default button shown in the <see cref="ChapterNumberBox" />.
 /// </summary>
-public class NumberResetButton : Button
+public class NumberResetButton : ButtonBase
 {
     static NumberResetButton()
     {

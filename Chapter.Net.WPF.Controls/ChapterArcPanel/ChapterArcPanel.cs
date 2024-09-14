@@ -7,8 +7,8 @@
 using System;
 using System.ComponentModel;
 using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Media;
+using Chapter.Net.WPF.Controls.Bases;
 
 // ReSharper disable once CheckNamespace
 
@@ -17,7 +17,7 @@ namespace Chapter.Net.WPF.Controls;
 /// <summary>
 ///     Arranges child elements in an arc form.
 /// </summary>
-public class ChapterArcPanel : Panel
+public class ChapterArcPanel : PanelBase
 {
     /// <summary>
     ///     Identifies the RotateElements dependency property.

@@ -9,6 +9,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
+using Chapter.Net.WPF.Controls.Bases;
 
 // ReSharper disable once CheckNamespace
 
@@ -17,7 +18,7 @@ namespace Chapter.Net.WPF.Controls;
 /// <summary>
 ///     A StackPanel which adds a spacing between the items.
 /// </summary>
-public class ChapterStackPanel : Panel
+public class ChapterStackPanel : PanelBase
 {
     /// <summary>
     ///     Identifies the Spacing dependency property.

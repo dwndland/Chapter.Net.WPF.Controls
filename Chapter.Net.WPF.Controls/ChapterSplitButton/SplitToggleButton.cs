@@ -5,7 +5,7 @@
 // -----------------------------------------------------------------------------------------------------------------
 
 using System.Windows;
-using System.Windows.Controls.Primitives;
+using Chapter.Net.WPF.Controls.Bases;
 
 // ReSharper disable once CheckNamespace
 
@@ -14,7 +14,7 @@ namespace Chapter.Net.WPF.Controls;
 /// <summary>
 ///     The drop down toggle button placed in the <see cref="ChapterSplitButton" />.
 /// </summary>
-public class SplitToggleButton : ToggleButton
+public class SplitToggleButton : ToggleButtonBase
 {
     static SplitToggleButton()
     {

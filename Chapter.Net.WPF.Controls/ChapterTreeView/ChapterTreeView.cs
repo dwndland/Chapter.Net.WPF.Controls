@@ -13,6 +13,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
+using Chapter.Net.WPF.Controls.Bases;
 
 // ReSharper disable once CheckNamespace
 
@@ -24,7 +25,7 @@ namespace Chapter.Net.WPF.Controls;
 ///     * select an item by right click on it and
 ///     * a two way bindable SelectedItem.
 /// </summary>
-public class ChapterTreeView : TreeView
+public class ChapterTreeView : TreeViewBase
 {
     /// <summary>
     ///     Identifies the <see cref="SelectionMode" /> dependency property.
@@ -67,18 +68,12 @@ public class ChapterTreeView : TreeView
 
         _selfMultiSelect = true;
 
-        PreviewMouseDown += (sender, e) => _selfMultiSelect = false;
-        PreviewMouseUp += (sender, e) => _selfMultiSelect = true;
-        PreviewKeyDown += (sender, e) => _selfMultiSelect = false;
-        PreviewKeyUp += (sender, e) => _selfMultiSelect = true;
+        PreviewMouseDown += (_, _) => _selfMultiSelect = false;
+        PreviewMouseUp += (_, _) => _selfMultiSelect = true;
+        PreviewKeyDown += (_, _) => _selfMultiSelect = false;
+        PreviewKeyUp += (_, _) => _selfMultiSelect = true;
 
         AddHandler(ChapterTreeViewItem.ContainerGeneratedEvent, new RoutedEventHandler(HandleContainerGenerated));
-
-        Loaded += (sender, args) =>
-        {
-            if (SelectedElement != null)
-                TrySelectItem(null, SelectedElement);
-        };
     }
 
     /// <summary>
@@ -172,6 +167,13 @@ public class ChapterTreeView : TreeView
     protected override bool IsItemItsOwnContainerOverride(object item)
     {
         return item is ChapterTreeViewItem;
+    }
+
+    /// <inheritdoc />
+    protected override void OnLoaded(object sender, RoutedEventArgs e)
+    {
+        if (SelectedElement != null)
+            TrySelectItem(null, SelectedElement);
     }
 
     private void EnhancedTreeView_PreviewMouseRightButtonDown(object sender, MouseButtonEventArgs e)
@@ -280,10 +282,7 @@ public class ChapterTreeView : TreeView
 
     private void Sort(ref int firstItemPos, ref int lastItemPos)
     {
-        if (firstItemPos > lastItemPos)
-        {
-            (firstItemPos, lastItemPos) = (lastItemPos, firstItemPos);
-        }
+        if (firstItemPos > lastItemPos) (firstItemPos, lastItemPos) = (lastItemPos, firstItemPos);
     }
 
     private List<ChapterTreeViewItem> GetFlatTreeViewItems(ItemsControl control)

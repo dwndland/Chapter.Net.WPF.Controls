@@ -6,7 +6,7 @@
 
 using System;
 using System.ComponentModel;
-using System.Windows.Markup;
+using Chapter.Net.WPF.Controls.Bases;
 
 // ReSharper disable once CheckNamespace
 
@@ -15,7 +15,7 @@ namespace Chapter.Net.WPF.Controls;
 /// <summary>
 ///     Defines the actions which should be done when the <see cref="ChapterNumberBox" /> lost the focus.
 /// </summary>
-public class LostFocusBehavior : MarkupExtension
+public class LostFocusBehavior : MarkupExtensionBase
 {
     /// <summary>
     ///     Initializes a new instance of the <see cref="LostFocusBehavior" /> class.

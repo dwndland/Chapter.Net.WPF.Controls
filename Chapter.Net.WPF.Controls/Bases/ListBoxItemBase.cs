@@ -23,14 +23,15 @@ public class ListBoxItemBase : ListBoxItem
     /// <summary>
     ///     Create a new instance of ListBoxItemBase.
     /// </summary>
-    protected ListBoxItemBase()
+    public ListBoxItemBase()
     {
         Loaded += OnLoaded;
         IsEnabledChanged += OnIsEnabledChanged;
+        DataContextChanged += OnDataContextChanged;
     }
 
     /// <summary>
-    ///     Gets or sets the corner radius of the bar.
+    ///     Gets or sets the corner radius of the item.
     /// </summary>
     /// <value>Default: 0.</value>
     public CornerRadius CornerRadius
@@ -54,6 +55,15 @@ public class ListBoxItemBase : ListBoxItem
     /// <param name="sender">The checkbox.</param>
     /// <param name="e">The IsEnabledChanged event parameter.</param>
     protected virtual void OnIsEnabledChanged(object sender, DependencyPropertyChangedEventArgs e)
+    {
+    }
+
+    /// <summary>
+    ///     Callback when the data context got changed.
+    /// </summary>
+    /// <param name="sender">The control.</param>
+    /// <param name="e">The DataContextChanged event parameter.</param>
+    protected virtual void OnDataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
     {
     }
 }

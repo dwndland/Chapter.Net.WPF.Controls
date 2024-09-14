@@ -8,6 +8,7 @@ using System;
 using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
+using Chapter.Net.WPF.Controls.Bases;
 
 // ReSharper disable once CheckNamespace
 
@@ -16,7 +17,7 @@ namespace Chapter.Net.WPF.Controls;
 /// <summary>
 ///     Enhances the <see cref="WrapPanel" /> by the feature that all items will have the same size.
 /// </summary>
-public class ChapterWrapPanel : WrapPanel
+public class ChapterWrapPanel : WrapPanelBase
 {
     /// <summary>
     ///     Identifies the <see cref="IsAutoUniform" /> dependency property.

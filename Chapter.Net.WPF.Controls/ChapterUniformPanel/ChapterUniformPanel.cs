@@ -9,6 +9,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
+using Chapter.Net.WPF.Controls.Bases;
 
 // ReSharper disable once CheckNamespace
 
@@ -18,7 +19,7 @@ namespace Chapter.Net.WPF.Controls;
 ///     A UniformGrid with only one row or one column, depending on the orientation, which adds a spacing between the
 ///     items.
 /// </summary>
-public class ChapterUniformPanel : Panel
+public class ChapterUniformPanel : PanelBase
 {
     /// <summary>
     ///     Identifies the Spacing dependency property.

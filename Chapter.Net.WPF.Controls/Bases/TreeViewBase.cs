@@ -1,5 +1,5 @@
 ﻿// -----------------------------------------------------------------------------------------------------------------
-// <copyright file="ItemsControlBase.cs" company="my-libraries">
+// <copyright file="TreeViewBase.cs" company="my-libraries">
 //     Copyright (c) David Wendland. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------------------------------------------------
@@ -10,18 +10,34 @@ using System.Windows.Controls;
 namespace Chapter.Net.WPF.Controls.Bases;
 
 /// <summary>
-///     Base class for items controls.
+///     Base class for list boxes.
 /// </summary>
-public abstract class ItemsControlBase : ItemsControl
+public class TreeViewBase : TreeView
 {
     /// <summary>
-    ///     Create a new instance of ItemsControlBase.
+    ///     The CornerRadius dependency property.
     /// </summary>
-    protected ItemsControlBase()
+    public static readonly DependencyProperty CornerRadiusProperty =
+        DependencyProperty.Register(nameof(CornerRadius), typeof(CornerRadius), typeof(TreeViewBase), new PropertyMetadata(default(CornerRadius)));
+
+    /// <summary>
+    ///     Create a new instance of TreeViewBase.
+    /// </summary>
+    protected TreeViewBase()
     {
         Loaded += OnLoaded;
         IsEnabledChanged += OnIsEnabledChanged;
         DataContextChanged += OnDataContextChanged;
+    }
+
+    /// <summary>
+    ///     Gets or sets the corner radius of the bar.
+    /// </summary>
+    /// <value>Default: 0.</value>
+    public CornerRadius CornerRadius
+    {
+        get => (CornerRadius)GetValue(CornerRadiusProperty);
+        set => SetValue(CornerRadiusProperty, value);
     }
 
     /// <summary>
@@ -49,5 +65,17 @@ public abstract class ItemsControlBase : ItemsControl
     /// <param name="e">The DataContextChanged event parameter.</param>
     protected virtual void OnDataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
     {
+    }
+
+    /// <inheritdoc />
+    protected override bool IsItemItsOwnContainerOverride(object item)
+    {
+        return item is TreeViewItemBase;
+    }
+
+    /// <inheritdoc />
+    protected override DependencyObject GetContainerForItemOverride()
+    {
+        return new TreeViewItemBase();
     }
 }

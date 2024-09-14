@@ -1,5 +1,5 @@
 ﻿// -----------------------------------------------------------------------------------------------------------------
-// <copyright file="ItemsControlBase.cs" company="my-libraries">
+// <copyright file="PanelBase.cs" company="my-libraries">
 //     Copyright (c) David Wendland. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------------------------------------------------
@@ -10,14 +10,14 @@ using System.Windows.Controls;
 namespace Chapter.Net.WPF.Controls.Bases;
 
 /// <summary>
-///     Base class for items controls.
+///     Base class for panels.
 /// </summary>
-public abstract class ItemsControlBase : ItemsControl
+public abstract class PanelBase : Panel
 {
     /// <summary>
-    ///     Create a new instance of ItemsControlBase.
+    ///     Create a new instance of PanelBase.
     /// </summary>
-    protected ItemsControlBase()
+    protected PanelBase()
     {
         Loaded += OnLoaded;
         IsEnabledChanged += OnIsEnabledChanged;

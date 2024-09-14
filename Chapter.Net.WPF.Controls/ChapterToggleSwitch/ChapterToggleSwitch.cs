@@ -6,7 +6,7 @@
 
 using System.ComponentModel;
 using System.Windows;
-using System.Windows.Controls;
+using Chapter.Net.WPF.Controls.Bases;
 
 // ReSharper disable once CheckNamespace
 
@@ -15,7 +15,7 @@ namespace Chapter.Net.WPF.Controls;
 /// <summary>
 ///     A custom checkbox where a slider shows the checked and unchecked state.
 /// </summary>
-public class ChapterToggleSwitch : CheckBox
+public class ChapterToggleSwitch : CheckBoxBase
 {
     /// <summary>
     ///     The ChapterToggleSwitch style key.

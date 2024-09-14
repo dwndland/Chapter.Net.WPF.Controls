@@ -6,7 +6,7 @@
 
 using System.ComponentModel;
 using System.Windows;
-using System.Windows.Controls;
+using Chapter.Net.WPF.Controls.Bases;
 
 // ReSharper disable once CheckNamespace
 
@@ -15,7 +15,7 @@ namespace Chapter.Net.WPF.Controls;
 /// <summary>
 ///     The background control shown in the <see cref="ChapterToggleSwitch" />.
 /// </summary>
-public class ChapterToggleSwitchBack : Control
+public class ChapterToggleSwitchBack : ControlBase
 {
     /// <summary>
     ///     The ChapterToggleSwitchBack style key.

@@ -6,7 +6,7 @@
 
 using System.ComponentModel;
 using System.Windows;
-using System.Windows.Controls;
+using Chapter.Net.WPF.Controls.Bases;
 
 // ReSharper disable once CheckNamespace
 
@@ -15,7 +15,7 @@ namespace Chapter.Net.WPF.Controls;
 /// <summary>
 ///     The slider shown in the <see cref="ChapterToggleSwitch" />.
 /// </summary>
-public class ChapterToggleSwitchSlider : Control
+public class ChapterToggleSwitchSlider : ControlBase
 {
     /// <summary>
     ///     The ChapterToggleSwitchSlider style key.

@@ -6,8 +6,8 @@
 
 using System.ComponentModel;
 using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Input;
+using Chapter.Net.WPF.Controls.Bases;
 
 // ReSharper disable once CheckNamespace
 
@@ -16,7 +16,7 @@ namespace Chapter.Net.WPF.Controls;
 /// <summary>
 ///     A single command entry in the <see cref="ChapterSplitButton" />.
 /// </summary>
-public class ChapterSplitButtonItem : ComboBoxItem
+public class ChapterSplitButtonItem : ComboBoxItemBase
 {
     /// <summary>
     ///     The ChapterSplitButtonItem style key.

@@ -6,7 +6,7 @@
 
 using System.ComponentModel;
 using System.Windows;
-using System.Windows.Controls;
+using Chapter.Net.WPF.Controls.Bases;
 
 // ReSharper disable once CheckNamespace
 
@@ -15,7 +15,7 @@ namespace Chapter.Net.WPF.Controls;
 /// <summary>
 ///     Represents a single line in the <see cref="ChapterTitledItemsControl" />.
 /// </summary>
-public class ChapterTitledItem : ContentControl
+public class ChapterTitledItem : ContentControlBase
 {
     /// <summary>
     ///     The ChapterTitledItem style key.

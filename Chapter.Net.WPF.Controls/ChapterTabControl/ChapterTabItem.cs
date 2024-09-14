@@ -7,6 +7,7 @@
 using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
+using Chapter.Net.WPF.Controls.Bases;
 
 // ReSharper disable once CheckNamespace
 
@@ -16,7 +17,7 @@ namespace Chapter.Net.WPF.Controls;
 ///     Represents the shown tab in the <see cref="ChapterTabControl" />.
 /// </summary>
 [TemplatePart(Name = "PART_CloseButton", Type = typeof(Button))]
-public class ChapterTabItem : TabItem
+public class ChapterTabItem : TabItemBase
 {
     /// <summary>
     ///     The ChapterTabItem style key.

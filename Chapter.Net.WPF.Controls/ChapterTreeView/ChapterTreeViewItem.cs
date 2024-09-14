@@ -5,7 +5,7 @@
 // -----------------------------------------------------------------------------------------------------------------
 
 using System.Windows;
-using System.Windows.Controls;
+using Chapter.Net.WPF.Controls.Bases;
 
 // ReSharper disable once CheckNamespace
 
@@ -14,19 +14,10 @@ namespace Chapter.Net.WPF.Controls;
 /// <summary>
 ///     Enhances the <see cref="ChapterTreeViewItem" /> to be used in the <see cref="ChapterTreeView" />.
 /// </summary>
-public class ChapterTreeViewItem : TreeViewItem
+public class ChapterTreeViewItem : TreeViewItemBase
 {
     internal static readonly RoutedEvent ContainerGeneratedEvent =
         EventManager.RegisterRoutedEvent("ContainerGenerated", RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(ChapterTreeViewItem));
-
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="ChapterTreeViewItem" /> class.
-    /// </summary>
-    public ChapterTreeViewItem()
-    {
-        DataContextChanged += (sender, args) => RaiseContainerGenerated();
-        Loaded += (sender, args) => RaiseContainerGenerated();
-    }
 
     /// <summary>
     ///     Generates a new child item container to hold in the <see cref="ChapterTreeViewItem" />.
@@ -46,6 +37,18 @@ public class ChapterTreeViewItem : TreeViewItem
     protected override bool IsItemItsOwnContainerOverride(object item)
     {
         return item is ChapterTreeViewItem;
+    }
+
+    /// <inheritdoc />
+    protected override void OnLoaded(object sender, RoutedEventArgs e)
+    {
+        RaiseContainerGenerated();
+    }
+
+    /// <inheritdoc />
+    protected override void OnDataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
+    {
+        RaiseContainerGenerated();
     }
 
     private void RaiseContainerGenerated()

@@ -5,7 +5,7 @@
 // -----------------------------------------------------------------------------------------------------------------
 
 using System.Windows;
-using System.Windows.Controls;
+using Chapter.Net.WPF.Controls.Bases;
 
 // ReSharper disable once CheckNamespace
 
@@ -14,7 +14,7 @@ namespace Chapter.Net.WPF.Controls;
 /// <summary>
 ///     The button which calls the cancel command in the <see cref="ChapterSearchTextBox" />.
 /// </summary>
-public class CancelButton : Button
+public class CancelButton : ButtonBase
 {
     /// <summary>
     ///     The CancelButton style key.
