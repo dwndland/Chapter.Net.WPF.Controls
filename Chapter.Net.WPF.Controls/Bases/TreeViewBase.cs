@@ -76,6 +76,6 @@ public class TreeViewBase : TreeView
     /// <inheritdoc />
     protected override DependencyObject GetContainerForItemOverride()
     {
-        return new TreeViewItemBase();
+        return TreeViewItemBase.CreateTreeViewItemBase();
     }
 }

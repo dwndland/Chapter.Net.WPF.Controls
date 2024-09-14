@@ -16,13 +16,6 @@ public abstract class RoutedEventArgsBase : RoutedEventArgs
     /// <summary>
     ///     Create a new instance of RoutedEventArgsBase.
     /// </summary>
-    protected RoutedEventArgsBase()
-    {
-    }
-
-    /// <summary>
-    ///     Create a new instance of RoutedEventArgsBase.
-    /// </summary>
     /// <param name="routedEvent">The new value that the RoutedEvent Property is being set to </param>
     protected RoutedEventArgsBase(RoutedEvent routedEvent)
         : base(routedEvent)

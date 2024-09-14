@@ -76,6 +76,6 @@ public class ListBoxBase : ListBox
     /// <inheritdoc />
     protected override DependencyObject GetContainerForItemOverride()
     {
-        return new ListBoxItemBase();
+        return ListBoxItemBase.CreateListBoxItemBase();
     }
 }

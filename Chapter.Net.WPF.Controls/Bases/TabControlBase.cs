@@ -76,6 +76,6 @@ public class TabControlBase : TabControl
     /// <inheritdoc />
     protected override DependencyObject GetContainerForItemOverride()
     {
-        return new TabItemBase();
+        return TabItemBase.CreateTabItemBase();
     }
 }

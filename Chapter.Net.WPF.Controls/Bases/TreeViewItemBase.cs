@@ -23,7 +23,7 @@ public class TreeViewItemBase : TreeViewItem
     /// <summary>
     ///     Create a new instance of TreeViewItemBase.
     /// </summary>
-    public TreeViewItemBase()
+    protected TreeViewItemBase()
     {
         Loaded += OnLoaded;
         IsEnabledChanged += OnIsEnabledChanged;
@@ -38,6 +38,11 @@ public class TreeViewItemBase : TreeViewItem
     {
         get => (CornerRadius)GetValue(CornerRadiusProperty);
         set => SetValue(CornerRadiusProperty, value);
+    }
+
+    internal static TreeViewItemBase CreateTreeViewItemBase()
+    {
+        return new TreeViewItemBase();
     }
 
     /// <summary>

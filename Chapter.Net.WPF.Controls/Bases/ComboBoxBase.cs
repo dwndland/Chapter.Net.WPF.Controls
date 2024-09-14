@@ -76,6 +76,6 @@ public class ComboBoxBase : ComboBox
     /// <inheritdoc />
     protected override DependencyObject GetContainerForItemOverride()
     {
-        return new ComboBoxItemBase();
+        return ComboBoxItemBase.CreateComboBoxItemBase();
     }
 }

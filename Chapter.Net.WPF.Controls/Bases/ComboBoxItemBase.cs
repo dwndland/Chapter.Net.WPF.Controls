@@ -23,7 +23,7 @@ public class ComboBoxItemBase : ComboBoxItem
     /// <summary>
     ///     Create a new instance of ComboBoxItemBase.
     /// </summary>
-    public ComboBoxItemBase()
+    protected ComboBoxItemBase()
     {
         Loaded += OnLoaded;
         IsEnabledChanged += OnIsEnabledChanged;
@@ -38,6 +38,11 @@ public class ComboBoxItemBase : ComboBoxItem
     {
         get => (CornerRadius)GetValue(CornerRadiusProperty);
         set => SetValue(CornerRadiusProperty, value);
+    }
+
+    internal static ComboBoxItemBase CreateComboBoxItemBase()
+    {
+        return new ComboBoxItemBase();
     }
 
     /// <summary>

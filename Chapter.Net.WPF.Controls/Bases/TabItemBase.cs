@@ -23,7 +23,7 @@ public class TabItemBase : TabItem
     /// <summary>
     ///     Create a new instance of TabItemBase.
     /// </summary>
-    public TabItemBase()
+    protected TabItemBase()
     {
         Loaded += OnLoaded;
         IsEnabledChanged += OnIsEnabledChanged;
@@ -38,6 +38,11 @@ public class TabItemBase : TabItem
     {
         get => (CornerRadius)GetValue(CornerRadiusProperty);
         set => SetValue(CornerRadiusProperty, value);
+    }
+
+    internal static TabItemBase CreateTabItemBase()
+    {
+        return new TabItemBase();
     }
 
     /// <summary>

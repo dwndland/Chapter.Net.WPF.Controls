@@ -23,7 +23,7 @@ public class ListBoxItemBase : ListBoxItem
     /// <summary>
     ///     Create a new instance of ListBoxItemBase.
     /// </summary>
-    public ListBoxItemBase()
+    protected ListBoxItemBase()
     {
         Loaded += OnLoaded;
         IsEnabledChanged += OnIsEnabledChanged;
@@ -38,6 +38,11 @@ public class ListBoxItemBase : ListBoxItem
     {
         get => (CornerRadius)GetValue(CornerRadiusProperty);
         set => SetValue(CornerRadiusProperty, value);
+    }
+
+    internal static ListBoxItemBase CreateListBoxItemBase()
+    {
+        return new ListBoxItemBase();
     }
 
     /// <summary>
