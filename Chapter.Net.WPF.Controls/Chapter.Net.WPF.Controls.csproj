@@ -1,9 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net8.0-windows</TargetFramework>
+    <TargetFrameworks>net8.0-windows;net9.0-windows</TargetFrameworks>
     <UseWPF>true</UseWPF>
-    <Version>3.0.0</Version>
+    <Version>3.1.0</Version>
     <Authors>David Wendland</Authors>
     <Description>A set of new WPF controls which are not yet build in.</Description>
     <Copyright>Copyright (c) 2024 David Wendland</Copyright>
@@ -34,7 +34,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Chapter.Net.WPF" Version="3.0.0" />
+    <PackageReference Include="Chapter.Net.WPF" Version="3.3.0" />
   </ItemGroup>
 
 </Project>

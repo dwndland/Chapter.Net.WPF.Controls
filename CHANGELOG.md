@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+## [3.1.0] - 2024-12-01
+### Added
+- Added .net 9 to the supported .net versions.
 ### Changed
 - Adjusted ChapterHeaderedContentControl to use the ChapterControlHeaderPresenter and ChapterControlFooterPresenter to present the header and footer.
 - Removed icon handling inside the ChapterButton.
@@ -17,6 +21,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Filled up missing base classes.
 ### Fixed
 - Fixed crash of the ChapterStackPanel if used empty.
+### Supported .Net Versions
+- .Net 8 (Windows)
+- .Net 9 (Windows)
 
 ## [3.0.0] - 2024-06-07
 ### Added
@@ -32,6 +39,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Update to support .Net 8 only.
 - Extended ChapterButton which is a button with more features like oval endings, corner radius, header, footer and optional icon either as image or object.
 - Renewed the ChapterHeaderedContentControl to be a headered content control with more possible customization and a footer.
+### Supported .Net Versions
+- .Net 8 (Windows)
 
 ## [2.0.0] - 2024-04-20
 ### Removed

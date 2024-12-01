@@ -50,12 +50,6 @@ public class ChapterNavigationViewItem : ChapterTreeViewItem
         DependencyProperty.Register(nameof(DisplayMode), typeof(NavigationDisplayMode), typeof(ChapterNavigationViewItem), new PropertyMetadata(NavigationDisplayMode.Left, OnToCompact));
 
     /// <summary>
-    ///     The CornerRadius dependency property.
-    /// </summary>
-    public static readonly DependencyProperty CornerRadiusProperty =
-        DependencyProperty.Register(nameof(CornerRadius), typeof(CornerRadius), typeof(ChapterNavigationViewItem), new PropertyMetadata(default(CornerRadius)));
-
-    /// <summary>
     ///     The Level dependency property.
     /// </summary>
     public static readonly DependencyProperty LevelProperty =
@@ -127,16 +121,6 @@ public class ChapterNavigationViewItem : ChapterTreeViewItem
     }
 
     /// <summary>
-    ///     Gets or sets the corner radius.
-    /// </summary>
-    /// <value>Default: default.</value>
-    public CornerRadius CornerRadius
-    {
-        get => (CornerRadius)GetValue(CornerRadiusProperty);
-        set => SetValue(CornerRadiusProperty, value);
-    }
-
-    /// <summary>
     ///     Gets the level of the item within the hierarchy.
     /// </summary>
     /// <value>Default: 0</value>
@@ -170,7 +154,8 @@ public class ChapterNavigationViewItem : ChapterTreeViewItem
             _headerBar.PreviewMouseDown += OnPressed;
     }
 
-    private void OnLoaded(object sender, RoutedEventArgs e)
+    /// <inheritdoc />
+    protected override void OnLoaded(object sender, RoutedEventArgs e)
     {
         // The binding in the xaml does not work if the item is within the popup item presenter
         SetBinding(DisplayModeProperty, new Binding("CurrentDisplayMode") { RelativeSource = new RelativeSource(RelativeSourceMode.FindAncestor, typeof(ChapterNavigationView), 1) });
