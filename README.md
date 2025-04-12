@@ -1,4 +1,4 @@
-<img src="https://raw.githubusercontent.com/dwndlnd/Chapter.Net.WPF.Controls/master/Icon.png" alt="logo" width="64"/>
+![Chapter](https://raw.githubusercontent.com/dwndlnd/Chapter.Net.WPF.Controls/master/Icon.png)
 
 # Chapter.Net.WPF.Controls Library
 
@@ -298,7 +298,7 @@ A set of new WPF controls which are not yet build in.
                               DefaultNumber="5"
 
                               ShowCurrency="True"
-                              Currency="€"
+                              Currency="ï¿½"
                               CurrencyPosition="Right"
 
                               HasCheckBox="True"
