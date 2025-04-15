@@ -1,5 +1,5 @@
 // -----------------------------------------------------------------------------------------------------------------
-// <copyright file="NB_long.cs" company="my-libraries">
+// <copyright file="NB_long.cs" company="dwndland">
 //     Copyright (c) David Wendland. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------------------------------------------------
