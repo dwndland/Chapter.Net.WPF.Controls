@@ -5,8 +5,8 @@
     <UseWPF>true</UseWPF>
     <Version>3.1.0</Version>
     <Authors>David Wendland</Authors>
-    <Description>A set of new WPF controls which are not yet build in.</Description>
-    <Copyright>Copyright (c) 2024 David Wendland</Copyright>
+    <Description>Chapter.Net.WPF.Controls is a comprehensive collection of modern, customizable WPF controls for professional desktop applications.</Description>
+    <Copyright>Copyright (c) 2025 David Wendland</Copyright>
     <PackageProjectUrl>https://github.com/dwndlnd/Chapter.Net.WPF.Controls</PackageProjectUrl>
     <PackageIcon>Icon.png</PackageIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>

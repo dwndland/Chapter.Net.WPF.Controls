@@ -3,7 +3,7 @@
 # Chapter.Net.WPF.Controls Library
 
 ## Overview
-A set of new WPF controls which are not yet build in.
+Chapter.Net.WPF.Controls is a comprehensive collection of modern, customizable WPF controls for professional desktop applications.
 
 ## Features
 - **ChapterTextBox:** Enhances the WPF TextBox by the possibilities to show background text, drop files and folders and place additional controls in.
