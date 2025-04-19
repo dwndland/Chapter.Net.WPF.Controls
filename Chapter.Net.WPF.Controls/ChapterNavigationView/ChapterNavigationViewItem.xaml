@@ -26,7 +26,7 @@
                               DockPanel.Dock="Top"
                               IsChecked="{Binding IsExpanded, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
                               Style="{StaticResource InvisibleToggleButton}">
-                    <Border Width="28"
+                    <Border MinWidth="28"
                             MinHeight="28"
                             Background="{TemplateBinding Background}"
                             BorderBrush="{TemplateBinding BorderBrush}"
